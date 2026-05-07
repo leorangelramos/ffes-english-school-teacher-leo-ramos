@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#020c1b">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="FFES App">
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <!-- SEO Essencial e Metadados -->
+    <title>App FFES | LeoLingo by Teacher Leo Ramos</title>
+    <meta name="description" content="Acesse o App FFES e domine a estrutura do inglês. Treinamento focado em lógica, gramática estrutural e fluência avançada.">
+    <meta name="author" content="Leonardo Rangel Ramos">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Tags Canonical e Hreflang -->
+    <link rel="canonical" href="https://teacherleoramos.com.br/index-app-ffes.html" />
+    <link rel="alternate" hreflang="pt-br" href="https://teacherleoramos.com.br/index-app-ffes.html" />
+    <link rel="alternate" hreflang="x-default" href="https://teacherleoramos.com.br/index-app-ffes.html" />
+
+    <!-- Open Graph & Twitter Cards -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://teacherleoramos.com.br/index-app-ffes.html" />
+    <meta property="og:title" content="App FFES | O Algoritmo da Fluência" />
+    <meta property="og:description" content="Ecossistema nativo de estudos. Metodologia Teacher Leo Ramos com foco em lógica algorítmica." />
+    <meta property="og:image" content="https://teacherleoramos.com.br/images/preview-social.jpg" />
+    <meta property="og:locale" content="pt_BR" />
+
+    <!-- Schema Markup (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "SoftwareApplication",
+          "name": "App FFES English",
+          "operatingSystem": "Web, Android, iOS",
+          "applicationCategory": "EducationalApplication",
+          "url": "https://teacherleoramos.com.br/index-app-ffes.html",
+          "author": {
+            "@type": "Person",
+            "name": "Leonardo Rangel Ramos",
+            "url": "https://teacherleoramos.com.br/"
+          },
+          "offers": {
+            "@type": "Offer",
+            "price": "0.00",
+            "priceCurrency": "BRL"
+          }
+        },
+        {
+          "@type": "EducationalOrganization",
+          "name": "FFES - Feathered Friends English School",
+          "url": "https://teacherleoramos.com.br/",
+          "logo": "https://teacherleoramos.com.br/images/logo-ffes.webp"
+        }
+      ]
+    }
+    </script>
+
+    <!-- Preconnect e Fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Syncopate:wght@700&display=swap" rel="stylesheet">
+
+    <!-- Estilos e Manifest -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/webp" href="images/teacher-leo-ramos.webp">
+    <link rel="apple-touch-icon" href="images/teacher-leo-ramos.webp">
+
+    <style>
+        /* =========================================
+           UI/UX APP - GLASSMORPHISM & CLAYMORPHISM
+        ========================================= */
+        body {
+            background-color: var(--bg-deep, #020c1b);
+            background-image: radial-gradient(circle at top right, rgba(59, 130, 246, 0.1), transparent 40%),
+                              radial-gradient(circle at bottom left, rgba(229, 192, 91, 0.05), transparent 40%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            color: #f0f4f8;
+        }
+
+        /* Header Pequeno e Centralizado */
+        .app-header {
+            padding: 1rem 5%;
+            background: rgba(10, 25, 47, 0.65);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(229, 192, 91, 0.15);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            gap: 12px;
+            position: center;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-titles h1 {
+            font-family: 'Syncopate', sans-serif;
+            font-size: 1.2rem;
+            letter-spacing: 2px;
+            margin: 0 0 4px 0;
+        }
+
+        .header-titles h1 span {
+            color: #e5c05b;
+            text-shadow: 0 0 10px rgba(229, 192, 91, 0.3);
+        }
+
+        .header-titles .subtitle {
+            font-size: 0.65rem;
+            color: #8b9bb4;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin: 0;
+        }
+
+        /* Navegação e Botões Centralizados */
+        .nav-center-app {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+            width: 100%;
+        }
+
+        .btn-voltar {
+            color: #3b82f6;
+            text-decoration: none;
+            font-size: 0.75rem;
+            font-weight: 600;
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            padding: 6px 16px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            background: rgba(59, 130, 246, 0.05);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-voltar:hover {
+            background: #3b82f6;
+            color: #fff;
+            box-shadow: 0 0 15px rgba(59, 130, 246, 0.4);
+        }
+
+        .download-buttons-center {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .app-install-btn {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 16px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(229, 192, 91, 0.2);
+            border-radius: 30px;
+            color: #e5c05b;
+            text-decoration: none;
+            font-size: 0.7rem;
+            font-weight: 800;
+            font-family: 'Syncopate', sans-serif;
+            box-shadow: 4px 4px 10px rgba(0,0,0,0.5), inset 1px 1px 3px rgba(229, 192, 91, 0.1);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+        }
+
+        .app-install-btn:hover {
+            background: #e5c05b;
+            color: #020c1b;
+            box-shadow: 0 0 15px rgba(229, 192, 91, 0.4);
+        }
+
+        /* Container Principal e Grid 4x4 Forçado */
+        .dashboard-container {
+            flex-grow: 1;
+            padding: 2rem 2%;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .grid-comandos {
+            display: grid;
+            /* Força estritamente 4 colunas em qualquer tela */
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+        }
+
+        .card-glass {
+            background: rgba(10, 25, 47, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-bottom: 3px solid #3b82f6;
+            border-radius: 16px;
+            padding: 15px 5px;
+            text-align: center;
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+            box-shadow: 5px 5px 15px rgba(0,0,0,0.4), inset 1px 1px 5px rgba(255,255,255,0.02);
+        }
+
+        .card-glass:hover {
+            transform: translateY(-3px);
+            border-bottom-color: #e5c05b;
+            background: rgba(10, 25, 47, 0.8);
+            box-shadow: 8px 8px 20px rgba(0,0,0,0.6), 0 0 15px rgba(59, 130, 246, 0.2);
+        }
+
+        .icon-glow {
+            font-size: 1.5rem;
+            filter: drop-shadow(0 0 8px rgba(255,255,255,0.1));
+            transition: transform 0.3s ease;
+        }
+
+        .card-glass:hover .icon-glow { transform: scale(1.1); }
+
+        .card-glass span {
+            color: #f0f4f8;
+            font-size: 0.65rem;
+            font-weight: 600;
+            line-height: 1.2;
+        }
+
+        /* Rodapé Restaurado */
+        .site-footer {
+            background: radial-gradient(circle at 50% 0%, rgba(2, 12, 27, 0.95), #01060e);
+            backdrop-filter: blur(20px);
+            border-top: 1px solid rgba(229, 192, 91, 0.3);
+            padding: 3rem 5% 1.5rem; 
+            text-align: center;
+            position: relative;
+            margin-top: auto;
+        }
+
+        .site-footer::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #3b82f6, #e5c05b, transparent);
+            box-shadow: 0 0 20px #e5c05b, 0 0 40px #3b82f6;
+        }
+
+        .social-media-links { margin-bottom: 20px; }
+        .social-media-links a { margin: 0 8px; display: inline-block; }
+        .social-media-links img { 
+            width: 24px; height: 24px; 
+            transition: all 0.3s ease;
+            filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.8));
+        }
+        .social-media-links a:hover img {
+            filter: drop-shadow(0 0 10px #e5c05b);
+            transform: translateY(-3px) scale(1.1);
+        }
+
+        .footer-info {
+            background: rgba(10, 25, 47, 0.6);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            border-radius: 16px;
+            padding: 20px;
+            display: inline-block;
+            box-shadow: 5px 5px 15px rgba(0,0,0,0.6);
+        }
+
+        .footer-info p {
+            font-size: 0.6rem; 
+            color: #8b9bb4;
+            margin: 4px 0;
+        }
+
+        /* Modal iOS */
+        #ios-modal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(2, 12, 27, 0.95);
+            z-index: 10000;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            backdrop-filter: blur(10px);
+        }
+
+        .modal-content {
+            background: rgba(10, 25, 47, 0.95);
+            border: 1px solid #e5c05b;
+            border-radius: 20px;
+            padding: 25px;
+            max-width: 350px;
+            text-align: center;
+        }
+
+        .step {
+            margin: 15px 0; display: flex; align-items: center; gap: 12px;
+            background: rgba(255,255,255,0.05); padding: 10px; border-radius: 8px;
+            font-size: 0.8rem; text-align: left;
+        }
+
+        .step-icon {
+            background: #e5c05b; color: #020c1b; width: 24px; height: 24px;
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            font-weight: 800; font-size: 0.7rem; flex-shrink: 0;
+        }
+
+        .close-modal {
+            margin-top: 15px; background: transparent; border: 1px solid #e5c05b;
+            color: #e5c05b; padding: 10px; border-radius: 8px; cursor: pointer;
+            width: 100%; font-weight: 800; text-transform: uppercase;
+        }
+        .close-modal:hover { background: #e5c05b; color: #020c1b; }
+
+        /* Ajustes Extremos para Mobile (Mantendo 4 colunas estritamente) */
+        @media (max-width: 600px) {
+            .grid-comandos { gap: 6px; }
+            .card-glass { padding: 10px 2px; border-radius: 12px; gap: 6px; }
+            .icon-glow { font-size: 1.2rem; }
+            .card-glass span { font-size: 0.5rem; letter-spacing: 0; }
+            .app-header { padding: 1rem 2%; }
+            .download-buttons-center { gap: 6px; }
+            .app-install-btn { font-size: 0.6rem; padding: 6px 10px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="app-header">
+        <div class="header-titles">
+            <h1>FFES <span>APP</span></h1>
+            <p class="subtitle">LeoLingo by Teacher Leo Ramos</p>
+        </div>
+        <nav class="nav-center-app" aria-label="Navegação do App">
+            <a href="/index.html" class="btn-voltar" rel="home">← Voltar ao Site</a>
+            <div class="download-buttons-center">
+                <button id="install-btn-android" class="app-install-btn" style="display: always;">
+                    <svg width="14" height="14" viewBox="0 0 512 512" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M325.3 234.3L104.6 13l280.8 161.2-60.1 60.1zM47 0C34 6.8 25.3 19.2 25.3 35.3v441.3c0 16.1 8.7 28.5 21.7 35.3l256.6-256L47 0zm425.2 225.6l-58.9-34.1-65.7 64.5 65.7 64.5 60.1-34.1c18-14.3 18-46.5-1.2-60.8zM104.6 499l280.8-161.2-60.1-60.1L104.6 499z"/></svg>
+                    
+                </button>
+                <button id="install-btn-permanent" class="app-install-btn">
+                    <svg width="14" height="14" viewBox="0 0 384 512" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+                    
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="dashboard-container">
+        <!-- 16 Itens no Grid Forçado de 4 Colunas -->
+        <section class="grid-comandos" aria-label="Módulos de Estudo">
+            
+            <a href="exercicios-ingles-geral-app-ffes-general-english-exercises-01/index.html" class="card-glass">
+                <div class="icon-glow" aria-hidden="true">🏛️</div>
+                <span>Estrutura Básica</span>
+            </a>
+            <a href="exercicios-ingles-geral-app-ffes-general-english-exercises-02/index.html" class="card-glass">
+                <div class="icon-glow" aria-hidden="true">🚀</div>
+                <span>Estrutura Avançada</span>
+            </a>
+            <a href="exercicios-ingles-geral-app-ffes-general-english-exercises-03/index.html" class="card-glass">
+                <div class="icon-glow" aria-hidden="true">✍️</div>
+                <span>Writing Lab</span>
+            </a>
+            <a href="exercicios-ingles-geral-app-ffes-general-english-exercises-04/index.html" class="card-glass">
+                <div class="icon-glow" aria-hidden="true">📖</div>
+                <span>Reading Zone</span>
+            </a>
+            <a href="exercicios-ingles-geral-app-ffes-general-english-exercises-05/index.html" class="card-glass">
+                <div class="icon-glow" aria-hidden="true">🎙️</div>
+                <span>Speaking Studio</span>
+            </a>
+            <a href="exercicios-ingles-geral-app-ffes-general-english-exercises-06/index.html" class="card-glass">
+                <div class="icon-glow" aria-hidden="true">🎧</div>
+                <span>Listening Station</span>
+            </a>
+            <a href="exercicios-ingles-geral-app-ffes-general-english-exercises-07/index.html" class="card-glass">
+                <div class="icon-glow" aria-hidden="true">⚡</div>
+                <span>Quiz Rápido</span>
+            </a>
+            <a href="exercicios-ingles-geral-app-ffes-general-english-exercises-08/index.html" class="card-glass">
+                <div class="icon-glow" aria-hidden="true">✅</div>
+                <span>Múltipla Escolha</span>
+            </a>
+            <a href="exercicios-ingles-geral-app-ffes-general-english-exercises-09/index.html" class="card-glass">
+                <div class="icon-glow" aria-hidden="true">🧩</div>
+                <span>Lacunas</span>
+            </a>
+            <a href="exercicios-ingles-geral-app-ffes-general-english-exercises-10/index.html" class="card-glass">
+                <div class="icon-glow" aria-hidden="true">❌</div>
+                <span>Caça-Erros</span>
+            </a>
+            <a href="exercicios-ingles-geral-app-ffes-general-english-exercises-11/index.html" class="card-glass">
+                <div class="icon-glow" aria-hidden="true">🧠</div>
+                <span>Memory Game</span>
+            </a>
+            <a href="exercicios-ingles-geral-app-ffes-general-english-exercises-12/index.html" class="card-glass">
+                <div class="icon-glow" aria-hidden="true">🏃</div>
+                <span>Verbos</span>
+            </a>
+            <a href="exercicios-ingles-geral-app-ffes-general-english-exercises-13/index.html" class="card-glass">
+                <div class="icon-glow" aria-hidden="true">👉</div>
+                <span>Pronomes</span>
+            </a>
+            <a href="exercicios-ingles-geral-app-ffes-general-english-exercises-14/index.html" class="card-glass">
+                <div class="icon-glow" aria-hidden="true">🎓</div>
+                <span>Temáticas</span>
+            </a>
+            <a href="exercicios-ingles-geral-app-ffes-general-english-exercises-15/index.html" class="card-glass">
+                <div class="icon-glow" aria-hidden="true">🔗</div>
+                <span>Phrasal Verbs</span>
+            </a>  
+            <a href="exercicios-ingles-geral-app-ffes-general-english-exercises-16/index.html" class="card-glass">
+                <div class="icon-glow" aria-hidden="true">🏆</div>
+                <span>Ranking & XP</span>
+            </a>
+
+        </section>
+    </main>
+
+    <footer id="contato" class="site-footer">
+        <div class="footer-content">
+            <div class="social-media-links">
+                <a href="https://www.youtube.com/@teacherleoramos/videos" target="_blank" rel="noopener" aria-label="YouTube">
+                    <img src="https://img.icons8.com/ios-filled/50/ffffff/youtube-play.png" alt="YouTube" loading="lazy">
+                </a>
+                <a href="https://www.instagram.com/teacherleoramos/" target="_blank" rel="noopener" aria-label="Instagram">
+                    <img src="https://img.icons8.com/ios-filled/50/ffffff/instagram-new.png" alt="Instagram" loading="lazy">
+                </a>
+                <a href="https://www.tiktok.com/@teacherleoramos" target="_blank" rel="noopener" aria-label="TikTok">
+                    <img src="https://img.icons8.com/ios-filled/50/ffffff/tiktok.png" alt="TikTok" loading="lazy">
+                </a>
+                <a href="https://wa.me/5511955582118" target="_blank" rel="noopener" aria-label="WhatsApp">
+                    <img src="https://img.icons8.com/ios-filled/50/ffffff/whatsapp--v1.png" alt="WhatsApp" loading="lazy">
+                </a>
+            </div>
+            <div class="footer-info">
+                <p style="color: #e5c05b; font-family: 'Syncopate', sans-serif; font-weight: 800;">CONTATO</p>
+                <p>Youtube: @teacherleoramos | WhatsApp: (11) 95558-2118</p>
+                <p>CNPJ: 43.226.983/0001-91 | São Paulo, SP</p>
+                <p style="margin-top: 10px; border-top: 1px solid rgba(59, 130, 246, 0.3); padding-top: 8px;">&copy; <span id="year">2026</span> | FFES. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal iOS -->
+    <aside id="ios-modal" aria-hidden="true" role="dialog" aria-labelledby="modal-title">
+        <div class="modal-content">
+            <h2 id="modal-title">Instalar no iOS</h2>
+            <div class="step">
+                <div class="step-icon" aria-hidden="true">1</div>
+                <div>Toque no botão <strong>Compartilhar</strong> no Safari.</div>
+            </div>
+            <div class="step">
+                <div class="step-icon" aria-hidden="true">2</div>
+                <div>Selecione <strong>"Adicionar à Tela de Início"</strong>.</div>
+            </div>
+            <div class="step">
+                <div class="step-icon" aria-hidden="true">3</div>
+                <div>Toque em <strong>"Adicionar"</strong>.</div>
+            </div>
+            <button class="close-modal" onclick="closeIosModal()">Entendi</button>
+        </div>
+    </aside>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('year').textContent = new Date().getFullYear();
+
+            // PWA Setup
+            if ('serviceWorker' in navigator) {
+                navigator.serviceWorker.register('sw.js').catch(err => console.error(err));
+            }
+
+            let deferredPrompt;
+            const installBtn = document.getElementById('install-btn-permanent');
+            const androidBtn = document.getElementById('install-btn-android'); 
+            const iosModal = document.getElementById('ios-modal');
+
+            const isInStandaloneMode = () => ('standalone' in window.navigator) && (window.navigator.standalone) || (window.matchMedia('(display-mode: standalone)').matches);
+
+            window.addEventListener('beforeinstallprompt', (e) => {
+                e.preventDefault();
+                deferredPrompt = e;
+                androidBtn.style.display = 'flex';
+            });
+
+            androidBtn.addEventListener('click', async () => {
+                if (deferredPrompt) {
+                    deferredPrompt.prompt();
+                    const { outcome } = await deferredPrompt.userChoice;
+                    deferredPrompt = null;
+                    if (outcome === 'accepted') androidBtn.style.display = 'none';
+                }
+            });
+
+            installBtn.addEventListener('click', () => {
+                iosModal.style.display = 'flex';
+                iosModal.setAttribute('aria-hidden', 'false');
+            });
+
+            window.closeIosModal = function() {
+                iosModal.style.display = 'none';
+                iosModal.setAttribute('aria-hidden', 'true');
+            }
+
+            if (isInStandaloneMode()) {
+                installBtn.style.display = 'none'; 
+                androidBtn.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
+
