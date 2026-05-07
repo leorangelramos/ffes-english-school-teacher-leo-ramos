@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Exercício de Conjunções em Inglês (Conectivos) | Professor Leo Ramos</title>
+    <meta name="description" content="Aprenda e pratique as conjunções em inglês: coordenativas (FANBOYS), subordinativas, correlativas e conectivos.">
+    <meta name="author" content="Leo Ramos">
+    <meta name="robots" content="index, follow">
+    <meta name="keywords" content="conjunções em inglês, conectivos, FANBOYS, linking words, exercícios de inglês, Leo Ramos, FFES">
+
+    <link rel="canonical" href="https://teacherleoramos.com.br/Ex7-8-9-10-11-12/conjuncoes-em-ingles-conjunctions.html">
+    <link rel="stylesheet" href="/CSS/universal.css">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="/Images/logofavicion.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/Images/logofavicion.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/Images/logofavicion.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/Images/logofavicion.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/Images/logofavicion.png">
+
+    <meta property="og:title" content="Exercício de Conjunções em Inglês (Conectivos) | Professor Leo Ramos">
+    <meta property="og:description" content="Teste seu conhecimento sobre conjunções coordenativas (FANBOYS), subordinativas, correlativas e conectivos em inglês.">
+    <meta property="og:image" content="https://teacherleoramos.com.br/Images/preview-social.jpg">
+    <meta property="og:url" content="https://teacherleoramos.com.br/Ex7-8-9-10-11-12/conjuncoes-em-ingles-conjunctions.html">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:site_name" content="FFES - Professor Leo Ramos">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Exercício de Conjunções em Inglês (Conectivos) | Professor Leo Ramos">
+    <meta name="twitter:description" content="Teste seu conhecimento sobre conjunções coordenativas (FANBOYS), subordinativas, correlativas e conectivos em inglês.">
+    <meta name="twitter:image" content="https://teacherleoramos.com.br/Images/preview-social.jpg">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Quiz",
+      "name": "Jogo das Conjunções e Conectivos",
+      "description": "Um quiz interativo para praticar o uso correto de conjunções coordenativas (FANBOYS), subordinativas, correlativas e conectivos (linking words) em inglês.",
+      "url": "https://teacherleoramos.com.br/Ex7-8-9-10-11-12/conjuncoes-em-ingles-conjunctions.html",
+      "image": "https://teacherleoramos.com.br/Images/preview-social.jpg",
+      "author": {
+        "@type": "Person",
+        "name": "Leo Ramos",
+        "url": "https://teacherleoramos.com.br"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "FFES - Professor Leo Ramos",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://teacherleoramos.com.br/Images/logo novo grande.png"
+        }
+      },
+      "learningResourceType": "Quiz",
+      "educationalLevel": "Intermediate"
+    }
+    </script>
+    
+    <style>
+        .game-title {
+            color: var(--cor-texto-claro);
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.6);
+        }
+        #placar-geral-container {
+            background: rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: var(--cor-texto-claro);
+            padding: 15px 25px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            font-size: 1.1em;
+        }
+        #placar-geral-container p { margin: 0; }
+        #placar-geral-container .nav-arrow {
+            color: inherit;
+            text-decoration: none;
+            font-size: 1.2em;
+            line-height: 1;
+            transition: color 0.2s ease, transform 0.2s ease;
+        }
+        #placar-geral-container .nav-arrow:hover {
+            color: var(--cor-acento);
+            transform: scale(1.15);
+        }
+        .introducao-container, .exercicio-card {
+            background-color: var(--cor-fundo-secao);
+            width: 100%;
+            max-width: 900px;
+            padding: 25px 30px;
+            margin-bottom: 25px;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+            box-sizing: border-box;
+        }
+        .exercicio-card .question-container p { font-size: 1.1em; }
+        .options-container {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 20px;
+        }
+        .option-button {
+            width: 100%;
+            padding: 15px;
+            font-size: 1em;
+            text-align: left;
+            background-color: var(--cor-fundo-geral);
+            border: 2px solid var(--cor-borda-sutil);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .option-button:not(:disabled):hover {
+            background-color: var(--cor-acento-hover);
+            border-color: var(--cor-acento);
+            transform: translateY(-2px);
+        }
+        .option-button:disabled {
+            cursor: not-allowed;
+            opacity: 0.7;
+        }
+        .option-button.correto {
+            background-color: var(--cor-sucesso);
+            border-color: #27ae60;
+            color: white;
+            font-weight: bold;
+        }
+        .option-button.incorreto {
+            background-color: var(--cor-erro);
+            border-color: #c0392b;
+            color: white;
+            font-weight: bold;
+        }
+        .explanation-container {
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.5s ease-out;
+            background-color: var(--cor-fundo-secao-destaque);
+            border-radius: 8px;
+            padding: 0 20px;
+            margin-top: 0;
+            border-left: 4px solid var(--cor-primaria-hover);
+        }
+        .explanation-container.visible {
+            max-height: 500px;
+            margin-top: 20px;
+            padding: 20px;
+        }
+        .introducao-container ul { padding-left: 20px; }
+        
+        /* Contêiner do botão "Voltar ao Topo" */
+        .rodape-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        @media (max-width: 800px) {
+            .game-title { font-size: 1.8em; }
+            h2 { font-size: 1.5em; }
+        }
+    </style>
+
+                <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-M8ZG06010Q"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-M8ZG06010Q');
+    </script>
+</head>
+<body id="topo">
+
+<div class="cabecalho-container">
+<header class="bloco-identidade">
+    <div class="logo-and-title">
+        <a href="/index.html">
+            <img src="/Images/logo novo grande.png" alt="Logo FFES" class="logo-img">
+        </a>
+        <a href="/index.html" style="text-decoration: none; color: inherit;">
+            <h1>Leo Ramos | Professor de Inglês</h1>
+        </a>
+    </div>
+</header>
+
+
+<div class="bloco-navegacao"> 
+    <nav class="nav-primary">
+        <ul>
+            <li><a href="/index.html#home">Home</a></li>
+            <li><a href="/index.html#sobre">Sobre Mim</a></li>
+            <li><a href="/exercicios-e-artigos.html#exercicios">Exercícios</a></li>
+            <li><a href="/exercicios-e-artigos.html#artigos-vocab">Artigos</a></li>
+            <li><a href="/cursos-e-ebook.html#cursos">Cursos e E-book</a></li>
+            <li><a href="/index.html#metodologia">Metodologia</a></li>
+        </ul>
+    </nav>
+</div>
+
+</div>
+<main>
+    <h1 class="game-title">Jogo das Conjunções</h1>
+    <div id="placar-geral-container">
+        <p>Acertos: <strong id="acertos-geral">0</strong></p>
+        <a href="#contato" class="nav-arrow" title="Ir para o final da página">&#11015;</a>
+        <p>Erros: <strong id="erros-geral">0</strong></p>
+    </div>
+    <button id="reset-btn" class="cta-button">Jogar Novamente</button>
+    <hr>
+    
+    <div class="introducao-container" style="text-align: left;">
+        <h3>Guia Completo de Conjunções e Conectivos</h3>
+        
+        <h4>1. Coordinating Conjunctions (FANBOYS)</h4>
+        <p>Conectam elementos de igual valor gramatical (duas ideias principais). Lembre-se do acrônimo <strong>FANBOYS</strong>:</p>
+        <ul>
+            <li><strong>F</strong>or (pois), <strong>A</strong>nd (e), <strong>N</strong>or (nem), <strong>B</strong>ut (mas), <strong>O</strong>r (ou), <strong>Y</strong>et (no entanto), <strong>S</strong>o (então).</li>
+            <li>Exemplo: <i>It was raining, <strong>so</strong> we decided to stay home.</i></li>
+        </ul>
+
+        <h4>2. Subordinating Conjunctions</h4>
+        <p>Conectam uma oração dependente (ideia secundária) a uma oração independente (ideia principal).</p>
+        <ul>
+            <li><strong>Tempo:</strong> <i>when, after, before, while...</i> Ex: <i>Call me <strong>when</strong> you arrive.</i></li>
+            <li><strong>Causa/Razão:</strong> <i>because, since, as...</i> Ex: <i>I stayed home <strong>because</strong> I was sick.</i></li>
+            <li><strong>Condição:</strong> <i>if, unless...</i> Ex: <i>You will pass the test <strong>if</strong> you study.</i></li>
+            <li><strong>Contraste:</strong> <i>although, though, even though...</i> Ex: <i><strong>Although</strong> it was cold, she went out.</i></li>
+            <li><strong>Propósito:</strong> <i>so that, in order that...</i> Ex: <i>She is studying hard <strong>so that</strong> she can get a good job.</i></li>
+        </ul>
+
+        <h4>3. Correlative Conjunctions</h4>
+        <p>Trabalham em pares para conectar elementos iguais.</p>
+        <ul>
+            <li><strong>either ... or ...</strong> (ou ... ou ...): <i>You can have <strong>either</strong> tea <strong>or</strong> coffee.</i></li>
+            <li><strong>neither ... nor ...</strong> (nem ... nem ...): <i>He speaks <strong>neither</strong> English <strong>nor</strong> Spanish.</i></li>
+            <li><strong>both ... and ...</strong> (tanto ... quanto ...): <i>She is <strong>both</strong> intelligent <strong>and</strong> beautiful.</i></li>
+            <li><strong>not only ... but also ...</strong> (não só ... mas também ...): <i>He is <strong>not only</strong> a musician <strong>but also</strong> an actor.</i></li>
+        </ul>
+
+        <h4>4. Connectors / Linking Words</h4>
+        <p>Gramaticalmente são advérbios, mas conectam ideias entre frases. Geralmente vêm no início da frase, seguidos por vírgula.</p>
+        <ul>
+            <li><strong>Contraste:</strong> <i>however, on the other hand...</i> Ex: <i>He is a great professional. <strong>However,</strong> he is always late.</i></li>
+            <li><strong>Resultado:</strong> <i>therefore, as a result...</i> Ex: <i>The company invested. <strong>As a result,</strong> productivity increased.</i></li>
+        </ul>
+        
+        <h4>5. Diferença: although / though / even though</h4>
+        <p>Todos significam "embora", mas com ênfases diferentes.</p>
+        <ul>
+            <li><strong>Although:</strong> Neutro e comum. <i><strong>Although</strong> the test was difficult, I passed.</i></li>
+            <li><strong>Though:</strong> Mais informal e flexível (pode ir no final da frase). <i>The test was difficult. I passed, <strong>though</strong>.</i></li>
+            <li><strong>Even though:</strong> Mais enfático, para um contraste forte. <i><strong>Even though</strong> he had studied for weeks, he failed.</i></li>
+        </ul>
+    </div>
+    
+    <div id="exercicios-container"></div>
+    <div class="rodape-container">
+        <a href="#topo" class="nav-button">&#11014;</a>
+    </div>
+</main>
+
+<footer id="contato" class="site-footer">
+    <div class="footer-content">
+        <div class="social-media-links">
+            <h4>Siga-me nas redes sociais e acesse o App</h4>
+            <a href="https://www.youtube.com/@teacherleoramos/videos" target="_blank" rel="noopener noreferrer" title="Canal YouTube Teacher Leo Ramos" aria-label="YouTube">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/youtube-play.png" alt="Ícone YouTube" width="30" height="30" loading="lazy">
+            </a>
+            <a href="https://www.instagram.com/teacherleoramos/" target="_blank" rel="noopener noreferrer" title="Instagram Teacher Leo Ramos" aria-label="Instagram">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/instagram-new.png" alt="Ícone Instagram" width="30" height="30" loading="lazy">
+            </a>
+            <a href="https://www.tiktok.com/@teacherleoramos" target="_blank" rel="noopener noreferrer" title="TikTok Teacher Leo Ramos" aria-label="TikTok">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/tiktok.png" alt="Ícone TikTok" width="30" height="30" loading="lazy">
+            </a>
+            <a href="https://wa.me/5511955582118" target="_blank" rel="noopener noreferrer" title="WhatsApp Agendamento" aria-label="WhatsApp">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/whatsapp--v1.png" alt="Ícone WhatsApp" width="30" height="30" loading="lazy">
+            </a>
+            <a href="/index-app.html" target="_blank" rel="noopener noreferrer" title="Acesse o FFES App" aria-label="FFES App"> 
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/controller.png" alt="Ícone FFES App" width="30" height="30" loading="lazy">
+            </a>
+        </div>
+        <p><strong>Contato</strong></p>
+        <p>Youtube: @teacherleoramos | Telefone - WhatsApp: (11) 95558-2118</p>
+        <p>Endereço: São Paulo, SP, Brasil</p>
+        <p>CNPJ: 43.226.983/0001-91</p>
+        <p>&copy; <span id="year">2025</span> | FEATHERED FRIENDS ENGLISH SCHOOL - FFES. Todos os direitos reservados.</p>
+    </div>
+</footer>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  // REMOVIDA A INJEÇÃO DE HTML DO CABEÇALHO E RODAPÉ
+
+    const dadosConjuncoes = [
+        { id: 'cj-1', pergunta: 'Complete a frase: "The movie was great, ___ it was very long."', opcoes: ['and', 'so', 'but', 'or'], respostaCorreta: 'but', explicacao: 'A conjunção <strong>"but"</strong> (mas) é usada para conectar duas ideias contrastantes. A primeira parte é positiva ("great"), e a segunda é uma ressalva ("very long").' },
+        { id: 'cj-2', pergunta: 'Complete a frase: "She stayed home ___ she was feeling sick."', opcoes: ['although', 'if', 'because', 'so that'], respostaCorreta: 'because', explicacao: '<strong>"Because"</strong> (porque) é uma conjunção subordinativa usada para apresentar a causa ou razão de uma ação. A doença é a razão para ela ter ficado em casa.' },
+        { id: 'cj-3', pergunta: 'Complete a frase: "For dessert, you can have ___ cake ___ ice cream."', opcoes: ['neither / nor', 'both / and', 'either / or', 'not only / but also'], respostaCorreta: 'either / or', explicacao: 'A conjunção correlativa <strong>"either...or"</strong> (ou...ou) é usada para apresentar duas alternativas ou escolhas.' },
+        { id: 'cj-4', pergunta: 'Complete: "He studied hard. ___, he didn\'t get a good grade."', opcoes: ['Therefore', 'However', 'Furthermore', 'And'], respostaCorreta: 'However', explicacao: '<strong>"However"</strong> (entretanto, no entanto) é um conectivo (advérbio conjuntivo) usado para introduzir um forte contraste com a ideia da frase anterior.' },
+        { id: 'cj-5', pergunta: 'Complete a frase: "___ it was raining, they decided to go for a walk."', opcoes: ['Because', 'So', 'Although', 'If'], respostaCorreta: 'Although', explicacao: '<strong>"Although"</strong> (embora) é uma conjunção subordinativa usada para introduzir uma ideia de contraste ou concessão. Ir caminhar apesar da chuva é um contraste.' },
+        { id: 'cj-6', pergunta: 'Complete a frase: "She is ___ a talented singer ___ a great dancer."', opcoes: ['both / and', 'either / or', 'not only / but also', 'neither / nor'], respostaCorreta: 'not only / but also', explicacao: 'A conjunção correlativa <strong>"not only...but also"</strong> (não só...mas também) é usada para adicionar uma informação extra com ênfase, destacando duas qualidades.' },
+        { id: 'cj-7', pergunta: 'Complete a frase: "I was very tired, ___ I went to bed early."', opcoes: ['but', 'so', 'for', 'yet'], respostaCorreta: 'so', explicacao: '<strong>"So"</strong> (então, por isso) é uma conjunção coordenativa usada para mostrar um resultado ou consequência. Ir para a cama cedo foi o resultado de estar cansado.' },
+        { id: 'cj-8', pergunta: 'Complete a frase: "He is exercising every day ___ he can be healthier."', opcoes: ['because', 'so that', 'although', 'if'], respostaCorreta: 'so that', explicacao: '<strong>"So that"</strong> (para que, a fim de que) é uma conjunção subordinativa usada para expressar o propósito ou a finalidade de uma ação.' },
+        { id: 'cj-9', pergunta: 'Complete: "You need to finish your homework ___ you can play video games."', opcoes: ['after', 'while', 'before', 'since'], respostaCorreta: 'before', explicacao: '<strong>"Before"</strong> (antes de) é uma conjunção de tempo que estabelece a ordem dos eventos. A tarefa deve ser concluída primeiro.' },
+        { id: 'cj-10', pergunta: 'Complete: "He likes ___ coffee ___ tea; he only drinks water."', opcoes: ['either / or', 'both / and', 'neither / nor', 'whether / or'], respostaCorreta: 'neither / nor', explicacao: 'A conjunção correlativa <strong>"neither...nor"</strong> (nem...nem) é usada para negar duas opções. A frase indica que ele não gosta de nenhuma das duas bebidas.' },
+        { id: 'cj-11', pergunta: 'Complete: "I will call you ___ I arrive at the airport."', opcoes: ['as soon as', 'unless', 'so that', 'because'], respostaCorreta: 'as soon as', explicacao: '<strong>"As soon as"</strong> (assim que) é uma conjunção de tempo que indica uma ação que acontecerá imediatamente após a outra.' },
+        { id: 'cj-12', pergunta: 'Complete: "She is ___ intelligent ___ beautiful."', opcoes: ['as / as', 'so / that', 'both / and', 'either / or'], respostaCorreta: 'both / and', explicacao: 'A conjunção correlativa <strong>"both...and"</strong> (tanto...quanto) é usada para enfatizar que as duas qualidades mencionadas são verdadeiras.' },
+        { id: 'cj-13', pergunta: 'Complete: "I\'ll bring a map ___ we get lost."', opcoes: ['even if', 'in case', 'because', 'although'], respostaCorreta: 'in case', explicacao: '<strong>"In case"</strong> (no caso de) é uma conjunção condicional usada para falar sobre uma precaução que se toma para uma possível situação futura.' },
+        { id: 'cj-14', pergunta: 'Complete: "He talks ___ he knows everything."', opcoes: ['as if', 'so that', 'in order that', 'as long as'], respostaCorreta: 'as if', explicacao: '<strong>"As if"</strong> (como se) é uma conjunção de maneira usada para fazer uma comparação com uma situação imaginária ou irreal.' },
+        { id: 'cj-15', pergunta: 'Complete: "I won\'t go to the party ___ you go with me."', opcoes: ['if', 'when', 'unless', 'so'], respostaCorreta: 'unless', explicacao: '<strong>"Unless"</strong> (a menos que) é uma conjunção condicional que significa "exceto se". A condição para eu ir é a sua companhia.' },
+        { id: 'cj-16', pergunta: 'Complete: "The weather was cold and wet, ___, we had a great time."', opcoes: ['but', 'yet', 'so', 'and'], respostaCorreta: 'yet', explicacao: '<strong>"Yet"</strong> (no entanto, contudo) é uma conjunção coordenativa usada para mostrar um contraste surpreendente, similar a "but".' },
+        { id: 'cj-17', pergunta: 'Complete: "I was listening to music ___ my sister was studying."', opcoes: ['while', 'when', 'before', 'after'], respostaCorreta: 'while', explicacao: '<strong>"While"</strong> (enquanto) é uma conjunção de tempo usada para descrever duas ações que acontecem simultaneamente.' },
+        { id: 'cj-18', pergunta: 'Complete: "He has to wake up early, ___ he sets two alarms."', opcoes: ['but', 'or', 'so', 'and'], respostaCorreta: 'so', explicacao: '<strong>"So"</strong> (então, por isso) indica que a segunda oração é um resultado ou consequência da primeira.' },
+        { id: 'cj-19', pergunta: 'Complete: "The exam was difficult. ___, most students passed."', opcoes: ['Nevertheless', 'Therefore', 'Besides', 'Because'], respostaCorreta: 'Nevertheless', explicacao: '<strong>"Nevertheless"</strong> (no entanto, mesmo assim) é um conectivo de contraste, similar a "however", usado para conectar duas frases e mostrar um resultado inesperado.' },
+        { id: 'cj-20', pergunta: 'Complete: "I don\'t know ___ I should accept the job offer ___ not."', opcoes: ['if / but', 'whether / or', 'either / or', 'both / and'], respostaCorreta: 'whether / or', explicacao: 'A conjunção correlativa <strong>"whether...or"</strong> (se...ou) é usada para expressar dúvida ou apresentar alternativas.' },
+        { id: 'cj-21', pergunta: 'Complete: "You can borrow my car ___ you promise to drive carefully."', opcoes: ['as long as', 'unless', 'although', 'because'], respostaCorreta: 'as long as', explicacao: '<strong>"As long as"</strong> (contanto que) é uma conjunção condicional usada para estabelecer uma condição para que algo aconteça.' },
+        { id: 'cj-22', pergunta: 'Complete: "He failed the test ___ he didn\'t study at all."', opcoes: ['since', 'so', 'yet', 'or'], respostaCorreta: 'since', explicacao: '<strong>"Since"</strong> (já que, visto que) é uma conjunção de causa, similar a "because", usada para dar a razão de algo.' },
+        { id: 'cj-23', pergunta: 'Complete: "She is a vegetarian, ___ she doesn\'t eat meat."', opcoes: ['but', 'and', 'so', 'or'], respostaCorreta: 'so', explicacao: '<strong>"So"</strong> (então, por isso) mostra que o fato de não comer carne é uma consequência direta de ser vegetariana.' },
+        { id: 'cj-24', pergunta: 'Complete: "She is very qualified for the job. ___, she has a lot of experience."', opcoes: ['However', 'In contrast', 'Furthermore', 'Therefore'], respostaCorreta: 'Furthermore', explicacao: '<strong>"Furthermore"</strong> (além disso) é um conectivo usado para adicionar mais uma informação que reforça o ponto anterior.' },
+        { id: 'cj-25', pergunta: 'Complete: "___ he was tired, he continued working."', opcoes: ['So', 'Though', 'Because', 'Unless'], respostaCorreta: 'Though', explicacao: '<strong>"Though"</strong> (embora), assim como "although", introduz uma oração de contraste. É uma alternativa um pouco mais informal.' },
+        { id: 'cj-26', pergunta: 'Complete: "The restaurant offers ___ pizza ___ pasta."', opcoes: ['neither / or', 'either / nor', 'both / and', 'whether / or'], respostaCorreta: 'both / and', explicacao: '<strong>"Both...and"</strong> (tanto...quanto) é usada para indicar que as duas opções estão disponíveis.' },
+        { id: 'cj-27', pergunta: 'Complete: "Let me know ___ you need any help."', opcoes: ['if', 'unless', 'so', 'but'], respostaCorreta: 'if', explicacao: '<strong>"If"</strong> (se) é a conjunção condicional mais comum, usada para introduzir uma possibilidade.' },
+        { id: 'cj-28', pergunta: 'Complete: "He felt ill, ___ he still went to work."', opcoes: ['and', 'so', 'or', 'but'], respostaCorreta: 'but', explicacao: '<strong>"But"</strong> (mas) mostra um contraste entre sentir-se mal e, mesmo assim, ir trabalhar.' },
+        { id: 'cj-29', pergunta: 'Complete: "I can\'t go out tonight, ___ do I want to."', opcoes: ['and', 'or', 'so', 'nor'], respostaCorreta: 'nor', explicacao: '<strong>"Nor"</strong> (nem) é usado para continuar uma ideia negativa, geralmente com a inversão do sujeito e do verbo auxiliar ("nor do I").' },
+        { id: 'cj-30', pergunta: 'Complete: "She speaks quietly ___ everyone can understand her."', opcoes: ['so that', 'in case', 'even though', 'as if'], respostaCorreta: 'so that', explicacao: '<strong>"So that"</strong> (para que) indica o propósito. A finalidade de falar baixo é que todos possam entendê-la (talvez em um ambiente que exige silêncio).' },
+        { id: 'cj-31', pergunta: 'Complete: "It was such a beautiful day ___ we decided to have a picnic."', opcoes: ['so', 'that', 'and', 'but'], respostaCorreta: 'that', explicacao: 'A conjunção correlativa aqui é <strong>"such...that"</strong> (tão...que), usada para mostrar um resultado causado por uma qualidade intensa.' },
+        { id: 'cj-32', pergunta: 'Complete: "I have been studying English ___ I was a child."', opcoes: ['for', 'when', 'since', 'while'], respostaCorreta: 'since', explicacao: '<strong>"Since"</strong> (desde que) é uma conjunção de tempo usada para indicar o ponto de partida de uma ação que continua até o presente.' },
+        { id: 'cj-33', pergunta: 'Complete: "He will be late for the train ___ he leaves now."', opcoes: ['if', 'as long as', 'unless', 'when'], respostaCorreta: 'unless', explicacao: '<strong>"Unless"</strong> (a menos que) introduz a única condição que pode evitar um resultado. Ele se atrasará, exceto se sair agora.' },
+        { id: 'cj-34', pergunta: 'Complete: "She is not only smart ___ funny."', opcoes: ['and', 'or', 'but also', 'so'], respostaCorreta: 'but also', explicacao: 'A conjunção correlativa <strong>"not only...but also"</strong> (não só...mas também) é usada em pares para adicionar ênfase.' },
+        { id: 'cj-35', pergunta: 'Complete: "He must be very tired, ___ he has been working all day."', opcoes: ['so', 'for', 'but', 'yet'], respostaCorreta: 'for', explicacao: '<strong>"For"</strong> (pois) é uma conjunção coordenativa usada para dar uma razão ou explicação, de forma um pouco mais formal que "because".' },
+        { id: 'cj-36', pergunta: 'Complete: "I\'ll finish my work now ___ I can relax later."', opcoes: ['because', 'in order that', 'as if', 'though'], respostaCorreta: 'in order that', explicacao: '<strong>"In order that"</strong> (para que, a fim de que), similar a "so that", é usado para expressar o propósito de umaação.' },
+        { id: 'cj-37', pergunta: 'Complete: "___ he is rich, he is not happy."', opcoes: ['As', 'Even though', 'Because', 'If'], respostaCorreta: 'Even though', explicacao: '<strong>"Even though"</strong> (embora, mesmo que) é usado para expressar um contraste forte e surpreendente. A riqueza não trouxe felicidade.' },
+        { id: 'cj-38', pergunta: 'Complete: "Would you like tea ___ coffee?"', opcoes: ['and', 'so', 'but', 'or'], respostaCorreta: 'or', explicacao: '<strong>"Or"</strong> (ou) é a conjunção coordenativa usada para apresentar alternativas ou escolhas.' },
+        { id: 'cj-39', pergunta: 'Complete: "The storm was getting stronger, ___ we looked for shelter."', opcoes: ['or', 'but', 'and', 'so'], respostaCorreta: 'so', explicacao: '<strong>"So"</strong> (então, por isso) indica que a busca por abrigo foi um resultado direto da intensificação da tempestade.' },
+        { id: 'cj-40', pergunta: 'Complete: "I respect his opinion, ___ I don\'t agree with it."', opcoes: ['and', 'so', 'though', 'because'], respostaCorreta: 'though', explicacao: '<strong>"Though"</strong> pode ser usado como um advérbio no final da frase para indicar contraste, de forma mais informal. Seria o mesmo que "...but I don\'t agree with it".' }
+    ];
+
+    const container = document.getElementById('exercicios-container');
+    const placarAcertosGeralEl = document.getElementById('acertos-geral');
+    const placarErrosGeralEl = document.getElementById('erros-geral');
+    const resetButton = document.getElementById('reset-btn');
+    let acertos = 0;
+    let erros = 0;
+    
+    function shuffleArray(array) { for (let i = array.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [array[i], array[j]] = [array[j], array[i]]; } }
+
+    function criarExercicioHTML(exercicioData, numeroExercicio) {
+        // Embaralha as opções para este exercício
+        const opcoesEmbaralhadas = [...exercicioData.opcoes];
+        shuffleArray(opcoesEmbaralhadas);
+        
+        const opcoesHTML = opcoesEmbaralhadas.map(opcao => `<button class="option-button" data-resposta="${opcao}">${opcao}</button>`).join('');
+        return `<section class="exercicio-card" id="exercicio-${exercicioData.id}" data-id="${exercicioData.id}"><h2 class="h2-exercicio">Exercício ${numeroExercicio}</h2><div class="question-container"><p>${exercicioData.pergunta}</p><div class="options-container">${opcoesHTML}</div></div><div class="explanation-container" id="explicacao-${exercicioData.id}"><p>${exercicioData.explicacao}</p></div></section>`;
+    }
+
+    function verificarResposta(exercicioId, btnClicado) {
+        const exercicioData = dadosConjuncoes.find(e => e.id === exercicioId);
+        const exercicioCard = document.getElementById(`exercicio-${exercicioData.id}`);
+        const botoes = exercicioCard.querySelectorAll('.option-button');
+        botoes.forEach(btn => btn.disabled = true);
+        const explicacaoEl = document.getElementById(`explicacao-${exercicioData.id}`);
+        explicacaoEl.classList.add('visible');
+        if (btnClicado.dataset.resposta === exercicioData.respostaCorreta) {
+            btnClicado.classList.add('correto');
+            acertos++;
+        } else {
+            btnClicado.classList.add('incorreto');
+            const respostaCorretaBtn = Array.from(botoes).find(btn => btn.dataset.resposta === exercicioData.respostaCorreta);
+            if (respostaCorretaBtn) { respostaCorretaBtn.classList.add('correto'); }
+            erros++;
+        }
+        placarAcertosGeralEl.textContent = acertos;
+        placarErrosGeralEl.textContent = erros;
+    }
+
+    let eventListenerRef;
+    function iniciarJogo() {
+        acertos = 0;
+        erros = 0;
+        placarAcertosGeralEl.textContent = '0';
+        placarErrosGeralEl.textContent = '0';
+        shuffleArray(dadosConjuncoes);
+        container.innerHTML = dadosConjuncoes.map((dado, index) => criarExercicioHTML(dado, index + 1)).join('');
+        
+        // Correção do bug de múltiplos listeners
+        if(eventListenerRef) container.removeEventListener('click', eventListenerRef);
+        
+        eventListenerRef = (event) => {
+            if (event.target.classList.contains('option-button') && !event.target.disabled) {
+                const btnClicado = event.target;
+                const exercicioCard = btnClicado.closest('.exercicio-card');
+                const exercicioId = exercicioCard.dataset.id;
+                verificarResposta(exercicioId, btnClicado);
+            }
+        };
+        container.addEventListener('click', eventListenerRef);
+        
+        // Rola a tela para o início do main content ao reiniciar
+        document.querySelector('main').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    resetButton.addEventListener('click', iniciarJogo);
+    iniciarJogo();
+});
+</script>
+
+</body>
+</html>

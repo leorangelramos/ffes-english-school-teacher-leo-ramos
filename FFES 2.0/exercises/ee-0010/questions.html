@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Exercício: Formação de Perguntas em Inglês (Quiz) | Professor Leo Ramos</title>
+    <meta name="description" content="Aprenda e pratique como formar todos os tipos de perguntas em inglês: Yes/No, Wh- Questions, Indiretas e Negativas.">
+    <meta name="author" content="Leo Ramos">
+    <meta name="robots" content="index, follow">
+    <meta name="keywords" content="formar perguntas em inglês, yes/no questions, wh- questions, indirect questions, exercícios de inglês, Leo Ramos, FFES">
+
+    <link rel="canonical" href="https://teacherleoramos.com.br/Ex7-8-9-10-11-12/como-formar-perguntas-em-ingles-questions.html">
+    <link rel="stylesheet" href="/CSS/universal.css">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="/Images/logofavicion.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/Images/logofavicion.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/Images/logofavicion.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/Images/logofavicion.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/Images/logofavicion.png">
+
+    <meta property="og:title" content="Exercício: Formação de Perguntas em Inglês (Quiz) | Professor Leo Ramos">
+    <meta property="og:description" content="Aprenda e pratique como formar todos os tipos de perguntas em inglês: Yes/No, Wh- Questions, Indiretas e Negativas.">
+    <meta property="og:image" content="https://teacherleoramos.com.br/Images/preview-social.jpg">
+    <meta property="og:url" content="https://teacherleoramos.com.br/Ex7-8-9-10-11-12/como-formar-perguntas-em-ingles-questions.html">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:site_name" content="FFES - Professor Leo Ramos">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Exercício: Formação de Perguntas em Inglês (Quiz) | Professor Leo Ramos">
+    <meta name="twitter:description" content="Aprenda e pratique como formar todos os tipos de perguntas em inglês: Yes/No, Wh- Questions, Indiretas e Negativas.">
+    <meta name="twitter:image" content="https://teacherleoramos.com.br/Images/preview-social.jpg">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Quiz",
+      "name": "Jogo da Formação de Perguntas em Inglês",
+      "description": "Um quiz interativo para praticar a formação correta de Yes/No questions, Wh- questions e perguntas indiretas em inglês.",
+      "url": "https://teacherleoramos.com.br/Ex7-8-9-10-11-12/como-formar-perguntas-em-ingles-questions.html",
+      "image": "https://teacherleoramos.com.br/Images/preview-social.jpg",
+      "author": {
+        "@type": "Person",
+        "name": "Leo Ramos",
+        "url": "https://teacherleoramos.com.br"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "FFES - Professor Leo Ramos",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://teacherleoramos.com.br/Images/logo novo grande.png"
+        }
+      },
+      "learningResourceType": "Quiz",
+      "educationalLevel": "Beginner/Intermediate"
+    }
+    </script>
+    
+    <style>
+        .game-title {
+            color: var(--cor-texto-claro);
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.6);
+        }
+        #placar-geral-container {
+            background: rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: var(--cor-texto-claro);
+            padding: 15px 25px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            font-size: 1.1em;
+        }
+        #placar-geral-container p { margin: 0; }
+        #placar-geral-container .nav-arrow {
+            color: inherit;
+            text-decoration: none;
+            font-size: 1.2em;
+            line-height: 1;
+            transition: color 0.2s ease, transform 0.2s ease;
+        }
+        #placar-geral-container .nav-arrow:hover {
+            color: var(--cor-acento);
+            transform: scale(1.15);
+        }
+        .introducao-container, .exercicio-card {
+            background-color: var(--cor-fundo-secao);
+            width: 100%;
+            max-width: 900px;
+            padding: 25px 30px;
+            margin-bottom: 25px;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+            box-sizing: border-box;
+        }
+        .exercicio-card .question-container p { font-size: 1.1em; }
+        .options-container {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 20px;
+        }
+        .option-button {
+            width: 100%;
+            padding: 15px;
+            font-size: 1em;
+            text-align: left;
+            background-color: var(--cor-fundo-geral);
+            border: 2px solid var(--cor-borda-sutil);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .option-button:not(:disabled):hover {
+            background-color: var(--cor-acento-hover);
+            border-color: var(--cor-acento);
+            transform: translateY(-2px);
+        }
+        .option-button:disabled {
+            cursor: not-allowed;
+            opacity: 0.7;
+        }
+        /* Estilos de feedback usando variáveis do universal.css */
+        .option-button.correto {
+            background-color: var(--cor-sucesso);
+            border-color: #27ae60; 
+            color: white;
+            font-weight: bold;
+        }
+        .option-button.incorreto {
+            background-color: var(--cor-erro);
+            border-color: #c0392b;
+            color: white;
+            font-weight: bold;
+        }
+        .explanation-container {
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.5s ease-out;
+            background-color: var(--cor-fundo-secao-destaque);
+            border-radius: 8px;
+            padding: 0 20px;
+            margin-top: 0;
+            border-left: 4px solid var(--cor-primaria-hover);
+        }
+        .explanation-container.visible {
+            max-height: 500px;
+            margin-top: 20px;
+            padding: 20px;
+        }
+        /* Tabela da Introdução */
+        .summary-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            font-size: 0.9em;
+        }
+        .summary-table th, .summary-table td {
+            border: 1px solid var(--cor-borda-sutil);
+            padding: 8px;
+            text-align: left;
+        }
+        .summary-table th {
+            background-color: var(--cor-fundo-secao-destaque);
+            color: var(--cor-primaria);
+        }
+        .introducao-container ul { padding-left: 20px; }
+        
+        /* Contêiner do botão "Voltar ao Topo" */
+        .rodape-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        @media (max-width: 800px) {
+            .game-title { font-size: 1.8em; }
+            h2 { font-size: 1.5em; }
+        }
+    </style>
+
+                <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-M8ZG06010Q"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-M8ZG06010Q');
+    </script>
+</head>
+<body id="topo">
+
+<div class="cabecalho-container">
+<header class="bloco-identidade">
+    <div class="logo-and-title">
+        <a href="/index.html">
+            <img src="/Images/logo novo grande.png" alt="Logo FFES" class="logo-img">
+        </a>
+        <a href="/index.html" style="text-decoration: none; color: inherit;">
+            <h1>Leo Ramos | Professor de Inglês</h1>
+        </a>
+    </div>
+</header>
+
+
+<div class="bloco-navegacao"> 
+    <nav class="nav-primary">
+        <ul>
+            <li><a href="/index.html#home">Home</a></li>
+            <li><a href="/index.html#sobre">Sobre Mim</a></li>
+            <li><a href="/exercicios-e-artigos.html#exercicios">Exercícios</a></li>
+            <li><a href="/exercicios-e-artigos.html#artigos-vocab">Artigos</a></li>
+            <li><a href="/cursos-e-ebook.html#cursos">Cursos e E-book</a></li>
+            <li><a href="/index.html#metodologia">Metodologia</a></li>
+        </ul>
+    </nav>
+</div>
+
+
+</div>
+<main>
+    <h1 class="game-title">Jogo da Formação de Perguntas</h1>
+    <div id="placar-geral-container">
+        <p>Acertos: <strong id="acertos-geral">0</strong></p>
+        <a href="#contato" class="nav-arrow" title="Ir para o final da página">&#11015;</a>
+        <p>Erros: <strong id="erros-geral">0</strong></p>
+    </div>
+    <button id="reset-btn" class="cta-button">Jogar Novamente</button>
+    <hr>
+    
+    <div class="introducao-container" style="text-align: left;">
+        <h3>Guia Completo da Formação de Perguntas</h3>
+        
+        <h4>A Regra de Ouro: Inversão Sujeito-Verbo</h4>
+        <p>Na maioria das perguntas, o verbo auxiliar (ou o verbo 'to be') vem <strong>antes</strong> do sujeito. <br><i>Afirmação: You <strong>are</strong> studying. -> Pergunta: <strong>Are</strong> you studying?</i></p>
+
+        <h4>1. Yes/No Questions (Perguntas de Sim/Não)</h4>
+        <p>Começam com um verbo auxiliar ou modal para obter uma resposta "sim" ou "não".</p>
+        <ul>
+            <li><strong>To Be:</strong> <i><strong>Is</strong> she your sister?</i></li>
+            <li><strong>Do/Does/Did:</strong> <i><strong>Did</strong> you see that movie?</i> (O verbo principal "see" fica na forma base).</li>
+            <li><strong>Modais:</strong> <i><strong>Can</strong> you help me?</i></li>
+        </ul>
+
+        <h4>2. Wh- Questions (Perguntas de Informação)</h4>
+        <p>Usam "Question Words" (What, Where, When, Who, Why, etc.) no início para pedir informações específicas.</p>
+        <ul>
+            <li><strong>What</strong> (o quê): <i>What is your name?</i></li>
+            <li><strong>Where</strong> (onde): <i>Where do you live?</i></li>
+            <li><strong>When</strong> (quando): <i>When is the party?</i></li>
+            <li><strong>Why</strong> (por que): <i>Why are you late?</i></li>
+            <li><strong>Who</strong> (quem): <i>Who is that person?</i></li>
+            <li><strong>Whose</strong> (de quem): <i>Whose car is this?</i></li>
+            <li><strong>How</strong> (como): <i>How are you?</i> | <strong>How much/many</strong> (quanto/s)</li>
+        </ul>
+
+        <h4>3. Indirect Questions (Perguntas Indiretas)</h4>
+        <p>São uma forma mais educada de perguntar. Elas começam com uma introdução e, mais importante, a parte da pergunta <strong>não tem inversão</strong>, mantendo a ordem de uma frase afirmativa (sujeito + verbo).</p>
+        <table class="summary-table">
+            <thead><tr><th>Pergunta Direta (com inversão)</th><th>Pergunta Indireta (sem inversão)</th></tr></thead>
+            <tbody>
+                <tr>
+                    <td><i>Where <strong>is the station</strong>?</i></td>
+                    <td><i>Could you tell me where the station <strong>is</strong>?</i></td>
+                </tr>
+                <tr>
+                    <td><i>What time <strong>does the bank open</strong>?</i></td>
+                    <td><i>Do you know what time the bank <strong>opens</strong>?</i></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h4>4. Uso de "Question Word + Infinitive"</h4>
+        <p>Não é uma pergunta, mas uma estrutura para expressar dúvida ou decisão. É formada por: <strong>Question Word + "to" + Verbo</strong>.</p>
+        <ul>
+            <li><i>I don't know <strong>what to do</strong>.</i> (Eu não sei o que fazer.)</li>
+            <li><i>She can't decide <strong>where to go</strong>.</i> (Ela não consegue decidir aonde ir.)</li>
+        </ul>
+
+        <h4>5. Negative Questions (Perguntas Negativas)</h4>
+        <p>Começam com um auxiliar negativo e são usadas para confirmar, expressar surpresa ou fazer um convite educado.</p>
+        <ul>
+            <li><strong>Confirmação:</strong> <i><strong>Don't</strong> you work here?</i> (Eu achava que você trabalhava aqui).</li>
+            <li><strong>Surpresa:</strong> <i><strong>Isn't</strong> this a beautiful day?</i> (Que dia lindo!)</li>
+            <li><strong>Convite:</strong> <i><strong>Wouldn't</strong> you like a cup of coffee?</i> (Você não gostaria de uma xícara de café?)</li>
+        </ul>
+    </div>
+    
+    <div id="exercicios-container"></div>
+    <div class="rodape-container">
+        <a href="#topo" class="nav-button">&#11014;</a>
+    </div>
+</main>
+
+<footer id="contato" class="site-footer">
+    <div class="footer-content">
+        <div class="social-media-links">
+            <h4>Siga-me nas redes sociais e acesse o App</h4>
+            <a href="https://www.youtube.com/@teacherleoramos/videos" target="_blank" rel="noopener noreferrer" title="Canal YouTube Teacher Leo Ramos" aria-label="YouTube">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/youtube-play.png" alt="Ícone YouTube" width="30" height="30" loading="lazy">
+            </a>
+            <a href="https://www.instagram.com/teacherleoramos/" target="_blank" rel="noopener noreferrer" title="Instagram Teacher Leo Ramos" aria-label="Instagram">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/instagram-new.png" alt="Ícone Instagram" width="30" height="30" loading="lazy">
+            </a>
+            <a href="https://www.tiktok.com/@teacherleoramos" target="_blank" rel="noopener noreferrer" title="TikTok Teacher Leo Ramos" aria-label="TikTok">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/tiktok.png" alt="Ícone TikTok" width="30" height="30" loading="lazy">
+            </a>
+            <a href="https://wa.me/5511955582118" target="_blank" rel="noopener noreferrer" title="WhatsApp Agendamento" aria-label="WhatsApp">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/whatsapp--v1.png" alt="Ícone WhatsApp" width="30" height="30" loading="lazy">
+            </a>
+            <a href="/index-app.html" target="_blank" rel="noopener noreferrer" title="Acesse o FFES App" aria-label="FFES App">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/controller.png" alt="Ícone FFES App" width="30" height="30" loading="lazy">
+            </a>
+        </div>
+        <p><strong>Contato</strong></p>
+        <p>Youtube: @teacherleoramos | Telefone - WhatsApp: (11) 95558-2118</p>
+        <p>Endereço: São Paulo, SP, Brasil</p>
+        <p>CNPJ: 43.226.983/0001-91</p>
+        <p>&copy; <span id="year">2025</span> | FEATHERED FRIENDS ENGLISH SCHOOL - FFES. Todos os direitos reservados.</p>
+    </div>
+</footer>
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    // REMOVIDA A INJEÇÃO DE HTML DO CABEÇALHO E RODAPÉ
+    // O HTML agora é estático.
+
+    const dadosPerguntas = [
+        { id: 'pq-1', pergunta: 'Qual é a pergunta correta para a afirmação "He plays the guitar."?', opcoes: ['Does he plays the guitar?', 'Do he plays the guitar?', 'Does he play the guitar?', 'Do he play the guitar?'], respostaCorreta: 'Does he play the guitar?', explicacao: 'Usamos o auxiliar "Does" para "he", e o verbo principal ("play") volta para a forma base, sem o "-s".' },
+        { id: 'pq-2', pergunta: 'Complete a pergunta: "___ did you go yesterday?"', opcoes: ['What', 'Where', 'When', 'Who'], respostaCorreta: 'Where', explicacao: 'A resposta esperada é um lugar ("go" -> ir), então usamos a Wh- Word "Where" (Onde).' },
+        { id: 'pq-3', pergunta: 'Transforme a pergunta direta "What time is it?" em uma pergunta indireta:', opcoes: ['Do you know what time is it?', 'Do you know what is the time?', 'Do you know what time it is?', 'Do you know what it is time?'], respostaCorreta: 'Do you know what time it is?', explicacao: 'Em perguntas indiretas, a ordem da oração interna é afirmativa (sujeito "it" + verbo "is"), sem inversão.' },
+        { id: 'pq-4', pergunta: 'Complete a pergunta: "___ you seen this movie before? It\'s a classic!"', opcoes: ['Don\'t', 'Aren\'t', 'Haven\'t', 'Weren\'t'], respostaCorreta: 'Haven\'t', explicacao: '"Haven\'t" é usado para formar uma pergunta negativa no Present Perfect, frequentemente para expressar surpresa ou confirmar algo.' },
+        { id: 'pq-5', pergunta: 'Complete a frase: "I\'m not sure ___ for the party."', opcoes: ['what to wear', 'what do I wear', 'what I wear', 'what wearing'], respostaCorreta: 'what to wear', explicacao: 'Após expressões como "I\'m not sure", usamos a estrutura "Question Word + to-infinitive" para indicar uma decisão a ser tomada.' },
+        { id: 'pq-6', pergunta: 'Complete a pergunta: "___ keys are these on the table?"', opcoes: ['Who', 'What', 'Which', 'Whose'], respostaCorreta: 'Whose', explicacao: '"Whose" (de quem) é a palavra interrogativa usada para perguntar sobre posse.' },
+        { id: 'pq-7', pergunta: 'Qual é a pergunta correta para a afirmação "She can swim."?', opcoes: ['Does she can swim?', 'Can she swim?', 'Cans she swim?', 'Is she can swim?'], respostaCorreta: 'Can she swim?', explicacao: 'Com verbos modais como "can", a pergunta é formada simplesmente invertendo o modal com o sujeito, sem usar "do/does".' },
+        { id: 'pq-8', pergunta: 'Transforme a pergunta direta "Why did he leave?" em uma pergunta indireta:', opcoes: ['I\'d like to know why did he leave.', 'I\'d like to know why he did leave.', 'I\'d like to know why did leave he.', 'I\'d like to know why he left.'], respostaCorreta: 'I\'d like to know why he left.', explicacao: 'Na pergunta indireta, a inversão e o auxiliar "did" são removidos, e o verbo principal ("leave") vai para o passado simples ("left").' },
+        { id: 'pq-9', pergunta: 'Complete a pergunta: "___ are you so tired today?"', opcoes: ['What', 'How', 'Why', 'When'], respostaCorreta: 'Why', explicacao: 'A pergunta busca a razão ou motivo ("so tired" -> tão cansado), então usamos "Why" (Por quê).' },
+        { id: 'pq-10', pergunta: 'Qual é a forma correta da pergunta? "They went to the park."', opcoes: ['Did they went to the park?', 'Did they go to the park?', 'Do they went to the park?', 'Have they go to the park?'], respostaCorreta: 'Did they go to the park?', explicacao: 'Para fazer uma pergunta no Simple Past, usamos o auxiliar "Did" e o verbo principal ("go") na sua forma base.' },
+        { id: 'pq-11', pergunta: 'Complete a pergunta indireta: "Could you tell me ___?"', opcoes: ['where is the post office', 'where the post office is', 'where does the post office is', 'where the post office was'], respostaCorreta: 'where the post office is', explicacao: 'Em perguntas indiretas, a ordem da frase é afirmativa (sujeito "the post office" + verbo "is").' },
+        { id: 'pq-12', pergunta: 'Qual pergunta espera uma resposta sobre posse?', opcoes: ['Who is that?', 'Whose is that bag?', 'What is that?', 'Which is that?'], respostaCorreta: 'Whose is that bag?', explicacao: '"Whose" é a "question word" específica para perguntar sobre posse (de quem).' },
+        { id: 'pq-13', pergunta: 'Complete a pergunta: "___ a beautiful day?"', opcoes: ['Isn\'t it', 'Doesn\'t it', 'Hasn\'t it', 'Won\'t it'], respostaCorreta: 'Isn\'t it', explicacao: 'É uma pergunta negativa usada para expressar surpresa ou concordância. A estrutura é "verbo auxiliar negativo + pronome".' },
+        { id: 'pq-14', pergunta: 'Qual é a pergunta correta para a resposta "He is a doctor."?', opcoes: ['What does he do?', 'How is he?', 'Who is he?', 'Where he is?'], respostaCorreta: 'What does he do?', explicacao: 'Para perguntar sobre a profissão de alguém, a pergunta comum é "What do you do?" ou "What does he/she do?".' },
+        { id: 'pq-15', pergunta: 'Complete a frase: "He asked me ___."', opcoes: ['what was my problem', 'what my problem it was', 'what my problem was', 'what is my problem'], respostaCorreta: 'what my problem was', explicacao: 'Esta é uma pergunta indireta (reported question). A ordem é afirmativa (sujeito "my problem" + verbo "was").' },
+        { id: 'pq-16', pergunta: 'Complete a pergunta: "___ have you been waiting?"', opcoes: ['How much', 'How many', 'How long', 'How often'], respostaCorreta: 'How long', explicacao: 'Para perguntar sobre a duração de um período de tempo, usamos "How long" (Há quanto tempo).' },
+        { id: 'pq-17', pergunta: 'Qual é a pergunta correta para "I should call my mom."?', opcoes: ['Do I should call my mom?', 'Should I call my mom?', 'Should I to call my mom?', 'Must I call my mom?'], respostaCorreta: 'Should I call my mom?', explicacao: 'Para verbos modais como "should", formamos a pergunta invertendo o modal com o sujeito.' },
+        { id: 'pq-18', pergunta: 'Complete a pergunta: "___ don\'t we go to the cinema tonight?"', opcoes: ['How', 'What', 'When', 'Why'], respostaCorreta: 'Why', explicacao: '"Why don\'t we...?" é uma estrutura comum para fazer uma sugestão.' },
+        { id: 'pq-19', pergunta: 'Transforme em uma pergunta indireta: "Is she coming?"', opcoes: ['Do you know if she is coming?', 'Do you know is she coming?', 'Do you know if is she coming?', 'Do you know that she is coming?'], respostaCorreta: 'Do you know if she is coming?', explicacao: 'Perguntas de sim/não indiretas usam "if" ou "whether", e a ordem é afirmativa (sujeito "she" + verbo "is coming").' },
+        { id: 'pq-20', pergunta: 'Complete a pergunta: "___ sugar do you need?"', opcoes: ['How many', 'How much', 'How long', 'What'], respostaCorreta: 'How much', explicacao: '"Sugar" é um substantivo incontável, então usamos "How much" para perguntar sobre a quantidade.' },
+        { id: 'pq-21', pergunta: 'Qual é a pergunta para a afirmação "She was sleeping."?', opcoes: ['Did she sleep?', 'Was she sleeping?', 'Is she sleeping?', 'Does she sleeping?'], respostaCorreta: 'Was she sleeping?', explicacao: 'Para o Past Continuous, a pergunta é formada invertendo o verbo "to be" no passado ("was") e o sujeito ("she").' },
+        { id: 'pq-22', pergunta: 'Complete a pergunta: "___ broke the window?"', opcoes: ['Who', 'What', 'Who did', 'What did'], respostaCorreta: 'Who', explicacao: 'Quando a "Wh-word" é o sujeito da pergunta (alguém quebrou), não usamos o auxiliar "do/does/did". A estrutura é "Who + verbo no passado".' },
+        { id: 'pq-23', pergunta: 'Qual é a maneira mais educada de perguntar "Where is the bathroom?"', opcoes: ['Tell me where is the bathroom.', 'Where is the bathroom, please?', 'Could you tell me where the bathroom is?', 'I want to know where is the bathroom.'], respostaCorreta: 'Could you tell me where the bathroom is?', explicacao: 'Perguntas indiretas, como "Could you tell me...", são consideradas mais educadas. Lembre-se que a ordem da frase interna é afirmativa.' },
+        { id: 'pq-24', pergunta: 'Complete a pergunta negativa: "___ you like another piece of cake?"', opcoes: ['Don\'t', 'Wouldn\'t', 'Aren\'t', 'Haven\'t'], respostaCorreta: 'Wouldn\'t', explicacao: '"Wouldn\'t you like...?" é uma forma educada e comum de oferecer algo.' },
+        { id: 'pq-25', pergunta: 'Qual é a pergunta correta? "He has two brothers."', opcoes: ['How many brothers has he?', 'How many brothers does he has?', 'How many brothers does he have?', 'How many brothers do he have?'], respostaCorreta: 'How many brothers does he have?', explicacao: 'Usamos o auxiliar "does" para "he", e o verbo principal volta a ser "have" (forma base).' },
+        { id: 'pq-26', pergunta: 'Complete a frase: "I can\'t decide ___ for dinner."', opcoes: ['what to make', 'what do I make', 'what making', 'what I make'], respostaCorreta: 'what to make', explicacao: 'A estrutura "Question Word + to-infinitive" é usada para expressar uma decisão ou incerteza.' },
+        { id: 'pq-27', pergunta: 'Transforme em uma pergunta indireta: "When did they arrive?"', opcoes: ['Do you know when they did arrive?', 'Do you know when did they arrive?', 'Do you know when they arrived?', 'Do you know when have they arrived?'], respostaCorreta: 'Do you know when they arrived?', explicacao: 'Na pergunta indireta, o auxiliar "did" é removido e o verbo principal ("arrive") vai para o passado ("arrived").' },
+        { id: 'pq-28', pergunta: 'Complete a pergunta: "___ are you talking to?"', opcoes: ['Whose', 'Who', 'Which', 'What'], respostaCorreta: 'Who', explicacao: 'A pergunta é sobre a pessoa com quem se está falando. A preposição "to" fica no final.' },
+        { id: 'pq-29', pergunta: 'Qual é a pergunta para a afirmação "They have been working here for years."?', opcoes: ['Have they being working here for years?', 'Do they have been working here for years?', 'Have they been working here for years?', 'Are they been working here for years?'], respostaCorreta: 'Have they been working here for years?', explicacao: 'Para o Present Perfect Continuous, a pergunta é feita invertendo o primeiro auxiliar ("have") com o sujeito ("they").' },
+        { id: 'pq-30', pergunta: 'Complete a pergunta: "___ of these books is yours?"', opcoes: ['What', 'Who', 'Whose', 'Which'], respostaCorreta: 'Which', explicacao: 'Usamos "Which" quando há um número limitado de opções para escolher (destes livros).' },
+        { id: 'pq-31', pergunta: 'Qual é a pergunta negativa para confirmar "I think you are a student."?', opcoes: ['Don\'t you a student?', 'Isn\'t you a student?', 'Aren\'t you a student?', 'Haven\'t you a student?'], respostaCorreta: 'Aren\'t you a student?', explicacao: 'A afirmação usa "are", então a pergunta negativa de confirmação usa o auxiliar correspondente, "Aren\'t".' },
+        { id: 'pq-32', pergunta: 'Transforme em uma pergunta indireta: "Will you be there?"', opcoes: ['Can you tell me will you be there?', 'Can you tell me if you will be there?', 'Can you tell me you will be there?', 'Can you tell me if will you be there?'], respostaCorreta: 'Can you tell me if you will be there?', explicacao: 'Introduzimos a pergunta de sim/não com "if" e mantemos a ordem afirmativa (sujeito "you" + verbo "will be").' },
+        { id: 'pq-33', pergunta: 'Complete a pergunta: "___ did you pay for that ticket?"', opcoes: ['How much', 'How many', 'What price', 'How value'], respostaCorreta: 'How much', explicacao: '"How much" é usado para perguntar o preço de algo.' },
+        { id: 'pq-34', pergunta: 'Qual é a pergunta correta para "He had already left."?', opcoes: ['Did he already left?', 'Has he already left?', 'Had he already left?', 'Was he already left?'], respostaCorreta: 'Had he already left?', explicacao: 'Para o Past Perfect, a pergunta é formada invertendo o auxiliar "had" com o sujeito "he".' },
+        { id: 'pq-35', pergunta: 'Complete a pergunta: "___ did he say?"', opcoes: ['Who', 'Why', 'What', 'How'], respostaCorreta: 'What', explicacao: 'A pergunta pede a informação sobre o conteúdo do que foi dito, então usamos "What" (O quê).' },
+        { id: 'pq-36', pergunta: 'Complete a pergunta indireta: "I wonder ___."', opcoes: ['if the train is on time', 'is the train on time', 'if is the train on time', 'whether is the train on time'], respostaCorreta: 'if the train is on time', explicacao: 'Após "I wonder", a estrutura da pergunta se torna afirmativa e é introduzida por "if" ou "whether".' },
+        { id: 'pq-37', pergunta: 'Qual é a pergunta correta para a resposta "I go to the gym twice a week."?', opcoes: ['How long do you go to the gym?', 'How much do you go to the gym?', 'How often do you go to the gym?', 'When do you go to the gym?'], respostaCorreta: 'How often do you go to the gym?', explicacao: '"How often" é usado para perguntar sobre a frequência de uma ação.' },
+        { id: 'pq-38', pergunta: 'Complete a pergunta: "___ you mind opening the window?"', opcoes: ['Do', 'Would', 'Will', 'Should'], respostaCorreta: 'Would', explicacao: '"Would you mind...?" é uma forma muito educada de fazer um pedido.' },
+        { id: 'pq-39', pergunta: 'Transforme em pergunta: "They will finish the project tomorrow."', opcoes: ['Do they will finish the project tomorrow?', 'Will they finish the project tomorrow?', 'Are they finish the project tomorrow?', 'Did they will finish the project tomorrow?'], respostaCorreta: 'Will they finish the project tomorrow?', explicacao: 'Para o futuro com "will", a pergunta é feita invertendo "will" e o sujeito "they".' },
+        { id: 'pq-40', pergunta: 'Complete a pergunta: "For ___ are you waiting?"', opcoes: ['who', 'what', 'whom', 'whose'], respostaCorreta: 'whom', explicacao: '"Whom" é a forma objeto de "who" e é usada formalmente após uma preposição como "for". Em linguagem informal, "Who are you waiting for?" é mais comum.' }
+    ];
+
+    const container = document.getElementById('exercicios-container');
+    const placarAcertosGeralEl = document.getElementById('acertos-geral');
+    const placarErrosGeralEl = document.getElementById('erros-geral');
+    const resetButton = document.getElementById('reset-btn');
+    let acertos = 0;
+    let erros = 0;
+    
+    function shuffleArray(array) { for (let i = array.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [array[i], array[j]] = [array[j], array[i]]; } }
+
+    function criarExercicioHTML(exercicioData, numeroExercicio) {
+        // Embaralha as opções para este exercício
+        const opcoesEmbaralhadas = [...exercicioData.opcoes];
+        shuffleArray(opcoesEmbaralhadas);
+        
+        const opcoesHTML = opcoesEmbaralhadas.map(opcao => `<button class="option-button" data-resposta="${opcao}">${opcao}</button>`).join('');
+        return `<section class="exercicio-card" id="exercicio-${exercicioData.id}" data-id="${exercicioData.id}"><h2 class="h2-exercicio">Exercício ${numeroExercicio}</h2><div class="question-container"><p>${exercicioData.pergunta}</p><div class="options-container">${opcoesHTML}</div></div><div class="explanation-container" id="explicacao-${exercicioData.id}"><p>${exercicioData.explicacao}</p></div></section>`;
+    }
+
+    function verificarResposta(exercicioId, btnClicado) {
+        const exercicioData = dadosPerguntas.find(e => e.id === exercicioId);
+        const exercicioCard = document.getElementById(`exercicio-${exercicioData.id}`);
+        const botoes = exercicioCard.querySelectorAll('.option-button');
+        botoes.forEach(btn => btn.disabled = true);
+        const explicacaoEl = document.getElementById(`explicacao-${exercicioData.id}`);
+        explicacaoEl.classList.add('visible');
+        if (btnClicado.dataset.resposta === exercicioData.respostaCorreta) {
+            btnClicado.classList.add('correto');
+            acertos++;
+        } else {
+            btnClicado.classList.add('incorreto');
+            const respostaCorretaBtn = Array.from(botoes).find(btn => btn.dataset.resposta === exercicioData.respostaCorreta);
+            if (respostaCorretaBtn) { respostaCorretaBtn.classList.add('correto'); }
+            erros++;
+        }
+        placarAcertosGeralEl.textContent = acertos;
+        placarErrosGeralEl.textContent = erros;
+    }
+
+    function iniciarJogo() {
+        acertos = 0;
+        erros = 0;
+        placarAcertosGeralEl.textContent = '0';
+        placarErrosGeralEl.textContent = '0';
+        shuffleArray(dadosPerguntas);
+        container.innerHTML = dadosPerguntas.map((dado, index) => criarExercicioHTML(dado, index + 1)).join('');
+        
+        // Remove e recria o event listener para evitar bugs de duplicação
+        const newContainer = container.cloneNode(true);
+        container.parentNode.replaceChild(newContainer, container);
+        
+        newContainer.addEventListener('click', (event) => {
+            if (event.target.classList.contains('option-button') && !event.target.disabled) {
+                const btnClicado = event.target;
+                const exercicioCard = btnClicado.closest('.exercicio-card');
+                const exercicioId = exercicioCard.dataset.id;
+                verificarResposta(exercicioId, btnClicado);
+            }
+        });
+        
+        // Rola a tela para o início do main content ao reiniciar
+        document.querySelector('main').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    resetButton.addEventListener('click', iniciarJogo);
+    iniciarJogo();
+});
+</script>
+
+</body>
+</html>
+
+

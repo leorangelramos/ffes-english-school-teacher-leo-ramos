@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Exercício: Tempos Verbais Perfeitos (Present, Past, Future) | Professor Leo Ramos</title>
+    <meta name="description" content="Pratique os 6 tempos verbais perfeitos em inglês (present perfect, past perfect, future perfect e contínuos) com este exercício interativo.">
+    
+    <meta name="author" content="Leo Ramos">
+    <meta name="robots" content="index, follow">
+    
+    <meta name="google-site-verification" content="9L-nEDj4G24e3JD1kt5bxcZ5_qHo9Q-03_DJkfIH_1M" />
+    
+    <link rel="canonical" href="https://teacherleoramos.com.br/ex1/presente-passado-futuro-perfeito-estruturas-em-ingles.html">
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/Images/logofavicion.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/Images/logofavicion.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/Images/logofavicion.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/Images/logofavicion.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/Images/logofavicion.png">
+    
+    <meta property="og:title" content="Exercício: Tempos Verbais Perfeitos | Professor Leo Ramos">
+    <meta property="og:description" content="Pratique os 6 tempos verbais perfeitos em inglês (present perfect, past perfect, future perfect e contínuos).">
+    <meta property="og:image" content="https://teacherleoramos.com.br/Images/preview-social.jpg">
+    <meta property="og:url" content="https://teacherleoramos.com.br/ex1/presente-passado-futuro-perfeito-estruturas-em-ingles.html">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:site_name" content="FFES - Professor Leo Ramos">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Exercício: Tempos Verbais Perfeitos | Professor Leo Ramos">
+    <meta name="twitter:description" content="Pratique os 6 tempos verbais perfeitos em inglês (present perfect, past perfect, future perfect e contínuos).">
+    <meta name="twitter:image" content="https://teacherleoramos.com.br/Images/preview-social.jpg">
+
+    <link rel="stylesheet" href="/CSS/universal.css">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Quiz",
+      "name": "Jogo das 6 Estruturas Perfeitas",
+      "description": "Pratique os 6 tempos verbais perfeitos em inglês (present perfect, past perfect, future perfect e seus contínuos).",
+      "inLanguage": "pt-BR",
+      "author": {
+        "@type": "Person",
+        "name": "Leo Ramos",
+        "jobTitle": "Professor de Inglês",
+        "url": "https://teacherleoramos.com.br/ex1/presente-passado-futuro-perfeito-estruturas-em-ingles.html"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "FFES - Professor Leo Ramos",
+        "logo": "https://teacherleoramos.com.br/Images/logo novo grande.png"
+      },
+      "hasPart": [
+        {
+          "@type": "Question",
+          "name": "Frase: 'They ___ this movie before.'",
+          "acceptedAnswer": { "@type": "Answer", "text": "have seen" }
+        },
+        {
+          "@type": "Question",
+          "name": "Frase: 'We ___ on this project since last year.'",
+          "acceptedAnswer": { "@type": "Answer", "text": "have been working" }
+        },
+        {
+          "@type": "Question",
+          "name": "Frase: 'She ___ the letter before I arrived.'",
+          "acceptedAnswer": { "@type": "Answer", "text": "had written" }
+        },
+        {
+          "@type": "Question",
+          "name": "Frase: 'They ___ for hours when he finally appeared.'",
+          "acceptedAnswer": { "@type": "Answer", "text": "had been waiting" }
+        },
+        {
+          "@type": "Question",
+          "name": "Frase: 'By the time you arrive, I ___ the dinner.'",
+          "acceptedAnswer": { "@type": "Answer", "text": "will have cooked" }
+        },
+        {
+          "@type": "Question",
+          "name": "Frase: 'By 5 o'clock, I ___ on this report for three hours.'",
+          "acceptedAnswer": { "@type": "Answer", "text": "will have been working" }
+        }
+      ]
+    }
+    </script>
+    
+    <style>
+        .game-title {
+            color: var(--cor-texto-claro);
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.6);
+        }
+        #placar-geral-container {
+            background: rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: var(--cor-texto-claro);
+            padding: 15px 25px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            font-size: 1.1em;
+        }
+        #placar-geral-container p { margin: 0; }
+        #placar-geral-container .nav-arrow {
+            color: inherit;
+            text-decoration: none;
+            font-size: 1.2em;
+            line-height: 1;
+            transition: color 0.2s ease, transform 0.2s ease;
+        }
+        #placar-geral-container .nav-arrow:hover {
+            color: var(--cor-acento);
+            transform: scale(1.15);
+        }
+        .introducao-container, .exercicio-card {
+            background-color: var(--cor-fundo-secao);
+            width: 100%;
+            max-width: 900px;
+            padding: 25px 30px;
+            margin-bottom: 25px;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+            box-sizing: border-box;
+        }
+        .introducao-container h3 {
+            text-align: left;
+            margin-top: 0;
+            color: var(--cor-primaria);
+        }
+        .introducao-container ul {
+            padding-left: 20px;
+        }
+        .exercicio-card .question-container p { font-size: 1.1em; }
+        .exercicio-card .question-container .blank {
+            color: var(--cor-primaria-hover);
+            font-weight: bold;
+        }
+        .options-container {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 20px;
+        }
+        .option-button {
+            width: 100%;
+            padding: 15px;
+            font-size: 1em;
+            text-align: left;
+            background-color: var(--cor-fundo-geral);
+            border: 2px solid var(--cor-borda-sutil);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .option-button:not(:disabled):hover {
+            background-color: var(--cor-acento-hover);
+            border-color: var(--cor-acento);
+            transform: translateY(-2px);
+        }
+        .option-button:disabled {
+            cursor: not-allowed;
+            opacity: 0.7;
+        }
+        .option-button.correto {
+            background-color: var(--cor-sucesso);
+            border-color: #27ae60;
+            color: white;
+            font-weight: bold;
+        }
+        .option-button.incorreto {
+            background-color: var(--cor-erro);
+            border-color: #c0392b;
+            color: white;
+            font-weight: bold;
+        }
+        .explanation-container {
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.5s ease-out;
+            background-color: var(--cor-fundo-secao-destaque);
+            border-radius: 8px;
+            padding: 0 20px;
+            margin-top: 0;
+            border-left: 4px solid var(--cor-primaria-hover);
+        }
+        .explanation-container.visible {
+            max-height: 500px;
+            margin-top: 20px;
+            padding: 20px;
+        }
+        #rodape {
+            text-align: center;
+            margin: 20px 0;
+        }
+        @media (max-width: 800px) {
+            .game-title { font-size: 1.8em; }
+            h2 { font-size: 1.5em; }
+        }
+    </style>
+
+                <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-M8ZG06010Q"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-M8ZG06010Q');
+    </script>
+</head>
+<body id="topo">
+
+<div class="cabecalho-container">
+<header class="bloco-identidade">
+    <div class="logo-and-title">
+        <a href="/index.html">
+            <img src="/Images/logo novo grande.png" alt="Logo FFES" class="logo-img">
+        </a>
+        <a href="/index.html" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;">
+            <h1>Leo Ramos | Professor de Inglês</h1>
+        </a>
+    </div>
+</header>
+
+<div class="bloco-navegacao"> 
+    <nav class="nav-primary">
+        <ul>
+            <li><a href="/index.html#home">Home</a></li>
+            <li><a href="/index.html#sobre">Sobre Mim</a></li>
+            <li><a href="/exercicios-e-artigos.html#exercicios">Exercícios</a></li>
+            <li><a href="/exercicios-e-artigos.html#artigos-vocab">Artigos</a></li>
+            <li><a href="/cursos-e-ebook.html#cursos">Cursos e E-book</a></li>
+            <li><a href="/index.html#metodologia">Metodologia</a></li>
+        </ul>
+    </nav>
+</div>
+
+
+
+</div>
+
+<main>
+    <h1 class="game-title">Jogo das 6 estruturas perfeitas</h1>
+
+    <div id="placar-geral-container">
+        <p>Acertos: <strong id="acertos-geral">0</strong></p>
+        <a href="#contato" class="nav-arrow" title="Ir para o final da página">&#11015;</a>
+        <p>Erros: <strong id="erros-geral">0</strong></p>
+    </div>
+    
+    <button id="reset-btn" class="cta-button">Jogar Novamente</button>
+
+    <div class="introducao-container">
+        <h3>1. Present Perfect</h3>
+        <p><strong>Uso:</strong> Para ações que ocorreram em um tempo não especificado no passado ou que começaram no passado e têm relevância no presente.</p>
+        <ul>
+            <li><strong>Afirmativa:</strong> Sujeito + have/has + Particípio Passado. <br><em>Ex: She <strong>has visited</strong> Paris three times.</em></li>
+            <li><strong>Negativa:</strong> Sujeito + have/has + not + Particípio Passado. <br><em>Ex: I <strong>have not finished</strong> my work yet.</em></li>
+            <li><strong>Interrogativa:</strong> Have/Has + sujeito + Particípio Passado? <br><em>Ex: <strong>Have</strong> you <strong>ever eaten</strong> sushi?</em></li>
+        </ul>
+    </div>
+
+    <div class="introducao-container">
+        <h3>2. Present Perfect Continuous</h3>
+        <p><strong>Uso:</strong> Para enfatizar a duração de uma ação que começou no passado e continua até o presente (ou acabou de terminar).</p>
+        <ul>
+            <li><strong>Afirmativa:</strong> Sujeito + have/has + been + verbo(-ing). <br><em>Ex: We <strong>have been waiting</strong> for hours.</em></li>
+            <li><strong>Negativa:</strong> Sujeito + have/has + not + been + verbo(-ing). <br><em>Ex: He <strong>hasn't been feeling</strong> well lately.</em></li>
+            <li><strong>Interrogativa:</strong> Have/Has + sujeito + been + verbo(-ing)? <br><em>Ex: <strong>Have</strong> you <strong>been working</strong> on this all day?</em></li>
+        </ul>
+    </div>
+
+    <div class="introducao-container">
+        <h3>3. Past Perfect</h3>
+        <p><strong>Uso:</strong> Para descrever uma ação que aconteceu antes de outra ação também no passado (o "passado do passado").</p>
+        <ul>
+            <li><strong>Afirmativa:</strong> Sujeito + had + Particípio Passado. <br><em>Ex: By the time I arrived, the movie <strong>had already started</strong>.</em></li>
+            <li><strong>Negativa:</strong> Sujeito + had + not + Particípio Passado. <br><em>Ex: She <strong>had not studied</strong> before the test.</em></li>
+            <li><strong>Interrogativa:</strong> Had + sujeito + Particípio Passado? <br><em>Ex: <strong>Had</strong> they <strong>left</strong> when you got there?</em></li>
+        </ul>
+    </div>
+    
+    <div class="introducao-container">
+        <h3>4. Past Perfect Continuous</h3>
+        <p><strong>Uso:</strong> Para mostrar a duração de uma ação que estava acontecendo antes de outra ação no passado.</p>
+        <ul>
+            <li><strong>Afirmativa:</strong> Sujeito + had + been + verbo(-ing). <br><em>Ex: He was tired because he <strong>had been running</strong> for an hour.</em></li>
+            <li><strong>Negativa:</strong> Sujeito + had + not + been + verbo(-ing). <br><em>Ex: They <strong>hadn't been waiting</strong> long when the bus arrived.</em></li>
+            <li><strong>Interrogativa:</strong> Had + sujeito + been + verbo(-ing)? <br><em>Ex: <strong>Had</strong> she <strong>been working</strong> there for years before she quit?</em></li>
+        </ul>
+    </div>
+    
+    <div class="introducao-container">
+        <h3>5. Future Perfect</h3>
+        <p><strong>Uso:</strong> Para uma ação que será concluída antes de um ponto específico no futuro.</p>
+        <ul>
+            <li><strong>Afirmativa:</strong> Sujeito + will have + Particípio Passado. <br><em>Ex: By next month, I <strong>will have finished</strong> this course.</em></li>
+            <li><strong>Negativa:</strong> Sujeito + will not have + Particípio Passado. <br><em>Ex: She <strong>won't have saved</strong> enough money by then.</em></li>
+            <li><strong>Interrogativa:</strong> Will + sujeito + have + Particípio Passado? <br><em>Ex: <strong>Will</strong> you <strong>have completed</strong> the report by Friday?</em></li>
+        </ul>
+    </div>
+
+    <div class="introducao-container">
+        <h3>6. Future Perfect Continuous</h3>
+        <p><strong>Uso:</strong> Para enfatizar a duração de uma ação que estará em progresso até um ponto específico no futuro.</p>
+        <ul>
+            <li><strong>Afirmativa:</strong> Sujeito + will have been + verbo(-ing). <br><em>Ex: By the end of the year, I <strong>will have been working</strong> here for a decade.</em></li>
+            <li><strong>Negativa:</strong> Sujeito + will not have been + verbo(-ing). <br><em>Ex: He <strong>won't have been studying</strong> for very long by the time the exam starts.</em></li>
+            <li><strong>Interrogativa:</strong> Will + sujeito + have been + verbo(-ing)? <br><em>Ex: <strong>Will</strong> she <strong>have been living</strong> there for ten years by next month?</em></li>
+        </ul>
+    </div>
+
+    <hr>
+    
+    <div id="exercicios-container"></div>
+
+    <div id="rodape">
+        <a href="#topo" class="nav-button">&#11014;</a>
+    </div>
+</main>
+
+<footer id="contato" class="site-footer">
+    <div class="footer-content">
+        <div class="social-media-links">
+            <h4>Siga-me nas redes sociais e acesse o App</h4>
+            <a href="https://www.youtube.com/@teacherleoramos/videos" target="_blank" rel="noopener noreferrer" title="Canal YouTube Teacher Leo Ramos" aria-label="YouTube">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/youtube-play.png" alt="Ícone YouTube" width="30" height="30" loading="lazy">
+            </a>
+            <a href="https://www.instagram.com/teacherleoramos/" target="_blank" rel="noopener noreferrer" title="Instagram Teacher Leo Ramos" aria-label="Instagram">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/instagram-new.png" alt="Ícone Instagram" width="30" height="30" loading="lazy">
+            </a>
+            <a href="https://www.tiktok.com/@teacherleoramos" target="_blank" rel="noopener noreferrer" title="TikTok Teacher Leo Ramos" aria-label="TikTok">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/tiktok.png" alt="Ícone TikTok" width="30" height="30" loading="lazy">
+            </a>
+            <a href="https://wa.me/5511955582118" target="_blank" rel="noopener noreferrer" title="WhatsApp Agendamento" aria-label="WhatsApp">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/whatsapp--v1.png" alt="Ícone WhatsApp" width="30" height="30" loading="lazy">
+            </a>
+            <a href="/index-app.html" target="_blank" rel="noopener noreferrer" title="Acesse o FFES App" aria-label="FFES App">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/controller.png" alt="Ícone FFES App" width="30" height="30" loading="lazy">
+            </a>
+        </div>
+        <p><strong>Contato</strong></p>
+        <p>Youtube: @teacherleoramos | Telefone - WhatsApp: (11) 95558-2118</p>
+        <p>Endereço: São Paulo, SP, Brasil</p>
+        <p>CNPJ: 43.226.983/0001-91</p>
+        <p>&copy; <span id="year">2025</span> | FEATHERED FRIENDS ENGLISH SCHOOL - FFES. Todos os direitos reservados.</p>
+    </div>
+</footer>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    // Array expandido com 150 exercícios focados nos 6 Tempos Perfeitos (3 opções)
+    const exercises = [
+        // --- Present Perfect Simple (50 exercícios) ---
+        { id: 'pps-1', sentence: 'They ___ this movie before.', correctAnswer: 'have seen', options: ['have seen', 'saw', 'are seeing'], explicacao: 'A ação ocorreu em um tempo não especificado no passado, mas tem relevância agora (Present Perfect Simple).' },
+        { id: 'pps-2', sentence: 'She ___ her keys, so she can\'t open the door.', correctAnswer: 'has lost', options: ['has lost', 'lost', 'is losing'], explicacao: 'A ação de perder as chaves aconteceu no passado, mas o resultado afeta o presente (Present Perfect Simple).' },
+        { id: 'pps-3', sentence: 'I ___ my homework already.', correctAnswer: 'have finished', options: ['have finished', 'finished', 'am finishing'], explicacao: 'Ação concluída em um passado recente, com resultado no presente (Present Perfect Simple).' },
+        { id: 'pps-4', sentence: 'He ___ to Japan twice.', correctAnswer: 'has been', options: ['has been', 'was', 'went'], explicacao: 'Experiência de vida em tempo não especificado (Present Perfect Simple).' },
+        { id: 'pps-5', sentence: 'We ___ this song many times.', correctAnswer: 'have heard', options: ['have heard', 'heard', 'hear'], explicacao: 'Ação repetida no passado em momentos não especificados (Present Perfect Simple).' },
+        { id: 'pps-6', sentence: '___ you ever ___ a horse?', correctAnswer: 'Have you ever ridden', options: ['Have you ever ridden', 'Did you ever ride', 'Do you ever ride'], explicacao: 'Pergunta sobre experiência de vida (Present Perfect Simple).' },
+        { id: 'pps-7', sentence: 'The company ___ many new employees this year.', correctAnswer: 'has hired', options: ['has hired', 'hired', 'hires'], explicacao: 'Ação que ocorreu durante um período de tempo que ainda não terminou (this year) (Present Perfect Simple).' },
+        { id: 'pps-8', sentence: 'My parents ___ here yet.', correctAnswer: 'haven\'t arrived', options: ['haven\'t arrived', 'didn\'t arrive', 'won\'t arrive'], explicacao: 'Ação que se espera que aconteça, mas ainda não aconteceu (com "yet") (Present Perfect Simple).' },
+        { id: 'pps-9', sentence: 'I ___ Susan since last year.', correctAnswer: 'haven\'t seen', options: ['didn\'t see', 'haven\'t seen', 'won\'t see'], explicacao: 'Ação que começou no passado (last year) e continua no presente (Present Perfect Simple).' },
+        { id: 'pps-10', sentence: 'They ___ in this city for 20 years.', correctAnswer: 'have lived', options: ['lived', 'have lived', 'are living'], explicacao: 'Situação que começou no passado e continua até agora (Present Perfect Simple).' },
+        { id: 'pps-11', sentence: '___ you ___ dinner yet?', correctAnswer: 'Have you eaten', options: ['Did you eat', 'Have you eaten', 'Do you eat'], explicacao: 'Pergunta sobre uma ação concluída em um passado recente (Present Perfect Simple).' },
+        { id: 'pps-12', sentence: 'This is the best movie I ___!', correctAnswer: 'have ever watched', options: ['ever watched', 'have ever watched', 'was watching'], explicacao: 'Usado após superlativos para indicar uma experiência de vida (Present Perfect Simple).' },
+        { id: 'pps-13', sentence: 'We ___ to the new museum.', correctAnswer: 'have just been', options: ['just went', 'have just been', 'will go'], explicacao: 'Ação concluída há pouco tempo (com "just") (Present Perfect Simple).' },
+        { id: 'pps-14', sentence: 'He ___ his wallet and now he can\'t find it.', correctAnswer: 'has misplaced', options: ['misplaced', 'has misplaced', 'is misplacing'], explicacao: 'Ação no passado com resultado no presente (Present Perfect Simple).' },
+        { id: 'pps-15', sentence: 'The weather ___ nice all week.', correctAnswer: 'has been', options: ['was', 'has been', 'is'], explicacao: 'A situação ("o clima") começou no passado e se estende até o presente (Present Perfect Simple).' },
+        { id: 'pps-16', sentence: 'I ___ that book, so I don\'t need to buy it.', correctAnswer: 'have read', options: ['read', 'have read', 'am reading'], explicacao: 'Ação concluída no passado, mas o fato de tê-la lido afeta o presente (Present Perfect Simple).' },
+        { id: 'pps-17', sentence: 'She ___ her degree and is looking for a job.', correctAnswer: 'has finished', options: ['finished', 'has finished', 'is finishing'], explicacao: 'Ação concluída com relevância para o presente (Present Perfect Simple).' },
+        { id: 'pps-18', sentence: 'We ___ all the wine.', correctAnswer: 'have drunk', options: ['drank', 'have drunk', 'drink'], explicacao: 'Ação concluída, com ênfase no resultado (Present Perfect Simple).' },
+        { id: 'pps-19', sentence: 'They ___ their house since 2010.', correctAnswer: 'have owned', options: ['owned', 'have owned', 'are owning'], explicacao: 'Situação que começou no passado e continua até agora (Present Perfect Simple).' },
+        { id: 'pps-20', sentence: 'The baby ___ his dinner.', correctAnswer: 'has eaten', options: ['ate', 'has eaten', 'is eating'], explicacao: 'Ação concluída em um passado recente, com ênfase no resultado (Present Perfect Simple).' },
+        { id: 'pps-21', sentence: 'I ___ to London once.', correctAnswer: 'have been', options: ['have been', 'went', 'go'], explicacao: 'Experiência de vida (Present Perfect Simple).' },
+        { id: 'pps-22', sentence: 'She ___ the mail.', correctAnswer: 'has checked', options: ['checked', 'has checked', 'checks'], explicacao: 'Ação concluída em um passado recente (Present Perfect Simple).' },
+        { id: 'pps-23', sentence: 'We ___ for the bus for ten minutes.', correctAnswer: 'have waited', options: ['waited', 'have waited', 'were waiting'], explicacao: 'Duração de uma ação que acabou de terminar, focando na conclusão (Present Perfect Simple).' },
+        { id: 'pps-24', sentence: 'He ___ a new car.', correctAnswer: 'has bought', options: ['bought', 'has bought', 'buys'], explicacao: 'Ação concluída, com relevância para o presente (Present Perfect Simple).' },
+        { id: 'pps-25', sentence: 'The children ___ their toys away.', correctAnswer: 'have put', options: ['put', 'have put', 'are putting'], explicacao: 'Ação concluída com resultado no presente (Present Perfect Simple).' },
+        { id: 'pps-26', sentence: 'I ___ never ___ snow.', correctAnswer: 'have never seen', options: ['never saw', 'have never seen', 'didn\'t see'], explicacao: 'Experiência de vida até o momento presente (Present Perfect Simple).' },
+        { id: 'pps-27', sentence: 'They ___ their flight.', correctAnswer: 'have missed', options: ['missed', 'have missed', 'miss'], explicacao: 'Ação no passado com resultado no presente (Present Perfect Simple).' },
+        { id: 'pps-28', sentence: 'We ___ three houses so far.', correctAnswer: 'have sold', options: ['sold', 'have sold', 'sell'], explicacao: 'Ação concluída em um período de tempo não terminado (so far) (Present Perfect Simple).' },
+        { id: 'pps-29', sentence: 'The movie ___ at last.', correctAnswer: 'has begun', options: ['began', 'has begun', 'is beginning'], explicacao: 'Ação concluída em um passado recente (Present Perfect Simple).' },
+        { id: 'pps-30', sentence: 'She ___ to the doctor about her headache.', correctAnswer: 'has spoken', options: ['spoke', 'has spoken', 'speaks'], explicacao: 'Ação concluída, com ênfase no resultado (Present Perfect Simple).' },
+        { id: 'pps-31', sentence: 'I ___ my mind about the vacation.', correctAnswer: 'have changed', options: ['changed', 'have changed', 'am changing'], explicacao: 'Ação concluída com efeito no presente (Present Perfect Simple).' },
+        { id: 'pps-32', sentence: 'He ___ already ___ the museum.', correctAnswer: 'has already visited', options: ['already visited', 'has already visited', 'will visit'], explicacao: 'Ação já concluída antes do esperado (com "already") (Present Perfect Simple).' },
+        { id: 'pps-33', sentence: 'We ___ a lot of money on this investment.', correctAnswer: 'have invested', options: ['invested', 'have invested', 'invest'], explicacao: 'Ação concluída com impacto no presente (Present Perfect Simple).' },
+        { id: 'pps-34', sentence: 'The team ___ the championship.', correctAnswer: 'has won', options: ['won', 'has won', 'is winning'], explicacao: 'Ação concluída com relevância atual (Present Perfect Simple).' },
+        { id: 'pps-35', sentence: 'They ___ my email.', correctAnswer: 'have received', options: ['received', 'have received', 'receive'], explicacao: 'Ação concluída recentemente, com relevância no presente (Present Perfect Simple).' },
+        { id: 'pps-36', sentence: 'I ___ never ___ sushi.', correctAnswer: 'have never tried', options: ['never tried', 'have never tried', 'didn\'t try'], explicacao: 'Experiência de vida (Present Perfect Simple).' },
+        { id: 'pps-37', sentence: 'She ___ her leg, so she can\'t dance.', correctAnswer: 'has broken', options: ['broke', 'has broken', 'is breaking'], explicacao: 'Ação no passado com resultado no presente (Present Perfect Simple).' },
+        { id: 'pps-38', sentence: 'We ___ the car for ten years.', correctAnswer: 'have had', options: ['had', 'have had', 'are having'], explicacao: 'Situação que começou no passado e continua até agora (Present Perfect Simple).' },
+        { id: 'pps-39', sentence: 'He ___ home.', correctAnswer: 'has gone', options: ['went', 'has gone', 'goes'], explicacao: 'Ação concluída no passado, mas o sujeito está fora de casa no presente (Present Perfect Simple).' },
+        { id: 'pps-40', sentence: 'They ___ their work.', correctAnswer: 'have finished', options: ['finished', 'have finished', 'finish'], explicacao: 'Ação concluída em um passado recente (Present Perfect Simple).' },
+        { id: 'pps-41', sentence: 'The store ___ its prices.', correctAnswer: 'has lowered', options: ['lowered', 'has lowered', 'lowers'], explicacao: 'Ação concluída com efeito no presente (Present Perfect Simple).' },
+        { id: 'pps-42', sentence: 'I ___ a flat tire.', correctAnswer: 'have had', options: ['had', 'have had', 'am having'], explicacao: 'Ação no passado com relevância imediata no presente (Present Perfect Simple).' },
+        { id: 'pps-43', sentence: 'She ___ the report, but I haven\'t.', correctAnswer: 'has typed', options: ['typed', 'has typed', 'is typing'], explicacao: 'Ação concluída em um passado não especificado (Present Perfect Simple).' },
+        { id: 'pps-44', sentence: 'We ___ a new language.', correctAnswer: 'have learned', options: ['learned', 'have learned', 'learn'], explicacao: 'Ação concluída com resultado no presente (Present Perfect Simple).' },
+        { id: 'pps-45', sentence: 'He ___ his job.', correctAnswer: 'has quit', options: ['quit', 'has quit', 'quits'], explicacao: 'Ação concluída com efeito no presente (Present Perfect Simple).' },
+        { id: 'pps-46', sentence: 'They ___ us the truth.', correctAnswer: 'have told', options: ['told', 'have told', 'tell'], explicacao: 'Ação concluída em um passado não especificado (Present Perfect Simple).' },
+        { id: 'pps-47', sentence: 'I ___ never ___ to an opera.', correctAnswer: 'have never been', options: ['never went', 'have never been', 'didn\'t go'], explicacao: 'Experiência de vida até o momento presente (Present Perfect Simple).' },
+        { id: 'pps-48', sentence: 'The cat ___ the mouse.', correctAnswer: 'has caught', options: ['caught', 'has caught', 'is catching'], explicacao: 'Ação concluída com relevância imediata (Present Perfect Simple).' },
+        { id: 'pps-49', sentence: 'She ___ her favorite show.', correctAnswer: 'has recorded', options: ['recorded', 'has recorded', 'records'], explicacao: 'Ação concluída em um passado recente (Present Perfect Simple).' },
+        { id: 'pps-50', sentence: 'We ___ the bill.', correctAnswer: 'have paid', options: ['paid', 'have paid', 'pay'], explicacao: 'Ação concluída recentemente, com ênfase no resultado (Present Perfect Simple).' },
+
+        // --- Past Perfect Simple (25 exercícios) ---
+        { id: 'pas-10', sentence: 'She ___ the letter before I arrived.', correctAnswer: 'had written', options: ['wrote', 'had written', 'has written'], explicacao: 'Ação de escrever a carta aconteceu ANTES da minha chegada (Past Perfect Simple).' },
+        { id: 'pas-11', sentence: 'We realized we ___ him before.', correctAnswer: 'had met', options: ['met', 'had met', 'have met'], explicacao: 'Ação de encontrar aconteceu antes do momento de perceber, ambos no passado (Past Perfect Simple).' },
+        { id: 'pas-12', sentence: 'By the time the police arrived, the thief ___.', correctAnswer: 'had escaped', options: ['escaped', 'had escaped', 'has escaped'], explicacao: 'A fuga aconteceu ANTES da chegada da polícia (Past Perfect Simple).' },
+        { id: 'pas-13', sentence: 'He told me he ___ his wallet.', correctAnswer: 'had lost', options: ['lost', 'had lost', 'has lost'], explicacao: 'Ação de perder a carteira aconteceu antes dele me contar (Past Perfect Simple).' },
+        { id: 'pas-14', sentence: 'The film ___ when we got to the cinema.', correctAnswer: 'had already started', options: ['already started', 'had already started', 'has already started'], explicacao: 'O início do filme foi anterior à nossa chegada (Past Perfect Simple).' },
+        { id: 'pas-15', sentence: 'I couldn\'t buy the ticket because I ___ all my money.', correctAnswer: 'had spent', options: ['had spent', 'spent', 'have spent'], explicacao: 'Ação de gastar o dinheiro ocorreu antes da tentativa de comprar o ingresso (Past Perfect Simple).'},
+        { id: 'pas-16', sentence: 'She was not hungry because she ___ a large breakfast.', correctAnswer: 'had eaten', options: ['ate', 'had eaten', 'has eaten'], explicacao: 'O café da manhã aconteceu antes dela não sentir fome (Past Perfect Simple).' },
+        { id: 'pas-17', sentence: 'They ___ in that house for ten years before they decided to sell it.', correctAnswer: 'had lived', options: ['lived', 'had lived', 'have lived'], explicacao: 'A ação de morar na casa ocorreu por um período ANTES da decisão de vendê-la (Past Perfect Simple).' },
+        { id: 'pas-18', sentence: 'After the guests ___, we started cleaning.', correctAnswer: 'had left', options: ['left', 'had left', 'have left'], explicacao: 'A saída dos convidados é a primeira ação no passado (Past Perfect Simple).' },
+        { id: 'pas-19', sentence: 'Before she called, I ___ the good news.', correctAnswer: 'had heard', options: ['heard', 'had heard', 'have heard'], explicacao: 'Ouvir a notícia foi anterior ao telefonema (Past Perfect Simple).' },
+        { id: 'pas-20', sentence: 'He ___ his work before the deadline.', correctAnswer: 'had finished', options: ['finished', 'had finished', 'has finished'], explicacao: 'A conclusão do trabalho foi anterior ao prazo (Past Perfect Simple).' },
+        { id: 'pas-21', sentence: 'I ___ never ___ such a beautiful scene before I went there.', correctAnswer: 'had never seen', options: ['never saw', 'had never seen', 'have never seen'], explicacao: 'Experiência anterior a um momento no passado (Past Perfect Simple).' },
+        { id: 'pas-22', sentence: 'We ___ to the party when we realized we had no invitation.', correctAnswer: 'had gone', options: ['went', 'had gone', 'have gone'], explicacao: 'A ida à festa foi anterior à percepção da falta de convite (Past Perfect Simple).' },
+        { id: 'pas-23', sentence: 'The fire ___ out by the time the firemen arrived.', correctAnswer: 'had gone', options: ['went', 'had gone', 'has gone'], explicacao: 'O fogo se apagou ANTES da chegada dos bombeiros (Past Perfect Simple).' },
+        { id: 'pas-24', sentence: 'She ___ the rules, so she was disqualified.', correctAnswer: 'had broken', options: ['broke', 'had broken', 'has broken'], explicacao: 'A quebra das regras foi anterior à desqualificação (Past Perfect Simple).' },
+        { id: 'pas-25', sentence: 'They ___ the house before it started raining.', correctAnswer: 'had entered', options: ['entered', 'had entered', 'have entered'], explicacao: 'A entrada na casa foi anterior ao início da chuva (Past Perfect Simple).' },
+        { id: 'pas-26', sentence: 'When I called, he ___ to bed.', correctAnswer: 'had gone', options: ['went', 'had gone', 'has gone'], explicacao: 'Ação de ir para a cama foi anterior ao telefonema (Past Perfect Simple).' },
+        { id: 'pas-27', sentence: 'We thanked him for everything he ___ for us.', correctAnswer: 'had done', options: ['did', 'had done', 'has done'], explicacao: 'As ações de ajuda foram anteriores ao agradecimento (Past Perfect Simple).' },
+        { id: 'pas-28', sentence: 'She realized that I ___ the letter.', correctAnswer: 'had sent', options: ['sent', 'had sent', 'have sent'], explicacao: 'Ação de enviar a carta foi anterior à percepção (Past Perfect Simple).' },
+        { id: 'pas-29', sentence: 'The plane ___ by the time we reached the airport.', correctAnswer: 'had taken off', options: ['took off', 'had taken off', 'has taken off'], explicacao: 'A decolagem foi anterior à nossa chegada (Past Perfect Simple).' },
+        { id: 'pas-30', sentence: 'He apologized because he ___ a mistake.', correctAnswer: 'had made', options: ['made', 'had made', 'has made'], explicacao: 'O erro ocorreu antes do pedido de desculpas (Past Perfect Simple).' },
+        { id: 'pas-31', sentence: 'I gave her the book which I ___ the day before.', correctAnswer: 'had bought', options: ['bought', 'had bought', 'have bought'], explicacao: 'A compra ocorreu antes do dia anterior (Past Perfect Simple).' },
+        { id: 'pas-32', sentence: 'We ___ already ___ a decision when he gave his opinion.', correctAnswer: 'had already made', options: ['already made', 'had already made', 'have already made'], explicacao: 'A decisão foi anterior à opinião (Past Perfect Simple).' },
+        { id: 'pas-33', sentence: 'The concert ___ when the lights suddenly went out.', correctAnswer: 'had started', options: ['started', 'had started', 'has started'], explicacao: 'O início do show foi anterior à queda das luzes (Past Perfect Simple).' },
+        { id: 'pas-34', sentence: 'She only understood the lesson after she ___ the movie.', correctAnswer: 'had watched', options: ['watched', 'had watched', 'has watched'], explicacao: 'A compreensão veio depois de assistir ao filme (Past Perfect Simple).' },
+
+        // --- Future Perfect Simple (25 exercícios) ---
+        { id: 'fup-10', sentence: 'By the time you arrive, I ___ the dinner.', correctAnswer: 'will have cooked', options: ['will be cooking', 'will have cooked', 'cook'], explicacao: 'A ação de cozinhar estará completa ANTES de um ponto futuro (Future Perfect Simple).' },
+        { id: 'fup-11', sentence: 'They ___ their trip by next month.', correctAnswer: 'will have finished', options: ['will finish', 'will have finished', 'finish'], explicacao: 'A ação de terminar a viagem estará completa ANTES de um ponto futuro específico (Future Perfect Simple).' },
+        { id: 'fup-12', sentence: 'By 2030, she ___ a famous scientist.', correctAnswer: 'will have become', options: ['will become', 'will have become', 'becomes'], explicacao: 'A ação de se tornar cientista estará concluída antes de um ponto futuro específico (Future Perfect Simple).' },
+        { id: 'fup-13', sentence: '___ you ___ the report by the deadline?', correctAnswer: 'Will you have completed', options: ['Will you complete', 'Will you have completed', 'Do you complete'], explicacao: 'Pergunta se uma ação estará finalizada antes de um ponto de referência no futuro (Future Perfect Simple).' },
+        { id: 'fup-14', sentence: 'In two years, I ___ from university.', correctAnswer: 'will have graduated', options: ['will graduate', 'will have graduated', 'graduate'], explicacao: 'A ação de se formar estará completa antes do fim do período de dois anos (Future Perfect Simple).' },
+        { id: 'fup-15', sentence: 'He ___ enough money to buy a car by the end of the year.', correctAnswer: 'will have saved', options: ['will save', 'will have saved', 'saves'], explicacao: 'A ação de economizar dinheiro será concluída antes de um marco temporal futuro (Future Perfect Simple).' },
+        { id: 'fup-16', sentence: 'By the time the play starts, we ___ our seats.', correctAnswer: 'will have found', options: ['will find', 'will have found', 'find'], explicacao: 'A ação de encontrar os assentos estará completa antes do início da peça (Future Perfect Simple).' },
+        { id: 'fup-17', sentence: 'She probably ___ by the time we call.', correctAnswer: 'will have left', options: ['will leave', 'will have left', 'leaves'], explicacao: 'Indica uma ação que se espera estar concluída antes de outra ação futura (Future Perfect Simple).' },
+        { id: 'fup-18', sentence: 'Next week, we ___ married for ten years.', correctAnswer: 'will have been', options: ['will be', 'will have been', 'are'], explicacao: 'Indica a conclusão de um período de tempo em um ponto específico do futuro (Future Perfect Simple).' },
+        { id: 'fup-19', sentence: 'I ___ my car by next week.', correctAnswer: 'will have fixed', options: ['will fix', 'will have fixed', 'fix'], explicacao: 'A ação de consertar estará completa antes do ponto futuro (Future Perfect Simple).' },
+        { id: 'fup-20', sentence: 'By Christmas, we ___ to five different countries.', correctAnswer: 'will have traveled', options: ['will travel', 'will have traveled', 'travel'], explicacao: 'Ação concluída antes de um ponto futuro (Future Perfect Simple).' },
+        { id: 'fup-21', sentence: 'They ___ the contract by tomorrow morning.', correctAnswer: 'will have signed', options: ['will sign', 'will have signed', 'sign'], explicacao: 'Ação concluída antes de um ponto futuro (Future Perfect Simple).' },
+        { id: 'fup-22', sentence: '___ the sun ___ by 6 AM?', correctAnswer: 'Will the sun have risen', options: ['Will the sun rise', 'Will the sun have risen', 'Does the sun rise'], explicacao: 'Pergunta se a ação estará completa em um ponto futuro (Future Perfect Simple).' },
+        { id: 'fup-23', sentence: 'The team ___ the trophy before the coach retires.', correctAnswer: 'will have won', options: ['will win', 'will have won', 'wins'], explicacao: 'Ação concluída antes de um evento futuro (Future Perfect Simple).' },
+        { id: 'fup-24', sentence: 'By July, she ___ a marathon.', correctAnswer: 'will have run', options: ['will run', 'will have run', 'runs'], explicacao: 'Ação concluída antes do marco temporal (Future Perfect Simple).' },
+        { id: 'fup-25', sentence: 'We ___ all the cookies before the party starts.', correctAnswer: 'will have eaten', options: ['will eat', 'will have eaten', 'eat'], explicacao: 'Ação concluída antes de um evento futuro (Future Perfect Simple).' },
+        { id: 'fup-26', sentence: 'He ___ his book by the end of the month.', correctAnswer: 'will have published', options: ['will publish', 'will have published', 'publishes'], explicacao: 'Ação concluída antes de um ponto futuro (Future Perfect Simple).' },
+        { id: 'fup-27', sentence: 'I ___ the report when you call me.', correctAnswer: 'will have sent', options: ['will send', 'will have sent', 'send'], explicacao: 'Ação concluída antes de outra ação futura (Future Perfect Simple).' },
+        { id: 'fup-28', sentence: 'They ___ the new bridge by the deadline.', correctAnswer: 'will have built', options: ['will build', 'will have built', 'build'], explicacao: 'Ação concluída antes do prazo final (Future Perfect Simple).' },
+        { id: 'fup-29', sentence: 'She ___ her mind by the time we leave.', correctAnswer: 'will have changed', options: ['will change', 'will have changed', 'changes'], explicacao: 'Ação concluída antes de um evento futuro (Future Perfect Simple).' },
+        { id: 'fup-30', sentence: 'By this time tomorrow, I ___ my presentation.', correctAnswer: 'will have delivered', options: ['will deliver', 'will have delivered', 'deliver'], explicacao: 'Ação concluída antes do ponto futuro (Future Perfect Simple).' },
+        { id: 'fup-31', sentence: 'We ___ all the cities on our list by the end of the tour.', correctAnswer: 'will have visited', options: ['will visit', 'will have visited', 'visit'], explicacao: 'Ação concluída antes do marco temporal (Future Perfect Simple).' },
+        { id: 'fup-32', sentence: 'He ___ his house before he sells it.', correctAnswer: 'will have cleaned', options: ['will clean', 'will have cleaned', 'cleans'], explicacao: 'Ação concluída antes de outra ação futura (Future Perfect Simple).' },
+        { id: 'fup-33', sentence: 'The children ___ the story by bedtime.', correctAnswer: 'will have read', options: ['will read', 'will have read', 'read'], explicacao: 'Ação concluída antes do ponto futuro (Future Perfect Simple).' },
+        { id: 'fup-34', sentence: 'I ___ the secret by the time you ask me.', correctAnswer: 'will have revealed', options: ['will reveal', 'will have revealed', 'reveal'], explicacao: 'Ação concluída antes de outra ação futura (Future Perfect Simple).' },
+
+        // --- Present Perfect Continuous (25 exercícios) ---
+        { id: 'ppc-9', sentence: 'We ___ on this project since last year.', correctAnswer: 'have been working', options: ['have worked', 'have been working', 'are working'], explicacao: 'A ação começou no passado e ainda continua, enfatizando a duração (Present Perfect Continuous).' },
+        { id: 'ppc-10', sentence: 'He ___ all morning, so he is tired.', correctAnswer: 'has been running', options: ['has run', 'has been running', 'is running'], explicacao: 'A ação de correr esteve em andamento e o resultado é visível agora (Present Perfect Continuous).' },
+        { id: 'ppc-11', sentence: 'It ___ all day. I wish it would stop.', correctAnswer: 'has been raining', options: ['has rained', 'has been raining', 'rained'], explicacao: 'Enfatiza a duração de uma ação que começou no passado e continua no presente (Present Perfect Continuous).' },
+        { id: 'ppc-12', sentence: 'How long ___ you ___ for me?', correctAnswer: 'have you been waiting', options: ['have you waited', 'have you been waiting', 'did you wait'], explicacao: 'Pergunta sobre a duração de uma ação que começou no passado e continua até agora (Present Perfect Continuous).' },
+        { id: 'ppc-13', sentence: 'She ___ English for five years.', correctAnswer: 'has been learning', options: ['has learned', 'has been learning', 'is learning'], explicacao: 'Foco na duração de uma atividade contínua ao longo do tempo (Present Perfect Continuous).' },
+        { id: 'ppc-14', sentence: 'They are out of breath because they ___.', correctAnswer: 'have been exercising', options: ['have exercised', 'have been exercising', 'exercised'], explicacao: 'A causa de um resultado presente é uma atividade recente e contínua (Present Perfect Continuous).' },
+        { id: 'ppc-15', sentence: 'I ___ this book for weeks, and I\'m still not finished.', correctAnswer: 'have been reading', options: ['have read', 'have been reading', 'read'], explicacao: 'Enfatiza a duração de uma ação incompleta que continua até o presente (Present Perfect Continuous).' },
+        { id: 'ppc-16', sentence: 'The kids ___ video games since they got home.', correctAnswer: 'have been playing', options: ['have played', 'have been playing', 'play'], explicacao: 'Ação contínua desde um ponto específico no passado até agora (Present Perfect Continuous).' },
+        { id: 'ppc-17', sentence: 'Why are your hands dirty? I ___ in the garden.', correctAnswer: 'have been gardening', options: ['have gardened', 'have been gardening', 'gardened'], explicacao: 'A causa do resultado presente é uma atividade recente e contínua (Present Perfect Continuous).' },
+        { id: 'ppc-18', sentence: 'He ___ all night, so he can\'t think straight.', correctAnswer: 'has been studying', options: ['has studied', 'has been studying', 'studied'], explicacao: 'Enfatiza a duração de uma ação contínua que causou o estado presente (Present Perfect Continuous).' },
+        { id: 'ppc-19', sentence: 'We ___ about the problem for an hour.', correctAnswer: 'have been talking', options: ['have talked', 'have been talking', 'talked'], explicacao: 'Enfatiza a duração de uma ação contínua que acabou de terminar ou continua (Present Perfect Continuous).' },
+        { id: 'ppc-20', sentence: 'She ___ TV since the morning.', correctAnswer: 'has been watching', options: ['has watched', 'has been watching', 'watched'], explicacao: 'Ação contínua desde um ponto específico no passado até agora (Present Perfect Continuous).' },
+        { id: 'ppc-21', sentence: 'The company ___ new policies recently.', correctAnswer: 'has been implementing', options: ['has implemented', 'has been implementing', 'implemented'], explicacao: 'Ação contínua que começou e continua a acontecer em um período recente (Present Perfect Continuous).' },
+        { id: 'ppc-22', sentence: 'I ___ all morning.', correctAnswer: 'have been cooking', options: ['have cooked', 'have been cooking', 'cooked'], explicacao: 'Enfatiza a duração de uma ação contínua que acabou de terminar (Present Perfect Continuous).' },
+        { id: 'ppc-23', sentence: 'He ___ his old car for a long time.', correctAnswer: 'has been driving', options: ['has driven', 'has been driving', 'drove'], explicacao: 'Foco na duração de uma atividade contínua (Present Perfect Continuous).' },
+        { id: 'ppc-24', sentence: 'They ___ here since May.', correctAnswer: 'have been living', options: ['have lived', 'have been living', 'lived'], explicacao: 'Situação que começou no passado e ainda continua (Present Perfect Continuous).' },
+        { id: 'ppc-25', sentence: 'We ___ for a new home.', correctAnswer: 'have been looking', options: ['have looked', 'have been looking', 'looked'], explicacao: 'Ação contínua com resultado no presente (Present Perfect Continuous).' },
+        { id: 'ppc-26', sentence: 'It ___ snow.', correctAnswer: 'has been snowing', options: ['has snowed', 'has been snowing', 'snowed'], explicacao: 'Ação contínua (nevar) que começou no passado e continua agora (Present Perfect Continuous).' },
+        { id: 'ppc-27', sentence: 'I ___ to call you, but your line was busy.', correctAnswer: 'have been trying', options: ['have tried', 'have been trying', 'tried'], explicacao: 'Enfatiza o processo ou esforço (Present Perfect Continuous).' },
+        { id: 'ppc-28', sentence: 'She ___ very hard recently.', correctAnswer: 'has been working', options: ['has worked', 'has been working', 'worked'], explicacao: 'Ação contínua que começou e continua a acontecer em um período recente (Present Perfect Continuous).' },
+        { id: 'ppc-29', sentence: 'The dogs ___ loudly all night.', correctAnswer: 'have been barking', options: ['have barked', 'have been barking', 'barked'], explicacao: 'Ação contínua que acabou de terminar, com foco na duração (Present Perfect Continuous).' },
+        { id: 'ppc-30', sentence: 'How long ___ she ___ for that answer?', correctAnswer: 'has she been searching', options: ['has she searched', 'has she been searching', 'did she search'], explicacao: 'Pergunta sobre a duração de uma ação contínua (Present Perfect Continuous).' },
+        { id: 'ppc-31', sentence: 'We ___ this show for hours.', correctAnswer: 'have been watching', options: ['have watched', 'have been watching', 'watched'], explicacao: 'Enfatiza a duração de uma ação que continua no presente (Present Perfect Continuous).' },
+        { id: 'ppc-32', sentence: 'He ___ all day, so he is exhausted.', correctAnswer: 'has been cycling', options: ['has cycled', 'has been cycling', 'cycled'], explicacao: 'Ação contínua que causou o estado presente (Present Perfect Continuous).' },
+        { id: 'ppc-33', sentence: 'I ___ well lately.', correctAnswer: 'haven\'t been sleeping', options: ['haven\'t slept', 'haven\'t been sleeping', 'didn\'t sleep'], explicacao: 'Enfatiza a falta de continuidade de uma ação ao longo de um período recente (Present Perfect Continuous).' },
+
+        // --- Past Perfect Continuous (25 exercícios) ---
+        { id: 'pac-9', sentence: 'They ___ for hours when he finally appeared.', correctAnswer: 'had been waiting', options: ['had waited', 'had been waiting', 'were waiting'], explicacao: 'A ação de esperar estava em andamento por um longo período ANTES de outro evento no passado (Past Perfect Continuous).' },
+        { id: 'pac-10', sentence: 'He was tired because he ___ all day.', correctAnswer: 'had been studying', options: ['had studied', 'had been studying', 'studied'], explicacao: 'A ação de estudar esteve em andamento por um tempo e causou a consequência no passado (estar cansado). Usa-se o Past Perfect Continuous.' },
+        { id: 'pac-11', sentence: 'Her eyes were red because she ___.', correctAnswer: 'had been crying', options: ['had cried', 'had been crying', 'cried'], explicacao: 'A ação contínua de chorar foi a causa do resultado no passado (olhos vermelhos) (Past Perfect Continuous).' },
+        { id: 'pac-12', sentence: 'We ___ for just a few minutes when the bus arrived.', correctAnswer: 'had been waiting', options: ['had waited', 'had been waiting', 'waited'], explicacao: 'Enfatiza a duração (curta, neste caso) de uma ação que foi interrompida por outra no passado (Past Perfect Continuous).' },
+        { id: 'pac-13', sentence: 'He failed the test because he ___ attention.', correctAnswer: 'had not been paying', options: ['had not paid', 'had not been paying', 'didn\'t pay'], explicacao: 'A ação contínua (ou a falta dela) de prestar atenção causou o resultado no passado (Past Perfect Continuous).' },
+        { id: 'pac-14', sentence: 'The ground was wet because it ___.', correctAnswer: 'had been raining', options: ['had rained', 'had been raining', 'rained'], explicacao: 'A ação contínua de chover causou a condição do solo no passado (Past Perfect Continuous).' },
+        { id: 'pac-15', sentence: 'Before she moved, she ___ in London for five years.', correctAnswer: 'had been living', options: ['had lived', 'had been living', 'lived'], explicacao: 'Enfatiza a duração de uma situação anterior a outro evento no passado (Past Perfect Continuous).' },
+        { id: 'pac-16', sentence: 'I could smell the cookies because my mom ___ all afternoon.', correctAnswer: 'had been baking', options: ['had baked', 'had been baking', 'baked'], explicacao: 'A ação contínua de assar causou o resultado no passado (o cheiro) (Past Perfect Continuous).' },
+        { id: 'pac-17', sentence: 'She was angry because she ___ for over an hour.', correctAnswer: 'had been waiting', options: ['had waited', 'had been waiting', 'waited'], explicacao: 'A duração da ação contínua de esperar foi a causa da raiva no passado (Past Perfect Continuous).' },
+        { id: 'pac-18', sentence: 'We ___ for five days before we found the solution.', correctAnswer: 'had been searching', options: ['had searched', 'had been searching', 'searched'], explicacao: 'Enfatiza a duração da ação antes de ela ser concluída (Past Perfect Continuous).' },
+        { id: 'pac-19', sentence: 'The machine broke down because it ___ too hard.', correctAnswer: 'had been working', options: ['had worked', 'had been working', 'worked'], explicacao: 'A ação contínua causou a consequência no passado (Past Perfect Continuous).' },
+        { id: 'pac-20', sentence: 'He had a terrible cough because he ___ a pack of cigarettes a day.', correctAnswer: 'had been smoking', options: ['had smoked', 'had been smoking', 'smoked'], explicacao: 'Hábito contínuo anterior a um ponto no passado (Past Perfect Continuous).' },
+        { id: 'pac-21', sentence: 'The students ___ on their papers all morning when the fire alarm rang.', correctAnswer: 'had been writing', options: ['had written', 'had been writing', 'wrote'], explicacao: 'Ação contínua que foi interrompida por outra no passado (Past Perfect Continuous).' },
+        { id: 'pac-22', sentence: 'I ___ for two months when I finally received the payment.', correctAnswer: 'had been negotiating', options: ['had negotiated', 'had been negotiating', 'negotiated'], explicacao: 'Enfatiza a duração da negociação antes da conclusão (Past Perfect Continuous).' },
+        { id: 'pac-23', sentence: 'She felt sick because she ___ too much at the party.', correctAnswer: 'had been eating', options: ['had eaten', 'had been eating', 'ate'], explicacao: 'A ação contínua de comer causou o resultado no passado (Past Perfect Continuous).' },
+        { id: 'pac-24', sentence: 'Before that day, they ___ together for ten years.', correctAnswer: 'had been collaborating', options: ['had collaborated', 'had been collaborating', 'collaborated'], explicacao: 'Enfatiza a duração da colaboração anterior a um momento no passado (Past Perfect Continuous).' },
+        { id: 'pac-25', sentence: 'The road was closed because it ___ since the night before.', correctAnswer: 'had been snowing', options: ['had snowed', 'had been snowing', 'snowed'], explicacao: 'A ação contínua de chover causou a condição da estrada no passado (Past Perfect Continuous).' },
+        { id: 'pac-26', sentence: 'He lost his voice because he ___ loudly.', correctAnswer: 'had been shouting', options: ['had shouted', 'had been shouting', 'shouted'], explicacao: 'A ação contínua (gritar) causou o resultado no passado (Past Perfect Continuous).' },
+        { id: 'pac-27', sentence: 'We ___ all morning when we finally took a break.', correctAnswer: 'had been cleaning', options: ['had cleaned', 'had been cleaning', 'cleaned'], explicacao: 'Enfatiza a duração da limpeza antes da pausa (Past Perfect Continuous).' },
+        { id: 'pac-28', sentence: 'How long ___ you ___ when the call dropped?', correctAnswer: 'had you been talking', options: ['had you talked', 'had you been talking', 'did you talk'], explicacao: 'Pergunta sobre a duração de uma ação que estava em andamento no momento de outra ação passada (Past Perfect Continuous).' },
+        { id: 'pac-29', sentence: 'I was soaked because I ___ in the rain.', correctAnswer: 'had been walking', options: ['had walked', 'had been walking', 'walked'], explicacao: 'A ação contínua de caminhar causou o resultado no passado (Past Perfect Continuous).' },
+        { id: 'pac-30', sentence: 'Before they started, they ___ for the right materials.', correctAnswer: 'had been searching', options: ['had searched', 'had been searching', 'searched'], explicacao: 'Enfatiza a duração de uma ação anterior ao início de outra (Past Perfect Continuous).' },
+        { id: 'pac-31', sentence: 'She was exhausted because she ___ without stopping.', correctAnswer: 'had been traveling', options: ['had traveled', 'had been traveling', 'traveled'], explicacao: 'A ação contínua causou o estado de exaustão no passado (Past Perfect Continuous).' },
+        { id: 'pac-32', sentence: 'The team ___ for five months before the big match.', correctAnswer: 'had been preparing', options: ['had prepared', 'had been preparing', 'prepared'], explicacao: 'Enfatiza a duração da preparação anterior a um evento no passado (Past Perfect Continuous).' },
+        { id: 'pac-33', sentence: 'He finally understood why his grades ___ badly.', correctAnswer: 'had been falling', options: ['had fallen', 'had been falling', 'fell'], explicacao: 'A ênfase é na queda contínua das notas antes do momento da compreensão (Past Perfect Continuous).' },
+
+        // --- Future Perfect Continuous (25 exercícios) ---
+        { id: 'fuc-8', sentence: 'By 5 o\'clock, I ___ on this report for three hours.', correctAnswer: 'will have been working', options: ['will have worked', 'will have been working', 'will work'], explicacao: 'A ação de trabalhar estará em andamento e terá uma duração específica no futuro (Future Perfect Continuous).' },
+        { id: 'fuc-9', sentence: 'By the end of the month, she ___ here for ten years.', correctAnswer: 'will have been working', options: ['will have worked', 'will have been working', 'will work'], explicacao: 'A ação de trabalhar estará em andamento por um período de tempo até um ponto futuro (Future Perfect Continuous).' },
+        { id: 'fuc-10', sentence: 'In September, we ___ in this house for a year.', correctAnswer: 'will have been living', options: ['will have lived', 'will have been living', 'will live'], explicacao: 'Enfatiza a duração de uma situação que continuará até um ponto futuro (Future Perfect Continuous).' },
+        { id: 'fuc-11', sentence: 'When he turns thirty, he ___ piano for twenty years.', correctAnswer: 'will have been playing', options: ['will have played', 'will have been playing', 'will play'], explicacao: 'Foco na duração de uma ação contínua que se estenderá até um marco futuro (Future Perfect Continuous).' },
+        { id: 'fuc-12', sentence: 'By the time you finish your call, I ___ for an hour.', correctAnswer: 'will have been waiting', options: ['will have waited', 'will have been waiting', 'will wait'], explicacao: 'Enfatiza a duração de uma espera que continuará até que outro evento futuro aconteça (Future Perfect Continuous).' },
+        { id: 'fuc-13', sentence: 'Next month, I ___ this diet for six months.', correctAnswer: 'will have been following', options: ['will have followed', 'will have been following', 'will follow'], explicacao: 'Descreve a duração de uma ação contínua até um ponto específico no futuro (Future Perfect Continuous).' },
+        { id: 'fuc-14', sentence: 'How long ___ you ___ when you finally retire?', correctAnswer: 'will you have been working', options: ['will you have worked', 'will you have been working', 'will you work'], explicacao: 'Pergunta sobre a duração total de uma ação que continuará até um ponto futuro (Future Perfect Continuous).' },
+        { id: 'fuc-15', sentence: 'By July, the construction crew ___ on the new road for a year.', correctAnswer: 'will have been building', options: ['will have built', 'will have been building', 'will build'], explicacao: 'Ação contínua de construir que terá uma duração específica no futuro (Future Perfect Continuous).' },
+        { id: 'fuc-16', sentence: 'She ___ TV for three hours by the time her favorite show starts.', correctAnswer: 'will have been watching', options: ['will have watched', 'will have been watching', 'will watch'], explicacao: 'Ação contínua que terá durado um período até um ponto futuro (Future Perfect Continuous).' },
+        { id: 'fuc-17', sentence: 'In ten minutes, I ___ for the bus for half an hour.', correctAnswer: 'will have been waiting', options: ['will have waited', 'will have been waiting', 'will wait'], explicacao: 'Enfatiza a duração da espera que se completará em um ponto futuro (Future Perfect Continuous).' },
+        { id: 'fuc-18', sentence: 'By the end of the day, we ___ all over the city.', correctAnswer: 'will have been walking', options: ['will have walked', 'will have been walking', 'will walk'], explicacao: 'Enfatiza a duração e o processo de caminhar até um ponto futuro (Future Perfect Continuous).' },
+        { id: 'fuc-19', sentence: 'The pilot ___ the plane for twelve hours by the time they land.', correctAnswer: 'will have been flying', options: ['will have flown', 'will have been flying', 'will fly'], explicacao: 'Ação contínua que terá durado 12 horas até o momento do pouso (Future Perfect Continuous).' },
+        { id: 'fuc-20', sentence: 'By next weekend, I ___ on my presentation for two weeks.', correctAnswer: 'will have been preparing', options: ['will have prepared', 'will have been preparing', 'will prepare'], explicacao: 'Enfatiza a duração do processo de preparação (Future Perfect Continuous).' },
+        { id: 'fuc-21', sentence: 'When the meeting finishes, he ___ for four hours.', correctAnswer: 'will have been talking', options: ['will have talked', 'will have been talking', 'will talk'], explicacao: 'Ação contínua de falar que terá uma duração específica no futuro (Future Perfect Continuous).' },
+        { id: 'fuc-22', sentence: 'I ___ this program for five minutes when the computer crashes.', correctAnswer: 'will have been using', options: ['will have used', 'will have been using', 'will use'], explicacao: 'Ação contínua que será interrompida por outra no futuro (Future Perfect Continuous).' },
+        { id: 'fuc-23', sentence: 'By midnight, the band ___ for six hours straight.', correctAnswer: 'will have been playing', options: ['will have played', 'will have been playing', 'will play'], explicacao: 'Enfatiza a duração da performance da banda até o ponto futuro (Future Perfect Continuous).' },
+        { id: 'fuc-24', sentence: 'She ___ that novel all afternoon when her mother calls.', correctAnswer: 'will have been reading', options: ['will have read', 'will have been reading', 'will read'], explicacao: 'Ação contínua que será interrompida por outra no futuro (Future Perfect Continuous).' },
+        { id: 'fuc-25', sentence: 'In May, they ___ their new strategy for a quarter.', correctAnswer: 'will have been implementing', options: ['will have implemented', 'will have been implementing', 'will implement'], explicacao: 'Foco na duração da implementação até o ponto futuro (Future Perfect Continuous).' },
+        { id: 'fuc-26', sentence: 'By his birthday, he ___ to save money for six months.', correctAnswer: 'will have been trying', options: ['will have tried', 'will have been trying', 'will try'], explicacao: 'Enfatiza a duração do esforço contínuo até o marco futuro (Future Perfect Continuous).' },
+        { id: 'fuc-27', sentence: 'We ___ for hours before we finally take a break.', correctAnswer: 'will have been negotiating', options: ['will have negotiated', 'will have been negotiating', 'will negotiate'], explicacao: 'Enfatiza a duração do processo de negociação (Future Perfect Continuous).' },
+        { id: 'fuc-28', sentence: 'How long ___ the children ___ by the time we get there?', correctAnswer: 'will the children have been sleeping', options: ['will the children have slept', 'will the children have been sleeping', 'will the children sleep'], explicacao: 'Pergunta sobre a duração contínua de uma ação até um ponto futuro (Future Perfect Continuous).' },
+        { id: 'fuc-29', sentence: 'By the time I retire, I ___ this company for forty years.', correctAnswer: 'will have been leading', options: ['will have led', 'will have been leading', 'will lead'], explicacao: 'Enfatiza a duração da liderança até o marco futuro (Future Perfect Continuous).' },
+        { id: 'fuc-30', sentence: 'Next Sunday, she ___ in the marathon for two hours when she reaches the finish line.', correctAnswer: 'will have been running', options: ['will have run', 'will have been running', 'will run'], explicacao: 'Ação contínua que terá uma duração específica no ponto de conclusão (Future Perfect Continuous).' },
+        { id: 'fuc-31', sentence: 'By the time the store closes, I ___ shopping for five hours.', correctAnswer: 'will have been shopping', options: ['will have shopped', 'will have been shopping', 'will shop'], explicacao: 'Enfatiza a duração do processo de compra (Future Perfect Continuous).' },
+        { id: 'fuc-32', sentence: 'He ___ his research for ten years when he publishes his findings.', correctAnswer: 'will have been conducting', options: ['will have conducted', 'will have been conducting', 'will conduct'], explicacao: 'Enfatiza a duração do processo de pesquisa antes da publicação (Future Perfect Continuous).' },
+    ];
+
+    const container = document.getElementById('exercicios-container');
+    const placarAcertosGeralEl = document.getElementById('acertos-geral');
+    const placarErrosGeralEl = document.getElementById('erros-geral');
+    const resetButton = document.getElementById('reset-btn'); 
+
+    let eventListenerRef;
+
+    function shuffleArray(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+        }
+    }
+
+    function createExerciseHTML(exerciseData, index) {
+        const shuffledOptions = [...exerciseData.options];
+        shuffleArray(shuffledOptions);
+        const optionsHTML = shuffledOptions.map(option => `<button class="option-button" data-resposta="${option}">${option}</button>`).join('');
+        
+        // Substitui a lacuna com a formatação
+        const sentenceHTML = exerciseData.sentence.replace(/___/g, '<span class="blank">___</span>');
+
+        return `
+            <section class="exercicio-card" data-id="${exerciseData.id}">
+                <h2>Exercício ${index + 1}</h2>
+                <div class="question-container">
+                    <p>${sentenceHTML}</p>
+                    <div class="options-container">${optionsHTML}</div>
+                </div>
+                <div class="explanation-container"><p>${exerciseData.explicacao}</p></div>
+            </section>
+        `;
+    }
+    
+    function handleAnswer(event) {
+        const button = event.target.closest('.option-button');
+        if (!button || button.disabled) return;
+
+        const card = button.closest('.exercicio-card');
+        const exerciseId = card.dataset.id;
+        const exerciseData = exercises.find(e => e.id === exerciseId);
+        const userAnswer = button.dataset.resposta;
+        const allButtons = card.querySelectorAll('.option-button');
+        
+        allButtons.forEach(btn => btn.disabled = true);
+        
+        const explanationEl = card.querySelector('.explanation-container');
+        explanationEl.classList.add('visible');
+
+        if (userAnswer === exerciseData.correctAnswer) {
+            button.classList.add('correto');
+            placarAcertosGeralEl.textContent = parseInt(placarAcertosGeralEl.textContent) + 1;
+        } else {
+            button.classList.add('incorreto');
+            const correctButton = Array.from(allButtons).find(btn => btn.dataset.resposta === exerciseData.correctAnswer);
+            if (correctButton) correctButton.classList.add('correto');
+            placarErrosGeralEl.textContent = parseInt(placarErrosGeralEl.textContent) + 1;
+        }
+    }
+
+    function startGame() {
+        const shuffledExercises = [...exercises];
+        shuffleArray(shuffledExercises);
+        container.innerHTML = shuffledExercises.map((exerciseData, index) => createExerciseHTML(exerciseData, index)).join('');
+        
+        // Remove o listener antigo se ele existir
+        if (eventListenerRef) {
+            container.removeEventListener('click', eventListenerRef);
+        }
+        
+        // Define o novo listener
+        eventListenerRef = (event) => {
+            handleAnswer(event);
+        };
+        
+        // Adiciona o novo listener
+        container.addEventListener('click', eventListenerRef);
+        
+        placarAcertosGeralEl.textContent = '0';
+        placarErrosGeralEl.textContent = '0';
+        
+        // Rola a tela para o início do main content ao reiniciar
+        document.querySelector('main').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    resetButton.addEventListener('click', startGame);
+
+    startGame();
+});
+</script>
+
+</body>
+</html>

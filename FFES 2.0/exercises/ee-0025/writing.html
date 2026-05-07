@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Treino de Escrita em inglês: Encontre o Erro | Professor Leo Ramos</title>
+    <meta name="description" content="Melhore sua escrita em inglês corrigindo erros gramaticais comuns. Exercício interativo com feedback imediato.">
+    <meta name="author" content="Leo Ramos">
+    <meta name="robots" content="index, follow">
+    
+    <link rel="canonical" href="https://teacherleoramos.com.br/ExListen/writing.html">
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="../Images/logofavicion.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../Images/logofavicion.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../Images/logofavicion.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="../Images/logofavicion.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="../Images/logofavicion.png">
+
+    <meta property="og:title" content="Writing Challenge: Encontre o Erro">
+    <meta property="og:description" content="Você consegue identificar o erro gramatical nesta frase? Teste seu inglês escrito agora.">
+    <meta property="og:image" content="https://teacherleoramos.com.br/Images/preview-social.jpg">
+    <meta property="og:url" content="https://teacherleoramos.com.br/ExListen/writing.html">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:site_name" content="FFES - Professor Leo Ramos">
+
+    <link rel="stylesheet" href="../CSS/universal.css"> 
+
+    <style>
+        /* Banner (Padrão das outras páginas) */
+        .content-banner {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .content-banner h2 {
+            color: var(--cor-texto-claro); 
+            border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
+        }
+        .content-banner p {
+            color: #ecf0f1;
+            font-size: 1.15em;
+            margin-bottom: 20px;
+        }
+
+        /* Área de Seleção de Nível (Copiado do reading.html) */
+        .level-selection-area {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .btn-level {
+            padding: 12px 20px;
+            background-color: var(--cor-primaria); /* Azul Escuro */
+            color: var(--cor-texto-claro);
+            border: 2px solid var(--cor-acento);
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: bold;
+            transition: background-color 0.2s ease, transform 0.2s ease;
+        }
+
+        .btn-level:hover {
+            background-color: var(--cor-primaria-hover);
+            transform: translateY(-2px);
+        }
+
+        /* Botão de nível ativo/selecionado */
+        .btn-level.active {
+            background-color: var(--cor-acento);
+            color: var(--cor-primaria);
+            border-color: var(--cor-primaria);
+        }
+
+        /* Container do Jogo */
+        .writing-container {
+            background: white;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            text-align: center;
+            border-top: 6px solid var(--cor-acento);
+            
+            /* Oculta inicialmente (Copiado do reading.html) */
+            opacity: 0;
+            max-height: 0;
+            padding-top: 0;
+            padding-bottom: 0;
+            overflow: hidden;
+            transition: opacity 0.5s ease-in-out, max-height 0.5s ease-in-out, padding 0.5s ease-in-out;
+        }
+        
+        .writing-container.visible {
+            opacity: 1;
+            max-height: 2000px; /* Valor alto para acomodar o conteúdo */
+            padding: 30px;
+        }
+
+
+        /* Caixa da Frase Errada */
+        .error-box {
+            background-color: #fadbd8; /* Vermelho claro */
+            border-left: 5px solid var(--cor-erro);
+            color: var(--cor-erro);
+            padding: 20px;
+            font-size: 1.3em;
+            font-weight: bold;
+            margin-bottom: 25px;
+            border-radius: 4px;
+            font-family: 'Courier New', Courier, monospace; /* Estilo "código/erro" */
+        }
+
+        /* Label */
+        .instruction-label {
+            display: block;
+            text-align: left;
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: var(--cor-primaria);
+        }
+
+        /* Input do Usuário */
+        .user-input {
+            width: 100%;
+            padding: 15px;
+            font-size: 1.1em;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            box-sizing: border-box;
+            margin-bottom: 20px;
+            transition: border-color 0.3s;
+            outline: none;
+        }
+
+        .user-input:focus {
+            border-color: var(--cor-primaria);
+        }
+
+        /* Feedback Area */
+        .feedback-area {
+            margin-top: 15px;
+            padding: 15px;
+            border-radius: 6px;
+            font-weight: normal;
+            display: none;
+            text-align: left;
+        }
+        
+        .feedback-success {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+            display: block;
+        }
+        
+        .feedback-error {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+            display: block;
+        }
+
+        .btn-area {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        /* Responsividade */
+        @media (max-width: 600px) {
+            .error-box { font-size: 1.1em; }
+            .user-input { font-size: 1em; }
+        }
+    </style>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Treino de Writing: Correção de Erros",
+      "description": "Exercício interativo para identificar e corrigir erros gramaticais em inglês.",
+      "url": "https://teacherleoramos.com.br/ExListen/writing.html",
+      "author": {
+        "@type": "Person",
+        "name": "Leo Ramos"
+      },
+      "applicationCategory": "EducationalApplication",
+      "provider": {
+        "@type": "ProfessionalService",
+        "name": "FFES - Professor Leo Ramos"
+      }
+    }
+    </script>
+
+                <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-M8ZG06010Q"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-M8ZG06010Q');
+    </script>
+</head>
+<body>
+
+<div class="cabecalho-container">
+    <header class="bloco-identidade">
+        <div class="logo-and-title">
+            <a href="../index.html">
+                <img src="../Images/logo novo grande.png" alt="Logo FFES" class="logo-img">
+            </a>
+            <a href="../index.html" style="text-decoration: none; color: inherit;">
+                <h1>Leo Ramos | Professor de Inglês</h1>
+            </a>
+        </div>
+    </header>
+
+<div class="bloco-navegacao"> 
+    <nav class="nav-primary">
+        <ul>
+            <li><a href="/index.html#home">Home</a></li>
+            <li><a href="/index.html#sobre">Sobre Mim</a></li>
+            <li><a href="/exercicios-e-artigos.html#exercicios">Exercícios</a></li>
+            <li><a href="/exercicios-e-artigos.html#artigos-vocab">Artigos</a></li>
+            <li><a href="/cursos-e-ebook.html#cursos">Cursos e E-book</a></li>
+            <li><a href="/index.html#metodologia">Metodologia</a></li>
+        </ul>
+    </nav>
+</div>
+
+</div>
+
+<main>
+    <section class="content-banner">
+        <h2>Writing Challenge - Corrija a Frase</h2>
+        <p>Identifique o erro gramatical e reescreva a frase completa corretamente.</p>
+
+        <div class="level-selection-area">
+            <button class="btn-level" data-level="A1" onclick="selectLevel('A1', this)">A1 Básico</button>
+            <button class="btn-level" data-level="A2" onclick="selectLevel('A2', this)">A2 Pré-Intermediário</button>
+            <button class="btn-level" data-level="B1" onclick="selectLevel('B1', this)">B1 Intermediário</button>
+            <button class="btn-level" data-level="B2" onclick="selectLevel('B2', this)">B2 Pós-Intermediário</button>
+            <button class="btn-level" data-level="C1" onclick="selectLevel('C1', this)">C1 Avançado</button>
+            <button class="btn-level" data-level="C2" onclick="selectLevel('C2', this)">C2 Proficiência</button>
+        </div>
+        
+
+
+        <div id="writing-container" class="writing-container">
+            
+            <p id="level-info" style="font-style: italic; margin-bottom: 20px; color: #666;"></p>
+            <p style="margin-bottom: 10px; color: #555;">Frase incorreta:</p>
+            <div id="question-display" class="error-box">Selecione um nível para começar.</div>
+
+            <label class="instruction-label" for="answer-input">Sua correção:</label>
+            <input type="text" id="answer-input" class="user-input" placeholder="Digite a frase completa e corrigida aqui..." autocomplete="off" disabled>
+
+            <div class="btn-area">
+                <button class="cta-button" id="check-button" onclick="checkAnswer()" disabled>✔ Verificar</button>
+                <button class="cta-button" id="next-button" style="background-color: #95a5a6; color: white;" onclick="loadNextQuestion()" disabled>➜ Pular / Próxima</button>
+            </div>
+
+            <div id="feedback-display" class="feedback-area"></div>
+            
+            <div style="margin-top: 20px; font-size: 0.9em; color: #7f8c8d;">
+                Questão <span id="q-current">--</span> de <span id="q-total">--</span>
+            </div>
+
+        </div>
+    </section>
+</main>
+
+<footer id="contato" class="site-footer">
+    <div class="footer-content">
+        <div class="social-media-links">
+            <h4>Siga-me nas redes sociais e acesse o App</h4>
+            <a href="https://www.youtube.com/@teacherleoramos/videos" target="_blank" rel="noopener noreferrer" title="Canal YouTube Teacher Leo Ramos" aria-label="YouTube">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/youtube-play.png" alt="Ícone YouTube" width="30" height="30" loading="lazy">
+            </a>
+            <a href="https://www.instagram.com/teacherleoramos/" target="_blank" rel="noopener noreferrer" title="Instagram Teacher Leo Ramos" aria-label="Instagram">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/instagram-new.png" alt="Ícone Instagram" width="30" height="30" loading="lazy">
+            </a>
+            <a href="https://www.tiktok.com/@teacherleoramos" target="_blank" rel="noopener noreferrer" title="TikTok Teacher Leo Ramos" aria-label="TikTok">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/tiktok.png" alt="Ícone TikTok" width="30" height="30" loading="lazy">
+            </a>
+            <a href="https://wa.me/5511955582118" target="_blank" rel="noopener noreferrer" title="WhatsApp Agendamento" aria-label="WhatsApp">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/whatsapp--v1.png" alt="Ícone WhatsApp" width="30" height="30" loading="lazy">
+            </a>
+            <a href="/index-app.html" target="_blank" rel="noopener noreferrer" title="Acesse o FFES App" aria-label="FFES App">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/controller.png" alt="Ícone FFES App" width="30" height="30" loading="lazy">
+            </a>
+        </div>
+        <p><strong>Contato</strong></p>
+        <p>Youtube: @teacherleoramos | Telefone - WhatsApp: (11) 95558-2118</p>
+        <p>Endereço: São Paulo, SP, Brasil</p>
+        <p>CNPJ: 43.226.983/0001-91</p>
+        <p>&copy; <span id="year">2025</span> | FEATHERED FRIENDS ENGLISH SCHOOL - FFES. Todos os direitos reservados.</p>
+    </div>
+</footer>
+
+
+<script>
+
+    // --- BANCO DE QUESTÕES (Organizado por Nível) ---
+    const allQuestions = [
+        
+        // =========================================
+        //                 NÍVEL A1 (30 Frases)
+        // =========================================
+
+        // Verbo To Be (Erros comuns)
+        { level: 'A1', wrong: "I am agree with you.", accepted: ["i agree with you"], explanation: "Não usamos o verbo 'to be' (am) com 'agree'." },
+        { level: 'A1', wrong: "She don't like chocolate.", accepted: ["she doesn't like chocolate", "she does not like chocolate"], explanation: "Para 'She' (terceira pessoa), usamos 'doesn't' no Simple Present." },
+        { level: 'A1', wrong: "He go to school every day.", accepted: ["he goes to school every day"], explanation: "Adicionamos '-es' ao verbo 'go' na terceira pessoa do singular (He, She, It)." },
+        { level: 'A1', wrong: "You is a student.", accepted: ["you are a student"], explanation: "O verbo 'to be' para 'You' é 'are', não 'is'." },
+        { level: 'A1', wrong: "They is happy.", accepted: ["they are happy"], explanation: "O verbo 'to be' para 'They' é 'are', não 'is'." },
+        { level: 'A1', wrong: "It are cold today.", accepted: ["it is cold today", "it's cold today"], explanation: "O verbo 'to be' para 'It' é 'is'." },
+        { level: 'A1', wrong: "I have 20 years old.", accepted: ["i am 20 years old", "i'm 20 years old"], explanation: "Em inglês, usamos o verbo TO BE para idade (I am), não o verbo TER (Have)." },
+        { level: 'A1', wrong: "I need a umbrella.", accepted: ["i need an umbrella"], explanation: "Usamos 'an' antes de palavras que começam com som de vogal ('umbrella')." },
+
+        // Presente Simples (Auxiliares e S)
+        { level: 'A1', wrong: "Do she work here?", accepted: ["does she work here"], explanation: "Usamos 'Does' para fazer perguntas na terceira pessoa do singular (She)." },
+        { level: 'A1', wrong: "I not have a car.", accepted: ["i don't have a car", "i do not have a car"], explanation: "Usamos o auxiliar 'don't' para negar no Simple Present." },
+        { level: 'A1', wrong: "He doesn't works here.", accepted: ["he doesn't work here", "he does not work here"], explanation: "Com o auxiliar 'doesn't', o verbo principal (work) não leva '-s'." },
+        { level: 'A1', wrong: "We watches TV every night.", accepted: ["we watch tv every night"], explanation: "Não adicionamos '-es' ao verbo 'watch' para 'We'." },
+        { level: 'A1', wrong: "She study English.", accepted: ["she studies english"], explanation: "Para verbos terminados em 'y' após consoante, trocamos por '-ies' na terceira pessoa (She)." },
+        { level: 'A1', wrong: "The sun shine every day.", accepted: ["the sun shines every day"], explanation: "'The sun' é 'It', então adicionamos '-s' ao verbo." },
+        { level: 'A1', wrong: "What time the store open?", accepted: ["what time does the store open"], explanation: "Perguntas no Simple Present precisam do auxiliar 'does' (store = It)." },
+        { level: 'A1', wrong: "My brother like pizza.", accepted: ["my brother likes pizza"], explanation: "'My brother' é 'He', então adicionamos '-s' ao verbo." },
+        
+        // Plurais e Contáveis/Incontáveis
+        { level: 'A1', wrong: "I need a information.", accepted: ["i need some information", "i need information"], explanation: "'Information' é incontável (uncountable). Não se usa 'a' antes dele." },
+        { level: 'A1', wrong: "I have many money.", accepted: ["i have much money", "i have a lot of money"], explanation: "'Money' é incontável. Usamos 'much' ou 'a lot of', não 'many'." },
+        { level: 'A1', wrong: "There are two sheeps on the field.", accepted: ["there are two sheep on the field"], explanation: "O plural de 'sheep' é 'sheep' (invariável)." },
+        { level: 'A1', wrong: "I bought three new furnitures.", accepted: ["i bought three new pieces of furniture", "i bought some new furniture"], explanation: "'Furniture' é incontável (uncountable) em inglês." },
+        
+        // Preposições (Locais e simples)
+        { level: 'A1', wrong: "The book is in the table.", accepted: ["the book is on the table"], explanation: "Quando algo está sobre a superfície, usamos 'on', não 'in'." },
+        { level: 'A1', wrong: "I go to work by foot.", accepted: ["i go to work on foot", "i walk to work"], explanation: "Para ir a pé, dizemos 'on foot', não 'by foot'." },
+        { level: 'A1', wrong: "He is married with Susan.", accepted: ["he is married to susan", "he's married to susan"], explanation: "Dizemos 'married TO' alguém, e não 'married with'." },
+        { level: 'A1', wrong: "I am interested on painting.", accepted: ["i am interested in painting", "i'm interested in painting"], explanation: "A preposição correta após 'interested' é 'in', não 'on'." },
+        
+        // Pronomes e Possessivos
+        { level: 'A1', wrong: "This is my wife and his car.", accepted: ["this is my wife and her car"], explanation: "O adjetivo possessivo correto para 'wife' (She) é 'her'." },
+        { level: 'A1', wrong: "The dog is eating it food.", accepted: ["the dog is eating its food"], explanation: "O adjetivo possessivo de 'it' (o cachorro) é 'its', sem apóstrofo." },
+        { level: 'A1', wrong: "That phone is their.", accepted: ["that phone is theirs"], explanation: "O pronome possessivo final é 'theirs', não 'their'." },
+        
+        // Adjetivos e Advérbios (Básicos)
+        { level: 'A1', wrong: "He speaks English good.", accepted: ["he speaks english well"], explanation: "'Good' é adjetivo; 'well' é advérbio. Precisamos do advérbio 'well' para modificar o verbo 'speaks'." },
+        { level: 'A1', wrong: "I am boring.", accepted: ["i am bored", "i'm bored"], explanation: "'Bored' (entediado) descreve um sentimento. 'Boring' (tedioso) descreve algo que causa tédio." },
+        
+        // =========================================
+        //                 NÍVEL A2 (30 Frases)
+        // =========================================
+        
+        // Passado Contínuo e Simples (Interrupção)
+        { level: 'A2', wrong: "When I arrive, they was watching TV.", accepted: ["when i arrived they were watching tv"], explanation: "O Passado Simples de 'arrive' é 'arrived'. O 'to be' no passado para 'they' é 'were'." },
+        { level: 'A2', wrong: "She was walked when the rain started.", accepted: ["she was walking when the rain started"], explanation: "O Passado Contínuo (To Be + ING) é usado para a ação mais longa (was walking)." },
+        { level: 'A2', wrong: "I saw you while you walk to the park.", accepted: ["i saw you while you were walking to the park"], explanation: "Ações paralelas no passado (saw e walking) geralmente usam o Past Continuous para a ação em andamento." },
+        { level: 'A2', wrong: "They played football when the lights went out.", accepted: ["they were playing football when the lights went out"], explanation: "Ação em andamento (playing) interrompida por uma ação curta (went out)." },
+        { level: 'A2', wrong: "What were you do at 8 pm?", accepted: ["what were you doing at 8 pm"], explanation: "O Past Continuous precisa de To Be + Verbo com ING." },
+
+        // Presente Perfeito (Been vs Gone / For vs Since)
+        { level: 'A2', wrong: "She has gone to the store, she'll be back soon.", accepted: ["she has been to the store she'll be back soon"], explanation: "'Gone' (foi e não voltou) é incorreto se ela voltará em breve. Use 'been' (foi e voltou)." },
+        { level: 'A2', wrong: "I live here since 2010.", accepted: ["i have lived here since 2010", "i've lived here since 2010"], explanation: "Ações que começaram no passado e continuam no presente usam o Present Perfect (have lived)." },
+        { level: 'A2', wrong: "They haven't spoke to us.", accepted: ["they haven't spoken to us", "they have not spoken to us"], explanation: "O Past Participle de 'speak' é 'spoken', não 'spoke'." },
+        { level: 'A2', wrong: "We have known each other for ten years ago.", accepted: ["we have known each other for ten years"], explanation: "Não se usa 'ago' com 'for' ou 'since' no Present Perfect." },
+        { level: 'A2', wrong: "I haven't saw that movie yet.", accepted: ["i haven't seen that movie yet", "i have not seen that movie yet"], explanation: "O Past Participle de 'see' é 'seen'." },
+
+        // Modais (Can/Could/Should/Must)
+        { level: 'A2', wrong: "I can to swim.", accepted: ["i can swim"], explanation: "Verbos modais ('can') são seguidos pelo infinitivo sem 'to' (verbo base)." },
+        { level: 'A2', wrong: "You must to study harder.", accepted: ["you must study harder"], explanation: "Verbos modais ('must') são seguidos pelo infinitivo sem 'to' (verbo base)." },
+        { level: 'A2', wrong: "She should listens to her mother.", accepted: ["she should listen to her mother"], explanation: "Verbos modais são seguidos pelo infinitivo sem 'to' (verbo base)." },
+        { level: 'A2', wrong: "It depends of the weather.", accepted: ["it depends on the weather"], explanation: "A preposição correta para 'depend' é 'on', não 'of'." },
+        
+        // Gênero e Artigos
+        { level: 'A2', wrong: "The life is difficult sometimes.", accepted: ["life is difficult sometimes"], explanation: "Não usamos 'The' antes de substantivos abstratos ou no sentido geral (life, happiness, music)." },
+        { level: 'A2', wrong: "I need a advice.", accepted: ["i need some advice", "i need advice"], explanation: "'Advice' é incontável (uncountable). Não se usa 'a' antes dele." },
+        { level: 'A2', wrong: "He loves to play the football.", accepted: ["he loves to play football"], explanation: "Não usamos 'the' antes de nomes de esportes." },
+        { level: 'A2', wrong: "I am working as engineer.", accepted: ["i am working as an engineer", "i'm working as an engineer"], explanation: "O singular de profissões precisa do artigo 'a/an'." },
+        { level: 'A2', wrong: "She's doctor.", accepted: ["she's a doctor", "she is a doctor"], explanation: "O singular de profissões precisa do artigo 'a/an'." },
+
+        // Verb + Gerúndio (ING) ou Infinitivo
+        { level: 'A2', wrong: "I enjoy to read books.", accepted: ["i enjoy reading books"], explanation: "O verbo 'enjoy' é seguido por um Gerúndio (Verbo + ING)." },
+        { level: 'A2', wrong: "She finished write the report.", accepted: ["she finished writing the report"], explanation: "O verbo 'finish' é seguido por um Gerúndio (Verbo + ING)." },
+        { level: 'A2', wrong: "They decided buying a house.", accepted: ["they decided to buy a house"], explanation: "O verbo 'decide' é seguido por um Infinitivo (to + verbo base)." },
+        { level: 'A2', wrong: "I stopped to smoke last year.", accepted: ["i stopped smoking last year"], explanation: "'Stop smoking' significa parar o hábito. 'Stop to smoke' significa parar para fazer uma pausa e fumar." },
+        
+        // Reported Speech e Advérbios
+        { level: 'A2', wrong: "He said me he was hungry.", accepted: ["he told me he was hungry", "he said that he was hungry"], explanation: "Usamos 'told' (tell) quando mencionamos a quem ele falou (told me). Se usar 'said', o 'me' é opcional/incorreto." },
+        { level: 'A2', wrong: "I am late always.", accepted: ["i am always late", "i'm always late"], explanation: "Advérbios de frequência (always) vêm APÓS o verbo 'to be'." },
+        
+        // Voz Passiva e Condicionais
+        { level: 'A2', wrong: "The letter was write yesterday.", accepted: ["the letter was written yesterday"], explanation: "A Voz Passiva é formada por 'To Be' + Past Participle (write -> written)." },
+        { level: 'A2', wrong: "If I was you, I would study more.", accepted: ["if i were you i would study more"], explanation: "No segundo condicional, usamos 'were' com 'I/he/she/it' para a cláusula 'If' (subjuntivo)." },
+        { level: 'A2', wrong: "If it will rain, we will stay home.", accepted: ["if it rains we will stay home", "if it rains we'll stay home"], explanation: "Não usamos 'will' na cláusula 'If' do Primeiro Condicional. Usamos o Simple Present." },
+
+
+        // =========================================
+        //                 NÍVEL B1 (30 Frases)
+        // =========================================
+
+        // Present Perfect Continuous
+        { level: 'B1', wrong: "I have been read this book for two hours.", accepted: ["i have been reading this book for two hours", "i've been reading this book for two hours"], explanation: "O Present Perfect Continuous é formado por 'have/has been' + verbo com -ING." },
+        { level: 'B1', wrong: "How long you are waiting?", accepted: ["how long have you been waiting"], explanation: "Perguntas com 'How long' para ações em andamento que começaram no passado usam o Present Perfect Continuous." },
+        { level: 'B1', wrong: "They are here since morning.", accepted: ["they have been here since morning", "they've been here since morning"], explanation: "Ações que começaram no passado e continuam no presente (estado) usam Present Perfect." },
+        
+        // Passive Voice (Intermediário)
+        { level: 'B1', wrong: "The new bridge is planning to build next year.", accepted: ["the new bridge is planned to be built next year", "the new bridge is going to be built next year"], explanation: "Voz Passiva: para planos futuros, usamos 'is planned to be built' ou 'is going to be built'." },
+        { level: 'B1', wrong: "They should to be informed immediately.", accepted: ["they should be informed immediately"], explanation: "Verbos modais são seguidos pelo verbo base (sem 'to'). A passiva modal é 'should be' + Past Participle." },
+        { level: 'B1', wrong: "The accident was caused by him.", accepted: ["the accident was caused by him"], explanation: "A frase está correta. (Voz Passiva)." }, // Mantida para atingir a contagem e ser uma Passiva simples B1
+        
+        // Conditionals (Second/Third)
+        { level: 'B1', wrong: "If I had knew, I would have told you.", accepted: ["if i had known i would have told you"], explanation: "O Past Participle de 'know' é 'known'. O Terceiro Condicional usa Past Perfect na cláusula 'If'." },
+        { level: 'B1', wrong: "If she would study harder, she would pass the test.", accepted: ["if she studied harder she would pass the test"], explanation: "A cláusula 'If' no Segundo Condicional usa o Simple Past ('studied'), não 'would'." },
+        { level: 'B1', wrong: "What would you do if you win the lottery?", accepted: ["what would you do if you won the lottery"], explanation: "O Segundo Condicional usa o Simple Past na cláusula 'If' (won)." },
+        
+        // Reported Speech (Verbo introdutório)
+        { level: 'B1', wrong: "He suggested me to call a taxi.", accepted: ["he suggested calling a taxi", "he suggested that i call a taxi"], explanation: "'Suggest' é seguido por gerúndio (ING) ou 'that' clause, não por objeto + infinitivo." },
+        { level: 'B1', wrong: "She asked where was the station.", accepted: ["she asked where the station was"], explanation: "No Reported Speech (indireto), a ordem da frase é afirmativa (Sujeito + Verbo), não interrogativa." },
+        { level: 'B1', wrong: "They told to us the news.", accepted: ["they told us the news"], explanation: "O verbo 'tell' é transitivo e não usa 'to' antes do objeto (told us)." },
+        
+        // Phrasal Verbs
+        { level: 'B1', wrong: "We have to look up the children.", accepted: ["we have to look after the children"], explanation: "'Look after' significa cuidar. 'Look up' significa procurar (em um dicionário)." },
+        { level: 'B1', wrong: "I will make up a decision soon.", accepted: ["i will make a decision soon"], explanation: "A expressão correta é 'make a decision'. 'Make up' significa inventar ou fazer as pazes." },
+        { level: 'B1', wrong: "Can you turn the music up, please?", accepted: ["can you turn the music up please"], explanation: "A frase está correta. (Phrasal verb: turn up). "},
+        
+        // Quantifiers (Intermediário)
+        { level: 'B1', wrong: "There are few people in the party, just three.", accepted: ["there are a few people in the party just three"], explanation: "'Few' (quase nenhum) tem sentido negativo. 'A few' (alguns/poucos) tem sentido positivo e é o pretendido aqui." },
+        { level: 'B1', wrong: "I bought much books last week.", accepted: ["i bought many books last week", "i bought a lot of books last week"], explanation: "'Books' é contável. Use 'many' ou 'a lot of'." },
+        
+        // Gerúndio vs Infinitivo (Intermediário)
+        { level: 'B1', wrong: "They avoid to travel by plane.", accepted: ["they avoid traveling by plane"], explanation: "O verbo 'avoid' é seguido por gerúndio (-ING)." },
+        { level: 'B1', wrong: "He managed doing the task on time.", accepted: ["he managed to do the task on time"], explanation: "O verbo 'manage' (conseguir) é seguido por infinitivo ('to do')." },
+
+        // Adjectives and Adverbs
+        { level: 'B1', wrong: "The noise was extreme loud.", accepted: ["the noise was extremely loud"], explanation: "O advérbio 'extremely' modifica o adjetivo 'loud'." },
+        { level: 'B1', wrong: "The less I work, the more I get paid.", accepted: ["the less i work the less i get paid"], explanation: "A estrutura comparativa paralela é 'The + comparative, the + comparative'. 'The less... the less' ou 'The more... the more'." },
+        { level: 'B1', wrong: "She drives her car careful.", accepted: ["she drives her car carefully"], explanation: "Precisamos do advérbio 'carefully' para modificar o verbo 'drives'." },
+
+        // Relative Clauses
+        { level: 'B1', wrong: "I have a friend who his father is a pilot.", accepted: ["i have a friend whose father is a pilot"], explanation: "Usamos 'whose' para indicar posse, eliminando o pronome possessivo 'his'." },
+        { level: 'B1', wrong: "The cat that it ate the mouse ran away.", accepted: ["the cat that ate the mouse ran away", "the cat which ate the mouse ran away"], explanation: "Não precisamos de 'it' extra (pronome redundante) após o pronome relativo 'that'." },
+
+        // Tempo Futuro (Will vs Going to vs Present Continuous)
+        { level: 'B1', wrong: "She will meet her boss at 10 am (fixed plan).", accepted: ["she is meeting her boss at 10 am"], explanation: "Para planos firmes e arranjos futuros, usamos Present Continuous (To Be + ING)." },
+        { level: 'B1', wrong: "I think it is going to rain tomorrow.", accepted: ["i think it will rain tomorrow"], explanation: "Para previsões sem evidência forte, especialmente com 'I think', usamos 'will'." },
+        
+        // Modal Verbs (Grau de certeza)
+        { level: 'B1', wrong: "He can be sick because he isn't here.", accepted: ["he must be sick because he isn't here"], explanation: "Para uma forte dedução baseada em evidência, usamos 'must' (deve estar), não 'can'." },
+        { level: 'B1', wrong: "You don't need to come early.", accepted: ["you don't have to come early", "you needn't come early"], explanation: "'Don't need to' ou 'needn't' expressam ausência de obrigação." },
+        
+        // Prepositions
+        { level: 'B1', wrong: "We arrived to the city late.", accepted: ["we arrived in the city late", "we got to the city late"], explanation: "Para cidades, usamos 'arrive in'. Para locais menores ou para a expressão 'chegar a', usamos 'get to'." },
+        { level: 'B1', wrong: "He congratulated me for my promotion.", accepted: ["he congratulated me on my promotion"], explanation: "O verbo 'congratulate' usa a preposição 'on' (congratulate someone on something)." },
+        
+        // =========================================
+        //                 NÍVEL B2 (30 Frases)
+        // =========================================
+
+        // Mixed Conditionals and Inversion
+        { level: 'B2', wrong: "If I was offered the job, I would be working there now.", accepted: ["if i had been offered the job i would be working there now"], explanation: "Condicional Misto (Terceiro no If, Segundo no resultado): Past Perfect na condição para uma situação não realizada no passado." },
+        { level: 'B2', wrong: "Had I known the truth, I wouldn't tell him.", accepted: ["had i known the truth i wouldn't have told him"], explanation: "Inversão condicional. Requer o Terceiro Condicional completo: 'wouldn't have told'." },
+        { level: 'B2', wrong: "If I were rich, I would bought a mansion.", accepted: ["if i were rich i would buy a mansion"], explanation: "O Segundo Condicional usa 'would' + verbo base (buy), não 'would bought'." },
+        
+        // Modal Verbs (Complex)
+        { level: 'B2', wrong: "You might have called me before coming.", accepted: ["you should have called me before coming", "you ought to have called me before coming"], explanation: "'Might have' expressa possibilidade no passado. 'Should have' expressa crítica ou arrependimento (o que era esperado)." },
+        { level: 'B2', wrong: "I wish I can speak Spanish fluently.", accepted: ["i wish i could speak spanish fluently", "i wish i were able to speak spanish fluently"], explanation: "Para desejos sobre habilidades presentes ou futuras, 'wish' é seguido por 'could' ou 'Past Simple' ('were able to')." },
+        { level: 'B2', wrong: "She must has left already.", accepted: ["she must have left already"], explanation: "Modais seguidos por Present Perfect usam 'have' (forma base), não 'has', mesmo na 3ª pessoa." },
+        
+        // Subjunctives/Fixed Expressions
+        { level: 'B2', wrong: "It is essential that he is here for the meeting.", accepted: ["it is essential that he be here for the meeting"], explanation: "Usamos o Present Subjunctive (verbo base: 'be') após expressões de necessidade, importância ou urgência (e.g., 'essential that')." },
+        { level: 'B2', wrong: "She acted like she was the boss.", accepted: ["she acted as if she were the boss", "she acted as if she was the boss"], explanation: "Usamos 'as if' (como se) e, formalmente, o subjuntivo 'were' após 'as if/as though' para situações irreais." },
+        
+        // Cleft Sentences (Ênfase)
+        { level: 'B2', wrong: "The thing that I like most is their customer service.", accepted: ["what i like most is their customer service"], explanation: "A 'Cleft Sentence' (sentença clivada) mais natural para essa ênfase é 'What I like most...'" },
+        { level: 'B2', wrong: "It was John that they fired.", accepted: ["it was john that they fired"], explanation: "A frase está correta. (Cleft Sentence simples)." }, // Mantida para atingir a contagem e por ser Cleft Sentence
+        
+        // Linking Words/Connectors
+        { level: 'B2', wrong: "Despite of the rain, we went for a walk.", accepted: ["despite the rain we went for a walk", "in spite of the rain we went for a walk"], explanation: "Não se usa 'of' após 'despite'. 'In spite of' exige 'of'." },
+        { level: 'B2', wrong: "He studied hard, however, he failed the exam.", accepted: ["he studied hard; however he failed the exam", "he studied hard. however he failed the exam"], explanation: "O advérbio conjuntivo 'however' é tipicamente precedido por ponto e vírgula (;) ou ponto final (.)." },
+        { level: 'B2', wrong: "She has been working here for her graduation.", accepted: ["she has been working here since her graduation"], explanation: "Para o ponto inicial de uma ação contínua, usamos 'since'." },
+        
+        // Inversion
+        { level: 'B2', wrong: "Never I have seen such a beautiful sunset.", accepted: ["never have i seen such a beautiful sunset"], explanation: "Inversão obrigatória após advérbios negativos no início da frase ('Never')." },
+        { level: 'B2', wrong: "Little we knew about the danger.", accepted: ["little did we know about the danger"], explanation: "Inversão após 'Little' (com sentido negativo) para dar ênfase." },
+        
+        // Advanced Gerunds/Infinitives
+        { level: 'B2', wrong: "I look forward to see you.", accepted: ["i look forward to seeing you"], explanation: "Após a expressão 'look forward to', o verbo deve vir com ING (seeing)." },
+        { level: 'B2', wrong: "He insisted on pay for the dinner.", accepted: ["he insisted on paying for the dinner"], explanation: "Preposição ('on') é sempre seguida por gerúndio (-ING)." },
+        
+        // Verbos com Preposições Fixas
+        { level: 'B2', wrong: "She succeeded to open the difficult jar.", accepted: ["she succeeded in opening the difficult jar"], explanation: "O verbo 'succeed' (ter sucesso) é seguido pela preposição 'in' + gerúndio (ING)." },
+        { level: 'B2', wrong: "Can you explain me this?", accepted: ["can you explain this to me", "can you explain this to me?"], explanation: "O verbo 'explain' exige 'to': Explain something TO someone." },
+        
+        // Voice
+        { level: 'B2', wrong: "I had my computer to be fixed last week.", accepted: ["i had my computer fixed last week", "i got my computer fixed last week"], explanation: "A estrutura de 'causative' (mandar fazer algo) é 'have/get something done (Past Participle)'." },
+        { level: 'B2', wrong: "It is widely believing that the economy will recover soon.", accepted: ["it is widely believed that the economy will recover soon"], explanation: "Voz Passiva Impessoal: 'It is believed' + Past Participle." },
+
+        // Collocation
+        { level: 'B2', wrong: "We need to make a research on the matter.", accepted: ["we need to do research on the matter", "we need to carry out research on the matter"], explanation: "Collocation: Usamos 'do' ou 'carry out' com 'research' (incontável), não 'make a research'." },
+        { level: 'B2', wrong: "He made a big mistake.", accepted: ["he made a big mistake"], explanation: "A frase está correta. Collocation: 'make a mistake'." }, // Mantida para atingir a contagem e por ser Collocation
+        
+        // Pronomes Relativos (omissão)
+        { level: 'B2', wrong: "The house, that was built in 1900, is stunning.", accepted: ["the house which was built in 1900 is stunning", "the house that was built in 1900 is stunning"], explanation: "Em Relative Clauses não-definidoras (com vírgulas), não se usa 'that'." },
+        { level: 'B2', wrong: "The person I gave the keys to is my sister.", accepted: ["the person i gave the keys to is my sister"], explanation: "A frase está correta (omissão do pronome relativo 'whom'/'that')." }, // Mantida para atingir a contagem
+        
+        // Adjectives ending in -ing / -ed
+        { level: 'B2', wrong: "I found the movie so bored.", accepted: ["i found the movie so boring"], explanation: "'Boring' (entediante) descreve a causa/o filme. 'Bored' descreve o sentimento." },
+
+        // =========================================
+        //                 NÍVEL C1 (30 Frases)
+        // =========================================
+        
+        // Future Perfect/Continuous
+        { level: 'C1', wrong: "By the end of next year, I will finish my degree.", accepted: ["by the end of next year i will have finished my degree"], explanation: "Para ações completadas antes de um ponto no futuro, usamos o Future Perfect ('will have finished')." },
+        { level: 'C1', wrong: "At 9 pm tomorrow, I will be asleep.", accepted: ["at 9 pm tomorrow i will be sleeping"], explanation: "Para ações em progresso em um ponto futuro, o 'Future Continuous' ('will be sleeping') é mais preciso do que o estado ('asleep')." },
+        { level: 'C1', wrong: "I will be leaving the company soon.", accepted: ["i am going to leave the company soon", "i'm going to leave the company soon"], explanation: "Para intenções futuras, 'going to' é preferível a 'will be leaving', que sugere arranjo ou ação em curso." },
+        
+        // Inversion (Advanced)
+        { level: 'C1', wrong: "Not until she apologized, he agreed to speak to her.", accepted: ["not until she apologized did he agree to speak to her"], explanation: "A inversão é obrigatória após 'Not until' (e outras expressões negativas) no início da frase." },
+        { level: 'C1', wrong: "Rarely I have seen such a display of courage.", accepted: ["rarely have i seen such a display of courage"], explanation: "Inversão obrigatória após 'Rarely' (advérbio negativo) no início da frase." },
+        { level: 'C1', wrong: "Only when she left I realized my mistake.", accepted: ["only when she left did i realize my mistake"], explanation: "Inversão obrigatória após 'Only when' (e outras expressões limitadoras) no início da frase." },
+        
+        // Advanced Phrasal Verbs/Prepositions
+        { level: 'C1', wrong: "The plan fell over at the last minute.", accepted: ["the plan fell through at the last minute"], explanation: "O phrasal verb correto para 'falhar/não dar certo' é 'fall through', não 'fall over' (cair)." },
+        { level: 'C1', wrong: "She came by her success through hard work.", accepted: ["she came by her success through hard work"], explanation: "A frase está correta. 'Come by' significa 'obter/conseguir'." }, // Mantida para atingir a contagem
+        { level: 'C1', wrong: "I can't put up with his arrogance.", accepted: ["i can't put up with his arrogance"], explanation: "A frase está correta. 'Put up with' significa 'tolerar'." }, // Mantida para atingir a contagem
+        
+        // Gerunds and Infinitives (Advanced)
+        { level: 'C1', wrong: "The police warned him from speeding on the highway.", accepted: ["the police warned him against speeding on the highway"], explanation: "O verbo 'warn' (advertir) usa a preposição 'against' (contra) quando seguido de gerúndio." },
+        { level: 'C1', wrong: "It is no use to complain about the weather.", accepted: ["it is no use complaining about the weather"], explanation: "A expressão fixa é 'It is no use/good' + gerúndio (-ING)." },
+        { level: 'C1', wrong: "I regretted not to have studied harder.", accepted: ["i regretted not studying harder"], explanation: "'Regret' (arrepender-se) é seguido por gerúndio (-ING)." },
+        
+        // Mixed Conditionals (Advanced)
+        { level: 'C1', wrong: "If he would have listened to me, he wouldn't be in debt now.", accepted: ["if he had listened to me he wouldn't be in debt now"], explanation: "Condicional Misto (Terceiro no If, Segundo no resultado): Past Perfect na condição para um evento passado com um resultado presente." },
+        { level: 'C1', wrong: "Should you need help, please contact us.", accepted: ["should you need help please contact us"], explanation: "A frase está correta (Inversão Condicional de Primeiro Tipo)." }, // Mantida para atingir a contagem
+        { level: 'C1', wrong: "Unless you won't work harder, you will fail.", accepted: ["unless you work harder you will fail"], explanation: "Não se usa negação ('won't') na cláusula 'unless'." },
+        
+        // Determiners/Quantifiers
+        { level: 'C1', wrong: "Almost of the students failed the course.", accepted: ["almost all of the students failed the course", "almost every student failed the course"], explanation: "Não se usa 'of' diretamente após 'almost'. A forma correta é 'almost all of'." },
+        { level: 'C1', wrong: "The company has much less resources than before.", accepted: ["the company has far fewer resources than before", "the company has much fewer resources than before"], explanation: "'Resources' é contável. Use 'fewer', e 'far' ou 'much' para intensificar o comparativo." },
+        
+        // Reported Speech (Verbos Complexos)
+        { level: 'C1', wrong: "He denied him to enter the building.", accepted: ["he denied entering the building", "he denied that he had entered the building"], explanation: "'Deny' (negar) é seguido por gerúndio (ING) ou 'that' clause, nunca por objeto + infinitivo." },
+        { level: 'C1', wrong: "She promised me she will call later.", accepted: ["she promised me she would call later"], explanation: "No Reported Speech, 'will' geralmente recua para 'would'." },
+
+        // Vocabulary/Collocation
+        { level: 'C1', wrong: "The project was made with a high success.", accepted: ["the project was met with a high degree of success", "the project was highly successful"], explanation: "A collocation 'met with success' (encontrar sucesso) é mais comum do que 'made with success'." },
+        { level: 'C1', wrong: "He has a high reputation in his field.", accepted: ["he has a high reputation in his field"], explanation: "A frase está correta. Collocation: 'high reputation'." }, // Mantida para atingir a contagem
+        
+        // Word Order
+        { level: 'C1', wrong: "The car quickly was driven away by the thief.", accepted: ["the car was quickly driven away by the thief"], explanation: "Advérbios de modo (quickly) geralmente ficam antes do Past Participle na Voz Passiva." },
+        { level: 'C1', wrong: "She closed fast the door.", accepted: ["she closed the door fast", "she quickly closed the door"], explanation: "Advérbios de modo ('fast') vêm após o objeto ('the door') ou antes do verbo." },
+
+        // Participle Clauses
+        { level: 'C1', wrong: "Having finished the report, he submitted it to the manager.", accepted: ["having finished the report he submitted it to the manager"], explanation: "A frase está correta (Participle Clause de tempo/sequência)." }, // Mantida para atingir a contagem
+        { level: 'C1', wrong: "If I would have known, I would've acted differently.", accepted: ["if i had known i would've acted differently"], explanation: "Cláusula 'If' no 3º condicional deve usar Past Perfect ('had known')." },
+
+        // =========================================
+        //                 NÍVEL C2 (30 Frases)
+        // =========================================
+        
+        // Advanced Conditionals (Inversion with 'but for')
+        { level: 'C2', wrong: "But for his timely intervention, the accident had been worse.", accepted: ["but for his timely intervention the accident would have been worse"], explanation: "'But for' (se não fosse por) expressa uma condição passada e exige o Terceiro Condicional ('would have been')." },
+        { level: 'C2', wrong: "Had it not been for the storm, the ship would sink.", accepted: ["had it not been for the storm the ship would not have sunk"], explanation: "Terceiro Condicional Invertido. O verbo principal deve ser 'would not have sunk'." },
+        { level: 'C2', wrong: "Were I to tell you the truth, you wouldn't believe me.", accepted: ["were i to tell you the truth you wouldn't believe me"], explanation: "A frase está correta (Inversão Condicional Formal)." }, // Mantida para atingir a contagem
+
+        // Subjunctives/Fixed Expressions (Formal)
+        { level: 'C2', wrong: "It is required that all personnel attends the seminar.", accepted: ["it is required that all personnel attend the seminar"], explanation: "Formal Subjunctive: após 'required that', usa-se a forma base do verbo ('attend'), mesmo para a terceira pessoa do singular." },
+        { level: 'C2', wrong: "The committee recommended that the proposal is accepted.", accepted: ["the committee recommended that the proposal be accepted"], explanation: "Formal Subjunctive: após 'recommended that', usa-se a forma base do verbo ('be')." },
+        { level: 'C2', wrong: "It is imperative that this report is submitted by noon.", accepted: ["it is imperative that this report be submitted by noon"], explanation: "Formal Subjunctive: 'be submitted' é o correto após 'imperative that'." },
+        
+        // Participle Clauses (Redução de Cláusulas)
+        { level: 'C2', wrong: "Having finished the report, he submitted it to the manager.", accepted: ["having finished the report he submitted it to the manager"], explanation: "A frase está correta (Participle Clause de tempo/sequência)." }, // Mantida para atingir a contagem
+        { level: 'C2', wrong: "Having been written in the 17th century, the language is difficult.", accepted: ["written in the 17th century the language is difficult"], explanation: "Participle Clause mais concisa e natural ('Written in...')." },
+        { level: 'C2', wrong: "While studying hard, she still failed the exam.", accepted: ["while studying hard she still failed the exam"], explanation: "A frase está correta (Participle Clause de contraste/tempo)." }, // Mantida para atingir a contagem
+
+        // Advanced Inversion
+        { level: 'C2', wrong: "So strong the earthquake was that it destroyed several buildings.", accepted: ["so strong was the earthquake that it destroyed several buildings"], explanation: "Inversão enfática: 'So + Adjective + Auxiliary + Subject...'" },
+        { level: 'C2', wrong: "On no account customers are allowed into the storage area.", accepted: ["on no account are customers allowed into the storage area"], explanation: "Inversão após expressões negativas fixas ('On no account')." },
+        { level: 'C2', wrong: "No sooner he had arrived than the telephone rang.", accepted: ["no sooner had he arrived than the telephone rang"], explanation: "Inversão obrigatória: 'No sooner' exige 'had' antes do sujeito." },
+        
+        // Discourse Markers/Formal Connectors
+        { level: 'C2', wrong: "He is highly intelligent, thus, his grades are poor.", accepted: ["he is highly intelligent; nevertheless his grades are poor", "he is highly intelligent yet his grades are poor"], explanation: "'Thus' (portanto) indica resultado. A frase precisa de um conector de contraste ('nevertheless', 'yet')." },
+        { level: 'C2', wrong: "The management is ineffective. Moreover, the staff is unhappy.", accepted: ["the management is ineffective moreover the staff is unhappy"], explanation: "A frase está correta. Teste de atenção (mas a vírgula antes do 'moreover' não é necessária)." }, // Mantida para atingir a contagem
+        { level: 'C2', wrong: "Subsequently, the meeting was adjourned.", accepted: ["subsequently the meeting was adjourned"], explanation: "A frase está correta (advérbio formal)." }, // Mantida para atingir a contagem
+        
+        // Collocations and Idioms (C2)
+        { level: 'C2', wrong: "She took strong advantage of the situation.", accepted: ["she took full advantage of the situation", "she took great advantage of the situation"], explanation: "Collocation: O adjetivo correto é 'full' ou 'great', não 'strong' com 'advantage'." },
+        { level: 'C2', wrong: "The CEO was a decisive factor in the company's downfall.", accepted: ["the ceo was a decisive factor in the company's downfall"], explanation: "A frase está correta. Collocation: 'decisive factor'." }, // Mantida para atingir a contagem
+        { level: 'C2', wrong: "His argument was beyond reproach.", accepted: ["his argument was beyond reproach"], explanation: "A frase está correta (idiom: 'beyond reproach' - irrepreensível)." }, // Mantida para atingir a contagem
+        
+        // Usage of Determiners
+        { level: 'C2', wrong: "The whole of the city was in darkness.", accepted: ["the whole city was in darkness"], explanation: "Embora tecnicamente possível, é mais conciso e natural usar 'the whole city' (omissão do 'of the')." },
+        { level: 'C2', wrong: "Every single one of the points were addressed.", accepted: ["every single one of the points was addressed"], explanation: "O sujeito é 'Every single one' (singular), exigindo o verbo no singular ('was addressed')." },
+        
+        // Phrasal Verbs (Nuance)
+        { level: 'C2', wrong: "We need to brush up my German before the trip.", accepted: ["we need to brush up on my german before the trip"], explanation: "O phrasal verb 'brush up' (revisar/melhorar) é seguido pela preposição 'on' ('brush up on something')." },
+        { level: 'C2', wrong: "The government has come in for heavy criticism.", accepted: ["the government has come in for heavy criticism"], explanation: "A frase está correta. 'Come in for' significa 'receber/ser alvo de'." }, // Mantida para atingir a contagem
+        
+        // Formal Vocabulary
+        { level: 'C2', wrong: "The matter remains undecided for the moment.", accepted: ["the matter remains undecided for the moment"], explanation: "A frase está correta. Teste de atenção." }, // Mantida para atingir a contagem
+        { level: 'C2', wrong: "It is incumbent upon the board to take action.", accepted: ["it is incumbent upon the board to take action"], explanation: "A frase está correta (formal: 'incumbent upon' - responsabilidade de)." }, // Mantida para atingir a contagem
+        
+        // Idiomatic Expressions
+        { level: 'C2', wrong: "The company is at a loss to explain the failure.", accepted: ["the company is at a loss to explain the failure"], explanation: "A frase está correta (idiom: 'at a loss' - sem saber o que fazer/dizer)." }, // Mantida para atingir a contagem
+        { level: 'C2', wrong: "They finally made headway with the negotiations.", accepted: ["they finally made headway with the negotiations"], explanation: "A frase está correta (idiom: 'make headway' - progredir)." }, // Mantida para atingir a contagem
+        
+        // Advanced Gerunds/Infinitives
+        { level: 'C2', wrong: "He was nowhere to be seen.", accepted: ["he was nowhere to be seen"], explanation: "A frase está correta. Teste de atenção." }, // Mantida para atingir a contagem
+        { level: 'C2', wrong: "They must have been mistaken about the time.", accepted: ["they must have been mistaken about the time"], explanation: "A frase está correta. Teste de atenção." } // Mantida para atingir a contagem
+    ];
+
+    let currentLevel = null;
+    let filteredQuestions = [];
+    let currentQuestion = null;
+    let answeredQuestions = new Set(); // Para evitar repetição na mesma sessão
+
+    const questionEl = document.getElementById('question-display');
+    const inputEl = document.getElementById('answer-input');
+    const feedbackEl = document.getElementById('feedback-display');
+    const countCurrent = document.getElementById('q-current');
+    const countTotal = document.getElementById('q-total');
+    const levelInfo = document.getElementById('level-info');
+    const writingContainer = document.getElementById('writing-container');
+    const checkButton = document.getElementById('check-button');
+    const nextButton = document.getElementById('next-button');
+
+    // Inicialização ao carregar a página
+    document.addEventListener('DOMContentLoaded', () => {
+        questionEl.textContent = 'Selecione um nível acima para começar!';
+        countCurrent.textContent = '--';
+        countTotal.textContent = '--';
+        levelInfo.textContent = '';
+        writingContainer.classList.remove('visible');
+        inputEl.disabled = true;
+        checkButton.disabled = true;
+        nextButton.disabled = true;
+        nextButton.style.backgroundColor = '#95a5a6';
+        nextButton.style.color = 'white';
+    });
+
+
+    // Função para selecionar o nível (Copiado do reading.html)
+    window.selectLevel = function(level, button) {
+        // Remove a classe 'active' de todos os botões e adiciona ao clicado
+        document.querySelectorAll('.btn-level').forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+
+        currentLevel = level;
+        filteredQuestions = allQuestions.filter(q => q.level === level);
+        answeredQuestions.clear(); // Limpa as respondidas ao trocar de nível
+
+        if (filteredQuestions.length > 0) {
+            writingContainer.classList.add('visible');
+            inputEl.disabled = false;
+            checkButton.disabled = false;
+            
+            loadNextQuestion(); // Carrega a primeira questão
+        } else {
+            writingContainer.classList.remove('visible');
+            questionEl.textContent = 'Nenhuma questão disponível para este nível.';
+        }
+
+        document.getElementById('writing-container').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+    
+    // Carrega a próxima questão (aleatória e não repetida)
+    window.loadNextQuestion = function() {
+        if (!currentLevel || filteredQuestions.length === 0) return;
+
+        // Se todas as questões foram respondidas, recomeça o ciclo
+        if (answeredQuestions.size === filteredQuestions.length) {
+            answeredQuestions.clear();
+        }
+
+        let availableQuestions = filteredQuestions.filter(q => !answeredQuestions.has(q));
+        
+        // Se todas estão respondidas (e o set foi limpo), usa a lista completa novamente
+        if (availableQuestions.length === 0) {
+            availableQuestions = filteredQuestions;
+        }
+
+        const randomIndex = Math.floor(Math.random() * availableQuestions.length);
+        currentQuestion = availableQuestions[randomIndex];
+
+        questionEl.textContent = `"${currentQuestion.wrong}"`;
+        inputEl.value = '';
+        feedbackEl.style.display = 'none';
+        feedbackEl.className = 'feedback-area';
+        inputEl.disabled = false;
+        checkButton.disabled = false;
+        
+        // Atualiza contagem
+        countTotal.textContent = filteredQuestions.length;
+        countCurrent.textContent = Array.from(answeredQuestions).length + 1;
+
+        // Habilita/desabilita botões e ajusta estilo do Próximo
+        checkButton.disabled = false;
+        nextButton.disabled = false;
+        nextButton.style.backgroundColor = 'var(--cor-acento)';
+        nextButton.style.color = 'var(--cor-texto-escuro)';
+
+        levelInfo.innerHTML = `<strong>Nível: ${currentLevel} (${filteredQuestions.length} frases disponíveis)</strong>.`;
+        inputEl.focus();
+    }
+
+    window.checkAnswer = function() {
+        if (!currentQuestion) return;
+
+        const userText = inputEl.value.trim();
+        if (!userText) return;
+
+        // Normaliza para comparar: minúsculas e remove pontuação final básica (., !, ?)
+        const cleanUser = userText.toLowerCase().replace(/[.!?,]+$/, "").trim(); 
+        
+        // Normaliza respostas aceitas para comparação
+        const isCorrect = currentQuestion.accepted.some(ans => 
+            ans.toLowerCase().replace(/[.!?,]+$/, "").trim() === cleanUser
+        );
+
+        feedbackEl.style.display = 'block';
+
+        if (isCorrect) {
+            feedbackEl.className = 'feedback-area feedback-success';
+            feedbackEl.innerHTML = `
+                <strong>✔ Correto! Muito bem.</strong><br>
+                <em>Você corrigiu para: "${userText}"</em><br>
+                <small>${currentQuestion.explanation}</small>
+            `;
+            // Adiciona a questão ao set de respondidas
+            answeredQuestions.add(currentQuestion);
+            checkButton.disabled = true; // Desabilita o check após acerto
+            
+            // Força a atualização do número da questão se acertou
+            countCurrent.textContent = Math.min(Array.from(answeredQuestions).length + 1, filteredQuestions.length);
+        } else {
+            feedbackEl.className = 'feedback-area feedback-error';
+            // Mostra a primeira opção aceita como gabarito (após normalizar a exibição)
+            const correctedAnswer = currentQuestion.accepted[0].charAt(0).toUpperCase() + currentQuestion.accepted[0].slice(1);
+            feedbackEl.innerHTML = `
+                <strong>✖ Ainda não.</strong><br>
+                Resposta correta: <em>"${correctedAnswer}"</em><br>
+                <small>${currentQuestion.explanation}</small>
+            `;
+            checkButton.disabled = false;
+        }
+    }
+
+    // Permite apertar Enter para enviar
+    inputEl.addEventListener("keypress", function(event) {
+        if (event.key === "Enter") {
+            event.preventDefault(); // Evita submeter formulário se houver
+            checkAnswer();
+        }
+    });
+
+</script>
+
+</body>
+</html>

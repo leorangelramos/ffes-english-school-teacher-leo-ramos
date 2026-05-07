@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Exercício: Substantivos Fundamentais (Contáveis, Incontáveis) | Professor Leo Ramos</title>
+    <meta name="description" content="Aprenda e pratique os tipos fundamentais de substantivos em inglês: Comuns, Próprios, Concretos, Abstratos, Contáveis e Incontáveis.">
+    <meta name="author" content="Leo Ramos">
+    <meta name="robots" content="index, follow">
+    <meta name="keywords" content="substantivos em inglês, substantivos contáveis, substantivos incontáveis, exercícios de inglês, Leo Ramos, FFES">
+
+    <link rel="canonical" href="https://teacherleoramos.com.br/Ex2-3-4-5-6/substantivos-em-ingles-noun-plural-singular-1.html">
+    <link rel="stylesheet" href="/CSS/universal.css">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="/Images/logofavicion.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/Images/logofavicion.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/Images/logofavicion.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/Images/logofavicion.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/Images/logofavicion.png">
+
+    <meta property="og:title" content="Exercício: Substantivos Fundamentais (Contáveis, Incontáveis) | Professor Leo Ramos">
+    <meta property="og:description" content="Pratique os tipos de substantivos em inglês: Comuns, Próprios, Concretos, Abstratos, Contáveis e Incontáveis com este quiz.">
+    <meta property="og:image" content="https://teacherleoramos.com.br/Images/preview-social.jpg">
+    <meta property="og:url" content="https://teacherleoramos.com.br/Ex2-3-4-5-6/substantivos-em-ingles-noun-plural-singular-1.html">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:site_name" content="FFES - Professor Leo Ramos">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Exercício: Substantivos Fundamentais (Contáveis, Incontáveis) | Professor Leo Ramos">
+    <meta name="twitter:description" content="Pratique os tipos de substantivos em inglês: Comuns, Próprios, Concretos, Abstratos, Contáveis e Incontáveis com este quiz.">
+    <meta name="twitter:image" content="https://teacherleoramos.com.br/Images/preview-social.jpg">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Quiz",
+      "name": "Jogo dos Nouns: Fundamentos",
+      "description": "Um quiz interativo para praticar os tipos fundamentais de substantivos: Comuns, Próprios, Concretos, Abstratos, Contáveis e Incontáveis.",
+      "url": "https://teacherleoramos.com.br/Ex2-3-4-5-6/substantivos-em-ingles-noun-plural-singular-1.html",
+      "image": "https://teacherleoramos.com.br/Images/preview-social.jpg",
+      "author": {
+        "@type": "Person",
+        "name": "Leo Ramos",
+        "url": "https://teacherleoramos.com.br"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "FFES - Professor Leo Ramos",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://teacherleoramos.com.br/Images/logo novo grande.png"
+        }
+      },
+      "learningResourceType": "Quiz",
+      "educationalLevel": "Beginner"
+    }
+    </script>
+    
+    <style>
+        .game-title {
+            color: var(--cor-texto-claro);
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.6);
+        }
+        #placar-geral-container {
+            background: rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: var(--cor-texto-claro);
+            padding: 15px 25px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            font-size: 1.1em;
+        }
+        #placar-geral-container p { margin: 0; }
+        #placar-geral-container .nav-arrow {
+            color: inherit;
+            text-decoration: none;
+            font-size: 1.2em;
+            line-height: 1;
+            transition: color 0.2s ease, transform 0.2s ease;
+        }
+        #placar-geral-container .nav-arrow:hover {
+            color: var(--cor-acento);
+            transform: scale(1.15);
+        }
+        .introducao-container, .exercicio-card {
+            background-color: var(--cor-fundo-secao);
+            width: 100%;
+            max-width: 900px;
+            padding: 25px 30px;
+            margin-bottom: 25px;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+            box-sizing: border-box;
+        }
+        .exercicio-card .question-container p { font-size: 1.1em; }
+        .options-container {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 20px;
+        }
+        .option-button {
+            width: 100%;
+            padding: 15px;
+            font-size: 1em;
+            text-align: left;
+            background-color: var(--cor-fundo-geral);
+            border: 2px solid var(--cor-borda-sutil);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .option-button:not(:disabled):hover {
+            background-color: var(--cor-acento-hover);
+            border-color: var(--cor-acento);
+            transform: translateY(-2px);
+        }
+        .option-button:disabled {
+            cursor: not-allowed;
+            opacity: 0.7;
+        }
+        .option-button.correto {
+            background-color: var(--cor-sucesso);
+            border-color: #27ae60;
+            color: white;
+            font-weight: bold;
+        }
+        .option-button.incorreto {
+            background-color: var(--cor-erro);
+            border-color: #c0392b;
+            color: white;
+            font-weight: bold;
+        }
+        .explanation-container {
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.5s ease-out;
+            background-color: var(--cor-fundo-secao-destaque);
+            border-radius: 8px;
+            padding: 0 20px;
+            margin-top: 0;
+            border-left: 4px solid var(--cor-primaria-hover);
+        }
+        .explanation-container.visible {
+            max-height: 500px;
+            margin-top: 20px;
+            padding: 20px;
+        }
+        /* Contêiner do botão "Voltar ao Topo" */
+        .rodape-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+        @media (max-width: 800px) {
+            .game-title { font-size: 1.8em; }
+            h2 { font-size: 1.5em; }
+        }
+    </style>
+
+                <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-M8ZG06010Q"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-M8ZG06010Q');
+    </script>
+</head>
+<body id="topo">
+
+<div class="cabecalho-container">
+<header class="bloco-identidade">
+    <div class="logo-and-title">
+        <a href="/index.html">
+            <img src="/Images/logo novo grande.png" alt="Logo FFES" class="logo-img">
+        </a>
+        <a href="/index.html" style="text-decoration: none; color: inherit;">
+            <h1>Leo Ramos | Professor de Inglês</h1>
+        </a>
+    </div>
+</header>
+
+
+<div class="bloco-navegacao"> 
+    <nav class="nav-primary">
+        <ul>
+            <li><a href="/index.html#home">Home</a></li>
+            <li><a href="/index.html#sobre">Sobre Mim</a></li>
+            <li><a href="/exercicios-e-artigos.html#exercicios">Exercícios</a></li>
+            <li><a href="/exercicios-e-artigos.html#artigos-vocab">Artigos</a></li>
+            <li><a href="/cursos-e-ebook.html#cursos">Cursos e E-book</a></li>
+            <li><a href="/index.html#metodologia">Metodologia</a></li>
+        </ul>
+    </nav>
+</div>
+
+
+</div>
+
+
+<main>
+    <h1 class="game-title">Jogo dos Nouns: Fundamentos</h1>
+    <div id="placar-geral-container">
+        <p>Acertos: <strong id="acertos-geral">0</strong></p>
+        <a href="#contato" class="nav-arrow" title="Ir para o final da página">&#11015;</a>
+        <p>Erros: <strong id="erros-geral">0</strong></p>
+    </div>
+    <button id="reset-btn" class="cta-button">Jogar Novamente</button>
+    <hr>
+    
+    <div class="introducao-container" style="text-align: left;">
+        <h3>Explicações Detalhadas</h3>
+        
+        <h4>1. Common Nouns vs. Proper Nouns (Substantivos Comuns vs. Próprios)</h4>
+        <p><strong>Common Nouns:</strong> São nomes genéricos para uma pessoa, lugar, coisa ou ideia. Eles não são capitalizados, a menos que comecem uma frase. Ex: <i>country, city, teacher, building.</i></p>
+        <p><strong>Proper Nouns:</strong> São nomes específicos de uma pessoa, lugar ou organização. Eles são sempre escritos com letra inicial maiúscula, não importa onde apareçam na frase. Ex: <i>Brazil, São Paulo, Leo Ramos, Eiffel Tower.</i></p>
+        
+        <h4>2. Concrete Nouns vs. Abstract Nouns (Substantivos Concretos vs. Abstratos)</h4>
+        <p><strong>Concrete Nouns:</strong> Referem-se a coisas físicas que podemos perceber com nossos cinco sentidos (visão, tato, audição, olfato, paladar). Ex: <i>table, car, rain, music, perfume.</i></p>
+        <p><strong>Abstract Nouns:</strong> Referem-se a ideias, conceitos, qualidades ou sentimentos que não têm existência física e não podem ser percebidos pelos sentidos. Ex: <i>love, happiness, courage, knowledge, freedom.</i></p>
+        
+        <h4>3. Countable Nouns vs. Uncountable Nouns (Substantivos Contáveis vs. Incontáveis)</h4>
+        <p><strong>Countable Nouns:</strong> São substantivos que podem ser contados individualmente. Eles têm uma forma singular e uma plural. Podem ser usados com números e com "a/an". Ex: <i>one book, two books, an apple.</i></p>
+        <p><strong>Uncountable Nouns:</strong> São substantivos que não podem ser contados como unidades (massas, líquidos, conceitos). Geralmente, não possuem forma plural e não são usados com "a/an". Para quantificá-los, usamos expressões como `some`, `a lot of`, `a piece of`. Ex: <i>water, information, furniture, advice, music.</i></p>
+
+        <h4>4. Singular & Plural Nouns (Substantivos Singulares e Plurais)</h4>
+        <p>Substantivos contáveis mudam de forma para indicar quantidade.</p>
+        <ul>
+            <li><strong>Plural Regular:</strong> A maioria adiciona `-s` (<i>cat -> cats</i>) ou `-es` para palavras terminadas em s, sh, ch, x, z (<i>box -> boxes</i>). Palavras terminadas em consoante + y trocam o y por `-ies` (<i>city -> cities</i>).</li>
+            <li><strong>Plural Irregular:</strong> Muitos substantivos comuns mudam completamente de forma. Ex: <i>man -> men, child -> children, foot -> feet, person -> people.</i></li>
+            <li><strong>Sem Mudança:</strong> Alguns substantivos têm a mesma forma para singular e plural. Ex: <i>sheep, fish, deer.</i></li>
+        </ul>
+    </div>
+    
+    <div id="exercicios-container"></div>
+    <div class="rodape-container">
+        <a href="#topo" class="nav-button">&#11014;</a>
+    </div>
+</main>
+
+<footer id="contato" class="site-footer">
+    <div class="footer-content">
+        <div class="social-media-links">
+            <h4>Siga-me nas redes sociais e acesse o App</h4>
+            <a href="https://www.youtube.com/@teacherleoramos/videos" target="_blank" rel="noopener noreferrer" title="Canal YouTube Teacher Leo Ramos" aria-label="YouTube">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/youtube-play.png" alt="Ícone YouTube" width="30" height="30" loading="lazy">
+            </a>
+            <a href="https://www.instagram.com/teacherleoramos/" target="_blank" rel="noopener noreferrer" title="Instagram Teacher Leo Ramos" aria-label="Instagram">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/instagram-new.png" alt="Ícone Instagram" width="30" height="30" loading="lazy">
+            </a>
+            <a href="https://www.tiktok.com/@teacherleoramos" target="_blank" rel="noopener noreferrer" title="TikTok Teacher Leo Ramos" aria-label="TikTok">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/tiktok.png" alt="Ícone TikTok" width="30" height="30" loading="lazy">
+            </a>
+            <a href="https://wa.me/5511955582118" target="_blank" rel="noopener noreferrer" title="WhatsApp Agendamento" aria-label="WhatsApp">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/whatsapp--v1.png" alt="Ícone WhatsApp" width="30" height="30" loading="lazy">
+            </a>
+            <a href="/index-app.html" target="_blank" rel="noopener noreferrer" title="Acesse o FFES App" aria-label="FFES App">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/controller.png" alt="Ícone FFES App" width="30" height="30" loading="lazy">
+            </a>
+        </div>
+        <p><strong>Contato</strong></p>
+        <p>Youtube: @teacherleoramos | Telefone - WhatsApp: (11) 95558-2118</p>
+        <p>Endereço: São Paulo, SP, Brasil</p>
+        <p>CNPJ: 43.226.983/0001-91</p>
+        <p>&copy; <span id="year">2025</span> | FEATHERED FRIENDS ENGLISH SCHOOL - FFES. Todos os direitos reservados.</p>
+    </div>
+</footer>
+
+
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    // REMOVIDA A INJEÇÃO DE HTML DO CABEÇALHO E RODAPÉ
+
+    const dadosNounsFundamentos = [
+        { id: 'nf-1', pergunta: 'Na frase "I am traveling to <strong>Paris</strong> next month.", que tipo de substantivo é "Paris"?', opcoes: ['Proper Noun', 'Common Noun', 'Abstract Noun', 'Collective Noun'], respostaCorreta: 'Proper Noun', explicacao: '"Paris" é um nome específico de um lugar, por isso é um Proper Noun (Substantivo Próprio) e começa com letra maiúscula.' },
+        { id: 'nf-2', pergunta: 'Qual destes substantivos é incontável (uncountable)?', opcoes: ['advice', 'apple', 'chair', 'idea'], respostaCorreta: 'advice', explicacao: '"Advice" (conselho) é um substantivo incontável. Não podemos dizer "two advices". Os outros são contáveis (apples, chairs, ideas).' },
+        { id: 'nf-3', pergunta: 'Em "We must fight for <strong>freedom</strong>.", que tipo de substantivo é "freedom"?', opcoes: ['Abstract Noun', 'Concrete Noun', 'Proper Noun', 'Countable Noun'], respostaCorreta: 'Abstract Noun', explicacao: '"Freedom" (liberdade) é um conceito, uma ideia. Não pode ser tocado ou visto, por isso é um Abstract Noun (Substantivo Abstrato).' },
+        { id: 'nf-4', pergunta: 'Qual é o plural irregular de "child"?', opcoes: ['childs', 'children', 'childes', 'child\'s'], respostaCorreta: 'children', explicacao: 'O plural de "child" (criança) é irregular, tornando-se "children" (crianças).' },
+        { id: 'nf-5', pergunta: 'Qual destes substantivos é concreto (concrete)?', opcoes: ['music', 'love', 'happiness', 'car'], respostaCorreta: 'car', explicacao: 'Um "car" (carro) pode ser visto e tocado, portanto é um Concrete Noun. Os outros são abstratos.' },
+        { id: 'nf-6', pergunta: 'Na frase "The <strong>dog</strong> is barking.", que tipo de substantivo é "dog"?', opcoes: ['Common Noun', 'Proper Noun', 'Collective Noun', 'Abstract Noun'], respostaCorreta: 'Common Noun', explicacao: '"Dog" (cachorro) é um nome genérico para um animal, por isso é um Common Noun (Substantivo Comum).' },
+        { id: 'nf-7', pergunta: 'Qual frase está gramaticalmente correta?', opcoes: ['I need an information.', 'She bought three furnitures.', 'He has many books.', 'Can I have a water?'], respostaCorreta: 'He has many books.', explicacao: '"Information", "furniture" e "water" são incontáveis e não podem ser usados com números ou "an" dessa forma. "Books" é contável e está correto com "many".' },
+        { id: 'nf-8', pergunta: 'Qual é o plural de "foot"?', opcoes: ['foots', 'feet', 'footes', 'feets'], respostaCorreta: 'feet', explicacao: 'O plural de "foot" (pé) é irregular, tornando-se "feet" (pés).' }
+    ];
+
+    const container = document.getElementById('exercicios-container');
+    const placarAcertosGeralEl = document.getElementById('acertos-geral');
+    const placarErrosGeralEl = document.getElementById('erros-geral');
+    const resetButton = document.getElementById('reset-btn');
+    let acertos = 0;
+    let erros = 0;
+    
+    function shuffleArray(array) { for (let i = array.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [array[i], array[j]] = [array[j], array[i]]; } }
+
+    function criarExercicioHTML(exercicioData, numeroExercicio) {
+        // Embaralha as opções
+        const opcoesEmbaralhadas = [...exercicioData.opcoes];
+        shuffleArray(opcoesEmbaralhadas);
+        
+        const opcoesHTML = opcoesEmbaralhadas.map(opcao => `<button class="option-button" data-resposta="${opcao}">${opcao}</button>`).join('');
+        return `
+            <section class="exercicio-card" id="exercicio-${exercicioData.id}" data-id="${exercicioData.id}">
+                <h2>Exercício ${numeroExercicio}</h2>
+                <div class="question-container"><p>${exercicioData.pergunta}</p><div class="options-container">${opcoesHTML}</div></div>
+                <div class="explanation-container" id="explicacao-${exercicioData.id}"><p>${exercicioData.explicacao}</p></div>
+            </section>
+        `;
+    }
+
+    function verificarResposta(exercicioId, btnClicado) {
+        const exercicioData = dadosNounsFundamentos.find(e => e.id === exercicioId);
+        const exercicioCard = document.getElementById(`exercicio-${exercicioData.id}`);
+        const botoes = exercicioCard.querySelectorAll('.option-button');
+        botoes.forEach(btn => btn.disabled = true);
+        const explicacaoEl = document.getElementById(`explicacao-${exercicioData.id}`);
+        explicacaoEl.classList.add('visible');
+        if (btnClicado.dataset.resposta === exercicioData.respostaCorreta) {
+            btnClicado.classList.add('correto');
+            acertos++;
+        } else {
+            btnClicado.classList.add('incorreto');
+            const respostaCorretaBtn = Array.from(botoes).find(btn => btn.dataset.resposta === exercicioData.respostaCorreta);
+            if (respostaCorretaBtn) { respostaCorretaBtn.classList.add('correto'); }
+            erros++;
+        }
+        placarAcertosGeralEl.textContent = acertos;
+        placarErrosGeralEl.textContent = erros;
+    }
+
+    function iniciarJogo() {
+        acertos = 0;
+        erros = 0;
+        placarAcertosGeralEl.textContent = '0';
+        placarErrosGeralEl.textContent = '0';
+        shuffleArray(dadosNounsFundamentos);
+        container.innerHTML = dadosNounsFundamentos.map((dado, index) => criarExercicioHTML(dado, index + 1)).join('');
+        
+        // Correção do bug de múltiplos listeners
+        const newContainer = container.cloneNode(true);
+        container.parentNode.replaceChild(newContainer, container);
+        
+        newContainer.addEventListener('click', (event) => {
+            if (event.target.classList.contains('option-button') && !event.target.disabled) {
+                const btnClicado = event.target;
+                const exercicioCard = btnClicado.closest('.exercicio-card');
+                const exercicioId = exercicioCard.dataset.id;
+                verificarResposta(exercicioId, btnClicado);
+            }
+        });
+
+        // Rola a tela para o início do main content ao reiniciar
+        document.querySelector('main').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    resetButton.addEventListener('click', iniciarJogo);
+    iniciarJogo();
+});
+</script>
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Exercício: Substantivos (Compostos, Coletivos, Possessivos) | Professor Leo Ramos</title>
+    <meta name="description" content="Aprenda e pratique os tipos estruturais e funcionais de substantivos em inglês: Compostos, Coletivos, Possessivos, Gerúndios e mais.">
+    <meta name="author" content="Leo Ramos">
+    <meta name="robots" content="index, follow">
+    <meta name="keywords" content="substantivos compostos, substantivos coletivos, substantivos possessivos, gerúndios, exercícios de inglês, Leo Ramos, FFES">
+
+    <link rel="canonical" href="https://teacherleoramos.com.br/Ex2-3-4-5-6/substantivos-em-ingles-noun-possessivos-compostos-2.html">
+    <link rel="stylesheet" href="/CSS/universal.css">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="/Images/logofavicion.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/Images/logofavicion.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/Images/logofavicion.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/Images/logofavicion.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/Images/logofavicion.png">
+
+    <meta property="og:title" content="Exercício: Substantivos (Compostos, Coletivos, Possessivos) | Professor Leo Ramos">
+    <meta property="og:description" content="Pratique os tipos estruturais e funcionais de substantivos em inglês: Compostos, Coletivos, Possessivos, Gerúndios e mais com este quiz.">
+    <meta property="og:image" content="https://teacherleoramos.com.br/Images/preview-social.jpg">
+    <meta property="og:url" content="https://teacherleoramos.com.br/Ex2-3-4-5-6/substantivos-em-ingles-noun-possessivos-compostos-2.html">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:site_name" content="FFES - Professor Leo Ramos">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Exercício: Substantivos (Compostos, Coletivos, Possessivos) | Professor Leo Ramos">
+    <meta name="twitter:description" content="Pratique os tipos estruturais e funcionais de substantivos em inglês: Compostos, Coletivos, Possessivos, Gerúndios e mais com este quiz.">
+    <meta name="twitter:image" content="https://teacherleoramos.com.br/Images/preview-social.jpg">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Quiz",
+      "name": "Jogo dos Nouns: Funções e Estruturas",
+      "description": "Um quiz interativo para praticar os tipos estruturais e funcionais de substantivos: Compostos, Coletivos, Possessivos, Gerúndios e Noun Clauses.",
+      "url": "https://teacherleoramos.com.br/Ex2-3-4-5-6/substantivos-em-ingles-noun-possessivos-compostos-2.html",
+      "image": "https://teacherleoramos.com.br/Images/preview-social.jpg",
+      "author": {
+        "@type": "Person",
+        "name": "Leo Ramos",
+        "url": "https://teacherleoramos.com.br"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "FFES - Professor Leo Ramos",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://teacherleoramos.com.br/Images/logo novo grande.png"
+        }
+      },
+      "learningResourceType": "Quiz",
+      "educationalLevel": "Intermediate"
+    }
+    </script>
+    
+    <style>
+        .game-title {
+            color: var(--cor-texto-claro);
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.6);
+        }
+        #placar-geral-container {
+            background: rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: var(--cor-texto-claro);
+            padding: 15px 25px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            font-size: 1.1em;
+        }
+        #placar-geral-container p { margin: 0; }
+        #placar-geral-container .nav-arrow {
+            color: inherit;
+            text-decoration: none;
+            font-size: 1.2em;
+            line-height: 1;
+            transition: color 0.2s ease, transform 0.2s ease;
+        }
+        #placar-geral-container .nav-arrow:hover {
+            color: var(--cor-acento);
+            transform: scale(1.15);
+        }
+        .introducao-container, .exercicio-card {
+            background-color: var(--cor-fundo-secao);
+            width: 100%;
+            max-width: 900px;
+            padding: 25px 30px;
+            margin-bottom: 25px;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+            box-sizing: border-box;
+        }
+        .exercicio-card .question-container p { font-size: 1.1em; }
+        .options-container {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 20px;
+        }
+        .option-button {
+            width: 100%;
+            padding: 15px;
+            font-size: 1em;
+            text-align: left;
+            background-color: var(--cor-fundo-geral);
+            border: 2px solid var(--cor-borda-sutil);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .option-button:not(:disabled):hover {
+            background-color: var(--cor-acento-hover);
+            border-color: var(--cor-acento);
+            transform: translateY(-2px);
+        }
+        .option-button:disabled {
+            cursor: not-allowed;
+            opacity: 0.7;
+        }
+        .option-button.correto {
+            background-color: var(--cor-sucesso);
+            border-color: #27ae60;
+            color: white;
+            font-weight: bold;
+        }
+        .option-button.incorreto {
+            background-color: var(--cor-erro);
+            border-color: #c0392b;
+            color: white;
+            font-weight: bold;
+        }
+        .explanation-container {
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.5s ease-out;
+            background-color: var(--cor-fundo-secao-destaque);
+            border-radius: 8px;
+            padding: 0 20px;
+            margin-top: 0;
+            border-left: 4px solid var(--cor-primaria-hover);
+        }
+        .explanation-container.visible {
+            max-height: 500px;
+            margin-top: 20px;
+            padding: 20px;
+        }
+        /* Estilos da Tabela de Resumo */
+        .summary-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            font-size: 0.9em;
+        }
+        .summary-table th, .summary-table td {
+            border: 1px solid var(--cor-borda-sutil);
+            padding: 8px;
+            text-align: left;
+        }
+        .summary-table th {
+            background-color: var(--cor-fundo-secao-destaque);
+            color: var(--cor-primaria);
+        }
+        /* Contêiner do botão "Voltar ao Topo" */
+        .rodape-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+        @media (max-width: 800px) {
+            .game-title { font-size: 1.8em; }
+            h2 { font-size: 1.5em; }
+        }
+    </style>
+
+                <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-M8ZG06010Q"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-M8ZG06010Q');
+    </script>
+</head>
+
+<body id="topo">
+
+<div class="cabecalho-container">
+<header class="bloco-identidade">
+    <div class="logo-and-title">
+        <a href="/index.html">
+            <img src="/Images/logo novo grande.png" alt="Logo FFES" class="logo-img">
+        </a>
+        <a href="/index.html" style="text-decoration: none; color: inherit;">
+            <h1>Leo Ramos | Professor de Inglês</h1>
+        </a>
+    </div>
+</header>
+
+
+<div class="bloco-navegacao"> 
+    <nav class="nav-primary">
+        <ul>
+            <li><a href="/index.html#home">Home</a></li>
+            <li><a href="/index.html#sobre">Sobre Mim</a></li>
+            <li><a href="/exercicios-e-artigos.html#exercicios">Exercícios</a></li>
+            <li><a href="/exercicios-e-artigos.html#artigos-vocab">Artigos</a></li>
+            <li><a href="/cursos-e-ebook.html#cursos">Cursos e E-book</a></li>
+            <li><a href="/index.html#metodologia">Metodologia</a></li>
+        </ul>
+    </nav>
+</div>
+
+
+</div>
+
+
+<main>
+    <h1 class="game-title">Jogo dos Nouns: Funções e Estruturas</h1>
+    <div id="placar-geral-container">
+        <p>Acertos: <strong id="acertos-geral">0</strong></p>
+        <a href="#contato" class="nav-arrow" title="Ir para o final da página">&#11015;</a>
+        <p>Erros: <strong id="erros-geral">0</strong></p>
+    </div>
+    <button id="reset-btn" class="cta-button">Jogar Novamente</button>
+    <hr>
+    
+    <div class="introducao-container" style="text-align: left;">
+        <h3>Explicações Detalhadas</h3>
+        
+        <h4>1. Compound Nouns (Substantivos Compostos)</h4>
+        <p>São substantivos formados pela junção de duas ou mais palavras para criar um novo significado. Podem ser escritos de três formas:</p>
+        <ul>
+            <li><strong>Uma palavra:</strong> <i>bedroom, sunglasses, keyboard.</i></li>
+            <li><strong>Hifenizado:</strong> <i>mother-in-law, ice-cream, check-in.</i></li>
+            <li><strong>Palavras separadas:</strong> <i>bus stop, living room, high school.</i></li>
+        </ul>
+        
+        <h4>2. Collective Nouns (Substantivos Coletivos)</h4>
+        <p>É uma palavra no singular que nomeia um grupo de pessoas, animais ou coisas. O verbo pode ser singular (se o grupo age como uma unidade) ou plural (se os membros agem individualmente).</p>
+        <ul>
+            <li>Exemplos: <i>team, family, government, audience, flock.</i></li>
+            <li>Concordância: <i>The team <strong>is</strong> winning.</i> (O time como unidade). <i>The team <strong>are</strong> arguing.</i> (Os membros estão discutindo entre si).</li>
+        </ul>
+        
+        <h4>3. Possessive Nouns (Substantivos Possessivos)</h4>
+        <p>Indicam posse ou pertencimento. A regra geral é adicionar <strong>'s</strong>. Se o substantivo for plural e já terminar em <strong>-s</strong>, adiciona-se apenas o apóstrofo (<strong>'</strong>).</p>
+        <ul>
+            <li>Singular: <i>the <strong>cat's</strong> toy</i> (o brinquedo do gato).</li>
+            <li>Plural regular: <i>the <strong>students'</strong> books</i> (os livros dos alunos).</li>
+            <li>Plural irregular: <i>the <strong>children's</strong> toys</i> (os brinquedos das crianças).</li>
+        </ul>
+
+        <h4>4. Nouns as Adjectives (Substantivos como Adjetivos)</h4>
+        <p>Ocorre quando um substantivo é usado para modificar ou descrever outro substantivo. O primeiro substantivo funciona como um adjetivo e, geralmente, fica no singular.</p>
+        <ul>
+            <li>Exemplos: <i>a <strong>chicken</strong> soup</i> (uma sopa de frango), <i>a <strong>computer</strong> problem</i> (um problema de computador).</li>
+        </ul>
+
+        <h4>5. Gerunds (Gerúndios como Substantivos)</h4>
+        <p>É a forma de um verbo terminada em <strong>-ing</strong> que é usada como um substantivo na frase, podendo ser o sujeito ou o objeto.</p>
+        <ul>
+            <li>Como Sujeito: <i><strong>Swimming</strong> is a good sport.</i> (Nadar é um bom esporte.)</li>
+            <li>Como Objeto: <i>I enjoy <strong>reading</strong>.</i> (Eu gosto de ler.)</li>
+        </ul>
+
+        <h4>6. Gendered Nouns (Substantivos com Gênero)</h4>
+        <p>São substantivos que possuem formas distintas para masculino e feminino. Hoje em dia, há uma forte tendência para usar termos neutros.</p>
+        <ul>
+            <li>Exemplos: <i>actor/actress</i> (ator/atriz), <i>waiter/waitress</i> (garçom/garçonete), <i>prince/princess</i> (príncipe/princesa).</li>
+        </ul>
+        
+        <h4>7. Noun Clauses (Orações Substantivas)</h4>
+        <p>É uma oração dependente inteira (com seu próprio sujeito e verbo) que funciona como um único substantivo na frase principal.</p>
+        <ul>
+            <li>Como Objeto: <i>I don't know <strong>where he lives</strong>.</i> (Eu não sei onde ele mora.)</li>
+            <li>Como Sujeito: <i><strong>What she said</strong> was interesting.</i> (O que ela disse foi interessante.)</li>
+        </ul>
+    </div>
+    
+    <div id="exercicios-container"></div>
+    <div class="rodape-container">
+        <a href="#topo" class="nav-button">&#11014;</a>
+    </div>
+</main>
+
+<footer id="contato" class="site-footer">
+    <div class="footer-content">
+        <div class="social-media-links">
+            <h4>Siga-me nas redes sociais e acesse o App</h4>
+            <a href="https://www.youtube.com/@teacherleoramos/videos" target="_blank" rel="noopener noreferrer" title="Canal YouTube Teacher Leo Ramos" aria-label="YouTube">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/youtube-play.png" alt="Ícone YouTube" width="30" height="30" loading="lazy">
+            </a>
+            <a href="https://www.instagram.com/teacherleoramos/" target="_blank" rel="noopener noreferrer" title="Instagram Teacher Leo Ramos" aria-label="Instagram">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/instagram-new.png" alt="Ícone Instagram" width="30" height="30" loading="lazy">
+            </a>
+            <a href="https://www.tiktok.com/@teacherleoramos" target="_blank" rel="noopener noreferrer" title="TikTok Teacher Leo Ramos" aria-label="TikTok">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/tiktok.png" alt="Ícone TikTok" width="30" height="30" loading="lazy">
+            </a>
+            <a href="https://wa.me/5511955582118" target="_blank" rel="noopener noreferrer" title="WhatsApp Agendamento" aria-label="WhatsApp">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/whatsapp--v1.png" alt="Ícone WhatsApp" width="30" height="30" loading="lazy">
+            </a>
+            <a href="/index-app.html" target="_blank" rel="noopener noreferrer" title="Acesse o FFES App" aria-label="FFES App">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/controller.png" alt="Ícone FFES App" width="30" height="30" loading="lazy">
+            </a>
+        </div>
+        <p><strong>Contato</strong></p>
+        <p>Youtube: @teacherleoramos | Telefone - WhatsApp: (11) 95558-2118</p>
+        <p>Endereço: São Paulo, SP, Brasil</p>
+        <p>CNPJ: 43.226.983/0001-91</p>
+        <p>&copy; <span id="year">2025</span> | FEATHERED FRIENDS ENGLISH SCHOOL - FFES. Todos os direitos reservados.</p>
+    </div>
+</footer>
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    // REMOVIDA A INJEÇÃO DE HTML DO CABEÇALHO E RODAPÉ
+
+    const dadosNounsAvancados = [
+        { id: 'na-1', pergunta: 'Na frase "<strong>Running</strong> is my favorite sport.", qual a função de "Running"?', opcoes: ['Gerund (como substantivo)', 'Verbo no presente', 'Adjetivo', 'Advérbio'], respostaCorreta: 'Gerund (como substantivo)', explicacao: '"Running" (Correr) é o sujeito da frase, uma função de substantivo. Verbos com -ing usados como substantivos são chamados de Gerunds.' },
+        { id: 'na-2', pergunta: 'Qual forma possessiva está correta para "o osso do cachorro"?', opcoes: ['the dogs bone', 'the dog\'s bone', 'the dogs\'s bone', 'the dog bone\'s'], respostaCorreta: 'the dog\'s bone', explicacao: 'Para posse no singular, usamos apóstrofo + s (\'s). "The dog\'s bone" significa "o osso pertencente ao cachorro".' },
+        { id: 'na-3', pergunta: 'Qual das opções é um Compound Noun (Substantivo Composto)?', opcoes: ['beautiful house', 'bus stop', 'runs quickly', 'very nice'], respostaCorreta: 'bus stop', explicacao: '"Bus stop" (ponto de ônibus) é um substantivo formado pela junção de duas palavras (bus + stop).' },
+        { id: 'na-4', pergunta: 'Em "Please pass me the <strong>vegetable</strong> soup.", qual a função de "vegetable"?', opcoes: ['Substantivo agindo como adjetivo', 'Adjetivo', 'Verbo', 'Substantivo como sujeito'], respostaCorreta: 'Substantivo agindo como adjetivo', explicacao: '"Vegetable" (um substantivo) está modificando outro substantivo ("soup"), funcionando como um adjetivo para descrever o tipo de sopa.' },
+        { id: 'na-5', pergunta: 'Na frase "Our <strong>team</strong> is playing well.", "team" é um:', opcoes: ['Collective Noun', 'Compound Noun', 'Plural Noun', 'Proper Noun'], respostaCorreta: 'Collective Noun', explicacao: '"Team" (equipe) é um substantivo coletivo, uma palavra no singular que representa um grupo de pessoas.' },
+        { id: 'na-6', pergunta: 'A frase "Os livros dos alunos" em inglês é:', opcoes: ['the student\'s books', 'the students\' books', 'the studentss\' books', 'the students book\'s'], respostaCorreta: 'the students\' books', explicacao: 'Para posse no plural de uma palavra que já termina em "s" (students), adicionamos apenas o apóstrofo (\') no final.' },
+        { id: 'na-7', pergunta: 'O feminino de "waiter" (garçom) é:', opcoes: ['waitress', 'waitres', 'waiteress', 'waitrine'], respostaCorreta: 'waitress', explicacao: '"Waitress" (garçonete) é a forma feminina de "waiter".' },
+        { id: 'na-8', pergunta: 'Em "I can\'t remember <strong>where I parked the car</strong>.", a parte em negrito é uma:', opcoes: ['Noun Clause', 'Adjective Clause', 'Prepositional Phrase', 'Main Clause'], respostaCorreta: 'Noun Clause', explicacao: 'A oração inteira "where I parked the car" funciona como o objeto do verbo "remember", agindo como um único substantivo. Isso é uma Noun Clause.' }
+    ];
+
+    const container = document.getElementById('exercicios-container');
+    const placarAcertosGeralEl = document.getElementById('acertos-geral');
+    const placarErrosGeralEl = document.getElementById('erros-geral');
+    const resetButton = document.getElementById('reset-btn');
+    let acertos = 0;
+    let erros = 0;
+
+    function shuffleArray(array) { for (let i = array.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [array[i], array[j]] = [array[j], array[i]]; } }
+
+    function criarExercicioHTML(exercicioData, numeroExercicio) {
+        // Embaralha as opções
+        const opcoesEmbaralhadas = [...exercicioData.opcoes];
+        shuffleArray(opcoesEmbaralhadas);
+        
+        const opcoesHTML = opcoesEmbaralhadas.map(opcao => `<button class="option-button" data-resposta="${opcao}">${opcao}</button>`).join('');
+        return `
+            <section class="exercicio-card" id="exercicio-${exercicioData.id}" data-id="${exercicioData.id}">
+                <h2>Exercício ${numeroExercicio}</h2>
+                <div class="question-container"><p>${exercicioData.pergunta}</p><div class="options-container">${opcoesHTML}</div></div>
+                <div class="explanation-container" id="explicacao-${exercicioData.id}"><p>${exercicioData.explicacao}</p></div>
+            </section>
+        `;
+    }
+
+    function verificarResposta(exercicioId, btnClicado) {
+        const exercicioData = dadosNounsAvancados.find(e => e.id === exercicioId);
+        const exercicioCard = document.getElementById(`exercicio-${exercicioData.id}`);
+        const botoes = exercicioCard.querySelectorAll('.option-button');
+        botoes.forEach(btn => btn.disabled = true);
+        const explicacaoEl = document.getElementById(`explicacao-${exercicioData.id}`);
+        explicacaoEl.classList.add('visible');
+        if (btnClicado.dataset.resposta === exercicioData.respostaCorreta) {
+            btnClicado.classList.add('correto');
+            acertos++;
+        } else {
+            btnClicado.classList.add('incorreto');
+            const respostaCorretaBtn = Array.from(botoes).find(btn => btn.dataset.resposta === exercicioData.respostaCorreta);
+            if (respostaCorretaBtn) { respostaCorretaBtn.classList.add('correto'); }
+            erros++;
+        }
+        placarAcertosGeralEl.textContent = acertos;
+        placarErrosGeralEl.textContent = erros;
+    }
+
+    function iniciarJogo() {
+        acertos = 0;
+        erros = 0;
+        placarAcertosGeralEl.textContent = '0';
+        placarErrosGeralEl.textContent = '0';
+        shuffleArray(dadosNounsAvancados);
+        container.innerHTML = dadosNounsAvancados.map((dado, index) => criarExercicioHTML(dado, index + 1)).join('');
+        
+        // Correção do bug de múltiplos listeners
+        const newContainer = container.cloneNode(true);
+        container.parentNode.replaceChild(newContainer, container);
+        
+        newContainer.addEventListener('click', (event) => {
+            if (event.target.classList.contains('option-button') && !event.target.disabled) {
+                const btnClicado = event.target;
+                const exercicioCard = btnClicado.closest('.exercicio-card');
+                const exercicioId = exercicioCard.dataset.id;
+                verificarResposta(exercicioId, btnClicado);
+            }
+        });
+
+        // Rola a tela para o início do main content ao reiniciar
+        document.querySelector('main').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    resetButton.addEventListener('click', iniciarJogo);
+    iniciarJogo();
+});
+</script>
+
+</body>
+</html>

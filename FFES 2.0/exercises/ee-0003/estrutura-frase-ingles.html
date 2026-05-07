@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Exercício: Estrutura de Frases (Fundamentos) | Professor Leo Ramos</title>
+    <meta name="description" content="Aprenda e pratique os fundamentos da estrutura de frases em inglês: Sujeito, Verbo, Objeto, Concordância e Orações.">
+    <meta name="author" content="Leo Ramos">
+    <meta name="robots" content="index, follow">
+    <meta name="keywords" content="estrutura de frases, sujeito verbo objeto, exercícios de inglês, gramática inglesa, Leo Ramos, FFES">
+
+    <link rel="canonical" href="https://teacherleoramos.com.br/Ex2-3-4-5-6/estrutura-da-frase-em-ingles-Sujeito-Verbo-Objeto.html">
+    <link rel="stylesheet" href="/CSS/universal.css">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="/Images/logofavicion.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/Images/logofavicion.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/Images/logofavicion.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/Images/logofavicion.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/Images/logofavicion.png">
+
+    <meta property="og:title" content="Exercício: Estrutura de Frases (Fundamentos) | Professor Leo Ramos">
+    <meta property="og:description" content="Aprenda e pratique os fundamentos da estrutura de frases em inglês: Sujeito, Verbo, Objeto, Concordância e Orações.">
+    <meta property="og:image" content="https://teacherleoramos.com.br/Images/preview-social.jpg">
+    <meta property="og:url" content="https://teacherleoramos.com.br/Ex2-3-4-5-6/estrutura-da-frase-em-ingles-Sujeito-Verbo-Objeto.html">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:site_name" content="FFES - Professor Leo Ramos">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Exercício: Estrutura de Frases (Fundamentos) | Professor Leo Ramos">
+    <meta name="twitter:description" content="Aprenda e pratique os fundamentos da estrutura de frases em inglês: Sujeito, Verbo, Objeto, Concordância e Orações.">
+    <meta name="twitter:image" content="https://teacherleoramos.com.br/Images/preview-social.jpg">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Quiz",
+      "name": "Jogo de Estrutura de Frases: Fundamentos",
+      "description": "Um quiz interativo para praticar os blocos fundamentais das frases em inglês: Sujeito, Verbo, Objeto, Concordância e Tipos de Orações.",
+      "url": "https://teacherleoramos.com.br/Ex2-3-4-5-6/estrutura-da-frase-em-ingles-Sujeito-Verbo-Objeto.html",
+      "image": "https://teacherleoramos.com.br/Images/preview-social.jpg",
+      "author": {
+        "@type": "Person",
+        "name": "Leo Ramos",
+        "url": "https://teacherleoramos.com.br"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "FFES - Professor Leo Ramos",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://teacherleoramos.com.br/Images/logo novo grande.png"
+        }
+      },
+      "learningResourceType": "Quiz",
+      "educationalLevel": "Beginner"
+    }
+    </script>
+    
+    <style>
+        .game-title {
+            color: var(--cor-texto-claro);
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.6);
+        }
+        #placar-geral-container {
+            background: rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: var(--cor-texto-claro);
+            padding: 15px 25px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            font-size: 1.1em;
+        }
+        #placar-geral-container p { margin: 0; }
+        #placar-geral-container .nav-arrow {
+            color: inherit;
+            text-decoration: none;
+            font-size: 1.2em;
+            line-height: 1;
+            transition: color 0.2s ease, transform 0.2s ease;
+        }
+        #placar-geral-container .nav-arrow:hover {
+            color: var(--cor-acento);
+            transform: scale(1.15);
+        }
+        .introducao-container, .exercicio-card {
+            background-color: var(--cor-fundo-secao);
+            width: 100%;
+            max-width: 900px;
+            padding: 25px 30px;
+            margin-bottom: 25px;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+            box-sizing: border-box;
+        }
+        .exercicio-card .question-container p { font-size: 1.1em; }
+        .options-container {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 20px;
+        }
+        .option-button {
+            width: 100%;
+            padding: 15px;
+            font-size: 1em;
+            text-align: left;
+            background-color: var(--cor-fundo-geral);
+            border: 2px solid var(--cor-borda-sutil);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .option-button:not(:disabled):hover {
+            background-color: var(--cor-acento-hover);
+            border-color: var(--cor-acento);
+            transform: translateY(-2px);
+        }
+        .option-button:disabled {
+            cursor: not-allowed;
+            opacity: 0.7;
+        }
+        .option-button.correto {
+            background-color: var(--cor-sucesso);
+            border-color: #27ae60;
+            color: white;
+            font-weight: bold;
+        }
+        .option-button.incorreto {
+            background-color: var(--cor-erro);
+            border-color: #c0392b;
+            color: white;
+            font-weight: bold;
+        }
+        .explanation-container {
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.5s ease-out;
+            background-color: var(--cor-fundo-secao-destaque);
+            border-radius: 8px;
+            padding: 0 20px;
+            margin-top: 0;
+            border-left: 4px solid var(--cor-primaria-hover);
+        }
+        .explanation-container.visible {
+            max-height: 500px;
+            margin-top: 20px;
+            padding: 20px;
+        }
+        .introducao-container ul { padding-left: 20px; }
+        
+        /* Contêiner do botão "Voltar ao Topo" */
+        .rodape-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+        @media (max-width: 800px) {
+            .game-title { font-size: 1.8em; }
+            h2 { font-size: 1.5em; }
+        }
+    </style>
+
+                <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-M8ZG06010Q"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-M8ZG06010Q');
+    </script>
+</head>
+<body id="topo">
+
+<div class="cabecalho-container">
+<header class="bloco-identidade">
+    <div class="logo-and-title">
+        <a href="/index.html">
+            <img src="/Images/logo novo grande.png" alt="Logo FFES" class="logo-img">
+        </a>
+        <a href="/index.html" style="text-decoration: none; color: inherit;">
+            <h1>Leo Ramos | Professor de Inglês</h1>
+        </a>
+    </div>
+</header>
+
+
+<div class="bloco-navegacao"> 
+    <nav class="nav-primary">
+        <ul>
+            <li><a href="/index.html#home">Home</a></li>
+            <li><a href="/index.html#sobre">Sobre Mim</a></li>
+            <li><a href="/exercicios-e-artigos.html#exercicios">Exercícios</a></li>
+            <li><a href="/exercicios-e-artigos.html#artigos-vocab">Artigos</a></li>
+            <li><a href="/cursos-e-ebook.html#cursos">Cursos e E-book</a></li>
+            <li><a href="/index.html#metodologia">Metodologia</a></li>
+        </ul>
+    </nav>
+</div>
+
+
+</div>
+<main>
+    <h1 class="game-title">Jogo de Estrutura de Frases: Fundamentos</h1>
+    <div id="placar-geral-container">
+        <p>Acertos: <strong id="acertos-geral">0</strong></p>
+        <a href="#contato" class="nav-arrow" title="Ir para o final da página">&#11015;</a>
+        <p>Erros: <strong id="erros-geral">0</strong></p>
+    </div>
+    <button id="reset-btn" class="cta-button">Jogar Novamente</button>
+    <hr>
+    
+    <div class="introducao-container" style="text-align: left;">
+        <h3>Explicações Detalhadas</h3>
+        
+        <h4>1. As Partes da Frase (Parts of the Sentence)</h4>
+        <p>Toda frase é construída com blocos fundamentais. Os principais são:</p>
+        <ul>
+            <li><strong>Sujeito (Subject):</strong> O "ator" da frase, quem ou o que realiza a ação. Ex: <strong>The dog</strong> barks.</li>
+            <li><strong>Verbo (Verb):</strong> A palavra que expressa a ação ou um estado. Ex: The dog <strong>barks</strong>.</li>
+            <li><strong>Objeto (Object):</strong> O "receptor" da ação do verbo. Ex: The dog chases <strong>the ball</strong>.</li>
+        </ul>
+
+        <h4>2. Padrões de Frases Essenciais (Basic Sentence Patterns)</h4>
+        <p>A ordem das palavras em inglês é geralmente fixa. Os padrões mais comuns são:</p>
+        <ul>
+            <li><strong>S-V (Sujeito-Verbo):</strong> <i>Birds fly.</i> (Pássaros voam.)</li>
+            <li><strong>S-V-O (Sujeito-Verbo-Objeto):</strong> <i>The student reads a book.</i> (O aluno lê um livro.)</li>
+        </ul>
+        
+        <h4>3. Concordância Sujeito-Verbo (Subject-Verb Agreement)</h4>
+        <p>O verbo deve concordar em número (singular/plural) com o sujeito. A regra principal no presente é adicionar <strong>-s</strong> ao verbo na terceira pessoa do singular (he, she, it).</p>
+        <ul>
+            <li>Singular: <i>The cat <strong>sleeps</strong> on the sofa.</i></li>
+            <li>Plural: <i>The cats <strong>sleep</strong> on the sofa.</i></li>
+            <li>Exceção: <i>Everybody <strong>knows</strong> the answer.</i> (Pronomes como 'everybody' são singulares).</li>
+        </ul>
+
+        <h4>4. Formação de Perguntas e Negativas</h4>
+        <p>Para a maioria dos verbos, usamos auxiliares (<strong>do, does, did</strong>) para formar perguntas e negativas. O verbo principal volta para a forma base (sem -s, -ed, etc.).</p>
+        <ul>
+            <li><strong>Afirmativa:</strong> <i>You speak English.</i></li>
+            <li><strong>Negativa:</strong> <i>You <strong>do not (don't)</strong> speak English.</i></li>
+            <li><strong>Interrogativa:</strong> <i><strong>Do</strong> you speak English?</i></li>
+        </ul>
+
+        <h4>5. Tipos de Orações (Types of Clauses)</h4>
+        <p>Uma oração é uma unidade de pensamento com um sujeito e um verbo.</p>
+        <ul>
+            <li><strong>Oração Independente:</strong> Expressa um pensamento completo e pode ser uma frase sozinha. Ex: <i>I finished my work.</i></li>
+            <li><strong>Oração Dependente (ou Subordinada):</strong> Começa com palavras como <i>because, when, if, who, which</i> e não tem sentido completo sozinha. Ela precisa de uma oração independente. Ex: <i>...because I was tired.</i></li>
+        </ul>
+        <p><strong>Juntas:</strong> <i>I went to bed early (independente) <strong>because I was tired</strong> (dependente).</i></p>
+    </div>
+    
+    <div id="exercicios-container"></div>
+    <div class="rodape-container">
+        <a href="#topo" class="nav-button">&#11014;</a>
+    </div>
+</main>
+
+<footer id="contato" class="site-footer">
+    <div class="footer-content">
+        <div class="social-media-links">
+            <h4>Siga-me nas redes sociais e acesse o App</h4>
+            <a href="https://www.youtube.com/@teacherleoramos/videos" target="_blank" rel="noopener noreferrer" title="Canal YouTube Teacher Leo Ramos" aria-label="YouTube">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/youtube-play.png" alt="Ícone YouTube" width="30" height="30" loading="lazy">
+            </a>
+            <a href="https://www.instagram.com/teacherleoramos/" target="_blank" rel="noopener noreferrer" title="Instagram Teacher Leo Ramos" aria-label="Instagram">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/instagram-new.png" alt="Ícone Instagram" width="30" height="30" loading="lazy">
+            </a>
+            <a href="https://www.tiktok.com/@teacherleoramos" target="_blank" rel="noopener noreferrer" title="TikTok Teacher Leo Ramos" aria-label="TikTok">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/tiktok.png" alt="Ícone TikTok" width="30" height="30" loading="lazy">
+            </a>
+            <a href="https://wa.me/5511955582118" target="_blank" rel="noopener noreferrer" title="WhatsApp Agendamento" aria-label="WhatsApp">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/whatsapp--v1.png" alt="Ícone WhatsApp" width="30" height="30" loading="lazy">
+            </a>
+            <a href="/index-app.html" target="_blank" rel="noopener noreferrer" title="Acesse o FFES App" aria-label="FFES App">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/controller.png" alt="Ícone FFES App" width="30" height="30" loading="lazy">
+            </a>
+        </div>
+        <p><strong>Contato</strong></p>
+        <p>Youtube: @teacherleoramos | Telefone - WhatsApp: (11) 95558-2118</p>
+        <p>Endereço: São Paulo, SP, Brasil</p>
+        <p>CNPJ: 43.226.983/0001-91</p>
+        <p>&copy; <span id="year">2025</span> | FEATHERED FRIENDS ENGLISH SCHOOL - FFES. Todos os direitos reservados.</p>
+    </div>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    // REMOVIDA A INJEÇÃO DE HTML DO CABEÇALHO E RODAPÉ
+
+    const dadosEstruturaFundamentos = [
+        { id: 'esf-1', pergunta: 'Na frase "The girl reads a book", o que é "a book"?', opcoes: ['Sujeito', 'Verbo', 'Objeto', 'Adjetivo'], respostaCorreta: 'Objeto', explicacao: '"A book" (um livro) é o objeto, pois recebe a ação do verbo "reads" (lê).' },
+        { id: 'esf-2', pergunta: 'Escolha a frase com a concordância sujeito-verbo correta:', opcoes: ['The dogs barks loudly.', 'The dogs bark loudly.', 'The dog bark loudly.', 'The dogs barking loudly.'], respostaCorreta: 'The dogs bark loudly.', explicacao: 'O sujeito plural "dogs" (cachorros) exige o verbo no plural "bark" (sem o "s").' },
+        { id: 'esf-3', pergunta: 'Qual é a forma interrogativa correta para "She lives in London."?', opcoes: ['Lives she in London?', 'She does live in London?', 'Does she live in London?', 'Do she live in London?'], respostaCorreta: 'Does she live in London?', explicacao: 'Para fazer uma pergunta no presente com "he/she/it", usamos o auxiliar "Does" no início.' },
+        { id: 'esf-4', pergunta: 'Qual é a forma negativa correta para "They played soccer."?', opcoes: ['They not played soccer.', 'They didn\'t played soccer.', 'They didn\'t play soccer.', 'They don\'t played soccer.'], respostaCorreta: 'They didn\'t play soccer.', explicacao: 'Para negar uma frase no passado simples, usamos "didn\'t" seguido do verbo na forma base (play).' },
+        { id: 'esf-5', pergunta: 'Na frase "I will call you when I arrive", a parte "when I arrive" é uma:', opcoes: ['Oração Independente', 'Oração Dependente', 'Frase Simples', 'Pergunta'], respostaCorreta: 'Oração Dependente', explicacao: '"When I arrive" (quando eu chegar) não tem sentido completo sozinho, dependendo da oração principal "I will call you".' },
+        { id: 'esf-6', pergunta: 'Qual é o padrão da frase "Birds fly."?', opcoes: ['S-V-O (Sujeito-Verbo-Objeto)', 'S-V-Adj (Sujeito-Verbo-Adjetivo)', 'S-V (Sujeito-Verbo)', 'S-O-V (Sujeito-Objeto-Verbo)'], respostaCorreta: 'S-V (Sujeito-Verbo)', explicacao: 'A frase tem apenas um sujeito ("Birds") e um verbo ("fly").' },
+        { id: 'esf-7', pergunta: 'Complete a frase: "Everybody ___ happy."', opcoes: ['is', 'are', 'be', 'were'], respostaCorreta: 'is', explicacao: 'Pronomes indefinidos como "everybody" são gramaticalmente singulares e exigem o verbo no singular ("is").' }
+    ];
+
+    const container = document.getElementById('exercicios-container');
+    const placarAcertosGeralEl = document.getElementById('acertos-geral');
+    const placarErrosGeralEl = document.getElementById('erros-geral');
+    const resetButton = document.getElementById('reset-btn');
+    let acertos = 0;
+    let erros = 0;
+    
+    function shuffleArray(array) { for (let i = array.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [array[i], array[j]] = [array[j], array[i]]; } }
+
+    function criarExercicioHTML(exercicioData, numeroExercicio) {
+        // Embaralha as opções
+        const opcoesEmbaralhadas = [...exercicioData.opcoes];
+        shuffleArray(opcoesEmbaralhadas);
+        
+        const opcoesHTML = opcoesEmbaralhadas.map(opcao => `<button class="option-button" data-resposta="${opcao}">${opcao}</button>`).join('');
+        return `
+            <section class="exercicio-card" id="exercicio-${exercicioData.id}" data-id="${exercicioData.id}">
+                <h2>Exercício ${numeroExercicio}</h2>
+                <div class="question-container"><p>${exercicioData.pergunta}</p><div class="options-container">${opcoesHTML}</div></div>
+                <div class="explanation-container" id="explicacao-${exercicioData.id}"><p>${exercicioData.explicacao}</p></div>
+            </section>
+        `;
+    }
+
+    function verificarResposta(exercicioId, btnClicado) {
+        const exercicioData = dadosEstruturaFundamentos.find(e => e.id === exercicioId);
+        const exercicioCard = document.getElementById(`exercicio-${exercicioData.id}`);
+        const botoes = exercicioCard.querySelectorAll('.option-button');
+        botoes.forEach(btn => btn.disabled = true);
+        const explicacaoEl = document.getElementById(`explicacao-${exercicioData.id}`);
+        explicacaoEl.classList.add('visible');
+        if (btnClicado.dataset.resposta === exercicioData.respostaCorreta) {
+            btnClicado.classList.add('correto');
+            acertos++;
+        } else {
+            btnClicado.classList.add('incorreto');
+            const respostaCorretaBtn = Array.from(botoes).find(btn => btn.dataset.resposta === exercicioData.respostaCorreta);
+            if (respostaCorretaBtn) { respostaCorretaBtn.classList.add('correto'); }
+            erros++;
+        }
+        placarAcertosGeralEl.textContent = acertos;
+        placarErrosGeralEl.textContent = erros;
+    }
+
+    function iniciarJogo() {
+        acertos = 0;
+        erros = 0;
+        placarAcertosGeralEl.textContent = '0';
+        placarErrosGeralEl.textContent = '0';
+        shuffleArray(dadosEstruturaFundamentos);
+        container.innerHTML = dadosEstruturaFundamentos.map((dado, index) => criarExercicioHTML(dado, index + 1)).join('');
+        
+        // Correção do bug de múltiplos listeners
+        const newContainer = container.cloneNode(true);
+        container.parentNode.replaceChild(newContainer, container);
+        
+        newContainer.addEventListener('click', (event) => {
+            if (event.target.classList.contains('option-button') && !event.target.disabled) {
+                const btnClicado = event.target;
+                const exercicioCard = btnClicado.closest('.exercicio-card');
+                const exercicioId = exercicioCard.dataset.id;
+                verificarResposta(exercicioId, btnClicado);
+            }
+        });
+
+        // Rola a tela para o início do main content ao reiniciar
+        document.querySelector('main').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    resetButton.addEventListener('click', iniciarJogo);
+    iniciarJogo();
+});
+</script>
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Exercício: Estrutura de Frases (Avançado) | Professor Leo Ramos</title>
+    <meta name="description" content="Aprenda e pratique tópicos avançados da estrutura de frases em inglês: voz passiva, paralelismo, tipos de frases e mais.">
+    <meta name="author" content="Leo Ramos">
+    <meta name="robots" content="index, follow">
+    <meta name="keywords" content="estrutura de frases, voz passiva, paralelismo, frases complexas, exercícios de inglês, Leo Ramos, FFES">
+
+    <link rel="canonical" href="https://teacherleoramos.com.br/Ex2-3-4-5-6/estrutura-da-frase-em-ingles-tipos-de-frases.html">
+    <link rel="stylesheet" href="/CSS/universal.css">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="/Images/logofavicion.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/Images/logofavicion.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/Images/logofavicion.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/Images/logofavicion.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/Images/logofavicion.png">
+
+    <meta property="og:title" content="Exercício: Estrutura de Frases (Avançado) | Professor Leo Ramos">
+    <meta property="og:description" content="Aprenda e pratique tópicos avançados da estrutura de frases em inglês: voz passiva, paralelismo, tipos de frases e mais.">
+    <meta property="og:image" content="https://teacherleoramos.com.br/Images/preview-social.jpg">
+    <meta property="og:url" content="https://teacherleoramos.com.br/Ex2-3-4-5-6/estrutura-da-frase-em-ingles-tipos-de-frases.html">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:site_name" content="FFES - Professor Leo Ramos">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Exercício: Estrutura de Frases (Avançado) | Professor Leo Ramos">
+    <meta name="twitter:description" content="Aprenda e pratique tópicos avançados da estrutura de frases em inglês: voz passiva, paralelismo, tipos de frases e mais.">
+    <meta name="twitter:image" content="https://teacherleoramos.com.br/Images/preview-social.jpg">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Quiz",
+      "name": "Jogo de Estrutura de Frases: Tópicos Avançados",
+      "description": "Um quiz interativo para praticar tópicos avançados da estrutura de frases: tipos de frases (composta, complexa), voz passiva e paralelismo.",
+      "url": "https://teacherleoramos.com.br/Ex2-3-4-5-6/estrutura-da-frase-em-ingles-tipos-de-frases.html",
+      "image": "https://teacherleoramos.com.br/Images/preview-social.jpg",
+      "author": {
+        "@type": "Person",
+        "name": "Leo Ramos",
+        "url": "https://teacherleoramos.com.br"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "FFES - Professor Leo Ramos",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://teacherleoramos.com.br/Images/logo novo grande.png"
+        }
+      },
+      "learningResourceType": "Quiz",
+      "educationalLevel": "Intermediate"
+    }
+    </script>
+    
+    <style>
+        .game-title {
+            color: var(--cor-texto-claro);
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.6);
+        }
+        #placar-geral-container {
+            background: rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: var(--cor-texto-claro);
+            padding: 15px 25px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            font-size: 1.1em;
+        }
+        #placar-geral-container p { margin: 0; }
+        #placar-geral-container .nav-arrow {
+            color: inherit;
+            text-decoration: none;
+            font-size: 1.2em;
+            line-height: 1;
+            transition: color 0.2s ease, transform 0.2s ease;
+        }
+        #placar-geral-container .nav-arrow:hover {
+            color: var(--cor-acento);
+            transform: scale(1.15);
+        }
+        .introducao-container, .exercicio-card {
+            background-color: var(--cor-fundo-secao);
+            width: 100%;
+            max-width: 900px;
+            padding: 25px 30px;
+            margin-bottom: 25px;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+            box-sizing: border-box;
+        }
+        .exercicio-card .question-container p { font-size: 1.1em; }
+        .options-container {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 20px;
+        }
+        .option-button {
+            width: 100%;
+            padding: 15px;
+            font-size: 1em;
+            text-align: left;
+            background-color: var(--cor-fundo-geral);
+            border: 2px solid var(--cor-borda-sutil);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .option-button:not(:disabled):hover {
+            background-color: var(--cor-acento-hover);
+            border-color: var(--cor-acento);
+            transform: translateY(-2px);
+        }
+        .option-button:disabled {
+            cursor: not-allowed;
+            opacity: 0.7;
+        }
+        .option-button.correto {
+            background-color: var(--cor-sucesso);
+            border-color: #27ae60;
+            color: white;
+            font-weight: bold;
+        }
+        .option-button.incorreto {
+            background-color: var(--cor-erro);
+            border-color: #c0392b;
+            color: white;
+            font-weight: bold;
+        }
+        .explanation-container {
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.5s ease-out;
+            background-color: var(--cor-fundo-secao-destaque);
+            border-radius: 8px;
+            padding: 0 20px;
+            margin-top: 0;
+            border-left: 4px solid var(--cor-primaria-hover);
+        }
+        .explanation-container.visible {
+            max-height: 500px;
+            margin-top: 20px;
+            padding: 20px;
+        }
+        .introducao-container ul { padding-left: 20px; }
+        
+        /* Contêiner do botão "Voltar ao Topo" */
+        .rodape-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+        @media (max-width: 800px) {
+            .game-title { font-size: 1.8em; }
+            h2 { font-size: 1.5em; }
+        }
+    </style>
+
+                <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-M8ZG06010Q"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-M8ZG06010Q');
+    </script>
+</head>
+<body id="topo">
+
+<div class="cabecalho-container">
+<header class="bloco-identidade">
+    <div class="logo-and-title">
+        <a href="/index.html">
+            <img src="/Images/logo novo grande.png" alt="Logo FFES" class="logo-img">
+        </a>
+        <a href="/index.html" style="text-decoration: none; color: inherit;">
+            <h1>Leo Ramos | Professor de Inglês</h1>
+        </a>
+    </div>
+</header>
+
+<div class="bloco-navegacao"> 
+    <nav class="nav-primary">
+        <ul>
+            <li><a href="/index.html#home">Home</a></li>
+            <li><a href="/index.html#sobre">Sobre Mim</a></li>
+            <li><a href="/exercicios-e-artigos.html#exercicios">Exercícios</a></li>
+            <li><a href="/exercicios-e-artigos.html#artigos-vocab">Artigos</a></li>
+            <li><a href="/cursos-e-ebook.html#cursos">Cursos e E-book</a></li>
+            <li><a href="/index.html#metodologia">Metodologia</a></li>
+        </ul>
+    </nav>
+</div>
+
+
+</div>
+
+<main>
+    <h1 class="game-title">Jogo de Estrutura de Frases: Tópicos Avançados</h1>
+    <div id="placar-geral-container">
+        <p>Acertos: <strong id="acertos-geral">0</strong></p>
+        <a href="#contato" class="nav-arrow" title="Ir para o final da página">&#11015;</a>
+        <p>Erros: <strong id="erros-geral">0</strong></p>
+    </div>
+    <button id="reset-btn" class="cta-button">Jogar Novamente</button>
+    <hr>
+    
+    <div class="introducao-container" style="text-align: left;">
+        <h3>Explicações Detalhadas</h3>
+        
+        <h4>1. Tipos de Frases por Estrutura</h4>
+        <p>A forma como as orações se combinam define o tipo de frase:</p>
+        <ul>
+            <li><strong>Frase Simples:</strong> Apenas uma oração independente. Ex: <i>The dog barked.</i></li>
+            <li><strong>Frase Composta:</strong> Duas ou mais orações independentes unidas por uma conjunção coordenativa (FANBOYS: for, and, nor, but, or, yet, so). Ex: <i>The dog barked, <strong>and</strong> the cat ran away.</i></li>
+            <li><strong>Frase Complexa:</strong> Uma oração independente e, no mínimo, uma oração dependente. Ex: <i>The dog barked <strong>when the cat appeared</strong>.</i></li>
+        </ul>
+
+        <h4>2. Tipos de Frases por Função</h4>
+        <p>O propósito da frase define sua função:</p>
+        <ul>
+            <li><strong>Declarativa:</strong> Afirma um fato. Termina com ponto final (.). Ex: <i>The sky is blue.</i></li>
+            <li><strong>Interrogativa:</strong> Faz uma pergunta. Termina com ponto de interrogação (?). Ex: <i>Is the sky blue?</i></li>
+            <li><strong>Imperativa:</strong> Dá uma ordem ou faz um pedido. O sujeito "you" é oculto. Ex: <i>(You) Look at the sky.</i></li>
+        </ul>
+
+        <h4>3. Voz Ativa e Voz Passiva (Active and Passive Voice)</h4>
+        <p>A voz verbal muda o foco da frase do autor da ação para o receptor.</p>
+        <ul>
+            <li><strong>Voz Ativa:</strong> O sujeito pratica a ação. Foco no agente. <br>Ex: <i><strong>The boy</strong> kicked the ball.</i></li>
+            <li><strong>Voz Passiva:</strong> O sujeito recebe a ação. Foco na ação ou no objeto.<br>Ex: <i><strong>The ball</strong> was kicked by the boy.</i> (Estrutura: objeto + verbo to be + particípio passado)</li>
+        </ul>
+
+        <h4>4. Estrutura Paralela (Parallel Structure / Parallelism)</h4>
+        <p>É uma técnica de escrita que cria ritmo e clareza ao manter a mesma estrutura gramatical para itens em uma lista ou série.</p>
+        <ul>
+            <li><strong>Correto:</strong> <i>She likes <strong>reading</strong>, <strong>writing</strong>, and <strong>painting</strong>.</i> (Todos são gerúndios)</li>
+            <li><strong>Incorreto:</strong> <i>She likes reading, to write, and paint.</i> (Formas misturadas)</li>
+        </ul>
+    </div>
+    
+    <div id="exercicios-container"></div>
+    <div class="rodape-container">
+        <a href="#topo" class="nav-button">&#11014;</a>
+    </div>
+</main>
+
+
+<footer id="contato" class="site-footer">
+    <div class="footer-content">
+        <div class="social-media-links">
+            <h4>Siga-me nas redes sociais e acesse o App</h4>
+            <a href="https://www.youtube.com/@teacherleoramos/videos" target="_blank" rel="noopener noreferrer" title="Canal YouTube Teacher Leo Ramos" aria-label="YouTube">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/youtube-play.png" alt="Ícone YouTube" width="30" height="30" loading="lazy">
+            </a>
+            <a href="https://www.instagram.com/teacherleoramos/" target="_blank" rel="noopener noreferrer" title="Instagram Teacher Leo Ramos" aria-label="Instagram">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/instagram-new.png" alt="Ícone Instagram" width="30" height="30" loading="lazy">
+            </a>
+            <a href="https://www.tiktok.com/@teacherleoramos" target="_blank" rel="noopener noreferrer" title="TikTok Teacher Leo Ramos" aria-label="TikTok">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/tiktok.png" alt="Ícone TikTok" width="30" height="30" loading="lazy">
+            </a>
+            <a href="https://wa.me/5511955582118" target="_blank" rel="noopener noreferrer" title="WhatsApp Agendamento" aria-label="WhatsApp">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/whatsapp--v1.png" alt="Ícone WhatsApp" width="30" height="30" loading="lazy">
+            </a>
+            <a href="/index-app.html" target="_blank" rel="noopener noreferrer" title="Acesse o FFES App" aria-label="FFES App">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/controller.png" alt="Ícone FFES App" width="30" height="30" loading="lazy">
+            </a>
+        </div>
+        <p><strong>Contato</strong></p>
+        <p>Youtube: @teacherleoramos | Telefone - WhatsApp: (11) 95558-2118</p>
+        <p>Endereço: São Paulo, SP, Brasil</p>
+        <p>CNPJ: 43.226.983/0001-91</p>
+        <p>&copy; <span id="year">2025</span> | FEATHERED FRIENDS ENGLISH SCHOOL - FFES. Todos os direitos reservados.</p>
+    </div>
+</footer>
+
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    // REMOVIDA A INJEÇÃO DE HTML DO CABEÇALHO E RODAPÉ
+
+    const dadosEstruturaAvancados = [
+        { id: 'esa-1', pergunta: 'Que tipo de frase é: "I like coffee, but my brother prefers tea."?', opcoes: ['Simples', 'Composta', 'Complexa', 'Composta-Complexa'], respostaCorreta: 'Composta', explicacao: 'É uma frase Composta, pois tem duas orações independentes ("I like coffee" e "my brother prefers tea") unidas pela conjunção "but".' },
+        { id: 'esa-2', pergunta: 'Que tipo de frase é: "He went to the store because he needed milk."?', opcoes: ['Simples', 'Composta', 'Complexa', 'Composta-Complexa'], respostaCorreta: 'Complexa', explicacao: 'É uma frase Complexa, pois tem uma oração independente ("He went to the store") e uma dependente ("because he needed milk").' },
+        { id: 'esa-3', pergunta: 'Que tipo de frase é: "Please pass the salt."?', opcoes: ['Declarativa', 'Interrogativa', 'Imperativa', 'Exclamativa'], respostaCorreta: 'Imperativa', explicacao: 'É uma frase Imperativa, pois expressa um pedido. O sujeito "you" está implícito.' },
+        { id: 'esa-4', pergunta: 'Passe para a voz passiva: "The teacher explains the lesson."', opcoes: ['The lesson is explained by the teacher.', 'The lesson explains the teacher.', 'The teacher is explained by the lesson.', 'The lesson explained by the teacher.'], respostaCorreta: 'The lesson is explained by the teacher.', explicacao: 'Na voz passiva, o objeto ("the lesson") vira o sujeito, seguido pelo verbo "to be" no tempo correto e o particípio do verbo principal.' },
+        { id: 'esa-5', pergunta: 'Escolha a frase com estrutura paralela correta:', opcoes: ['She likes to run, swimming, and to hike.', 'She likes running, swimming, and hiking.', 'She likes to run, to swim, and hiking.', 'She likes running, to swim, and the hike.'], respostaCorreta: 'She likes running, swimming, and hiking.', explicacao: 'A estrutura paralela exige que todos os itens da lista tenham a mesma forma gramatical. Neste caso, todos são gerúndios (-ing).' },
+        { id: 'esa-6', pergunta: '"The sun is shining." é uma...', opcoes: ['Frase Simples', 'Frase Composta', 'Frase Complexa'], respostaCorreta: 'Frase Simples', explicacao: 'É uma Frase Simples, pois contém apenas uma oração independente (um sujeito "The sun" e um verbo "is shining").' },
+        { id: 'esa-7', pergunta: 'Passe para a voz ativa: "The book was written by her."', opcoes: ['She was written by the book.', 'The book wrote her.', 'She wrote the book.', 'Her wrote the book.'], respostaCorreta: 'She wrote the book.', explicacao: 'Na voz ativa, o agente da passiva ("her") vira o sujeito ("She"), seguido pelo verbo no tempo correto ("wrote") e o sujeito da passiva ("The book") vira o objeto.' }
+    ];
+    
+    const container = document.getElementById('exercicios-container');
+    const placarAcertosGeralEl = document.getElementById('acertos-geral');
+    const placarErrosGeralEl = document.getElementById('erros-geral');
+    const resetButton = document.getElementById('reset-btn');
+    let acertos = 0;
+    let erros = 0;
+
+    function shuffleArray(array) { for (let i = array.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [array[i], array[j]] = [array[j], array[i]]; } }
+
+    function criarExercicioHTML(exercicioData, numeroExercicio) {
+        // Embaralha as opções
+        const opcoesEmbaralhadas = [...exercicioData.opcoes];
+        shuffleArray(opcoesEmbaralhadas);
+        
+        const opcoesHTML = opcoesEmbaralhadas.map(opcao => `<button class="option-button" data-resposta="${opcao}">${opcao}</button>`).join('');
+        return `
+            <section class="exercicio-card" id="exercicio-${exercicioData.id}" data-id="${exercicioData.id}">
+                <h2>Exercício ${numeroExercicio}</h2>
+                <div class="question-container"><p>${exercicioData.pergunta}</p><div class="options-container">${opcoesHTML}</div></div>
+                <div class="explanation-container" id="explicacao-${exercicioData.id}"><p>${exercicioData.explicacao}</p></div>
+            </section>
+        `;
+    }
+
+    function verificarResposta(exercicioId, btnClicado) {
+        const exercicioData = dadosEstruturaAvancados.find(e => e.id === exercicioId);
+        const exercicioCard = document.getElementById(`exercicio-${exercicioData.id}`);
+        const botoes = exercicioCard.querySelectorAll('.option-button');
+        botoes.forEach(btn => btn.disabled = true);
+        const explicacaoEl = document.getElementById(`explicacao-${exercicioData.id}`);
+        explicacaoEl.classList.add('visible');
+        if (btnClicado.dataset.resposta === exercicioData.respostaCorreta) {
+            btnClicado.classList.add('correto');
+            acertos++;
+        } else {
+            btnClicado.classList.add('incorreto');
+            const respostaCorretaBtn = Array.from(botoes).find(btn => btn.dataset.resposta === exercicioData.respostaCorreta);
+            if (respostaCorretaBtn) { respostaCorretaBtn.classList.add('correto'); }
+            erros++;
+        }
+        placarAcertosGeralEl.textContent = acertos;
+        placarErrosGeralEl.textContent = erros;
+    }
+
+    function iniciarJogo() {
+        acertos = 0;
+        erros = 0;
+        placarAcertosGeralEl.textContent = '0';
+        placarErrosGeralEl.textContent = '0';
+        shuffleArray(dadosEstruturaAvancados);
+        container.innerHTML = dadosEstruturaAvancados.map((dado, index) => criarExercicioHTML(dado, index + 1)).join('');
+        
+        // Correção do bug de múltiplos listeners
+        const newContainer = container.cloneNode(true);
+        container.parentNode.replaceChild(newContainer, container);
+        
+        newContainer.addEventListener('click', (event) => {
+            if (event.target.classList.contains('option-button') && !event.target.disabled) {
+                const btnClicado = event.target;
+                const exercicioCard = btnClicado.closest('.exercicio-card');
+                const exercicioId = exercicioCard.dataset.id;
+                verificarResposta(exercicioId, btnClicado);
+            }
+        });
+
+        // Rola a tela para o início do main content ao reiniciar
+        document.querySelector('main').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    resetButton.addEventListener('click', iniciarJogo);
+    iniciarJogo();
+});
+</script>
+
+</body>
+</html>

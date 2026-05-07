@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Exercício: Tipos de Advérbios (Modo, Lugar, Tempo) | Professor Leo Ramos</title>
+    <meta name="description" content="Aprenda e pratique os tipos essenciais de advérbios em inglês: modo, lugar, tempo, frequência e grau com este quiz interativo.">
+    <meta name="author" content="Leo Ramos">
+    <meta name="robots" content="index, follow">
+    <meta name="keywords" content="advérbios em inglês, tipos de advérbios, exercícios de inglês, Leo Ramos, FFES">
+    
+    <link rel="canonical" href="https://teacherleoramos.com.br/Ex7-8-9-10-11-12/adverbios-em-ingles-frequencia-adverbs-1.html">
+    <link rel="stylesheet" href="/CSS/universal.css">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="/Images/logofavicion.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/Images/logofavicion.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/Images/logofavicion.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/Images/logofavicion.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/Images/logofavicion.png">
+
+    <meta property="og:title" content="Exercício: Tipos de Advérbios (Modo, Lugar, Tempo) | Professor Leo Ramos">
+    <meta property="og:description" content="Aprenda e pratique os tipos essenciais de advérbios em inglês: modo, lugar, tempo, frequência e grau com este quiz interativo.">
+    <meta property="og:image" content="https://teacherleoramos.com.br/Images/preview-social.jpg">
+    <meta property="og:url" content="https://teacherleoramos.com.br/Ex7-8-9-10-11-12/adverbios-em-ingles-frequencia-adverbs-1.html">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:site_name" content="FFES - Professor Leo Ramos">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Exercício: Tipos de Advérbios (Modo, Lugar, Tempo) | Professor Leo Ramos">
+    <meta name="twitter:description" content="Aprenda e pratique os tipos essenciais de advérbios em inglês: modo, lugar, tempo, frequência e grau com este quiz interativo.">
+    <meta name="twitter:image" content="https://teacherleoramos.com.br/Images/preview-social.jpg">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Quiz",
+      "name": "Jogo de Advérbios: Os Tipos Essenciais",
+      "description": "Um quiz interativo para praticar a identificação e o uso dos principais tipos de advérbios: modo, lugar, tempo, frequência e grau.",
+      "url": "https://teacherleoramos.com.br/Ex7-8-9-10-11-12/adverbios-em-ingles-frequencia-adverbs-1.html",
+      "image": "https://teacherleoramos.com.br/Images/preview-social.jpg",
+      "author": {
+        "@type": "Person",
+        "name": "Leo Ramos",
+        "url": "https://teacherleoramos.com.br"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "FFES - Professor Leo Ramos",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://teacherleoramos.com.br/Images/logo novo grande.png"
+        }
+      },
+      "learningResourceType": "Quiz",
+      "educationalLevel": "Beginner/Intermediate"
+    }
+    </script>
+    
+    <style>
+        .game-title {
+            color: var(--cor-texto-claro);
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.6);
+        }
+        #placar-geral-container {
+            background: rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: var(--cor-texto-claro);
+            padding: 15px 25px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            font-size: 1.1em;
+        }
+        #placar-geral-container p { margin: 0; }
+        #placar-geral-container .nav-arrow {
+            color: inherit;
+            text-decoration: none;
+            font-size: 1.2em;
+            line-height: 1;
+            transition: color 0.2s ease, transform 0.2s ease;
+        }
+        #placar-geral-container .nav-arrow:hover {
+            color: var(--cor-acento);
+            transform: scale(1.15);
+        }
+        .introducao-container, .exercicio-card {
+            background-color: var(--cor-fundo-secao);
+            width: 100%;
+            max-width: 900px;
+            padding: 25px 30px;
+            margin-bottom: 25px;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+            box-sizing: border-box;
+        }
+        .exercicio-card .question-container p { font-size: 1.1em; }
+        .options-container {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 20px;
+        }
+        .option-button {
+            width: 100%;
+            padding: 15px;
+            font-size: 1em;
+            text-align: left;
+            background-color: var(--cor-fundo-geral);
+            border: 2px solid var(--cor-borda-sutil);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .option-button:not(:disabled):hover {
+            background-color: var(--cor-acento-hover);
+            border-color: var(--cor-acento);
+            transform: translateY(-2px);
+        }
+        .option-button:disabled {
+            cursor: not-allowed;
+            opacity: 0.7;
+        }
+        .option-button.correto {
+            background-color: var(--cor-sucesso);
+            border-color: #27ae60;
+            color: white;
+            font-weight: bold;
+        }
+        .option-button.incorreto {
+            background-color: var(--cor-erro);
+            border-color: #c0392b;
+            color: white;
+            font-weight: bold;
+        }
+        .explanation-container {
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.5s ease-out;
+            background-color: var(--cor-fundo-secao-destaque);
+            border-radius: 8px;
+            padding: 0 20px;
+            margin-top: 0;
+            border-left: 4px solid var(--cor-primaria-hover);
+        }
+        .explanation-container.visible {
+            max-height: 500px;
+            margin-top: 20px;
+            padding: 20px;
+        }
+        /* Contêiner do botão "Voltar ao Topo" */
+        .rodape-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        @media (max-width: 800px) {
+            .game-title { font-size: 1.8em; }
+            h2 { font-size: 1.5em; }
+        }
+    </style>
+
+                <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-M8ZG06010Q"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-M8ZG06010Q');
+    </script>
+</head>
+<body id="topo">
+
+<div class="cabecalho-container">
+<header class="bloco-identidade">
+    <div class="logo-and-title">
+        <a href="/index.html">
+            <img src="/Images/logo novo grande.png" alt="Logo FFES" class="logo-img">
+        </a>
+        <a href="/index.html" style="text-decoration: none; color: inherit;">
+            <h1>Leo Ramos | Professor de Inglês</h1>
+        </a>
+    </div>
+</header>
+
+
+<div class="bloco-navegacao"> 
+    <nav class="nav-primary">
+        <ul>
+            <li><a href="/index.html#home">Home</a></li>
+            <li><a href="/index.html#sobre">Sobre Mim</a></li>
+            <li><a href="/exercicios-e-artigos.html#exercicios">Exercícios</a></li>
+            <li><a href="/exercicios-e-artigos.html#artigos-vocab">Artigos</a></li>
+            <li><a href="/cursos-e-ebook.html#cursos">Cursos e E-book</a></li>
+            <li><a href="/index.html#metodologia">Metodologia</a></li>
+        </ul>
+    </nav>
+</div>
+
+
+</div>
+<main>
+    <h1 class="game-title">Jogo de Advérbios: Os Tipos Essenciais</h1>
+    <div id="placar-geral-container">
+        <p>Acertos: <strong id="acertos-geral">0</strong></p>
+        <a href="#contato" class="nav-arrow" title="Ir para o final da página">&#11015;</a>
+        <p>Erros: <strong id="erros-geral">0</strong></p>
+    </div>
+    <button id="reset-btn" class="cta-button">Jogar Novamente</button>
+    <hr>
+    
+    <div class="introducao-container" style="text-align: left;">
+        <h3>Explicações Detalhadas</h3>
+        
+        <h4>1. O que é um Advérbio (Adverb)?</h4>
+        <p>Um advérbio é uma palavra que modifica ou adiciona informações a um <strong>verbo</strong>, um <strong>adjetivo</strong> ou a <strong>outro advérbio</strong>. Eles são essenciais para dar detalhe e precisão, respondendo a perguntas como "Como?", "Onde?", "Quando?", "Com que frequência?" e "Qual a intensidade?". Muitos advérbios de modo terminam em <strong>-ly</strong> (equivalente ao nosso "-mente").</p>
+        
+        <h4>2. Adverbs of Manner (Advérbios de Modo)</h4>
+        <p><strong>Função:</strong> Descrevem <strong>como</strong> uma ação é realizada. São os mais comuns.<br>
+        <strong>Exemplos:</strong> <i>slowly</i> (lentamente), <i>carefully</i> (cuidadosamente), <i>happily</i> (felizmente), <i>well</i> (bem), <i>fast</i> (rápido), <i>loudly</i> (em voz alta).<br>
+        <strong>Frase de Exemplo:</strong> <i>He drives his car <strong>slowly</strong> and <strong>carefully</strong>.</i></p>
+
+        <h4>3. Adverbs of Place (Advérbios de Lugar)</h4>
+        <p><strong>Função:</strong> Indicam <strong>onde</strong> a ação ocorre.<br>
+        <strong>Exemplos:</strong> <i>here</i> (aqui), <i>there</i> (lá), <i>everywhere</i> (em todo lugar), <i>outside</i> (fora), <i>upstairs</i> (no andar de cima), <i>nearby</i> (por perto).<br>
+        <strong>Frase de Exemplo:</strong> <i>The kids are playing <strong>outside</strong>.</i></p>
+
+        <h4>4. Adverbs of Time (Advérbios de Tempo)</h4>
+        <p><strong>Função:</strong> Indicam <strong>quando</strong> uma ação ocorre.<br>
+        <strong>Exemplos:</strong> <i>now</i> (agora), <i>yesterday</i> (ontem), <i>tomorrow</i> (amanhã), <i>soon</i> (em breve), <i>later</i> (mais tarde), <i>already</i> (já).<br>
+        <strong>Frase de Exemplo:</strong> <i>I will finish my homework <strong>soon</strong>.</i></p>
+
+        <h4>5. Adverbs of Frequency (Advérbios de Frequência)</h4>
+        <p><strong>Função:</strong> Indicam <strong>com que frequência</strong> uma ação ocorre.<br>
+        <strong>Exemplos:</strong> <i>always</i> (sempre), <i>usually</i> (geralmente), <i>often</i> (frequentemente), <i>sometimes</i> (às vezes), <i>rarely</i> (raramente), <i>never</i> (nunca).<br>
+        <strong>Frase de Exemplo:</strong> <i>She <strong>usually</strong> arrives early.</i></p>
+        
+        <h4>6. Adverbs of Degree (Advérbios de Grau ou Intensidade)</h4>
+        <p><strong>Função:</strong> Indicam <strong>a intensidade</strong> de uma ação, adjetivo ou outro advérbio.<br>
+        <strong>Exemplos:</strong> <i>very</i> (muito), <i>extremely</i> (extremamente), <i>quite</i> (bastante), <i>too</i> (demais), <i>enough</i> (suficiente), <i>almost</i> (quase).<br>
+        <strong>Frase de Exemplo:</strong> <i>The coffee is <strong>very</strong> hot. This is not good <strong>enough</strong>.</i></p>
+    </div>
+    
+    <div id="exercicios-container"></div>
+    <div class="rodape-container">
+        <a href="#topo" class="nav-button">&#11014;</a>
+    </div>
+</main>
+
+<footer id="contato" class="site-footer">
+    <div class="footer-content">
+        <div class="social-media-links">
+            <h4>Siga-me nas redes sociais e acesse o App</h4>
+            <a href="https://www.youtube.com/@teacherleoramos/videos" target="_blank" rel="noopener noreferrer" title="Canal YouTube Teacher Leo Ramos" aria-label="YouTube">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/youtube-play.png" alt="Ícone YouTube" width="30" height="30" loading="lazy">
+            </a>
+            <a href="https://www.instagram.com/teacherleoramos/" target="_blank" rel="noopener noreferrer" title="Instagram Teacher Leo Ramos" aria-label="Instagram">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/instagram-new.png" alt="Ícone Instagram" width="30" height="30" loading="lazy">
+            </a>
+            <a href="https://www.tiktok.com/@teacherleoramos" target="_blank" rel="noopener noreferrer" title="TikTok Teacher Leo Ramos" aria-label="TikTok">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/tiktok.png" alt="Ícone TikTok" width="30" height="30" loading="lazy">
+            </a>
+            <a href="https://wa.me/5511955582118" target="_blank" rel="noopener noreferrer" title="WhatsApp Agendamento" aria-label="WhatsApp">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/whatsapp--v1.png" alt="Ícone WhatsApp" width="30" height="30" loading="lazy">
+            </a>
+            <a href="/index-app.html" target="_blank" rel="noopener noreferrer" title="Acesse o FFES App" aria-label="FFES App">  
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/controller.png" alt="Ícone FFES App" width="30" height="30" loading="lazy">
+            </a>
+        </div>
+        <p><strong>Contato</strong></p>
+        <p>Youtube: @teacherleoramos | Telefone - WhatsApp: (11) 95558-2118</p>
+        <p>Endereço: São Paulo, SP, Brasil</p>
+        <p>CNPJ: 43.226.983/0001-91</p>
+        <p>&copy; <span id="year">2025</span> | FEATHERED FRIENDS ENGLISH SCHOOL - FFES. Todos os direitos reservados.</p>
+    </div>
+</footer>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+    const dadosAdverbios1 = [
+        { id: 'adv1-1', pergunta: 'Na frase "She sings beautifully", a que pergunta o advérbio "beautifully" responde?', opcoes: ['Como?', 'Quando?', 'Onde?', 'Com que frequência?'], respostaCorreta: 'Como?', explicacao: '"Beautifully" (lindamente) é um advérbio de modo, descrevendo como ela canta.' },
+        { id: 'adv1-2', pergunta: 'Qual das opções é um Advérbio de Lugar (Adverb of Place)?', opcoes: ['quickly', 'here', 'always', 'very'], respostaCorreta: 'here', explicacao: '"Here" (aqui) indica um lugar.' },
+        { id: 'adv1-3', pergunta: 'Complete a frase: "I will see you ___."', opcoes: ['carefully', 'upstairs', 'soon', 'often'], respostaCorreta: 'soon', explicacao: '"Soon" (em breve) é um advérbio de tempo.' },
+        { id: 'adv1-4', pergunta: 'Na frase "He is ___ late for class.", qual advérbio de frequência se encaixa melhor?', opcoes: ['never', 'weekly', 'yesterday', 'slowly'], respostaCorreta: 'never', explicacao: '"Never" é frequência. Posiciona-se após o verbo to be.' },
+        { id: 'adv1-5', pergunta: 'Em "The soup is <strong>too</strong> hot," qual é a função de "too"?', opcoes: ['Advérbio de Grau', 'Advérbio de Tempo', 'Advérbio de Modo', 'Adjetivo'], respostaCorreta: 'Advérbio de Grau', explicacao: '"Too" (demais) intensifica o adjetivo, indicando grau.' },
+        { id: 'adv1-6', pergunta: 'Qual é o tipo do advérbio "sometimes"?', opcoes: ['Frequência', 'Modo', 'Lugar', 'Grau'], respostaCorreta: 'Frequência', explicacao: '"Sometimes" (às vezes) indica frequência.' },
+        { id: 'adv1-7', pergunta: 'Em "Put the box <strong>there</strong>", que tipo de advérbio é "there"?', opcoes: ['Lugar', 'Tempo', 'Modo', 'Frequência'], respostaCorreta: 'Lugar', explicacao: '"There" (lá) indica onde.' },
+        { id: 'adv1-8', pergunta: 'Qual frase contém um advérbio de MODO?', opcoes: ['He walks slowly.', 'He is here.', 'He arrived yesterday.', 'He is very tall.'], respostaCorreta: 'He walks slowly.', explicacao: '"Slowly" descreve o modo como ele anda.' },
+        { id: 'adv1-9', pergunta: 'O advérbio "yesterday" responde a qual pergunta?', opcoes: ['Quando?', 'Onde?', 'Como?', 'Quanto?'], respostaCorreta: 'Quando?', explicacao: 'Advérbios de tempo respondem a "Quando?".' },
+        { id: 'adv1-10', pergunta: 'Identifique o advérbio: "She is extremely smart."', opcoes: ['extremely', 'she', 'is', 'smart'], respostaCorreta: 'extremely', explicacao: '"Extremely" é um advérbio de grau modificando o adjetivo "smart".' },
+        { id: 'adv1-11', pergunta: 'Qual destes é um advérbio de TEMPO?', opcoes: ['Now', 'Quickly', 'Outside', 'Almost'], respostaCorreta: 'Now', explicacao: '"Now" (agora) indica tempo.' },
+        { id: 'adv1-12', pergunta: 'Qual destes é um advérbio de LUGAR?', opcoes: ['Inside', 'Yesterday', 'Happily', 'Often'], respostaCorreta: 'Inside', explicacao: '"Inside" (dentro) indica lugar.' },
+        { id: 'adv1-13', pergunta: '"I <strong>rarely</strong> eat fast food." Que tipo de advérbio é o destacado?', opcoes: ['Frequência', 'Tempo', 'Modo', 'Grau'], respostaCorreta: 'Frequência', explicacao: '"Rarely" indica com que frequência a ação ocorre.' },
+        { id: 'adv1-14', pergunta: 'Complete: "Please, come ___."', opcoes: ['in', 'yesterday', 'slowly', 'often'], respostaCorreta: 'in', explicacao: '"Come in" (entre) funciona como indicação de lugar/movimento.' },
+        { id: 'adv1-15', pergunta: '"He speaks English <strong>well</strong>." "Well" é um advérbio de:', opcoes: ['Modo', 'Tempo', 'Lugar', 'Grau'], respostaCorreta: 'Modo', explicacao: '"Well" descreve a maneira como ele fala.' },
+        { id: 'adv1-16', pergunta: 'Qual é o oposto do advérbio de frequência "always"?', opcoes: ['Never', 'Sometimes', 'Often', 'Usually'], respostaCorreta: 'Never', explicacao: 'O oposto de sempre é nunca.' },
+        { id: 'adv1-17', pergunta: '"The movie was <strong>quite</strong> interesting." "Quite" é:', opcoes: ['Advérbio de Grau', 'Advérbio de Modo', 'Advérbio de Tempo', 'Verbo'], respostaCorreta: 'Advérbio de Grau', explicacao: '"Quite" (bastante/meio) modifica a intensidade do adjetivo.' },
+        { id: 'adv1-18', pergunta: 'Selecione o advérbio de modo:', opcoes: ['Loudly', 'Always', 'There', 'Soon'], respostaCorreta: 'Loudly', explicacao: '"Loudly" (em voz alta) descreve a maneira.' },
+        { id: 'adv1-19', pergunta: '"Wait <strong>outside</strong>." A palavra destacada é:', opcoes: ['Advérbio de Lugar', 'Advérbio de Tempo', 'Preposição', 'Verbo'], respostaCorreta: 'Advérbio de Lugar', explicacao: 'Indica onde esperar.' },
+        { id: 'adv1-20', pergunta: '"I will call you <strong>later</strong>." "Later" indica:', opcoes: ['Tempo', 'Lugar', 'Modo', 'Grau'], respostaCorreta: 'Tempo', explicacao: '"Later" (mais tarde) refere-se ao tempo.' },
+        { id: 'adv1-21', pergunta: 'Qual destes NÃO é um advérbio de frequência?', opcoes: ['Quickly', 'Always', 'Seldom', 'Often'], respostaCorreta: 'Quickly', explicacao: '"Quickly" é modo, não frequência.' },
+        { id: 'adv1-22', pergunta: '"It is <strong>very</strong> cold." "Very" modifica:', opcoes: ['O adjetivo "cold"', 'O verbo "is"', 'O sujeito "It"', 'Nenhuma das anteriores'], respostaCorreta: 'O adjetivo "cold"', explicacao: 'Advérbios de grau modificam adjetivos ou outros advérbios.' },
+        { id: 'adv1-23', pergunta: 'Complete: "She opened the gift ___."', opcoes: ['carefully', 'always', 'yesterday', 'very'], respostaCorreta: 'carefully', explicacao: 'Precisamos de um modo (como ela abriu).' },
+        { id: 'adv1-24', pergunta: '"Look <strong>up</strong>!" "Up" aqui funciona como:', opcoes: ['Advérbio de Lugar', 'Advérbio de Tempo', 'Conjunção', 'Adjetivo'], respostaCorreta: 'Advérbio de Lugar', explicacao: 'Indica a direção/lugar para onde olhar.' },
+        { id: 'adv1-25', pergunta: 'Qual destes advérbios termina em -ly mas é de TEMPO?', opcoes: ['Early', 'Slowly', 'Badly', 'Softly'], respostaCorreta: 'Early', explicacao: '"Early" (cedo) é tempo, embora termine em -ly (na verdade, é adjetivo e advérbio).' },
+        { id: 'adv1-26', pergunta: '"I <strong>almost</strong> fell." "Almost" é um advérbio de:', opcoes: ['Grau', 'Modo', 'Lugar', 'Tempo'], respostaCorreta: 'Grau', explicacao: '"Almost" (quase) indica o grau de proximidade da ação acontecer.' },
+        { id: 'adv1-27', pergunta: '"Everywhere" é um exemplo de advérbio de:', opcoes: ['Lugar', 'Tempo', 'Frequência', 'Modo'], respostaCorreta: 'Lugar', explicacao: 'Significa "em todo lugar".' },
+        { id: 'adv1-28', pergunta: 'Complete: "He drives ___ fast."', opcoes: ['too', 'always', 'yesterday', 'here'], respostaCorreta: 'too', explicacao: '"Too" intensifica "fast". "Too fast" (rápido demais).' },
+        { id: 'adv1-29', pergunta: '"Does she <strong>usually</strong> cook?" A palavra destacada é:', opcoes: ['Advérbio de Frequência', 'Verbo', 'Substantivo', 'Adjetivo'], respostaCorreta: 'Advérbio de Frequência', explicacao: 'Indica o hábito.' },
+        { id: 'adv1-30', pergunta: '"Suddenly" é um advérbio de:', opcoes: ['Modo', 'Lugar', 'Tempo', 'Grau'], respostaCorreta: 'Modo', explicacao: 'Significa "repentinamente" (o modo como aconteceu).' },
+        { id: 'adv1-31', pergunta: '"The cat is <strong>downstairs</strong>." Tipo de advérbio:', opcoes: ['Lugar', 'Tempo', 'Modo', 'Grau'], respostaCorreta: 'Lugar', explicacao: 'No andar de baixo.' },
+        { id: 'adv1-32', pergunta: '"We met <strong>recently</strong>." Tipo de advérbio:', opcoes: ['Tempo', 'Lugar', 'Modo', 'Grau'], respostaCorreta: 'Tempo', explicacao: 'Recentemente (tempo).' },
+        { id: 'adv1-33', pergunta: '"Totally" é sinônimo de qual tipo de advérbio?', opcoes: ['Grau', 'Lugar', 'Tempo', 'Frequência'], respostaCorreta: 'Grau', explicacao: 'Significa "totalmente", indicando completude/grau.' },
+        { id: 'adv1-34', pergunta: 'Qual frase usa um advérbio de frequência?', opcoes: ['I never drink coffee.', 'I drink coffee quickly.', 'I drink coffee here.', 'I drink hot coffee.'], respostaCorreta: 'I never drink coffee.', explicacao: '"Never" é frequência.' },
+        { id: 'adv1-35', pergunta: '"Nearby" é um advérbio de:', opcoes: ['Lugar', 'Tempo', 'Modo', 'Frequência'], respostaCorreta: 'Lugar', explicacao: 'Significa "por perto".' },
+        { id: 'adv1-36', pergunta: '"She works <strong>hard</strong>." "Hard" é advérbio de:', opcoes: ['Modo', 'Lugar', 'Tempo', 'Grau'], respostaCorreta: 'Modo', explicacao: 'Descreve como ela trabalha (duro/muito).' },
+        { id: 'adv1-37', pergunta: '"I have <strong>just</strong> arrived." "Just" aqui indica:', opcoes: ['Tempo', 'Lugar', 'Modo', 'Grau'], respostaCorreta: 'Tempo', explicacao: 'Indica um passado muito recente.' },
+        { id: 'adv1-38', pergunta: '"Enough" (suficiente) geralmente é um advérbio de:', opcoes: ['Grau', 'Lugar', 'Tempo', 'Modo'], respostaCorreta: 'Grau', explicacao: 'Indica a quantidade/intensidade necessária.' },
+        { id: 'adv1-39', pergunta: '"Weekly" (semanalmente) é um advérbio de:', opcoes: ['Frequência', 'Modo', 'Lugar', 'Grau'], respostaCorreta: 'Frequência', explicacao: 'Indica a periodicidade.' },
+        { id: 'adv1-40', pergunta: 'Qual advérbio completa a frase indicando MODO? "He shouted ___."', opcoes: ['angrily', 'yesterday', 'outside', 'never'], respostaCorreta: 'angrily', explicacao: '"Angrily" (com raiva) descreve como ele gritou.' },
+        { id: 'adv1-41', pergunta: '"I am <strong>so</strong> happy." "So" é advérbio de:', opcoes: ['Grau', 'Tempo', 'Lugar', 'Modo'], respostaCorreta: 'Grau', explicacao: 'Intensifica "happy".' },
+        { id: 'adv1-42', pergunta: '"Abroad" (no exterior) é advérbio de:', opcoes: ['Lugar', 'Tempo', 'Modo', 'Grau'], respostaCorreta: 'Lugar', explicacao: 'Indica localização.' },
+        { id: 'adv1-43', pergunta: '"Tonight" é advérbio de:', opcoes: ['Tempo', 'Lugar', 'Modo', 'Grau'], respostaCorreta: 'Tempo', explicacao: 'Esta noite (tempo).' },
+        { id: 'adv1-44', pergunta: '"Generally" é advérbio de:', opcoes: ['Frequência', 'Lugar', 'Tempo', 'Modo'], respostaCorreta: 'Frequência', explicacao: 'Geralmente.' },
+        { id: 'adv1-45', pergunta: '"Rather" em "It is rather cold" é advérbio de:', opcoes: ['Grau', 'Modo', 'Tempo', 'Lugar'], respostaCorreta: 'Grau', explicacao: 'Significa "um tanto" ou "bastante".' },
+        { id: 'adv1-46', pergunta: '"Fast" pode ser adjetivo ou advérbio. Em "He runs fast", é:', opcoes: ['Advérbio de Modo', 'Adjetivo', 'Advérbio de Tempo', 'Verbo'], respostaCorreta: 'Advérbio de Modo', explicacao: 'Modifica o verbo correr.' },
+        { id: 'adv1-47', pergunta: '"Somewhere" é advérbio de:', opcoes: ['Lugar', 'Tempo', 'Modo', 'Grau'], respostaCorreta: 'Lugar', explicacao: 'Algum lugar.' },
+        { id: 'adv1-48', pergunta: '"Monthly" é advérbio de:', opcoes: ['Frequência', 'Modo', 'Lugar', 'Grau'], respostaCorreta: 'Frequência', explicacao: 'Mensalmente.' },
+        { id: 'adv1-49', pergunta: '"Simply" é advérbio de:', opcoes: ['Modo', 'Tempo', 'Lugar', 'Grau'], respostaCorreta: 'Modo', explicacao: 'Simplesmente (modo).' },
+        { id: 'adv1-50', pergunta: '"Already" (já) é advérbio de:', opcoes: ['Tempo', 'Lugar', 'Modo', 'Grau'], respostaCorreta: 'Tempo', explicacao: 'Indica que algo aconteceu antes do esperado ou no passado.' }
+    ];
+
+    const container = document.getElementById('exercicios-container');
+    const placarAcertosGeralEl = document.getElementById('acertos-geral');
+    const placarErrosGeralEl = document.getElementById('erros-geral');
+    const resetButton = document.getElementById('reset-btn');
+    let acertos = 0;
+    let erros = 0;
+    
+    function shuffleArray(array) { 
+        for (let i = array.length - 1; i > 0; i--) { 
+            const j = Math.floor(Math.random() * (i + 1)); 
+            [array[i], array[j]] = [array[j], array[i]]; 
+        } 
+    }
+
+    function criarExercicioHTML(exercicioData, numeroExercicio) {
+        const opcoesEmbaralhadas = [...exercicioData.opcoes];
+        shuffleArray(opcoesEmbaralhadas);
+        
+        const opcoesHTML = opcoesEmbaralhadas.map(opcao => `<button class="option-button" data-resposta="${opcao}">${opcao}</button>`).join('');
+        return `
+            <section class="exercicio-card" id="exercicio-${exercicioData.id}" data-id="${exercicioData.id}">
+                <h2>Exercício ${numeroExercicio}</h2>
+                <div class="question-container"><p>${exercicioData.pergunta}</p><div class="options-container">${opcoesHTML}</div></div>
+                <div class="explanation-container" id="explicacao-${exercicioData.id}"><p>${exercicioData.explicacao}</p></div>
+            </section>
+        `;
+    }
+
+    function verificarResposta(exercicioId, btnClicado) {
+        const exercicioData = dadosAdverbios1.find(e => e.id === exercicioId);
+        const exercicioCard = document.getElementById(`exercicio-${exercicioData.id}`);
+        const botoes = exercicioCard.querySelectorAll('.option-button');
+        botoes.forEach(btn => btn.disabled = true);
+        const explicacaoEl = document.getElementById(`explicacao-${exercicioData.id}`);
+        explicacaoEl.classList.add('visible');
+        
+        if (btnClicado.dataset.resposta === exercicioData.respostaCorreta) {
+            btnClicado.classList.add('correto');
+            acertos++;
+        } else {
+            btnClicado.classList.add('incorreto');
+            const respostaCorretaBtn = Array.from(botoes).find(btn => btn.dataset.resposta === exercicioData.respostaCorreta);
+            if (respostaCorretaBtn) { respostaCorretaBtn.classList.add('correto'); }
+            erros++;
+        }
+        placarAcertosGeralEl.textContent = acertos;
+        placarErrosGeralEl.textContent = erros;
+    }
+
+    function iniciarJogo() {
+        acertos = 0;
+        erros = 0;
+        placarAcertosGeralEl.textContent = '0';
+        placarErrosGeralEl.textContent = '0';
+        
+        shuffleArray(dadosAdverbios1);
+        
+        // Pega apenas os primeiros 50 (se houver mais) ou todos
+        const perguntasSelecionadas = dadosAdverbios1.slice(0, 50);
+        
+        container.innerHTML = perguntasSelecionadas.map((dado, index) => criarExercicioHTML(dado, index + 1)).join('');
+        
+        const newContainer = container.cloneNode(true);
+        container.parentNode.replaceChild(newContainer, container);
+        
+        newContainer.addEventListener('click', (event) => {
+            if (event.target.classList.contains('option-button') && !event.target.disabled) {
+                const btnClicado = event.target;
+                const exercicioCard = btnClicado.closest('.exercicio-card');
+                const exercicioId = exercicioCard.dataset.id;
+                verificarResposta(exercicioId, btnClicado);
+            }
+        });
+
+        document.querySelector('main').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    resetButton.addEventListener('click', iniciarJogo);
+    iniciarJogo();
+});
+</script>
+
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Exercício: Posição dos Advérbios (Good vs Well) | Professor Leo Ramos</title>
+    <meta name="description" content="Aprenda e pratique regras avançadas de advérbios em inglês: posicionamento, good vs. well e advérbios de foco com este quiz interativo.">
+    <meta name="author" content="Leo Ramos">
+    <meta name="robots" content="index, follow">
+    <meta name="keywords" content="advérbios em inglês, good vs well, posição dos advérbios, exercícios de inglês, Leo Ramos, FFES">
+    
+    <link rel="canonical" href="https://teacherleoramos.com.br/Ex7-8-9-10-11-12/adverbios-em-ingles-posicao-adverbs-2.html">
+    <link rel="stylesheet" href="/CSS/universal.css">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="/Images/logofavicion.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/Images/logofavicion.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/Images/logofavicion.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/Images/logofavicion.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/Images/logofavicion.png">
+
+    <meta property="og:title" content="Exercício: Posição dos Advérbios (Good vs Well) | Professor Leo Ramos">
+    <meta property="og:description" content="Aprenda e pratique regras avançadas de advérbios em inglês: posicionamento, good vs. well e advérbios de foco com este quiz interativo.">
+    <meta property="og:image" content="https://teacherleoramos.com.br/Images/preview-social.jpg">
+    <meta property="og:url" content="https://teacherleoramos.com.br/Ex7-8-9-10-11-12/adverbios-em-ingles-posicao-adverbs-2.html">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:site_name" content="FFES - Professor Leo Ramos">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Exercício: Posição dos Advérbios (Good vs Well) | Professor Leo Ramos">
+    <meta name="twitter:description" content="Aprenda e pratique regras avançadas de advérbios em inglês: posicionamento, good vs. well e advérbios de foco com este quiz interativo.">
+    <meta name="twitter:image" content="https://teacherleoramos.com.br/Images/preview-social.jpg">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Quiz",
+      "name": "Jogo de Advérbios: Posição e Nuances",
+      "description": "Um quiz interativo para praticar regras avançadas de advérbios, como o posicionamento na frase, a diferença entre 'good' e 'well', e advérbios de foco.",
+      "url": "https://teacherleoramos.com.br/Ex7-8-9-10-11-12/adverbios-em-ingles-posicao-adverbs-2.html",
+      "image": "https://teacherleoramos.com.br/Images/preview-social.jpg",
+      "author": {
+        "@type": "Person",
+        "name": "Leo Ramos",
+        "url": "https://teacherleoramos.com.br"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "FFES - Professor Leo Ramos",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://teacherleoramos.com.br/Images/logo novo grande.png"
+        }
+      },
+      "learningResourceType": "Quiz",
+      "educationalLevel": "Intermediate"
+    }
+    </script>
+    
+    <style>
+        .game-title {
+            color: var(--cor-texto-claro);
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.6);
+        }
+        #placar-geral-container {
+            background: rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: var(--cor-texto-claro);
+            padding: 15px 25px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            font-size: 1.1em;
+        }
+        #placar-geral-container p { margin: 0; }
+        #placar-geral-container .nav-arrow {
+            color: inherit;
+            text-decoration: none;
+            font-size: 1.2em;
+            line-height: 1;
+            transition: color 0.2s ease, transform 0.2s ease;
+        }
+        #placar-geral-container .nav-arrow:hover {
+            color: var(--cor-acento);
+            transform: scale(1.15);
+        }
+        .introducao-container, .exercicio-card {
+            background-color: var(--cor-fundo-secao);
+            width: 100%;
+            max-width: 900px;
+            padding: 25px 30px;
+            margin-bottom: 25px;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+            box-sizing: border-box;
+        }
+        .exercicio-card .question-container p { font-size: 1.1em; }
+        .options-container {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 20px;
+        }
+        .option-button {
+            width: 100%;
+            padding: 15px;
+            font-size: 1em;
+            text-align: left;
+            background-color: var(--cor-fundo-geral);
+            border: 2px solid var(--cor-borda-sutil);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .option-button:not(:disabled):hover {
+            background-color: var(--cor-acento-hover);
+            border-color: var(--cor-acento);
+            transform: translateY(-2px);
+        }
+        .option-button:disabled {
+            cursor: not-allowed;
+            opacity: 0.7;
+        }
+        .option-button.correto {
+            background-color: var(--cor-sucesso);
+            border-color: #27ae60;
+            color: white;
+            font-weight: bold;
+        }
+        .option-button.incorreto {
+            background-color: var(--cor-erro);
+            border-color: #c0392b;
+            color: white;
+            font-weight: bold;
+        }
+        .explanation-container {
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.5s ease-out;
+            background-color: var(--cor-fundo-secao-destaque);
+            border-radius: 8px;
+            padding: 0 20px;
+            margin-top: 0;
+            border-left: 4px solid var(--cor-primaria-hover);
+        }
+        .explanation-container.visible {
+            max-height: 500px;
+            margin-top: 20px;
+            padding: 20px;
+        }
+        /* Tabela de Resumo (específica desta página) */
+        .summary-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            font-size: 0.9em;
+        }
+        .summary-table th, .summary-table td {
+            border: 1px solid var(--cor-borda-sutil);
+            padding: 8px;
+            text-align: left;
+        }
+        .summary-table th {
+            background-color: var(--cor-fundo-secao-destaque);
+            color: var(--cor-primaria);
+        }
+        /* Contêiner do botão "Voltar ao Topo" */
+        .rodape-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+        
+        @media (max-width: 800px) {
+            .game-title { font-size: 1.8em; }
+            h2 { font-size: 1.5em; }
+        }
+    </style>
+
+                <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-M8ZG06010Q"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-M8ZG06010Q');
+    </script>
+</head>
+<body id="topo">
+
+<div class="cabecalho-container">
+<header class="bloco-identidade">
+    <div class="logo-and-title">
+        <a href="/index.html">
+            <img src="/Images/logo novo grande.png" alt="Logo FFES" class="logo-img">
+        </a>
+        <a href="/index.html" style="text-decoration: none; color: inherit;">
+            <h1>Leo Ramos | Professor de Inglês</h1>
+        </a>
+    </div>
+</header>
+
+
+<div class="bloco-navegacao"> 
+    <nav class="nav-primary">
+        <ul>
+            <li><a href="/index.html#home">Home</a></li>
+            <li><a href="/index.html#sobre">Sobre Mim</a></li>
+            <li><a href="/exercicios-e-artigos.html#exercicios">Exercícios</a></li>
+            <li><a href="/exercicios-e-artigos.html#artigos-vocab">Artigos</a></li>
+            <li><a href="/cursos-e-ebook.html#cursos">Cursos e E-book</a></li>
+            <li><a href="/index.html#metodologia">Metodologia</a></li>
+        </ul>
+    </nav>
+</div>
+
+
+</div>
+<main>
+    <h1 class="game-title">Jogo de Advérbios: Posição e Nuances</h1>
+    <div id="placar-geral-container">
+        <p>Acertos: <strong id="acertos-geral">0</strong></p>
+        <a href="#contato" class="nav-arrow" title="Ir para o final da página">&#11015;</a>
+        <p>Erros: <strong id="erros-geral">0</strong></p>
+    </div>
+    <button id="reset-btn" class="cta-button">Jogar Novamente</button>
+    <hr>
+    
+    <div class="introducao-container" style="text-align: left;">
+        <h3>Explicações Detalhadas</h3>
+        
+        <h4>1. Regras de Posição dos Advérbios (Adverb Position Rules)</h4>
+        <p>Saber onde colocar o advérbio é crucial para a naturalidade da frase.</p>
+        <ul>
+            <li><strong>Adv. de Frequência</strong> (always, never...): Vêm <strong>antes do verbo principal</strong> (<i>She <strong>always</strong> arrives early</i>), mas <strong>depois do verbo 'to be'</strong> (<i>She <strong>is always</strong> early</i>).</li>
+            <li><strong>Adv. de Modo, Lugar e Tempo:</strong> Geralmente vêm no <strong>final da frase</strong>, na ordem <strong>M-P-T (Modo, Lugar, Tempo)</strong>. <br>Ex: <i>He worked <strong>hard</strong> (M) <strong>in the library</strong> (P) <strong>yesterday</strong> (T).</i></li>
+            <li><strong>Adv. de Grau:</strong> Vêm <strong>antes</strong> da palavra que eles modificam. Ex: <i>The test was <strong>extremely</strong> difficult.</i></li>
+        </ul>
+
+        <h4>2. A Diferença Crucial: Good vs. Well</h4>
+        <p>Esta é uma das confusões mais comuns entre adjetivos e advérbios.</p>
+        <table class="summary-table">
+            <thead><tr><th>Good (Adjetivo)</th><th>Well (Advérbio)</th></tr></thead>
+            <tbody>
+                <tr>
+                    <td>Descreve um substantivo (pessoa, lugar, coisa). Responde "que tipo de?".<br>Ex: <i>He is a <strong>good</strong> student.</i></td>
+                    <td>Descreve um verbo (ação). Responde "como?".<br>Ex: <i>He studies <strong>well</strong>.</i></td>
+                </tr>
+                <tr>
+                    <td><i>The food tastes <strong>good</strong>.</i> (depois de verbos de ligação)</td>
+                    <td><i>She speaks English <strong>well</strong>.</i></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><strong>Exceção:</strong> "Well" pode ser um adjetivo significando "saudável".<br>Ex: <i>I don't feel <strong>well</strong> today.</i></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h4>3. Advérbios que Mudam de Significado com a Posição</h4>
+        <p>Advérbios de foco, como <strong>only</strong> e <strong>just</strong>, podem mudar completamente o sentido da frase dependendo da palavra que eles precedem. O advérbio "conversa" com a palavra que vem logo depois dele.</p>
+        <p>Veja o exemplo com a frase "She told him the secret on Tuesday":</p>
+        <ul>
+            <li><i><strong>Only</strong> she told him...</i> (Apenas ela, ninguém mais, contou a ele.)</li>
+            <li><i>She told <strong>only</strong> him...</i> (Ela contou apenas para ele, para mais ninguém.)</li>
+            <li><i>She told him <strong>only</strong> the secret...</i> (Ela contou apenas o segredo, e não outras informações.)</li>
+            <li><i>She told him the secret <strong>only</strong> on Tuesday.</i> (Ela contou na terça-feira, e não em outro dia.)</li>
+        </ul>
+    </div>
+    
+    <div id="exercicios-container"></div>
+    <div class="rodape-container">
+        <a href="#topo" class="nav-button">&#11014;</a>
+    </div>
+</main>
+
+<footer id="contato" class="site-footer">
+    <div class="footer-content">
+        <div class="social-media-links">
+            <h4>Siga-me nas redes sociais e acesse o App</h4>
+            <a href="https://www.youtube.com/@teacherleoramos/videos" target="_blank" rel="noopener noreferrer" title="Canal YouTube Teacher Leo Ramos" aria-label="YouTube">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/youtube-play.png" alt="Ícone YouTube" width="30" height="30" loading="lazy">
+            </a>
+            <a href="https://www.instagram.com/teacherleoramos/" target="_blank" rel="noopener noreferrer" title="Instagram Teacher Leo Ramos" aria-label="Instagram">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/instagram-new.png" alt="Ícone Instagram" width="30" height="30" loading="lazy">
+            </a>
+            <a href="https://www.tiktok.com/@teacherleoramos" target="_blank" rel="noopener noreferrer" title="TikTok Teacher Leo Ramos" aria-label="TikTok">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/tiktok.png" alt="Ícone TikTok" width="30" height="30" loading="lazy">
+            </a>
+            <a href="https://wa.me/5511955582118" target="_blank" rel="noopener noreferrer" title="WhatsApp Agendamento" aria-label="WhatsApp">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/whatsapp--v1.png" alt="Ícone WhatsApp" width="30" height="30" loading="lazy">
+            </a>
+            <a href="/index-app.html" target="_blank" rel="noopener noreferrer" title="Acesse o FFES App" aria-label="FFES App">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/controller.png" alt="Ícone FFES App" width="30" height="30" loading="lazy">
+            </a>
+        </div>
+        <p><strong>Contato</strong></p>
+        <p>Youtube: @teacherleoramos | Telefone - WhatsApp: (11) 95558-2118</p>
+        <p>Endereço: São Paulo, SP, Brasil</p>
+        <p>CNPJ: 43.226.983/0001-91</p>
+        <p>&copy; <span id="year">2025</span> | FEATHERED FRIENDS ENGLISH SCHOOL - FFES. Todos os direitos reservados.</p>
+    </div>
+</footer>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+    const dadosAdverbios2 = [
+        { id: 'adv2-1', pergunta: 'Complete: "He is a ___ student. He studies ___."', opcoes: ['good / well', 'well / good', 'good / good', 'well / well'], respostaCorreta: 'good / well', explicacao: '"Good" é adjetivo (estudante bom). "Well" é advérbio (estuda bem).' },
+        { id: 'adv2-2', pergunta: 'Escolha a frase correta:', opcoes: ['She arrives always on time.', 'She always arrives on time.', 'Always she arrives on time.', 'She arrives on time always.'], respostaCorreta: 'She always arrives on time.', explicacao: 'Advérbios de frequência vêm antes do verbo principal.' },
+        { id: 'adv2-3', pergunta: 'Escolha a frase correta com verbo To Be:', opcoes: ['He often is tired.', 'He is often tired.', 'Often he is tired.', 'He is tired often.'], respostaCorreta: 'He is often tired.', explicacao: 'Advérbios de frequência vêm DEPOIS do verbo "to be".' },
+        { id: 'adv2-4', pergunta: 'Na frase "Only I ate the pizza", o que "only" significa?', opcoes: ['Que ninguém mais comeu a pizza, só eu.', 'Que eu comi apenas a pizza e nada mais.', 'Que eu apenas comi, não preparei.', 'Que havia apenas uma pizza.'], respostaCorreta: 'Que ninguém mais comeu a pizza, só eu.', explicacao: '"Only" antes de "I" restringe a ação ao sujeito.' },
+        { id: 'adv2-5', pergunta: 'Complete: "I don\'t feel very ___ today."', opcoes: ['good', 'well', 'best', 'better'], respostaCorreta: 'well', explicacao: 'Para saúde, usamos "well" (adjetivo neste caso específico).' },
+        { id: 'adv2-6', pergunta: 'Ordem correta (M-P-T):', opcoes: ['He worked yesterday hard in the office.', 'He worked hard in the office yesterday.', 'He worked in the office hard yesterday.', 'He worked hard yesterday in the office.'], respostaCorreta: 'He worked hard in the office yesterday.', explicacao: 'Modo (hard) + Lugar (in the office) + Tempo (yesterday).' },
+        { id: 'adv2-7', pergunta: 'Para enfatizar que você comeu APENAS a pizza (e não a salada):', opcoes: ['I ate only the pizza.', 'I only ate the pizza.', 'Only I ate the pizza.', 'I ate the only pizza.'], respostaCorreta: 'I ate only the pizza.', explicacao: '"Only" antes do objeto restringe o objeto.' },
+        { id: 'adv2-8', pergunta: 'Complete: "She plays the piano ___."', opcoes: ['good', 'well', 'bad', 'nice'], respostaCorreta: 'well', explicacao: 'Para descrever o verbo (tocar), usamos o advérbio "well".' },
+        { id: 'adv2-9', pergunta: 'Escolha a ordem correta:', opcoes: ['I go usually to the park.', 'I usually go to the park.', 'Usually I go to the park.', 'I go to the park usually.'], respostaCorreta: 'I usually go to the park.', explicacao: 'Frequência antes do verbo principal.' },
+        { id: 'adv2-10', pergunta: 'Complete: "Your English is very ___."', opcoes: ['good', 'well', 'badly', 'correctly'], respostaCorreta: 'good', explicacao: 'Verbo "to be" pede adjetivo ("good").' },
+        { id: 'adv2-11', pergunta: 'Complete: "You speak English very ___."', opcoes: ['good', 'well', 'nice', 'goodly'], respostaCorreta: 'well', explicacao: 'Verbo de ação (speak) pede advérbio ("well").' },
+        { id: 'adv2-12', pergunta: 'Onde colocar "definitely"? "I ___ will ___ do it."', opcoes: ['will definitely', 'definitely will', 'will do definitely', 'do definitely will'], respostaCorreta: 'will definitely', explicacao: 'Advérbios geralmente vão depois do auxiliar "will".' },
+        { id: 'adv2-13', pergunta: 'Ordem M-P-T: "She sang ___."', opcoes: ['at the club beautifully last night', 'beautifully at the club last night', 'last night at the club beautifully', 'beautifully last night at the club'], respostaCorreta: 'beautifully at the club last night', explicacao: 'Modo (beautifully) -> Lugar (at the club) -> Tempo (last night).' },
+        { id: 'adv2-14', pergunta: 'Posição de "never": "They ___ are ___ late."', opcoes: ['never / -', '- / never', 'are / never', 'never / are'], respostaCorreta: '- / never', explicacao: 'A frase correta é "They are never late" (depois do verbo to be).' },
+        { id: 'adv2-15', pergunta: 'Complete: "The food tastes ___."', opcoes: ['well', 'good', 'badly', 'nicely'], respostaCorreta: 'good', explicacao: 'Verbos de ligação (taste, smell, look) pedem adjetivos.' },
+        { id: 'adv2-16', pergunta: 'Complete: "The team played ___."', opcoes: ['bad', 'badly', 'good', 'slow'], respostaCorreta: 'badly', explicacao: 'Para descrever como jogaram, usamos o advérbio "badly".' },
+        { id: 'adv2-17', pergunta: 'Escolha a correta:', opcoes: ['I have always lived here.', 'I always have lived here.', 'I have lived always here.', 'Always I have lived here.'], respostaCorreta: 'I have always lived here.', explicacao: 'Entre o auxiliar (have) e o principal (lived).' },
+        { id: 'adv2-18', pergunta: 'Onde colocar "probably"? "He ___ is ___ going to buy it."', opcoes: ['probably / -', '- / probably', 'is / probably', 'probably / is'], respostaCorreta: 'probably / -', explicacao: '"Probably" vem antes do auxiliar quando a frase é negativa ou em certos tempos, mas "He is probably going" é o padrão. Contudo, entre as opções, a mais natural em fala rápida ou ênfase é "He probably is..." ou "He is probably...". A melhor regra: depois do auxiliar IS.' },
+        { id: 'adv2-18b', pergunta: 'Qual a posição padrão de "probably" em "He is going"?', opcoes: ['He probably is going.', 'He is probably going.', 'He is going probably.', 'Probably he is going.'], respostaCorreta: 'He is probably going.', explicacao: 'Depois do verbo auxiliar/to be.' },
+        
+        { id: 'adv2-19', pergunta: 'Complete: "She was ___ injured."', opcoes: ['bad', 'badly', 'good', 'hard'], respostaCorreta: 'badly', explicacao: 'Usa-se advérbio antes de particípio passado (adjetivo).' },
+        { id: 'adv2-20', pergunta: '"I barely know him." O advérbio está:', opcoes: ['Na posição correta (antes do verbo)', 'Na posição errada (deveria ser depois)', 'Errado (não existe)', 'No final da frase'], respostaCorreta: 'Na posição correta (antes do verbo)', explicacao: '"Barely" funciona como frequência/grau negativo, antes do verbo.' },
+        { id: 'adv2-21', pergunta: 'Complete: "It smells ___."', opcoes: ['good', 'well', 'beautifully', 'strongly'], respostaCorreta: 'good', explicacao: 'Smell é verbo de ligação -> Adjetivo.' },
+        { id: 'adv2-22', pergunta: 'Ordem: "We went ___."', opcoes: ['to Paris by plane last year', 'by plane to Paris last year', 'last year to Paris by plane', 'to Paris last year by plane'], respostaCorreta: 'by plane to Paris last year', explicacao: 'Se houver movimento, geralmente Modo/Meio -> Lugar -> Tempo.' },
+        { id: 'adv2-23', pergunta: 'Onde colocar "still"? "She ___ is ___ waiting."', opcoes: ['still / -', '- / still', 'is / still', 'waiting / still'], respostaCorreta: '- / still', explicacao: '"She is still waiting" (depois do auxiliar "is").' },
+        { id: 'adv2-24', pergunta: '"Luckily, he passed the test." O advérbio está:', opcoes: ['Modificando a frase toda', 'Modificando só o verbo', 'Modificando "he"', 'Modificando "test"'], respostaCorreta: 'Modificando a frase toda', explicacao: 'Advérbios de comentário no início modificam a sentença inteira.' },
+        { id: 'adv2-25', pergunta: 'Complete: "Do it ___."', opcoes: ['good', 'careful', 'carefully', 'slow'], respostaCorreta: 'carefully', explicacao: 'Imperativo (ação) pede advérbio.' },
+        { id: 'adv2-26', pergunta: 'Complete: "He is a ___ worker."', opcoes: ['hard', 'hardly', 'heavy', 'strongly'], respostaCorreta: 'hard', explicacao: '"Hard" é adjetivo aqui. "Hardly" significa "mal/quase não".' },
+        { id: 'adv2-27', pergunta: 'Complete: "He works ___."', opcoes: ['hard', 'hardly', 'heavy', 'good'], respostaCorreta: 'hard', explicacao: '"Hard" também é advérbio de modo (muito/duro).' },
+        { id: 'adv2-28', pergunta: 'Complete: "I can ___ see the road." (Quase não vejo)', opcoes: ['hard', 'hardly', 'good', 'bad'], respostaCorreta: 'hardly', explicacao: '"Hardly" significa "apenas, mal, quase nada".' },
+        { id: 'adv2-29', pergunta: 'Posição de "enough": "He is ___."', opcoes: ['tall enough', 'enough tall', 'tall quite', 'enough big'], respostaCorreta: 'tall enough', explicacao: '"Enough" vem DEPOIS do adjetivo que modifica.' },
+        { id: 'adv2-30', pergunta: 'Posição de "enough": "I have ___."', opcoes: ['money enough', 'enough money', 'rich enough', 'enough rich'], respostaCorreta: 'enough money', explicacao: '"Enough" vem ANTES do substantivo.' },
+        { id: 'adv2-31', pergunta: 'Complete: "She looks ___ today."', opcoes: ['happy', 'happily', 'well', 'nicely'], respostaCorreta: 'happy', explicacao: 'Look (parecer) é verbo de ligação -> Adjetivo.' },
+        { id: 'adv2-32', pergunta: 'Complete: "She looked at me ___."', opcoes: ['happy', 'happily', 'good', 'sad'], respostaCorreta: 'happily', explicacao: 'Look at (olhar para) é ação -> Advérbio.' },
+        { id: 'adv2-33', pergunta: '"Even" (até mesmo) posição: "___ he ___ didn\'t know."', opcoes: ['Even / -', '- / even', 'Did / even', 'Know / even'], respostaCorreta: 'Even / -', explicacao: '"Even he didn\'t know" (Até mesmo ele não sabia).' },
+        { id: 'adv2-34', pergunta: 'Escolha a frase correta (lugar/tempo):', opcoes: ['I saw him there yesterday.', 'I saw him yesterday there.', 'I saw there him yesterday.', 'I there saw him.'], respostaCorreta: 'I saw him there yesterday.', explicacao: 'Lugar (there) antes de Tempo (yesterday).' },
+        { id: 'adv2-35', pergunta: 'Complete: "This song sounds ___."', opcoes: ['terrible', 'terribly', 'badly', 'well'], respostaCorreta: 'terrible', explicacao: 'Sound (soar) é verbo de ligação -> Adjetivo.' },
+        { id: 'adv2-36', pergunta: 'Complete: "He treated her ___."', opcoes: ['bad', 'terrible', 'badly', 'good'], respostaCorreta: 'badly', explicacao: 'Treat (tratar) é ação -> Advérbio.' },
+        { id: 'adv2-37', pergunta: '"Late" adjetivo vs advérbio. "He arrived ___."', opcoes: ['late', 'lately', 'later', 'latest'], respostaCorreta: 'late', explicacao: '"Late" é advérbio de tempo/modo. "Lately" é "ultimamente".' },
+        { id: 'adv2-38', pergunta: 'Complete: "Have you seen him ___?"', opcoes: ['late', 'lately', 'later', 'latest'], respostaCorreta: 'lately', explicacao: 'Aqui o sentido é "ultimamente".' },
+        { id: 'adv2-39', pergunta: '"I simply don\'t understand." Posição de "simply":', opcoes: ['Ênfase antes do auxiliar negativo', 'Deveria ser depois de don\'t', 'Deveria ser no fim', 'Deveria ser no começo'], respostaCorreta: 'Ênfase antes do auxiliar negativo', explicacao: 'Advérbios de ênfase podem vir antes do auxiliar negativo.' },
+        { id: 'adv2-40', pergunta: '"Yet" geralmente vai:', opcoes: ['No final da frase', 'No começo da frase', 'Antes do verbo', 'Depois do sujeito'], respostaCorreta: 'No final da frase', explicacao: 'Ex: "I haven\'t finished yet."' },
+        { id: 'adv2-41', pergunta: '"Already" geralmente vai:', opcoes: ['Entre auxiliar e verbo principal', 'No final da frase sempre', 'No começo da frase', 'Depois do verbo principal'], respostaCorreta: 'Entre auxiliar e verbo principal', explicacao: 'Ex: "I have already finished."' },
+        { id: 'adv2-42', pergunta: '"Sometimes" pode ir no começo da frase?', opcoes: ['Sim, é comum', 'Não, nunca', 'Só em perguntas', 'Só em inglês britânico'], respostaCorreta: 'Sim, é comum', explicacao: '"Sometimes I go..." é perfeitamente correto para ênfase.' },
+        { id: 'adv2-43', pergunta: 'Complete: "You did a ___ job."', opcoes: ['good', 'well', 'badly', 'nicely'], respostaCorreta: 'good', explicacao: 'Adjetivo antes de substantivo (job).' },
+        { id: 'adv2-44', pergunta: 'Complete: "You did the job ___."', opcoes: ['good', 'well', 'nice', 'bad'], respostaCorreta: 'well', explicacao: 'Advérbio modificando a ação de fazer o trabalho.' },
+        { id: 'adv2-45', pergunta: 'Escolha a correta (Adv de grau):', opcoes: ['I quite like it.', 'I like quite it.', 'I like it quite.', 'Quite I like it.'], respostaCorreta: 'I quite like it.', explicacao: '"Quite" vem antes do verbo que modifica (gostar um tanto).' },
+        { id: 'adv2-46', pergunta: '"Very" pode modificar verbos diretamente? (Ex: I very like it)', opcoes: ['Não, usamos "really" ou "very much"', 'Sim, é correto', 'Sim, mas informal', 'Apenas no passado'], respostaCorreta: 'Não, usamos "really" ou "very much"', explicacao: 'Não se diz "I very like". Diz-se "I really like" ou "I like it very much".' },
+        { id: 'adv2-47', pergunta: 'Posição de "too" (também):', opcoes: ['No final da frase', 'No começo da frase', 'Antes do verbo', 'Depois do verbo'], respostaCorreta: 'No final da frase', explicacao: 'Ex: "I like it too."' },
+        { id: 'adv2-48', pergunta: 'Complete: "Drive ___!"', opcoes: ['slow', 'slowly', 'good', 'nice'], respostaCorreta: 'slowly', explicacao: 'Modo de dirigir. (Nota: "Drive slow" é aceito informalmente nos EUA, mas "slowly" é o gramaticalmente padrão).' },
+        { id: 'adv2-49', pergunta: 'Complete: "He is a ___ runner."', opcoes: ['fast', 'fastly', 'quick', 'quickly'], respostaCorreta: 'fast', explicacao: '"Fast" é o adjetivo. "Fastly" não existe.' },
+        { id: 'adv2-50', pergunta: 'Complete: "He runs ___."', opcoes: ['fast', 'fastly', 'quick', 'good'], respostaCorreta: 'fast', explicacao: '"Fast" também é o advérbio. "Fastly" não existe.' }
+    ];
+
+    const container = document.getElementById('exercicios-container');
+    const placarAcertosGeralEl = document.getElementById('acertos-geral');
+    const placarErrosGeralEl = document.getElementById('erros-geral');
+    const resetButton = document.getElementById('reset-btn');
+    let acertos = 0;
+    let erros = 0;
+
+    function shuffleArray(array) { 
+        for (let i = array.length - 1; i > 0; i--) { 
+            const j = Math.floor(Math.random() * (i + 1)); 
+            [array[i], array[j]] = [array[j], array[i]]; 
+        } 
+    }
+
+    function criarExercicioHTML(exercicioData, numeroExercicio) {
+        const opcoesEmbaralhadas = [...exercicioData.opcoes];
+        shuffleArray(opcoesEmbaralhadas);
+        
+        const opcoesHTML = opcoesEmbaralhadas.map(opcao => `<button class="option-button" data-resposta="${opcao}">${opcao}</button>`).join('');
+        return `<section class="exercicio-card" id="exercicio-${exercicioData.id}" data-id="${exercicioData.id}"><h2 class="h2-exercicio">Exercício ${numeroExercicio}</h2><div class="question-container"><p>${exercicioData.pergunta}</p><div class="options-container">${opcoesHTML}</div></div><div class="explanation-container" id="explicacao-${exercicioData.id}"><p>${exercicioData.explicacao}</p></div></section>`;
+    }
+
+    function verificarResposta(exercicioId, btnClicado) {
+        const exercicioData = dadosAdverbios2.find(e => e.id === exercicioId);
+        const exercicioCard = document.getElementById(`exercicio-${exercicioData.id}`);
+        const botoes = exercicioCard.querySelectorAll('.option-button');
+        botoes.forEach(btn => btn.disabled = true);
+        const explicacaoEl = document.getElementById(`explicacao-${exercicioData.id}`);
+        explicacaoEl.classList.add('visible');
+        
+        if (btnClicado.dataset.resposta === exercicioData.respostaCorreta) {
+            btnClicado.classList.add('correto');
+            acertos++;
+        } else {
+            btnClicado.classList.add('incorreto');
+            const respostaCorretaBtn = Array.from(botoes).find(btn => btn.dataset.resposta === exercicioData.respostaCorreta);
+            if (respostaCorretaBtn) { respostaCorretaBtn.classList.add('correto'); }
+            erros++;
+        }
+        placarAcertosGeralEl.textContent = acertos;
+        placarErrosGeralEl.textContent = erros;
+    }
+
+    function iniciarJogo() {
+        acertos = 0;
+        erros = 0;
+        placarAcertosGeralEl.textContent = '0';
+        placarErrosGeralEl.textContent = '0';
+        
+        shuffleArray(dadosAdverbios2);
+        
+        const perguntasSelecionadas = dadosAdverbios2.slice(0, 50);
+
+        container.innerHTML = perguntasSelecionadas.map((dado, index) => criarExercicioHTML(dado, index + 1)).join('');
+        
+        const newContainer = container.cloneNode(true);
+        container.parentNode.replaceChild(newContainer, container);
+        
+        newContainer.addEventListener('click', (event) => {
+            if (event.target.classList.contains('option-button') && !event.target.disabled) {
+                const btnClicado = event.target;
+                const exercicioCard = btnClicado.closest('.exercicio-card');
+                const exercicioId = exercicioCard.dataset.id;
+                verificarResposta(exercicioId, btnClicado);
+            }
+        });
+
+        document.querySelector('main').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    resetButton.addEventListener('click', iniciarJogo);
+    iniciarJogo();
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Treino de Speaking e Pronúncia em inglês: 100 Frases | Professor Leo Ramos</title>
+    <meta name="description" content="Pratique sua pronúncia em inglês com feedback imediato. Ferramenta interativa com 100 frases essenciais, áudio nativo e reconhecimento de voz.">
+    <meta name="author" content="Leo Ramos">
+    <meta name="robots" content="index, follow">
+    
+    <link rel="canonical" href="https://teacherleoramos.com.br/ExListen/speaking.html">
+
+
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="../Images/logofavicion.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../Images/logofavicion.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../Images/logofavicion.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="../Images/logofavicion.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="../Images/logofavicion.png">
+
+    <meta property="og:title" content="Desafio de Speaking: 100 Frases em Inglês | Leo Ramos">
+    <meta property="og:description" content="Teste sua pronúncia agora! O computador ouve sua voz e dá feedback na hora. Pratique inglês de graça com o Professor Leo Ramos.">
+    <meta property="og:image" content="https://teacherleoramos.com.br/Images/preview-social.jpg"> 
+    <meta property="og:url" content="https://teacherleoramos.com.br/ExListen/speaking.html">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:site_name" content="FFES - Professor Leo Ramos">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Desafio de Speaking: 100 Frases em Inglês">
+    <meta name="twitter:description" content="Pratique sua pronúncia com feedback instantâneo. Ferramenta gratuita do Professor Leo Ramos.">
+    <meta name="twitter:image" content="https://teacherleoramos.com.br/Images/preview-social.jpg">
+    
+    <link rel="stylesheet" href="../CSS/universal.css"> 
+
+    <style>
+        .content-banner {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .content-banner h2 {
+            color: var(--cor-texto-claro); 
+            border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
+        }
+        .content-banner p {
+            color: #ecf0f1;
+            font-size: 1.15em;
+            margin-bottom: 20px;
+        }
+
+        /* Área de Seleção de Nível (Copiado dos outros jogos) */
+        .level-selection-area {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .btn-level {
+            padding: 12px 20px;
+            background-color: var(--cor-primaria); /* Azul Escuro */
+            color: var(--cor-texto-claro);
+            border: 2px solid var(--cor-acento);
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: bold;
+            transition: background-color 0.2s ease, transform 0.2s ease;
+        }
+
+        .btn-level:hover {
+            background-color: var(--cor-primaria-hover);
+            transform: translateY(-2px);
+        }
+
+        /* Botão de nível ativo/selecionado */
+        .btn-level.active {
+            background-color: var(--cor-acento);
+            color: var(--cor-primaria);
+            border-color: var(--cor-primaria);
+        }
+        
+        /* Container do Jogo (Ocultar até selecionar nível) */
+        .game-card-container {
+            background: white;
+            border-radius: 8px;
+            padding: 30px;
+            max-width: 800px;
+            margin: 20px auto;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            text-align: center;
+            border-top: 6px solid var(--cor-acento);
+
+            /* Oculta inicialmente */
+            opacity: 0;
+            max-height: 0;
+            padding-top: 0;
+            padding-bottom: 0;
+            overflow: hidden;
+            transition: opacity 0.5s ease-in-out, max-height 0.5s ease-in-out, padding 0.5s ease-in-out;
+        }
+
+        .game-card-container.visible {
+            opacity: 1;
+            max-height: 2000px; /* Valor alto para acomodar o conteúdo */
+            padding: 30px;
+        }
+
+        /* Estilo para feedback de 'Ouvindo...' */
+        .feedback-listening {
+            background-color: #fff3cd !important;
+            color: #856404 !important;
+            display: block !important;
+        }
+    </style>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Treino de Speaking FFES",
+      "description": "Ferramenta interativa para prática de pronúncia em inglês com 100 frases essenciais e reconhecimento de voz.",
+      "url": "https://teacherleoramos.com.br/ExListen/speaking.html",
+      "image": "https://teacherleoramos.com.br/Images/preview-social.jpg",
+      "author": {
+        "@type": "Person",
+        "name": "Leo Ramos",
+        "jobTitle": "Professor de Inglês"
+      },
+      "applicationCategory": "EducationalApplication",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "BRL"
+      },
+      "provider": {
+        "@type": "ProfessionalService",
+        "name": "FFES - Professor Leo Ramos",
+        "telephone": "+5511955582118",
+        "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "BR"
+        }
+      }
+    }
+    </script>
+
+                <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-M8ZG06010Q"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-M8ZG06010Q');
+    </script>
+</head>
+<body>
+
+<div class="cabecalho-container">
+    <header class="bloco-identidade">
+        <div class="logo-and-title">
+            <a href="../index.html">
+                <img src="../Images/logo novo grande.png" alt="Logo FFES" class="logo-img">
+            </a>
+            
+            <a href="../index.html" style="text-decoration: none; color: inherit;">
+                <h1>Leo Ramos | Professor de Inglês</h1>
+            </a>
+        </div>
+    </header>
+
+<div class="bloco-navegacao"> 
+    <nav class="nav-primary">
+        <ul>
+            <li><a href="/index.html#home">Home</a></li>
+            <li><a href="/index.html#sobre">Sobre Mim</a></li>
+            <li><a href="/exercicios-e-artigos.html#exercicios">Exercícios</a></li>
+            <li><a href="/exercicios-e-artigos.html#artigos-vocab">Artigos</a></li>
+            <li><a href="/cursos-e-ebook.html#cursos">Cursos e E-book</a></li>
+            <li><a href="/index.html#metodologia">Metodologia</a></li>
+        </ul>
+    </nav>
+</div>
+
+
+</div>
+
+<main>
+    <section class="content-banner">
+        <h2>Desafio de Speaking e Pronúncia</h2>
+        <p>Selecione um nível. O computador ouvirá sua voz e dará feedback instantâneo.</p>
+
+        <div class="level-selection-area">
+            <button class="btn-level" data-level="A1" onclick="selectLevel('A1', this)">A1 Básico</button>
+            <button class="btn-level" data-level="A2" onclick="selectLevel('A2', this)">A2 Pré-Intermediário</button>
+            <button class="btn-level" data-level="B1" onclick="selectLevel('B1', this)">B1 Intermediário</button>
+            <button class="btn-level" data-level="B2" onclick="selectLevel('B2', this)">B2 Pós-Intermediário</button>
+            <button class="btn-level" data-level="C1" onclick="selectLevel('C1', this)">C1 Avançado</button>
+            <button class="btn-level" data-level="C2" onclick="selectLevel('C2', this)">C2 Proficiência</button>
+        </div>
+        
+
+
+
+        <div id="game-card-container" class="game-card-container">
+            
+            <p id="level-info" style="font-style: italic; margin-bottom: 20px; color: #666;"></p>
+
+            <div id="english-display" class="big-phrase">Selecione um nível para começar.</div>
+            
+            <div id="portuguese-display" class="translation-text"></div>
+
+            <div class="action-area">
+                <button class="cta-button" id="audio-button" style="background-color: #e0e0e0; color: #333;" onclick="playAudio()" disabled>🔊 Ouvir</button>
+                <button class="cta-button btn-record" id="record-button" onclick="startRecording()" disabled>🎤 Gravar Voz</button>
+            </div>
+
+            <div id="feedback-display" class="feedback-area"></div>
+
+            <hr>
+
+            <button class="cta-button" id="next-phrase-button" style="width: 100%; font-size: 1.1em;" onclick="loadRandomPhrase()" disabled>↻ Próxima Frase</button>
+        </div>
+    </section>
+</main>
+
+<footer id="contato" class="site-footer">
+    <div class="footer-content">
+        <div class="social-media-links">
+            <h4>Siga-me nas redes sociais e acesse o App</h4>
+            <a href="https://www.youtube.com/@teacherleoramos/videos" target="_blank" rel="noopener noreferrer" title="Canal YouTube Teacher Leo Ramos" aria-label="YouTube">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/youtube-play.png" alt="Ícone YouTube" width="30" height="30" loading="lazy">
+            </a>
+            <a href="https://www.instagram.com/teacherleoramos/" target="_blank" rel="noopener noreferrer" title="Instagram Teacher Leo Ramos" aria-label="Instagram">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/instagram-new.png" alt="Ícone Instagram" width="30" height="30" loading="lazy">
+            </a>
+            <a href="https://www.tiktok.com/@teacherleoramos" target="_blank" rel="noopener noreferrer" title="TikTok Teacher Leo Ramos" aria-label="TikTok">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/tiktok.png" alt="Ícone TikTok" width="30" height="30" loading="lazy">
+            </a>
+            <a href="https://wa.me/5511955582118" target="_blank" rel="noopener noreferrer" title="WhatsApp Agendamento" aria-label="WhatsApp">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/whatsapp--v1.png" alt="Ícone WhatsApp" width="30" height="30" loading="lazy">
+            </a>
+            <a href="/index-app.html" target="_blank" rel="noopener noreferrer" title="Acesse o FFES App" aria-label="FFES App">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/controller.png" alt="Ícone FFES App" width="30" height="30" loading="lazy">
+            </a>
+        </div>
+        <p><strong>Contato</strong></p>
+        <p>Youtube: @teacherleoramos | Telefone - WhatsApp: (11) 95558-2118</p>
+        <p>Endereço: São Paulo, SP, Brasil</p>
+        <p>CNPJ: 43.226.983/0001-91</p>
+        <p>&copy; <span id="year">2025</span> | FEATHERED FRIENDS ENGLISH SCHOOL - FFES. Todos os direitos reservados.</p>
+    </div>
+</footer>
+
+
+
+<script>
+    // --- BANCO DE DADOS: 180 FRASES (30 por nível: A1, A2, B1, B2, C1, C2) ---
+    const phraseBank = [
+        // =========================================
+        //                 NÍVEL A1 (30 Frases)
+        // =========================================
+        {level: 'A1', en: "Hello, how are you?", pt: "Olá, como você está?"},
+        {level: 'A1', en: "My name is John.", pt: "Meu nome é John."},
+        {level: 'A1', en: "I am a student.", pt: "Eu sou um estudante."},
+        {level: 'A1', en: "She is happy today.", pt: "Ela está feliz hoje."},
+        {level: 'A1', en: "It is cold outside.", pt: "Está frio lá fora."},
+        {level: 'A1', en: "We are at home.", pt: "Nós estamos em casa."},
+        {level: 'A1', en: "They are my friends.", pt: "Eles são meus amigos."},
+        {level: 'A1', en: "I like coffee.", pt: "Eu gosto de café."},
+        {level: 'A1', en: "Do you speak English?", pt: "Você fala inglês?"},
+        {level: 'A1', en: "Yes, a little.", pt: "Sim, um pouco."},
+        {level: 'A1', en: "I don't have a car.", pt: "Eu não tenho um carro."},
+        {level: 'A1', en: "She works in a bank.", pt: "Ela trabalha em um banco."},
+        {level: 'A1', en: "He goes to school.", pt: "Ele vai para a escola."},
+        {level: 'A1', en: "What is your job?", pt: "Qual é o seu trabalho?"},
+        {level: 'A1', en: "I need help.", pt: "Eu preciso de ajuda."},
+        {level: 'A1', en: "Where are you from?", pt: "De onde você é?"},
+        {level: 'A1', en: "I am from Brazil.", pt: "Eu sou do Brasil."},
+        {level: 'A1', en: "How much is this?", pt: "Quanto custa isso?"},
+        
+        // =========================================
+        //                 NÍVEL A2 (30 Frases)
+        // =========================================
+        {level: 'A2', en: "How are you doing today?", pt: "Como você está hoje?"},
+        {level: 'A2', en: "I am looking forward to seeing you.", pt: "Estou ansioso para te ver."},
+        {level: 'A2', en: "We have lived here since 2018.", pt: "Nós moramos aqui desde 2018."},
+        {level: 'A2', en: "She has gone to the supermarket.", pt: "Ela foi ao supermercado."},
+        {level: 'A2', en: "I've never been to New York.", pt: "Eu nunca estive em Nova York."},
+        {level: 'A2', en: "What were you doing at 10 pm?", pt: "O que você estava fazendo às 22h?"},
+        {level: 'A2', en: "While I was driving, it started raining.", pt: "Enquanto eu dirigia, começou a chover."},
+        {level: 'A2', en: "I can't swim very well.", pt: "Eu não sei nadar muito bem."},
+        {level: 'A2', en: "You should study more.", pt: "Você deveria estudar mais."},
+        {level: 'A2', en: "We must leave now.", pt: "Nós devemos sair agora."},
+        {level: 'A2', en: "I don't agree with the decision.", pt: "Eu não concordo com a decisão."},
+        {level: 'A2', en: "It depends on the time.", pt: "Depende do horário."},
+        {level: 'A2', en: "I enjoy reading books.", pt: "Eu gosto de ler livros."},
+        {level: 'A2', en: "They decided to buy a car.", pt: "Eles decidiram comprar um carro."},
+
+        // =========================================
+        //                 NÍVEL B1 (30 Frases)
+        // =========================================
+        {level: 'B1', en: "I've been learning English for five years.", pt: "Eu tenho estudado inglês por cinco anos."},
+        {level: 'B1', en: "He used to smoke when he was younger.", pt: "Ele costumava fumar quando era mais jovem."},
+        {level: 'B1', en: "They are likely to arrive late.", pt: "É provável que eles cheguem atrasados."},
+        {level: 'B1', en: "The report has been completed this morning.", pt: "O relatório foi concluído esta manhã."},
+        {level: 'B1', en: "If I found a wallet, I would return it.", pt: "Se eu encontrasse uma carteira, eu a devolveria."},
+        {level: 'B1', en: "I recommend trying the local food.", pt: "Eu recomendo experimentar a comida local."},
+        {level: 'B1', en: "She tried to open the window.", pt: "Ela tentou abrir a janela."},
+        {level: 'B1', en: "You must remember to lock the door.", pt: "Você deve se lembrar de trancar a porta."},
+        {level: 'B1', en: "He advised me to take a break.", pt: "Ele me aconselhou a fazer uma pausa."},
+        {level: 'B1', en: "I wish I were taller.", pt: "Eu queria ser mais alto."},
+  
+
+        // =========================================
+        //                 NÍVEL B2 (30 Frases)
+        // =========================================
+        {level: 'B2', en: "The government should have taken action sooner.", pt: "O governo deveria ter agido mais cedo."},
+        {level: 'B2', en: "Had I known, I would have told you immediately.", pt: "Se eu soubesse, teria te contado imediatamente."},
+        {level: 'B2', en: "I regret not having applied for the scholarship.", pt: "Eu me arrependo de não ter me inscrito para a bolsa."},
+        {level: 'B2', en: "It's high time we addressed this problem.", pt: "Já é hora de abordarmos este problema."},
+        {level: 'B2', en: "The presentation, which was excellent, lasted an hour.", pt: "A apresentação, que foi excelente, durou uma hora."},
+        {level: 'B2', en: "It was his ambition that led to his success.", pt: "Foi a ambição dele que levou ao sucesso."},
+        {level: 'B2', en: "What I really need is a long holiday.", pt: "O que eu realmente preciso é de férias longas."},
+        {level: 'B2', en: "Despite the bad weather, the game continued.", pt: "Apesar do tempo ruim, o jogo continuou."},
+        {level: 'B2', en: "On the other hand, the cost is quite high.", pt: "Por outro lado, o custo é muito alto."},
+        {level: 'B2', en: "We had the roof repaired last month.", pt: "Nós mandamos consertar o telhado no mês passado."},
+        {level: 'B2', en: "It is considered to be a groundbreaking discovery.", pt: "É considerada uma descoberta inovadora."},
+       
+
+        // =========================================
+        //                 NÍVEL C1 (30 Frases)
+        // =========================================
+        {level: 'C1', en: "By this time next year, I will have finished my course.", pt: "Nesta época do próximo ano, eu terei terminado meu curso."},
+        {level: 'C1', en: "The company will be implementing new policies soon.", pt: "A empresa estará implementando novas políticas em breve."},
+        {level: 'C1', en: "Not until the trial was over did he reveal the truth.", pt: "Somente após o julgamento ele revelou a verdade."},
+        {level: 'C1', en: "Under no circumstances should you open that package.", pt: "Em nenhuma circunstância você deve abrir aquele pacote."},
+        {level: 'C1', en: "Rarely have I come across such a talented artist.", pt: "Raramente encontrei um artista tão talentoso."},
+        {level: 'C1', en: "Were it not for your help, I would have failed.", pt: "Se não fosse pela sua ajuda, eu teria falhado."},
+        {level: 'C1', en: "Had the government anticipated the crisis, they wouldn't be struggling now.", pt: "Se o governo tivesse antecipado a crise, eles não estariam em apuros agora."},
+        {level: 'C1', en: "It is imperative that the decision be made immediately.", pt: "É imperativo que a decisão seja tomada imediatamente."},
+        {level: 'C1', en: "I object to having my picture taken.", pt: "Eu me oponho a ter minha foto tirada."},
+        {level: 'C1', en: "We must endeavour to minimize the environmental impact.", pt: "Nós devemos nos esforçar para minimizar o impacto ambiental."},
+        {level: 'C1', en: "The theory breaks down when applied to real life.", pt: "A teoria falha quando aplicada à vida real."},
+        {level: 'C1', en: "We should give him the benefit of the doubt.", pt: "Nós devemos dar a ele o benefício da dúvida."},
+        {level: 'C1', en: "They finally made headway with the negotiations.", pt: "Eles finalmente progrediram nas negociações."},
+        {level: 'C1', en: "The issue boiled down to a matter of funding.", pt: "A questão se resumiu a uma questão de financiamento."},
+        {level: 'C1', en: "I confess to feeling somewhat apprehensive.", pt: "Eu confesso sentir-me um tanto apreensivo."},
+
+        // =========================================
+        //                 NÍVEL C2 (30 Frases)
+        // =========================================
+        {level: 'C2', en: "On no account must this information be made public.", pt: "Em nenhuma hipótese esta informação deve ser tornada pública."},
+        {level: 'C2', en: "Such was the storm that all flights were cancelled.", pt: "Tão forte foi a tempestade que todos os voos foram cancelados."},
+        {level: 'C2', en: "But for the rain, the harvest would have been excellent.", pt: "Se não fosse pela chuva, a colheita teria sido excelente."},
+        {level: 'C2', en: "It is incumbent upon the members to vote.", pt: "É responsabilidade dos membros votar."},
+        {level: 'C2', en: "The decision was reached by dint of tireless negotiation.", pt: "A decisão foi alcançada por força de negociações incansáveis."},
+        {level: 'C2', en: "The argument is beyond reproach.", pt: "O argumento está acima de qualquer crítica."},
+        {level: 'C2', en: "The proceedings were shrouded in secrecy.", pt: "Os procedimentos foram envoltos em sigilo."},
+        {level: 'C2', en: "I wholeheartedly support the committee's findings.", pt: "Eu apoio de todo o coração as conclusões do comitê."},
+        {level: 'C2', en: "The whole affair has become a bone of contention.", pt: "Todo o caso se tornou um pomo de discórdia."},
+        {level: 'C2', en: "The company's future hangs in the balance.", pt: "O futuro da empresa está em jogo."},
+        {level: 'C2', en: "They must have been mistaken about the time.", pt: "Eles devem ter se enganado sobre a hora."},
+        {level: 'C2', en: "I am at a loss to explain his sudden disappearance.", pt: "Não sei como explicar o seu súbito desaparecimento."},
+        {level: 'C2', en: "His resignation was deemed a foregone conclusion.", pt: "A sua renúncia foi considerada uma conclusão inevitável."},
+        {level: 'C2', en: "The manager has come in for heavy criticism.", pt: "O gerente tem sido alvo de pesadas críticas."},
+        {level: 'C2', en: "We should endeavour to rise above petty squabbles.", pt: "Nós devemos nos esforçar para nos elevar acima de brigas mesquinhas."},
+      
+    ];
+
+    let currentLevel = null;
+    let filteredPhrases = [];
+    let currentPhraseObj = {};
+
+    const gameContainer = document.getElementById('game-card-container');
+    const displayEn = document.getElementById('english-display');
+    const displayPt = document.getElementById('portuguese-display');
+    const feedbackEl = document.getElementById('feedback-display');
+    const levelInfo = document.getElementById('level-info');
+    const audioButton = document.getElementById('audio-button');
+    const recordButton = document.getElementById('record-button');
+    const nextPhraseButton = document.getElementById('next-phrase-button');
+
+    // Inicialização ao carregar a página
+    document.addEventListener('DOMContentLoaded', () => {
+        displayEn.textContent = 'Selecione um nível acima para começar!';
+        displayPt.textContent = '';
+        levelInfo.textContent = '';
+        gameContainer.classList.remove('visible');
+        audioButton.disabled = true;
+        recordButton.disabled = true;
+        nextPhraseButton.disabled = true;
+    });
+
+    // Função para selecionar o nível (Copiado dos outros jogos)
+    window.selectLevel = function(level, button) {
+        // Remove a classe 'active' de todos os botões e adiciona ao clicado
+        document.querySelectorAll('.btn-level').forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+
+        currentLevel = level;
+        filteredPhrases = phraseBank.filter(p => p.level === level);
+
+        if (filteredPhrases.length > 0) {
+            gameContainer.classList.add('visible');
+            audioButton.disabled = false;
+            recordButton.disabled = false;
+            nextPhraseButton.disabled = false;
+            
+            levelInfo.innerHTML = `<strong>Nível: ${currentLevel} (${filteredPhrases.length} frases disponíveis)</strong>.`;
+            loadRandomPhrase(); // Carrega a primeira frase
+        } else {
+            gameContainer.classList.remove('visible');
+            displayEn.textContent = 'Nenhuma frase disponível para este nível.';
+        }
+
+        document.getElementById('game-card-container').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    // Carrega uma frase aleatória
+    function loadRandomPhrase() {
+        if (!currentLevel || filteredPhrases.length === 0) return;
+
+        feedbackEl.style.display = 'none';
+        feedbackEl.className = 'feedback-area';
+        
+        const randomIndex = Math.floor(Math.random() * filteredPhrases.length);
+        currentPhraseObj = filteredPhrases[randomIndex];
+
+        displayEn.textContent = currentPhraseObj.en;
+        displayPt.textContent = currentPhraseObj.pt;
+    }
+
+    // Função para tocar o áudio
+    function playAudio() {
+        if ('speechSynthesis' in window) {
+            window.speechSynthesis.cancel();
+            const utterance = new SpeechSynthesisUtterance(currentPhraseObj.en);
+            utterance.lang = 'en-US';
+            utterance.rate = 0.9; 
+            window.speechSynthesis.speak(utterance);
+        } else {
+            alert("Seu navegador não suporta áudio de leitura (Speech Synthesis).");
+        }
+    }
+
+    // Função para iniciar a gravação de voz
+    function startRecording() {
+        const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+        if (!SpeechRecognition) {
+            alert("Seu navegador não suporta reconhecimento de voz. Use o Chrome ou Edge.");
+            return;
+        }
+
+        const recognition = new SpeechRecognition();
+        recognition.lang = 'en-US';
+        recognition.interimResults = false;
+        recognition.maxAlternatives = 1;
+
+        // Feedback de Ouvindo
+        feedbackEl.style.display = 'block';
+        feedbackEl.className = 'feedback-area feedback-listening'; // Nova classe para "Ouvindo"
+        feedbackEl.innerHTML = "🎤 Ouvindo... Fale agora!";
+
+        recognition.start();
+
+        recognition.onresult = (event) => {
+            const userSpeech = event.results[0][0].transcript;
+            // Normalização: minúsculas e remove pontuação básica
+            const cleanUser = userSpeech.toLowerCase().replace(/[.,?!]/g, '').trim();
+            const cleanTarget = currentPhraseObj.en.toLowerCase().replace(/[.,?!]/g, '').trim();
+
+            if (cleanUser === cleanTarget) {
+                feedbackEl.className = 'feedback-area feedback-success';
+                feedbackEl.innerHTML = `✔ Perfeito!<br><span style='font-weight:normal; font-size:0.9em'>Você disse: "${userSpeech}"</span>`;
+            } else {
+                feedbackEl.className = 'feedback-area feedback-error';
+                feedbackEl.innerHTML = `✖ Quase lá.<br><span style='font-weight:normal; font-size:0.9em'>O computador ouviu: "${userSpeech}"</span>`;
+            }
+        };
+
+        recognition.onerror = (event) => {
+            feedbackEl.className = 'feedback-area feedback-error';
+            feedbackEl.textContent = "Erro no microfone ou sem resposta audível. Tente novamente.";
+        };
+    }
+</script>
+
+</body>
+</html>

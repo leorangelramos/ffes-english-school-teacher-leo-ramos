@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Exercício: Comparativos e Superlativos | Professor Leo Ramos</title>
+    <meta name="description" content="Aprenda a usar adjetivos comparativos (better, more) e superlativos (the best, the most) em inglês com este quiz interativo.">
+    <meta name="author" content="Leo Ramos">
+    <meta name="robots" content="index, follow">
+    <meta name="keywords" content="comparativos, superlativos, inglês, gramática inglesa, adjetivos em inglês, exercícios de inglês">
+
+    <link rel="canonical" href="https://teacherleoramos.com.br/Ex2-3-4-5-6/adjetivos-em-ingles-comparativos-superlativos.html">
+    <link rel="stylesheet" href="/CSS/universal.css">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="/Images/logofavicion.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/Images/logofavicion.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/Images/logofavicion.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/Images/logofavicion.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/Images/logofavicion.png">
+
+    <meta property="og:title" content="Exercício: Comparativos e Superlativos | Professor Leo Ramos">
+    <meta property="og:description" content="Aprenda a usar adjetivos comparativos (better, more) e superlativos (the best, the most) em inglês com este quiz interativo.">
+    <meta property="og:image" content="https://teacherleoramos.com.br/Images/preview-social.jpg">
+    <meta property="og:url" content="https://teacherleoramos.com.br/Ex2-3-4-5-6/adjetivos-em-ingles-comparativos-superlativos.html">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:site_name" content="FFES - Professor Leo Ramos">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Exercício: Comparativos e Superlativos | Professor Leo Ramos">
+    <meta name="twitter:description" content="Aprenda a usar adjetivos comparativos (better, more) e superlativos (the best, the most) em inglês com este quiz interativo.">
+    <meta name="twitter:image" content="https://teacherleoramos.com.br/Images/preview-social.jpg">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Quiz",
+      "name": "Jogo dos Comparativos e Superlativos",
+      "description": "Um quiz interativo para praticar as regras de adjetivos comparativos (faster, more expensive) e superlativos (the fastest, the most expensive), incluindo irregulares (good, bad).",
+      "url": "https://teacherleoramos.com.br/Ex2-3-4-5-6/adjetivos-em-ingles-comparativos-superlativos.html",
+      "image": "https://teacherleoramos.com.br/Images/preview-social.jpg",
+      "author": {
+        "@type": "Person",
+        "name": "Leo Ramos",
+        "url": "https://teacherleoramos.com.br"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "FFES - Professor Leo Ramos",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://teacherleoramos.com.br/Images/logo novo grande.png"
+        }
+      },
+      "learningResourceType": "Quiz",
+      "educationalLevel": "Beginner/Intermediate"
+    }
+    </script>
+
+    <style>
+        .game-title {
+            color: var(--cor-texto-claro);
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.6);
+        }
+        #placar-geral-container {
+            background: rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: var(--cor-texto-claro);
+            padding: 15px 25px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            font-size: 1.1em;
+        }
+        #placar-geral-container p { margin: 0; }
+        #placar-geral-container .nav-arrow {
+            color: inherit;
+            text-decoration: none;
+            font-size: 1.2em;
+            line-height: 1;
+            transition: color 0.2s ease, transform 0.2s ease;
+        }
+        #placar-geral-container .nav-arrow:hover {
+            color: var(--cor-acento);
+            transform: scale(1.15);
+        }
+        .introducao-container, .exercicio-card {
+            background-color: var(--cor-fundo-secao);
+            width: 100%;
+            max-width: 900px;
+            padding: 25px 30px;
+            margin-bottom: 25px;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+            box-sizing: border-box;
+        }
+        .exercicio-card .question-container p { font-size: 1.1em; }
+        .options-container {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 20px;
+        }
+        .option-button {
+            width: 100%;
+            padding: 15px;
+            font-size: 1em;
+            text-align: left;
+            background-color: var(--cor-fundo-geral);
+            border: 2px solid var(--cor-borda-sutil);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .option-button:not(:disabled):hover {
+            background-color: var(--cor-acento-hover);
+            border-color: var(--cor-acento);
+            transform: translateY(-2px);
+        }
+        .option-button:disabled {
+            cursor: not-allowed;
+            opacity: 0.7;
+        }
+        .option-button.correto {
+            background-color: var(--cor-sucesso);
+            border-color: #27ae60;
+            color: white;
+            font-weight: bold;
+        }
+        .option-button.incorreto {
+            background-color: var(--cor-erro);
+            border-color: #c0392b;
+            color: white;
+            font-weight: bold;
+        }
+        .explanation-container {
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.5s ease-out;
+            background-color: var(--cor-fundo-secao-destaque);
+            border-radius: 8px;
+            padding: 0 20px;
+            margin-top: 0;
+            border-left: 4px solid var(--cor-primaria-hover);
+        }
+        .explanation-container.visible {
+            max-height: 500px;
+            margin-top: 20px;
+            padding: 20px;
+        }
+        /* Tabela de Resumo */
+        .summary-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 1em;
+        }
+        .summary-table th, .summary-table td {
+            border: 1px solid var(--cor-borda-sutil);
+            padding: 12px;
+            text-align: left;
+        }
+        .summary-table th {
+            background-color: var(--cor-primaria-hover);
+            color: var(--cor-texto-claro);
+        }
+        .summary-table td:nth-child(1) {
+            font-weight: bold;
+        }
+        /* Contêiner do botão "Voltar ao Topo" */
+        .rodape-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+        @media (max-width: 800px) {
+            .game-title { font-size: 1.8em; }
+            h2 { font-size: 1.5em; }
+        }
+    </style>
+
+                <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-M8ZG06010Q"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-M8ZG06010Q');
+    </script>
+</head>
+<body id="topo">
+
+<div class="cabecalho-container">
+    <header class="bloco-identidade">
+        <div class="logo-and-title">
+            <a href="/index.html">
+                <img src="/Images/logo novo grande.png" alt="Logo FFES" class="logo-img">
+            </a>
+            <a href="/index.html" style="text-decoration: none; color: inherit;">
+                <h1>Leo Ramos | Professor de Inglês</h1>
+            </a>
+        </div>
+    </header>
+
+
+<div class="bloco-navegacao"> 
+    <nav class="nav-primary">
+        <ul>
+            <li><a href="/index.html#home">Home</a></li>
+            <li><a href="/index.html#sobre">Sobre Mim</a></li>
+            <li><a href="/exercicios-e-artigos.html#exercicios">Exercícios</a></li>
+            <li><a href="/exercicios-e-artigos.html#artigos-vocab">Artigos</a></li>
+            <li><a href="/cursos-e-ebook.html#cursos">Cursos e E-book</a></li>
+            <li><a href="/index.html#metodologia">Metodologia</a></li>
+        </ul>
+    </nav>
+</div>
+
+
+</div>
+
+<main>
+    <h1 class="game-title">Jogo dos Comparativos e Superlativos</h1>
+
+    <div id="placar-geral-container">
+        <p>Acertos: <strong id="acertos-geral">0</strong></p>
+        <a href="#contato" class="nav-arrow" title="Ir para o final da página">&#11015;</a>
+        <p>Erros: <strong id="erros-geral">0</strong></p>
+    </div>
+
+    <button id="reset-btn" class="cta-button">Jogar Novamente</button>
+    <hr>
+
+    <div class="introducao-container" style="text-align: left;">
+        <h3>Adjetivos Comparativos e Superlativos</h3>
+        <p>Usamos adjetivos para descrever, mas também para comparar. Os <strong>Comparativos</strong> são usados para contrastar duas coisas, enquanto os <strong>Superlativos</strong> são usados para destacar uma coisa em um grupo de três ou mais.</p>
+
+        <h4>1. Regras para Adjetivos Curtos</h4>
+        <p>Adjetivos curtos (geralmente de 1 sílaba) seguem regras simples. Para o comparativo, adicionamos <strong>-er</strong>. Para o superlativo, usamos <strong>the</strong> e adicionamos <strong>-est</strong>. Se o adjetivo terminar em -y, trocamos por <strong>-ier</strong> ou <strong>-iest</strong>. Para o padrão C-V-C (Consoante-Vogal-Consoante), dobramos a última consoante.</p>
+        <table class="summary-table">
+            <thead><tr><th>Adjetivo Base</th><th>Comparativo</th><th>Superlativo</th></tr></thead>
+            <tbody>
+                <tr><td>tall (alto)</td><td>taller</td><td>the tallest</td></tr>
+                <tr><td>fast (rápido)</td><td>faster</td><td>the fastest</td></tr>
+                <tr><td>happy (feliz)</td><td>happier</td><td>the happiest</td></tr>
+                <tr><td>big (grande)</td><td>bigger</td><td>the biggest</td></tr>
+            </tbody>
+        </table>
+        
+        <h4>2. Regras para Adjetivos Longos</h4>
+        <p>Adjetivos longos (com duas ou mais sílabas) não mudam sua forma. Em vez disso, usamos palavras auxiliares. Para o comparativo, usamos <strong>more</strong> antes do adjetivo. Para o superlativo, usamos <strong>the most</strong>.</p>
+        <table class="summary-table">
+            <thead><tr><th>Adjetivo Base</th><th>Comparativo</th><th>Superlativo</th></tr></thead>
+            <tbody>
+                <tr><td>expensive (caro)</td><td>more expensive</td><td>the most expensive</td></tr>
+                <tr><td>beautiful (bonito)</td><td>more beautiful</td><td>the most beautiful</td></tr>
+                <tr><td>interesting (interessante)</td><td>more interesting</td><td>the most interesting</td></tr>
+            </tbody>
+        </table>
+
+        <h4>3. Adjetivos Irregulares</h4>
+        <p>Alguns dos adjetivos mais comuns são irregulares. Eles não seguem nenhuma regra e precisam ser memorizados.</p>
+        <table class="summary-table">
+            <thead><tr><th>Adjetivo Base</th><th>Comparativo</th><th>Superlativo</th></tr></thead>
+            <tbody>
+                <tr><td>good (bom)</td><td>better</td><td>the best</td></tr>
+                <tr><td>bad (ruim)</td><td>worse</td><td>the worst</td></tr>
+                <tr><td>far (longe)</td><td>farther / further</td><td>the farthest / the furthest</td></tr>
+                <tr><td>little (pouco)</td><td>less</td><td>the least</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div id="exercicios-container"></div>
+    
+    <div class="rodape-container">
+        <a href="#topo" class="nav-button">&#11014;</a>
+    </div>
+</main>
+
+<footer id="contato" class="site-footer">
+    <div class="footer-content">
+        <div class="social-media-links">
+            <h4>Siga-me nas redes sociais e acesse o App</h4>
+            <a href="https://www.youtube.com/@teacherleoramos/videos" target="_blank" rel="noopener noreferrer" title="Canal YouTube Teacher Leo Ramos" aria-label="YouTube">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/youtube-play.png" alt="Ícone YouTube" width="30" height="30" loading="lazy">
+            </a>
+            <a href="https://www.instagram.com/teacherleoramos/" target="_blank" rel="noopener noreferrer" title="Instagram Teacher Leo Ramos" aria-label="Instagram">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/instagram-new.png" alt="Ícone Instagram" width="30" height="30" loading="lazy">
+            </a>
+            <a href="https://www.tiktok.com/@teacherleoramos" target="_blank" rel="noopener noreferrer" title="TikTok Teacher Leo Ramos" aria-label="TikTok">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/tiktok.png" alt="Ícone TikTok" width="30" height="30" loading="lazy">
+            </a>
+            <a href="https://wa.me/5511955582118" target="_blank" rel="noopener noreferrer" title="WhatsApp Agendamento" aria-label="WhatsApp">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/whatsapp--v1.png" alt="Ícone WhatsApp" width="30" height="30" loading="lazy">
+            </a>
+            <a href="/index-app.html" target="_blank" rel="noopener noreferrer" title="Acesse o FFES App" aria-label="FFES App">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/controller.png" alt="Ícone FFES App" width="30" height="30" loading="lazy">
+            </a>
+        </div>
+        <p><strong>Contato</strong></p>
+        <p>Youtube: @teacherleoramos | Telefone - WhatsApp: (11) 95558-2118</p>
+        <p>Endereço: São Paulo, SP, Brasil</p>
+        <p>CNPJ: 43.226.983/0001-91</p>
+        <p>&copy; <span id="year">2025</span> | FEATHERED FRIENDS ENGLISH SCHOOL - FFES. Todos os direitos reservados.</p>
+    </div>
+</footer>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    // Lista expandida com 120 exercícios variados sobre Comparativos e Superlativos
+    const dadosComparativos = [
+        // 1. Curto - Comparativo (-er)
+        { id: 'comp-1', frase: 'My car is ___ than your car.', pergunta: 'Complete a frase com o comparativo de "fast":', opcoes: ['faster', 'fastest', 'more fast'], respostaCorreta: 'faster', explicacao: '"Fast" é um adjetivo curto. Adicionamos "-er" para formar o comparativo.' },
+        // 2. Longo - Superlativo (the most)
+        { id: 'comp-2', frase: 'This is ___ book I have ever read.', pergunta: 'Complete a frase com o superlativo de "interesting":', opcoes: ['the most interesting', 'more interesting', 'the interestingest'], respostaCorreta: 'the most interesting', explicacao: '"Interesting" é um adjetivo longo. Usamos "the most" para o superlativo.' },
+        // 3. Curto (y -> ier) - Comparativo
+        { id: 'comp-3', frase: 'She is ___ than her sister.', pergunta: 'Complete a frase com o comparativo de "happy":', opcoes: ['happier', 'happyest', 'more happy'], respostaCorreta: 'happier', explicacao: 'Para adjetivos terminados em "y", trocamos por "-ier" no comparativo.' },
+        // 4. Irregular - Superlativo
+        { id: 'comp-4', frase: 'He is ___ student in the class.', pergunta: 'Complete a frase com o superlativo de "good":', opcoes: ['the best', 'the goodest', 'better'], respostaCorreta: 'the best', explicacao: '"Good" é um adjetivo irregular. Seu superlativo é "the best".' },
+        // 5. Irregular - Comparativo
+        { id: 'comp-5', frase: 'The situation is ___ than we thought.', pergunta: 'Complete a frase com o comparativo de "bad":', opcoes: ['worse', 'badder', 'the worst'], respostaCorreta: 'worse', explicacao: '"Bad" é um adjetivo irregular. Seu comparativo é "worse".' },
+        // 6. Curto (CVC) - Superlativo
+        { id: 'comp-6', frase: 'Russia is ___ country in the world.', pergunta: 'Complete a frase com o superlativo de "big":', opcoes: ['the biggest', 'the bigest', 'bigger'], respostaCorreta: 'the biggest', explicacao: '"Big" é um adjetivo curto CVC (consoante-vogal-consoante). Dobramos a última consoante e adicionamos "-est".' },
+        // 7. Longo - Comparativo (more)
+        { id: 'comp-7', frase: 'This test was ___ than the last one.', pergunta: 'Complete a frase com o comparativo de "difficult":', opcoes: ['more difficult', 'difficulter', 'the most difficult'], respostaCorreta: 'more difficult', explicacao: '"Difficult" é um adjetivo longo. Usamos "more" para o comparativo.' },
+        // 8. Curto - Superlativo (-est)
+        { id: 'comp-8', frase: 'Mount Everest is ___ mountain in the world.', pergunta: 'Complete a frase com o superlativo de "high":', opcoes: ['the highest', 'the highst', 'higher'], respostaCorreta: 'the highest', explicacao: '"High" é um adjetivo curto. Adicionamos "-est" para o superlativo.' },
+        // 9. Irregular - Comparativo
+        { id: 'comp-9', frase: 'I think summer is ___ than winter.', pergunta: 'Complete a frase com o comparativo de "good":', opcoes: ['better', 'gooder', 'the best'], respostaCorreta: 'better', explicacao: '"Good" é um adjetivo irregular. Seu comparativo é "better".' },
+        // 10. Irregular - Superlativo
+        { id: 'comp-10', frase: 'This is ___ movie I have ever seen!', pergunta: 'Complete a frase com o superlativo de "bad":', opcoes: ['the worst', 'the baddest', 'worse'], respostaCorreta: 'the worst', explicacao: '"Bad" é um adjetivo irregular. Seu superlativo é "the worst".' },
+        // 11. Curto - Comparativo (-er)
+        { id: 'comp-11', frase: 'A turtle is ___ than a rabbit.', pergunta: 'Complete a frase com o comparativo de "slow":', opcoes: ['slower', 'slowest', 'more slow'], respostaCorreta: 'slower', explicacao: '"Slow" é um adjetivo curto. Adicionamos "-er" para o comparativo.' },
+        // 12. Curto - Superlativo (-est)
+        { id: 'comp-12', frase: 'She is ___ person I know.', pergunta: 'Complete a frase com o superlativo de "kind":', opcoes: ['the kindest', 'the kinder', 'most kind'], respostaCorreta: 'the kindest', explicacao: '"Kind" é um adjetivo curto. Adicionamos "-est" para o superlativo.' },
+        // 13. Irregular - Comparativo
+        { id: 'comp-13', frase: 'Your house is ___ from the school than mine.', pergunta: 'Complete a frase com o comparativo de "far":', opcoes: ['farther', 'farrer', 'the farthest'], respostaCorreta: 'farther', explicacao: '"Far" é um adjetivo irregular. Seu comparativo é "farther" ou "further".' },
+        // 14. Curto - Superlativo (-est)
+        { id: 'comp-14', frase: 'He is trying to find ___ apartment in the city.', pergunta: 'Complete a frase com o superlativo de "cheap":', opcoes: ['the cheapest', 'the cheaper', 'most cheap'], respostaCorreta: 'the cheapest', explicacao: '"Cheap" é um adjetivo curto. Adicionamos "-est" para o superlativo.' },
+        // 15. Curto - Comparativo (-er)
+        { id: 'comp-15', frase: 'The weather today is ___ than yesterday.', pergunta: 'Complete a frase com o comparativo de "cold":', opcoes: ['colder', 'coldest', 'more cold'], respostaCorreta: 'colder', explicacao: '"Cold" é um adjetivo curto. Adicionamos "-er" para o comparativo.' },
+        // 16. Longo - Superlativo (the most)
+        { id: 'comp-16', frase: 'This is ___ cake I\'ve ever tasted.', pergunta: 'Complete a frase com o superlativo de "delicious":', opcoes: ['the most delicious', 'more delicious', 'the deliciousest'], respostaCorreta: 'the most delicious', explicacao: '"Delicious" é um adjetivo longo. Usamos "the most" para o superlativo.' },
+        // 17. Curto (y -> ier) - Comparativo
+        { id: 'comp-17', frase: 'My cat is ___ than your dog.', pergunta: 'Complete a frase com o comparativo de "lazy":', opcoes: ['lazier', 'lazyest', 'more lazy'], respostaCorreta: 'lazier', explicacao: 'Para adjetivos terminados em "y", trocamos por "-ier" no comparativo.' },
+        // 18. Curto - Superlativo (-est)
+        { id: 'comp-18', frase: 'Who is ___ person in your family?', pergunta: 'Complete a frase com o superlativo de "old":', opcoes: ['the oldest', 'the older', 'most old'], respostaCorreta: 'the oldest', explicacao: '"Old" é um adjetivo curto. Adicionamos "-est" para o superlativo.' },
+        // 19. Longo - Comparativo (more)
+        { id: 'comp-19', frase: 'Traveling by train is ___ than traveling by plane.', pergunta: 'Complete a frase com o comparativo de "comfortable":', opcoes: ['more comfortable', 'comfortabler', 'the most comfortable'], respostaCorreta: 'more comfortable', explicacao: '"Comfortable" é um adjetivo longo. Usamos "more" para o comparativo.' },
+        // 20. Curto (CVC) - Superlativo
+        { id: 'comp-20', frase: 'This is one of ___ problems we face.', pergunta: 'Complete a frase com o superlativo de "big":', opcoes: ['the biggest', 'the bigest', 'bigger'], respostaCorreta: 'the biggest', explicacao: '"Big" é um adjetivo curto CVC. Dobramos a última consoante e adicionamos "-est".' },
+        // 21. Curto - Comparativo (-er)
+        { id: 'comp-21', frase: 'A phone is ___ than a laptop.', pergunta: 'Complete a frase com o comparativo de "small":', opcoes: ['smaller', 'smallest', 'more small'], respostaCorreta: 'smaller', explicacao: '"Small" é um adjetivo curto. Adicionamos "-er" para o comparativo.' },
+        // 22. Curto - Superlativo (-est)
+        { id: 'comp-22', frase: 'This is ___ road to the city.', pergunta: 'Complete a frase com o superlativo de "short":', opcoes: ['the shortest', 'the shorter', 'more short'], respostaCorreta: 'the shortest', explicacao: '"Short" é um adjetivo curto. Adicionamos "-est" para o superlativo.' },
+        // 23. Longo - Comparativo (more)
+        { id: 'comp-23', frase: 'She is ___ than her colleagues.', pergunta: 'Complete a frase com o comparativo de "hard-working":', opcoes: ['more hard-working', 'hard-workinger', 'the most hard-working'], respostaCorreta: 'more hard-working', explicacao: '"Hard-working" é um adjetivo longo. Usamos "more" para o comparativo.' },
+        // 24. Irregular - Superlativo
+        { id: 'comp-24', frase: 'I had ___ time of my life on vacation.', pergunta: 'Complete a frase com o superlativo de "good":', opcoes: ['the best', 'the goodest', 'better'], respostaCorreta: 'the best', explicacao: '"Good" é irregular. O superlativo é "the best".' },
+        // 25. Curto - Comparativo (-er)
+        { id: 'comp-25', frase: 'A feather is ___ than a rock.', pergunta: 'Complete a frase com o comparativo de "light":', opcoes: ['lighter', 'lightest', 'more light'], respostaCorreta: 'lighter', explicacao: '"Light" é um adjetivo curto. Adicionamos "-er" para o comparativo.' },
+        // 26. Longo - Superlativo (the most)
+        { id: 'comp-26', frase: 'What is ___ animal in the world?', pergunta: 'Complete a frase com o superlativo de "dangerous":', opcoes: ['the most dangerous', 'more dangerous', 'the dangerousest'], respostaCorreta: 'the most dangerous', explicacao: '"Dangerous" é um adjetivo longo. Usamos "the most" para o superlativo.' },
+        // 27. Curto (y -> ier) - Comparativo
+        { id: 'comp-27', frase: 'He is much ___ now.', pergunta: 'Complete a frase com o comparativo de "healthy":', opcoes: ['healthier', 'healthyest', 'more healthy'], respostaCorreta: 'healthier', explicacao: 'Adjetivos terminados em "y" trocam por "-ier" no comparativo.' },
+        // 28. Longo - Superlativo (the most)
+        { id: 'comp-28', frase: 'It was ___ exam of the year.', pergunta: 'Complete a frase com o superlativo de "difficult":', opcoes: ['the most difficult', 'more difficult', 'the difficulter'], respostaCorreta: 'the most difficult', explicacao: '"Difficult" é um adjetivo longo. Usamos "the most" para o superlativo.' },
+        // 29. Contexto: 2 opções - Comparativo (irregular)
+        { id: 'comp-29', frase: 'Of the two options, the first one is ___.', pergunta: 'Estamos comparando DUAS opções. Qual forma usar?', opcoes: ['better', 'the best', 'good'], respostaCorreta: 'better', explicacao: 'Para comparar duas coisas, usamos o comparativo ("better"). "The best" seria para três ou mais.' },
+        // 30. Contexto: 1 vs grupo - Superlativo
+        { id: 'comp-30', frase: 'Of all the students, she is ___.', pergunta: 'Estamos comparando UMA com TODAS. Qual forma usar?', opcoes: ['the smartest', 'smarter', 'smart'], respostaCorreta: 'the smartest', explicacao: 'Para comparar uma pessoa com um grupo, usamos o superlativo ("the smartest").' },
+        // 31. Curto (CVC) - Comparativo
+        { id: 'comp-31', frase: 'This room is ___ than the other one.', pergunta: 'Complete a frase com o comparativo de "hot":', opcoes: ['hotter', 'hotest', 'more hot'], respostaCorreta: 'hotter', explicacao: '"Hot" é um adjetivo curto CVC. Dobramos a consoante e adicionamos "-er".' },
+        // 32. Curto (CVC) - Superlativo
+        { id: 'comp-32', frase: 'This is ___ part of the movie.', pergunta: 'Complete a frase com o superlativo de "sad":', opcoes: ['the saddest', 'the sadest', 'sadder'], respostaCorreta: 'the saddest', explicacao: '"Sad" é um adjetivo curto CVC. Dobramos a consoante e adicionamos "-est".' },
+        // 33. Irregular - Comparativo (de inferioridade)
+        { id: 'comp-33', frase: 'He has ___ money than I do.', pergunta: 'Complete a frase com o comparativo de "little":', opcoes: ['less', 'littler', 'the least'], respostaCorreta: 'less', explicacao: '"Little" é um adjetivo irregular. Seu comparativo é "less".' },
+        // 34. Longo - Superlativo (the most)
+        { id: 'comp-34', frase: 'She is ___ person in the company.', pergunta: 'Complete a frase com o superlativo de "powerful":', opcoes: ['the most powerful', 'more powerful', 'the powerfulest'], respostaCorreta: 'the most powerful', explicacao: '"Powerful" é um adjetivo longo. Usamos "the most" para o superlativo.' },
+        // 35. Curto (y -> ier) - Comparativo
+        { id: 'comp-35', frase: 'This exercise is ___ than I expected.', pergunta: 'Complete a frase com o comparativo de "easy":', opcoes: ['easier', 'easyest', 'more easy'], respostaCorreta: 'easier', explicacao: 'Adjetivos terminados em "y" trocam por "-ier" no comparativo.' },
+        // 36. Irregular - Superlativo (de inferioridade)
+        { id: 'comp-36', frase: 'This is ___ problem of all.', pergunta: 'Complete a frase com o superlativo de "little":', opcoes: ['the least', 'the littlest', 'less'], respostaCorreta: 'the least', explicacao: '"Little" é irregular. Seu superlativo é "the least".' },
+        // 37. Curto (termina em -e) - Comparativo
+        { id: 'comp-37', frase: 'The new design is ___ than the old one.', pergunta: 'Complete a frase com o comparativo de "simple":', opcoes: ['simpler', 'simplest', 'more simple'], respostaCorreta: 'simpler', explicacao: '"Simple" é um adjetivo curto terminado em -e. Adicionamos apenas "-r".' },
+        // 38. Longo - Superlativo (the most)
+        { id: 'comp-38', frase: 'It was ___ speech I have ever heard.', pergunta: 'Complete a frase com o superlativo de "boring":', opcoes: ['the most boring', 'more boring', 'the boringest'], respostaCorreta: 'the most boring', explicacao: '"Boring" é um adjetivo longo. Usamos "the most" para o superlativo.' },
+        // 39. Curto (termina em -e) - Superlativo
+        { id: 'comp-39', frase: 'My grandfather is ___ man I know.', pergunta: 'Complete a frase com o superlativo de "wise":', opcoes: ['the wisest', 'the wiser', 'most wise'], respostaCorreta: 'the wisest', explicacao: '"Wise" é um adjetivo curto terminado em -e. Adicionamos apenas "-st".' },
+        // 40. Longo - Comparativo (more)
+        { id: 'comp-40', frase: 'Health is ___ than money.', pergunta: 'Complete a frase com o comparativo de "important":', opcoes: ['more important', 'importanter', 'the most important'], respostaCorreta: 'more important', explicacao: '"Important" é um adjetivo longo. Usamos "more" para o comparativo.' },
+        
+        // --- Novos Exercícios (41-120) ---
+        // 41. Curto - Comparativo
+        { id: 'comp-41', frase: 'Your voice is ___ than mine.', pergunta: 'Complete a frase com o comparativo de "loud":', opcoes: ['louder', 'the loudest', 'more loud'], respostaCorreta: 'louder', explicacao: '"Loud" é um adjetivo curto. Adicionamos "-er".' },
+        // 42. Longo - Superlativo
+        { id: 'comp-42', frase: 'That was ___ presentation of the day.', pergunta: 'Complete a frase com o superlativo de "impressive":', opcoes: ['the most impressive', 'more impressive', 'the impressivest'], respostaCorreta: 'the most impressive', explicacao: '"Impressive" é um adjetivo longo. Usamos "the most".' },
+        // 43. Curto (CVC) - Comparativo
+        { id: 'comp-43', frase: 'I need to wear a ___ coat today.', pergunta: 'Complete a frase com o comparativo de "thin":', opcoes: ['thinner', 'thinest', 'more thin'], respostaCorreta: 'thinner', explicacao: '"Thin" é um adjetivo curto CVC. Dobramos a consoante e adicionamos "-er".' },
+        // 44. Irregular - Comparativo
+        { id: 'comp:44', frase: 'The market is ___ than the library.', pergunta: 'Complete a frase com o comparativo de "far":', opcoes: ['further', 'the furthest', 'farer'], respostaCorreta: 'further', explicacao: '"Far" é irregular, podendo usar "farther" ou "further" no comparativo.' },
+        // 45. Curto (termina em -e) - Superlativo
+        { id: 'comp-45', frase: 'That’s ___ piece of news I’ve heard all year.', pergunta: 'Complete a frase com o superlativo de "late":', opcoes: ['the latest', 'the later', 'most late'], respostaCorreta: 'the latest', explicacao: '"Late" é um adjetivo curto terminado em -e. Adicionamos apenas "-st".' },
+        // 46. Longo - Comparativo
+        { id: 'comp-46', frase: 'Learning Chinese is ___ than learning Spanish.', pergunta: 'Complete a frase com o comparativo de "challenging":', opcoes: ['more challenging', 'challenginger', 'the most challenging'], respostaCorreta: 'more challenging', explicacao: '"Challenging" é um adjetivo longo. Usamos "more".' },
+        // 47. Curto (y -> iest) - Superlativo
+        { id: 'comp-47', frase: 'She had ___ day of her life.', pergunta: 'Complete a frase com o superlativo de "busy":', opcoes: ['the busiest', 'the busyer', 'most busy'], respostaCorreta: 'the busiest', explicacao: 'Adjetivos terminados em "y" trocam por "-iest" no superlativo.' },
+        // 48. Curto - Comparativo
+        { id: 'comp-48', frase: 'Our new apartment is much ___ than the old one.', pergunta: 'Complete a frase com o comparativo de "clean":', opcoes: ['cleaner', 'the cleanest', 'more clean'], respostaCorreta: 'cleaner', explicacao: '"Clean" é um adjetivo curto. Adicionamos "-er".' },
+        // 49. Irregular - Superlativo
+        { id: 'comp-49', frase: 'It was ___ decision I could have made.', pergunta: 'Complete a frase com o superlativo de "bad":', opcoes: ['the worst', 'the baddest', 'worse'], respostaCorreta: 'the worst', explicacao: '"Bad" é irregular. Seu superlativo é "the worst".' },
+        // 50. Longo - Superlativo
+        { id: 'comp-50', frase: 'He is ___ popular actor in Hollywood right now.', pergunta: 'Complete a frase com o superlativo de "popular":', opcoes: ['the most popular', 'more popular', 'the popularest'], respostaCorreta: 'the most popular', explicacao: '"Popular" é um adjetivo longo. Usamos "the most".' },
+        // 51. Curto (CVC) - Superlativo
+        { id: 'comp-51', frase: 'The Sahara is ___ desert in the world.', pergunta: 'Complete a frase com o superlativo de "dry":', opcoes: ['the driest', 'the dryest', 'dryer'], respostaCorreta: 'the driest', explicacao: 'Adjetivos terminados em "y" (precedido por consoante) trocam por "-iest".' },
+        // 52. Longo - Comparativo
+        { id: 'comp-52', frase: 'A sports car is ___ than a family car.', pergunta: 'Complete a frase com o comparativo de "expensive":', opcoes: ['more expensive', 'expensiver', 'the most expensive'], respostaCorreta: 'more expensive', explicacao: '"Expensive" é um adjetivo longo. Usamos "more".' },
+        // 53. Curto - Comparativo
+        { id: 'comp-53', frase: 'This road is ___ than the motorway.', pergunta: 'Complete a frase com o comparativo de "narrow":', opcoes: ['narrower', 'more narrow', 'the narrowest'], respostaCorreta: 'narrower', explicacao: '"Narrow" é um adjetivo curto (alguns de duas sílabas, como este, aceitam -er/-est ou more/most).' },
+        // 54. Irregular - Comparativo
+        { id: 'comp-54', frase: 'We need to make ___ effort this time.', pergunta: 'Complete a frase com o comparativo de "much" / "many":', opcoes: ['more', 'most', 'mucher'], respostaCorreta: 'more', explicacao: '"Much" e "many" são irregulares. O comparativo é "more".' },
+        // 55. Longo - Superlativo
+        { id: 'comp-55', frase: 'She wore ___ dress to the party.', pergunta: 'Complete a frase com o superlativo de "elegant":', opcoes: ['the most elegant', 'more elegant', 'the elegantest'], respostaCorreta: 'the most elegant', explicacao: '"Elegant" é um adjetivo longo. Usamos "the most".' },
+        // 56. Curto (termina em -e) - Comparativo
+        { id: 'comp-56', frase: 'My sister is ___ than I am.', pergunta: 'Complete a frase com o comparativo de "safe":', opcoes: ['safer', 'safest', 'more safe'], respostaCorreta: 'safer', explicacao: '"Safe" é um adjetivo curto terminado em -e. Adicionamos apenas "-r".' },
+        // 57. Curto (CVC) - Comparativo
+        { id: 'comp-57', frase: 'He is ___ than his brother.', pergunta: 'Complete a frase com o comparativo de "fat":', opcoes: ['fatter', 'fatest', 'more fat'], respostaCorreta: 'fatter', explicacao: '"Fat" é um adjetivo curto CVC. Dobramos a consoante e adicionamos "-er".' },
+        // 58. Longo - Superlativo
+        { id: 'comp-58', frase: 'That was ___ movie I’ve ever seen.', pergunta: 'Complete a frase com o superlativo de "disappointing":', opcoes: ['the most disappointing', 'more disappointing', 'the disappointingest'], respostaCorreta: 'the most disappointing', explicacao: '"Disappointing" é um adjetivo longo. Usamos "the most".' },
+        // 59. Curto - Comparativo
+        { id: 'comp-59', frase: 'The plane flew ___ than the birds.', pergunta: 'Complete a frase com o comparativo de "high":', opcoes: ['higher', 'the highest', 'more high'], respostaCorreta: 'higher', explicacao: '"High" é um adjetivo curto. Adicionamos "-er".' },
+        // 60. Irregular - Superlativo
+        { id: 'comp-60', frase: 'The Pacific Ocean is ___ large body of water on Earth.', pergunta: 'Complete a frase com o superlativo de "great":', opcoes: ['the greatest', 'the greatst', 'greater'], respostaCorreta: 'the greatest', explicacao: '"Great" é um adjetivo curto. Adicionamos "-est".' },
+        // 61. Longo - Comparativo (Inferioridade)
+        { id: 'comp-61', frase: 'A bicycle is ___ efficient than a motorbike.', pergunta: 'Complete a frase com o comparativo de inferioridade para "efficient":', opcoes: ['less efficient', 'the least efficient', 'efficienter'], respostaCorreta: 'less efficient', explicacao: 'O comparativo de inferioridade usa "less... than" para todos os adjetivos.' },
+        // 62. Curto - Superlativo
+        { id: 'comp-62', frase: 'The cheetah is ___ land animal.', pergunta: 'Complete a frase com o superlativo de "quick":', opcoes: ['the quickest', 'the quicker', 'most quick'], respostaCorreta: 'the quickest', explicacao: '"Quick" é um adjetivo curto. Adicionamos "-est".' },
+        // 63. Curto (y -> ier) - Comparativo
+        { id: 'comp-63', frase: 'He is ___ when he gets a good night\'s sleep.', pergunta: 'Complete a frase com o comparativo de "grumpy":', opcoes: ['grumpier', 'grumpiest', 'more grumpy'], respostaCorreta: 'grumpier', explicacao: 'Adjetivos terminados em "y" trocam por "-ier" no comparativo.' },
+        // 64. Irregular - Comparativo
+        { id: 'comp-64', frase: 'We had ___ snow this winter than last year.', pergunta: 'Complete a frase com o comparativo de "little":', opcoes: ['less', 'littler', 'the least'], respostaCorreta: 'less', explicacao: '"Little" é irregular. O comparativo é "less".' },
+        // 65. Longo - Superlativo
+        { id: 'comp-65', frase: 'Which is ___ sport to watch?', pergunta: 'Complete a frase com o superlativo de "exciting":', opcoes: ['the most exciting', 'more exciting', 'the excitingest'], respostaCorreta: 'the most exciting', explicacao: '"Exciting" é um adjetivo longo. Usamos "the most".' },
+        // 66. Curto - Comparativo
+        { id: 'comp-66', frase: 'The train journey was ___ than the flight.', pergunta: 'Complete a frase com o comparativo de "long":', opcoes: ['longer', 'the longest', 'more long'], respostaCorreta: 'longer', explicacao: '"Long" é um adjetivo curto. Adicionamos "-er".' },
+        // 67. Curto (termina em -e) - Superlativo
+        { id: 'comp-67', frase: 'The Amazon is ___ river in the world.', pergunta: 'Complete a frase com o superlativo de "large":', opcoes: ['the largest', 'the larger', 'most large'], respostaCorreta: 'the largest', explicacao: '"Large" é um adjetivo curto terminado em -e. Adicionamos apenas "-st".' },
+        // 68. Irregular - Superlativo
+        { id: 'comp-68', frase: 'That was ___ mistake I have ever made.', pergunta: 'Complete a frase com o superlativo de "bad":', opcoes: ['the worst', 'the baddest', 'worse'], respostaCorreta: 'the worst', explicacao: '"Bad" é irregular. O superlativo é "the worst".' },
+        // 69. Longo - Comparativo
+        { id: 'comp-69', frase: 'Is your job ___ than mine?', pergunta: 'Complete a frase com o comparativo de "stressful":', opcoes: ['more stressful', 'stressfuler', 'the most stressful'], respostaCorreta: 'more stressful', explicacao: '"Stressful" é um adjetivo longo. Usamos "more".' },
+        // 70. Curto - Superlativo
+        { id: 'comp-70', frase: 'Who is ___ man you know?', pergunta: 'Complete a frase com o superlativo de "strong":', opcoes: ['the strongest', 'the stronger', 'most strong'], respostaCorreta: 'the strongest', explicacao: '"Strong" é um adjetivo curto. Adicionamos "-est".' },
+        // 71. Curto (y -> iest) - Superlativo
+        { id: 'comp-71', frase: 'It was ___ movie I have ever seen.', pergunta: 'Complete a frase com o superlativo de "funny":', opcoes: ['the funniest', 'the funnier', 'most funny'], respostaCorreta: 'the funniest', explicacao: 'Adjetivos terminados em "y" trocam por "-iest" no superlativo.' },
+        // 72. Longo - Comparativo (Inferioridade)
+        { id: 'comp-72', frase: 'Reading a book is ___ exciting than watching TV.', pergunta: 'Complete a frase com o comparativo de inferioridade para "exciting":', opcoes: ['less exciting', 'the least exciting', 'excitinger'], respostaCorreta: 'less exciting', explicacao: 'O comparativo de inferioridade usa "less... than".' },
+        // 73. Curto - Comparativo
+        { id: 'comp-73', frase: 'His new book is ___ than his previous one.', pergunta: 'Complete a frase com o comparativo de "popular":', opcoes: ['more popular', 'popularest', 'popularer'], respostaCorreta: 'more popular', explicacao: '"Popular" é um adjetivo longo, portanto, usa "more".' },
+        // 74. Irregular - Comparativo
+        { id: 'comp-74', frase: 'The second option sounds ___ to me.', pergunta: 'Complete a frase com o comparativo de "good":', opcoes: ['better', 'gooder', 'the best'], respostaCorreta: 'better', explicacao: '"Good" é irregular. O comparativo é "better".' },
+        // 75. Longo - Superlativo
+        { id: 'comp-75', frase: 'The scientist made ___ discovery of the century.', pergunta: 'Complete a frase com o superlativo de "important":', opcoes: ['the most important', 'more important', 'the importantest'], respostaCorreta: 'the most important', explicacao: '"Important" é um adjetivo longo. Usamos "the most".' },
+        // 76. Curto (CVC) - Comparativo
+        { id: 'comp-76', frase: 'My luggage is ___ than yours.', pergunta: 'Complete a frase com o comparativo de "heavy":', opcoes: ['heavier', 'heavyest', 'more heavy'], respostaCorreta: 'heavier', explicacao: 'Adjetivos terminados em "y" trocam por "-ier".' },
+        // 77. Curto - Superlativo
+        { id: 'comp:77', frase: 'What is ___ bridge in the world?', pergunta: 'Complete a frase com o superlativo de "long":', opcoes: ['the longest', 'the longer', 'most long'], respostaCorreta: 'the longest', explicacao: '"Long" é um adjetivo curto. Adicionamos "-est".' },
+        // 78. Curto (termina em -e) - Comparativo
+        { id: 'comp-78', frase: 'The new rules are ___ than the old ones.', pergunta: 'Complete a frase com o comparativo de "nice":', opcoes: ['nicer', 'nicest', 'more nice'], respostaCorreta: 'nicer', explicacao: '"Nice" é um adjetivo curto terminado em -e. Adicionamos apenas "-r".' },
+        // 79. Longo - Comparativo
+        { id: 'comp-79', frase: 'Your explanation was ___ than hers.', pergunta: 'Complete a frase com o comparativo de "clear":', opcoes: ['clearer', 'more clear', 'the clearest'], respostaCorreta: 'clearer', explicacao: '"Clear" é um adjetivo curto. Adicionamos "-er".' },
+        // 80. Irregular - Superlativo (de inferioridade)
+        { id: 'comp-80', frase: 'That was ___ amount of effort I’ve ever seen.', pergunta: 'Complete a frase com o superlativo de "little":', opcoes: ['the least', 'the littlest', 'less'], respostaCorreta: 'the least', explicacao: '"Little" é irregular. O superlativo é "the least".' },
+        // 81. Longo - Superlativo
+        { id: 'comp-81', frase: 'She is ___ careful person in the office.', pergunta: 'Complete a frase com o superlativo de "careful":', opcoes: ['the most careful', 'more careful', 'the carefulest'], respostaCorreta: 'the most careful', explicacao: '"Careful" é um adjetivo longo. Usamos "the most".' },
+        // 82. Curto - Comparativo
+        { id: 'comp-82', frase: 'My dog is ___ than your dog.', pergunta: 'Complete a frase com o comparativo de "calm":', opcoes: ['calmer', 'the calmest', 'more calm'], respostaCorreta: 'calmer', explicacao: '"Calm" é um adjetivo curto. Adicionamos "-er".' },
+        // 83. Irregular - Comparativo
+        { id: 'comp-83', frase: 'The result was ___ than expected.', pergunta: 'Complete a frase com o comparativo de "bad":', opcoes: ['worse', 'badder', 'the worst'], respostaCorreta: 'worse', explicacao: '"Bad" é irregular. O comparativo é "worse".' },
+        // 84. Curto (CVC) - Superlativo
+        { id: 'comp-84', frase: 'This is ___ day of my life.', pergunta: 'Complete a frase com o superlativo de "mad":', opcoes: ['the maddest', 'the madest', 'madder'], respostaCorreta: 'the maddest', explicacao: '"Mad" é um adjetivo curto CVC. Dobramos a consoante e adicionamos "-est".' },
+        // 85. Longo - Comparativo
+        { id: 'comp-85', frase: 'This game is ___ than the previous version.', pergunta: 'Complete a frase com o comparativo de "addictive":', opcoes: ['more addictive', 'addictiver', 'the most addictive'], respostaCorreta: 'more addictive', explicacao: '"Addictive" é um adjetivo longo. Usamos "more".' },
+        // 86. Curto (termina em -e) - Comparativo
+        { id: 'comp-86', frase: 'The population of this city is getting ___ and ___.', pergunta: 'Complete a frase com o comparativo de "large":', opcoes: ['larger and larger', 'more large', 'the largest'], respostaCorreta: 'larger and larger', explicacao: 'Para mostrar mudança progressiva, repetimos o comparativo, neste caso, de um adjetivo curto que termina em -e.' },
+        // 87. Longo - Superlativo
+        { id: 'comp-87', frase: 'It was ___ day of the vacation.', pergunta: 'Complete a frase com o superlativo de "memorable":', opcoes: ['the most memorable', 'more memorable', 'the memorablest'], respostaCorreta: 'the most memorable', explicacao: '"Memorable" é um adjetivo longo. Usamos "the most".' },
+        // 88. Curto - Comparativo
+        { id: 'comp-88', frase: 'My coffee is ___ than yours.', pergunta: 'Complete a frase com o comparativo de "hot":', opcoes: ['hotter', 'hottest', 'more hot'], respostaCorreta: 'hotter', explicacao: '"Hot" é um adjetivo curto CVC. Dobramos a consoante e adicionamos "-er".' },
+        // 89. Irregular - Comparativo
+        { id: 'comp-89', frase: 'The station is ___ away than I thought.', pergunta: 'Complete a frase com o comparativo de "far":', opcoes: ['further', 'farrer', 'the furthest'], respostaCorreta: 'further', explicacao: '"Far" é irregular, podendo usar "farther" ou "further".' },
+        // 90. Curto - Superlativo
+        { id: 'comp-90', frase: 'The building is ___ structure in the city.', pergunta: 'Complete a frase com o superlativo de "tall":', opcoes: ['the tallest', 'the taller', 'most tall'], respostaCorreta: 'the tallest', explicacao: '"Tall" é um adjetivo curto. Adicionamos "-est".' },
+        // 91. Longo - Comparativo
+        { id: 'comp-91', frase: 'They became ___ and ___ with each step.', pergunta: 'Complete a frase com o comparativo de "tired":', opcoes: ['more and more tired', 'tireder', 'the most tired'], respostaCorreta: 'more and more tired', explicacao: 'Para mostrar mudança progressiva em adjetivos longos, repetimos "more".' },
+        // 92. Curto (y -> ier) - Comparativo
+        { id: 'comp-92', frase: 'She got ___ results in the second attempt.', pergunta: 'Complete a frase com o comparativo de "lucky":', opcoes: ['luckier', 'luckyest', 'more lucky'], respostaCorreta: 'luckier', explicacao: 'Adjetivos terminados em "y" trocam por "-ier".' },
+        // 93. Longo - Superlativo
+        { id: 'comp-93', frase: 'What is ___ unusual thing you have seen?', pergunta: 'Complete a frase com o superlativo de "unusual":', opcoes: ['the most unusual', 'more unusual', 'the unusualest'], respostaCorreta: 'the most unusual', explicacao: '"Unusual" é um adjetivo longo. Usamos "the most".' },
+        // 94. Curto (CVC) - Comparativo
+        { id: 'comp-94', frase: 'The kitchen is ___ than the living room.', pergunta: 'Complete a frase com o comparativo de "dim":', opcoes: ['dimmer', 'dimest', 'more dim'], respostaCorreta: 'dimmer', explicacao: '"Dim" é um adjetivo curto CVC. Dobramos a consoante e adicionamos "-er".' },
+        // 95. Irregular - Superlativo
+        { id: 'comp-95', frase: 'That was ___ performance of his career.', pergunta: 'Complete a frase com o superlativo de "good":', opcoes: ['the best', 'the goodest', 'better'], respostaCorreta: 'the best', explicacao: '"Good" é irregular. O superlativo é "the best".' },
+        // 96. Curto - Comparativo
+        { id: 'comp-96', frase: 'The new paint job makes the car look ___.', pergunta: 'Complete a frase com o comparativo de "bright":', opcoes: ['brighter', 'the brightest', 'more bright'], respostaCorreta: 'brighter', explicacao: '"Bright" é um adjetivo curto. Adicionamos "-er".' },
+        // 97. Longo - Comparativo
+        { id: 'comp-97', frase: 'The new policy is ___ than the old one.', pergunta: 'Complete a frase com o comparativo de "beneficial":', opcoes: ['more beneficial', 'beneficialer', 'the most beneficial'], respostaCorreta: 'more beneficial', explicacao: '"Beneficial" é um adjetivo longo. Usamos "more".' },
+        // 98. Curto (y -> ier) - Superlativo
+        { id: 'comp-98', frase: 'She is ___ girl in the group.', pergunta: 'Complete a frase com o superlativo de "pretty":', opcoes: ['the prettiest', 'the pretter', 'most pretty'], respostaCorreta: 'the prettiest', explicacao: 'Adjetivos terminados em "y" trocam por "-iest".' },
+        // 99. Irregular - Comparativo
+        { id: 'comp-99', frase: 'I feel ___ now than an hour ago.', pergunta: 'Complete a frase com o comparativo de "well" (saúde):', opcoes: ['better', 'weller', 'gooder'], respostaCorreta: 'better', explicacao: 'O comparativo de "well" (bem) é "better", seguindo a regra do "good".' },
+        // 100. Longo - Superlativo
+        { id: 'comp-100', frase: 'Who is ___ famous scientist in history?', pergunta: 'Complete a frase com o superlativo de "famous":', opcoes: ['the most famous', 'more famous', 'the famousest'], respostaCorreta: 'the most famous', explicacao: '"Famous" é um adjetivo longo. Usamos "the most".' },
+        // 101. Curto (termina em -e) - Superlativo
+        { id: 'comp-101', frase: 'The sky is ___ color I have ever seen.', pergunta: 'Complete a frase com o superlativo de "blue":', opcoes: ['the bluest', 'the bluer', 'most blue'], respostaCorreta: 'the bluest', explicacao: '"Blue" é um adjetivo curto terminado em -e. Adicionamos apenas "-st".' },
+        // 102. Curto - Comparativo
+        { id: 'comp-102', frase: 'The sea is much ___ here than near the coast.', pergunta: 'Complete a frase com o comparativo de "deep":', opcoes: ['deeper', 'the deepest', 'more deep'], respostaCorreta: 'deeper', explicacao: '"Deep" é um adjetivo curto. Adicionamos "-er".' },
+        // 103. Longo - Comparativo
+        { id: 'comp-103', frase: 'His second novel was ___ successful than his first.', pergunta: 'Complete a frase com o comparativo de "successful":', opcoes: ['more successful', 'successfuller', 'the most successful'], respostaCorreta: 'more successful', explicacao: '"Successful" é um adjetivo longo. Usamos "more".' },
+        // 104. Curto (CVC) - Superlativo
+        { id: 'comp-104', frase: 'This is ___ time of the year for tourism.', pergunta: 'Complete a frase com o superlativo de "wet":', opcoes: ['the wettest', 'the wetest', 'wetter'], respostaCorreta: 'the wettest', explicacao: '"Wet" é um adjetivo curto CVC. Dobramos a consoante e adicionamos "-est".' },
+        // 105. Irregular - Comparativo
+        { id: 'comp-105', frase: 'She is getting ___ at playing the piano.', pergunta: 'Complete a frase com o comparativo de "good":', opcoes: ['better', 'gooder', 'the best'], respostaCorreta: 'better', explicacao: '"Good" é irregular. O comparativo é "better".' },
+        // 106. Longo - Superlativo (Inferioridade)
+        { id: 'comp-106', frase: 'It was ___ imaginative story in the competition.', pergunta: 'Complete a frase com o superlativo de inferioridade para "imaginative":', opcoes: ['the least imaginative', 'less imaginative', 'the most imaginative'], respostaCorreta: 'the least imaginative', explicacao: 'O superlativo de inferioridade usa "the least".' },
+        // 107. Curto - Comparativo
+        { id: 'comp-107', frase: 'The days are getting ___ as winter approaches.', pergunta: 'Complete a frase com o comparativo de "short":', opcoes: ['shorter', 'the shortest', 'more short'], respostaCorreta: 'shorter', explicacao: '"Short" é um adjetivo curto. Adicionamos "-er".' },
+        // 108. Longo - Superlativo
+        { id: 'comp-108', frase: 'Which is ___ language to learn?', pergunta: 'Complete a frase com o superlativo de "complicated":', opcoes: ['the most complicated', 'more complicated', 'the complicatedest'], respostaCorreta: 'the most complicated', explicacao: '"Complicated" é um adjetivo longo. Usamos "the most".' },
+        // 109. Curto (y -> ier) - Comparativo
+        { id: 'comp-109', frase: 'The children are always ___ than the adults.', pergunta: 'Complete a frase com o comparativo de "noisy":', opcoes: ['noisier', 'noisyest', 'more noisy'], respostaCorreta: 'noisier', explicacao: 'Adjetivos terminados em "y" trocam por "-ier".' },
+        // 110. Curto - Superlativo
+        { id: 'comp-110', frase: 'She is ___ runner in the team.', pergunta: 'Complete a frase com o superlativo de "fast":', opcoes: ['the fastest', 'the faster', 'most fast'], respostaCorreta: 'the fastest', explicacao: '"Fast" é um adjetivo curto. Adicionamos "-est".' },
+        // 111. Longo - Comparativo
+        { id: 'comp-111', frase: 'The journey was a little ___ than expected.', pergunta: 'Complete a frase com o comparativo de "tiring":', opcoes: ['more tiring', 'tiringer', 'the most tiring'], respostaCorreta: 'more tiring', explicacao: '"Tiring" é um adjetivo longo. Usamos "more".' },
+        // 112. Curto (CVC) - Comparativo
+        { id: 'comp-112', frase: 'His chances are ___ now than they were before.', pergunta: 'Complete a frase com o comparativo de "slim":', opcoes: ['slimmer', 'slimest', 'more slim'], respostaCorreta: 'slimmer', explicacao: '"Slim" é um adjetivo curto CVC. Dobramos a consoante e adicionamos "-er".' },
+        // 113. Irregular - Superlativo
+        { id: 'comp-113', frase: 'The moon is ___ celestial body from the Earth.', pergunta: 'Complete a frase com o superlativo de "far":', opcoes: ['the farthest', 'the further', 'farther'], respostaCorreta: 'the farthest', explicacao: '"Far" é irregular. O superlativo é "the farthest" ou "the furthest".' },
+        // 114. Longo - Superlativo
+        { id: 'comp-114', frase: 'It was ___ amazing meal I’ve ever eaten.', pergunta: 'Complete a frase com o superlativo de "amazing":', opcoes: ['the most amazing', 'more amazing', 'the amazingest'], respostaCorreta: 'the most amazing', explicacao: '"Amazing" é um adjetivo longo. Usamos "the most".' },
+        // 115. Curto (termina em -e) - Comparativo
+        { id: 'comp-115', frase: 'His jokes were ___ than mine.', pergunta: 'Complete a frase com o comparativo de "rude":', opcoes: ['ruder', 'rudest', 'more rude'], respostaCorreta: 'ruder', explicacao: '"Rude" é um adjetivo curto terminado em -e. Adicionamos apenas "-r".' },
+        // 116. Curto - Superlativo
+        { id: 'comp-116', frase: 'This is ___ time to visit the city.', pergunta: 'Complete a frase com o superlativo de "good":', opcoes: ['the best', 'the goodest', 'better'], respostaCorreta: 'the best', explicacao: '"Good" é irregular. O superlativo é "the best".' },
+        // 117. Longo - Comparativo
+        { id: 'comp-117', frase: 'Your essay should be ___ than 500 words.', pergunta: 'Complete a frase com o comparativo de "long":', opcoes: ['longer', 'more long', 'the longest'], respostaCorreta: 'longer', explicacao: '"Long" é um adjetivo curto. Adicionamos "-er".' },
+        // 118. Curto (y -> iest) - Superlativo
+        { id: 'comp-118', frase: 'The party was ___ event of the month.', pergunta: 'Complete a frase com o superlativo de "lively":', opcoes: ['the liveliest', 'the livelier', 'most lively'], respostaCorreta: 'the liveliest', explicacao: 'Adjetivos terminados em "y" trocam por "-iest".' },
+        // 119. Irregular - Comparativo
+        { id: 'comp-119', frase: 'I need to drink ___ water.', pergunta: 'Complete a frase com o comparativo de "much" / "many":', opcoes: ['more', 'most', 'mucher'], respostaCorreta: 'more', explicacao: '"Much" e "many" são irregulares. O comparativo é "more".' },
+        // 120. Longo - Comparativo
+        { id: 'comp-120', frase: 'The explanation was ___ confusing than the question.', pergunta: 'Complete a frase com o comparativo de "confusing":', opcoes: ['more confusing', 'confusinger', 'the most confusing'], respostaCorreta: 'more confusing', explicacao: '"Confusing" é um adjetivo longo. Usamos "more".' }
+    ];
+
+    const container = document.getElementById('exercicios-container');
+    const placarAcertosGeralEl = document.getElementById('acertos-geral');
+    const placarErrosGeralEl = document.getElementById('erros-geral');
+    const resetButton = document.getElementById('reset-btn');
+
+    // Referência para o listener, para poder removê-lo
+    let eventListenerRef;
+
+    function shuffleArray(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+        }
+    }
+
+    function criarExercicioHTML(exercicioData, numeroExercicio) {
+        // Embaralha as opções para cada exercício individualmente
+        const opcoesEmbaralhadas = [...exercicioData.opcoes];
+        shuffleArray(opcoesEmbaralhadas);
+        
+        const opcoesHTML = opcoesEmbaralhadas.map(opcao =>
+            `<button class="option-button" data-resposta="${opcao}">${opcao}</button>`
+        ).join('');
+        
+        return `
+            <section class="exercicio-card" id="exercicio-${exercicioData.id}" data-id="${exercicioData.id}">
+                <h2>Exercício ${numeroExercicio}</h2>
+                <div class="question-container">
+                    <p><strong>Frase:</strong> ${exercicioData.frase}</p>
+                    <p>${exercicioData.pergunta}</p>
+                    <div class="options-container">${opcoesHTML}</div>
+                </div>
+                <div class="explanation-container" id="explicacao-${exercicioData.id}"><p>${exercicioData.explicacao}</p></div>
+            </section>
+        `;
+    }
+
+    function verificarResposta(exercicioId, btnClicado) {
+        const exercicioData = dadosComparativos.find(e => e.id === exercicioId);
+        const exercicioCard = btnClicado.closest('.exercicio-card'); // Usa closest para encontrar o card pai
+        const botoes = exercicioCard.querySelectorAll('.option-button');
+        
+        // Desabilita todos os botões do card para evitar múltiplas respostas
+        botoes.forEach(btn => btn.disabled = true);
+
+        const explicacaoEl = document.getElementById(`explicacao-${exercicioData.id}`);
+        explicacaoEl.classList.add('visible');
+
+        if (btnClicado.dataset.resposta === exercicioData.respostaCorreta) {
+            btnClicado.classList.add('correto');
+            // Atualiza o placar
+            placarAcertosGeralEl.textContent = parseInt(placarAcertosGeralEl.textContent) + 1;
+        } else {
+            btnClicado.classList.add('incorreto');
+            // Atualiza o placar
+            placarErrosGeralEl.textContent = parseInt(placarErrosGeralEl.textContent) + 1;
+            
+            // Destaca a resposta correta
+            const respostaCorretaBtn = Array.from(botoes).find(btn => btn.dataset.resposta === exercicioData.respostaCorreta);
+            if (respostaCorretaBtn) {
+                respostaCorretaBtn.classList.add('correto');
+            }
+        }
+    }
+
+    function iniciarJogo() {
+        // Reseta placar e embaralha a lista completa
+        placarAcertosGeralEl.textContent = '0';
+        placarErrosGeralEl.textContent = '0';
+        shuffleArray(dadosComparativos);
+        
+        // Gera o HTML dos 120 exercícios
+        container.innerHTML = dadosComparativos.map((dado, index) => criarExercicioHTML(dado, index + 1)).join('');
+        
+        // Remove o listener antigo se ele existir
+        if (eventListenerRef) {
+            container.removeEventListener('click', eventListenerRef);
+        }
+
+        // Define o novo listener: verifica se o clique foi em um botão de opção e chama verificarResposta
+        eventListenerRef = (event) => {
+            if (event.target.classList.contains('option-button') && !event.target.disabled) {
+                const btnClicado = event.target;
+                const exercicioCard = btnClicado.closest('.exercicio-card');
+                const exercicioId = exercicioCard.dataset.id;
+                verificarResposta(exercicioId, btnClicado);
+            }
+        };
+
+        // Adiciona o novo listener ao contêiner principal para delegação
+        container.addEventListener('click', eventListenerRef);
+        
+        // Rola a tela para o início do main content ao reiniciar
+        document.querySelector('main').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    resetButton.addEventListener('click', iniciarJogo);
+    iniciarJogo();
+});
+</script>
+
+
+</body>
+</html>

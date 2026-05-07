@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Exercício: Padrões de Verbos Irregulares (A-A-A, A-B-C...) | Professor Leo Ramos</title>
+    <meta name="description" content="Aprenda os padrões de conjugação de verbos irregulares em inglês (A-A-A, A-B-C, I-A-U) e pratique com um jogo interativo.">
+    
+    <meta name="author" content="Leo Ramos">
+    <meta name="robots" content="index, follow">
+    
+    <meta name="google-site-verification" content="9L-nEDj4G24e3JD1kt5bxcZ5_qHo9Q-03_DJkfIH_1M" />
+    
+    <link rel="canonical" href="https://teacherleoramos.com.br/ex1/padroes-verbais-em-ingles.html">
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/Images/logofavicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/Images/logofavicion.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/Images/logofavicion.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/Images/logofavicion.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/Images/logofavicion.png">
+    
+    <meta property="og:title" content="Exercício: Padrões de Verbos Irregulares | Professor Leo Ramos">
+    <meta property="og:description" content="Aprenda os padrões de conjugação de verbos irregulares (A-A-A, A-B-C, I-A-U) e pratique com um jogo interativo.">
+    <meta property="og:image" content="https://teacherleoramos.com.br/Images/preview-social.jpg">
+    <meta property="og:url" content="https://teacherleoramos.com.br/ex1/padroes-verbais-em-ingles.html">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:site_name" content="FFES - Professor Leo Ramos">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Exercício: Padrões de Verbos Irregulares | Professor Leo Ramos">
+    <meta name="twitter:description" content="Aprenda os padrões de conjugação de verbos irregulares (A-A-A, A-B-C, I-A-U) e pratique com um jogo interativo.">
+    <meta name="twitter:image" content="https://teacherleoramos.com.br/Images/preview-social.jpg">
+
+    <link rel="stylesheet" href="/CSS/universal.css">
+
+    <style>
+        #botoes-listas-verbos {
+            width: 100%;
+            max-width: 900px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px; /* Mantido para espaçamento interno */
+            margin-bottom: 10px; /* Ajustado para espaçamento interno */
+        }
+
+        .popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            padding: 15px;
+            box-sizing: border-box;
+        }
+        .popup-overlay.visible {
+            display: flex;
+        }
+        .popup-content {
+            background-color: var(--cor-fundo-secao);
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            width: 100%;
+            max-width: 800px;
+            position: relative;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+        .fechar-popup {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            background: none;
+            border: none;
+            font-size: 2.5em;
+            font-weight: bold;
+            line-height: 1;
+            color: var(--cor-texto-escuro);
+            cursor: pointer;
+            transition: color 0.2s ease;
+        }
+        .fechar-popup:hover {
+            color: var(--cor-primaria);
+        }
+        .popup-lista table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+        .popup-lista th, .popup-lista td {
+            border: 1px solid var(--cor-borda-sutil);
+            padding: 10px;
+            text-align: left;
+        }
+        .popup-lista th {
+            background-color: var(--cor-primaria);
+            color: white;
+        }
+        .popup-lista tr:nth-child(even) {
+            background-color: var(--cor-fundo-secao-destaque);
+        }
+    </style>
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Quiz",
+      "name": "Jogo de Padrões Verbais",
+      "description": "Pratique a identificação dos padrões de verbos irregulares em inglês (A-A-A, A-B-C, I-A-U).",
+      "inLanguage": "pt-BR",
+        "author": {
+        "@type": "Person",
+        "name": "Leo Ramos",
+        "jobTitle": "Professor de Inglês",
+        "url": "https://teacherleoramos.com.br/ex1/padroes-verbais-em-ingles.html"
+        },
+  
+      "publisher": {
+        "@type": "Organization",
+        "name": "FFES - Professor Leo Ramos",
+        "logo": "https://teacherleoramos.com.br/Images/logo novo grande.png"
+      },
+      "hasPart": [
+        {
+          "@type": "Question",
+          "name": "Os verbos put, cut, cost pertencem a qual tipo de conjugação?",
+          "acceptedAnswer": { "@type": "Answer", "text": "A-A-A (Irregular)" }
+        },
+        {
+          "@type": "Question",
+          "name": "Os verbos drink, sing, swim pertencem a qual tipo de conjugação?",
+          "acceptedAnswer": { "@type": "Answer", "text": "I-A-U (Irregular)" }
+        },
+        {
+          "@type": "Question",
+          "name": "Os verbos take, speak, write pertencem a qual tipo de conjugação?",
+          "acceptedAnswer": { "@type": "Answer", "text": "A-B-C (Irregular)" }
+        }
+      ]
+    }
+    </script>
+
+                <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-M8ZG06010Q"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-M8ZG06010Q');
+    </script>
+</head>
+<body id="topo">
+
+<div class="cabecalho-container">
+<header class="bloco-identidade">
+    <div class="logo-and-title">
+        <a href="/index.html">
+            <img src="/Images/logo novo grande.png" alt="Logo FFES" class="logo-img">
+        </a>
+        <a href="https://www.youtube.com/@teacherleoramos/videos" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;">
+            <h1>Leo Ramos | Professor de Inglês</h1>
+        </a>
+    </div>
+</header>
+
+<div class="bloco-navegacao"> 
+    <nav class="nav-primary">
+        <ul>
+            <li><a href="/index.html#home">Home</a></li>
+            <li><a href="/index.html#sobre">Sobre Mim</a></li>
+            <li><a href="/exercicios-e-artigos.html#exercicios">Exercícios</a></li>
+            <li><a href="/exercicios-e-artigos.html#artigos-vocab">Artigos</a></li>
+            <li><a href="/cursos-e-ebook.html#cursos">Cursos e E-book</a></li>
+            <li><a href="/index.html#metodologia">Metodologia</a></li>
+        </ul>
+    </nav>
+</div>
+
+
+</div>
+
+<main>
+    <h1 class="game-title">Jogo de Padrões Verbais</h1>
+
+    <div id="placar-geral-container">
+        <p>Acertos Gerais: <strong id="acertos-geral">0</strong></p>
+        <a href="#contato" class="nav-arrow" title="Ir para o final da página">&#11015;</a>
+        <p>Erros Gerais: <strong id="erros-geral">0</strong></p>
+    </div>
+
+    <div class="introducao-container">
+        <h3>Entendendo a lógica da conjugação</h3>
+        <p>Aprender os verbos irregulares no inglês pode parecer difícil, mas a melhor estratégia é agrupá-los por padrões de conjugação.</p>
+        <p>Existem três formas verbais principais: <strong>Presente</strong>, <strong>Passado Simples</strong> e <strong>Particípio Passado</strong>. A partir delas, identificamos os padrões:</p>
+        <ul>
+            <li><strong>Verbos Regulares:</strong> Terminam em <strong>-ed</strong> (help - help<strong>ed</strong> - help<strong>ed</strong>)</li>
+            <li><strong>Padrão A-A-A:</strong> A forma não muda (cut - cut - cut)</li>
+            <li><strong>Padrão A-B-A:</strong> O presente é igual ao particípio (come - came - come)</li>
+            <li><strong>Padrão I-A-U:</strong> A vogal muda em cada forma (begin - began - begun)</li>
+            <li><strong>Padrão A-B-B:</strong> O passado e o particípio são iguais (buy - bought - bought)</li>
+            <li><strong>Padrão A-B-C:</strong> Todas as três formas são diferentes (speak - spoke - spoken)</li>
+        </ul>
+    </div>
+    
+    <div class="introducao-container" style="margin-top: 25px;">
+        <h2 style="color: var(--cor-primaria); text-align: center; margin-top: 0; border-bottom: none; padding-bottom: 0;">Ver Listas de Verbos por Padrão</h2>
+        <div id="botoes-listas-verbos">
+            <button class="cta-button" onclick="showVerbList('regular')">Verbos Regulares</button>
+            <button class="cta-button" onclick="showVerbList('abc')">Padrão A-B-C</button>
+            <button class="cta-button" onclick="showVerbList('abb')">Padrão A-B-B</button>
+            <button class="cta-button" onclick="showVerbList('iau')">Padrão I-A-U</button>
+            <button class="cta-button" onclick="showVerbList('aaa')">Padrão A-A-A</button>
+            <button class="cta-button" onclick="showVerbList('aba')">Padrão A-B-A</button>
+        </div>
+    </div>
+    <div class="introducao-container" style="margin-top: 25px; text-align: center;">
+        <h3>Pratique a Conjugação Completa</h3>
+        <p>Coloque seu conhecimento sobre os padrões verbais em prática:</p>
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
+            <a href="verbos-conjugacoes-regulares-em-ingles.html" class="cta-button" style="background-color: var(--cor-primaria); color: var(--cor-texto-claro);">
+                Exercício 120 Verbos Mais Comuns
+            </a>
+            <a href="verbos-conjugacoes-irregulares-em-ingles.html" class="cta-button">
+                Exercício 100 Verbos Irregulares
+            </a>
+        </div>
+    </div>
+
+    
+
+    <hr>
+    
+    <div id="exercicios-container"></div>
+
+    <hr>
+
+    <div id="rodape" style="text-align: center; margin: 20px 0;">
+        <a href="#topo" class="nav-button">&#11014;</a>
+    </div>
+
+    <div id="popup-overlay" class="popup-overlay" onclick="hideVerbList()">
+        <div id="popup-content" class="popup-content" onclick="event.stopPropagation()">
+            <button class="fechar-popup" onclick="hideVerbList()">&times;</button>
+            <h2 id="popup-titulo"></h2>
+            <div id="popup-lista" class="popup-lista"></div>
+        </div>
+    </div>
+</main>
+
+<footer id="contato" class="site-footer">
+    <div class="footer-content">
+        <div class="social-media-links">
+            <h4>Siga-me nas redes sociais e acesse o App</h4>
+            <a href="https://www.youtube.com/@teacherleoramos/videos" target="_blank" rel="noopener noreferrer" title="Canal YouTube Teacher Leo Ramos" aria-label="YouTube">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/youtube-play.png" alt="Ícone YouTube" width="30" height="30" loading="lazy">
+            </a>
+            <a href="https://www.instagram.com/teacherleoramos/" target="_blank" rel="noopener noreferrer" title="Instagram Teacher Leo Ramos" aria-label="Instagram">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/instagram-new.png" alt="Ícone Instagram" width="30" height="30" loading="lazy">
+            </a>
+            <a href="https://www.tiktok.com/@teacherleoramos" target="_blank" rel="noopener noreferrer" title="TikTok Teacher Leo Ramos" aria-label="TikTok">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/tiktok.png" alt="Ícone TikTok" width="30" height="30" loading="lazy">
+            </a>
+            <a href="https://wa.me/5511955582118" target="_blank" rel="noopener noreferrer" title="WhatsApp Agendamento" aria-label="WhatsApp">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/whatsapp--v1.png" alt="Ícone WhatsApp" width="30" height="30" loading="lazy">
+            </a>
+            <a href="/index-app.html" target="_blank" rel="noopener noreferrer" title="Acesse o FFES App" aria-label="FFES App">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/controller.png" alt="Ícone FFES App" width="30" height="30" loading="lazy">
+            </a>
+        </div>
+        <p><strong>Contato</strong></p>
+        <p>Youtube: @teacherleoramos | Telefone - WhatsApp: (11) 95558-2118</p>
+        <p>Endereço: São Paulo, SP, Brasil</p>
+        <p>CNPJ: 43.226.983/0001-91</p>
+        <p>&copy; <span id="year">2025</span> | FEATHERED FRIENDS ENGLISH SCHOOL - FFES. Todos os direitos reservados.</p>
+    </div>
+</footer>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const dadosDoQuiz = [
+        { id: 'q1', pergunta: 'Os verbos <strong>work, help, ask</strong> pertencem a qual tipo de conjugação?', opcoes: ['Verbo Regular', 'A-B-B (Irregular)', 'A-B-C (Irregular)'], respostaCorreta: 'Verbo Regular', explicacao: 'Verbos regulares formam o passado e o particípio com "-ed". Ex: <strong>work - worked - worked</strong>.' },
+        { id: 'q2', pergunta: 'Os verbos <strong>put, cut, cost</strong> pertencem a qual tipo de conjugação?', opcoes: ['A-B-A (Irregular)', 'A-A-A (Irregular)', 'Verbo Regular'], respostaCorreta: 'A-A-A (Irregular)', explicacao: 'O padrão A-A-A não muda a forma do verbo. Ex: <strong>put - put - put</strong>.' },
+        { id: 'q3', pergunta: 'Os verbos <strong>run, come, become</strong> pertencem a qual tipo de conjugação?', opcoes: ['A-A-A (Irregular)', 'A-B-A (Irregular)', 'A-B-B (Irregular)'], respostaCorreta: 'A-B-A (Irregular)', explicacao: 'No padrão A-B-A, o presente e o particípio são iguais. Ex: <strong>run - ran - run</strong>.' },
+        { id: 'q4', pergunta: 'Os verbos <strong>drink, sing, swim</strong> pertencem a qual tipo de conjugação?', opcoes: ['A-B-B (Irregular)', 'I-A-U (Irregular)', 'A-B-C (Irregular)'], respostaCorreta: 'I-A-U (Irregular)', explicacao: 'O padrão I-A-U muda a vogal principal em cada forma. Ex: <strong>drink - drank - drunk</strong>.' },
+        { id: 'q5', pergunta: 'Os verbos <strong>leave, buy, sleep</strong> pertencem a qual tipo de conjugação?', opcoes: ['A-B-B (Irregular)', 'A-B-C (Irregular)', 'Verbo Regular'], respostaCorreta: 'A-B-B (Irregular)', explicacao: 'No padrão A-B-B, o passado e o particípio são iguais. Ex: <strong>leave - left - left</strong>.' },
+        { id: 'q6', pergunta: 'Os verbos <strong>take, speak, write</strong> pertencem a qual tipo de conjugação?', opcoes: ['I-A-U (Irregular)', 'A-B-A (Irregular)', 'A-B-C (Irregular)'], respostaCorreta: 'A-B-C (Irregular)', explicacao: 'No padrão A-B-C, todas as três formas são diferentes. Ex: <strong>take - took - taken</strong>.' }
+    ];
+    
+    // LISTA DE VERBOS EXPANDIDA
+    const verbos = {
+        regular: [
+            { pt: 'aceitar', p: 'accept', pp: 'accepted', pa: 'accepted' },
+            { pt: 'perguntar', p: 'ask', pp: 'asked', pa: 'asked' },
+            { pt: 'ligar', p: 'call', pp: 'called', pa: 'called' },
+            { pt: 'limpar', p: 'clean', pp: 'cleaned', pa: 'cleaned' },
+            { pt: 'entregar', p: 'deliver', pp: 'delivered', pa: 'delivered' },
+            { pt: 'ajudar', p: 'help', pp: 'helped', pa: 'helped' },
+            { pt: 'convidar', p: 'invite', pp: 'invited', pa: 'invited' },
+            { pt: 'querer', p: 'want', pp: 'wanted', pa: 'wanted' },
+            { pt: 'trabalhar', p: 'work', pp: 'worked', pa: 'worked' }
+        ],
+        aaa: [
+            { pt: 'apostar', p: 'bet', pp: 'bet', pa: 'bet' },
+            { pt: 'custar', p: 'cost', pp: 'cost', pa: 'cost' },
+            { pt: 'cortar', p: 'cut', pp: 'cut', pa: 'cut' },
+            { pt: 'bater', p: 'hit', pp: 'hit', pa: 'hit' },
+            { pt: 'machucar', p: 'hurt', pp: 'hurt', pa: 'hurt' },
+            { pt: 'desistir', p: 'quit', pp: 'quit', pa: 'quit' },
+            { pt: 'ler', p: 'read', pp: 'read', pa: 'read' },
+            { pt: 'definir', p: 'set', pp: 'set', pa: 'set' },
+            { pt: 'fechar', p: 'shut', pp: 'shut', pa: 'shut' },
+        ],
+        iau: [
+            { pt: 'começar', p: 'begin', pp: 'began', pa: 'begun' },
+            { pt: 'beber', p: 'drink', pp: 'drank', pa: 'drunk' },
+            { pt: 'tocar (sino)', p: 'ring', pp: 'rang', pa: 'rung' },
+            { pt: 'encolher', p: 'shrink', pp: 'shrank', pa: 'shrunk' },
+            { pt: 'cantar', p: 'sing', pp: 'sang', pa: 'sung' },
+            { pt: 'afundar', p: 'sink', pp: 'sank', pa: 'sunk' },
+            { pt: 'nadar', p: 'swim', pp: 'swam', pa: 'swum' }
+        ],
+        aba: [
+            { pt: 'vir', p: 'come', pp: 'came', pa: 'come' },
+            { pt: 'correr', p: 'run', pp: 'ran', pa: 'run' }, 
+        ],
+        abb: [
+            { pt: 'ter', p: 'have', pp: 'had', pa: 'had' },
+            { pt: 'ouvir', p: 'hear', pp: 'heard', pa: 'heard' },
+            { pt: 'manter', p: 'keep', pp: 'kept', pa: 'kept' },
+            { pt: 'deixar/partir', p: 'leave', pp: 'left', pa: 'left' },
+            { pt: 'perder', p: 'lose', pp: 'lost', pa: 'lost' },
+            { pt: 'pagar', p: 'pay', pp: 'paid', pa: 'paid' },
+            { pt: 'dizer', p: 'say', pp: 'said', pa: 'said' },
+            { pt: 'vender', p: 'sell', pp: 'sold', pa: 'sold' },
+            { pt: 'ensinar', p: 'teach', pp: 'taught', pa: 'taught' },
+            { pt: 'contar', p: 'tell', pp: 'told', pa: 'told' },
+            { pt: 'pensar', p: 'think', pp: 'thought', pa: 'thought' },
+        ],
+        abc: [
+            { pt: 'ser/estar', p: 'am/is/are', pp: 'was/were', pa: 'been' },
+            { pt: 'quebrar', p: 'break', pp: 'broke', pa: 'broken' },
+            { pt: 'escolher', p: 'choose', pp: 'chose', pa: 'chosen' },
+            { pt: 'fazer', p: 'do', pp: 'did', pa: 'done' },
+            { pt: 'comer', p: 'eat', pp: 'ate', pa: 'eaten' },
+            { pt: 'ir', p: 'go', pp: 'went', pa: 'gone' },
+            { pt: 'ver', p: 'see', pp: 'saw', pa: 'seen' },
+            { pt: 'falar', p: 'speak', pp: 'spoke', pa: 'spoken' },
+            { pt: 'pegar/levar', p: 'take', pp: 'took', pa: 'taken' },
+            { pt: 'vestir', p: 'wear', pp: 'wore', pa: 'worn' },
+            { pt: 'escrever', p: 'write', pp: 'wrote', pa: 'written' }
+        ]
+    };
+    
+    const container = document.getElementById('exercicios-container');
+    const placarAcertosGeralEl = document.getElementById('acertos-geral');
+    const placarErrosGeralEl = document.getElementById('erros-geral');
+    const popupOverlay = document.getElementById('popup-overlay');
+    const popupTitulo = document.getElementById('popup-titulo');
+    const popupLista = document.getElementById('popup-lista');
+    
+    window.showVerbList = (tipo) => {
+        const listaVerbos = verbos[tipo];
+        const titulos = { regular: 'Verbos Regulares', aaa: 'Padrão A-A-A', aba: 'Padrão A-B-A', iau: 'Padrão I-A-U', abb: 'Padrão A-B-B', abc: 'Padrão A-B-C' };
+        popupTitulo.textContent = `Lista de Verbos: ${titulos[tipo]}`;
+        let tabelaHTML = '<table><thead><tr><th>Tradução</th><th>Presente</th><th>Passado</th><th>Particípio</th></tr></thead><tbody>';
+        listaVerbos.forEach(verbo => { tabelaHTML += `<tr><td>${verbo.pt}</td><td>${verbo.p}</td><td>${verbo.pp}</td><td>${verbo.pa}</td></tr>`; });
+        tabelaHTML += '</tbody></table>';
+        popupLista.innerHTML = tabelaHTML;
+        popupOverlay.classList.add('visible');
+    };
+
+    window.hideVerbList = () => popupOverlay.classList.remove('visible');
+
+    function createExerciseHTML(exerciseData, index) {
+        const shuffledOptions = [...exerciseData.opcoes];
+        shuffleArray(shuffledOptions);
+        const optionsHTML = shuffledOptions.map(option => `<button class="option-button" data-resposta="${option}">${option}</button>`).join('');
+        return `
+            <section class="exercicio-card" data-id="${exerciseData.id}">
+                <h2>Exercício ${index + 1}</h2>
+                <div class="question-container">
+                    <p>${exerciseData.pergunta}</p>
+                    <div class="options-container">${optionsHTML}</div>
+                </div>
+                <div class="explanation-container"><p>${exerciseData.explicacao}</p></div>
+            </section>
+        `;
+    }
+    
+    function handleAnswer(event) {
+        const button = event.target.closest('.option-button');
+        if (!button || button.disabled) return;
+
+        const card = button.closest('.exercicio-card');
+        const exerciseId = card.dataset.id;
+        const exerciseData = dadosDoQuiz.find(e => e.id === exerciseId);
+        const userAnswer = button.dataset.resposta;
+        const allButtons = card.querySelectorAll('.option-button');
+        
+        allButtons.forEach(btn => btn.disabled = true);
+        
+        if (userAnswer === exerciseData.respostaCorreta) {
+            button.classList.add('correto');
+            placarAcertosGeralEl.textContent = parseInt(placarAcertosGeralEl.textContent) + 1;
+        } else {
+            button.classList.add('incorreto');
+            const correctButton = Array.from(allButtons).find(btn => btn.dataset.resposta === exerciseData.respostaCorreta);
+            if (correctButton) correctButton.classList.add('correto');
+            placarErrosGeralEl.textContent = parseInt(placarErrosGeralEl.textContent) + 1;
+        }
+        
+        card.querySelector('.explanation-container').classList.add('visible');
+    }
+    
+    function shuffleArray(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+        }
+    }
+    
+    function startGame() {
+        const shuffledQuiz = [...dadosDoQuiz];
+        shuffleArray(shuffledQuiz);
+        container.innerHTML = shuffledQuiz.map((data, index) => createExerciseHTML(data, index)).join('');
+        container.addEventListener('click', handleAnswer);
+    }
+    
+    startGame();
+});
+</script>
+
+</body>
+</html>

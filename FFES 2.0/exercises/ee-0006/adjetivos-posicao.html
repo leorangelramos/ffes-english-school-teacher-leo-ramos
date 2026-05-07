@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Exercício: Posição dos Adjetivos (Atributivo vs. Predicativo) | Professor Leo Ramos</title>
+    <meta name="description" content="Aprenda a diferença entre adjetivos atributivos (antes do nome) e predicativos (depois do verbo) em inglês com este quiz.">
+    <meta name="author" content="Leo Ramos">
+    <meta name="robots" content="index, follow">
+    <meta name="keywords" content="adjetivos em inglês, adjetivo atributivo, adjetivo predicativo, gramática inglesa, exercícios de inglês">
+
+    <link rel="canonical" href="https://teacherleoramos.com.br/Ex2-3-4-5-6/adjetivos-em-ingles-posicao-descritivo.html">
+    <link rel="stylesheet" href="/CSS/universal.css">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="/Images/logofavicion.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/Images/logofavicion.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/Images/logofavicion.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/Images/logofavicion.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/Images/logofavicion.png">
+
+    <meta property="og:title" content="Exercício: Posição dos Adjetivos (Atributivo vs. Predicativo) | Professor Leo Ramos">
+    <meta property="og:description" content="Aprenda a diferença entre adjetivos atributivos (antes do nome) e predicativos (depois do verbo) em inglês com este quiz.">
+    <meta property="og:image" content="https://teacherleoramos.com.br/Images/preview-social.jpg">
+    <meta property="og:url" content="https://teacherleoramos.com.br/Ex2-3-4-5-6/adjetivos-em-ingles-posicao-descritivo.html">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:site_name" content="FFES - Professor Leo Ramos">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Exercício: Posição dos Adjetivos (Atributivo vs. Predicativo) | Professor Leo Ramos">
+    <meta name="twitter:description" content="Aprenda a diferença entre adjetivos atributivos (antes do nome) e predicativos (depois do verbo) em inglês com este quiz.">
+    <meta name="twitter:image" content="https://teacherleoramos.com.br/Images/preview-social.jpg">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Quiz",
+      "name": "Jogo dos Adjetivos: Descrição e Posição",
+      "description": "Um quiz interativo para praticar a diferença entre o uso atributivo (antes do substantivo) e predicativo (depois do verbo) dos adjetivos em inglês.",
+      "url": "https://teacherleoramos.com.br/Ex2-3-4-5-6/adjetivos-em-ingles-posicao-descritivo.html",
+      "image": "https://teacherleoramos.com.br/Images/preview-social.jpg",
+      "author": {
+        "@type": "Person",
+        "name": "Leo Ramos",
+        "url": "https://teacherleoramos.com.br"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "FFES - Professor Leo Ramos",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://teacherleoramos.com.br/Images/logo novo grande.png"
+        }
+      },
+      "learningResourceType": "Quiz",
+      "educationalLevel": "Beginner/Intermediate"
+    }
+    </script>
+
+    <style>
+        .game-title {
+            color: var(--cor-texto-claro);
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.6);
+        }
+        #placar-geral-container {
+            background: rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: var(--cor-texto-claro);
+            padding: 15px 25px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            font-size: 1.1em;
+        }
+        #placar-geral-container p { margin: 0; }
+        #placar-geral-container .nav-arrow {
+            color: inherit;
+            text-decoration: none;
+            font-size: 1.2em;
+            line-height: 1;
+            transition: color 0.2s ease, transform 0.2s ease;
+        }
+        #placar-geral-container .nav-arrow:hover {
+            color: var(--cor-acento);
+            transform: scale(1.15);
+        }
+        .introducao-container, .exercicio-card {
+            background-color: var(--cor-fundo-secao);
+            width: 100%;
+            max-width: 900px;
+            padding: 25px 30px;
+            margin-bottom: 25px;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+            box-sizing: border-box;
+        }
+        .exercicio-card .question-container p { font-size: 1.1em; }
+        .options-container {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 20px;
+        }
+        .option-button {
+            width: 100%;
+            padding: 15px;
+            font-size: 1em;
+            text-align: left;
+            background-color: var(--cor-fundo-geral);
+            border: 2px solid var(--cor-borda-sutil);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .option-button:not(:disabled):hover {
+            background-color: var(--cor-acento-hover);
+            border-color: var(--cor-acento);
+            transform: translateY(-2px);
+        }
+        .option-button:disabled {
+            cursor: not-allowed;
+            opacity: 0.7;
+        }
+        .option-button.correto {
+            background-color: var(--cor-sucesso);
+            border-color: #27ae60;
+            color: white;
+            font-weight: bold;
+        }
+        .option-button.incorreto {
+            background-color: var(--cor-erro);
+            border-color: #c0392b;
+            color: white;
+            font-weight: bold;
+        }
+        .explanation-container {
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.5s ease-out;
+            background-color: var(--cor-fundo-secao-destaque);
+            border-radius: 8px;
+            padding: 0 20px;
+            margin-top: 0;
+            border-left: 4px solid var(--cor-primaria-hover);
+        }
+        .explanation-container.visible {
+            max-height: 500px;
+            margin-top: 20px;
+            padding: 20px;
+        }
+        /* Tabela de Resumo */
+        .summary-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 1em;
+        }
+        .summary-table th, .summary-table td {
+            border: 1px solid var(--cor-borda-sutil);
+            padding: 12px;
+            text-align: left;
+        }
+        .summary-table th {
+            background-color: var(--cor-primaria-hover);
+            color: var(--cor-texto-claro);
+        }
+        .summary-table tr:nth-child(even) {
+            background-color: var(--cor-fundo-secao-destaque);
+        }
+        /* Contêiner do botão "Voltar ao Topo" */
+        .rodape-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+        @media (max-width: 800px) {
+            .game-title { font-size: 1.8em; }
+            h2 { font-size: 1.5em; }
+        }
+    </style>
+
+                <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-M8ZG06010Q"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-M8ZG06010Q');
+    </script>
+</head>
+<body id="topo">
+
+<div class="cabecalho-container">
+    <header class="bloco-identidade">
+        <div class="logo-and-title">
+            <a href="/index.html">
+                <img src="/Images/logo novo grande.png" alt="Logo FFES" class="logo-img">
+            </a>
+            <a href="/index.html" style="text-decoration: none; color: inherit;">
+                <h1>Leo Ramos | Professor de Inglês</h1>
+            </a>
+        </div>
+    </header>
+
+
+<div class="bloco-navegacao"> 
+    <nav class="nav-primary">
+        <ul>
+            <li><a href="/index.html#home">Home</a></li>
+            <li><a href="/index.html#sobre">Sobre Mim</a></li>
+            <li><a href="/exercicios-e-artigos.html#exercicios">Exercícios</a></li>
+            <li><a href="/exercicios-e-artigos.html#artigos-vocab">Artigos</a></li>
+            <li><a href="/cursos-e-ebook.html#cursos">Cursos e E-book</a></li>
+            <li><a href="/index.html#metodologia">Metodologia</a></li>
+        </ul>
+    </nav>
+</div>
+
+
+</div>
+<main>
+    <h1 class="game-title">Jogo dos Adjetivos: Descrição e Posição</h1>
+
+    <div id="placar-geral-container">
+        <p>Acertos: <strong id="acertos-geral">0</strong></p>
+        <a href="#contato" class="nav-arrow" title="Ir para o final da página">&#11015;</a>
+        <p>Erros: <strong id="erros-geral">0</strong></p>
+    </div>
+
+    <button id="reset-btn" class="cta-button">Jogar Novamente</button>
+    <hr>
+
+    <div class="introducao-container" style="text-align: left;">
+        <h3>1. O que são Adjetivos Descritivos?</h3>
+        <p>Adjetivos são palavras que dão qualidades, características e estados a substantivos (pessoas, lugares, coisas). Eles enriquecem a comunicação, tornando-a mais detalhada e interessante. Pense neles como "pintores de palavras".</p>
+        <p>Exemplos básicos:</p>
+        <ul>
+            <li>a <strong>beautiful</strong> house (uma casa bonita)</li>
+            <li>a <strong>tall</strong> person (uma pessoa alta)</li>
+            <li>the water is <strong>cold</strong> (a água está fria)</li>
+        </ul>
+
+        <h3>2. Uso Atributivo vs. Predicativo</h3>
+        <p>A posição de um adjetivo na frase pode mudar a ênfase da comunicação. Existem duas posições principais:</p>
+        
+        <h4>A) Adjetivos Atributivos (Attributive Use)</h4>
+        <p><strong>Regra:</strong> Vêm <strong>antes</strong> do substantivo que estão modificando. Esta é a posição mais comum.</p>
+        <p><strong>Fórmula:</strong> <code>Adjetivo + Substantivo</code></p>
+        <ul>
+            <li>She drives a <strong>fast</strong> car. (Ela dirige um carro rápido.)</li>
+            <li>He is an <strong>honest</strong> man. (Ele é um homem honesto.)</li>
+        </ul>
+
+        <h4>B) Adjetivos Predicativos (Predicative Use)</h4>
+        <p><strong>Regra:</strong> Vêm <strong>depois</strong> de um verbo de ligação (*linking verb*), como <em>to be, to seem, to feel, to look, to become, to taste</em>. Eles descrevem o sujeito da frase.</p>
+        <p><strong>Fórmula:</strong> <code>Sujeito + Verbo de Ligação + Adjetivo</code></p>
+        <ul>
+            <li>The car is <strong>fast</strong>. (O carro é rápido.)</li>
+            <li>The man seems <strong>honest</strong>. (O homem parece honesto.)</li>
+            <li>I feel <strong>happy</strong> today. (Eu me sinto feliz hoje.)</li>
+        </ul>
+
+        <table class="summary-table">
+            <thead>
+                <tr>
+                    <th>Tipo de Uso</th>
+                    <th>Posição</th>
+                    <th>Exemplo</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Atributivo</strong></td>
+                    <td>Antes do substantivo</td>
+                    <td>I saw a <strong>black</strong> cat.</td>
+                </tr>
+                <tr>
+                    <td><strong>Predicativo</strong></td>
+                    <td>Depois do verbo de ligação</td>
+                    <td>The cat is <strong>black</strong>.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div id="exercicios-container"></div>
+    
+    <div class="rodape-container">
+        <a href="#topo" class="nav-button">&#11014;</a>
+    </div>
+</main>
+
+<footer id="contato" class="site-footer">
+    <div class="footer-content">
+        <div class="social-media-links">
+            <h4>Siga-me nas redes sociais e acesse o App</h4>
+            <a href="https://www.youtube.com/@teacherleoramos/videos" target="_blank" rel="noopener noreferrer" title="Canal YouTube Teacher Leo Ramos" aria-label="YouTube">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/youtube-play.png" alt="Ícone YouTube" width="30" height="30" loading="lazy">
+            </a>
+            <a href="https://www.instagram.com/teacherleoramos/" target="_blank" rel="noopener noreferrer" title="Instagram Teacher Leo Ramos" aria-label="Instagram">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/instagram-new.png" alt="Ícone Instagram" width="30" height="30" loading="lazy">
+            </a>
+            <a href="https://www.tiktok.com/@teacherleoramos" target="_blank" rel="noopener noreferrer" title="TikTok Teacher Leo Ramos" aria-label="TikTok">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/tiktok.png" alt="Ícone TikTok" width="30" height="30" loading="lazy">
+            </a>
+            <a href="https://wa.me/5511955582118" target="_blank" rel="noopener noreferrer" title="WhatsApp Agendamento" aria-label="WhatsApp">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/whatsapp--v1.png" alt="Ícone WhatsApp" width="30" height="30" loading="lazy">
+            </a>
+            <a href="/index-app.html" target="_blank" rel="noopener noreferrer" title="Acesse o FFES App" aria-label="FFES App">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/controller.png" alt="Ícone FFES App" width="30" height="30" loading="lazy">
+            </a>
+        </div>
+        <p><strong>Contato</strong></p>
+        <p>Youtube: @teacherleoramos | Telefone - WhatsApp: (11) 95558-2118</p>
+        <p>Endereço: São Paulo, SP, Brasil</p>
+        <p>CNPJ: 43.226.983/0001-91</p>
+        <p>&copy; <span id="year">2025</span> | FEATHERED FRIENDS ENGLISH SCHOOL - FFES. Todos os direitos reservados.</p>
+    </div>
+</footer>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const dadosAdjetivos = [
+        { id: 'adj-1', frase: 'I have a <strong>new</strong> phone.', pergunta: 'Na frase acima, o adjetivo "new" tem uso:', opcoes: ['Atributivo', 'Predicativo'], respostaCorreta: 'Atributivo', explicacao: '<strong>Atributivo</strong>: o adjetivo "new" vem diretamente antes do substantivo "phone".' },
+        { id: 'adj-2', frase: 'The coffee is <strong>hot</strong>.', pergunta: 'Na frase acima, o adjetivo "hot" tem uso:', opcoes: ['Atributivo', 'Predicativo'], respostaCorreta: 'Predicativo', explicacao: '<strong>Predicativo</strong>: o adjetivo "hot" vem depois do verbo de ligação "is".' },
+        { id: 'adj-3', frase: 'She wore a <strong>beautiful</strong> dress.', pergunta: 'Na frase acima, o adjetivo "beautiful" tem uso:', opcoes: ['Atributivo', 'Predicativo'], respostaCorreta: 'Atributivo', explicacao: '<strong>Atributivo</strong>: o adjetivo "beautiful" vem diretamente antes do substantivo "dress".' },
+        { id: 'adj-4', frase: 'He seems <strong>tired</strong> today.', pergunta: 'Na frase acima, o adjetivo "tired" tem uso:', opcoes: ['Atributivo', 'Predicativo'], respostaCorreta: 'Predicativo', explicacao: '<strong>Predicativo</strong>: o adjetivo "tired" vem depois do verbo de ligação "seems".' },
+        { id: 'adj-5', frase: 'It was a <strong>long</strong> movie.', pergunta: 'Na frase acima, o adjetivo "long" tem uso:', opcoes: ['Atributivo', 'Predicativo'], respostaCorreta: 'Atributivo', explicacao: '<strong>Atributivo</strong>: o adjetivo "long" vem diretamente antes do substantivo "movie".' },
+        { id: 'adj-6', frase: 'The children are <strong>happy</strong>.', pergunta: 'Na frase acima, o adjetivo "happy" tem uso:', opcoes: ['Atributivo', 'Predicativo'], respostaCorreta: 'Predicativo', explicacao: '<strong>Predicativo</strong>: o adjetivo "happy" vem depois do verbo de ligação "are".' },
+        { id: 'adj-7', frase: 'That is a <strong>fast</strong> car.', pergunta: 'Na frase acima, o adjetivo "fast" tem uso:', opcoes: ['Atributivo', 'Predicativo'], respostaCorreta: 'Atributivo', explicacao: '<strong>Atributivo</strong>: o adjetivo "fast" vem diretamente antes do substantivo "car".' },
+        { id: 'adj-8', frase: 'This food tastes <strong>delicious</strong>.', pergunta: 'Na frase acima, o adjetivo "delicious" tem uso:', opcoes: ['Atributivo', 'Predicativo'], respostaCorreta: 'Predicativo', explicacao: '<strong>Predicativo</strong>: o adjetivo "delicious" vem depois do verbo de ligação "tastes".' },
+        { id: 'adj-9', frase: 'They live in a <strong>big</strong> house.', pergunta: 'Na frase acima, o adjetivo "big" tem uso:', opcoes: ['Atributivo', 'Predicativo'], respostaCorreta: 'Atributivo', explicacao: '<strong>Atributivo</strong>: o adjetivo "big" vem diretamente antes do substantivo "house".' },
+        { id: 'adj-10', frase: 'My sister is <strong>smart</strong>.', pergunta: 'Na frase acima, o adjetivo "smart" tem uso:', opcoes: ['Atributivo', 'Predicativo'], respostaCorreta: 'Predicativo', explicacao: '<strong>Predicativo</strong>: o adjetivo "smart" vem depois do verbo de ligação "is".' },
+        { id: 'adj-11', frase: 'We watched an <strong>interesting</strong> film.', pergunta: 'Na frase acima, o adjetivo "interesting" tem uso:', opcoes: ['Atributivo', 'Predicativo'], respostaCorreta: 'Atributivo', explicacao: '<strong>Atributivo</strong>: o adjetivo "interesting" vem diretamente antes do substantivo "film".' },
+        { id: 'adj-12', frase: 'The weather became <strong>cold</strong>.', pergunta: 'Na frase acima, o adjetivo "cold" tem uso:', opcoes: ['Atributivo', 'Predicativo'], respostaCorreta: 'Predicativo', explicacao: '<strong>Predicativo</strong>: o adjetivo "cold" vem depois do verbo de ligação "became".' },
+        { id: 'adj-13', frase: 'That was an <strong>easy</strong> test.', pergunta: 'Na frase acima, o adjetivo "easy" tem uso:', opcoes: ['Atributivo', 'Predicativo'], respostaCorreta: 'Atributivo', explicacao: '<strong>Atributivo</strong>: o adjetivo "easy" vem diretamente antes do substantivo "test".' },
+        { id: 'adj-14', frase: 'The story sounds <strong>true</strong>.', pergunta: 'Na frase acima, o adjetivo "true" tem uso:', opcoes: ['Atributivo', 'Predicativo'], respostaCorreta: 'Predicativo', explicacao: '<strong>Predicativo</strong>: o adjetivo "true" vem depois do verbo de ligação "sounds".' },
+        { id: 'adj-15', frase: 'He is a <strong>famous</strong> actor.', pergunta: 'Na frase acima, o adjetivo "famous" tem uso:', opcoes: ['Atributivo', 'Predicativo'], respostaCorreta: 'Atributivo', explicacao: '<strong>Atributivo</strong>: o adjetivo "famous" vem diretamente antes do substantivo "actor".' },
+        { id: 'adj-16', frase: 'Please be <strong>quiet</strong>.', pergunta: 'Na frase acima, o adjetivo "quiet" tem uso:', opcoes: ['Atributivo', 'Predicativo'], respostaCorreta: 'Predicativo', explicacao: '<strong>Predicativo</strong>: o adjetivo "quiet" vem depois do verbo de ligação "be".' },
+        { id: 'adj-17', frase: 'A <strong>small</strong> cat entered the room.', pergunta: 'Na frase acima, o adjetivo "small" tem uso:', opcoes: ['Atributivo', 'Predicativo'], respostaCorreta: 'Atributivo', explicacao: '<strong>Atributivo</strong>: o adjetivo "small" vem diretamente antes do substantivo "cat".' },
+        { id: 'adj-18', frase: 'The flowers smell <strong>nice</strong>.', pergunta: 'Na frase acima, o adjetivo "nice" tem uso:', opcoes: ['Atributivo', 'Predicativo'], respostaCorreta: 'Predicativo', explicacao: '<strong>Predicativo</strong>: o adjetivo "nice" vem depois do verbo de ligação "smell".' },
+        { id: 'adj-19', frase: 'She told a <strong>funny</strong> joke.', pergunta: 'Na frase acima, o adjetivo "funny" tem uso:', opcoes: ['Atributivo', 'Predicativo'], respostaCorreta: 'Atributivo', explicacao: '<strong>Atributivo</strong>: o adjetivo "funny" vem diretamente antes do substantivo "joke".' },
+        { id: 'adj-20', frase: 'You look <strong>wonderful</strong> tonight.', pergunta: 'Na frase acima, o adjetivo "wonderful" tem uso:', opcoes: ['Atributivo', 'Predicativo'], respostaCorreta: 'Predicativo', explicacao: '<strong>Predicativo</strong>: o adjetivo "wonderful" vem depois do verbo de ligação "look".' },
+        { id: 'adj-21', frase: 'He is a very ___ person.', pergunta: 'Complete a frase corretamente:', opcoes: ['honest', 'honestly'], respostaCorreta: 'honest', explicacao: 'Usamos o adjetivo "honest" para descrever o substantivo "person". "Honestly" é um advérbio.' },
+        { id: 'adj-22', frase: 'The music is too ___.', pergunta: 'Complete a frase corretamente:', opcoes: ['loud', 'loudly'], respostaCorreta: 'loud', explicacao: 'Depois do verbo de ligação "is", usamos o adjetivo "loud". "Loudly" é um advérbio.' },
+        { id: 'adj-23', frase: 'What a <strong>lovely</strong> day!', pergunta: 'Na frase acima, o adjetivo "lovely" tem uso:', opcoes: ['Atributivo', 'Predicativo'], respostaCorreta: 'Atributivo', explicacao: '<strong>Atributivo</strong>: o adjetivo "lovely" vem diretamente antes do substantivo "day".' },
+        { id: 'adj-24', frase: 'The soup is <strong>salty</strong>.', pergunta: 'Na frase acima, o adjetivo "salty" tem uso:', opcoes: ['Atributivo', 'Predicativo'], respostaCorreta: 'Predicativo', explicacao: '<strong>Predicativo</strong>: o adjetivo "salty" vem depois do verbo de ligação "is".' },
+        { id: 'adj-25', frase: 'This is a <strong>public</strong> park.', pergunta: 'Na frase acima, o adjetivo "public" tem uso:', opcoes: ['Atributivo', 'Predicativo'], respostaCorreta: 'Atributivo', explicacao: '<strong>Atributivo</strong>: o adjetivo "public" vem diretamente antes do substantivo "park".' },
+        { id: 'adj-26', frase: 'I feel <strong>safe</strong> here.', pergunta: 'Na frase acima, o adjetivo "safe" tem uso:', opcoes: ['Atributivo', 'Predicativo'], respostaCorreta: 'Predicativo', explicacao: '<strong>Predicativo</strong>: o adjetivo "safe" vem depois do verbo de ligação "feel".' },
+        { id: 'adj-27', frase: 'The test was ___.', pergunta: 'Complete a frase corretamente:', opcoes: ['difficult', 'difficultly'], respostaCorreta: 'difficult', explicacao: 'Usamos o adjetivo "difficult" após o verbo de ligação "was". "Difficultly" é um advérbio.' },
+        { id: 'adj-28', frase: 'It\'s a <strong>simple</strong> question.', pergunta: 'Na frase acima, o adjetivo "simple" tem uso:', opcoes: ['Atributivo', 'Predicativo'], respostaCorreta: 'Atributivo', explicacao: '<strong>Atributivo</strong>: o adjetivo "simple" vem diretamente antes do substantivo "question".' },
+        { id: 'adj-29', frase: 'The boss became <strong>angry</strong>.', pergunta: 'Na frase acima, o adjetivo "angry" tem uso:', opcoes: ['Atributivo', 'Predicativo'], respostaCorreta: 'Predicativo', explicacao: '<strong>Predicativo</strong>: o adjetivo "angry" vem depois do verbo de ligação "became".' },
+        { id: 'adj-30', frase: 'He has <strong>blue</strong> eyes.', pergunta: 'Na frase acima, o adjetivo "blue" tem uso:', opcoes: ['Atributivo', 'Predicativo'], respostaCorreta: 'Atributivo', explicacao: '<strong>Atributivo</strong>: o adjetivo "blue" vem diretamente antes do substantivo "eyes".' }
+    ];
+
+    const container = document.getElementById('exercicios-container');
+    const placarAcertosGeralEl = document.getElementById('acertos-geral');
+    const placarErrosGeralEl = document.getElementById('erros-geral');
+    const resetButton = document.getElementById('reset-btn');
+
+    // Referência para o listener, para poder removê-lo
+    let eventListenerRef;
+
+    function shuffleArray(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+        }
+    }
+
+    function criarExercicioHTML(exercicioData, numeroExercicio) {
+        const opcoesEmbaralhadas = [...exercicioData.opcoes];
+        shuffleArray(opcoesEmbaralhadas);
+        const opcoesHTML = opcoesEmbaralhadas.map(opcao =>
+            `<button class="option-button" data-resposta="${opcao}">${opcao}</button>`
+        ).join('');
+        
+        return `
+            <section class="exercicio-card" id="exercicio-${exercicioData.id}" data-id="${exercicioData.id}">
+                <h2>Exercício ${numeroExercicio}</h2>
+                <div class="question-container">
+                    <p><strong>Frase:</strong> ${exercicioData.frase}</p>
+                    <p>${exercicioData.pergunta}</p>
+                    <div class="options-container">${opcoesHTML}</div>
+                </div>
+                <div class="explanation-container" id="explicacao-${exercicioData.id}"><p>${exercicioData.explicacao}</p></div>
+            </section>
+        `;
+    }
+
+    function verificarResposta(exercicioId, btnClicado) {
+        const exercicioData = dadosAdjetivos.find(e => e.id === exercicioId);
+        const exercicioCard = document.getElementById(`exercicio-${exercicioData.id}`);
+        const botoes = exercicioCard.querySelectorAll('.option-button');
+        
+        botoes.forEach(btn => btn.disabled = true);
+
+        const explicacaoEl = document.getElementById(`explicacao-${exercicioData.id}`);
+        explicacaoEl.classList.add('visible');
+
+        if (btnClicado.dataset.resposta === exercicioData.respostaCorreta) {
+            btnClicado.classList.add('correto');
+            placarAcertosGeralEl.textContent = parseInt(placarAcertosGeralEl.textContent) + 1;
+        } else {
+            btnClicado.classList.add('incorreto');
+            placarErrosGeralEl.textContent = parseInt(placarErrosGeralEl.textContent) + 1;
+            
+            const respostaCorretaBtn = Array.from(botoes).find(btn => btn.dataset.resposta === exercicioData.respostaCorreta);
+            if (respostaCorretaBtn) {
+                respostaCorretaBtn.classList.add('correto');
+            }
+        }
+    }
+
+    function iniciarJogo() {
+        placarAcertosGeralEl.textContent = '0';
+        placarErrosGeralEl.textContent = '0';
+        shuffleArray(dadosAdjetivos);
+        container.innerHTML = dadosAdjetivos.map((dado, index) => criarExercicioHTML(dado, index + 1)).join('');
+        
+        // Remove o listener antigo se ele existir
+        if (eventListenerRef) {
+            container.removeEventListener('click', eventListenerRef);
+        }
+
+        // Define o novo listener
+        eventListenerRef = (event) => {
+            if (event.target.classList.contains('option-button') && !event.target.disabled) {
+                const btnClicado = event.target;
+                const exercicioCard = btnClicado.closest('.exercicio-card');
+                const exercicioId = exercicioCard.dataset.id;
+                verificarResposta(exercicioId, btnClicado);
+            }
+        };
+
+        // Adiciona o novo listener
+        container.addEventListener('click', eventListenerRef);
+
+        // Rola a tela para o início do main content ao reiniciar
+        document.querySelector('main').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    resetButton.addEventListener('click', iniciarJogo);
+    iniciarJogo();
+});
+</script>
+
+</body>
+</html>

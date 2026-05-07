@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Jogo de Determinantes (30 Exercícios) - Professor Leo Ramos</title>
+    <meta name="description" content="Aprenda sobre os tipos de determinantes em inglês (articles, possessives, demonstratives) com este jogo interativo de 30 exercícios.">
+    
+    <meta name="keywords" content="determiners, articles, a, an, the, this, that, my, your, english exercises, Leo Ramos">
+    <meta name="author" content="Leo Ramos">
+    <meta name="robots" content="index, follow">
+
+    <meta name="google-site-verification" content="9L-nEDj4G24e3JD1kt5bxcZ5_qHo9Q-03_DJkfIH_1M" />
+    
+    <link rel="canonical" href="https://teacherleoramos.com.br/Ex13-14-15-16-17/this-that-these-those-determinantes-em-ingles.html">
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/Images/logofavicion.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/Images/logofavicion.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/Images/logofavicion.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/Images/logofavicion.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/Images/logofavicion.png">
+
+    <meta property="og:title" content="Jogo de Determinantes (30 Exercícios) | Professor Leo Ramos">
+    <meta property="og:description" content="Aprenda sobre os tipos de determinantes em inglês (articles, possessives, demonstratives) com este jogo interativo.">
+    <meta property="og:image" content="https://teacherleoramos.com.br/Images/preview-social.jpg">
+    <meta property="og:url" content="https://teacherleoramos.com.br/Ex13-14-15-16-17/this-that-these-those-determinantes-em-ingles.html">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:site_name" content="FFES - Professor Leo Ramos">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Jogo de Determinantes (30 Exercícios) | Professor Leo Ramos">
+    <meta name="twitter:description" content="Aprenda sobre os tipos de determinantes em inglês (articles, possessives, demonstratives) com este jogo interativo.">
+    <meta name="twitter:image" content="https://teacherleoramos.com.br/Images/preview-social.jpg">
+    
+    <link rel="stylesheet" href="/CSS/universal.css">
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Quiz",
+      "name": "Jogo de Determinantes",
+      "description": "Pratique o uso de determinantes em inglês (Articles, Demonstratives, Possessives, Quantifiers) com 30 exercícios.",
+      "inLanguage": "pt-BR",
+      "learningResourceType": "Practice",
+      "author": {
+        "@type": "Person",
+        "name": "Leo Ramos",
+        "url": "https://teacherleoramos.com.br/Ex13-14-15-16-17/this-that-these-those-determinantes-em-ingles.html"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "FFES - Professor Leo Ramos",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://teacherleoramos.com.br/Images/logo novo grande.png"
+        }
+      },
+      "hasPart": [
+        {
+          "@type": "Question",
+          "name": "Complete: 'She is studying to be ___ university professor.'",
+          "acceptedAnswer": { "@type": "Answer", "text": "a" }
+        },
+        {
+          "@type": "Question",
+          "name": "Complete: 'Can you pass me ___ books on the table over there?'",
+          "acceptedAnswer": { "@type": "Answer", "text": "those" }
+        }
+      ]
+    }
+    </script>
+    
+    <style>
+        .game-title {
+            color: var(--cor-texto-claro);
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.6);
+        }
+        #placar-geral-container {
+            background: rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: var(--cor-texto-claro);
+            padding: 15px 25px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            font-size: 1.1em;
+        }
+        #placar-geral-container p { margin: 0; }
+        #placar-geral-container .nav-arrow {
+            color: inherit;
+            text-decoration: none;
+            font-size: 1.2em;
+            line-height: 1;
+            transition: color 0.2s ease, transform 0.2s ease;
+        }
+        #placar-geral-container .nav-arrow:hover {
+            color: var(--cor-acento);
+            transform: scale(1.15);
+        }
+        .introducao-container, .exercicio-card {
+            background-color: var(--cor-fundo-secao);
+            width: 100%;
+            max-width: 900px;
+            padding: 25px 30px;
+            margin-bottom: 25px;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+            box-sizing: border-box;
+        }
+        .exercicio-card .question-container p { font-size: 1.1em; }
+        .options-container {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 20px;
+        }
+        .option-button {
+            width: 100%;
+            padding: 15px;
+            font-size: 1em;
+            text-align: left;
+            background-color: var(--cor-fundo-geral);
+            border: 2px solid var(--cor-borda-sutil);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .option-button:not(:disabled):hover {
+            background-color: var(--cor-acento-hover);
+            border-color: var(--cor-acento);
+            transform: translateY(-2px);
+        }
+        .option-button:disabled {
+            cursor: not-allowed;
+            opacity: 0.7;
+        }
+        .option-button.correto {
+            background-color: var(--cor-sucesso);
+            border-color: #27ae60;
+            color: white;
+            font-weight: bold;
+        }
+        .option-button.incorreto {
+            background-color: var(--cor-erro);
+            border-color: #c0392b;
+            color: white;
+            font-weight: bold;
+        }
+        .explanation-container {
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.5s ease-out;
+            background-color: var(--cor-fundo-secao-destaque);
+            border-radius: 8px;
+            padding: 0 20px;
+            margin-top: 0;
+            border-left: 4px solid var(--cor-primaria-hover);
+        }
+        .explanation-container.visible {
+            max-height: 500px;
+            margin-top: 20px;
+            padding: 20px;
+        }
+        .rodape-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+        
+        /* ESTILOS ESPECÍFICOS QUE ESTAVAM FALTANDO */
+        .introducao-container h3 {
+            text-align: left;
+            margin-top: 0;
+            color: var(--cor-primaria);
+        }
+        .introducao-container h4 { 
+            background-color: var(--cor-fundo-secao-destaque); 
+            color: var(--cor-primaria); 
+            padding: 5px 10px; 
+            border-radius: 5px; 
+            margin-top: 20px; 
+            text-align: left;
+        }
+        .introducao-container ul { 
+            padding-left: 20px; 
+            list-style-type: square; 
+        }
+        .introducao-container .dica { 
+            background-color: #e6f7ff; 
+            border-left: 4px solid #1890ff; 
+            padding: 10px; 
+            margin: 15px 0; 
+            border-radius: 4px; 
+        }
+
+        @media (max-width: 800px) {
+            .game-title { font-size: 1.8em; }
+            h2 { font-size: 1.5em; }
+        }
+    </style>
+
+                <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-M8ZG06010Q"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-M8ZG06010Q');
+    </script>
+</head>
+<body id="topo">
+
+<div class="cabecalho-container">
+    <header class="bloco-identidade">
+        <div class="logo-and-title">
+            <a href="/index.html">
+                <img src="/Images/logo novo grande.png" alt="Logo FFES" class="logo-img">
+            </a>
+            <a href="/index.html" rel="noopener noreferrer" style="text-decoration: none; color: inherit;">
+                <h1>Leo Ramos | Professor de Inglês</h1>
+            </a>
+        </div>
+    </header>
+
+
+<div class="bloco-navegacao"> 
+    <nav class="nav-primary">
+        <ul>
+            <li><a href="/index.html#home">Home</a></li>
+            <li><a href="/index.html#sobre">Sobre Mim</a></li>
+            <li><a href="/exercicios-e-artigos.html#exercicios">Exercícios</a></li>
+            <li><a href="/exercicios-e-artigos.html#artigos-vocab">Artigos</a></li>
+            <li><a href="/cursos-e-ebook.html#cursos">Cursos e E-book</a></li>
+            <li><a href="/index.html#metodologia">Metodologia</a></li>
+        </ul>
+    </nav>
+</div>
+
+
+</div>
+<main>
+    <h1 class="game-title">Jogo de Determinantes</h1>
+    <div id="placar-geral-container">
+        <p>Acertos: <strong id="acertos-geral">0</strong></p>
+        <a href="#contato" class="nav-arrow" title="Ir para o final da página">&#11015;</a>
+        <p>Erros: <strong id="erros-geral">0</strong></p>
+    </div>
+    <button id="reset-btn" class="cta-button">Jogar Novamente</button>
+    <hr>
+    
+    <div class="introducao-container" style="text-align: left;">
+        <h3>Guia Completo de Determinantes (Determiners)</h3>
+        <p><strong>Determinantes</strong> são palavras que introduzem substantivos. Eles vêm antes de um substantivo ou de adjetivos que o descrevem, e são essenciais para indicar a que ou a quem o substantivo se refere.</p>
+
+        <h4>1. Artigos (Articles): A/An, The</h4>
+        <ul>
+            <li><b>A / An (Indefinidos):</b> Usados para algo não específico ou mencionado pela primeira vez. A regra é o <strong>som</strong> inicial da palavra seguinte, não a letra.
+                <ul>
+                    <li><i><b>a</b> car, <b>a</b> university (som de "yu"), <b>a</b> European country</i></li>
+                    <li><i><b>an</b> apple, <b>an</b> hour (o 'h' é mudo), <b>an</b> MBA</i></li>
+                </ul>
+            </li>
+            <li><b>The (Definido):</b> Usado para algo específico, único, ou já mencionado.
+                <ul>
+                    <li><i>I saw a cat. <b>The</b> cat was black.</i> (Gato específico, já mencionado)</li>
+                    <li><i><b>The</b> Earth revolves around <b>the</b> Sun.</i> (Únicos)</li>
+                    <li><i><b>The</b> President will give a speech.</i> (Cargo específico)</li>
+                </ul>
+            </li>
+            <li><b>Zero Article:</b> Não usamos artigo para falar de coisas em geral ou de substantivos incontáveis de forma genérica.
+                 <ul>
+                    <li><i><b>Love</b> is important.</i> (Conceito geral)</li>
+                    <li><i>She likes <b>music</b>.</i> (Música em geral)</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h4>2. Demonstrativos (Demonstratives): This, That, These, Those</h4>
+        <p>Apontam para substantivos, indicando proximidade (física ou temporal) ou distância.</p>
+        <ul>
+            <li><b>This (perto, singular):</b> <i>Is <b>this</b> your pen?</i></li>
+            <li><b>That (longe, singular):</b> <i>Who is <b>that</b> person over there?</i></li>
+            <li><b>These (perto, plural):</b> <i>I'm taking <b>these</b> books with me.</i></li>
+            <li><b>Those (longe, plural):</b> <i><b>Those</b> mountains are beautiful.</i></li>
+        </ul>
+
+        <h4>3. Possessivos (Possessive Adjectives): My, Your, His, Her, Its, Our, Their</h4>
+        <p>Indicam posse e <strong>sempre</strong> vêm antes de um substantivo.</p>
+        <ul>
+            <li><i>This is <b>my</b> house.</i></li>
+            <li><i>The dog wagged <b>its</b> tail.</i></li>
+            <li><i>I met <b>their</b> parents.</i></li>
+        </ul>
+        <div class="dica"><strong>Diferença Crucial:</strong> Não confunda determinantes possessivos (my, your) com pronomes possessivos (mine, yours). Os pronomes substituem o substantivo.<br><i>This is <b>my book</b>. (determinante) -> This book is <b>mine</b>. (pronome)</i></div>
+
+        <h4>4. Quantificadores (Quantifiers)</h4>
+        <p>Um tipo muito importante de determinante que informa a quantidade. Incluem <i>some, any, many, much, all, enough, few, little,</i> etc. Eles possuem regras próprias baseadas no tipo de substantivo (contável/incontável) e no tipo de frase (afirmativa/negativa).</p>
+        
+        <h4>5. Distributivos (Distributives): Each, Every, All, Both, Either, Neither</h4>
+        <p>Referem-se a como algo é distribuído ou dividido entre os membros de um grupo.</p>
+        <ul>
+            <li><b>Each / Every:</b> Singularizam os membros de um grupo. "Each" foca mais na individualidade. "Every" foca no grupo como um conjunto de indivíduos. Ambos usam verbo no singular. <i>Ex: <b>Each</b> student has a different opinion. <b>Every</b> citizen has rights.</i></li>
+            <li><b>All:</b> Refere-se ao grupo inteiro, como um todo. Usa verbo no plural. <i>Ex: <b>All</b> the students have books.</i></li>
+            <li><b>Both / Either / Neither:</b> Apenas para grupos de dois. <i>Ex: <b>Both</b> hands were dirty. You can use <b>either</b> entrance. <b>Neither</b> story was true.</i></li>
+        </ul>
+    </div>
+    
+    <div id="exercicios-container"></div>
+    <div class="rodape-container">
+        <a href="#topo" class="nav-button">&#11014;</a>
+    </div>
+</main>
+
+<footer id="contato" class="site-footer">
+    <div class="footer-content">
+        <div class="social-media-links">
+            <h4>Siga-me nas redes sociais e acesse o App</h4>
+            <a href="https://www.youtube.com/@teacherleoramos/videos" target="_blank" rel="noopener noreferrer" title="Canal YouTube Teacher Leo Ramos" aria-label="YouTube">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/youtube-play.png" alt="Ícone YouTube" width="30" height="30" loading="lazy">
+            </a>
+            <a href="https://www.instagram.com/teacherleoramos/" target="_blank" rel="noopener noreferrer" title="Instagram Teacher Leo Ramos" aria-label="Instagram">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/instagram-new.png" alt="Ícone Instagram" width="30" height="30" loading="lazy">
+            </a>
+            <a href="https://www.tiktok.com/@teacherleoramos" target="_blank" rel="noopener noreferrer" title="TikTok Teacher Leo Ramos" aria-label="TikTok">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/tiktok.png" alt="Ícone TikTok" width="30" height="30" loading="lazy">
+            </a>
+            <a href="https://wa.me/5511955582118" target="_blank" rel="noopener noreferrer" title="WhatsApp Agendamento" aria-label="WhatsApp">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/whatsapp--v1.png" alt="Ícone WhatsApp" width="30" height="30" loading="lazy">
+            </a>
+            <a href="/index-app.html" target="_blank" rel="noopener noreferrer" title="Acesse o FFES App" aria-label="FFES App">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/controller.png" alt="Ícone FFES App" width="30" height="30" loading="lazy">
+            </a>
+        </div>
+        <p><strong>Contato</strong></p>
+        <p>Youtube: @teacherleoramos | Telefone - WhatsApp: (11) 95558-2118</p>
+        <p>Endereço: São Paulo, SP, Brasil</p>
+        <p>CNPJ: 43.226.983/0001-91</p>
+        <p>&copy; <span id="year">2025</span> | FEATHERED FRIENDS ENGLISH SCHOOL - FFES. Todos os direitos reservados.</p>
+    </div>
+</footer>
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const dadosDeterminantes = [
+        { id: 'det-1', pergunta: 'She is studying to be ___ university professor.', opcoes: ['a', 'an', 'the', 'some'], respostaCorreta: 'a', explicacao: '"University" começa com som de consoante ("yoo"), então usamos "a".' },
+        { id: 'det-2', pergunta: 'Can you pass me ___ books on the table over there?', opcoes: ['this', 'that', 'these', 'those'], respostaCorreta: 'those', explicacao: '"Books" é plural e "over there" indica distância, então usamos "those".' },
+        { id: 'det-3', pergunta: 'I haven\'t seen him today. Have you seen ___ dad?', opcoes: ['his', 'him', 'he', 'its'], respostaCorreta: 'his', explicacao: 'Para indicar que o "dad" pertence a "him", usamos o possessivo "his".' },
+        { id: 'det-4', pergunta: 'I need to go to ___ post office to send a letter.', opcoes: ['a', 'an', 'the', 'any'], respostaCorreta: 'the', explicacao: 'Usamos "the" para lugares comuns e específicos em uma cidade, como "the bank", "the post office".' },
+        { id: 'det-5', pergunta: '___ child in the school has a unique talent.', opcoes: ['All', 'Every', 'Both', 'Some'], respostaCorreta: 'Every', explicacao: '"Every" refere-se a cada membro individualmente, seguido por substantivo no singular.' },
+        { id: 'det-6', pergunta: 'Is this your bag? No, it\'s ___ bag.', opcoes: ['her', 'she', 'hers', 'it'], respostaCorreta: 'her', explicacao: '"Her" é o determinante possessivo que modifica "bag". "Hers" é um pronome e não pode vir antes do substantivo.' },
+        { id: 'det-7', pergunta: 'What is ___ name of the movie you watched?', opcoes: ['a', 'the', 'its', 'what'], respostaCorreta: 'the', explicacao: 'Perguntamos sobre o nome específico de um filme, então usamos o artigo definido "the".' },
+        { id: 'det-8', pergunta: 'I don\'t like ___ kind of music. It\'s too loud.', opcoes: ['these', 'those', 'this', 'a'], respostaCorreta: 'this', explicacao: '"Kind of music" está no singular, então usamos "this".' },
+        { id: 'det-9', pergunta: 'We only have ___ hour until the exam starts.', opcoes: ['a', 'an', 'the', 'some'], respostaCorreta: 'an', explicacao: 'A palavra "hour" começa com som de vogal (o "h" é mudo), então usamos "an".' },
+        { id: 'det-10', pergunta: 'Look at ___ beautiful painting on the wall.', opcoes: ['this', 'that', 'these', 'those'], respostaCorreta: 'that', explicacao: 'Subentende-se que a pintura está a alguma distância (on the wall), e é singular. "That" é a melhor opção.' },
+        { id: 'det-11', pergunta: 'The cat is cleaning ___ paws.', opcoes: ['it', 'it\'s', 'its', 'their'], respostaCorreta: 'its', explicacao: '"Its" é o determinante possessivo para animais e objetos. "It\'s" é a contração de "it is".' },
+        { id: 'det-12', pergunta: '___ people believe that aliens exist.', opcoes: ['Much', 'A little', 'Some', 'Every'], respostaCorreta: 'Some', explicacao: '"Some" pode ser usado com substantivos contáveis no plural para indicar uma quantidade indefinida.' },
+        { id: 'det-13', pergunta: 'I spoke to ___ parents, and they are both happy.', opcoes: ['all', 'every', 'each', 'both'], respostaCorreta: 'both', explicacao: '"Parents" implica duas pessoas, e o contexto ("they are both happy") confirma o uso de "both".' },
+        { id: 'det-14', pergunta: 'She wants to be ___ astronaut when she grows up.', opcoes: ['a', 'an', 'the', 'some'], respostaCorreta: 'an', explicacao: '"Astronaut" começa com som de vogal, então usamos "an".' },
+        { id: 'det-15', pergunta: '___ shoes you are wearing are really nice.', opcoes: ['This', 'That', 'These', 'Those'], respostaCorreta: 'These', explicacao: '"Shoes" é plural. Como a pessoa está usando ("are wearing"), eles estão perto. Logo, "these".' },
+        { id: 'det-16', pergunta: 'Which sentence is correct?', opcoes: ['The love is all you need.', 'A love is all you need.', 'Love is all you need.', 'An love is all you need.'], respostaCorreta: 'Love is all you need.', explicacao: 'Não usamos artigo (zero article) para falar de conceitos abstratos e gerais como "love", "hate", "happiness".' },
+        { id: 'det-17', pergunta: 'He broke ___ arm while playing soccer.', opcoes: ['his', 'he', 'him', 'the'], respostaCorreta: 'his', explicacao: 'Usamos determinantes possessivos (his, my, her) com partes do corpo.' },
+        { id: 'det-18', pergunta: 'Could you give me ___ information about the course?', opcoes: ['an', 'some', 'many', 'a few'], respostaCorreta: 'some', explicacao: '"Information" é incontável. "Some" é usado para incontáveis em pedidos e afirmativas.' },
+        { id: 'det-19', pergunta: '___ of the two restaurants is good. You can pick one.', opcoes: ['Either', 'Neither', 'Both', 'All'], respostaCorreta: 'Either', explicacao: '"Either" significa "um ou outro" quando se refere a duas opções.' },
+        { id: 'det-20', pergunta: '___ sun is shining brightly today.', opcoes: ['A', 'An', 'The', 'Some'], respostaCorreta: 'The', explicacao: 'Usamos "the" para coisas que são únicas, como o sol (the sun), a lua (the moon), a Terra (the Earth).' },
+        { id: 'det-21', pergunta: '___ house at the end of the street is for sale.', opcoes: ['This', 'That', 'These', 'Those'], respostaCorreta: 'That', explicacao: '"House" é singular. "At the end of the street" indica distância, então usamos "that".' },
+        { id: 'det-22', pergunta: 'I can\'t find ___ keys. Have you seen them?', opcoes: ['my', 'me', 'mine', 'I'], respostaCorreta: 'my', explicacao: '"My" é o determinante possessivo que modifica o substantivo "keys".' },
+        { id: 'det-23', pergunta: 'There aren\'t ___ cookies left in the jar.', opcoes: ['some', 'no', 'any', 'much'], respostaCorreta: 'any', explicacao: 'Em frases negativas ("aren\'t"), usamos "any" com substantivos contáveis.' },
+        { id: 'det-24', pergunta: '___ guest must sign in at the reception.', opcoes: ['All', 'Each', 'Both', 'Several'], respostaCorreta: 'Each', explicacao: '"Each" é usado com um substantivo no singular ("guest") para se referir a todos individualmente.' },
+        { id: 'det-25', pergunta: 'This isn\'t my umbrella. It must be ___.', opcoes: ['her', 'she', 'hers', 'her\'s'], respostaCorreta: 'hers', explicacao: 'Aqui precisamos de um pronome possessivo para substituir "her umbrella". O pronome é "hers".' },
+        { id: 'det-26', pergunta: '___ Pacific Ocean is the largest ocean on Earth.', opcoes: ['A', 'An', 'The', 'No article'], respostaCorreta: 'The', explicacao: 'Usamos o artigo "the" antes de nomes de oceanos, rios, mares e desertos.' },
+        { id: 'det-27', pergunta: 'We are going to visit ___ grandparents this weekend.', opcoes: ['our', 'us', 'ours', 'we'], respostaCorreta: 'our', explicacao: '"Our" é o determinante possessivo que indica que os avós pertencem a "we".' },
+        { id: 'det-28', pergunta: 'I don\'t have ___ idea what you are talking about.', opcoes: ['some', 'any', 'no', 'none'], respostaCorreta: 'any', explicacao: 'A expressão correta em uma frase negativa é "I don\'t have any idea".' },
+        { id: 'det-29', pergunta: 'There are two roads. You can take ___ one, they both lead to the city.', opcoes: ['neither', 'both', 'either', 'every'], respostaCorreta: 'either', explicacao: '"Either" é usado para indicar "qualquer um dos dois" quando há duas opções.' },
+        { id: 'det-30', pergunta: 'He is ___ honest man.', opcoes: ['a', 'an', 'the', 'some'], respostaCorreta: 'an', explicacao: 'A palavra "honest" começa com som de vogal (o "h" é mudo), então usamos "an".' }
+    ];
+
+    const container = document.getElementById('exercicios-container');
+    const placarAcertosGeralEl = document.getElementById('acertos-geral');
+    const placarErrosGeralEl = document.getElementById('erros-geral');
+    const resetButton = document.getElementById('reset-btn');
+    let acertos = 0;
+    let erros = 0;
+    
+    // ===================================
+    //     FUNÇÃO SHUFFLEARRAY CORRIGIDA
+    // ===================================
+    function shuffleArray(array) {
+        let newArray = [...array]; // Cria uma cópia para não alterar o original
+        for (let i = newArray.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
+        }
+        return newArray; // <--- BUG CORRIGIDO: Faltava o "return"
+    }
+
+    function criarExercicioHTML(exercicioData, numeroExercicio) {
+        // Agora 'opcoesEmbaralhadas' receberá o array retornado
+        const opcoesEmbaralhadas = shuffleArray(exercicioData.opcoes); 
+        const opcoesHTML = opcoesEmbaralhadas.map(opcao => `<button class="option-button" data-resposta="${opcao}">${opcao}</button>`).join('');
+        return `<section class="exercicio-card" id="exercicio-${exercicioData.id}" data-id="${exercicioData.id}"><h2 class="h2-exercicio">Exercício ${numeroExercicio}</h2><div class="question-container"><p>${exercicioData.pergunta}</p><div class="options-container">${opcoesHTML}</div></div><div class="explanation-container" id="explicacao-${exercicioData.id}"><p>${exercicioData.explicacao}</p></div></section>`;
+    }
+
+    function verificarResposta(exercicioId, btnClicado) {
+        const exercicioData = dadosDeterminantes.find(e => e.id === exercicioId);
+        const exercicioCard = document.getElementById(`exercicio-${exercicioData.id}`);
+        const botoes = exercicioCard.querySelectorAll('.option-button');
+        botoes.forEach(btn => btn.disabled = true);
+        const explicacaoEl = document.getElementById(`explicacao-${exercicioData.id}`);
+        explicacaoEl.classList.add('visible');
+        if (btnClicado.dataset.resposta === exercicioData.respostaCorreta) {
+            btnClicado.classList.add('correto');
+            acertos++;
+        } else {
+            btnClicado.classList.add('incorreto');
+            const respostaCorretaBtn = Array.from(botoes).find(btn => btn.dataset.resposta === exercicioData.respostaCorreta);
+            if (respostaCorretaBtn) { respostaCorretaBtn.classList.add('correto'); }
+            erros++;
+        }
+        placarAcertosGeralEl.textContent = acertos;
+        placarErrosGeralEl.textContent = erros;
+    }
+
+    // --- CORREÇÃO DE BUG: O listener estava sendo adicionado múltiplas vezes no reset ---
+    let eventListenerRef;
+    function iniciarJogo() {
+        acertos = 0;
+        erros = 0;
+        placarAcertosGeralEl.textContent = '0';
+        placarErrosGeralEl.textContent = '0';
+        
+        // Agora 'exerciciosEmbaralhados' receberá o array retornado
+        const exerciciosEmbaralhados = shuffleArray(dadosDeterminantes);
+        container.innerHTML = exerciciosEmbaralhados.map((dado, index) => criarExercicioHTML(dado, index + 1)).join('');
+        
+        // Remove o listener antigo antes de adicionar um novo
+        if (eventListenerRef) {
+            container.removeEventListener('click', eventListenerRef);
+        }
+
+        // Adiciona o novo listener
+        eventListenerRef = (event) => {
+            if (event.target.classList.contains('option-button') && !event.target.disabled) {
+                const btnClicado = event.target;
+                const exercicioCard = btnClicado.closest('.exercicio-card');
+                const exercicioId = exercicioCard.dataset.id;
+                verificarResposta(exercicioId, btnClicado);
+            }
+        };
+        container.addEventListener('click', eventListenerRef);
+        
+        window.scrollTo(0, 0);
+    }
+
+    resetButton.addEventListener('click', iniciarJogo);
+    iniciarJogo();
+});
+</script>
+
+</body>
+</html>

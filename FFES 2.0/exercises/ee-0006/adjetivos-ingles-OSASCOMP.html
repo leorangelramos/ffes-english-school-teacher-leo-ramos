@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Exercício: Ordem dos Adjetivos (OSASCOMP) | Professor Leo Ramos</title>
+    <meta name="description" content="Aprenda a ordem correta dos adjetivos em inglês com a regra OSASCOMP e pratique com 30 exercícios interativos.">
+    <meta name="author" content="Leo Ramos">
+    <meta name="robots" content="index, follow">
+    <meta name="keywords" content="ordem dos adjetivos, OSASCOMP, gramática inglesa, adjetivos em inglês, exercícios de inglês">
+
+    <link rel="canonical" href="https://teacherleoramos.com.br/Ex2-3-4-5-6/adjetivos-em-ingles-ordem-correta-OSASCOMP.html">
+    <link rel="stylesheet" href="/CSS/universal.css">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="/Images/logofavicion.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/Images/logofavicion.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/Images/logofavicion.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/Images/logofavicion.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/Images/logofavicion.png">
+
+    <meta property="og:title" content="Exercício: Ordem dos Adjetivos (OSASCOMP) | Professor Leo Ramos">
+    <meta property="og:description" content="Aprenda e pratique a ordem correta dos adjetivos em inglês (OSASCOMP) com este quiz interativo.">
+    <meta property="og:image" content="https://teacherleoramos.com.br/Images/preview-social.jpg">
+    <meta property="og:url" content="https://teacherleoramos.com.br/Ex2-3-4-5-6/adjetivos-em-ingles-ordem-correta-OSASCOMP.html">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:site_name" content="FFES - Professor Leo Ramos">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Exercício: Ordem dos Adjetivos (OSASCOMP) | Professor Leo Ramos">
+    <meta name="twitter:description" content="Aprenda e pratique a ordem correta dos adjetivos em inglês (OSASCOMP) com este quiz interativo.">
+    <meta name="twitter:image" content="https://teacherleoramos.com.br/Images/preview-social.jpg">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Quiz",
+      "name": "Jogo da Ordem dos Adjetivos (OSASCOMP)",
+      "description": "Um quiz interativo para praticar a ordem correta dos adjetivos em inglês (Opinion, Size, Age, Shape, Color, Origin, Material, Purpose).",
+      "url": "https://teacherleoramos.com.br/Ex2-3-4-5-6/adjetivos-em-ingles-ordem-correta-OSASCOMP.html",
+      "image": "https://teacherleoramos.com.br/Images/preview-social.jpg",
+      "author": {
+        "@type": "Person",
+        "name": "Leo Ramos",
+        "url": "https://teacherleoramos.com.br"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "FFES - Professor Leo Ramos",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://teacherleoramos.com.br/Images/logo novo grande.png"
+        }
+      },
+      "learningResourceType": "Quiz",
+      "educationalLevel": "Intermediate"
+    }
+    </script>
+
+    <style>
+        .game-title {
+            color: var(--cor-texto-claro);
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.6);
+        }
+        #placar-geral-container {
+            background: rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: var(--cor-texto-claro);
+            padding: 15px 25px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            font-size: 1.1em;
+        }
+        #placar-geral-container p { margin: 0; }
+        #placar-geral-container .nav-arrow {
+            color: inherit;
+            text-decoration: none;
+            font-size: 1.2em;
+            line-height: 1;
+            transition: color 0.2s ease, transform 0.2s ease;
+        }
+        #placar-geral-container .nav-arrow:hover {
+            color: var(--cor-acento);
+            transform: scale(1.15);
+        }
+        .introducao-container, .exercicio-card {
+            background-color: var(--cor-fundo-secao);
+            width: 100%;
+            max-width: 900px;
+            padding: 25px 30px;
+            margin-bottom: 25px;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+            box-sizing: border-box;
+        }
+        .exercicio-card .question-container p { font-size: 1.1em; }
+        .options-container {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 20px;
+        }
+        .option-button {
+            width: 100%;
+            padding: 15px;
+            font-size: 1em;
+            text-align: left;
+            background-color: var(--cor-fundo-geral);
+            border: 2px solid var(--cor-borda-sutil);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .option-button:not(:disabled):hover {
+            background-color: var(--cor-acento-hover);
+            border-color: var(--cor-acento);
+            transform: translateY(-2px);
+        }
+        .option-button:disabled {
+            cursor: not-allowed;
+            opacity: 0.7;
+        }
+        .option-button.correto {
+            background-color: var(--cor-sucesso);
+            border-color: #27ae60;
+            color: white;
+            font-weight: bold;
+        }
+        .option-button.incorreto {
+            background-color: var(--cor-erro);
+            border-color: #c0392b;
+            color: white;
+            font-weight: bold;
+        }
+        .explanation-container {
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.5s ease-out;
+            background-color: var(--cor-fundo-secao-destaque);
+            border-radius: 8px;
+            padding: 0 20px;
+            margin-top: 0;
+            border-left: 4px solid var(--cor-primaria-hover);
+        }
+        .explanation-container.visible {
+            max-height: 500px;
+            margin-top: 20px;
+            padding: 20px;
+        }
+        /* Tabela de Resumo */
+        .summary-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 1em;
+        }
+        .summary-table th, .summary-table td {
+            border: 1px solid var(--cor-borda-sutil);
+            padding: 12px;
+            text-align: left;
+        }
+        .summary-table th {
+            background-color: var(--cor-primaria-hover);
+            color: var(--cor-texto-claro);
+        }
+        .summary-table td:nth-child(1) {
+            font-weight: bold;
+        }
+        /* Contêiner do botão "Voltar ao Topo" */
+        .rodape-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+        @media (max-width: 800px) {
+            .game-title { font-size: 1.8em; }
+            h2 { font-size: 1.5em; }
+        }
+    </style>
+
+                <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-M8ZG06010Q"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-M8ZG06010Q');
+    </script>
+</head>
+<body id="topo">
+
+<div class="cabecalho-container">
+    <header class="bloco-identidade">
+        <div class="logo-and-title">
+            <a href="/index.html">
+                <img src="/Images/logo novo grande.png" alt="Logo FFES" class="logo-img">
+            </a>
+            <a href="/index.html" style="text-decoration: none; color: inherit;">
+                <h1>Leo Ramos | Professor de Inglês</h1>
+            </a>
+        </div>
+    </header>
+
+
+<div class="bloco-navegacao"> 
+    <nav class="nav-primary">
+        <ul>
+            <li><a href="/index.html#home">Home</a></li>
+            <li><a href="/index.html#sobre">Sobre Mim</a></li>
+            <li><a href="/exercicios-e-artigos.html#exercicios">Exercícios</a></li>
+            <li><a href="/exercicios-e-artigos.html#artigos-vocab">Artigos</a></li>
+            <li><a href="/cursos-e-ebook.html#cursos">Cursos e E-book</a></li>
+            <li><a href="/index.html#metodologia">Metodologia</a></li>
+        </ul>
+    </nav>
+</div>
+
+
+</div>
+<main>
+    <h1 class="game-title">Jogo da Ordem dos Adjetivos</h1>
+
+    <div id="placar-geral-container">
+        <p>Acertos: <strong id="acertos-geral">0</strong></p>
+        <a href="#contato" class="nav-arrow" title="Ir para o final da página">&#11015;</a>
+        <p>Erros: <strong id="erros-geral">0</strong></p>
+    </div>
+
+    <button id="reset-btn" class="cta-button">Jogar Novamente</button>
+    <hr>
+
+    <div class="introducao-container" style="text-align: left;">
+        <h3>A Ordem dos Adjetivos em Inglês</h3>
+        <p>Quando usamos mais de um adjetivo para descrever um substantivo, eles precisam seguir uma ordem específica para que a frase soe natural. Enquanto um nativo faz isso instintivamente, para nós, aprendizes, existe uma regra que facilita muito: o mnemônico <strong>OSASCOMP</strong>.</p>
+        <p>Embora seja raro usar mais de três adjetivos em uma conversa normal, conhecer a ordem é fundamental para escrever e falar corretamente.</p>
+
+        <h3>A Regra OSASCOMP</h3>
+        <p>Cada letra representa uma categoria de adjetivo, e esta é a sequência que você deve seguir:</p>
+        
+        <table class="summary-table">
+            <thead>
+                <tr>
+                    <th>Ordem</th>
+                    <th>Categoria</th>
+                    <th>Exemplos</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>1. <strong>O</strong></td><td><strong>Opinion</strong> (Opinião)</td><td><em>beautiful, horrible, lovely, nice</em></td></tr>
+                <tr><td>2. <strong>S</strong></td><td><strong>Size</strong> (Tamanho)</td><td><em>big, small, long, short, tall</em></td></tr>
+                <tr><td>3. <strong>A</strong></td><td><strong>Age</strong> (Idade)</td><td><em>old, new, young, ancient</em></td></tr>
+                <tr><td>4. <strong>S</strong></td><td><strong>Shape</strong> (Formato)</td><td><em>round, square, triangular</em></td></tr>
+                <tr><td>5. <strong>C</strong></td><td><strong>Color</strong> (Cor)</td><td><em>red, black, blue, green</em></td></tr>
+                <tr><td>6. <strong>O</strong></td><td><strong>Origin</strong> (Origem)</td><td><em>Brazilian, American, Italian</em></td></tr>
+                <tr><td>7. <strong>M</strong></td><td><strong>Material</strong> (Material)</td><td><em>wooden, plastic, metal, cotton</em></td></tr>
+                <tr><td>8. <strong>P</strong></td><td><strong>Purpose</strong> (Propósito)</td><td><em>sleeping (bag), running (shoes)</em></td></tr>
+            </tbody>
+        </table>
+
+        <h4>Exemplos em frases:</h4>
+        <ul>
+            <li>She bought a <strong>beautiful new Italian</strong> car. (Opinião > Idade > Origem)</li>
+            <li>He is a <strong>tall young</strong> man. (Tamanho > Idade)</li>
+            <li>I love that <strong>small old wooden</strong> table. (Tamanho > Idade > Material)</li>
+        </ul>
+    </div>
+
+    <div id="exercicios-container"></div>
+    
+    <div class="rodape-container">
+        <a href="#topo" class="nav-button">&#11014;</a>
+    </div>
+</main>
+
+
+<footer id="contato" class="site-footer">
+    <div class="footer-content">
+        <div class="social-media-links">
+            <h4>Siga-me nas redes sociais e acesse o App</h4>
+            <a href="https://www.youtube.com/@teacherleoramos/videos" target="_blank" rel="noopener noreferrer" title="Canal YouTube Teacher Leo Ramos" aria-label="YouTube">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/youtube-play.png" alt="Ícone YouTube" width="30" height="30" loading="lazy">
+            </a>
+            <a href="https://www.instagram.com/teacherleoramos/" target="_blank" rel="noopener noreferrer" title="Instagram Teacher Leo Ramos" aria-label="Instagram">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/instagram-new.png" alt="Ícone Instagram" width="30" height="30" loading="lazy">
+            </a>
+            <a href="https://www.tiktok.com/@teacherleoramos" target="_blank" rel="noopener noreferrer" title="TikTok Teacher Leo Ramos" aria-label="TikTok">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/tiktok.png" alt="Ícone TikTok" width="30" height="30" loading="lazy">
+            </a>
+            <a href="https://wa.me/5511955582118" target="_blank" rel="noopener noreferrer" title="WhatsApp Agendamento" aria-label="WhatsApp">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/whatsapp--v1.png" alt="Ícone WhatsApp" width="30" height="30" loading="lazy">
+            </a>
+            <a href="/index-app.html" target="_blank" rel="noopener noreferrer" title="Acesse o FFES App" aria-label="FFES App">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/controller.png" alt="Ícone FFES App" width="30" height="30" loading="lazy">
+            </a>
+        </div>
+        <p><strong>Contato</strong></p>
+        <p>Youtube: @teacherleoramos | Telefone - WhatsApp: (11) 95558-2118</p>
+        <p>Endereço: São Paulo, SP, Brasil</p>
+        <p>CNPJ: 43.226.983/0001-91</p>
+        <p>&copy; <span id="year">2025</span> | FEATHERED FRIENDS ENGLISH SCHOOL - FFES. Todos os direitos reservados.</p>
+    </div>
+</footer>
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const dadosOrdem = [
+        { id: 'ord-1', pergunta: 'Qual frase está na ordem correta?', opcoes: ['a big red car', 'a red big car'], respostaCorreta: 'a big red car', explicacao: 'A ordem correta é Tamanho (big) antes de Cor (red).' },
+        { id: 'ord-2', pergunta: 'Qual frase está na ordem correta?', opcoes: ['an old interesting book', 'an interesting old book'], respostaCorreta: 'an interesting old book', explicacao: 'A ordem correta é Opinião (interesting) antes de Idade (old).' },
+        { id: 'ord-3', pergunta: 'Qual frase está na ordem correta?', opcoes: ['a new blue shirt', 'a blue new shirt'], respostaCorreta: 'a new blue shirt', explicacao: 'A ordem correta é Idade (new) antes de Cor (blue).' },
+        { id: 'ord-4', pergunta: 'Qual frase está na ordem correta?', opcoes: ['a wooden big table', 'a big wooden table'], respostaCorreta: 'a big wooden table', explicacao: 'A ordem correta é Tamanho (big) antes de Material (wooden).' },
+        { id: 'ord-5', pergunta: 'Qual frase está na ordem correta?', opcoes: ['a small round mirror', 'a round small mirror'], respostaCorreta: 'a small round mirror', explicacao: 'A ordem correta é Tamanho (small) antes de Formato (round).' },
+        { id: 'ord-6', pergunta: 'Qual frase está na ordem correta?', opcoes: ['a Brazilian handsome actor', 'a handsome Brazilian actor'], respostaCorreta: 'a handsome Brazilian actor', explicacao: 'A ordem correta é Opinião (handsome) antes de Origem (Brazilian).' },
+        { id: 'ord-7', pergunta: 'Qual frase está na ordem correta?', opcoes: ['a plastic cheap toy', 'a cheap plastic toy'], respostaCorreta: 'a cheap plastic toy', explicacao: 'A ordem correta é Opinião (cheap) antes de Material (plastic).' },
+        { id: 'ord-8', pergunta: 'Qual frase está na ordem correta?', opcoes: ['a long black hair', 'black long hair'], respostaCorreta: 'black long hair', explicacao: 'A ordem correta é Tamanho (long) antes de Cor (black). Neste caso, o artigo "a" não é usado com "hair".' },
+        { id: 'ord-9', pergunta: 'Qual frase está na ordem correta?', opcoes: ['a new powerful computer', 'a powerful new computer'], respostaCorreta: 'a powerful new computer', explicacao: 'A ordem correta é Opinião (powerful) antes de Idade (new).' },
+        { id: 'ord-10', pergunta: 'Qual frase está na ordem correta?', opcoes: ['a leather old jacket', 'an old leather jacket'], respostaCorreta: 'an old leather jacket', explicacao: 'A ordem correta é Idade (old) antes de Material (leather).' },
+        { id: 'ord-11', pergunta: 'O adjetivo "cotton" pertence a qual categoria?', opcoes: ['Material', 'Origem', 'Opinião'], respostaCorreta: 'Material', explicacao: '"Cotton" (algodão) descreve o material de que algo é feito.' },
+        { id: 'ord-12', pergunta: 'O adjetivo "horrible" pertence a qual categoria?', opcoes: ['Tamanho', 'Opinião', 'Cor'], respostaCorreta: 'Opinião', explicacao: '"Horrible" (horrível) expressa um julgamento ou opinião.' },
+        { id: 'ord-13', pergunta: 'O adjetivo "ancient" pertence a qual categoria?', opcoes: ['Formato', 'Idade', 'Origem'], respostaCorreta: 'Idade', explicacao: '"Ancient" (antigo) descreve a idade de algo.' },
+        { id: 'ord-14', pergunta: 'O adjetivo "Japanese" pertence a qual categoria?', opcoes: ['Origem', 'Material', 'Propósito'], respostaCorreta: 'Origem', explicacao: '"Japanese" (japonês) descreve a origem.' },
+        { id: 'ord-15', pergunta: 'O adjetivo "square" pertence a qual categoria?', opcoes: ['Tamanho', 'Formato', 'Idade'], respostaCorreta: 'Formato', explicacao: '"Square" (quadrado) descreve o formato.' },
+        { id: 'ord-16', pergunta: 'Complete a frase: I bought some ___ ___ apples.', opcoes: ['delicious red', 'red delicious'], respostaCorreta: 'delicious red', explicacao: 'A ordem correta é Opinião (delicious) antes de Cor (red).' },
+        { id: 'ord-17', pergunta: 'Complete a frase: He lives in a ___ ___ house.', opcoes: ['modern big', 'big modern'], respostaCorreta: 'big modern', explicacao: 'A ordem correta é Tamanho (big) antes de Idade (modern).' },
+        { id: 'ord-18', pergunta: 'Complete a frase: She was wearing a ___ ___ dress.', opcoes: ['silk beautiful', 'beautiful silk'], respostaCorreta: 'beautiful silk', explicacao: 'A ordem correta é Opinião (beautiful) antes de Material (silk).' },
+        { id: 'ord-19', pergunta: 'Complete a frase: It\'s a ___ ___ movie.', opcoes: ['long boring', 'boring long'], respostaCorreta: 'boring long', explicacao: 'A ordem correta é Opinião (boring) antes de Tamanho (long).' },
+        { id: 'ord-20', pergunta: 'Complete a frase: That\'s a ___ ___ machine.', opcoes: ['German old powerful', 'powerful old German'], respostaCorreta: 'powerful old German', explicacao: 'A ordem correta é Opinião (powerful) > Idade (old) > Origem (German).' },
+        { id: 'ord-21', pergunta: 'Qual frase está na ordem correta?', opcoes: ['a green beautiful garden', 'a beautiful green garden'], respostaCorreta: 'a beautiful green garden', explicacao: 'A ordem correta é Opinião (beautiful) antes de Cor (green).' },
+        { id: 'ord-22', pergunta: 'Qual frase está na ordem correta?', opcoes: ['a young tall man', 'a tall young man'], respostaCorreta: 'a tall young man', explicacao: 'A ordem correta é Tamanho (tall) antes de Idade (young).' },
+        { id: 'ord-23', pergunta: 'Qual frase está na ordem correta?', opcoes: ['a metal black box', 'a black metal box'], respostaCorreta: 'a black metal box', explicacao: 'A ordem correta é Cor (black) antes de Material (metal).' },
+        { id: 'ord-24', pergunta: 'Qual frase está na ordem correta?', opcoes: ['my comfortable old shoes', 'my old comfortable shoes'], respostaCorreta: 'my comfortable old shoes', explicacao: 'A ordem correta é Opinião (comfortable) antes de Idade (old).' },
+        { id: 'ord-25', pergunta: 'Qual frase está na ordem correta?', opcoes: ['a tiny sleeping kitten', 'a sleeping tiny kitten'], respostaCorreta: 'a tiny sleeping kitten', explicacao: 'A ordem correta é Tamanho (tiny) antes de Propósito (sleeping).' },
+        { id: 'ord-26', pergunta: 'Complete a frase: We ate a ___ ___ pizza.', opcoes: ['delicious round', 'round delicious'], respostaCorreta: 'delicious round', explicacao: 'A ordem correta é Opinião (delicious) antes de Formato (round).' },
+        { id: 'ord-27', pergunta: 'O adjetivo "running" em "running shoes" pertence a qual categoria?', opcoes: ['Propósito', 'Opinião', 'Material'], respostaCorreta: 'Propósito', explicacao: '"Running" descreve o propósito ou finalidade dos sapatos (sapatos de corrida).' },
+        { id: 'ord-28', pergunta: 'Qual frase está na ordem correta?', opcoes: ['a square small table', 'a small square table'], respostaCorreta: 'a small square table', explicacao: 'A ordem correta é Tamanho (small) antes de Formato (square).' },
+        { id: 'ord-29', pergunta: 'Qual frase está na ordem correta?', opcoes: ['an American interesting old film', 'an interesting old American film'], respostaCorreta: 'an interesting old American film', explicacao: 'A ordem correta é Opinião (interesting) > Idade (old) > Origem (American).' },
+        { id: 'ord-30', pergunta: 'Complete a frase: He has a ___ ___ dog.', opcoes: ['friendly black big', 'big friendly black', 'friendly big black'], respostaCorreta: 'friendly big black', explicacao: 'A ordem correta é Opinião (friendly) > Tamanho (big) > Cor (black).' }
+    ];
+
+    const container = document.getElementById('exercicios-container');
+    const placarAcertosGeralEl = document.getElementById('acertos-geral');
+    const placarErrosGeralEl = document.getElementById('erros-geral');
+    const resetButton = document.getElementById('reset-btn');
+
+    // Referência para o listener, para poder removê-lo
+    let eventListenerRef;
+
+    function shuffleArray(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+        }
+    }
+
+    function criarExercicioHTML(exercicioData, numeroExercicio) {
+        const opcoesEmbaralhadas = [...exercicioData.opcoes];
+        shuffleArray(opcoesEmbaralhadas);
+        const opcoesHTML = opcoesEmbaralhadas.map(opcao =>
+            `<button class="option-button" data-resposta="${opcao}">${opcao}</button>`
+        ).join('');
+        
+        return `
+            <section class="exercicio-card" id="exercicio-${exercicioData.id}" data-id="${exercicioData.id}">
+                <h2>Exercício ${numeroExercicio}</h2>
+                <div class="question-container">
+                    <p>${exercicioData.pergunta}</p>
+                    <div class="options-container">${opcoesHTML}</div>
+                </div>
+                <div class="explanation-container" id="explicacao-${exercicioData.id}"><p>${exercicioData.explicacao}</p></div>
+            </section>
+        `;
+    }
+
+    function verificarResposta(exercicioId, btnClicado) {
+        const exercicioData = dadosOrdem.find(e => e.id === exercicioId);
+        const exercicioCard = document.getElementById(`exercicio-${exercicioData.id}`);
+        const botoes = exercicioCard.querySelectorAll('.option-button');
+        
+        botoes.forEach(btn => btn.disabled = true);
+
+        const explicacaoEl = document.getElementById(`explicacao-${exercicioData.id}`);
+        explicacaoEl.classList.add('visible');
+
+        if (btnClicado.dataset.resposta === exercicioData.respostaCorreta) {
+            btnClicado.classList.add('correto');
+            placarAcertosGeralEl.textContent = parseInt(placarAcertosGeralEl.textContent) + 1;
+        } else {
+            btnClicado.classList.add('incorreto');
+            placarErrosGeralEl.textContent = parseInt(placarErrosGeralEl.textContent) + 1;
+            
+            const respostaCorretaBtn = Array.from(botoes).find(btn => btn.dataset.resposta === exercicioData.respostaCorreta);
+            if (respostaCorretaBtn) {
+                respostaCorretaBtn.classList.add('correto');
+            }
+        }
+    }
+
+    function iniciarJogo() {
+        placarAcertosGeralEl.textContent = '0';
+        placarErrosGeralEl.textContent = '0';
+        shuffleArray(dadosOrdem);
+        container.innerHTML = dadosOrdem.map((dado, index) => criarExercicioHTML(dado, index + 1)).join('');
+        
+        // Remove o listener antigo se ele existir
+        if (eventListenerRef) {
+            container.removeEventListener('click', eventListenerRef);
+        }
+
+        // Define o novo listener
+        eventListenerRef = (event) => {
+            if (event.target.classList.contains('option-button') && !event.target.disabled) {
+                const btnClicado = event.target;
+                const exercicioCard = btnClicado.closest('.exercicio-card');
+                const exercicioId = exercicioCard.dataset.id;
+                verificarResposta(exercicioId, btnClicado);
+            }
+        };
+
+        // Adiciona o novo listener
+        container.addEventListener('click', eventListenerRef);
+
+        // Rola a tela para o início do main content ao reiniciar
+        document.querySelector('main').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    resetButton.addEventListener('click', iniciarJogo);
+    iniciarJogo();
+});
+</script>
+
+</body>
+</html>

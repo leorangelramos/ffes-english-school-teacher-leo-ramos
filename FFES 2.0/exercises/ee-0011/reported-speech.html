@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Exercício de Reported Speech (Discurso Indireto) | Professor Leo Ramos</title>
+    <meta name="description" content="Teste seu conhecimento de Discurso Indireto (Reported Speech) em inglês. Pratique as mudanças de tempo verbal, pronomes e advérbios com este quiz.">
+    <meta name="author" content="Leo Ramos">
+    <meta name="robots" content="index, follow">
+    <meta name="keywords" content="reported speech, discurso indireto, discurso direto, exercícios de inglês, Leo Ramos, FFES">
+    
+    <link rel="canonical" href="https://teacherleoramos.com.br/Ex7-8-9-10-11-12/reported-speech-em-ingles-discurso-indireto.html">
+    <link rel="stylesheet" href="/CSS/universal.css">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="/Images/logofavicion.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/Images/logofavicion.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/Images/logofavicion.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/Images/logofavicion.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/Images/logofavicion.png">
+
+    <meta property="og:title" content="Exercício de Reported Speech (Discurso Indireto) | Professor Leo Ramos">
+    <meta property="og:description" content="Teste seu conhecimento de Discurso Indireto (Reported Speech) em inglês. Pratique as mudanças de tempo verbal, pronomes e advérbios.">
+    <meta property="og:image" content="https://teacherleoramos.com.br/Images/preview-social.jpg">
+    <meta property="og:url" content="https://teacherleoramos.com.br/Ex7-8-9-10-11-12/reported-speech-em-ingles-discurso-indireto.html">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:site_name" content="FFES - Professor Leo Ramos">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Exercício de Reported Speech (Discurso Indireto) | Professor Leo Ramos">
+    <meta name="twitter:description" content="Teste seu conhecimento de Discurso Indireto (Reported Speech) em inglês. Pratique as mudanças de tempo verbal, pronomes e advérbios.">
+    <meta name="twitter:image" content="https://teacherleoramos.com.br/Images/preview-social.jpg">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Quiz",
+      "name": "Jogo de Reported Speech (Discurso Indireto)",
+      "description": "Um quiz interativo para praticar a conversão de Discurso Direto para Indireto, focando nas mudanças de tempo verbal, pronomes e advérbios.",
+      "url": "https://teacherleoramos.com.br/Ex7-8-9-10-11-12/reported-speech-em-ingles-discurso-indireto.html",
+      "image": "https://teacherleoramos.com.br/Images/preview-social.jpg",
+      "author": {
+        "@type": "Person",
+        "name": "Leo Ramos",
+        "url": "https://teacherleoramos.com.br"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "FFES - Professor Leo Ramos",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://teacherleoramos.com.br/Images/logo novo grande.png"
+        }
+      },
+      "learningResourceType": "Quiz",
+      "educationalLevel": "Intermediate"
+    }
+    </script>
+
+    <style>
+        .game-title {
+            color: var(--cor-texto-claro);
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.6);
+        }
+
+        #placar-geral-container {
+            background: rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: var(--cor-texto-claro);
+            padding: 15px 25px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            font-size: 1.1em;
+        }
+
+        #placar-geral-container p { margin: 0; }
+
+        #placar-geral-container .nav-arrow {
+            color: inherit;
+            text-decoration: none;
+            font-size: 1.2em;
+            line-height: 1;
+            transition: color 0.2s ease, transform 0.2s ease;
+        }
+
+        #placar-geral-container .nav-arrow:hover {
+            color: var(--cor-acento);
+            transform: scale(1.15);
+        }
+
+        .introducao-container, .exercicio-card {
+            background-color: var(--cor-fundo-secao);
+            width: 100%;
+            max-width: 900px;
+            padding: 25px 30px;
+            margin-bottom: 25px;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+            box-sizing: border-box;
+        }
+
+        .exercicio-card .question-container p { font-size: 1.1em; }
+
+        .options-container {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .option-button {
+            width: 100%;
+            padding: 15px;
+            font-size: 1em;
+            text-align: left;
+            background-color: var(--cor-fundo-geral);
+            border: 2px solid var(--cor-borda-sutil);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .option-button:not(:disabled):hover {
+            background-color: var(--cor-acento-hover);
+            border-color: var(--cor-acento);
+            transform: translateY(-2px);
+        }
+
+        .option-button:disabled {
+            cursor: not-allowed;
+            opacity: 0.7;
+        }
+
+        /* Cores de feedback usando variáveis :root */
+        .option-button.correto {
+            background-color: var(--cor-sucesso);
+            border-color: #27ae60;
+            color: white;
+            font-weight: bold;
+        }
+
+        .option-button.incorreto {
+            background-color: var(--cor-erro);
+            border-color: #c0392b;
+            color: white;
+            font-weight: bold;
+        }
+
+        .explanation-container {
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.5s ease-out;
+            background-color: var(--cor-fundo-secao-destaque);
+            border-radius: 8px;
+            padding: 0 20px;
+            margin-top: 0;
+            border-left: 4px solid var(--cor-primaria-hover);
+        }
+
+        .explanation-container.visible {
+            max-height: 500px;
+            margin-top: 20px;
+            padding: 20px;
+        }
+
+        /* Estilos da Tabela de Resumo */
+        .summary-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 0.9em;
+        }
+
+        .summary-table th, .summary-table td {
+            border: 1px solid var(--cor-borda-sutil);
+            padding: 8px;
+            text-align: left;
+        }
+
+        .summary-table th {
+            background-color: var(--cor-fundo-secao-destaque);
+            color: var(--cor-primaria);
+        }
+
+        .introducao-container ul {
+            padding-left: 20px;
+            list-style-position: inside;
+        }
+        
+        /* Contêiner do botão "Voltar ao Topo" */
+        .rodape-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        @media (max-width: 800px) {
+            .game-title { font-size: 1.8em; }
+            h2 { font-size: 1.5em; }
+        }
+    </style>
+
+                <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-M8ZG06010Q"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-M8ZG06010Q');
+    </script>
+</head>
+<body id="topo">
+
+<div class="cabecalho-container">
+<header class="bloco-identidade">
+    <div class="logo-and-title">
+        <a href="/index.html">
+            <img src="/Images/logo novo grande.png" alt="Logo FFES" class="logo-img">
+        </a>
+        <a href="/index.html" style="text-decoration: none; color: inherit;">
+            <h1>Leo Ramos | Professor de Inglês</h1>
+        </a>
+    </div>
+</header>
+
+
+<div class="bloco-navegacao"> 
+    <nav class="nav-primary">
+        <ul>
+            <li><a href="/index.html#home">Home</a></li>
+            <li><a href="/index.html#sobre">Sobre Mim</a></li>
+            <li><a href="/exercicios-e-artigos.html#exercicios">Exercícios</a></li>
+            <li><a href="/exercicios-e-artigos.html#artigos-vocab">Artigos</a></li>
+            <li><a href="/cursos-e-ebook.html#cursos">Cursos e E-book</a></li>
+            <li><a href="/index.html#metodologia">Metodologia</a></li>
+        </ul>
+    </nav>
+</div>
+
+
+</div>
+
+<main>
+    <h1 class="game-title">Jogo de Reported Speech (Discurso Indireto)</h1>
+    <div id="placar-geral-container">
+        <p>Acertos: <strong id="acertos-geral">0</strong></p>
+        <a href="#contato" class="nav-arrow" title="Ir para o final da página">&#11015;</a>
+        <p>Erros: <strong id="erros-geral">0</strong></p>
+    </div>
+    <button id="reset-btn" class="cta-button">Jogar Novamente</button>
+    <hr>
+    
+    <div class="introducao-container" style="text-align: left;">
+        <h3>Guia Completo de Discurso Direto e Indireto</h3>
+        <p><strong>Discurso Direto:</strong> Citar as palavras exatas de alguém, usando aspas (" "). Ex: <i>She said, "I am tired."</i></p>
+        <p><strong>Discurso Indireto (Reportado):</strong> Relatar o que alguém disse com suas próprias palavras, sem aspas. Isso causa mudanças na frase. Ex: <i>She said that she was tired.</i></p>
+
+        <h4>1. Backshift of Tenses (Mudança nos Tempos Verbais)</h4>
+        <p>Quando o verbo de reporte (said, told) está no passado, o tempo verbal da fala original "dá um passo para trás" no passado.</p>
+        <table class="summary-table">
+            <thead><tr><th>Discurso Direto (Verbo)</th><th>Discurso Indireto (Verbo)</th></tr></thead>
+            <tbody>
+                <tr><td>Simple Present (I <strong>work</strong>)</td><td>Simple Past (he <strong>worked</strong>)</td></tr>
+                <tr><td>Present Continuous (I <strong>am working</strong>)</td><td>Past Continuous (he <strong>was working</strong>)</td></tr>
+                <tr><td>Simple Past (I <strong>worked</strong>)</td><td>Past Perfect (he <strong>had worked</strong>)</td></tr>
+                <tr><td>Present Perfect (I <strong>have worked</strong>)</td><td>Past Perfect (he <strong>had worked</strong>)</td></tr>
+                <tr><td>Future 'will' (I <strong>will work</strong>)</td><td>Would (he <strong>would work</strong>)</td></tr>
+                <tr><td>Can</td><td>Could</td></tr>
+                <tr><td>May</td><td>Might</td></tr>
+                <tr><td>Must</td><td>Had to</td></tr>
+            </tbody>
+        </table>
+        
+        <h4>2. Mudança de Pronomes e Advérbios</h4>
+        <p>Palavras que indicam proximidade (no tempo e espaço) também mudam para refletir a nova perspectiva.</p>
+        <ul>
+            <li><strong>Pronomes:</strong> "<strong>I</strong> like <strong>your</strong> car." -> <i>He said that <strong>he</strong> liked <strong>my</strong> car.</i></li>
+            <li><strong>Tempo/Lugar:</strong> `today` -> `that day`, `tomorrow` -> `the next day`, `yesterday` -> `the day before`, `now` -> `then`, `here` -> `there`.</li>
+        </ul>
+
+        <h4>3. Reportando Afirmações, Perguntas e Ordens</h4>
+        <ul>
+            <li><strong>Afirmações:</strong> Usam as regras de backshift. <i>Ana said, "I will go." -> Ana said that she <strong>would go</strong>.</i></li>
+            <li><strong>Perguntas:</strong> A frase vira uma afirmação (sem inversão) e é introduzida por <strong>if/whether</strong> (para perguntas de sim/não) ou pela <strong>Wh-word</strong>.
+                <br><i>"Are you busy?" -> He asked <strong>if I was</strong> busy.</i>
+                <br><i>"Where do you live?" -> She asked me <strong>where I lived</strong>.</i></li>
+            <li><strong>Ordens/Pedidos:</strong> Usa-se a estrutura <strong>verbo + objeto + to + verbo</strong>.
+                <br><i>"Close the door." -> He told me <strong>to close</strong> the door.</i>
+                <br><i>"Don't be late." -> She asked us <strong>not to be</strong> late.</i></li>
+        </ul>
+
+        <h4>4. Exceções ao Backshift</h4>
+        <p>O tempo verbal NÃO muda se:</p>
+        <ul>
+            <li>A afirmação é um fato universal ou verdade geral (<i>The Earth <strong>is</strong> round</i>).</li>
+            <li>A situação reportada ainda é verdadeira no presente (<i>He said his brother <strong>is</strong> a doctor</i>).</li>
+            <li>O verbo de reporte está no presente (<i>She <strong>says</strong> she <strong>will</strong> be there</i>).</li>
+        </ul>
+    </div>
+    
+    <div id="exercicios-container"></div>
+    <div class="rodape-container">
+        <a href="#topo" class="nav-button">&#11014;</a>
+    </div>
+</main>
+
+<footer id="contato" class="site-footer">
+    <div class="footer-content">
+        <div class="social-media-links">
+            <h4>Siga-me nas redes sociais e acesse o App</h4>
+            <a href="https://www.youtube.com/@teacherleoramos/videos" target="_blank" rel="noopener noreferrer" title="Canal YouTube Teacher Leo Ramos" aria-label="YouTube">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/youtube-play.png" alt="Ícone YouTube" width="30" height="30" loading="lazy">
+            </a>
+            <a href="https://www.instagram.com/teacherleoramos/" target="_blank" rel="noopener noreferrer" title="Instagram Teacher Leo Ramos" aria-label="Instagram">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/instagram-new.png" alt="Ícone Instagram" width="30" height="30" loading="lazy">
+            </a>
+            <a href="https://www.tiktok.com/@teacherleoramos" target="_blank" rel="noopener noreferrer" title="TikTok Teacher Leo Ramos" aria-label="TikTok">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/tiktok.png" alt="Ícone TikTok" width="30" height="30" loading="lazy">
+            </a>
+            <a href="https://wa.me/5511955582118" target="_blank" rel="noopener noreferrer" title="WhatsApp Agendamento" aria-label="WhatsApp">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/whatsapp--v1.png" alt="Ícone WhatsApp" width="30" height="30" loading="lazy">
+            </a>
+            <a href="/index-app.html" target="_blank" rel="noopener noreferrer" title="Acesse o FFES App" aria-label="FFES App">  
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/controller.png" alt="Ícone FFES App" width="30" height="30" loading="lazy">
+            </a>
+        </div>
+        <p><strong>Contato</strong></p>
+        <p>Youtube: @teacherleoramos | Telefone - WhatsApp: (11) 95558-2118</p>
+        <p>Endereço: São Paulo, SP, Brasil</p>
+        <p>CNPJ: 43.226.983/0001-91</p>
+        <p>&copy; <span id="year">2025</span> | FEATHERED FRIENDS ENGLISH SCHOOL - FFES. Todos os direitos reservados.</p>
+    </div>
+</footer>
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    // REMOVIDA A INJEÇÃO DE HTML DO CABEÇALHO E RODAPÉ
+    // O HTML agora é estático.
+
+    const dadosReportedSpeech = [
+        { id: 'rs-1', pergunta: 'Passe para o discurso indireto: He said, "I <strong>am</strong> happy."', opcoes: ['He said that he is happy.', 'He said that he was happy.', 'He said that I am happy.', 'He said that I was happy.'], respostaCorreta: 'He said that he was happy.', explicacao: 'O pronome "I" muda para "he" e o verbo no Simple Present ("am") muda para o Simple Past ("was").' },
+        { id: 'rs-2', pergunta: 'Passe para o discurso indireto: She said, "I <strong>will</strong> call you <strong>tomorrow</strong>."', opcoes: ['She said she will call me tomorrow.', 'She said she would call me tomorrow.', 'She said she will call me the next day.', 'She said she would call me the next day.'], respostaCorreta: 'She said she would call me the next day.', explicacao: '"Will" muda para "would" e o advérbio de tempo "tomorrow" muda para "the next day".' },
+        { id: 'rs-3', pergunta: 'Passe para o discurso indireto: They asked, "Where <strong>do</strong> you live?"', opcoes: ['They asked where do I live.', 'They asked where I live.', 'They asked where did I live.', 'They asked where I lived.'], respostaCorreta: 'They asked where I lived.', explicacao: 'Ao reportar uma pergunta, a estrutura volta a ser afirmativa (sem inversão). O auxiliar "do" é removido e o verbo "live" vai para o passado "lived".' },
+        { id: 'rs-4', pergunta: 'Passe para o discurso indireto: The teacher said, "<strong>Do</strong> your homework."', opcoes: ['The teacher said to do my homework.', 'The teacher told me to do my homework.', 'The teacher said that I do my homework.', 'The teacher told me do my homework.'], respostaCorreta: 'The teacher told me to do my homework.', explicacao: 'Para reportar uma ordem ou pedido, usamos a estrutura "tell/ask + objeto + to + verbo".' },
+        { id: 'rs-5', pergunta: 'Passe para o discurso indireto: John said, "<strong>My</strong> car is blue."', opcoes: ['John said that my car is blue.', 'John said that your car was blue.', 'John said that his car was blue.', 'John said that John\'s car is blue.'], respostaCorreta: 'John said that his car was blue.', explicacao: 'O pronome possessivo "My" muda para "his" para concordar com o novo falante (John), e o verbo "is" muda para "was".' },
+        { id: 'rs-6', pergunta: 'Passe para o discurso indireto: The guide said, "The museum <strong>closes</strong> at 5 PM."', opcoes: ['The guide said the museum had closed at 5 PM.', 'The guide said the museum would close at 5 PM.', 'The guide said the museum closes at 5 PM.', 'The guide said the museum was closing at 5 PM.'], respostaCorreta: 'The guide said the museum closes at 5 PM.', explicacao: 'Esta é uma exceção ao backshift. Como se trata de um fato ou horário fixo que ainda é verdade, o tempo verbal pode permanecer no presente.' },
+        { id: 'rs-7', pergunta: 'Passe para o discurso indireto: "<strong>Are</strong> you coming to the party?" he asked.', opcoes: ['He asked if I am coming to the party.', 'He asked that I was coming to the party.', 'He asked if I was coming to the party.', 'He asked that am I coming to the party.'], respostaCorreta: 'He asked if I was coming to the party.', explicacao: 'Perguntas de sim/não são introduzidas por "if" ou "whether", e a estrutura da frase se torna afirmativa (I was coming).' },
+        { id: 'rs-8', pergunta: 'Passe para o discurso indireto: Maria said, "I <strong>visited</strong> Paris last year."', opcoes: ['Maria said she visited Paris last year.', 'Maria said she was visiting Paris the year before.', 'Maria said she had visited Paris the previous year.', 'Maria said she has visited Paris the previous year.'], respostaCorreta: 'Maria said she had visited Paris the previous year.', explicacao: 'O Simple Past ("visited") muda para o Past Perfect ("had visited"), e "last year" muda para "the previous year".' },
+        { id: 'rs-9', pergunta: 'Passe para o discurso indireto: He said, "I <strong>am writing</strong> a letter <strong>now</strong>."', opcoes: ['He said he was writing a letter then.', 'He said he is writing a letter now.', 'He said he wrote a letter then.', 'He said he was writing a letter now.'], respostaCorreta: 'He said he was writing a letter then.', explicacao: 'O Present Continuous ("am writing") muda para o Past Continuous ("was writing") e "now" muda para "then".' },
+        { id: 'rs-10', pergunta: 'Passe para o discurso indireto: She asked, "<strong>Can</strong> you help me?"', opcoes: ['She asked if I can help her.', 'She asked if you could help her.', 'She asked can I help her.', 'She asked if I could help her.'], respostaCorreta: 'She asked if I could help her.', explicacao: 'O modal "can" muda para "could", o pronome "me" muda para "her" e, por ser uma pergunta, introduzimos com "if".' },
+        { id: 'rs-11', pergunta: 'Passe para o discurso indireto: Tom said, "I <strong>have finished</strong> my work."', opcoes: ['Tom said that he has finished his work.', 'Tom said that he had finished his work.', 'Tom said that he finished his work.', 'Tom said that I had finished my work.'], respostaCorreta: 'Tom said that he had finished his work.', explicacao: 'O Present Perfect ("have finished") muda para o Past Perfect ("had finished"), e "my" muda para "his".' },
+        { id: 'rs-12', pergunta: 'Passe para o discurso indireto: The doctor said, "<strong>Don\'t</strong> smoke."', opcoes: ['The doctor told me don\'t smoke.', 'The doctor told me to not smoke.', 'The doctor told me not to smoke.', 'The doctor said not to smoke.'], respostaCorreta: 'The doctor told me not to smoke.', explicacao: 'Para ordens negativas, a estrutura é "told + object + not to + verb".' },
+        { id: 'rs-13', pergunta: 'Passe para o discurso indireto: "What <strong>are</strong> you doing?" she asked.', opcoes: ['She asked what I was doing.', 'She asked what was I doing.', 'She asked what are you doing.', 'She asked what I am doing.'], respostaCorreta: 'She asked what I was doing.', explicacao: 'A pergunta se torna uma afirmação na ordem das palavras (sujeito "I" antes do verbo "was"), e o Present Continuous vai para o Past Continuous.' },
+        { id: 'rs-14', pergunta: 'Passe para o discurso indireto: He said, "I <strong>must</strong> go."', opcoes: ['He said he must go.', 'He said he had to go.', 'He said he would go.', 'He said he should go.'], respostaCorreta: 'He said he had to go.', explicacao: '"Must" geralmente muda para "had to" no discurso indireto para expressar obrigação.' },
+        { id: 'rs-15', pergunta: 'Passe para o discurso indireto: My friend said, "I saw a great film <strong>yesterday</strong>."', opcoes: ['My friend said he saw a great film the day before.', 'My friend said he had seen a great film yesterday.', 'My friend said he had seen a great film the day before.', 'My friend said he seen a great film yesterday.'], respostaCorreta: 'My friend said he had seen a great film the day before.', explicacao: 'O Simple Past ("saw") muda para Past Perfect ("had seen") e "yesterday" muda para "the day before".' },
+        { id: 'rs-16', pergunta: 'Passe para o discurso indireto: "Please wait <strong>here</strong>," he said.', opcoes: ['He asked me to wait here.', 'He asked me to wait there.', 'He said to me wait here.', 'He asked me please wait there.'], respostaCorreta: 'He asked me to wait there.', explicacao: 'Para um pedido, usamos "asked me to + verbo". O advérbio de lugar "here" muda para "there".' },
+        { id: 'rs-17', pergunta: 'Passe para o discurso indireto: She says, "I <strong>will</strong> always love you."', opcoes: ['She says she would always love me.', 'She says she will always love me.', 'She said she would always love me.', 'She says she will always loved me.'], respostaCorreta: 'She says she will always love me.', explicacao: 'Quando o verbo de reporte está no presente ("says"), não há mudança no tempo verbal (backshift). "Will" permanece "will".' },
+        { id: 'rs-18', pergunta: 'Passe para o discurso indireto: He asked, "<strong>Did</strong> you finish the project?"', opcoes: ['He asked if I did finish the project.', 'He asked if I finished the project.', 'He asked had I finished the project.', 'He asked if I had finished the project.'], respostaCorreta: 'He asked if I had finished the project.', explicacao: 'A pergunta no Simple Past se torna uma afirmação no Past Perfect, introduzida por "if".' },
+        { id: 'rs-19', pergunta: 'Passe para o discurso indireto: "I <strong>may</strong> be late," she said.', opcoes: ['She said she may be late.', 'She said she could be late.', 'She said she might be late.', 'She said she would be late.'], respostaCorreta: 'She said she might be late.', explicacao: 'O modal "may" muda para "might" no discurso indireto para indicar possibilidade.' },
+        { id: 'rs-20', pergunta: 'Passe para o discurso indireto: The teacher said, "The Earth <strong>is</strong> round."', opcoes: ['The teacher said the Earth was round.', 'The teacher said the Earth is round.', 'The teacher said the Earth had been round.', 'The teacher said the Earth would be round.'], respostaCorreta: 'The teacher said the Earth is round.', explicacao: 'Esta é uma exceção. Para fatos universais e verdades gerais, o tempo verbal não muda.' },
+        { id: 'rs-21', pergunta: 'Passe para o discurso indireto: "Don\'t make noise," the librarian told us.', opcoes: ['The librarian told us to not make noise.', 'The librarian told us don\'t make noise.', 'The librarian told us not to make noise.', 'The librarian told us to don\'t make noise.'], respostaCorreta: 'The librarian told us not to make noise.', explicacao: 'Uma ordem negativa é reportada com a estrutura "told + objeto + not to + verbo".' },
+        { id: 'rs-22', pergunta: 'Passe para o discurso indireto: He said, "I am going to the cinema <strong>tonight</strong>."', opcoes: ['He said he was going to the cinema tonight.', 'He said he was going to the cinema that night.', 'He said he is going to the cinema that night.', 'He said he would go to the cinema that night.'], respostaCorreta: 'He said he was going to the cinema that night.', explicacao: '"Am going" (Present Continuous) muda para "was going" (Past Continuous) e "tonight" muda para "that night".' },
+        { id: 'rs-23', pergunta: 'Passe para o discurso indireto: "When <strong>does</strong> the train leave?" I asked.', opcoes: ['I asked when did the train leave.', 'I asked when the train left.', 'I asked when does the train leave.', 'I asked when the train leaves.'], respostaCorreta: 'I asked when the train left.', explicacao: 'Remove-se o auxiliar "does", a frase volta à ordem afirmativa e o verbo "leave" vai para o Simple Past ("left").' },
+        { id: 'rs-24', pergunta: 'Passe para o discurso indireto: She said, "I can\'t find <strong>my</strong> keys."', opcoes: ['She said she couldn\'t find my keys.', 'She said she can\'t find her keys.', 'She said she couldn\'t find her keys.', 'She said I couldn\'t find her keys.'], respostaCorreta: 'She said she couldn\'t find her keys.', explicacao: '"Can\'t" muda para "couldn\'t" e o pronome possessivo "my" muda para "her".' },
+        
+        { id: 'rs-25', pergunta: 'Passe para o discurso indireto: "Let\'s go to the beach," he suggested.', opcoes: ['He suggested to go to the beach.', 'He suggested that we should go to the beach.', 'He suggested let\'s go to the beach.', 'He suggested us to go to the beach.'], respostaCorreta: 'He suggested that we should go to the beach.', explicacao: 'Para sugestões com "Let\'s", a estrutura mais comum é "suggested that we should + verbo".' },
+        { id: 'rs-26', pergunta: 'Passe para o discurso indireto: He said, "I am flying to London <strong>tomorrow</strong>."', opcoes: ['He said he is flying to London the next day.', 'He said he was flying to London tomorrow.', 'He said he was flying to London the next day.', 'He said he would fly to London the next day.'], respostaCorreta: 'He said he was flying to London the next day.', explicacao: '"Am flying" (Present Continuous) muda para "was flying" (Past Continuous), e "tomorrow" muda para "the next day".' },
+        { id: 'rs-27', pergunta: 'Passe para o discurso indireto: "What is your name?" the officer asked.', opcoes: ['The officer asked what is my name.', 'The officer asked what my name was.', 'The officer asked what was my name.', 'The officer asked what my name is.'], respostaCorreta: 'The officer asked what my name was.', explicacao: 'A ordem da pergunta muda para a de uma afirmação (sujeito "my name" + verbo "was").' },
+        { id: 'rs-28', pergunta: 'Passe para o discurso indireto: "I have never been here before," said Carol.', opcoes: ['Carol said she had never been there before.', 'Carol said she has never been here before.', 'Carol said she had never been here before.', 'Carol said she was never there before.'], respostaCorreta: 'Carol said she had never been there before.', explicacao: 'Present Perfect ("have been") muda para Past Perfect ("had been"), e "here" muda para "there".' },
+        { id: 'rs-29', pergunta: 'Passe para o discurso indireto: "Do you want a drink?" she offered.', opcoes: ['She offered if I wanted a drink.', 'She asked me if I wanted a drink.', 'She offered me if I want a drink.', 'She asked me do I want a drink.'], respostaCorreta: 'She asked me if I wanted a drink.', explicacao: 'Uma pergunta de sim/não no presente simples ("Do you want") é reportada com "if" e o verbo no passado simples ("if I wanted").' },
+        { id: 'rs-30', pergunta: 'Passe para o discurso indireto: He promised, "I will be back by noon."', opcoes: ['He promised he will be back by noon.', 'He promised he would have been back by noon.', 'He promised he would be back by noon.', 'He promised I would be back by noon.'], respostaCorreta: 'He promised he would be back by noon.', explicacao: 'O verbo de reporte é "promised", e "will" muda para "would" na oração reportada.' },
+        { id: 'rs-31', pergunta: 'Passe para o discurso indireto: "Who did you see at the party?" he asked.', opcoes: ['He asked who I had seen at the party.', 'He asked who did I see at the party.', 'He asked who I saw at the party.', 'He asked who had I seen at the party.'], respostaCorreta: 'He asked who I had seen at the party.', explicacao: 'Uma pergunta no Simple Past ("did you see") é reportada com o Past Perfect ("had seen") e a ordem afirmativa (sujeito "I" antes do verbo).' },
+        { id: 'rs-32', pergunta: 'Passe para o discurso indireto: "I wasn\'t listening," he admitted.', opcoes: ['He admitted that he wasn\'t listening.', 'He admitted that he hadn\'t been listening.', 'He admitted that I hadn\'t been listening.', 'He admitted that he isn\'t listening.'], respostaCorreta: 'He admitted that he hadn\'t been listening.', explicacao: 'O Past Continuous ("wasn\'t listening") muda para o Past Perfect Continuous ("hadn\'t been listening").' },
+        { id: 'rs-33', pergunta: 'Passe para o discurso indireto: "Open the window, please," she said.', opcoes: ['She said to me to open the window.', 'She asked to me to open the window.', 'She asked me to open the window.', 'She said me to open the window.'], respostaCorreta: 'She asked me to open the window.', explicacao: 'Um pedido educado ("please") é reportado usando a estrutura "ask + objeto + to-infinitive".' },
+        { id: 'rs-34', pergunta: 'Passe para o discurso indireto: "I might go to the cinema," he said.', opcoes: ['He said he might go to the cinema.', 'He said he may go to the cinema.', 'He said he had to go to the cinema.', 'He said he would go to the cinema.'], respostaCorreta: 'He said he might go to the cinema.', explicacao: 'Os modais "might", "could", "should", "would" e "ought to" não mudam no discurso indireto.' },
+        { id: 'rs-35', pergunta: 'Passe para o discurso indireto: He says, "I am feeling ill."', opcoes: ['He says that he was feeling ill.', 'He said he was feeling ill.', 'He says that he is feeling ill.', 'He said he is feeling ill.'], respostaCorreta: 'He says that he is feeling ill.', explicacao: 'Como o verbo de reporte está no presente ("says"), o tempo verbal da fala original não muda (backshift não é aplicado).' },
+        { id: 'rs-36', pergunta: 'Passe para o discurso indireto: "Why are you crying?" asked the boy.', opcoes: ['The boy asked why she was crying.', 'The boy asked why was she crying.', 'The boy asked why is she crying.', 'The boy asked her why you are crying.'], respostaCorreta: 'The boy asked why she was crying.', explicacao: 'A Wh-question é reportada mantendo a "wh-word" e mudando a estrutura para a forma afirmativa (sujeito "she" + verbo "was crying").' },
+        { id: 'rs-37', pergunta: 'Passe para o discurso indireto: She said, "I have to finish this report <strong>today</strong>."', opcoes: ['She said she had to finish that report today.', 'She said she has to finish that report that day.', 'She said she had to finish this report today.', 'She said she had to finish that report that day.'], respostaCorreta: 'She said she had to finish that report that day.', explicacao: '"Have to" muda para "had to", "this" muda para "that", e "today" muda para "that day".' },
+        { id: 'rs-38', pergunta: 'Passe para o discurso indireto: "Don\'t wait for me," he said.', opcoes: ['He said don\'t wait for him.', 'He told me to not wait for him.', 'He told me not to wait for him.', 'He said to me not to wait for him.'], respostaCorreta: 'He told me not to wait for him.', explicacao: 'Uma ordem negativa é reportada com "told + objeto + not to + verbo". O pronome "me" muda para "him".' },
+        { id: 'rs-39', pergunta: 'Passe para o discurso indireto: "Were you sleeping when I called?" she asked.', opcoes: ['She asked if I was sleeping when she called.', 'She asked if I had been sleeping when she had called.', 'She asked was I sleeping when she called.', 'She asked if I have been sleeping when she had called.'], respostaCorreta: 'She asked if I had been sleeping when she had called.', explicacao: 'Past Continuous ("were you sleeping") muda para Past Perfect Continuous ("had been sleeping"), e o Simple Past ("called") muda para Past Perfect ("had called").' },
+        { id: 'rs-40', pergunta: 'Passe para o discurso indireto: He said, "I\'ll see you <strong>next week</strong>."', opcoes: ['He said he would see me next week.', 'He said he will see me the following week.', 'He said he would see me the following week.', 'He said he would see me the week after.'], respostaCorreta: 'He said he would see me the following week.', explicacao: '"I\'ll" (I will) muda para "he would", e "next week" muda para "the following week" ou "the week after".' }
+    ];
+
+    const container = document.getElementById('exercicios-container');
+    const placarAcertosGeralEl = document.getElementById('acertos-geral');
+    const placarErrosGeralEl = document.getElementById('erros-geral');
+    const resetButton = document.getElementById('reset-btn');
+    let acertos = 0;
+    let erros = 0;
+    
+    function shuffleArray(array) { for (let i = array.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [array[i], array[j]] = [array[j], array[i]]; } }
+
+    function criarExercicioHTML(exercicioData, numeroExercicio) {
+        // Embaralha as opções para este exercício específico
+        const opcoesEmbaralhadas = [...exercicioData.opcoes];
+        shuffleArray(opcoesEmbaralhadas);
+
+        const opcoesHTML = opcoesEmbaralhadas.map(opcao => `<button class="option-button" data-resposta="${opcao}">${opcao}</button>`).join('');
+        return `<section class="exercicio-card" id="exercicio-${exercicioData.id}" data-id="${exercicioData.id}"><h2 class="h2-exercicio">Exercício ${numeroExercicio}</h2><div class="question-container"><p>${exercicioData.pergunta}</p><div class="options-container">${opcoesHTML}</div></div><div class="explanation-container" id="explicacao-${exercicioData.id}"><p>${exercicioData.explicacao}</p></div></section>`;
+    }
+
+    function verificarResposta(exercicioId, btnClicado) {
+        const exercicioData = dadosReportedSpeech.find(e => e.id === exercicioId);
+        const exercicioCard = document.getElementById(`exercicio-${exercicioData.id}`);
+        const botoes = exercicioCard.querySelectorAll('.option-button');
+        botoes.forEach(btn => btn.disabled = true);
+        const explicacaoEl = document.getElementById(`explicacao-${exercicioData.id}`);
+        explicacaoEl.classList.add('visible');
+        if (btnClicado.dataset.resposta === exercicioData.respostaCorreta) {
+            btnClicado.classList.add('correto');
+            acertos++;
+        } else {
+            btnClicado.classList.add('incorreto');
+            const respostaCorretaBtn = Array.from(botoes).find(btn => btn.dataset.resposta === exercicioData.respostaCorreta);
+            if (respostaCorretaBtn) { respostaCorretaBtn.classList.add('correto'); }
+            erros++;
+        }
+        placarAcertosGeralEl.textContent = acertos;
+        placarErrosGeralEl.textContent = erros;
+    }
+
+    function iniciarJogo() {
+        acertos = 0;
+        erros = 0;
+        placarAcertosGeralEl.textContent = '0';
+        placarErrosGeralEl.textContent = '0';
+        shuffleArray(dadosReportedSpeech);
+        container.innerHTML = dadosReportedSpeech.map((dado, index) => criarExercicioHTML(dado, index + 1)).join('');
+        
+        // Remove o event listener antigo e recria para evitar duplicatas
+        const newContainer = container.cloneNode(true);
+        container.parentNode.replaceChild(newContainer, container);
+        
+        newContainer.addEventListener('click', (event) => {
+            if (event.target.classList.contains('option-button') && !event.target.disabled) {
+                const btnClicado = event.target;
+                const exercicioCard = btnClicado.closest('.exercicio-card');
+                const exercicioId = exercicioCard.dataset.id;
+                verificarResposta(exercicioId, btnClicado);
+            }
+        });
+        
+        // Rola a tela para o início do main content ao reiniciar
+        document.querySelector('main').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    resetButton.addEventListener('click', iniciarJogo);
+    iniciarJogo();
+});
+</script>
+
+</body>
+</html>

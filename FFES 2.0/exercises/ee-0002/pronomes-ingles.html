@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Exercício: Pronomes (Indefinidos, Recíprocos) | Professor Leo Ramos</title>
+    <meta name="description" content="Aprenda e pratique os pronomes indefinidos (everybody, someone), recíprocos (each other) e intensivos (myself) em inglês com exercícios interativos.">
+    <meta name="author" content="Leo Ramos">
+    <meta name="robots" content="index, follow">
+    <meta name="keywords" content="pronomes indefinidos, pronomes recíprocos, pronomes intensivos, exercícios de inglês, Leo Ramos, FFES">
+    
+    <link rel="canonical" href="https://teacherleoramos.com.br/Ex2-3-4-5-6/pronomes-indefinidos.html">
+    <link rel="stylesheet" href="/CSS/universal.css">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="/Images/logofavicion.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/Images/logofavicion.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/Images/logofavicion.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/Images/logofavicion.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/Images/logofavicion.png">
+
+    <meta property="og:title" content="Exercício: Pronomes (Indefinidos, Recíprocos) | Professor Leo Ramos">
+    <meta property="og:description" content="Pratique pronomes indefinidos (everybody, someone), recíprocos (each other) e intensivos (myself, himself) com este quiz.">
+    <meta property="og:image" content="https://teacherleoramos.com.br/Images/preview-social.jpg">
+    <meta property="og:url" content="https://teacherleoramos.com.br/Ex2-3-4-5-6/pronomes-indefinidos.html">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:site_name" content="FFES - Professor Leo Ramos">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Exercício: Pronomes (Indefinidos, Recíprocos) | Professor Leo Ramos">
+    <meta name="twitter:description" content="Pratique pronomes indefinidos (everybody, someone), recíprocos (each other) e intensivos (myself, himself) com este quiz.">
+    <meta name="twitter:image" content="https://teacherleoramos.com.br/Images/preview-social.jpg">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Quiz",
+      "name": "Jogo dos Pronomes: Indefinidos, Recíprocos e Intensivos",
+      "description": "Um quiz interativo para praticar o uso correto de pronomes indefinidos (everybody, someone, many), recíprocos (each other) e intensivos (myself, herself).",
+      "url": "https://teacherleoramos.com.br/Ex2-3-4-5-6/pronomes-indefinidos.html",
+      "image": "https://teacherleoramos.com.br/Images/preview-social.jpg",
+      "author": {
+        "@type": "Person",
+        "name": "Leo Ramos",
+        "url": "https://teacherleoramos.com.br"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "FFES - Professor Leo Ramos",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://teacherleoramos.com.br/Images/logo novo grande.png"
+        }
+      },
+      "learningResourceType": "Quiz",
+      "educationalLevel": "Intermediate"
+    }
+    </script>
+    
+    <style>
+        .game-title {
+            color: var(--cor-texto-claro);
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.6);
+        }
+        #placar-geral-container {
+            background: rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: var(--cor-texto-claro);
+            padding: 15px 25px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            font-size: 1.1em;
+        }
+        #placar-geral-container p { margin: 0; }
+        #placar-geral-container .nav-arrow {
+            color: inherit;
+            text-decoration: none;
+            font-size: 1.2em;
+            line-height: 1;
+            transition: color 0.2s ease, transform 0.2s ease;
+        }
+        #placar-geral-container .nav-arrow:hover {
+            color: var(--cor-acento);
+            transform: scale(1.15);
+        }
+        .introducao-container, .exercicio-card {
+            background-color: var(--cor-fundo-secao);
+            width: 100%;
+            max-width: 900px;
+            padding: 25px 30px;
+            margin-bottom: 25px;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+            box-sizing: border-box;
+        }
+        .exercicio-card .question-container p { font-size: 1.1em; }
+        .options-container {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 20px;
+        }
+        .option-button {
+            width: 100%;
+            padding: 15px;
+            font-size: 1em;
+            text-align: left;
+            background-color: var(--cor-fundo-geral);
+            border: 2px solid var(--cor-borda-sutil);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .option-button:not(:disabled):hover {
+            background-color: var(--cor-acento-hover);
+            border-color: var(--cor-acento);
+            transform: translateY(-2px);
+        }
+        .option-button:disabled {
+            cursor: not-allowed;
+            opacity: 0.7;
+        }
+        .option-button.correto {
+            background-color: var(--cor-sucesso);
+            border-color: #27ae60;
+            color: white;
+            font-weight: bold;
+        }
+        .option-button.incorreto {
+            background-color: var(--cor-erro);
+            border-color: #c0392b;
+            color: white;
+            font-weight: bold;
+        }
+        .explanation-container {
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.5s ease-out;
+            background-color: var(--cor-fundo-secao-destaque);
+            border-radius: 8px;
+            padding: 0 20px;
+            margin-top: 0;
+            border-left: 4px solid var(--cor-primaria-hover);
+        }
+        .explanation-container.visible {
+            max-height: 500px;
+            margin-top: 20px;
+            padding: 20px;
+        }
+        /* Estilos para a tabela de resumo */
+        .summary-table { width: 100%; border-collapse: collapse; margin-top: 15px; font-size: 0.9em; }
+        .summary-table th, .summary-table td { border: 1px solid var(--cor-borda-sutil); padding: 8px; text-align: left; }
+        .summary-table th { background-color: var(--cor-fundo-secao-destaque); color: var(--cor-primaria); }
+        .summary-table td { background-color: #fff; }
+        .summary-table td:first-child { font-weight: bold; color: var(--cor-primaria-hover); }
+        .introducao-container ul { padding-left: 20px; }
+        
+        /* Contêiner do botão "Voltar ao Topo" */
+        .rodape-container {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        @media (max-width: 800px) {
+            .game-title { font-size: 1.8em; }
+            h2 { font-size: 1.5em; }
+        }
+    </style>
+
+                <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-M8ZG06010Q"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-M8ZG06010Q');
+    </script>
+</head>
+<body id="topo">
+
+<div class="cabecalho-container">
+<header class="bloco-identidade">
+    <div class="logo-and-title">
+        <a href="/index.html">
+            <img src="/Images/logo novo grande.png" alt="Logo FFES" class="logo-img">
+        </a>
+        <a href="/index.html" style="text-decoration: none; color: inherit;">
+            <h1>Leo Ramos | Professor de Inglês</h1>
+        </a>
+    </div>
+</header>
+
+
+<div class="bloco-navegacao"> 
+    <nav class="nav-primary">
+        <ul>
+            <li><a href="/index.html#home">Home</a></li>
+            <li><a href="/index.html#sobre">Sobre Mim</a></li>
+            <li><a href="/exercicios-e-artigos.html#exercicios">Exercícios</a></li>
+            <li><a href="/exercicios-e-artigos.html#artigos-vocab">Artigos</a></li>
+            <li><a href="/cursos-e-ebook.html#cursos">Cursos e E-book</a></li>
+            <li><a href="/index.html#metodologia">Metodologia</a></li>
+        </ul>
+    </nav>
+</div>
+
+
+
+</div>
+
+<main>
+    <h1 class="game-title">Jogo dos Pronomes: Indefinidos, Recíprocos e Intensivos</h1>
+
+    <div id="placar-geral-container">
+        <p>Acertos Gerais: <strong id="acertos-geral">0</strong></p>
+        <a href="#contato" class="nav-arrow" title="Ir para o final da página">&#11015;</a>
+        <p>Erros Gerais: <strong id="erros-geral">0</strong></p>
+    </div>
+
+    <button id="reset-btn" class="cta-button">Jogar Novamente</button>
+
+    <div class="introducao-container" style="text-align: left;">
+        <h3>Guia Completo de Pronomes (Parte Final)</h3>
+
+        <h4>1. Indefinite Pronouns (Pronomes Indefinidos)</h4>
+        <p>Referem-se a pessoas ou coisas de forma não específica. A concordância verbal é a regra principal.</p>
+        <ul>
+            <li><strong>Sempre Singulares (verbo no singular):</strong> `everybody`, `everyone`, `everything`, `somebody`, `someone`, `something`, `anybody`, `anyone`, `anything`, `nobody`, `no one`, `nothing`.<br>
+            Exemplo: <em>Everybody <strong>is</strong> happy.</em></li>
+            <li><strong>Sempre Plurais (verbo no plural):</strong> `both`, `few`, `many`, `others`, `several`.<br>
+            Exemplo: <em>Many <strong>are</strong> called, but few <strong>are</strong> chosen.</em></li>
+            <li><strong>Pode ser Singular ou Plural (depende do contexto):</strong> `all`, `any`, `most`, `none`, `some`.<br>
+            Exemplo (Singular): <em>Some of the cake <strong>is</strong> missing.</em> (bolo é incontável)<br>
+            Exemplo (Plural): <em>Some of the students <strong>are</strong> late.</em> (alunos é contável)</li>
+        </ul>
+
+        <hr style="width: 100%; margin: 20px 0;">
+        
+        <h4>2. Reciprocal Pronouns (Pronomes Recíprocos)</h4>
+        <p>Indicam uma ação ou relação mútua entre dois ou mais sujeitos. Existem apenas dois:</p>
+        <ul>
+            <li><strong>each other:</strong> Tradicionalmente para 2 sujeitos, mas hoje usado de forma geral.</li>
+            <li><strong>one another:</strong> Tradicionalmente para 3 ou mais sujeitos, hoje intercambiável com 'each other'.</li>
+        </ul>
+        <p>Exemplo: <em>The two friends trust <strong>each other</strong>.</em> (Os dois amigos confiam um no outro.)</p>
+        
+        <hr style="width: 100%; margin: 20px 0;">
+
+        <h4>3. Intensive Pronouns (Pronomes Intensivos ou de Ênfase)</h4>
+        <p>São idênticos aos reflexivos (`myself`, `himself`, etc.), mas servem apenas para <strong>dar ênfase</strong> a um substantivo ou pronome. Significam "pessoalmente" ou "o próprio / a própria".</p>
+        <p><strong>Diferença Crucial:</strong> O pronome intensivo pode ser removido da frase sem alterar seu sentido básico. O reflexivo não.</p>
+        <table class="summary-table">
+            <thead><tr><th>Uso</th><th>Exemplo</th><th>Análise</th></tr></thead>
+            <tbody>
+                <tr>
+                    <td><strong>Intensivo (Ênfase)</strong></td>
+                    <td><em>The director <strong>himself</strong> called me.</em></td>
+                    <td>Pode ser removido: "The director called me." (A frase ainda faz sentido.)</td>
+                </tr>
+                <tr>
+                    <td><strong>Reflexivo (Ação)</strong></td>
+                    <td><em>He cut <strong>himself</strong>.</em></td>
+                    <td>Não pode ser removido: "He cut." (A frase fica incompleta ou muda de sentido.)</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div id="exercicios-container"></div>
+
+    <div class="rodape-container">
+        <a href="#topo" class="nav-button" title="Ir para o início da página">&#11014;</a>
+    </div>
+</main>
+
+<footer id="contato" class="site-footer">
+    <div class="footer-content">
+        <div class="social-media-links">
+            <h4>Siga-me nas redes sociais e acesse o App</h4>
+            <a href="https://www.youtube.com/@teacherleoramos/videos" target="_blank" rel="noopener noreferrer" title="Canal YouTube Teacher Leo Ramos" aria-label="YouTube">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/youtube-play.png" alt="Ícone YouTube" width="30" height="30" loading="lazy">
+            </a>
+            <a href="https://www.instagram.com/teacherleoramos/" target="_blank" rel="noopener noreferrer" title="Instagram Teacher Leo Ramos" aria-label="Instagram">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/instagram-new.png" alt="Ícone Instagram" width="30" height="30" loading="lazy">
+            </a>
+            <a href="https://www.tiktok.com/@teacherleoramos" target="_blank" rel="noopener noreferrer" title="TikTok Teacher Leo Ramos" aria-label="TikTok">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/tiktok.png" alt="Ícone TikTok" width="30" height="30" loading="lazy">
+            </a>
+            <a href="https://wa.me/5511955582118" target="_blank" rel="noopener noreferrer" title="WhatsApp Agendamento" aria-label="WhatsApp">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/whatsapp--v1.png" alt="Ícone WhatsApp" width="30" height="30" loading="lazy">
+            </a>
+            <a href="/index-app.html" target="_blank" rel="noopener noreferrer" title="Acesse o FFES App" aria-label="FFES App">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/controller.png" alt="Ícone FFES App" width="30" height="30" loading="lazy">
+            </a>
+        </div>
+        <p><strong>Contato</strong></p>
+        <p>Youtube: @teacherleoramos | Telefone - WhatsApp: (11) 95558-2118</p>
+        <p>Endereço: São Paulo, SP, Brasil</p>
+        <p>CNPJ: 43.226.983/0001-91</p>
+        <p>&copy; <span id="year">2025</span> | FEATHERED FRIENDS ENGLISH SCHOOL - FFES. Todos os direitos reservados.</p>
+    </div>
+</footer>
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const dadosPronomesFinal = [
+        { id: 'pf-1', frase: 'Everybody ___ excited for the trip.', pergunta: 'Qual verbo completa a frase corretamente?', opcoes: ['is', 'are', 'was', 'were'], respostaCorreta: 'is', explicacao: 'Pronomes indefinidos como "Everybody" são gramaticalmente singulares e exigem um verbo no singular, como "is".' },
+        { id: 'pf-2', frase: 'Several of the applicants ___ very qualified.', pergunta: 'Qual verbo completa a frase corretamente?', opcoes: ['was', 'were', 'is', 'are'], respostaCorreta: 'were', explicacao: '"Several" é um pronome indefinido plural e exige um verbo no plural, como "were".' },
+        { id: 'pf-3', frase: 'Some of the pizza ___ already been eaten.', pergunta: 'Qual verbo completa a frase corretamente?', opcoes: ['has', 'have', 'is', 'are'], respostaCorreta: 'has', explicacao: '"Some" aqui se refere a "pizza" (incontável/singular), então o verbo deve ser singular ("has").' },
+        { id: 'pf-4', frase: 'Some of the guests ___ already left.', pergunta: 'Qual verbo completa a frase corretamente?', opcoes: ['has', 'have', 'is', 'are'], respostaCorreta: 'have', explicacao: '"Some" aqui se refere a "guests" (contável/plural), então o verbo deve ser plural ("have").' },
+        { id: 'pf-5', frase: 'The two kids were blaming __ for the mess.', pergunta: 'Qual pronome completa a frase corretamente?', opcoes: ['each other', 'one another', 'themselves', 'itself'], respostaCorreta: 'each other', explicacao: '"Each other" é usado para indicar uma ação mútua (um culpando o outro) entre dois sujeitos.' },
+        { id: 'pf-6', frase: 'The queen ___ presented the award.', pergunta: 'Qual pronome completa a frase para dar ênfase?', opcoes: ['her', 'hers', 'herself', 'she'], respostaCorreta: 'herself', explicacao: 'O pronome intensivo "herself" é usado para enfatizar que a própria rainha, pessoalmente, entregou o prêmio.' },
+        { id: 'pf-7', frase: 'He accidentally cut ___ while shaving.', pergunta: 'Qual pronome completa a frase corretamente?', opcoes: ['him', 'his', 'himself', 'he'], respostaCorreta: 'himself', explicacao: 'O pronome reflexivo "himself" é essencial aqui, pois a ação (cortar) volta para o sujeito (He). Sem ele, a frase estaria incompleta.' },
+        { id: 'pf-8', frase: 'I ___ will fix the problem. You can count on it.', pergunta: 'Qual pronome adiciona ênfase à frase?', opcoes: ['me', 'myself', 'mine', 'I'], respostaCorreta: 'myself', explicacao: 'O pronome intensivo "myself" é usado para enfatizar que "Eu mesmo" vou resolver o problema.' },
+        { id: 'pf-9', frase: 'At the end of the game, the players shook hands with ___.', pergunta: 'Qual pronome indica ação mútua?', opcoes: ['each other', 'themselves', 'them', 'theirs'], respostaCorreta: 'each other', explicacao: '"Each other" (ou "one another") é usado para mostrar que os jogadores apertaram as mãos uns dos outros.' },
+        { id: 'pf-10', frase: 'Is ___ in the room? I heard a noise.', pergunta: 'Qual pronome indefinido completa a pergunta?', opcoes: ['Anyone', 'No one', 'Someone', 'Everyone'], respostaCorreta: 'Anyone', explicacao: '"Anyone" (alguém) é geralmente usado em perguntas e frases negativas.' }
+    ];
+
+    const container = document.getElementById('exercicios-container');
+    const placarAcertosGeralEl = document.getElementById('acertos-geral');
+    const placarErrosGeralEl = document.getElementById('erros-geral');
+    const resetButton = document.getElementById('reset-btn');
+
+    // Referência para o listener, para poder removê-lo
+    let eventListenerRef;
+
+    function shuffleArray(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+        }
+    }
+
+    function criarExercicioHTML(exercicioData, numeroExercicio) {
+        const opcoesEmbaralhadas = [...exercicioData.opcoes];
+        shuffleArray(opcoesEmbaralhadas);
+        const opcoesHTML = opcoesEmbaralhadas.map(opcao =>
+            `<button class="option-button" data-resposta="${opcao}">${opcao}</button>`
+        ).join('');
+        
+        const fraseFormatada = exercicioData.frase.replace('___', '<strong style="color: var(--cor-primaria-hover);">___</strong>');
+
+        return `
+            <section class="exercicio-card" id="exercicio-${exercicioData.id}" data-id="${exercicioData.id}">
+                <h2>Exercício ${numeroExercicio}</h2>
+                <div class="question-container">
+                    <p><strong>Frase:</strong> ${fraseFormatada}</p>
+                    <p>${exercicioData.pergunta}</p>
+                    <div class="options-container">${opcoesHTML}</div>
+                </div>
+                <div class="explanation-container" id="explicacao-${exercicioData.id}"><p>${exercicioData.explicacao}</p></div>
+            </section>
+        `;
+    }
+
+    function verificarResposta(exercicioId, btnClicado) {
+        const exercicioData = dadosPronomesFinal.find(e => e.id === exercicioId);
+        const exercicioCard = document.getElementById(`exercicio-${exercicioData.id}`);
+        const botoes = exercicioCard.querySelectorAll('.option-button');
+        
+        botoes.forEach(btn => btn.disabled = true);
+
+        const explicacaoEl = document.getElementById(`explicacao-${exercicioData.id}`);
+        explicacaoEl.classList.add('visible');
+
+        if (btnClicado.dataset.resposta === exercicioData.respostaCorreta) {
+            btnClicado.classList.add('correto');
+            placarAcertosGeralEl.textContent = parseInt(placarAcertosGeralEl.textContent) + 1;
+        } else {
+            btnClicado.classList.add('incorreto');
+            placarErrosGeralEl.textContent = parseInt(placarErrosGeralEl.textContent) + 1;
+            
+            const respostaCorretaBtn = Array.from(botoes).find(btn => btn.dataset.resposta === exercicioData.respostaCorreta);
+            if (respostaCorretaBtn) {
+                respostaCorretaBtn.classList.add('correto');
+            }
+        }
+    }
+
+    function iniciarJogo() {
+        placarAcertosGeralEl.textContent = '0';
+        placarErrosGeralEl.textContent = '0';
+        shuffleArray(dadosPronomesFinal);
+        container.innerHTML = dadosPronomesFinal.map((dado, index) => criarExercicioHTML(dado, index + 1)).join('');
+        
+        // Remove o listener antigo se ele existir
+        if (eventListenerRef) {
+            container.removeEventListener('click', eventListenerRef);
+        }
+        
+        // Define o novo listener
+        eventListenerRef = (event) => {
+            if (event.target.classList.contains('option-button') && !event.target.disabled) {
+                const btnClicado = event.target;
+                const exercicioCard = btnClicado.closest('.exercicio-card');
+                const exercicioId = exercicioCard.dataset.id;
+                verificarResposta(exercicioId, btnClicado);
+            }
+        };
+        
+        // Adiciona o novo listener
+        container.addEventListener('click', eventListenerRef);
+
+        // Rola a tela para o início do main content ao reiniciar
+        document.querySelector('main').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    resetButton.addEventListener('click', iniciarJogo);
+    iniciarJogo(); // Inicia o jogo pela primeira vez
+});
+</script>
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Exercício: Pronomes (Relativos, Demonstrativos) | Professor Leo Ramos</title>
+    <meta name="description" content="Aprenda e pratique os pronomes relativos (who, which, whose), demonstrativos (this, that) e interrogativos em inglês com exercícios interativos.">
+    <meta name="author" content="Leo Ramos">
+    <meta name="robots" content="index, follow">
+    <meta name="keywords" content="pronomes relativos, pronomes demonstrativos, pronomes interrogativos, exercícios de inglês, Leo Ramos, FFES">
+    
+    <link rel="canonical" href="https://teacherleoramos.com.br/Ex2-3-4-5-6/pronomes-demonstrativos.html">
+    <link rel="stylesheet" href="/CSS/universal.css">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="/Images/logofavicion.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/Images/logofavicion.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/Images/logofavicion.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/Images/logofavicion.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/Images/logofavicion.png">
+
+    <meta property="og:title" content="Exercício: Pronomes (Relativos, Demonstrativos) | Professor Leo Ramos">
+    <meta property="og:description" content="Pratique pronomes relativos (who, which, whose), demonstrativos (this, that, these, those) e interrogativos com este quiz.">
+    <meta property="og:image" content="https://teacherleoramos.com.br/Images/preview-social.jpg">
+    <meta property="og:url" content="https://teacherleoramos.com.br/Ex2-3-4-5-6/pronomes-demonstrativos.html">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:site_name" content="FFES - Professor Leo Ramos">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Exercício: Pronomes (Relativos, Demonstrativos) | Professor Leo Ramos">
+    <meta name="twitter:description" content="Pratique pronomes relativos (who, which, whose), demonstrativos (this, that, these, those) e interrogativos com este quiz.">
+    <meta name="twitter:image" content="https://teacherleoramos.com.br/Images/preview-social.jpg">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Quiz",
+      "name": "Jogo dos Pronomes: Relativos, Demonstrativos e Interrogativos",
+      "description": "Um quiz interativo para praticar o uso correto de pronomes relativos (who, which, whose), demonstrativos (this, that, these, those) e interrogativos (who, what, which).",
+      "url": "https://teacherleoramos.com.br/Ex2-3-4-5-6/pronomes-demonstrativos.html",
+      "image": "https://teacherleoramos.com.br/Images/preview-social.jpg",
+      "author": {
+        "@type": "Person",
+        "name": "Leo Ramos",
+        "url": "https://teacherleoramos.com.br"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "FFES - Professor Leo Ramos",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://teacherleoramos.com.br/Images/logo novo grande.png"
+        }
+      },
+      "learningResourceType": "Quiz",
+      "educationalLevel": "Intermediate"
+    }
+    </script>
+    
+    <style>
+        .game-title {
+            color: var(--cor-texto-claro);
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.6);
+        }
+        #placar-geral-container {
+            background: rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: var(--cor-texto-claro);
+            padding: 15px 25px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            font-size: 1.1em;
+        }
+        #placar-geral-container p { margin: 0; }
+        #placar-geral-container .nav-arrow {
+            color: inherit;
+            text-decoration: none;
+            font-size: 1.2em;
+            line-height: 1;
+            transition: color 0.2s ease, transform 0.2s ease;
+        }
+        #placar-geral-container .nav-arrow:hover {
+            color: var(--cor-acento);
+            transform: scale(1.15);
+        }
+        .introducao-container, .exercicio-card {
+            background-color: var(--cor-fundo-secao);
+            width: 100%;
+            max-width: 900px;
+            padding: 25px 30px;
+            margin-bottom: 25px;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+            box-sizing: border-box;
+        }
+        .exercicio-card .question-container p { font-size: 1.1em; }
+        .options-container {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 20px;
+        }
+        .option-button {
+            width: 100%;
+            padding: 15px;
+            font-size: 1em;
+            text-align: left;
+            background-color: var(--cor-fundo-geral);
+            border: 2px solid var(--cor-borda-sutil);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .option-button:not(:disabled):hover {
+            background-color: var(--cor-acento-hover);
+            border-color: var(--cor-acento);
+            transform: translateY(-2px);
+        }
+        .option-button:disabled {
+            cursor: not-allowed;
+            opacity: 0.7;
+        }
+        .option-button.correto {
+            background-color: var(--cor-sucesso);
+            border-color: #27ae60;
+            color: white;
+            font-weight: bold;
+        }
+        .option-button.incorreto {
+            background-color: var(--cor-erro);
+            border-color: #c0392b;
+            color: white;
+            font-weight: bold;
+        }
+        .explanation-container {
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.5s ease-out;
+            background-color: var(--cor-fundo-secao-destaque);
+            border-radius: 8px;
+            padding: 0 20px;
+            margin-top: 0;
+            border-left: 4px solid var(--cor-primaria-hover);
+        }
+        .explanation-container.visible {
+            max-height: 500px;
+            margin-top: 20px;
+            padding: 20px;
+        }
+        /* Estilos para a tabela de resumo */
+        .summary-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            font-size: 0.9em;
+        }
+        .summary-table th, .summary-table td {
+            border: 1px solid var(--cor-borda-sutil);
+            padding: 8px;
+            text-align: left;
+        }
+        .summary-table th {
+            background-color: var(--cor-fundo-secao-destaque);
+            color: var(--cor-primaria);
+            text-align: center;
+        }
+        .summary-table td {
+            background-color: #fff;
+        }
+        .summary-table td:first-child {
+            font-weight: bold;
+            color: var(--cor-primaria-hover);
+        }
+        /* Contêiner do botão "Voltar ao Topo" */
+        .rodape-container {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        @media (max-width: 800px) {
+            .game-title { font-size: 1.8em; }
+            h2 { font-size: 1.5em; }
+        }
+    </style>
+
+                <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-M8ZG06010Q"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-M8ZG06010Q');
+    </script>
+</head>
+<body id="topo">
+
+<div class="cabecalho-container">
+<header class="bloco-identidade">
+    <div class="logo-and-title">
+        <a href="/index.html">
+            <img src="/Images/logo novo grande.png" alt="Logo FFES" class="logo-img">
+        </a>
+        <a href="/index.html" style="text-decoration: none; color: inherit;">
+            <h1>Leo Ramos | Professor de Inglês</h1>
+        </a>
+    </div>
+</header>
+
+
+<div class="bloco-navegacao"> 
+    <nav class="nav-primary">
+        <ul>
+            <li><a href="/index.html#home">Home</a></li>
+            <li><a href="/index.html#sobre">Sobre Mim</a></li>
+            <li><a href="/exercicios-e-artigos.html#exercicios">Exercícios</a></li>
+            <li><a href="/exercicios-e-artigos.html#artigos-vocab">Artigos</a></li>
+            <li><a href="/cursos-e-ebook.html#cursos">Cursos e E-book</a></li>
+            <li><a href="/index.html#metodologia">Metodologia</a></li>
+        </ul>
+    </nav>
+</div>
+
+
+</div>
+
+<main>
+    <h1 class="game-title">Jogo dos Pronomes: Relativos, Demonstrativos e Interrogativos</h1>
+
+    <div id="placar-geral-container">
+        <p>Acertos Gerais: <strong id="acertos-geral">0</strong></p>
+        <a href="#contato" class="nav-arrow" title="Ir para o final da página">&#11015;</a>
+        <p>Erros Gerais: <strong id="erros-geral">0</strong></p>
+    </div>
+
+    <button id="reset-btn" class="cta-button">Jogar Novamente</button>
+
+    <div class="introducao-container" style="text-align: left;">
+        <h3>Guia Completo de Pronomes</h3>
+
+        <h4>1. Relative Pronouns (Pronomes Relativos)</h4>
+        <p>Conectam orações, dando mais informações sobre um substantivo. Evitam a repetição.</p>
+        <table class="summary-table">
+            <thead><tr><th colspan="2">Pronomes Relativos</th></tr></thead>
+            <tbody>
+                <tr><td><strong>Who</strong></td><td>Para <strong>pessoas</strong> (sujeito). Ex: <em>The actor <strong>who</strong> won the Oscar...</em></td></tr>
+                <tr><td><strong>Whom</strong></td><td>Para <strong>pessoas</strong> (objeto, formal). Ex: <em>The woman <strong>whom</strong> I met...</em></td></tr>
+                <tr><td><strong>Whose</strong></td><td>Indica <strong>posse</strong>. Ex: <em>The student <strong>whose</strong> phone rang...</em></td></tr>
+                <tr><td><strong>Which</strong></td><td>Para <strong>coisas ou animais</strong>. Ex: <em>This is the book <strong>which</strong> I was reading.</em></td></tr>
+                <tr><td><strong>That</strong></td><td>Para <strong>pessoas, coisas ou animais</strong> (geralmente em orações essenciais, sem vírgula). Ex: <em>Where is the cake <strong>that</strong> I bought?</em></td></tr>
+            </tbody>
+        </table>
+        <p style="font-size: 0.9em; margin-top: 10px;"><strong>Dica:</strong> Nunca use <strong>that</strong> depois de uma vírgula em orações explicativas. Use <strong>which</strong> (para coisas) ou <strong>who</strong> (para pessoas).</p>
+
+        <hr style="width: 100%; margin: 20px 0;">
+        
+        <h4>2. Demonstrative Pronouns (Pronomes Demonstrativos)</h4>
+        <p>"Apontam" para substantivos, indicando distância e quantidade.</p>
+        <table class="summary-table">
+             <thead><tr><th></th><th>Perto (Here)</th><th>Longe (There)</th></tr></thead>
+             <tbody>
+                 <tr><td><strong>Singular</strong></td><td><strong>This</strong> (Este, Esta, Isto)</td><td><strong>That</strong> (Aquele, Aquela, Aquilo)</td></tr>
+                 <tr><td><strong>Plural</strong></td><td><strong>These</strong> (Estes, Estas)</td><td><strong>Those</strong> (Aqueles, Aquelas)</td></tr>
+             </tbody>
+        </table>
+        <ul>
+            <li>Exemplo (perto): <em><strong>This</strong> is my cup and <strong>these</strong> are my books.</em></li>
+            <li>Exemplo (longe): <em><strong>That</strong> car is new and <strong>those</strong> houses are old.</em></li>
+        </ul>
+        
+        <hr style="width: 100%; margin: 20px 0;">
+
+        <h4>3. Interrogative Pronouns (Pronomes Interrogativos)</h4>
+        <p>Iniciam uma pergunta.</p>
+        <table class="summary-table">
+            <thead><tr><th colspan="2">Pronomes Interrogativos</th></tr></thead>
+            <tbody>
+                <tr><td><strong>Who</strong></td><td>Pergunta sobre <strong>pessoas</strong> (sujeito). Ex: <em><strong>Who</strong> is your best friend?</em></td></tr>
+                <tr><td><strong>Whom</strong></td><td>Pergunta sobre <strong>pessoas</strong> (objeto, formal). Ex: <em><strong>Whom</strong> did you invite?</em></td></tr>
+                <tr><td><strong>Whose</strong></td><td>Pergunta sobre <strong>posse</strong>. Ex: <em><strong>Whose</strong> jacket is this?</em></td></tr>
+                <tr><td><strong>What</strong></td><td>Pergunta sobre <strong>coisas ou ideias</strong> de forma geral. Ex: <em><strong>What</strong> is your favorite color?</em></td></tr>
+                <tr><td><strong>Which</strong></td><td>Pergunta para escolher entre um <strong>número limitado de opções</strong>. Ex: <em><strong>Which</strong> do you prefer, coffee or tea?</em></td></tr>
+            </tbody>
+        </table>
+
+    </div>
+    <div id="exercicios-container"></div>
+
+    <div class="rodape-container">
+        <a href="#topo" class="nav-button" title="Ir para o início da página">&#11014;</a>
+    </div>
+</main>
+
+<footer id="contato" class="site-footer">
+    <div class="footer-content">
+        <div class="social-media-links">
+            <h4>Siga-me nas redes sociais e acesse o App</h4>
+            <a href="https://www.youtube.com/@teacherleoramos/videos" target="_blank" rel="noopener noreferrer" title="Canal YouTube Teacher Leo Ramos" aria-label="YouTube">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/youtube-play.png" alt="Ícone YouTube" width="30" height="30" loading="lazy">
+            </a>
+            <a href="https://www.instagram.com/teacherleoramos/" target="_blank" rel="noopener noreferrer" title="Instagram Teacher Leo Ramos" aria-label="Instagram">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/instagram-new.png" alt="Ícone Instagram" width="30" height="30" loading="lazy">
+            </a>
+            <a href="https://www.tiktok.com/@teacherleoramos" target="_blank" rel="noopener noreferrer" title="TikTok Teacher Leo Ramos" aria-label="TikTok">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/tiktok.png" alt="Ícone TikTok" width="30" height="30" loading="lazy">
+            </a>
+            <a href="https://wa.me/5511955582118" target="_blank" rel="noopener noreferrer" title="WhatsApp Agendamento" aria-label="WhatsApp">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/whatsapp--v1.png" alt="Ícone WhatsApp" width="30" height="30" loading="lazy">
+            </a>
+            <a href="/index-app.html" target="_blank" rel="noopener noreferrer" title="Acesse o FFES App" aria-label="FFES App">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/controller.png" alt="Ícone FFES App" width="30" height="30" loading="lazy">
+            </a>
+        </div>
+        <p><strong>Contato</strong></p>
+        <p>Youtube: @teacherleoramos | Telefone - WhatsApp: (11) 95558-2118</p>
+        <p>Endereço: São Paulo, SP, Brasil</p>
+        <p>CNPJ: 43.226.983/0001-91</p>
+        <p>&copy; <span id="year">2025</span> | FEATHERED FRIENDS ENGLISH SCHOOL - FFES. Todos os direitos reservados.</p>
+    </div>
+</footer>
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const dadosPronomesAvancados = [
+        { id: 'pa-1', frase: 'The girl ___ is sitting over there is my cousin.', pergunta: 'Qual pronome relativo completa a frase?', opcoes: ['who', 'which', 'whose', 'what'], respostaCorreta: 'who', explicacao: 'Usamos "who" para nos referir a pessoas (the girl) quando são o sujeito da oração.' },
+        { id: 'pa-2', frase: 'That\'s the man ___ car was stolen.', pergunta: 'Qual pronome relativo completa a frase?', opcoes: ['who', 'which', 'whose', 'whom'], respostaCorreta: 'whose', explicacao: 'Usamos "whose" para indicar posse (o carro pertence ao homem).' },
+        { id: 'pa-3', frase: 'Look at ___ diamond ring on my finger.', pergunta: 'Qual pronome demonstrativo completa a frase?', opcoes: ['this', 'that', 'these', 'those'], respostaCorreta: 'this', explicacao: 'Usamos "this" para um objeto singular que está perto (no meu dedo).' },
+        { id: 'pa-4', frase: 'Can you see ___ birds flying way up in the sky?', pergunta: 'Qual pronome demonstrativo completa a frase?', opcoes: ['this', 'that', 'these', 'those'], respostaCorreta: 'those', explicacao: 'Usamos "those" para objetos no plural que estão longe (lá no céu).' },
+        { id: 'pa-5', frase: '___ is the capital of Brazil?', pergunta: 'Qual pronome interrogativo completa a pergunta?', opcoes: ['What', 'Which', 'Who', 'Whose'], respostaCorreta: 'What', explicacao: 'Usamos "What" para perguntar sobre uma coisa ou informação de forma geral.' },
+        { id: 'pa-6', frase: '___ of these two options do you prefer?', pergunta: 'Qual pronome interrogativo completa a pergunta?', opcoes: ['What', 'Which', 'Who', 'Whose'], respostaCorreta: 'Which', explicacao: 'Usamos "Which" para perguntar quando há um número limitado de opções para escolher (duas opções).' },
+        { id: 'pa-7', frase: 'This is the company ___ I work for.', pergunta: 'Qual pronome relativo completa a frase?', opcoes: ['who', 'which', 'whose', 'whom'], respostaCorreta: 'which', explicacao: 'Usamos "which" (ou "that") para nos referir a coisas (a empresa).' },
+        { id: 'pa-8', frase: 'Is ___ your house on the other side of the street?', pergunta: 'Qual pronome demonstrativo completa a frase?', opcoes: ['this', 'that', 'these', 'those'], respostaCorreta: 'that', explicacao: 'Usamos "that" para um objeto singular que está longe (do outro lado da rua).' },
+        { id: 'pa-9', frase: '___ backpack is this on my chair?', pergunta: 'Qual pronome interrogativo completa a pergunta?', opcoes: ['Who', 'What', 'Which', 'Whose'], respostaCorreta: 'Whose', explicacao: 'Usamos "Whose" para perguntar sobre posse (de quem é a mochila).' },
+        { id: 'pa-10', frase: 'The author ___ I admire most is Machado de Assis.', pergunta: 'Qual pronome relativo completa a frase?', opcoes: ['who', 'whom', 'whose', 'which'], respostaCorreta: 'whom', explicacao: '"Whom" é o pronome objeto formal para pessoas (I admire *him*/the author). Na fala comum, "who" ou "that" também seriam usados aqui.' }
+    ];
+
+    const container = document.getElementById('exercicios-container');
+    const placarAcertosGeralEl = document.getElementById('acertos-geral');
+    const placarErrosGeralEl = document.getElementById('erros-geral');
+    const resetButton = document.getElementById('reset-btn');
+
+    // Referência para o listener, para poder removê-lo
+    let eventListenerRef;
+
+    function shuffleArray(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+        }
+    }
+
+    function criarExercicioHTML(exercicioData, numeroExercicio) {
+        const opcoesEmbaralhadas = [...exercicioData.opcoes];
+        shuffleArray(opcoesEmbaralhadas);
+        const opcoesHTML = opcoesEmbaralhadas.map(opcao =>
+            `<button class="option-button" data-resposta="${opcao}">${opcao}</button>`
+        ).join('');
+        
+        const fraseFormatada = exercicioData.frase.replace('___', '<strong style="color: var(--cor-primaria-hover);">___</strong>');
+
+        return `
+            <section class="exercicio-card" id="exercicio-${exercicioData.id}" data-id="${exercicioData.id}">
+                <h2>Exercício ${numeroExercicio}</h2>
+                <div class="question-container">
+                    <p><strong>Frase:</strong> ${fraseFormatada}</p>
+                    <p>${exercicioData.pergunta}</p>
+                    <div class="options-container">${opcoesHTML}</div>
+                </div>
+                <div class="explanation-container" id="explicacao-${exercicioData.id}"><p>${exercicioData.explicacao}</p></div>
+            </section>
+        `;
+    }
+
+    function verificarResposta(exercicioId, btnClicado) {
+        const exercicioData = dadosPronomesAvancados.find(e => e.id === exercicioId);
+        const exercicioCard = document.getElementById(`exercicio-${exercicioData.id}`);
+        const botoes = exercicioCard.querySelectorAll('.option-button');
+        
+        botoes.forEach(btn => btn.disabled = true);
+
+        const explicacaoEl = document.getElementById(`explicacao-${exercicioData.id}`);
+        explicacaoEl.classList.add('visible');
+
+        if (btnClicado.dataset.resposta === exercicioData.respostaCorreta) {
+            btnClicado.classList.add('correto');
+            placarAcertosGeralEl.textContent = parseInt(placarAcertosGeralEl.textContent) + 1;
+        } else {
+            btnClicado.classList.add('incorreto');
+            placarErrosGeralEl.textContent = parseInt(placarErrosGeralEl.textContent) + 1;
+            
+            const respostaCorretaBtn = Array.from(botoes).find(btn => btn.dataset.resposta === exercicioData.respostaCorreta);
+            if (respostaCorretaBtn) {
+                respostaCorretaBtn.classList.add('correto');
+            }
+        }
+    }
+
+    function iniciarJogo() {
+        placarAcertosGeralEl.textContent = '0';
+        placarErrosGeralEl.textContent = '0';
+        shuffleArray(dadosPronomesAvancados);
+        container.innerHTML = dadosPronomesAvancados.map((dado, index) => criarExercicioHTML(dado, index + 1)).join('');
+        
+        // Remove o listener antigo se ele existir
+        if (eventListenerRef) {
+            container.removeEventListener('click', eventListenerRef);
+        }
+        
+        // Define o novo listener
+        eventListenerRef = (event) => {
+            if (event.target.classList.contains('option-button') && !event.target.disabled) {
+                const btnClicado = event.target;
+                const exercicioCard = btnClicado.closest('.exercicio-card');
+                const exercicioId = exercicioCard.dataset.id;
+                verificarResposta(exercicioId, btnClicado);
+            }
+        };
+        
+        // Adiciona o novo listener
+        container.addEventListener('click', eventListenerRef);
+
+        // Rola a tela para o início do main content ao reiniciar
+        document.querySelector('main').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    resetButton.addEventListener('click', iniciarJogo);
+    iniciarJogo(); // Inicia o jogo pela primeira vez
+});
+</script>
+
+</body>
+</html>

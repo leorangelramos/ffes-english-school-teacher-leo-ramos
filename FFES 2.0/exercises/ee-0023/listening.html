@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Treino de Listening em inglês: Múltipla Escolha | Professor Leo Ramos</title>
+    <meta name="description" content="Teste sua compreensão auditiva em inglês. Ouça a frase e escolha a opção correta. Exercício interativo com feedback imediato.">
+    <meta name="author" content="Leo Ramos">
+    <meta name="robots" content="index, follow">
+    
+    <link rel="canonical" href="https://teacherleoramos.com.br/ExListen/listening.html">
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="../Images/logofavicion.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../Images/logofavicion.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../Images/logofavicion.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="../Images/logofavicion.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="../Images/logofavicion.png">
+
+    <meta property="og:title" content="Listening Challenge: O que você ouviu?">
+    <meta property="og:description" content="Ouça o áudio e escolha a frase correta. Teste seu inglês auditivo agora.">
+    <meta property="og:image" content="https://teacherleoramos.com.br/Images/preview-social.jpg">
+    <meta property="og:url" content="https://teacherleoramos.com.br/ExListen/listening.html">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:site_name" content="FFES - Professor Leo Ramos">
+   
+    <link rel="stylesheet" href="../CSS/universal.css"> 
+
+    <style>
+        /* Banner (Padrão das outras páginas) */
+        .content-banner {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .content-banner h2 {
+            color: var(--cor-texto-claro); 
+            border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
+        }
+        .content-banner p {
+            color: #ecf0f1;
+            font-size: 1.15em;
+            margin-bottom: 20px;
+        }
+
+        /* Área de Seleção de Nível */
+        .level-selection-area {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .btn-level {
+            padding: 12px 20px;
+            background-color: var(--cor-primaria);
+            color: var(--cor-texto-claro);
+            border: 2px solid var(--cor-acento);
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: bold;
+            transition: background-color 0.2s ease, transform 0.2s ease;
+        }
+
+        .btn-level:hover {
+            background-color: var(--cor-primaria-hover);
+            transform: translateY(-2px);
+        }
+
+        .btn-level.active {
+            background-color: var(--cor-acento);
+            color: var(--cor-primaria);
+            border-color: var(--cor-primaria);
+        }
+
+        /* Container do Jogo */
+        .listening-container {
+            background: white;
+            border-radius: 8px;
+            padding: 30px;
+            max-width: 800px;
+            margin: 0 auto;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            text-align: center;
+            border-top: 6px solid var(--cor-acento);
+            
+            /* Oculta inicialmente */
+            opacity: 0;
+            max-height: 0;
+            padding-top: 0;
+            padding-bottom: 0;
+            overflow: hidden;
+            transition: opacity 0.5s ease-in-out, max-height 0.5s ease-in-out, padding 0.5s ease-in-out;
+        }
+        
+        .listening-container.visible {
+            opacity: 1;
+            max-height: 2000px; 
+            padding: 30px;
+        }
+
+        /* Botão principal de Áudio */
+        .btn-audio {
+            background-color: var(--cor-primaria);
+            color: var(--cor-texto-claro);
+            padding: 20px 40px;
+            font-size: 1.5em;
+            border-radius: 50px;
+            border: none;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 30px;
+            transition: background-color 0.2s ease, transform 0.2s ease;
+        }
+
+        .btn-audio:hover:not(:disabled) {
+            background-color: var(--cor-primaria-hover);
+            transform: scale(1.05);
+        }
+
+        .btn-audio:disabled {
+            background-color: #95a5a6;
+            cursor: not-allowed;
+        }
+
+        /* Estilo das Opções de Múltipla Escolha (Copiado do universal.css - option-button) */
+        .options-container {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .option-button {
+            width: 100%;
+            padding: 15px;
+            font-size: 1em;
+            text-align: left;
+            background-color: var(--cor-fundo-geral);
+            border: 2px solid var(--cor-borda-sutil);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+            box-sizing: border-box; /* Garante que o padding não aumente o tamanho */
+        }
+
+        .option-button:not(:disabled):hover {
+            background-color: #e0e0e0;
+            border-color: var(--cor-acento);
+        }
+
+        .option-button:disabled {
+            cursor: not-allowed;
+            opacity: 0.7;
+        }
+
+        .option-button.correto {
+            background-color: var(--cor-sucesso);
+            border-color: #27ae60;
+            color: white;
+            font-weight: bold;
+        }
+
+        .option-button.incorreto {
+            background-color: var(--cor-erro);
+            border-color: #c0392b;
+            color: white;
+            font-weight: bold;
+        }
+
+        /* Feedback (Padrão) */
+        .feedback-area {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 6px;
+            font-weight: normal;
+            display: none;
+            text-align: center;
+        }
+        
+        .feedback-success {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+            display: block;
+        }
+        
+        .feedback-error {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+            display: block;
+        }
+
+        .action-area-bottom {
+            margin-top: 25px;
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+    </style>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Treino de Listening: Múltipla Escolha",
+      "description": "Exercício interativo para testar a compreensão auditiva em inglês com áudios gerados por síntese de voz.",
+      "url": "https://teacherleoramos.com.br/ExListen/listening.html",
+      "author": {
+        "@type": "Person",
+        "name": "Leo Ramos"
+      },
+      "applicationCategory": "EducationalApplication",
+      "provider": {
+        "@type": "ProfessionalService",
+        "name": "FFES - Professor Leo Ramos"
+      }
+    }
+    </script>
+
+                <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-M8ZG06010Q"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-M8ZG06010Q');
+    </script>
+</head>
+<body>
+
+<div class="cabecalho-container">
+    <header class="bloco-identidade">
+        <div class="logo-and-title">
+            <a href="../index.html">
+                <img src="../Images/logo novo grande.png" alt="Logo FFES" class="logo-img">
+            </a>
+            <a href="../index.html" style="text-decoration: none; color: inherit;">
+                <h1>Leo Ramos | Professor de Inglês</h1>
+            </a>
+        </div>
+    </header>
+
+<div class="bloco-navegacao"> 
+    <nav class="nav-primary">
+        <ul>
+            <li><a href="/index.html#home">Home</a></li>
+            <li><a href="/index.html#sobre">Sobre Mim</a></li>
+            <li><a href="/exercicios-e-artigos.html#exercicios">Exercícios</a></li>
+            <li><a href="/exercicios-e-artigos.html#artigos-vocab">Artigos</a></li>
+            <li><a href="/cursos-e-ebook.html#cursos">Cursos e E-book</a></li>
+            <li><a href="/index.html#metodologia">Metodologia</a></li>
+        </ul>
+    </nav>
+</div>
+
+
+</div>
+
+<main>
+    <section class="content-banner">
+        <h2>Listening Challenge - O que você ouviu?</h2>
+        <p>Ouça atentamente a frase e selecione a opção que corresponde exatamente ao que foi dito.</p>
+
+        <div class="level-selection-area">
+            <button class="btn-level" data-level="A1" onclick="selectLevel('A1', this)">A1 Básico</button>
+            <button class="btn-level" data-level="A2" onclick="selectLevel('A2', this)">A2 Pré-Intermediário</button>
+            <button class="btn-level" data-level="B1" onclick="selectLevel('B1', this)">B1 Intermediário</button>
+            <button class="btn-level" data-level="B2" onclick="selectLevel('B2', this)">B2 Pós-Intermediário</button>
+            <button class="btn-level" data-level="C1" onclick="selectLevel('C1', this)">C1 Avançado</button>
+            <button class="btn-level" data-level="C2" onclick="selectLevel('C2', this)">C2 Proficiência</button>
+        </div>
+  
+        
+
+        <div id="listening-container" class="listening-container">
+            
+            <p id="level-info" style="font-style: italic; margin-bottom: 20px; color: #666;"></p>
+
+            <button class="btn-audio" id="play-audio-button" onclick="playAudio()" disabled>
+                <span style="font-size: 1.5em;">▶</span> Tocar Áudio
+            </button>
+
+            <div id="options-container" class="options-container">
+                <p style="color: #999;">Opções de resposta aparecerão aqui.</p>
+            </div>
+
+            <div id="feedback-display" class="feedback-area"></div>
+            
+            <div class="action-area-bottom">
+                <button class="cta-button" id="next-button" onclick="loadNextQuestion()" disabled>→ Próximo Áudio</button>
+            </div>
+            
+            <div style="margin-top: 20px; font-size: 0.9em; color: #7f8c8d;">
+                Questão <span id="q-current">--</span> de <span id="q-total">--</span>
+            </div>
+
+        </div>
+    </section>
+</main>
+
+<footer id="contato" class="site-footer">
+    <div class="footer-content">
+        <div class="social-media-links">
+            <h4>Siga-me nas redes sociais e acesse o App</h4>
+            <a href="https://www.youtube.com/@teacherleoramos/videos" target="_blank" rel="noopener noreferrer" title="Canal YouTube Teacher Leo Ramos" aria-label="YouTube">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/youtube-play.png" alt="Ícone YouTube" width="30" height="30" loading="lazy">
+            </a>
+            <a href="https://www.instagram.com/teacherleoramos/" target="_blank" rel="noopener noreferrer" title="Instagram Teacher Leo Ramos" aria-label="Instagram">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/instagram-new.png" alt="Ícone Instagram" width="30" height="30" loading="lazy">
+            </a>
+            <a href="https://www.tiktok.com/@teacherleoramos" target="_blank" rel="noopener noreferrer" title="TikTok Teacher Leo Ramos" aria-label="TikTok">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/tiktok.png" alt="Ícone TikTok" width="30" height="30" loading="lazy">
+            </a>
+            <a href="https://wa.me/5511955582118" target="_blank" rel="noopener noreferrer" title="WhatsApp Agendamento" aria-label="WhatsApp">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/whatsapp--v1.png" alt="Ícone WhatsApp" width="30" height="30" loading="lazy">
+            </a>
+            <a href="/index-app.html" target="_blank" rel="noopener noreferrer" title="Acesse o FFES App" aria-label="FFES App">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/controller.png" alt="Ícone FFES App" width="30" height="30" loading="lazy">
+            </a>
+        </div>
+        <p><strong>Contato</strong></p>
+        <p>Youtube: @teacherleoramos | Telefone - WhatsApp: (11) 95558-2118</p>
+        <p>Endereço: São Paulo, SP, Brasil</p>
+        <p>CNPJ: 43.226.983/0001-91</p>
+        <p>&copy; <span id="year">2025</span> | FEATHERED FRIENDS ENGLISH SCHOOL - FFES. Todos os direitos reservados.</p>
+    </div>
+</footer>
+
+
+<script>
+    
+    const allQuestions = [
+        
+        { level: 'A1', correct: "I am a student.", distractors: ["I have a student.", "I am student."] },
+        { level: 'A1', correct: "She is happy today.", distractors: ["She are happy today.", "She happy today."] },
+        { level: 'A1', correct: "Do you speak English?", distractors: ["You speak English?", "Does you speak English?"] },
+        { level: 'A1', correct: "We go to work by bus.", distractors: ["We goes to work by bus.", "We go to work on bus."] },
+        { level: 'A1', correct: "I don't like milk.", distractors: ["I not like milk.", "I doesn't like milk."] },
+        { level: 'A1', correct: "What is your name?", distractors: ["What your name is?", "What are your name?"] },
+        { level: 'A1', correct: "It is six o'clock.", distractors: ["It has six o'clock.", "Is it six o'clock."] },
+        { level: 'A1', correct: "I need help.", distractors: ["I needs help.", "I need a help."] },
+        { level: 'A1', correct: "Where are you from?", distractors: ["Where you are from?", "From where are you?"] },
+        { level: 'A1', correct: "How much is this book?", distractors: ["How many is this book?", "How cost this book?"] },
+        { level: 'A1', correct: "I want an apple.", distractors: ["I want a apple.", "I want one apple."] },
+        { level: 'A1', correct: "He is 25 years old.", distractors: ["He has 25 years old.", "He is 25 years."] },
+        { level: 'A1', correct: "They are at the park.", distractors: ["They is at the park.", "They are in the park."] },
+        { level: 'A1', correct: "I live in a small apartment.", distractors: ["I live on a small apartment.", "I living in a small apartment."] },
+        { level: 'A1', correct: "Does she like pizza?", distractors: ["Do she like pizza?", "She likes pizza?"] },
+        { level: 'A1', correct: "The cat is on the table.", distractors: ["The cat is in the table.", "The cat on the table."] },
+        { level: 'A1', correct: "We were tired yesterday.", distractors: ["We was tired yesterday.", "We are tired yesterday."] },
+        { level: 'A1', correct: "I saw him last night.", distractors: ["I see him last night.", "I seen him last night."] },
+        { level: 'A1', correct: "Did you go to the store?", distractors: ["Did you went to the store?", "You did go to the store?"] },
+        { level: 'A1', correct: "She ate lunch at noon.", distractors: ["She eat lunch at noon.", "She lunch at noon."] },
+        { level: 'A1', correct: "I walked home quickly.", distractors: ["I walk home quickly.", "I walked home quick."] },
+        { level: 'A1', correct: "Can you close the door?", distractors: ["You can close the door?", "Can you closing the door?"] },
+        { level: 'A1', correct: "We are watching TV now.", distractors: ["We watch TV now.", "We is watching TV now."] },
+        { level: 'A1', correct: "What are you doing?", distractors: ["What you are doing?", "What do you do?"] },
+        { level: 'A1', correct: "They are playing outside.", distractors: ["They is playing outside.", "They playing outside."] },
+        { level: 'A1', correct: "It is raining heavily.", distractors: ["It is rain heavily.", "It raining heavily."] },
+        { level: 'A1', correct: "I am feeling sick.", distractors: ["I feel sick.", "I am feel sick."] },
+        { level: 'A1', correct: "Where is the library?", distractors: ["Where the library is?", "Where are the library?"] },
+        { level: 'A1', correct: "There are two books.", distractors: ["There is two books.", "Is there two books?"] },
+        { level: 'A1', correct: "Is there a problem?", distractors: ["Are there a problem?", "There is a problem?"] },
+        { level: 'A1', correct: "I have two sisters.", distractors: ["I has two sisters.", "I have two sister."] },
+        { level: 'A1', correct: "This is her dog.", distractors: ["This is his dog.", "This is she dog."] },
+        { level: 'A1', correct: "The bag is theirs.", distractors: ["The bag is their.", "The bag is them."] },
+        { level: 'A1', correct: "Give the keys to me.", distractors: ["Give the keys me.", "Give me the key."] },
+        { level: 'A1', correct: "She sings well.", distractors: ["She sings good.", "She sings happily."] },
+       
+        
+        // =========================================
+        //                 NÍVEL A2 (50 Frases)
+        // =========================================
+        { level: 'A2', correct: "I have lived here since 2018.", distractors: ["I live here since 2018.", "I am living here since 2018."] },
+        { level: 'A2', correct: "She has gone to the store.", distractors: ["She has been to the store.", "She went to the store."] },
+        { level: 'A2', correct: "Have you ever seen a ghost?", distractors: ["Did you ever saw a ghost?", "Do you ever seen a ghost?"] },
+        { level: 'A2', correct: "I was sleeping when the phone rang.", distractors: ["I slept when the phone rang.", "I am sleeping when the phone rang."] },
+        { level: 'A2', correct: "They were playing soccer at 3 pm.", distractors: ["They played soccer at 3 pm.", "They are playing soccer at 3 pm."] },
+        { level: 'A2', correct: "You must study for the test.", distractors: ["You must to study for the test.", "You should studying for the test."] },
+        { level: 'A2', correct: "I can't swim very well.", distractors: ["I cannot to swim very well.", "I can't swimming very well."] },
+        { level: 'A2', correct: "We should talk about the problem.", distractors: ["We should to talk about the problem.", "We should talking about the problem."] },
+        { level: 'A2', correct: "It depends on the traffic.", distractors: ["It depends of the traffic.", "It depends to the traffic."] },
+        { level: 'A2', correct: "I look forward to hearing from you.", distractors: ["I look forward to hear from you.", "I look forward to listen to you."] },
+        { level: 'A2', correct: "She decided to quit her job.", distractors: ["She decided quitting her job.", "She decided quit her job."] },
+        { level: 'A2', correct: "I enjoy watching movies.", distractors: ["I enjoy to watch movies.", "I enjoys watching movies."] },
+        { level: 'A2', correct: "Can you explain this to me?", distractors: ["Can you explain me this?", "Can you explain this for me?"] },
+        { level: 'A2', correct: "I went to the bank to pay the bills.", distractors: ["I went to the bank for pay the bills.", "I went to the bank and pay the bills."] },
+        { level: 'A2', correct: "I need some advice.", distractors: ["I need an advice.", "I need few advice."] },
+        { level: 'A2', correct: "Life is beautiful.", distractors: ["The life is beautiful.", "A life is beautiful."] },
+        { level: 'A2', correct: "He is a great engineer.", distractors: ["He is great engineer.", "He is engineer."] },
+        { level: 'A2', correct: "It was such a cold day.", distractors: ["It was so a cold day.", "It was such cold day."] },
+        { level: 'A2', correct: "She is so friendly.", distractors: ["She is such friendly.", "She is too friendly."] },
+        { level: 'A2', correct: "He drives his car carefully.", distractors: ["He drives his car careful.", "He drives careful his car."] },
+        { level: 'A2', correct: "I am always tired.", distractors: ["I always am tired.", "I am tired always."] },
+        { level: 'A2', correct: "The vase was broken by the child.", distractors: ["The vase broke by the child.", "The vase was break by the child."] },
+        { level: 'A2', correct: "The report has been sent.", distractors: ["The report have been sent.", "The report was send."] },
+        { level: 'A2', correct: "If I were rich, I would travel.", distractors: ["If I was rich, I would travel.", "If I am rich, I would travel."] },
+        { level: 'A2', correct: "If it snows, the flight will be canceled.", distractors: ["If it will snow, the flight will be canceled.", "If it snow, the flight will be canceled."] },
+        { level: 'A2', correct: "What would you do if you lost your phone?", distractors: ["What you would do if you lost your phone?", "What will you do if you lost your phone?"] },
+        { level: 'A2', correct: "They said they were fine.", distractors: ["They said they are fine.", "They told they were fine."] },
+        { level: 'A2', correct: "She told me she left early.", distractors: ["She said me she left early.", "She told to me she left early."] },
+        { level: 'A2', correct: "I asked where he lived.", distractors: ["I asked where did he live.", "I asked where he lives."] },
+        { level: 'A2', correct: "The car is newer than mine.", distractors: ["The car is more newer than mine.", "The car is new than mine."] },
+        { level: 'A2', correct: "He is the smartest student.", distractors: ["He is most smart student.", "He is the smarter student."] },
+        { level: 'A2', correct: "I have too many worries.", distractors: ["I have too much worries.", "I have too many worry."] },
+        { level: 'A2', correct: "There is too much noise.", distractors: ["There are too much noise.", "There is too many noise."] },
+        { level: 'A2', correct: "I don't have enough time.", distractors: ["I don't have time enough.", "I don't have too time."] },
+
+        // =========================================
+        //                 NÍVEL B1 (50 Frases)
+        // =========================================
+        { level: 'B1', correct: "I wish I could speak better English.", distractors: ["I wish I can speak better English.", "I wish I spoke better English."] },
+        { level: 'B1', correct: "Despite the rain, we went out.", distractors: ["Although the rain, we went out.", "Despite of the rain, we went out."] },
+        { level: 'B1', correct: "The meeting will have finished by 5 pm.", distractors: ["The meeting will finish by 5 pm.", "The meeting will be finished by 5 pm."] },
+        { level: 'B1', correct: "He might have forgotten the key.", distractors: ["He may forgotten the key.", "He might to forget the key."] },
+        { level: 'B1', correct: "If I had known, I would have called.", distractors: ["If I knew, I would have called.", "If I had knew, I would have called."] },
+        { level: 'B1', correct: "She used to live in London.", distractors: ["She is used to live in London.", "She use to live in London."] },
+        { level: 'B1', correct: "I'm looking forward to going on holiday.", distractors: ["I'm looking forward to go on holiday.", "I'm looking forward for going on holiday."] },
+        { level: 'B1', correct: "I regretted telling her the secret.", distractors: ["I regretted to tell her the secret.", "I regretted for telling her the secret."] },
+        { level: 'B1', correct: "He is thought to be the best.", distractors: ["He is thinking to be the best.", "They think he is the best."] },
+        { level: 'B1', correct: "She had her hair cut yesterday.", distractors: ["She had her hair cutting yesterday.", "She cut her hair yesterday."] },
+        { level: 'B1', correct: "The more you practice, the better you get.", distractors: ["More you practice, better you get.", "The most you practice, the better you get."] },
+        { level: 'B1', correct: "Neither John nor Mary was there.", distractors: ["Neither John nor Mary were there.", "Neither John or Mary was there."] },
+        { level: 'B1', correct: "Hardly had I arrived when it started raining.", distractors: ["I had hardly arrived when it started raining.", "Hardly I arrived when it started raining."] },
+        { level: 'B1', correct: "I'd rather stay home tonight.", distractors: ["I'd rather to stay home tonight.", "I rather stay home tonight."] },
+        { level: 'B1', correct: "He suggested going to the cinema.", distractors: ["He suggested to go to the cinema.", "He suggested we go to the cinema."] },
+        { level: 'B1', correct: "The police warned us not to approach the area.", distractors: ["The police warned us to not approach the area.", "The police warned us from approaching the area."] },
+        { level: 'B1', correct: "She must be exhausted after running a marathon.", distractors: ["She must exhausted after running a marathon.", "She must to be exhausted after running a marathon."] },
+        { level: 'B1', correct: "It's time you bought a new car.", distractors: ["It's time you buy a new car.", "It's time you had bought a new car."] },
+        { level: 'B1', correct: "They kept on talking despite the noise.", distractors: ["They kept talk despite the noise.", "They keep on talking despite the noise."] },
+        { level: 'B1', correct: "He managed to fix the computer.", distractors: ["He managed fixing the computer.", "He managed fix the computer."] },
+        { level: 'B1', correct: "I'm used to waking up early.", distractors: ["I used to waking up early.", "I'm used to wake up early."] },
+        { level: 'B1', correct: "The job requires working on weekends.", distractors: ["The job requires to work on weekends.", "The job require working on weekends."] },
+        { level: 'B1', correct: "What if we were late?", distractors: ["What if we are late?", "What if we was late?"] },
+        { level: 'B1', correct: "The building was renovated last year.", distractors: ["The building renovated last year.", "The building has been renovated last year."] },
+        { level: 'B1', correct: "I was about to leave when you called.", distractors: ["I was about leaving when you called.", "I about to leave when you called."] },
+        { level: 'B1', correct: "Could you tell me what time it is?", distractors: ["Could you tell me what time is it?", "Could you tell what time it is?"] },
+        { level: 'B1', correct: "I can't afford to buy that house.", distractors: ["I can't afford buying that house.", "I cannot afford for buy that house."] },
+        { level: 'B1', correct: "She ended up losing her keys.", distractors: ["She ended to lose her keys.", "She ended losing her keys."] },
+        { level: 'B1', correct: "It's worth seeing that exhibition.", distractors: ["It's worth to see that exhibition.", "It's worth of seeing that exhibition."] },
+        { level: 'B1', correct: "I regret to inform you of the delay.", distractors: ["I regret informing you of the delay.", "I regret in inform you of the delay."] },
+        { level: 'B1', correct: "We should have left earlier.", distractors: ["We should left earlier.", "We should had left earlier."] },
+        { level: 'B1', correct: "He is likely to succeed.", distractors: ["He is likely succeed.", "He is probable to succeed."] },
+        { level: 'B1', correct: "The car needs cleaning.", distractors: ["The car needs to clean.", "The car need cleaning."] },
+        { level: 'B1', correct: "He denied stealing the money.", distractors: ["He denied to steal the money.", "He denied having stole the money."] },
+     
+
+        // =========================================
+        //                 NÍVEL B2 (50 Frases)
+        // =========================================
+        { level: 'B2', correct: "Were it not for his help, I would have failed.", distractors: ["If it was not for his help, I would have failed.", "If it wasn't for his help, I would have failed."] },
+        { level: 'B2', correct: "He is believed to have been an accomplice.", distractors: ["He is believed to be an accomplice.", "It is believed that he was an accomplice."] },
+        { level: 'B2', correct: "No sooner had I started reading than the lights went out.", distractors: ["No sooner I had started reading than the lights went out.", "No sooner had I started reading when the lights went out."] },
+        { level: 'B2', correct: "I appreciate your having helped me.", distractors: ["I appreciate you helped me.", "I appreciate that you helped me."] },
+        { level: 'B2', correct: "I can't help thinking about the problem.", distractors: ["I can't help to think about the problem.", "I can't avoid to think about the problem."] },
+        { level: 'B2', correct: "The company stands to lose a lot of money.", distractors: ["The company stands losing a lot of money.", "The company stand to lose a lot of money."] },
+        { level: 'B2', correct: "Only when I saw him did I realize the truth.", distractors: ["Only when I saw him I realized the truth.", "Only when I saw him I did realize the truth."] },
+        { level: 'B2', correct: "Had he studied harder, he wouldn't have failed.", distractors: ["If he would have studied harder, he wouldn't have failed.", "If he had study harder, he wouldn't have failed."] },
+        { level: 'B2', correct: "I suggest you take a look at the contract.", distractors: ["I suggest you to take a look at the contract.", "I suggest that you take a look to the contract."] },
+        { level: 'B2', correct: "It's high time the government addressed this issue.", distractors: ["It's high time the government addresses this issue.", "It's high time the government will address this issue."] },
+        { level: 'B2', correct: "I object to being treated like a child.", distractors: ["I object to be treated like a child.", "I object to treat like a child."] },
+        { level: 'B2', correct: "She's supposed to be arriving at noon.", distractors: ["She's suppose to be arriving at noon.", "She is supposing to be arriving at noon."] },
+        { level: 'B2', correct: "I'd sooner you didn't tell anyone.", distractors: ["I'd sooner you don't tell anyone.", "I'd sooner you wouldn't tell anyone."] },
+        { level: 'B2', correct: "The fire was put out by the firefighters.", distractors: ["The fire put out by the firefighters.", "The fire was putting out by the firefighters."] },
+        { level: 'B2', correct: "He came up with a brilliant idea.", distractors: ["He came out with a brilliant idea.", "He came through with a brilliant idea."] },
+        { level: 'B2', correct: "We ran out of coffee.", distractors: ["We ran out with coffee.", "We ran over of coffee."] },
+        { level: 'B2', correct: "There seems to be no other solution.", distractors: ["It seems there is no other solution.", "There seems like no other solution."] },
+        { level: 'B2', correct: "It was a mistake on my part.", distractors: ["It was a mistake from my part.", "It was a mistake in my part."] },
+        { level: 'B2', correct: "The chances of him winning are slim.", distractors: ["The chances of his winning are slim.", "The chance of him winning are slim."] },
+        { level: 'B2', correct: "I ended up getting lost in the city.", distractors: ["I ended to get lost in the city.", "I ended to lost in the city."] },
+        { level: 'B2', correct: "We are committed to finding a solution.", distractors: ["We are committed for finding a solution.", "We are committed finding a solution."] },
+        { level: 'B2', correct: "This is the spot where the accident happened.", distractors: ["This is the spot which the accident happened.", "This is the spot that the accident happened."] },
+        { level: 'B2', correct: "He is not as tall as his brother.", distractors: ["He is not so tall as his brother.", "He is less tall than his brother."] },
+        { level: 'B2', correct: "The lecture bored me to tears.", distractors: ["The lecture made me bored to tears.", "The lecture bored me very much."] },
+        { level: 'B2', correct: "I'm getting used to the noise.", distractors: ["I get used to the noise.", "I'm used to the noise."] },
+        { level: 'B2', correct: "I would appreciate it if you could help.", distractors: ["I would appreciate if you could help.", "I appreciate if you could help."] },
+        { level: 'B2', correct: "Little did I know she was leaving.", distractors: ["Little I did know she was leaving.", "Little I knew she was leaving."] },
+        { level: 'B2', correct: "The children were made to clean the room.", distractors: ["The children were made clean the room.", "The children were let clean the room."] },
+        { level: 'B2', correct: "Not only did he apologize, but he also offered a refund.", distractors: ["Not only he apologized, but he also offered a refund.", "Not only did he apologize, but he offered a refund too."] },
+        { level: 'B2', correct: "I have every intention of paying you back.", distractors: ["I have all intention of paying you back.", "I have the intention of paying you back."] },
+        { level: 'B2', correct: "The rumor turned out to be false.", distractors: ["The rumor turned out false.", "The rumor turned into false."] },
+        { level: 'B2', correct: "He is said to be recovering.", distractors: ["He said to be recovering.", "It is said he is recovering."] },
+        { level: 'B2', correct: "She put her success down to hard work.", distractors: ["She put her success on hard work.", "She put her success down by hard work."] },
+       
+
+        // =========================================
+        //                 NÍVEL C1 (50 Frases)
+        // =========================================
+        { level: 'C1', correct: "I'd just as soon stay in tonight.", distractors: ["I'd just rather stay in tonight.", "I'd just soon stay in tonight."] },
+        { level: 'C1', correct: "The scheme is predicated on the assumption that inflation will fall.", distractors: ["The scheme is predicated in the assumption that inflation will fall.", "The scheme predicates on the assumption that inflation will fall."] },
+        { level: 'C1', correct: "Little realizing the danger, she walked into the trap.", distractors: ["Little she realized the danger, she walked into the trap.", "Little realizing the danger, she walks into the trap."] },
+        { level: 'C1', correct: "She was on the verge of tears.", distractors: ["She was in the verge of tears.", "She was on the verge to tears."] },
+        { level: 'C1', correct: "Try as he might, he couldn't solve the problem.", distractors: ["As he might try, he couldn't solve the problem.", "Though he might try, he couldn't solve the problem."] },
+        { level: 'C1', correct: "The new measures are to take effect next month.", distractors: ["The new measures are taking effect next month.", "The new measures are to taking effect next month."] },
+        { level: 'C1', correct: "He gave an undertaking to complete the work on time.", distractors: ["He gave an undertaking for complete the work on time.", "He gave an undertaking completing the work on time."] },
+        { level: 'C1', correct: "I was under the impression that you had already left.", distractors: ["I was on the impression that you had already left.", "I was under the impression to have already left."] },
+        { level: 'C1', correct: "Be that as it may, we still need a plan B.", distractors: ["Be that it may, we still need a plan B.", "Although that may be, we still need a plan B."] },
+        { level: 'C1', correct: "The government has come in for heavy criticism.", distractors: ["The government has come out for heavy criticism.", "The government has come into heavy criticism."] },
+        { level: 'C1', correct: "He is averse to taking risks.", distractors: ["He is averse of taking risks.", "He is averse to take risks."] },
+        { level: 'C1', correct: "Scarcely had the performance begun when the power went out.", distractors: ["Scarcely the performance had begun when the power went out.", "Scarcely had the performance begun than the power went out."] },
+        { level: 'C1', correct: "I wish I were capable of such generosity.", distractors: ["I wish I was capable of such generosity.", "I wish I could be capable of such generosity."] },
+        { level: 'C1', correct: "Not until much later did he understand the implications.", distractors: ["Not until much later he understood the implications.", "Not until much later he did understand the implications."] },
+        { level: 'C1', correct: "She took exception to his remarks.", distractors: ["She took exceptions to his remarks.", "She took exception from his remarks."] },
+        { level: 'C1', correct: "It is incumbent upon us to respond.", distractors: ["It is incumbent on us to respond.", "It is incumbent for us to respond."] },
+        { level: 'C1', correct: "The committee is comprised of experts.", distractors: ["The committee is comprised by experts.", "The committee comprises of experts."] },
+        { level: 'C1', correct: "What with the traffic and the rain, we arrived late.", distractors: ["What with the traffic and the rain, we arrive late.", "What for the traffic and the rain, we arrived late."] },
+        { level: 'C1', correct: "He is reputed to be the most demanding professor.", distractors: ["He is reputed as the most demanding professor.", "He is reputed for being the most demanding professor."] },
+        { level: 'C1', correct: "Such is the power of love that it conquers all.", distractors: ["So is the power of love that it conquers all.", "Such the power of love that it conquers all."] },
+        { level: 'C1', correct: "The problem stems from a lack of communication.", distractors: ["The problem stems in a lack of communication.", "The problem stems at a lack of communication."] },
+        { level: 'C1', correct: "The situation calls for immediate action.", distractors: ["The situation calls to immediate action.", "The situation calls about immediate action."] },
+        { level: 'C1', correct: "He was on the point of resigning.", distractors: ["He was in the point of resigning.", "He was on the point to resign."] },
+        { level: 'C1', correct: "It goes without saying that the economy is struggling.", distractors: ["It goes without saying the economy is struggling.", "It went without saying that the economy is struggling."] },
+        { level: 'C1', correct: "I wish you wouldn't keep interrupting me.", distractors: ["I wish you don't keep interrupting me.", "I wish you wouldn't to keep interrupting me."] },
+        { level: 'C1', correct: "Far be it from me to tell you what to do.", distractors: ["Far is it from me to tell you what to do.", "Far from me be it to tell you what to do."] },
+        { level: 'C1', correct: "He is bound to fail if he doesn't work harder.", distractors: ["He is bound fail if he doesn't work harder.", "He is bound to failing if he doesn't work harder."] },
+        { level: 'C1', correct: "I took pains to ensure everything was correct.", distractors: ["I took pain to ensure everything was correct.", "I took efforts to ensure everything was correct."] },
+        { level: 'C1', correct: "I am intent on finishing this project.", distractors: ["I am intent in finishing this project.", "I am intent to finish this project."] },
+        { level: 'C1', correct: "The two issues are inextricably linked.", distractors: ["The two issues are inextricable linked.", "The two issues are inextricably link."] },
+     
+
+        // =========================================
+        //                 NÍVEL C2 (50 Frases)
+        // =========================================
+        { level: 'C2', correct: "Wary of the potential backlash, the CEO withheld the announcement.", distractors: ["Wary about the potential backlash, the CEO withheld the announcement.", "Warily of the potential backlash, the CEO withheld the announcement."] },
+        { level: 'C2', correct: "Paradoxically, the intervention proved to be counter-productive.", distractors: ["Paradoxical, the intervention proved to be counter-productive.", "Paradoxically, the intervention proved to be contra-productive."] },
+        { level: 'C2', correct: "He seemed to evince an air of studied indifference.", distractors: ["He seemed to evince an air of studying indifference.", "He seemed to evince an air with studied indifference."] },
+        { level: 'C2', correct: "A modicum of success can breed complacency.", distractors: ["A modicum with success can breed complacency.", "A modicum for success can breed complacency."] },
+        { level: 'C2', correct: "The argument was underpinned by a faulty premise.", distractors: ["The argument was underpinned on a faulty premise.", "The argument underpinned by a faulty premise."] },
+        { level: 'C2', correct: "It is incumbent upon all of us to ensure probity.", distractors: ["It is incumbent for all of us to ensure probity.", "It is incumbent in all of us to ensure probity."] },
+        { level: 'C2', correct: "The concept is notoriously difficult to convey.", distractors: ["The concept is notoriously difficult to be conveyed.", "The concept is notorius difficult to convey."] },
+        { level: 'C2', correct: "The findings are a testament to the team's perseverance.", distractors: ["The findings are a testament of the team's perseverance.", "The findings are a testaments to the team's perseverance."] },
+        { level: 'C2', correct: "She was possessed of an uncanny ability to predict the market.", distractors: ["She was possessed with an uncanny ability to predict the market.", "She possessed of an uncanny ability to predict the market."] },
+        { level: 'C2', correct: "The decision was taken in an arbitrary fashion.", distractors: ["The decision was taken in a arbitrary fashion.", "The decision was taken in an arbitrary of fashion."] },
+        { level: 'C2', correct: "The company's ethos militates against frivolous spending.", distractors: ["The company's ethos militates for frivolous spending.", "The company's ethos militates to frivolous spending."] },
+        { level: 'C2', correct: "He was impervious to her pleas.", distractors: ["He was impervious from her pleas.", "He was impervious at her pleas."] },
+        { level: 'C2', correct: "Nothing short of a miracle could save the project.", distractors: ["Nothing short from a miracle could save the project.", "Nothing less of a miracle could save the project."] },
+        { level: 'C2', correct: "The evidence, on the face of it, seems damning.", distractors: ["The evidence, on the face, seems damning.", "The evidence, by the face of it, seems damning."] },
+        { level: 'C2', correct: "He is often credited with having pioneered the technique.", distractors: ["He is often credited to have pioneered the technique.", "He is often credited for having pioneered the technique."] },
+        { level: 'C2', correct: "The negotiations reached a precarious juncture.", distractors: ["The negotiations reached a precarious junction.", "The negotiations reached a precarity juncture."] },
+        { level: 'C2', correct: "Her eloquence was something of a phenomenon.", distractors: ["Her eloquence was something of phenomenon.", "Her eloquence was something in a phenomenon."] },
+        { level: 'C2', correct: "The project was deemed to be unviable.", distractors: ["The project deemed to be unviable.", "The project was deemed unviable."] },
+        { level: 'C2', correct: "I wouldn't venture to guess the outcome.", distractors: ["I wouldn't venture guessing the outcome.", "I wouldn't venture to a guess the outcome."] },
+       
+
+    ];
+
+    let currentLevel = null;
+    let filteredQuestions = [];
+    let currentQuestion = null;
+    let answeredQuestions = new Set(); 
+
+    const listeningContainer = document.getElementById('listening-container');
+    const optionsContainer = document.getElementById('options-container');
+    const feedbackEl = document.getElementById('feedback-display');
+    const levelInfo = document.getElementById('level-info');
+    const playAudioButton = document.getElementById('play-audio-button');
+    const nextButton = document.getElementById('next-button');
+    const countCurrent = document.getElementById('q-current');
+    const countTotal = document.getElementById('q-total');
+    let isSpeaking = false; // Flag para controlar o áudio
+
+    // Inicialização ao carregar a página
+    document.addEventListener('DOMContentLoaded', () => {
+        optionsContainer.innerHTML = '<p style="color: #999;">Opções de resposta aparecerão aqui.</p>';
+        countCurrent.textContent = '--';
+        countTotal.textContent = '--';
+        levelInfo.textContent = '';
+        listeningContainer.classList.remove('visible');
+        playAudioButton.disabled = true;
+        nextButton.disabled = true;
+        nextButton.style.backgroundColor = '#95a5a6';
+    });
+
+
+    // Função para selecionar o nível
+    window.selectLevel = function(level, button) {
+        // Remove a classe 'active' de todos os botões e adiciona ao clicado
+        document.querySelectorAll('.btn-level').forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+
+        currentLevel = level;
+        filteredQuestions = allQuestions.filter(q => q.level === level);
+        answeredQuestions.clear(); 
+
+        if (filteredQuestions.length > 0) {
+            listeningContainer.classList.add('visible');
+            playAudioButton.disabled = false;
+            nextButton.disabled = false;
+            nextButton.style.backgroundColor = 'var(--cor-acento)';
+
+            levelInfo.innerHTML = `<strong>Nível: ${currentLevel} (${filteredQuestions.length} frases disponíveis)</strong>. Ouça e escolha a opção correta.`;
+            loadNextQuestion(); // Carrega a primeira questão
+        } else {
+            listeningContainer.classList.remove('visible');
+            optionsContainer.innerHTML = '<p style="color: red;">Nenhuma questão disponível para este nível.</p>';
+        }
+
+        document.getElementById('listening-container').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    // Função para embaralhar array (Fisher-Yates Shuffle)
+    function shuffle(array) {
+        let currentIndex = array.length, randomIndex;
+        while (currentIndex != 0) {
+            randomIndex = Math.floor(Math.random() * currentIndex);
+            currentIndex--;
+            [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
+        }
+        return array;
+    }
+
+    // Carrega a próxima questão (aleatória e não repetida)
+    window.loadNextQuestion = function() {
+        if (!currentLevel || filteredQuestions.length === 0) return;
+
+        // Se todas as questões foram respondidas, recomeça o ciclo
+        if (answeredQuestions.size === filteredQuestions.length) {
+            answeredQuestions.clear();
+        }
+
+        let availableQuestions = filteredQuestions.filter(q => !answeredQuestions.has(q));
+        if (availableQuestions.length === 0) availableQuestions = filteredQuestions;
+
+        const randomIndex = Math.floor(Math.random() * availableQuestions.length);
+        currentQuestion = availableQuestions[randomIndex];
+
+        // Prepara as opções e embaralha
+        const options = [...currentQuestion.distractors, currentQuestion.correct];
+        const shuffledOptions = shuffle(options);
+
+        renderOptions(shuffledOptions);
+        feedbackEl.style.display = 'none';
+        
+        // Atualiza contagem
+        countTotal.textContent = filteredQuestions.length;
+        countCurrent.textContent = Array.from(answeredQuestions).length + 1;
+
+        // Habilita áudio e toca automaticamente a primeira vez
+        playAudioButton.disabled = false;
+        playAudio(); 
+    }
+
+    // Renderiza as opções na tela
+    function renderOptions(options) {
+        optionsContainer.innerHTML = '';
+        options.forEach(option => {
+            const button = document.createElement('button');
+            button.className = 'option-button';
+            button.textContent = option;
+            button.onclick = () => checkAnswer(button, option);
+            optionsContainer.appendChild(button);
+        });
+    }
+
+    // Toca o áudio
+    window.playAudio = function() {
+        if (!currentQuestion || isSpeaking) return;
+
+        if ('speechSynthesis' in window) {
+            window.speechSynthesis.cancel();
+            const utterance = new SpeechSynthesisUtterance(currentQuestion.correct);
+            utterance.lang = 'en-US';
+            utterance.rate = 1.0; 
+            
+            // Adiciona um listener para a flag de speaking
+            utterance.onstart = () => { isSpeaking = true; playAudioButton.disabled = true; };
+            utterance.onend = () => { isSpeaking = false; playAudioButton.disabled = false; };
+
+            window.speechSynthesis.speak(utterance);
+        } else {
+            alert("Seu navegador não suporta áudio de leitura (Speech Synthesis).");
+        }
+    }
+    
+    // Verifica a resposta
+    function checkAnswer(selectedButton, selectedOption) {
+        // Desabilita todos os botões após a escolha
+        document.querySelectorAll('.option-button').forEach(btn => btn.disabled = true);
+
+        feedbackEl.style.display = 'block';
+
+        if (selectedOption === currentQuestion.correct) {
+            selectedButton.classList.add('correto');
+            feedbackEl.className = 'feedback-area feedback-success';
+            feedbackEl.innerHTML = `
+                <strong>✔ Correto!</strong><br>
+                A frase que você ouviu foi: <em>"${currentQuestion.correct}"</em>
+            `;
+            answeredQuestions.add(currentQuestion);
+            
+            // Força a atualização do número da questão se acertou
+            countCurrent.textContent = Math.min(Array.from(answeredQuestions).length + 1, filteredQuestions.length);
+        } else {
+            selectedButton.classList.add('incorreto');
+            // Encontra e destaca a resposta correta
+            document.querySelectorAll('.option-button').forEach(btn => {
+                if (btn.textContent === currentQuestion.correct) {
+                    btn.classList.add('correto');
+                }
+            });
+            
+            feedbackEl.className = 'feedback-area feedback-error';
+            feedbackEl.innerHTML = `
+                <strong>✖ Incorreto.</strong><br>
+                A resposta correta é: <em>"${currentQuestion.correct}"</em>
+            `;
+        }
+    }
+
+</script>
+
+</body>
+</html>
+
