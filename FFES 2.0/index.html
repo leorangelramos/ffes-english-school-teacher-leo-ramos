@@ -1,0 +1,1092 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#020c1b">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Syncopate:wght@700&display=swap" rel="stylesheet">
+    
+    <title>Professor de Inglês Leo Ramos | Fluência, Gramática e Filmes</title>
+    <meta name="description" content="Aprenda inglês de forma definitiva e lógica. Metodologia estrutural unindo gramática, análise de filmes e conversação. Baixe o app e comece agora.">
+    <meta name="author" content="Leonardo Rangel Ramos">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="google-site-verification" content="ScGbMgNDM0-MyQRWMZm6WKAoMIKTGB3nQoGuTeruZp8" />
+    <link rel="canonical" href="https://teacherleoramos.com.br/">
+    
+    <link rel="alternate" hreflang="pt-br" href="https://teacherleoramos.com.br/" />
+    <link rel="alternate" hreflang="x-default" href="https://teacherleoramos.com.br/" />
+
+    <link rel="icon" type="image/webp" href="/images/teacher-leo-ramos.webp">
+    <link rel="apple-touch-icon" href="/images/teacher-leo-ramos.webp">
+    
+    <meta property="og:title" content="Teacher Leo Ramos | Ecossistema de Fluência em Inglês">
+    <meta property="og:description" content="Domine o idioma através de uma análise estrutural, filmes e conversação imersiva. Disponível para iOS e Android.">
+    <meta property="og:image" content="https://teacherleoramos.com.br/images/preview-social.jpg">
+    <meta property="og:url" content="https://teacherleoramos.com.br/">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:site_name" content="FFES - Teacher Leo Ramos">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Professor de Inglês Leo Ramos | Cursos e Fluência">
+    <meta name="twitter:description" content="Domine o idioma sem enrolação. Cursos, e-books e App nativo.">
+    <meta name="twitter:image" content="https://teacherleoramos.com.br/images/preview-social.jpg">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Person",
+          "@id": "https://teacherleoramos.com.br/#person",
+          "name": "Leonardo Rangel Ramos",
+          "url": "https://teacherleoramos.com.br/",
+          "jobTitle": ["Professor de Inglês", "Programador Front-end"],
+          "sameAs": [
+            "https://www.youtube.com/@teacherleoramos",
+            "https://www.instagram.com/teacherleoramos/",
+            "https://www.tiktok.com/@teacherleoramos"
+          ]
+        },
+        {
+          "@type": "ProfessionalService",
+          "@id": "https://teacherleoramos.com.br/#service",
+          "name": "FFES - Professor Leo Ramos",
+          "image": "https://teacherleoramos.com.br/images/teacher-leo-ramos.webp",
+          "description": "Aulas e ecossistema de estudo de inglês focados em gramática estrutural, análise de filmes e conversação prática.",
+          "url": "https://teacherleoramos.com.br/",
+          "telephone": "+5511955582118",
+          "priceRange": "$$",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Caraguatatuba",
+            "addressRegion": "SP",
+            "addressCountry": "BR"
+          }
+        },
+        {
+          "@type": "SoftwareApplication",
+          "name": "App FFES English",
+          "operatingSystem": "ANDROID, IOS",
+          "applicationCategory": "EducationalApplication",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "BRL"
+          }
+        }
+      ]
+    }
+    </script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-M8ZG06010Q"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-M8ZG06010Q');
+    </script>
+
+    <style>
+        /* CSS Vanilla - Arquitetura de Variáveis para Tema Azul e Dourado */
+        :root {
+            /* Paleta Core Azul & Dourado */
+            --bg-deep: #020c1b;
+            --bg-accent: #0a192f;
+            --primary-blue: #3b82f6;
+            --primary-blue-dim: rgba(59, 130, 246, 0.2);
+            --gold-tech: #e5c05b;
+            --gold-tech-dim: rgba(229, 192, 91, 0.2);
+            --text-main: #f0f4f8;
+            --text-muted: #8b9bb4;
+            
+            /* Gradientes Especiais */
+            --gradient-blue-gold: linear-gradient(135deg, #0a192f 0%, #d4af37 100%);
+            --gradient-text: linear-gradient(to right, #3b82f6, #e5c05b);
+
+            /* Utilitários Glassmorphism + Claymorphism Dark + Bento 3D */
+            --glass-bg: rgba(10, 25, 47, 0.65);
+            --glass-border: rgba(229, 192, 91, 0.15);
+            --glass-blur: blur(20px);
+            
+            /* Sombras 3D Bento e Densidade Claymorphism */
+            --bento-3d-shadow: 
+                20px 20px 40px rgba(0, 0, 0, 0.8), /* Sombra externa profunda */
+                -5px -5px 15px rgba(255, 255, 255, 0.03), /* Luz de contra-relevo */
+                inset 2px 2px 10px rgba(255, 255, 255, 0.05), /* Luz interna Clay */
+                inset -5px -5px 15px rgba(0, 0, 0, 0.6); /* Sombra interna Clay (Densidade) */
+                
+            --clay-btn-primary:
+                8px 8px 16px rgba(0, 0, 0, 0.6),
+                -3px -3px 8px rgba(255, 255, 255, 0.05),
+                inset 3px 3px 8px rgba(255, 255, 255, 0.2),
+                inset -3px -3px 8px rgba(0, 0, 0, 0.4);
+                
+            --clay-btn-gold:
+                6px 6px 12px rgba(0, 0, 0, 0.5),
+                -2px -2px 6px rgba(229, 192, 91, 0.05),
+                inset 2px 2px 6px rgba(229, 192, 91, 0.15),
+                inset -3px -3px 6px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Resets & Base Otimizada */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-family: 'Inter', sans-serif;
+            color: var(--text-main);
+            background-color: var(--bg-deep);
+            overflow-x: hidden;
+        }
+
+        body {
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Classes para o Scroll-Driven Immersive */
+        .scroll-reveal {
+            opacity: 0;
+            /* Inicia levemente rotacionado para trás, simulando a montagem 3D */
+            transform: translateY(80px) scale(0.95) rotateX(-10deg);
+            transition: opacity 0.9s cubic-bezier(0.25, 1, 0.5, 1), transform 0.9s cubic-bezier(0.25, 1, 0.5, 1);
+            will-change: opacity, transform;
+            transform-style: preserve-3d;
+        }
+
+        .scroll-reveal.visible {
+            opacity: 1;
+            transform: translateY(0) scale(1) rotateX(0);
+        }
+
+        /* Atrasos em cascata para elementos adjacentes (Efeito Imersivo de montagem) */
+        .delay-1 { transition-delay: 0.1s; }
+        .delay-2 { transition-delay: 0.2s; }
+        .delay-3 { transition-delay: 0.3s; }
+
+        /* Video Background Hero - PARALAX */
+        .video-bg-container {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -2;
+            overflow: hidden;
+            background: var(--bg-deep);
+            transform: translateZ(0);
+        }
+
+        .video-bg-container video {
+            width: 100%;
+            height: 115%;
+            object-fit: cover;
+            filter: contrast(1.1) brightness(0.6) saturate(1.2);
+            opacity: 0.8;
+            will-change: transform;
+        }
+
+        .video-overlay {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100vw; height: 100vh;
+            background: radial-gradient(circle at center, rgba(2, 12, 27, 0.6) 0%, rgba(2, 12, 27, 0.95) 100%);
+            z-index: -1;
+        }
+
+        /* =========================================
+           HEADER GLASSMORPHISM - CENTRALIZADO E 50% MENOR
+        ========================================= */
+        .header-glass {
+            position: absolute; 
+            top: 0; left: 0; right: 0;
+            z-index: 1000;
+            background: var(--glass-bg);
+            backdrop-filter: var(--glass-blur);
+            -webkit-backdrop-filter: var(--glass-blur);
+            border-bottom: 1px solid var(--glass-border);
+            /* Bento/Clay Shadow no Header */
+            box-shadow: 0 10px 30px rgba(0,0,0,0.6), inset 0 -2px 10px rgba(0,0,0,0.4);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 0.6rem 5%; 
+            gap: 8px; 
+            transition: all 0.3s ease;
+        }
+
+        .header-glass.scrolled {
+            padding: 0.35rem 5%; 
+            background: rgba(2, 12, 27, 0.97);
+            /* Removido o position: fixed; para que o menu suba com o scroll */
+        }
+
+        /* LOGO + NOME — centralizado */
+        .logo-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            gap: 4px;
+        }
+
+        .logo-img-name {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-wrapper img {
+            width: 30px; 
+            height: 30px; 
+            border-radius: 50%;
+            border: 1px solid var(--gold-tech);
+            box-shadow: 0 0 10px var(--gold-tech-dim), 0 2px 6px rgba(0,0,0,0.5);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            object-fit: cover;
+        }
+
+        .logo-wrapper:hover img {
+            transform: scale(1.07);
+            box-shadow: 0 0 20px rgba(229, 192, 91, 0.45);
+        }
+
+        .logo-name {
+            font-family: 'Syncopate', sans-serif;
+            font-size: 1rem; 
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--gold-tech); 
+            line-height: 1.1;
+        }
+
+        .logo-subtitle {
+            font-size: 0.55rem; 
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            text-align: center;
+        }
+
+        /* NAV — grid 2 linhas centralizado */
+        .nav-center {
+            width: 100%;
+        }
+
+        .nav-center ul {
+            display: grid;
+            grid-template-columns: repeat(3, auto);
+            grid-template-rows: auto auto;
+            gap: 4.5px 12px; 
+            list-style: none;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .nav-center a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.49875rem; 
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            padding: 2.85px 8.55px; 
+            border-radius: 8px; /* Mais curvo para o Clay */
+            border: 1px solid transparent;
+            display: block;
+            text-align: center;
+            /* CLAYMORPHISM DENSO NOS LINKS */
+            background: rgba(10, 25, 47, 0.4);
+            box-shadow:
+                2px 2px 5px rgba(0,0,0,0.5),
+                inset 1px 1px 2px rgba(255,255,255,0.05),
+                inset -1px -1px 3px rgba(0,0,0,0.5);
+            transition: all 0.28s ease;
+            position: relative;
+        }
+
+        .nav-center a:hover {
+            color: var(--gold-tech);
+            border-color: rgba(229, 192, 91, 0.15);
+            text-shadow: 0 0 8px var(--gold-tech-dim);
+            background: rgba(229, 192, 91, 0.07);
+            box-shadow:
+                4px 4px 10px rgba(0,0,0,0.6),
+                inset 1px 1px 3px rgba(229, 192, 91, 0.15),
+                inset -2px -2px 5px rgba(0,0,0,0.6);
+            transform: translateY(-2px);
+        }
+
+        /* Linha divisória antes dos apps */
+        .header-divider {
+            width: 100%;
+            height: 1px;
+            margin-top: 4px;
+            background: linear-gradient(to right, transparent, rgba(229, 192, 91, 0.2), transparent);
+        }
+
+        /* Botões de App */
+        .header-bottom-level {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            width: 100%;
+        }
+
+        .app-btn {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4.25px 13.6px; 
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(229, 192, 91, 0.1);
+            border-radius: 30px; /* Bem redondo para Claymorphism */
+            color: var(--text-main);
+            text-decoration: none;
+            font-size: 0.6375rem; 
+            font-weight: 600;
+            /* Densidade Claymorphism */
+            box-shadow: var(--clay-btn-gold);
+            transition: all 0.3s ease;
+        }
+
+        .app-btn:hover {
+            background: var(--primary-blue-dim);
+            border-color: var(--primary-blue);
+            box-shadow: 
+                8px 8px 20px rgba(0,0,0,0.7), 
+                inset 2px 2px 8px rgba(59, 130, 246, 0.3),
+                inset -3px -3px 8px rgba(0,0,0,0.6);
+            transform: translateY(-2px);
+        }
+
+        .app-btn svg {
+            width: 11.9px; 
+            height: 11.9px; 
+            fill: var(--gold-tech);
+        }
+
+        /* Espaçamento para o Header Fixo */
+        main {
+            margin-top: 130px; 
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Seção Hero Central */
+        .hero-section {
+            min-height: calc(100vh - 130px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 5%;
+        }
+
+        /* BENTO GRID 3D + CLAYMORPHISM + GLASSMORPHISM */
+        .glass-panel {
+            background: var(--glass-bg);
+            backdrop-filter: var(--glass-blur);
+            -webkit-backdrop-filter: var(--glass-blur);
+            border: 1px solid var(--glass-border);
+            border-radius: 32px; /* Acentuado para formato Bento */
+            padding: 4rem 3rem;
+            max-width: 900px;
+            text-align: center;
+            /* Sombra profunda 3D simulando relevo pesado */
+            box-shadow: var(--bento-3d-shadow);
+            position: relative;
+            overflow: hidden;
+            transform: perspective(1000px) rotateX(2deg); /* Leve inclinação 3D nativa */
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+        
+        .glass-panel:hover {
+            transform: perspective(1000px) rotateX(0deg) translateY(-5px);
+            box-shadow: 
+                25px 25px 50px rgba(0, 0, 0, 0.9), 
+                -5px -5px 15px rgba(255, 255, 255, 0.04), 
+                inset 2px 2px 10px rgba(255, 255, 255, 0.08), 
+                inset -5px -5px 15px rgba(0, 0, 0, 0.7);
+        }
+
+        /* Efeito de brilho futurista interno */
+        .glass-panel::before {
+            content: '';
+            position: absolute;
+            top: -50%; left: -50%;
+            width: 200%; height: 200%;
+            background: radial-gradient(circle at 50% 0%, var(--primary-blue-dim), transparent 60%);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* Modificação de Layout: Imagem e Logo Lado a Lado */
+        .hero-images-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .profile-img {
+            border-radius: 50%;
+            border: 2px solid var(--gold-tech);
+            /* Clay shadow na imagem */
+            box-shadow: 
+                8px 8px 20px rgba(0,0,0,0.8),
+                inset 4px 4px 10px rgba(255,255,255,0.2);
+            width: 140px;
+            height: 140px;
+            object-fit: cover;
+        }
+
+        .hero-logo-img {
+            max-width: 220px; 
+            height: auto;
+            object-fit: contain;
+            filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.6)); /* 3D pop */
+        }
+
+        .hero-name-title {
+            font-family: 'Syncopate', sans-serif;
+            font-size: 1.6rem;
+            color: var(--gold-tech);
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8), 0 0 10px rgba(229, 192, 91, 0.3);
+        }
+
+        .hero-title {
+            font-family: 'Syncopate', sans-serif;
+            font-size: 2.2rem;
+            color: var(--text-main);
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            text-transform: uppercase;
+            text-shadow: 4px 4px 8px rgba(0,0,0,0.9);
+        }
+
+        .hero-title span {
+            color: var(--gold-tech); 
+        }
+
+        .hero-subtitle {
+            font-size: 1.1rem;
+            margin-bottom: 2.5rem;
+            color: var(--text-muted);
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+        }
+
+        /* Botões Call to Action — DENSIDADE CLAYMORPHISM DARK */
+        .btn-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .cyber-btn {
+            position: relative;
+            display: inline-block;
+            text-decoration: none;
+            padding: 15px 35px;
+            font-weight: 800;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-radius: 16px; /* Bordas Clay */
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            overflow: hidden;
+        }
+
+        .cyber-btn-primary {
+            background: var(--gradient-blue-gold);
+            color: #fff;
+            border: 1px solid rgba(255,255,255,0.1);
+            box-shadow: var(--clay-btn-primary);
+        }
+
+        .cyber-btn-primary:hover {
+            filter: brightness(1.15);
+            box-shadow: 
+                12px 12px 24px rgba(0,0,0,0.8),
+                -4px -4px 10px rgba(255, 255, 255, 0.08),
+                inset 4px 4px 10px rgba(255,255,255,0.3),
+                inset -4px -4px 10px rgba(0,0,0,0.5);
+            transform: translateY(-4px);
+        }
+
+        .cyber-btn-primary:active {
+            transform: translateY(2px);
+            box-shadow: 
+                2px 2px 5px rgba(0,0,0,0.8),
+                inset 4px 4px 10px rgba(0,0,0,0.6),
+                inset -2px -2px 5px rgba(255,255,255,0.1);
+        }
+
+        .cyber-btn-gold {
+            background: rgba(229, 192, 91, 0.05);
+            color: var(--gold-tech);
+            border: 1px solid rgba(229, 192, 91, 0.3);
+            backdrop-filter: blur(5px);
+            box-shadow: var(--clay-btn-gold);
+        }
+
+        .cyber-btn-gold:hover {
+            background: var(--gold-tech);
+            color: var(--bg-deep);
+            box-shadow: 
+                10px 10px 20px rgba(0,0,0,0.7),
+                -2px -2px 8px rgba(229, 192, 91, 0.2),
+                inset 3px 3px 8px rgba(255,255,255,0.4),
+                inset -4px -4px 10px rgba(0,0,0,0.4);
+            transform: translateY(-4px);
+        }
+
+        .cyber-btn-gold:active {
+            transform: translateY(2px);
+            box-shadow: 
+                2px 2px 5px rgba(0,0,0,0.8),
+                inset 4px 4px 10px rgba(0,0,0,0.6);
+        }
+
+        /* Seções de Conteúdo */
+        .content-section {
+            padding: 6rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-family: 'Syncopate', sans-serif;
+            color: var(--text-main);
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 4rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            position: relative;
+            text-shadow: 4px 4px 10px rgba(0,0,0,0.8);
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 3px;
+            background: var(--gradient-text);
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            box-shadow: 0 0 10px var(--gold-tech-dim);
+        }
+
+        /* BENTO GRID 3D CAIXAS MENORES */
+        .text-glass-box {
+            background: var(--glass-bg);
+            backdrop-filter: var(--glass-blur);
+            -webkit-backdrop-filter: var(--glass-blur);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-left: 4px solid var(--gold-tech);
+            border-radius: 24px; /* Mais arredondado Bento */
+            padding: 3rem;
+            margin-bottom: 2.5rem;
+            box-shadow: var(--bento-3d-shadow);
+            transform: perspective(1000px) rotateX(1deg);
+            transition: transform 0.4s ease;
+        }
+        
+        .text-glass-box:hover {
+            transform: perspective(1000px) rotateX(0deg) translateY(-3px);
+        }
+
+        .text-glass-box h3 {
+            color: var(--gold-tech);
+            margin-bottom: 1.5rem;
+            font-size: 1.4rem;
+            font-weight: 600;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.8);
+        }
+
+        .text-glass-box p, .text-glass-box ul {
+            color: var(--text-muted);
+            margin-bottom: 1.2rem;
+            text-align: left;
+        }
+
+        .text-glass-box ul {
+            margin-left: 2rem;
+        }
+
+        .text-glass-box li {
+            margin-bottom: 0.8rem;
+        }
+
+        /* ACCORDION ESTILIZADO CLAYMORPHISM */
+        .accordion-wrapper {
+            margin-top: 1.5rem;
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 12px;
+            overflow: hidden;
+            background: rgba(2, 12, 27, 0.4);
+            box-shadow: inset 4px 4px 10px rgba(0,0,0,0.6), inset -2px -2px 5px rgba(255,255,255,0.02);
+        }
+
+        .accordion-header {
+            width: 100%;
+            padding: 15px 20px;
+            background: var(--gradient-blue-gold);
+            color: #fff;
+            border: none;
+            text-align: left;
+            font-weight: 800;
+            font-size: 1rem;
+            font-family: 'Syncopate', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+            box-shadow: var(--clay-btn-primary);
+        }
+
+        .accordion-header:hover {
+            filter: brightness(1.15);
+        }
+
+        .accordion-icon {
+            font-size: 1.5rem;
+            font-weight: normal;
+            transition: transform 0.4s ease;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+        }
+
+        .collapsible-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.6s cubic-bezier(0, 1, 0, 1), opacity 0.5s ease-out, padding 0.5s ease;
+            opacity: 0;
+            padding: 0 20px;
+        }
+
+        .collapsible-content.expanded {
+            max-height: 2000px;
+            opacity: 1;
+            padding: 20px;
+            transition: max-height 0.8s ease-in-out, opacity 0.5s ease-in, padding 0.5s ease;
+        }
+
+        /* Reprodutor de Vídeo Metodologia - Bento 3D */
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: var(--bento-3d-shadow);
+            margin-bottom: 3.5rem;
+            background: #000;
+            border: 2px solid rgba(255,255,255,0.05);
+            transform: perspective(1000px) rotateX(1deg);
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            border: none;
+        }
+
+        /* FOOTER FUTURISTA OTIMIZADO - CLAYMORPHISM DARK */
+        .site-footer {
+            background: radial-gradient(circle at 50% 0%, rgba(2, 12, 27, 0.95), #01060e);
+            backdrop-filter: blur(20px);
+            border-top: 1px solid rgba(229, 192, 91, 0.3);
+            /* Sombra interna para afundar o rodapé no final da página (Immersive) */
+            box-shadow: 0 -20px 50px rgba(0, 0, 0, 0.9), inset 0 10px 30px rgba(0, 0, 0, 0.8);
+            padding: 3.4rem 5% 1.7rem; 
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        /* Feixe de Neon no topo do Footer */
+        .site-footer::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--primary-blue), var(--gold-tech), transparent);
+            box-shadow: 0 0 20px var(--gold-tech), 0 0 40px var(--primary-blue);
+            z-index: 2;
+        }
+
+        .footer-content {
+            position: relative;
+            z-index: 3;
+        }
+
+        .social-media-links {
+            margin-bottom: 20px;
+        }
+        .social-media-links a { 
+            margin: 0 10px; 
+            display: inline-block;
+        }
+        .social-media-links img { 
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); 
+            width: 25.5px !important; 
+            height: 25.5px !important; 
+            filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.8));
+        }
+        .social-media-links a:hover img {
+            filter: drop-shadow(0 0 15px var(--gold-tech)) drop-shadow(0 0 10px var(--primary-blue));
+            transform: translateY(-5px) scale(1.1);
+        }
+
+        /* Bloco de Informações estilo Painel Digital Bento/Clay */
+        .footer-info {
+            background: rgba(10, 25, 47, 0.6);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            border-radius: 20px;
+            padding: 25px;
+            display: inline-block;
+            box-shadow: 
+                10px 10px 30px rgba(0,0,0,0.8), 
+                inset 4px 4px 15px rgba(0,0,0,0.6),
+                inset -2px -2px 10px rgba(59, 130, 246, 0.05);
+            margin-top: 1rem;
+        }
+
+        .footer-info p {
+            font-size: 0.51rem; 
+            color: var(--text-main);
+            margin-bottom: 0.5rem;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.9);
+        }
+
+        #back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--glass-bg);
+            backdrop-filter: var(--glass-blur);
+            border: 1px solid var(--gold-tech);
+            color: var(--gold-tech);
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+            z-index: 999;
+            /* Botão flutuante Claymorphism */
+            box-shadow: var(--clay-btn-gold);
+        }
+
+        #back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        #back-to-top:hover {
+            background: var(--gold-tech);
+            color: var(--bg-deep);
+            transform: translateY(-5px);
+            box-shadow: 
+                10px 10px 25px rgba(0,0,0,0.8),
+                inset 3px 3px 8px rgba(255,255,255,0.4);
+        }
+
+        /* Responsividade */
+        @media (max-width: 900px) {
+            .nav-center ul {
+                grid-template-columns: repeat(3, auto);
+                gap: 4.5px 9px; 
+            }
+            main { margin-top: 140px; }
+            .hero-title { font-size: 1.8rem; }
+            .hero-name-title { font-size: 1.3rem; }
+            .header-bottom-level { flex-direction: column; gap: 8px; align-items: center; }
+        }
+
+        @media (max-width: 600px) {
+            .glass-panel { padding: 3rem 1.5rem; }
+            .text-glass-box { padding: 2rem 1.5rem; }
+            .hero-title { font-size: 1.4rem; }
+            .hero-name-title { font-size: 1.1rem; }
+            main { margin-top: 150px; }
+            .nav-center ul {
+                grid-template-columns: repeat(2, auto);
+                gap: 4.5px 7.5px; 
+            }
+            .logo-name { font-size: 0.9rem; }
+            .hero-logo-img { max-width: 150px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="video-bg-container" id="parallax-bg">
+        <video autoplay muted loop playsinline poster="images/preview-social.jpg">
+            <source src="videos/video-flag-uk.mp4" type="video/mp4">
+        </video>
+    </div>
+    <div class="video-overlay"></div>
+
+    <header class="header-glass scroll-reveal visible" id="main-header">
+        
+        <nav class="nav-center" aria-label="Navegação Principal">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#sobre">Sobre Mim</a></li>
+                <li><a href="#metodologia">Metodologia</a></li>
+                <li><a href="/exercicios-ingles-geral-general-english-exercises.html">Exercícios</a></li>
+                <li><a href="/artigos-ingles-articles-english.html">Artigos</a></li>
+                <li><a href="/cursos-de-ingles-ebook.html">Cursos / E-Book</a></li>
+            </ul>
+        </nav>
+
+        <div class="header-divider"></div>
+
+        <div class="header-bottom-level subheader-apps">
+            <a href="#" class="app-btn" aria-label="Baixar na Apple App Store">
+                <svg viewBox="0 0 384 512" xmlns="http://www.w3.org/2000/svg"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+                App
+            </a>
+            <a href="#" class="app-btn" aria-label="Baixar no Google Play">
+                <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M325.3 234.3L104.6 13l280.8 161.2-60.1 60.1zM47 0C34 6.8 25.3 19.2 25.3 35.3v441.3c0 16.1 8.7 28.5 21.7 35.3l256.6-256L47 0zm425.2 225.6l-58.9-34.1-65.7 64.5 65.7 64.5 60.1-34.1c18-14.3 18-46.5-1.2-60.8zM104.6 499l280.8-161.2-60.1-60.1L104.6 499z"/></svg>
+                App
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="hero-section scroll-reveal delay-1">
+            <article class="glass-panel">
+                
+                <div class="hero-images-wrapper">
+                    <img src="images/teacher-leo-ramos.webp" alt="Professor Leo Ramos" class="profile-img" width="140" height="140" fetchpriority="high">
+                    <img src="images/logo-ffes.webp" alt="Logo FFES English School" class="hero-logo-img">
+                </div>
+
+                <h1 class="hero-name-title">Teacher Leo Ramos</h1>
+                <h2 class="hero-title">Engenharia da <span>Fluência</span></h2>
+                
+                <p class="hero-subtitle">Metodologia analítica rigorosa: gramática estrutural, dissecação de filmes e imersão acadêmica e profissional. Construa o idioma linha por linha.</p>
+                
+                <div class="btn-container">
+                    <a href="cursos-de-ingles-ebook.html" class="cyber-btn cyber-btn-gold">Conhecer cursos</a>
+                    <a href="index-app-ffes.html" class="cyber-btn cyber-btn-primary">Acessar o APP</a>
+                </div>
+            </article>
+        </section>
+
+        <section id="sobre" class="content-section">
+            <h2 class="section-title scroll-reveal">Sobre Mim</h2>
+            
+            <div class="text-glass-box scroll-reveal delay-1">
+                <h3>Ensino de inglês dinâmico</h3>
+                <p>O aprendizado autêntico exige estrutura. Como professor e desenvolvedor front-end, criei um ecossistema próprio unindo lógica algorítmica e linguística aplicadas à vida real.</p>
+                
+                <div class="accordion-wrapper">
+                    <button id="toggle-sobre-btn" class="accordion-header" aria-expanded="false" aria-controls="sobre-texto">
+                        Mais sobre mim <span class="accordion-icon">+</span>
+                    </button>
+                    <div id="sobre-texto" class="collapsible-content">
+                        <p>Ao longo de 8 anos na Nova Zelândia, adquiri certificação acadêmica na Universidade de Auckland e o CELTA de Cambridge. Não acredito em métodos de "decoreba". Assim como não se programa copiando código alheio sem entender a sintaxe, não se atinge a fluência sem analisar as engrenagens da gramática.</p>
+                        <p>Meu foco é 100% no desenvolvimento das suas capacidades lógicas para deduzir e construir a comunicação em inglês autonomamente, utilizando ferramentas digitais exclusivas e análises profundas da cultura pop e profissional.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="metodologia" class="content-section">
+            <h2 class="section-title scroll-reveal">A Metodologia</h2>
+            
+            <div class="video-wrapper scroll-reveal delay-1">
+                <iframe src="https://www.youtube.com/embed/XaBnDq-y-AU" title="Metodologia Estrutural do Teacher Leo Ramos" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+
+            <div class="text-glass-box scroll-reveal delay-2">
+                <h3>Aprendendo o Idioma</h3>
+                <p>Nenhum aluno é jogado à conversação sem antes estabelecer o *framework* mental. O método garante o domínio estrutural (sintaxe e tempos verbais) nas primeiras etapas de execução.</p>
+                
+                <div class="accordion-wrapper">
+                    <button id="toggle-metodologia-btn" class="accordion-header" aria-expanded="false" aria-controls="metodologia-texto">
+                        Mais sobre a Metodologia <span class="accordion-icon">+</span>
+                    </button>
+                    <div id="metodologia-texto" class="collapsible-content">
+                        <ul>
+                            <li><strong>Análise de Sintaxe:</strong> Dissecação lógica da montagem de frases. Compreenda o 'porquê' e não apenas o 'como'.</li>
+                            <li><strong>Parsing de Filmes:</strong> Treinamento de *listening* com *inputs* do mundo real. Transcrição, tradução e análise semântica de diálogos.</li>
+                            <li><strong>Output Direto (Conversação):</strong> Aplicação imediata da base de dados construída, focada em rotinas reais de trabalho, tecnologia e academia.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contato" class="site-footer scroll-reveal">
+    <div class="footer-content">
+        <div class="social-media-links">
+            <h4 style="color: var(--text-main); margin-bottom: 0.85rem; text-transform: uppercase; letter-spacing: 1px; font-size: 0.85rem;">Siga-me nas redes sociais e acesse o App</h4>
+            <a href="https://www.youtube.com/@teacherleoramos/videos" target="_blank" rel="noopener noreferrer" title="Canal YouTube Teacher Leo Ramos" aria-label="YouTube">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/youtube-play.png" alt="Ícone YouTube" width="30" height="30" loading="lazy">
+            </a>
+            <a href="https://www.instagram.com/teacherleoramos/" target="_blank" rel="noopener noreferrer" title="Instagram Teacher Leo Ramos" aria-label="Instagram">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/instagram-new.png" alt="Ícone Instagram" width="30" height="30" loading="lazy">
+            </a>
+            <a href="https://www.tiktok.com/@teacherleoramos" target="_blank" rel="noopener noreferrer" title="TikTok Teacher Leo Ramos" aria-label="TikTok">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/tiktok.png" alt="Ícone TikTok" width="30" height="30" loading="lazy">
+            </a>
+            <a href="https://wa.me/5511955582118" target="_blank" rel="noopener noreferrer" title="WhatsApp Agendamento" aria-label="WhatsApp">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/whatsapp--v1.png" alt="Ícone WhatsApp" width="30" height="30" loading="lazy">
+            </a>
+            <a href="index-app.html" target="_blank" rel="noopener noreferrer" title="Acesse o FFES App" aria-label="FFES App">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/controller.png" alt="Ícone FFES App" width="30" height="30" loading="lazy">
+            </a>
+        </div>
+        <div class="footer-info">
+            <p style="color: var(--gold-tech); font-family: 'Syncopate', sans-serif; font-size: 0.6rem; margin-bottom: 10px;"><strong>Contato</strong></p>
+            <p>Youtube: @teacherleoramos | Telefone - WhatsApp: (11) 95558-2118</p>
+            <p>Endereço: São Paulo, SP, Brasil</p>
+            <p>CNPJ: 43.226.983/0001-91</p>
+            <p style="margin-top: 15px; border-top: 1px solid rgba(59, 130, 246, 0.3); padding-top: 10px;">&copy; <span id="year">2026</span> | FEATHERED FRIENDS ENGLISH SCHOOL - FFES. Todos os direitos reservados.</p>
+        </div>
+    </div>
+    </footer>
+
+    <button id="back-to-top" aria-label="Voltar ao topo">&#8673;</button>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // 1. Atualização do Ano
+            document.getElementById('year').textContent = new Date().getFullYear();
+
+            // 2. Comportamento dinâmico do Header
+            const header = document.getElementById('main-header');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+
+            // 3. Paralax no vídeo de fundo
+            const parallaxBg = document.getElementById('parallax-bg');
+            window.addEventListener('scroll', () => {
+                const scrollY = window.scrollY;
+                if (parallaxBg) {
+                    parallaxBg.style.transform = `translateY(${scrollY * 0.35}px)`;
+                }
+            }, { passive: true });
+
+            // 4. Lógica Modular para Collapsibles
+            const setupToggle = (btnId, contentId) => {
+                const btn = document.getElementById(btnId);
+                const content = document.getElementById(contentId);
+                
+                if(btn && content) {
+                    btn.addEventListener('click', () => {
+                        const isExpanded = content.classList.contains('expanded');
+                        const icon = btn.querySelector('.accordion-icon');
+                        
+                        if (isExpanded) {
+                            content.classList.remove('expanded');
+                            btn.setAttribute('aria-expanded', 'false');
+                            if(icon) {
+                                icon.textContent = '+';
+                                icon.style.transform = 'rotate(0deg)';
+                            }
+                        } else {
+                            content.classList.add('expanded');
+                            btn.setAttribute('aria-expanded', 'true');
+                            if(icon) {
+                                icon.textContent = '−';
+                                icon.style.transform = 'rotate(180deg)';
+                            }
+                        }
+                    });
+                }
+            };
+
+            setupToggle('toggle-sobre-btn', 'sobre-texto');
+            setupToggle('toggle-metodologia-btn', 'metodologia-texto');
+
+            // 5. Lógica de Back to Top
+            const backToTopBtn = document.getElementById('back-to-top');
+            
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 400) {
+                    backToTopBtn.classList.add('visible');
+                } else {
+                    backToTopBtn.classList.remove('visible');
+                }
+            });
+
+            backToTopBtn.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+
+            // 6. SCROLL-DRIVEN IMMERSIVE (Intersection Observer)
+            // Revela as peças (caixas Bento) à medida que o Soberano desce a página
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.15 // Gatilho acionado quando 15% do elemento estiver visível
+            };
+
+            const scrollObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    } else {
+                        // Remova a classe 'visible' se quiser que o efeito se repita ao subir a página.
+                        // Mantido para manter a imersão viva em ambas as direções da rolagem.
+                        entry.target.classList.remove('visible');
+                    }
+                });
+            }, observerOptions);
+
+            const revealElements = document.querySelectorAll('.scroll-reveal');
+            revealElements.forEach(el => {
+                scrollObserver.observe(el);
+            });
+            
+            // Força a exibição imediata do header sem depender do scroll
+            setTimeout(() => {
+                const mainHeader = document.getElementById('main-header');
+                if(mainHeader) mainHeader.classList.add('visible');
+            }, 100);
+        });
+    </script>
+</body>
+</html>

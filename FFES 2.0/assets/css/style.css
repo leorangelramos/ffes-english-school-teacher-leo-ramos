@@ -1,0 +1,238 @@
+/* ======================
+   FFES GLOBAL DESIGN SYSTEM - STYLE.CSS
+   Theme: Dark Tech & Glassmorphism (Soberano Edition - Sem 3D, Compacto)
+   Author: Leonardo Rangel Ramos
+   ======================= */
+
+
+:root {
+    --bg-deep: #020c1b;
+    --primary-blue: #3b82f6;
+    --primary-blue-dim: rgba(59, 130, 246, 0.2);
+    --gold-tech: #e5c05b;
+    --gold-tech-dim: rgba(229, 192, 91, 0.2);
+    --success-green: #10b981;
+    --success-green-dim: rgba(16, 185, 129, 0.2);
+    --error-red: #ef4444;
+    --error-red-dim: rgba(239, 68, 68, 0.2);
+    
+    --text-main: #f0f4f8;
+    --text-muted: #8b9bb4;
+    
+    --gradient-blue-gold: linear-gradient(135deg, #0a192f 0%, #d4af37 100%);
+    --gradient-text: linear-gradient(to right, #3b82f6, #e5c05b);
+    
+    /* Glassmorphism Plano */
+    --glass-bg: rgba(10, 25, 47, 0.75);
+    --glass-border: rgba(229, 192, 91, 0.15);
+    --glass-blur: blur(16px);
+    --flat-shadow: 0 5px 20px rgba(0, 0, 0, 0.6);
+    
+    /* Clay Buttons (Mais leves e rápidos) */
+    --clay-btn-primary: 2px 2px 6px rgba(0, 0, 0, 0.5), -1px -1px 4px rgba(255, 255, 255, 0.05), inset 1px 1px 3px rgba(255, 255, 255, 0.2);
+    --clay-btn-gold: 2px 2px 6px rgba(0, 0, 0, 0.4), -1px -1px 4px rgba(229, 192, 91, 0.05), inset 1px 1px 3px rgba(229, 192, 91, 0.15);
+    --clay-inner-panel: inset 2px 2px 5px rgba(0,0,0,0.8), inset -1px -1px 3px rgba(255,255,255,0.03);
+    
+    /* Raios Reduzidos */
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 16px;
+    --radius-pill: 30px;
+}
+
+/* =========================================
+   2. RESET E BASE
+   ========================================= */
+*, *::before, *::after { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
+
+html { 
+    scroll-behavior: smooth; 
+    font-size: 14px; /* Fonte base menor para compactação global */
+    font-family: 'Inter', sans-serif; 
+    color: var(--text-main); 
+    background-color: var(--bg-deep); 
+    overflow-x: hidden; 
+}
+
+body { 
+    line-height: 1.5; 
+    -webkit-font-smoothing: antialiased; 
+    background-image: 
+        radial-gradient(circle at 15% 50%, rgba(59, 130, 246, 0.05), transparent 25%), 
+        radial-gradient(circle at 85% 30%, rgba(229, 192, 91, 0.05), transparent 25%); 
+    background-attachment: fixed; 
+}
+
+img, video, svg { display: block; max-width: 100%; }
+a { color: var(--primary-blue); text-decoration: none; transition: color 0.3s ease; }
+a:hover { color: var(--gold-tech); }
+
+/* =========================================
+   3. TIPOGRAFIA SEO E HIERARQUIA
+   ========================================= */
+h1, h2, h3, h4, h5, h6 { 
+    font-family: 'Syncopate', sans-serif; 
+    text-transform: uppercase; 
+    line-height: 1.2; 
+    margin-bottom: 0.5rem; 
+    color: var(--text-main); 
+}
+
+/* Bug do webkit-background-clip resolvido */
+.text-gradient { 
+    background: var(--gradient-text); 
+    color: var(--gold-tech); /* Fallback seguro */
+}
+
+p { margin-bottom: 0.8rem; color: var(--text-muted); }
+
+/* =========================================
+   4. HEADER GLASSMORPHISM (UNIVERSAL)
+   ========================================= */
+.header-glass { 
+    position: absolute; top: 0; left: 0; right: 0; z-index: 1000; 
+    background: rgba(10, 25, 47, 0.85); backdrop-filter: var(--glass-blur); 
+    border-bottom: 1px solid var(--glass-border); box-shadow: 0 5px 20px rgba(0,0,0,0.6); 
+    display: flex; flex-direction: column; align-items: center; padding: 0.5rem 5%; gap: 6px; 
+    transition: all 0.3s ease; 
+}
+
+.header-glass.scrolled { padding: 0.3rem 5%; background: rgba(2, 12, 27, 0.98); position: fixed; }
+
+.nav-center { width: 100%; }
+.nav-center ul { display: grid; grid-template-columns: repeat(3, auto); gap: 6px 10px; list-style: none; justify-content: center; }
+.nav-center a { color: var(--text-muted); text-decoration: none; font-weight: 600; font-size: 0.6rem; text-transform: uppercase; letter-spacing: 1px; padding: 3px 8px; border-radius: 6px; background: rgba(10, 25, 47, 0.4); transition: all 0.2s ease; }
+.nav-center a:hover { color: var(--gold-tech); background: rgba(229, 192, 91, 0.07); transform: translateY(-1px); }
+
+.header-divider { width: 100%; height: 1px; margin-top: 2px; background: linear-gradient(to right, transparent, rgba(229, 192, 91, 0.2), transparent); }
+
+.header-bottom-level { display: flex; justify-content: center; gap: 10px; width: 100%; }
+.app-btn { display: flex; align-items: center; gap: 4px; padding: 4px 12px; background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(229, 192, 91, 0.1); border-radius: 20px; color: var(--text-main); font-size: 0.65rem; font-weight: 600; box-shadow: var(--clay-btn-gold); transition: all 0.3s ease; }
+.app-btn:hover { background: var(--primary-blue-dim); border-color: var(--primary-blue); transform: translateY(-1px); }
+.app-btn svg { width: 10px; height: 10px; fill: var(--gold-tech); }
+
+@media (max-width: 600px) { 
+    .nav-center ul { grid-template-columns: repeat(2, auto); } 
+    .header-bottom-level { flex-direction: column; align-items: center; gap: 5px; } 
+}
+
+/* =========================================
+   5. LAYOUT GERAL (COMPACTADO EM 50%)
+   ========================================= */
+main { margin-top: 100px; position: relative; z-index: 1; }
+
+.content-section { padding: 2rem 5% 2rem; max-width: 900px; margin: 0 auto; }
+
+.section-title { font-size: 1.5rem; text-align: center; margin-bottom: 1.5rem; text-shadow: 2px 2px 6px rgba(0,0,0,0.8); }
+
+/* Glass Box (Paddings Reduzidos pela Metade) */
+.text-glass-box {
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--glass-border);
+    border-left: 3px solid var(--gold-tech);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: var(--flat-shadow);
+    transition: transform 0.3s ease;
+}
+
+.text-glass-box:hover { transform: translateY(-2px); }
+
+@media (max-width: 600px) { 
+    .text-glass-box { padding: 1rem; margin-bottom: 1rem; border-radius: var(--radius-md); } 
+    .content-section { padding: 1.5rem 3% 1rem; }
+}
+
+/* =========================================
+   6. BOTÕES CYBER (Menores e mais ágeis)
+   ========================================= */
+.cyber-btn { display: inline-block; text-decoration: none; padding: 10px 20px; font-weight: 800; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; border-radius: var(--radius-sm); cursor: pointer; transition: all 0.2s ease; border: none; outline: none; text-align: center; }
+.cyber-btn-primary { background: var(--gradient-blue-gold); color: #fff; border: 1px solid rgba(255,255,255,0.1); box-shadow: var(--clay-btn-primary); }
+.cyber-btn-primary:hover:not(:disabled) { filter: brightness(1.15); transform: translateY(-2px); }
+.cyber-btn-primary:disabled { opacity: 0.5; cursor: not-allowed; }
+.cyber-btn-gold { background: rgba(229, 192, 91, 0.05); color: var(--gold-tech); border: 1px solid rgba(229, 192, 91, 0.3); backdrop-filter: blur(5px); box-shadow: var(--clay-btn-gold); }
+.cyber-btn-gold:hover:not(:disabled) { background: var(--gold-tech); color: var(--bg-deep); transform: translateY(-2px); }
+.cyber-btn-gold:disabled { opacity: 0.5; cursor: not-allowed; }
+
+/* =========================================
+   7. CARROSSEL E TABELAS (COMPACTADOS)
+   ========================================= */
+.carousel-wrapper { width: 100%; overflow: hidden; position: relative; }
+.carousel-track { display: flex; transition: transform 0.3s ease; }
+.carousel-slide { min-width: 100%; box-sizing: border-box; display: flex; flex-direction: column; justify-content: center; padding: 0 0.5rem; }
+.carousel-slide h3, .carousel-slide h4 { font-size: 1.1rem; margin-bottom: 0.5rem; }
+.carousel-slide p, .carousel-slide ul { font-size: 0.85rem; margin-bottom: 0.5rem; }
+
+.carousel-nav-container { display: flex; gap: 10px; justify-content: space-between; margin-top: 1rem; }
+.carousel-nav-container button { flex: 1; }
+
+.glass-table-wrapper { width: 100%; overflow-x: auto; margin-top: 0.8rem; border-radius: var(--radius-sm); border: 1px solid var(--glass-border); box-shadow: var(--clay-inner-panel); }
+.glass-table { width: 100%; border-collapse: collapse; font-size: 0.8rem; text-align: center; }
+.glass-table th { background: var(--gradient-blue-gold); color: #fff; padding: 8px; font-family: 'Syncopate', sans-serif; text-transform: uppercase; font-size: 0.65rem; letter-spacing: 1px; }
+.glass-table td { padding: 8px; border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--text-main); background: rgba(2, 12, 27, 0.4); }
+.glass-table tr:nth-child(even) td { background: rgba(10, 25, 47, 0.6); }
+
+/* =========================================
+   8. PLACAR E XP (COMPACTADOS)
+   ========================================= */
+.score-board { display: flex; justify-content: center; align-items: center; gap: 15px; flex-wrap: wrap; }
+.score-item { font-family: 'Syncopate', sans-serif; font-size: 0.75rem; text-transform: uppercase; }
+.score-item strong { font-size: 1.2rem; margin-left: 5px; font-family: 'Inter', sans-serif; }
+#acertos-geral { color: var(--success-green); }
+#erros-geral { color: var(--error-red); }
+
+.xp-board { background: var(--gradient-blue-gold); color: #fff; padding: 8px 16px; border-radius: var(--radius-sm); font-family: 'Syncopate', sans-serif; font-weight: bold; box-shadow: var(--clay-btn-primary); text-align: center; font-size: 0.85rem; }
+.xp-board strong { font-size: 1.2rem; margin-left: 6px; color: #fff; }
+
+/* =========================================
+   9. QUIZ ENGINE (COMPACTADO)
+   ========================================= */
+.quiz-title-progress { font-family: 'Syncopate', sans-serif; color: var(--gold-tech); font-size: 0.9rem; margin-bottom: 1rem; text-align: center; letter-spacing: 1px; }
+.question-text { font-size: 1.2rem; margin-bottom: 0.3rem; text-align: center; font-weight: 800; text-shadow: 1px 1px 3px rgba(0,0,0,0.5); }
+.question-instruction { color: var(--text-muted); text-align: center; margin-bottom: 1.5rem; font-size: 0.85rem; }
+
+.options-grid { display: grid; grid-template-columns: 1fr; gap: 10px; margin-bottom: 1.5rem; max-width: 500px; margin-left: auto; margin-right: auto; }
+.opt-btn { background: rgba(10, 25, 47, 0.6); border: 1px solid rgba(59, 130, 246, 0.3); color: var(--text-main); padding: 10px 15px; border-radius: var(--radius-sm); font-size: 0.95rem; cursor: pointer; transition: all 0.2s ease; text-align: center; font-weight: 600; box-shadow: var(--clay-btn-gold); }
+.opt-btn:hover:not(:disabled) { background: var(--primary-blue-dim); border-color: var(--primary-blue); transform: translateY(-2px); }
+.opt-btn:disabled { cursor: not-allowed; opacity: 0.7; }
+
+.opt-btn.correct-ans { background: var(--success-green-dim); border-color: var(--success-green); color: var(--success-green); box-shadow: 0 0 15px var(--success-green-dim); }
+.opt-btn.wrong-ans { background: var(--error-red-dim); border-color: var(--error-red); color: var(--error-red); box-shadow: 0 0 15px var(--error-red-dim); }
+
+.feedback-box { background: rgba(229, 192, 91, 0.08); border-left: 3px solid var(--gold-tech); padding: 12px; border-radius: 4px; margin-bottom: 1.5rem; display: none; color: var(--text-main); font-size: 0.85rem; max-width: 500px; margin-left: auto; margin-right: auto; }
+.quiz-nav-btns { display: flex; gap: 15px; justify-content: center; }
+.quiz-nav-btns button { flex: 1; max-width: 200px; }
+
+/* =========================================
+   10. COMBOS E ANIMAÇÕES (LATÊNCIA ZERO)
+   ========================================= */
+.combo-container { width: 100%; margin-bottom: 1.5rem; max-width: 500px; margin-left: auto; margin-right: auto; }
+.combo-text { text-align: center; font-family: 'Syncopate', sans-serif; font-size: 0.75rem; color: var(--gold-tech); margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 1px; text-shadow: 0 0 4px var(--gold-tech-dim); }
+.combo-bar-wrapper { width: 100%; height: 10px; background: rgba(0,0,0,0.7); border-radius: var(--radius-pill); border: 1px solid var(--glass-border); overflow: hidden; position: relative; box-shadow: var(--clay-inner-panel); }
+.combo-bar-fill { height: 100%; background: var(--gradient-text); width: 0%; transition: width 0.3s ease; box-shadow: 0 0 8px var(--gold-tech); }
+
+@keyframes pulse-correct { 0% { transform: scale(1); } 50% { transform: scale(1.02); box-shadow: 0 0 30px var(--success-green); border-color: var(--success-green); } 100% { transform: scale(1); } }
+@keyframes shake-wrong { 0%, 100% { transform: translateX(0); border-color: var(--error-red); } 25% { transform: translateX(-8px); } 50% { transform: translateX(8px); } 75% { transform: translateX(-8px); } }
+@keyframes combo-x5 { 0% { filter: hue-rotate(0deg); transform: scale(1); } 50% { filter: hue-rotate(90deg); transform: scale(1.02); box-shadow: 0 0 40px rgba(59, 130, 246, 0.6); } 100% { filter: hue-rotate(0deg); transform: scale(1); } }
+@keyframes combo-x10 { 0% { box-shadow: 0 0 15px var(--primary-blue); transform: scale(1); } 50% { box-shadow: 0 0 50px var(--gold-tech); transform: scale(1.03) rotate(1deg); } 100% { box-shadow: 0 0 15px var(--primary-blue); transform: scale(1); } }
+@keyframes combo-x20 { 0% { filter: contrast(1); transform: scale(1); } 25% { filter: contrast(1.5); transform: scale(1.04) rotate(-1deg); box-shadow: 0 0 60px var(--gold-tech); } 50% { filter: contrast(2.5); box-shadow: 0 0 80px #fff; transform: scale(1.06) rotate(0deg); } 75% { filter: contrast(1.5); transform: scale(1.04) rotate(1deg); box-shadow: 0 0 60px var(--primary-blue); } 100% { filter: contrast(1); transform: scale(1); } }
+
+.anim-correct { animation: pulse-correct 0.3s ease-out; }
+.anim-wrong { animation: shake-wrong 0.3s ease-out; }
+.anim-combo-5 { animation: combo-x5 0.5s ease-in-out; }
+.anim-combo-10 { animation: combo-x10 0.6s ease-in-out; }
+.anim-combo-20 { animation: combo-x20 0.8s ease-in-out; }
+
+/* =========================================
+   11. BACK TO TOP
+   ========================================= */
+#back-to-top { position: fixed; bottom: 20px; right: 20px; width: 40px; height: 40px; border-radius: 50%; background: var(--glass-bg); border: 1px solid var(--gold-tech); color: var(--gold-tech); font-size: 1rem; display: flex; align-items: center; justify-content: center; cursor: pointer; opacity: 0; visibility: hidden; transition: all 0.3s ease; z-index: 999; }
+#back-to-top.visible { opacity: 1; visibility: visible; }
+#back-to-top:hover { background: var(--gold-tech); color: var(--bg-deep); transform: translateY(-3px); }
