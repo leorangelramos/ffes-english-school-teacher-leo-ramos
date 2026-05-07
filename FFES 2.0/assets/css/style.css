@@ -1,238 +1,534 @@
-/* ======================
-   FFES GLOBAL DESIGN SYSTEM - STYLE.CSS
-   Theme: Dark Tech & Glassmorphism (Soberano Edition - Sem 3D, Compacto)
-   Author: Leonardo Rangel Ramos
-   ======================= */
-
+/* STYLE.CSS - Teacher Leo Ramos
+   Modelo de Design: Glassmorphism Puro & Clean + Sistema de Quiz Engines
+   Autor: Leonardo Rangel Ramos
+*/
 
 :root {
     --bg-deep: #020c1b;
+    --bg-accent: #0a192f;
     --primary-blue: #3b82f6;
-    --primary-blue-dim: rgba(59, 130, 246, 0.2);
     --gold-tech: #e5c05b;
-    --gold-tech-dim: rgba(229, 192, 91, 0.2);
-    --success-green: #10b981;
-    --success-green-dim: rgba(16, 185, 129, 0.2);
-    --error-red: #ef4444;
-    --error-red-dim: rgba(239, 68, 68, 0.2);
-    
     --text-main: #f0f4f8;
     --text-muted: #8b9bb4;
     
+    /* Gradientes Oficiais */
     --gradient-blue-gold: linear-gradient(135deg, #0a192f 0%, #d4af37 100%);
     --gradient-text: linear-gradient(to right, #3b82f6, #e5c05b);
-    
-    /* Glassmorphism Plano */
-    --glass-bg: rgba(10, 25, 47, 0.75);
-    --glass-border: rgba(229, 192, 91, 0.15);
-    --glass-blur: blur(16px);
-    --flat-shadow: 0 5px 20px rgba(0, 0, 0, 0.6);
-    
-    /* Clay Buttons (Mais leves e rápidos) */
-    --clay-btn-primary: 2px 2px 6px rgba(0, 0, 0, 0.5), -1px -1px 4px rgba(255, 255, 255, 0.05), inset 1px 1px 3px rgba(255, 255, 255, 0.2);
-    --clay-btn-gold: 2px 2px 6px rgba(0, 0, 0, 0.4), -1px -1px 4px rgba(229, 192, 91, 0.05), inset 1px 1px 3px rgba(229, 192, 91, 0.15);
-    --clay-inner-panel: inset 2px 2px 5px rgba(0,0,0,0.8), inset -1px -1px 3px rgba(255,255,255,0.03);
-    
-    /* Raios Reduzidos */
-    --radius-sm: 6px;
-    --radius-md: 10px;
-    --radius-lg: 16px;
-    --radius-pill: 30px;
+
+    /* Glassmorphism Puro */
+    --glass-bg: rgba(10, 25, 47, 0.7);
+    --glass-border: rgba(229, 192, 91, 0.2);
+    --glass-blur: blur(15px);
+    --shadow-standard: 0 8px 32px 0 rgba(0, 0, 0, 0.6);
 }
 
-/* =========================================
-   2. RESET E BASE
-   ========================================= */
-*, *::before, *::after { 
-    margin: 0; 
-    padding: 0; 
-    box-sizing: border-box; 
+/* 1. RESET & GLOBAL */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-html { 
-    scroll-behavior: smooth; 
-    font-size: 14px; /* Fonte base menor para compactação global */
-    font-family: 'Inter', sans-serif; 
-    color: var(--text-main); 
-    background-color: var(--bg-deep); 
-    overflow-x: hidden; 
+html {
+    scroll-behavior: smooth;
+    font-family: 'Inter', sans-serif;
+    color: var(--text-main);
+    background-color: var(--bg-deep);
+    overflow-x: hidden;
 }
 
-body { 
-    line-height: 1.5; 
-    -webkit-font-smoothing: antialiased; 
-    background-image: 
-        radial-gradient(circle at 15% 50%, rgba(59, 130, 246, 0.05), transparent 25%), 
-        radial-gradient(circle at 85% 30%, rgba(229, 192, 91, 0.05), transparent 25%); 
-    background-attachment: fixed; 
+body {
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
 }
 
-img, video, svg { display: block; max-width: 100%; }
-a { color: var(--primary-blue); text-decoration: none; transition: color 0.3s ease; }
-a:hover { color: var(--gold-tech); }
-
-/* =========================================
-   3. TIPOGRAFIA SEO E HIERARQUIA
-   ========================================= */
-h1, h2, h3, h4, h5, h6 { 
-    font-family: 'Syncopate', sans-serif; 
-    text-transform: uppercase; 
-    line-height: 1.2; 
-    margin-bottom: 0.5rem; 
-    color: var(--text-main); 
+/* 2. BACKGROUND (VIDEO & OVERLAY) */
+.video-bg-container {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    z-index: -2;
+    overflow: hidden;
+    background: var(--bg-deep);
 }
 
-/* Bug do webkit-background-clip resolvido */
-.text-gradient { 
-    background: var(--gradient-text); 
-    color: var(--gold-tech); /* Fallback seguro */
+.video-bg-container video {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    filter: contrast(1.1) brightness(0.5);
+    opacity: 0.8;
 }
 
-p { margin-bottom: 0.8rem; color: var(--text-muted); }
-
-/* =========================================
-   4. HEADER GLASSMORPHISM (UNIVERSAL)
-   ========================================= */
-.header-glass { 
-    position: absolute; top: 0; left: 0; right: 0; z-index: 1000; 
-    background: rgba(10, 25, 47, 0.85); backdrop-filter: var(--glass-blur); 
-    border-bottom: 1px solid var(--glass-border); box-shadow: 0 5px 20px rgba(0,0,0,0.6); 
-    display: flex; flex-direction: column; align-items: center; padding: 0.5rem 5%; gap: 6px; 
-    transition: all 0.3s ease; 
+.video-overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    background: radial-gradient(circle at center, rgba(2, 12, 27, 0.4) 0%, rgba(2, 12, 27, 0.9) 100%);
+    z-index: -1;
 }
 
-.header-glass.scrolled { padding: 0.3rem 5%; background: rgba(2, 12, 27, 0.98); position: fixed; }
-
-.nav-center { width: 100%; }
-.nav-center ul { display: grid; grid-template-columns: repeat(3, auto); gap: 6px 10px; list-style: none; justify-content: center; }
-.nav-center a { color: var(--text-muted); text-decoration: none; font-weight: 600; font-size: 0.6rem; text-transform: uppercase; letter-spacing: 1px; padding: 3px 8px; border-radius: 6px; background: rgba(10, 25, 47, 0.4); transition: all 0.2s ease; }
-.nav-center a:hover { color: var(--gold-tech); background: rgba(229, 192, 91, 0.07); transform: translateY(-1px); }
-
-.header-divider { width: 100%; height: 1px; margin-top: 2px; background: linear-gradient(to right, transparent, rgba(229, 192, 91, 0.2), transparent); }
-
-.header-bottom-level { display: flex; justify-content: center; gap: 10px; width: 100%; }
-.app-btn { display: flex; align-items: center; gap: 4px; padding: 4px 12px; background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(229, 192, 91, 0.1); border-radius: 20px; color: var(--text-main); font-size: 0.65rem; font-weight: 600; box-shadow: var(--clay-btn-gold); transition: all 0.3s ease; }
-.app-btn:hover { background: var(--primary-blue-dim); border-color: var(--primary-blue); transform: translateY(-1px); }
-.app-btn svg { width: 10px; height: 10px; fill: var(--gold-tech); }
-
-@media (max-width: 600px) { 
-    .nav-center ul { grid-template-columns: repeat(2, auto); } 
-    .header-bottom-level { flex-direction: column; align-items: center; gap: 5px; } 
+/* 3. HEADER GLASSMORPHISM */
+.header-glass {
+    position: fixed; 
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border-bottom: 1px solid var(--glass-border);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.8rem 5%;
+    gap: 10px;
+    box-shadow: var(--shadow-standard);
+    transition: padding 0.3s ease;
 }
 
-/* =========================================
-   5. LAYOUT GERAL (COMPACTADO EM 50%)
-   ========================================= */
-main { margin-top: 100px; position: relative; z-index: 1; }
+.header-glass.scrolled {
+    padding: 0.4rem 5%;
+    background: rgba(10, 25, 47, 0.9);
+}
 
-.content-section { padding: 2rem 5% 2rem; max-width: 900px; margin: 0 auto; }
+.logo-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+}
 
-.section-title { font-size: 1.5rem; text-align: center; margin-bottom: 1.5rem; text-shadow: 2px 2px 6px rgba(0,0,0,0.8); }
+.logo-img-name {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
 
-/* Glass Box (Paddings Reduzidos pela Metade) */
-.text-glass-box {
+.logo-wrapper img {
+    width: 35px; height: 35px;
+    border-radius: 50%;
+    border: 1px solid var(--gold-tech);
+}
+
+.logo-name {
+    font-family: 'Syncopate', sans-serif;
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold-tech);
+}
+
+.nav-center ul {
+    display: flex;
+    gap: 15px;
+    list-style: none;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.nav-center a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    padding: 5px 10px;
+    border-radius: 8px;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid transparent;
+    transition: 0.3s;
+}
+
+.nav-center a:hover {
+    color: var(--gold-tech);
+    border-color: var(--gold-tech);
+    background: rgba(229, 192, 91, 0.05);
+}
+
+.header-divider {
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--glass-border), transparent);
+}
+
+.header-bottom-level {
+    display: flex;
+    gap: 15px;
+}
+
+.app-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 15px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--glass-border);
+    border-radius: 30px;
+    color: var(--text-main);
+    text-decoration: none;
+    font-size: 0.7rem;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.app-btn:hover {
+    background: var(--gradient-blue-gold);
+    border-color: var(--gold-tech);
+}
+
+.app-btn svg { width: 14px; height: 14px; fill: var(--gold-tech); }
+
+/* 4. MAIN LAYOUT (Atualizado para ficar mais próximo ao menu) */
+main {
+    margin-top: 100px; /* Reduzido de 150px para aproximar do Header */
+    position: relative;
+    z-index: 1;
+}
+
+/* 5. GLASS PANELS & SECTIONS */
+.glass-panel {
     background: var(--glass-bg);
     backdrop-filter: var(--glass-blur);
     -webkit-backdrop-filter: var(--glass-blur);
     border: 1px solid var(--glass-border);
-    border-left: 3px solid var(--gold-tech);
-    border-radius: var(--radius-lg);
-    padding: 1.5rem;
+    border-radius: 32px;
+    padding: 4rem 3rem;
+    max-width: 900px;
+    margin: 0 auto 4rem;
+    text-align: center;
+    box-shadow: var(--shadow-standard);
+}
+
+.hero-images-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.profile-img {
+    border-radius: 50%;
+    border: 2px solid var(--gold-tech);
+    width: 140px; height: 140px;
+    object-fit: cover;
+}
+
+.hero-logo-img {
+    max-width: 200px; height: auto;
+}
+
+.hero-name-title {
+    font-family: 'Syncopate', sans-serif;
+    font-size: 1.6rem;
+    color: var(--gold-tech);
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+}
+
+.hero-title {
+    font-family: 'Syncopate', sans-serif;
+    font-size: 2.2rem;
+    color: var(--text-main);
     margin-bottom: 1.5rem;
-    box-shadow: var(--flat-shadow);
-    transition: transform 0.3s ease;
+    text-transform: uppercase;
 }
 
-.text-glass-box:hover { transform: translateY(-2px); }
+.hero-title span { color: var(--gold-tech); }
 
-@media (max-width: 600px) { 
-    .text-glass-box { padding: 1rem; margin-bottom: 1rem; border-radius: var(--radius-md); } 
-    .content-section { padding: 1.5rem 3% 1rem; }
+.hero-subtitle {
+    font-size: 1.1rem;
+    margin-bottom: 2.5rem;
+    color: var(--text-muted);
 }
 
-/* =========================================
-   6. BOTÕES CYBER (Menores e mais ágeis)
-   ========================================= */
-.cyber-btn { display: inline-block; text-decoration: none; padding: 10px 20px; font-weight: 800; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; border-radius: var(--radius-sm); cursor: pointer; transition: all 0.2s ease; border: none; outline: none; text-align: center; }
-.cyber-btn-primary { background: var(--gradient-blue-gold); color: #fff; border: 1px solid rgba(255,255,255,0.1); box-shadow: var(--clay-btn-primary); }
-.cyber-btn-primary:hover:not(:disabled) { filter: brightness(1.15); transform: translateY(-2px); }
-.cyber-btn-primary:disabled { opacity: 0.5; cursor: not-allowed; }
-.cyber-btn-gold { background: rgba(229, 192, 91, 0.05); color: var(--gold-tech); border: 1px solid rgba(229, 192, 91, 0.3); backdrop-filter: blur(5px); box-shadow: var(--clay-btn-gold); }
-.cyber-btn-gold:hover:not(:disabled) { background: var(--gold-tech); color: var(--bg-deep); transform: translateY(-2px); }
-.cyber-btn-gold:disabled { opacity: 0.5; cursor: not-allowed; }
+/* 6. BUTTONS */
+.btn-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
 
-/* =========================================
-   7. CARROSSEL E TABELAS (COMPACTADOS)
-   ========================================= */
-.carousel-wrapper { width: 100%; overflow: hidden; position: relative; }
-.carousel-track { display: flex; transition: transform 0.3s ease; }
-.carousel-slide { min-width: 100%; box-sizing: border-box; display: flex; flex-direction: column; justify-content: center; padding: 0 0.5rem; }
-.carousel-slide h3, .carousel-slide h4 { font-size: 1.1rem; margin-bottom: 0.5rem; }
-.carousel-slide p, .carousel-slide ul { font-size: 0.85rem; margin-bottom: 0.5rem; }
+.cyber-btn {
+    text-decoration: none;
+    padding: 15px 35px;
+    font-weight: 800;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    border-radius: 12px;
+    transition: 0.3s;
+    cursor: pointer;
+}
 
-.carousel-nav-container { display: flex; gap: 10px; justify-content: space-between; margin-top: 1rem; }
-.carousel-nav-container button { flex: 1; }
+.cyber-btn-primary {
+    background: var(--gradient-blue-gold);
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.1);
+}
 
-.glass-table-wrapper { width: 100%; overflow-x: auto; margin-top: 0.8rem; border-radius: var(--radius-sm); border: 1px solid var(--glass-border); box-shadow: var(--clay-inner-panel); }
-.glass-table { width: 100%; border-collapse: collapse; font-size: 0.8rem; text-align: center; }
-.glass-table th { background: var(--gradient-blue-gold); color: #fff; padding: 8px; font-family: 'Syncopate', sans-serif; text-transform: uppercase; font-size: 0.65rem; letter-spacing: 1px; }
-.glass-table td { padding: 8px; border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--text-main); background: rgba(2, 12, 27, 0.4); }
-.glass-table tr:nth-child(even) td { background: rgba(10, 25, 47, 0.6); }
+.cyber-btn-gold {
+    background: rgba(229, 192, 91, 0.05);
+    color: var(--gold-tech);
+    border: 1px solid var(--gold-tech);
+}
 
-/* =========================================
-   8. PLACAR E XP (COMPACTADOS)
-   ========================================= */
-.score-board { display: flex; justify-content: center; align-items: center; gap: 15px; flex-wrap: wrap; }
-.score-item { font-family: 'Syncopate', sans-serif; font-size: 0.75rem; text-transform: uppercase; }
-.score-item strong { font-size: 1.2rem; margin-left: 5px; font-family: 'Inter', sans-serif; }
-#acertos-geral { color: var(--success-green); }
-#erros-geral { color: var(--error-red); }
+.cyber-btn:hover:not(:disabled) {
+    transform: translateY(-3px);
+    filter: brightness(1.2);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+}
 
-.xp-board { background: var(--gradient-blue-gold); color: #fff; padding: 8px 16px; border-radius: var(--radius-sm); font-family: 'Syncopate', sans-serif; font-weight: bold; box-shadow: var(--clay-btn-primary); text-align: center; font-size: 0.85rem; }
-.xp-board strong { font-size: 1.2rem; margin-left: 6px; color: #fff; }
+/* Botão de reset centralizado no Placar */
+.btn-reset-central {
+    padding: 8px 18px !important;
+    font-size: 0.75rem !important;
+    margin: 0 10px;
+}
 
-/* =========================================
-   9. QUIZ ENGINE (COMPACTADO)
-   ========================================= */
-.quiz-title-progress { font-family: 'Syncopate', sans-serif; color: var(--gold-tech); font-size: 0.9rem; margin-bottom: 1rem; text-align: center; letter-spacing: 1px; }
-.question-text { font-size: 1.2rem; margin-bottom: 0.3rem; text-align: center; font-weight: 800; text-shadow: 1px 1px 3px rgba(0,0,0,0.5); }
-.question-instruction { color: var(--text-muted); text-align: center; margin-bottom: 1.5rem; font-size: 0.85rem; }
+/* 7. CONTENT SECTIONS (Padding reduzido) */
+.content-section { padding: 2rem 5%; max-width: 1200px; margin: 0 auto; }
 
-.options-grid { display: grid; grid-template-columns: 1fr; gap: 10px; margin-bottom: 1.5rem; max-width: 500px; margin-left: auto; margin-right: auto; }
-.opt-btn { background: rgba(10, 25, 47, 0.6); border: 1px solid rgba(59, 130, 246, 0.3); color: var(--text-main); padding: 10px 15px; border-radius: var(--radius-sm); font-size: 0.95rem; cursor: pointer; transition: all 0.2s ease; text-align: center; font-weight: 600; box-shadow: var(--clay-btn-gold); }
-.opt-btn:hover:not(:disabled) { background: var(--primary-blue-dim); border-color: var(--primary-blue); transform: translateY(-2px); }
-.opt-btn:disabled { cursor: not-allowed; opacity: 0.7; }
+.section-title {
+    font-family: 'Syncopate', sans-serif;
+    color: var(--text-main);
+    font-size: 1.8rem;
+    text-align: center;
+    margin-bottom: 1.5rem; /* Reduzido de 3.5rem para grudar nas caixas */
+    text-transform: uppercase;
+}
 
-.opt-btn.correct-ans { background: var(--success-green-dim); border-color: var(--success-green); color: var(--success-green); box-shadow: 0 0 15px var(--success-green-dim); }
-.opt-btn.wrong-ans { background: var(--error-red-dim); border-color: var(--error-red); color: var(--error-red); box-shadow: 0 0 15px var(--error-red-dim); }
+/* Caixas menores e centralizadas */
+.text-glass-box {
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--glass-border);
+    border-left: 4px solid var(--gold-tech);
+    border-radius: 20px;
+    padding: 1.5rem 2rem;
+    margin: 0 auto 1.5rem auto; /* Centraliza horizontalmente */
+    max-width: 750px; /* Caixas mais finas e elegantes */
+    box-shadow: var(--shadow-standard);
+    text-align: left;
+    position: relative;
+}
 
-.feedback-box { background: rgba(229, 192, 91, 0.08); border-left: 3px solid var(--gold-tech); padding: 12px; border-radius: 4px; margin-bottom: 1.5rem; display: none; color: var(--text-main); font-size: 0.85rem; max-width: 500px; margin-left: auto; margin-right: auto; }
-.quiz-nav-btns { display: flex; gap: 15px; justify-content: center; }
-.quiz-nav-btns button { flex: 1; max-width: 200px; }
+.text-glass-box h3 { color: var(--gold-tech); margin-bottom: 1rem; }
 
-/* =========================================
-   10. COMBOS E ANIMAÇÕES (LATÊNCIA ZERO)
-   ========================================= */
-.combo-container { width: 100%; margin-bottom: 1.5rem; max-width: 500px; margin-left: auto; margin-right: auto; }
-.combo-text { text-align: center; font-family: 'Syncopate', sans-serif; font-size: 0.75rem; color: var(--gold-tech); margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 1px; text-shadow: 0 0 4px var(--gold-tech-dim); }
-.combo-bar-wrapper { width: 100%; height: 10px; background: rgba(0,0,0,0.7); border-radius: var(--radius-pill); border: 1px solid var(--glass-border); overflow: hidden; position: relative; box-shadow: var(--clay-inner-panel); }
-.combo-bar-fill { height: 100%; background: var(--gradient-text); width: 0%; transition: width 0.3s ease; box-shadow: 0 0 8px var(--gold-tech); }
+/* 8. ACCORDIONS */
+.accordion-header {
+    width: 100%;
+    padding: 15px 20px;
+    background: var(--gradient-blue-gold);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-weight: 800;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
 
-@keyframes pulse-correct { 0% { transform: scale(1); } 50% { transform: scale(1.02); box-shadow: 0 0 30px var(--success-green); border-color: var(--success-green); } 100% { transform: scale(1); } }
-@keyframes shake-wrong { 0%, 100% { transform: translateX(0); border-color: var(--error-red); } 25% { transform: translateX(-8px); } 50% { transform: translateX(8px); } 75% { transform: translateX(-8px); } }
-@keyframes combo-x5 { 0% { filter: hue-rotate(0deg); transform: scale(1); } 50% { filter: hue-rotate(90deg); transform: scale(1.02); box-shadow: 0 0 40px rgba(59, 130, 246, 0.6); } 100% { filter: hue-rotate(0deg); transform: scale(1); } }
-@keyframes combo-x10 { 0% { box-shadow: 0 0 15px var(--primary-blue); transform: scale(1); } 50% { box-shadow: 0 0 50px var(--gold-tech); transform: scale(1.03) rotate(1deg); } 100% { box-shadow: 0 0 15px var(--primary-blue); transform: scale(1); } }
-@keyframes combo-x20 { 0% { filter: contrast(1); transform: scale(1); } 25% { filter: contrast(1.5); transform: scale(1.04) rotate(-1deg); box-shadow: 0 0 60px var(--gold-tech); } 50% { filter: contrast(2.5); box-shadow: 0 0 80px #fff; transform: scale(1.06) rotate(0deg); } 75% { filter: contrast(1.5); transform: scale(1.04) rotate(1deg); box-shadow: 0 0 60px var(--primary-blue); } 100% { filter: contrast(1); transform: scale(1); } }
+.collapsible-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+    opacity: 0;
+}
 
-.anim-correct { animation: pulse-correct 0.3s ease-out; }
-.anim-wrong { animation: shake-wrong 0.3s ease-out; }
-.anim-combo-5 { animation: combo-x5 0.5s ease-in-out; }
-.anim-combo-10 { animation: combo-x10 0.6s ease-in-out; }
-.anim-combo-20 { animation: combo-x20 0.8s ease-in-out; }
+.collapsible-content.expanded {
+    max-height: 1000px;
+    opacity: 1;
+    padding: 20px 0;
+}
 
-/* =========================================
-   11. BACK TO TOP
-   ========================================= */
-#back-to-top { position: fixed; bottom: 20px; right: 20px; width: 40px; height: 40px; border-radius: 50%; background: var(--glass-bg); border: 1px solid var(--gold-tech); color: var(--gold-tech); font-size: 1rem; display: flex; align-items: center; justify-content: center; cursor: pointer; opacity: 0; visibility: hidden; transition: all 0.3s ease; z-index: 999; }
-#back-to-top.visible { opacity: 1; visibility: visible; }
-#back-to-top:hover { background: var(--gold-tech); color: var(--bg-deep); transform: translateY(-3px); }
+/* 9. MEDIA ELEMENTS */
+.video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%;
+    border-radius: 24px;
+    overflow: hidden;
+    border: 1px solid var(--glass-border);
+    margin-bottom: 3.5rem;
+    box-shadow: var(--shadow-standard);
+}
+
+.video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+
+/* 10. FOOTER PREMIUM */
+.site-footer {
+    background: radial-gradient(circle at 50% 0%, rgba(2, 12, 27, 0.95), #01060e);
+    backdrop-filter: blur(20px);
+    border-top: 1px solid var(--gold-tech);
+    padding: 4rem 5% 2rem;
+    text-align: center;
+    position: relative;
+    margin-top: 5rem;
+}
+
+.site-footer::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--primary-blue), var(--gold-tech), transparent);
+    box-shadow: 0 0 15px var(--gold-tech);
+}
+
+.social-media-links { margin-bottom: 25px; }
+.social-media-links a { margin: 0 12px; display: inline-block; }
+.social-media-links img { 
+    width: 32px; height: 32px; 
+    filter: drop-shadow(0 0 5px rgba(229,192,91,0.3));
+    transition: 0.3s;
+}
+.social-media-links a:hover img { transform: translateY(-5px) scale(1.1); filter: drop-shadow(0 0 15px var(--gold-tech)); }
+
+.footer-info {
+    background: rgba(10, 25, 47, 0.4);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    padding: 30px;
+    display: inline-block;
+    margin-top: 1rem;
+}
+
+.footer-info p { font-size: 0.75rem; color: var(--text-main); margin-bottom: 0.6rem; }
+
+/* 11. UTILITIES */
+#back-to-top {
+    position: fixed;
+    bottom: 30px; right: 30px;
+    width: 50px; height: 50px;
+    border-radius: 50%;
+    background: var(--glass-bg);
+    border: 1px solid var(--gold-tech);
+    color: var(--gold-tech);
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none;
+    z-index: 999;
+    transition: 0.3s;
+}
+
+#back-to-top:hover { background: var(--gold-tech); color: #000; }
+
+/* 12. RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+    main { margin-top: 120px; } /* Reduzido de 200px */
+    .hero-title { font-size: 1.6rem; }
+    .hero-images-wrapper { flex-direction: column; }
+    .header-glass { padding: 1rem 2%; }
+    .nav-center a { font-size: 0.55rem; padding: 4px 8px; }
+    .options-grid { grid-template-columns: 1fr !important; }
+    .text-glass-box { padding: 1.2rem; } /* Caixas mais justas no celular */
+    .stats-board { flex-direction: column; gap: 10px; }
+}
+
+
+/* ==============================================================
+   13. QUIZ ENGINE & ANIMATIONS (ESTILO CASSINO / CAÇA-NÍQUEL)
+   ============================================================== */
+
+/* Carrossel de Explicação */
+.carousel-wrapper { overflow: hidden; width: 100%; border-radius: 10px; background: rgba(0,0,0,0.2); padding: 12px; font-size: 0.85rem; }
+.carousel-track { display: flex; transition: transform 0.4s ease-in-out; width: 100%; }
+.carousel-slide { min-width: 100%; box-sizing: border-box; padding: 0 10px; }
+.carousel-slide p, .carousel-slide ul { margin-bottom: 0.5rem; }
+.glass-table-wrapper { overflow-x: auto; margin-top: 10px; }
+.glass-table { width: 100%; border-collapse: collapse; text-align: left; font-size: 0.75rem; }
+.glass-table th { background: rgba(229, 192, 91, 0.1); color: var(--gold-tech); padding: 8px; border-bottom: 1px solid var(--gold-tech); }
+.glass-table td { padding: 8px; border-bottom: 1px solid rgba(255,255,255,0.05); }
+
+/* Score e Barras */
+.score-board {
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    font-size: 1.1rem; margin-bottom: 1.5rem; padding: 1.5rem !important; border-left: none;
+    border-top: 3px solid var(--primary-blue); border-bottom: 3px solid var(--primary-blue);
+}
+.xp-board { color: var(--gold-tech); font-family: 'Syncopate', sans-serif; font-size: 1.3rem; margin-bottom: 10px; text-shadow: 0 0 10px rgba(229, 192, 91, 0.5); }
+
+/* Placar reorganizado para o Botão Reset ficar no meio */
+.stats-board { 
+    display: flex; align-items: center; justify-content: center; gap: 15px; flex-wrap: wrap; 
+    font-weight: 800; font-size: 0.95rem; background: rgba(0,0,0,0.4); padding: 10px 20px; border-radius: 20px; width: 100%; 
+}
+
+.combo-container { background: rgba(0,0,0,0.4); border-radius: 12px; padding: 12px; margin-bottom: 20px; border: 1px solid rgba(229, 192, 91, 0.2); }
+.combo-bar-wrapper { width: 100%; height: 10px; background: #111; border-radius: 5px; overflow: hidden; margin-top: 8px; box-shadow: inset 0 0 5px #000; }
+.combo-bar-fill { height: 100%; background: var(--gradient-text); width: 0%; transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 0 10px var(--gold-tech); }
+
+/* Botões de Opção (Quiz) */
+.options-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 15px;}
+.opt-btn { 
+    padding: 12px; background: rgba(255,255,255,0.05); border: 2px solid var(--glass-border); 
+    color: #fff; border-radius: 12px; cursor: pointer; transition: all 0.2s ease; 
+    font-weight: 800; font-size: 1rem; text-transform: uppercase; letter-spacing: 1px;
+}
+.opt-btn:hover:not(:disabled) { background: rgba(229, 192, 91, 0.15); border-color: var(--gold-tech); transform: scale(1.05); }
+.opt-btn:disabled { cursor: not-allowed; opacity: 0.8; }
+
+.opt-btn.correct-ans { background: rgba(229, 192, 91, 0.3); border-color: var(--gold-tech); box-shadow: 0 0 20px rgba(229, 192, 91, 0.6); color: var(--gold-tech); }
+.opt-btn.wrong-ans { background: rgba(255, 0, 0, 0.3); border-color: #f00; box-shadow: 0 0 15px rgba(255, 0, 0, 0.4); color: #fff; text-decoration: line-through; }
+
+/* -------------------------------------------
+   KEYFRAMES DE ANIMAÇÕES ESTILO CASSINO/SLOTS
+------------------------------------------- */
+
+/* ACERTO: Pulo rápido com brilho dourado (Estilo Coleta de Moeda) */
+@keyframes pulse-correct-casino { 
+    0% { transform: scale(1) translateY(0); box-shadow: 0 0 0 transparent; border-color: var(--gold-tech); }
+    50% { transform: scale(1.03) translateY(-8px); background: rgba(229, 192, 91, 0.3); box-shadow: 0 15px 30px rgba(229, 192, 91, 0.5), inset 0 0 15px rgba(229,192,91,0.5); border-color: #fff; }
+    100% { transform: scale(1) translateY(0); background: var(--glass-bg); box-shadow: var(--shadow-standard); border-color: var(--glass-border); }
+}
+
+/* ERRO: Tranco forte para os lados (Máquina travando) */
+@keyframes shake-wrong-casino { 
+    0%, 100% { transform: translateX(0); background: var(--glass-bg); }
+    15% { transform: translateX(-12px) rotate(-1deg); background: rgba(255, 0, 0, 0.3); box-shadow: inset 0 0 20px red; }
+    30% { transform: translateX(12px) rotate(1deg); }
+    45% { transform: translateX(-12px) rotate(-1deg); }
+    60% { transform: translateX(12px) rotate(1deg); }
+    75% { transform: translateX(-6px) rotate(0); }
+}
+
+/* COMBO 5: Mini Prêmio (Pisca Dourado e Branco estilo Neon) */
+@keyframes combo5-casino { 
+    0%, 100% { box-shadow: 0 0 0 transparent; border-color: var(--glass-border); }
+    25% { box-shadow: 0 0 40px var(--gold-tech); border-color: var(--gold-tech); transform: scale(1.02); }
+    50% { box-shadow: 0 0 40px #fff; border-color: #fff; transform: scale(1.03); background: rgba(255,255,255,0.1); }
+    75% { box-shadow: 0 0 40px var(--gold-tech); border-color: var(--gold-tech); transform: scale(1.02); }
+}
+
+/* COMBO 10: Prêmio Grande (Chuva de Luzes) */
+@keyframes combo10-casino { 
+    0% { border-color: var(--gold-tech); box-shadow: 0 0 10px var(--gold-tech); }
+    20% { border-color: #ff0; box-shadow: 0 -20px 50px var(--gold-tech), 0 20px 50px #ff0; transform: scale(1.04); background: rgba(229, 192, 91, 0.2); }
+    40% { border-color: #fff; box-shadow: 0 -20px 50px #fff, 0 20px 50px var(--gold-tech); transform: scale(1.06); }
+    60% { border-color: #ff0; box-shadow: 0 -20px 50px var(--gold-tech), 0 20px 50px #ff0; transform: scale(1.04); background: rgba(229, 192, 91, 0.2); }
+    80% { border-color: #fff; box-shadow: 0 -20px 50px #fff, 0 20px 50px var(--gold-tech); transform: scale(1.02); }
+    100% { border-color: var(--glass-border); box-shadow: var(--shadow-standard); transform: scale(1); background: var(--glass-bg); }
+}
+
+/* COMBO 20: MEGA JACKPOT TIGRINHO (Frenesi de cores de Caça-Níquel) */
+@keyframes combo20-casino { 
+    0% { filter: contrast(1); transform: scale(1); }
+    10% { transform: scale(1.08); box-shadow: 0 0 80px var(--gold-tech), inset 0 0 30px #ff0; border-color: #ff0; background: rgba(229,192,91,0.3); }
+    20% { transform: scale(1.05) translateY(-5px); box-shadow: 0 0 100px #f00, inset 0 0 30px #f00; border-color: #f00; }
+    30% { transform: scale(1.08) translateY(5px); box-shadow: 0 0 100px var(--gold-tech), inset 0 0 30px #ff0; border-color: #ff0; }
+    40% { transform: scale(1.05) translateY(-5px); box-shadow: 0 0 100px #0f0, inset 0 0 30px #0f0; border-color: #0f0; }
+    50% { transform: scale(1.1) translateY(5px); box-shadow: 0 0 150px var(--gold-tech), inset 0 0 50px #ff0; border-color: #ff0; background: rgba(229,192,91,0.5); }
+    60% { transform: scale(1.05) translateY(-5px); box-shadow: 0 0 100px #0ff, inset 0 0 30px #0ff; border-color: #0ff; }
+    70% { transform: scale(1.08) translateY(5px); box-shadow: 0 0 100px var(--gold-tech), inset 0 0 30px #ff0; border-color: #ff0; }
+    80% { transform: scale(1.05) translateY(-5px); box-shadow: 0 0 100px #f0f, inset 0 0 30px #f0f; border-color: #f0f; }
+    90% { transform: scale(1.1) translateY(0); box-shadow: 0 0 150px var(--gold-tech), inset 0 0 80px #ff0; border-color: #fff; background: rgba(255,255,255,0.2); }
+    100% { filter: contrast(1); transform: scale(1); border-color: var(--glass-border); box-shadow: var(--shadow-standard); background: var(--glass-bg); }
+}
+
+/* Aplicando as classes de animação */
+.anim-correct { animation: pulse-correct-casino 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; }
+.anim-wrong { animation: shake-wrong-casino 0.4s ease-in-out forwards; }
+.anim-combo-5 { animation: combo5-casino 0.6s ease-out forwards; }
+.anim-combo-10 { animation: combo10-casino 0.9s ease-out forwards; }
+.anim-combo-20 { animation: combo20-casino 1.5s ease-out forwards; }
