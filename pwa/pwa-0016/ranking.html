@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>FFES | Ranking </title>
+    <meta name="title" content="FFES | Ranking Global (Top 200)">
+    <meta name="description" content="A classificação dos alunos da elite FFES. Veja quem domina o inglês e garanta sua posição.">
+    <meta name="robots" content="index, follow">
+    <meta name="google-site-verification" content="9L-nEDj4G24e3JD1kt5bxcZ5_qHo9Q-03_DJkfIH_1M" />
+    
+    <link rel="canonical" href="https://teacherleoramos.com.br/PWA/Pasta015/ranking-geral.html">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-M8ZG06010Q"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-M8ZG06010Q');
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Table",
+      "name": "Ranking Global FFES",
+      "about": "Classificação de gamificação dos estudantes do método FFES"
+    }
+    </script>
+
+    <link rel="stylesheet" href="/CSS/style-app.css">
+
+    <style>
+        /* === UI DO RANKING === */
+        
+        /* Contêiner principal centralizando tudo absolutamente */
+        .dashboard-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Centraliza tudo no eixo X */
+            padding-top: 20px;
+            width: 100%;
+        }
+
+        .ranking-container { 
+            background: rgba(0,0,0,0.6); 
+            padding: 15px; 
+            border-radius: 20px; 
+            border: 1px solid rgba(255,215,0,0.4); 
+            width: 100%;
+            max-width: 450px; 
+        }
+        
+        .ranking-row { display: flex; justify-content: space-between; padding: 12px 10px; border-bottom: 1px solid rgba(255,255,255,0.05); color: #fff; align-items: center; }
+        .ranking-row:last-child { border-bottom: none; }
+        
+        .rank-1 { background: linear-gradient(90deg, rgba(255,215,0,0.2) 0%, transparent 100%); border-left: 4px solid #FFD700; color: #FFD700; font-weight: 900;}
+        .rank-2 { background: linear-gradient(90deg, rgba(192,192,192,0.2) 0%, transparent 100%); border-left: 4px solid #C0C0C0; font-weight: 900;}
+        .rank-3 { background: linear-gradient(90deg, rgba(205,127,50,0.2) 0%, transparent 100%); border-left: 4px solid #CD7F32; font-weight: 900;}
+        
+        .player-row { background: rgba(0, 230, 118, 0.2) !important; border: 1px solid #00e676 !important; border-radius: 8px; color: #00e676 !important; font-weight: 900; box-shadow: 0 0 15px rgba(0,230,118,0.3);}
+        
+        .rank-pos { width: 50px; font-size: 1.1rem; opacity: 0.8;}
+        .rank-name { flex: 1; text-align: left; text-transform: uppercase; font-size: 0.95rem; letter-spacing: 1px;}
+        .rank-xp { font-family: monospace; font-size: 1.1rem; color: #FFD700;}
+
+        /* MODAL DE NOME */
+        .modal-overlay { position: fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.95); z-index:9999; display:none; justify-content:center; align-items:center; backdrop-filter: blur(5px); }
+        .modal-box { background: #111; border: 2px solid #FFD700; padding: 30px; border-radius: 15px; text-align: center; max-width: 350px; width: 90%; }
+        .modal-box input { padding: 15px; width: 100%; border-radius: 8px; border: 1px solid #FFD700; background: #000; color: #fff; text-transform: uppercase; margin: 15px 0; font-weight: bold; text-align: center;}
+        .modal-box button { background: #FFD700; color: #000; font-weight: 900; padding: 12px 30px; border:none; border-radius: 50px; cursor:pointer; text-transform: uppercase; width: 100%;}
+
+        /* ESTILO DO BOTÃO DE VOLTAR - BEM PEQUENO E CENTRALIZADO */
+        .btn-voltar { 
+            margin-bottom: 15px; 
+            padding: 6px 12px; 
+            font-size: 0.65rem; /* Fonte muito menor */
+            background: transparent; 
+            border: 1px solid #FFD700; /* Borda mais fina */
+            color: #FFD700; 
+            border-radius: 30px; 
+            text-decoration: none; 
+            font-weight: 900; 
+            text-transform: uppercase; 
+            transition: all 0.3s; 
+            letter-spacing: 1px;
+        }
+        .btn-voltar:hover { background: #FFD700; color: #000; box-shadow: 0 0 10px #FFD700; }
+    </style>
+</head>
+
+<body>
+    <header class="glass-header app-header" style="text-align: center; padding: 20px;">
+        <h1 style="color: #fff;">LEADER<span style="color: #FFD700;">BOARD</span></h1>
+        <p class="subtitle">Ranking atualizado a cada 24 horas.</p>
+    </header>
+
+    <main class="dashboard-container">
+        <a href="indexpasta015.html" class="btn-voltar">← Sair do Ranking</a>
+        
+        <div class="ranking-container" id="ranking-list">
+            </div>
+    </main>
+
+    <div class="modal-overlay" id="name-modal">
+        <div class="modal-box">
+            <h2 style="color: #FFD700; margin-bottom: 5px;">IDENTIFIQUE-SE</h2>
+            <p style="font-size: 0.8rem; color: #ccc;">Digite seu nome para entrar na tabela de classificação oficial.</p>
+            <input type="text" id="player-name-input" placeholder="Seu Nome / Apelido" maxlength="15">
+            <button onclick="saveName()">Entrar no Jogo</button>
+        </div>
+    </div>
+
+    <script>
+        // === 1. ALGORITMO SHADOW RANKING (Geração de Fantasmas) ===
+        // Nomes de alta plausibilidade no Brasil/Mundo
+        const firstNames = ["Ana", "Pedro", "Lucas", "Mariana", "Carlos", "Julia", "Rafael", "Fernanda", "Thiago", "Camila", "Bruno", "Amanda", "Rodrigo", "Letícia", "Diego", "Beatriz", "Gustavo", "Laura", "Felipe", "Isabela", "Vitor", "Juliana", "Marcelo", "Carolina", "Eduardo"];
+        const lastNames = ["Silva", "Costa", "Oliveira", "Souza", "Santos", "Ferreira", "Alves", "Pereira", "Lima", "Gomes", "Ribeiro", "Martins", "Carvalho", "Melo", "Barbosa"];
+
+        // Seed generator para que os bots não mudem de nome ao recarregar a página
+        function seededRandom(seed) {
+            let x = Math.sin(seed) * 10000;
+            return x - Math.floor(x);
+        }
+
+        let bots = [];
+        // Lógica de Inflação de Pontos baseada em Dias
+        let today = Math.floor(Date.now() / 86400000); // Dias desde 1970
+        let startDay = 20550; // "Data Zero" do sistema (Aprox. Maio 2026)
+        let daysPassed = Math.max(0, today - startDay);
+
+        // Gera 199 Oponentes
+        for(let i=1; i<=199; i++) {
+            let fn = firstNames[Math.floor(seededRandom(i) * firstNames.length)];
+            let ln = lastNames[Math.floor(seededRandom(i+100) * lastNames.length)];
+            let botName = `${fn} ${ln}`;
+            
+            // Curva de XP: O #1 tem muito, o #199 tem pouco
+            let baseXP = Math.floor(35000 * Math.pow(0.96, i));
+            
+            // Cada bot "joga" um pouco por dia. O XP sobe naturalmente a cada 24h.
+            let dailyGain = Math.floor(20 + seededRandom(i+200) * 130);
+            let currentXP = baseXP + (daysPassed * dailyGain);
+            
+            bots.push({ name: botName, xp: currentXP, isPlayer: false });
+        }
+
+        // === 2. LÓGICA DO JOGADOR E RENDERIZAÇÃO ===
+        function renderRanking() {
+            let pName = localStorage.getItem('ffes_player_name');
+            let pXP = parseInt(localStorage.getItem('ffes_xp') || 0);
+            
+            if(!pName) {
+                // Força o registro se for a primeira vez
+                document.getElementById('name-modal').style.display = 'flex';
+                return;
+            }
+            
+            // Mistura o Jogador com os Fantasmas e Ordena
+            let allPlayers = [...bots, {name: pName, xp: pXP, isPlayer: true}];
+            allPlayers.sort((a, b) => b.xp - a.xp);
+            
+            let listHTML = '';
+            let playerRank = -1;
+            
+            for(let i=0; i<allPlayers.length; i++) {
+                if(allPlayers[i].isPlayer) playerRank = i + 1;
+                
+                // Renderiza o Top 20 para instigar
+                if(i < 20) {
+                    let rankClass = i === 0 ? 'rank-1' : (i === 1 ? 'rank-2' : (i === 2 ? 'rank-3' : ''));
+                    let itemClass = allPlayers[i].isPlayer ? 'player-row' : '';
+                    let displayName = allPlayers[i].isPlayer ? `${allPlayers[i].name} (YOU)` : allPlayers[i].name;
+                    
+                    listHTML += `
+                    <div class="ranking-row ${rankClass} ${itemClass}">
+                        <div class="rank-pos">#${i+1}</div>
+                        <div class="rank-name">${displayName}</div>
+                        <div class="rank-xp">${allPlayers[i].xp.toLocaleString('pt-BR')}</div>
+                    </div>`;
+                }
+            }
+            
+            // Se o Jogador for pior que Top 20, esfrega a posição real na cara dele lá embaixo
+            if(playerRank > 20) {
+                listHTML += `<div style="text-align:center; color:#FFD700; margin: 15px 0; font-size: 1.5rem; opacity: 0.5;">...</div>`;
+                listHTML += `
+                <div class="ranking-row player-row">
+                    <div class="rank-pos">#${playerRank}</div>
+                    <div class="rank-name">${pName} (YOU)</div>
+                    <div class="rank-xp">${pXP.toLocaleString('pt-BR')}</div>
+                </div>`;
+            }
+            
+            document.getElementById('ranking-list').innerHTML = listHTML;
+        }
+
+        // === 3. REGISTRO DE IDENTIDADE ===
+        function saveName() {
+            let nameInput = document.getElementById('player-name-input').value.trim();
+            if(nameInput.length > 2) {
+                localStorage.setItem('ffes_player_name', nameInput);
+                document.getElementById('name-modal').style.display = 'none';
+                renderRanking();
+            } else {
+                alert("O sistema exige um codinome válido (mínimo 3 letras).");
+            }
+        }
+
+        window.onload = renderRanking;
+    </script>
+    
+</body>
+</html>

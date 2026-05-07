@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>FFES | Conditional Continuous Master: O Fluxo Hipotético</title>
+    <meta name="title" content="FFES | Conditional Continuous Master: O Fluxo Hipotético">
+    <meta name="description" content="Domine a estrutura WOULD BE + ING. Treinamento avançado de reflexo para situações hipotéticas em curso com o método FFES.">
+    <meta name="keywords" content="conditional continuous, would be ing, gramática inglês, teacher leo ramos, ffes, inglês de alta performance">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="Portuguese">
+    <meta name="author" content="Teacher Leo Ramos">
+    <meta name="google-site-verification" content="9L-nEDj4G24e3JD1kt5bxcZ5_qHo9Q-03_DJkfIH_1M" />
+
+    
+    <link rel="canonical" href="https://teacherleoramos.com.br/PWA/Pasta002/wouldcontinuous.html">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-M8ZG06010Q"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-M8ZG06010Q');
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LearningResource",
+      "name": "Simulador Conditional Continuous - FFES",
+      "description": "Desafio de lógica focado na estrutura WOULD BE + ING, eliminando confusões com o particípio BEEN.",
+      "url": "https://teacherleoramos.com.br/PWA/Pasta002/wouldcontinuous.html",
+      "learningResourceType": "Interactive Resource",
+      "educationalAlignment": {
+        "@type": "AlignmentObject",
+        "alignmentType": "educationalSubject",
+        "targetName": "English Grammar - Conditional Continuous"
+      },
+      "isPartOf": {
+        "@type": "CollectionPage",
+        "url": "https://teacherleoramos.com.br/PWA/Pasta002/indexpasta002.html"
+      }
+    }
+    </script>
+
+    <link rel="stylesheet" href="/CSS/style-app.css">
+
+    <style>
+        :root { --main-color: #7209b7; --success: #4cc9f0; --error: #f72585; --accent: #480ca8; }
+        .game-wrapper { width: 100%; max-width: 600px; display: flex; flex-direction: column; gap: 15px; margin: 0 auto; z-index: 10; position: relative; }
+        
+        .info-box { background: rgba(114, 9, 183, 0.05); border: 1px solid var(--main-color); border-radius: 16px; padding: 20px; margin-bottom: 20px; color: #ccc; font-size: 0.85rem; line-height: 1.4; text-align: left; }
+        .info-box h3 { color: #fff; margin-bottom: 8px; text-transform: uppercase; font-size: 0.95rem; border-bottom: 1px solid rgba(114, 9, 183, 0.2); padding-bottom: 5px; }
+        .info-box b { color: var(--success); }
+        .info-box code { color: #ffea00; background: rgba(0,0,0,0.3); padding: 2px 4px; border-radius: 4px; font-family: monospace; }
+
+        .game-card { background: rgba(0, 0, 0, 0.85); backdrop-filter: blur(10px); border: 2px solid var(--main-color); border-radius: 24px; padding: 35px 20px; text-align: center; box-shadow: 0 10px 40px rgba(114, 9, 183, 0.3); min-height: 220px; display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; overflow: visible;}
+        
+        #display-sentence { font-size: 1.5rem; font-weight: 900; line-height: 1.5; color: #fff; text-shadow: 0 2px 10px rgba(0,0,0,0.8); }
+        .gap { color: var(--success); border-bottom: 3px solid var(--success); padding: 0 10px; }
+        
+        .game-controls { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; width: 100%; margin-top: 20px; }
+        .btn-option { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255,255,255,0.2); color: #fff; padding: 20px; font-size: 1.1rem; font-weight: 900; border-radius: 16px; cursor: pointer; transition: all 0.2s ease; text-transform: uppercase; line-height: 1.2;}
+        .btn-option:hover { border-color: var(--success); background: rgba(76, 201, 240, 0.1); transform: translateY(-3px); }
+        .btn-option.correct { background: var(--success) !important; color: #000 !important; border-color: var(--success) !important; }
+        .btn-option.wrong { background: var(--error) !important; opacity: 0.5; }
+
+        #feedback { height: 30px; text-align: center; font-weight: 900; letter-spacing: 2px; text-transform: uppercase; transition: all 0.2s; opacity: 0; margin-bottom: 10px; }
+        #feedback.visible { opacity: 1; transform: translateY(-5px); }
+        
+        .xp-pill { background: rgba(0, 0, 0, 0.5); border: 1px solid var(--main-color); padding: 5px 15px; border-radius: 50px; color: #fff; font-weight: 900; font-size: 1.1rem; margin-top: 10px; display: inline-block; }
+        .feedback-float { position: absolute; top: -15px; right: -10px; font-weight: 900; font-size: 0.9rem; color: #000; background: #fff; padding: 5px 12px; border-radius: 20px; border: 1px solid #fff; opacity: 0; transform: translateY(10px); transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); z-index: 5; box-shadow: 0 0 15px var(--main-color); }
+        .feedback-float.show { opacity: 1; transform: translateY(0) rotate(5deg); }
+
+        .progress-track { width: 100%; height: 5px; background: rgba(255,255,255,0.1); position: fixed; top: 0; left: 0; z-index: 1000; }
+        .progress-fill { height: 100%; background: var(--main-color); width: 0%; transition: width 0.3s ease; }
+
+        /* CASINO EFFECTS */
+        .casino-coin { position: fixed; width: 25px; height: 25px; background: var(--success); border-radius: 50%; box-shadow: 0 0 15px var(--success); pointer-events: none; z-index: 9999; top: 50%; left: 50%; transform: translate(-50%, -50%); border: 2px solid #fff; }
+        @keyframes coin-explosion { 0% { transform: translate(-50%, -50%) scale(0.5); opacity: 1; } 100% { transform: translate(var(--tx), var(--ty)) scale(1.2) rotate(360deg); opacity: 0; } }
+        
+        .rain-coin { position: fixed; width: 35px; height: 35px; background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45" fill="%234cc9f0" stroke="white" stroke-width="5"/><text x="50" y="65" font-size="25" text-anchor="middle" font-weight="bold" fill="black" font-family="Arial">ING</text></svg>') no-repeat center; background-size: contain; pointer-events: none; z-index: 9999; top: -50px; animation: coin-drop linear forwards; }
+        @keyframes coin-drop { 0% { transform: translateY(0) rotate(0deg); opacity: 1; } 100% { transform: translateY(110vh) rotate(360deg); opacity: 0.8; } }
+        
+        @keyframes shake { 0%, 100% { transform: translateX(0); } 20%, 60% { transform: translateX(-8px); } 40%, 80% { transform: translateX(8px); } }
+        .shake-effect { animation: shake 0.4s ease-in-out; border-color: var(--error) !important; }
+
+        .btn-voltar { display: block; margin: 30px auto; padding: 15px 30px; background: transparent; border: 2px solid var(--main-color); color: var(--main-color); border-radius: 50px; text-decoration: none; font-weight: 900; text-align: center; max-width: 300px; text-transform: uppercase; transition: all 0.3s; }
+        .btn-voltar:hover { background: var(--main-color); color: #000; }
+    </style>
+</head>
+<body>
+
+    <div class="progress-track"><div class="progress-fill" id="progress-bar"></div></div>
+
+    <header class="glass-header" style="text-align: center; padding: 20px;">
+        <h1 style="color: #fff; margin-bottom: 5px;">WOULD <span style="color: var(--success);">CONTINUOUS</span></h1>
+        <p class="subtitle" style="color: #ccc;">Matrix do Fluxo Hipotético: Would Be + ING</p>
+        <div class="xp-pill">XP: <span id="xp-val">0</span></div>
+    </header>
+
+    <main style="max-width: 800px; margin: 0 auto; padding: 0 20px;">
+        
+        <div class="info-box">
+            <h3>📖 Briefing: O Estado Imaginário</h3>
+            <p>O <b>Would Continuous</b> descreve o que você estaria fazendo agora se a realidade fosse outra.</p>
+            <p>• <b>A PEÇA FIXA:</b> Use sempre <code>BE</code>. Nunca use "been" ou "being" aqui! <br><i>Ex: I <u>would be</u> studying.</i></p>
+            <p>• <b>O FLUXO:</b> O verbo principal <u>precisa</u> de <b>ING</b>. <br><i>Ex: She <u>would be</u> accept<b>ing</b>.</i></p>
+            <p>• <b>NEGAR:</b> O "NOT" trava o would. <br><i>Ex: I <u>wouldn't be</u> (would not be) participating.</i></p>
+        </div>
+
+        <div id="game-container" class="game-wrapper">
+            <div id="feedback"></div>
+            
+            <div class="game-card" id="game-card-element">
+                <div id="combo-feedback" class="feedback-float">COMBO x2</div>
+                <div id="speed-feedback" style="font-size: 0.75rem; color: var(--success); font-weight: 900; margin-top: 10px;"></div>
+                <div id="display-sentence">Iniciando Varredura de Fluxo...</div>
+            </div>
+
+            <div class="game-controls" id="ab-controls">
+                <button id="btn1" class="btn-option"></button>
+                <button id="btn2" class="btn-option"></button>
+            </div>
+        </div>
+
+        <a href="indexpasta002.html" class="btn-voltar">⬅ Voltar ao Hub</a>
+    </main>
+
+    <script>
+        // === 1. BANCO DE DADOS: 200 VERBOS COGNATOS ===
+        const verbs = ["accept", "adapt", "admit", "adopt", "affect", "alarm", "alter", "analyze", "appear", "apply", "approve", "argue", "arrest", "assist", "attract", "calculate", "cause", "celebrate", "center", "characterize", "classify", "collect", "combine", "command", "comment", "communicate", "compare", "complete", "compose", "concentrate", "conclude", "confirm", "confuse", "connect", "consider", "consist", "construct", "consult", "consume", "contact", "contain", "continue", "contrast", "contribute", "control", "convert", "convince", "copy", "correct", "create", "criticize", "cultivate", "date", "decide", "declare", "decorate", "defend", "define", "demonstrate", "depend", "describe", "design", "detect", "determine", "diagnose", "dictate", "differ", "direct", "discipline", "discuss", "distinguish", "distribute", "divide", "document", "dominate", "duplicate", "echo", "economize", "edit", "educate", "effect", "elaborate", "elect", "eliminate", "emancipate", "emit", "emphasize", "employ", "estimate", "evacuate", "evoke", "exaggerate", "examine", "exclaim", "exclude", "execute", "exercise", "exhibit", "exist", "expand", "expect", "experiment", "explain", "explore", "export", "expose", "express", "extend", "fabricate", "facilitate", "factor", "fascinate", "favor", "figure", "filter", "finalize", "finance", "fix", "form", "formulate", "fragment", "frequent", "function", "generalize", "generate", "glamorize", "group", "guarantee", "guide", "hesitate", "honor", "hospitalize", "humanize", "identify", "ignore", "illustrate", "imagine", "imitate", "implore", "import", "impose", "impress", "include", "indicate", "induce", "infect", "inform", "initiate", "inject", "insert", "insist", "inspect", "inspire", "install", "instigate", "institute", "instruct", "insult", "integrate", "intensify", "interest", "interpret", "interrupt", "introduce", "invade", "invent", "investigate", "invite", "isolate", "justify", "limit", "list", "locate", "maintain", "manipulate", "manufacture", "march", "mark", "mechanize", "meditate", "mention", "mobilize", "modify", "multiply", "murmur", "negate", "negotiate", "neutralize", "note", "notify", "object", "observe", "occupy", "occur", "offer", "omit", "operate", "organize", "orient", "originate", "participate", "pass", "penetrate", "perfect", "permit", "persist", "persuade", "plan", "plant", "practice", "prepare", "present", "preserve", "produce", "program", "progress", "project", "promote", "pronounce", "protect"];
+
+        const subjects = ["I", "YOU", "HE", "SHE", "WE", "THEY"];
+
+        let database = [];
+
+        // GERAÇÃO DE 200 DESAFIOS (WOULD BE vs WOULD BEEN, ING vs BASE)
+        for (let i = 0; i < 200; i++) {
+            let v = verbs[i % verbs.length];
+            let s = subjects[Math.floor(Math.random() * subjects.length)];
+            let type = Math.floor(Math.random() * 4); 
+
+            if (type === 0) { // AFIRMATIVA - Testa Be vs Been
+                database.push({
+                    q: `${s} WOULD ___ ${v.toUpperCase()}ING right now.`,
+                    correct: "BE",
+                    wrong: "BEEN"
+                });
+            } else if (type === 1) { // AFIRMATIVA - Testa ING vs Base
+                database.push({
+                    q: `${s} WOULD BE ___ currently. (${v})`,
+                    correct: v.toUpperCase() + "ING",
+                    wrong: v.toUpperCase()
+                });
+            } else if (type === 2) { // NEGATIVA - Testa Posição do Not
+                database.push({
+                    q: `${s} ___ BE ${v.toUpperCase()}ING.`,
+                    correct: "WOULDN'T",
+                    wrong: "WOULD BE NOT"
+                });
+            } else { // PERGUNTA - Testa Inversão
+                database.push({
+                    q: `___ ${s} BE ${v.toUpperCase()}ING if possible?`,
+                    correct: "WOULD",
+                    wrong: "WILL"
+                });
+            }
+        }
+        database = database.sort(() => Math.random() - 0.5);
+
+        // === 2. AUDIO ENGINE (WEB AUDIO) ===
+        const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        function playFX(type) {
+            if (audioCtx.state === 'suspended') audioCtx.resume();
+            const t = audioCtx.currentTime;
+            const osc = audioCtx.createOscillator();
+            const gain = audioCtx.createGain();
+            osc.connect(gain); gain.connect(audioCtx.destination);
+            
+            if(type === 'win') {
+                osc.type = 'sine'; osc.frequency.setValueAtTime(1200, t);
+                gain.gain.setValueAtTime(0.1, t); gain.gain.exponentialRampToValueAtTime(0.01, t + 0.2);
+                osc.start(t); osc.stop(t + 0.2);
+            } else if(type === 'error') {
+                osc.type = 'sawtooth'; osc.frequency.setValueAtTime(140, t);
+                gain.gain.setValueAtTime(0.1, t); gain.gain.exponentialRampToValueAtTime(0.01, t + 0.4);
+                osc.start(t); osc.stop(t + 0.4);
+            } else if(type === 'combo') {
+                osc.type = 'square'; osc.frequency.setValueAtTime(700 + (state.combo * 40), t);
+                gain.gain.setValueAtTime(0.05, t); gain.gain.exponentialRampToValueAtTime(0.01, t + 0.1);
+                osc.start(t); osc.stop(t + 0.1);
+            }
+        }
+
+        // === 3. VISUAL EFFECTS ===
+        function triggerCasino() {
+            for (let i = 0; i < 15; i++) {
+                const coin = document.createElement('div');
+                coin.classList.add('casino-coin');
+                const angle = Math.random() * Math.PI * 2;
+                const dist = 80 + Math.random() * 120;
+                coin.style.setProperty('--tx', Math.cos(angle) * dist + 'px');
+                coin.style.setProperty('--ty', Math.sin(angle) * dist + 'px');
+                coin.style.animation = `coin-explosion 0.5s ease-out forwards`;
+                document.body.appendChild(coin);
+                setTimeout(() => coin.remove(), 600);
+            }
+        }
+
+        function triggerRain() {
+            for (let i = 0; i < 40; i++) {
+                const coin = document.createElement('div');
+                coin.classList.add('rain-coin');
+                coin.style.left = Math.random() * 100 + 'vw';
+                coin.style.animationDuration = (1 + Math.random() * 1.5) + 's';
+                document.body.appendChild(coin);
+                setTimeout(() => coin.remove(), 2500);
+            }
+        }
+
+        // === 4. STATE & LOGIC ===
+        let xp = parseInt(localStorage.getItem('ffes_xp') || 0);
+        document.getElementById('xp-val').innerText = xp;
+        let state = { currentQ: null, combo: 0, startTime: 0, questionIndex: 0 };
+
+        function generate() {
+            if(state.questionIndex >= 100) {
+                document.getElementById('display-sentence').innerHTML = "FLUXO CONDICIONAL DOMINADO!<br><span style='color:var(--success);'>100/100</span>";
+                document.getElementById('ab-controls').style.display = 'none';
+                return;
+            }
+            const fb = document.getElementById('feedback');
+            fb.className = ''; document.getElementById('speed-feedback').innerText = "";
+            
+            const item = database[state.questionIndex];
+            state.currentQ = item;
+            state.startTime = Date.now();
+
+            document.getElementById('display-sentence').innerHTML = item.q.replace("___", "<span class='gap'>___</span>");
+            
+            let btn1 = document.getElementById('btn1');
+            let btn2 = document.getElementById('btn2');
+            if (Math.random() > 0.5) {
+                btn1.innerText = item.correct; btn1.onclick = () => check(item.correct);
+                btn2.innerText = item.wrong; btn2.onclick = () => check(item.wrong);
+            } else {
+                btn1.innerText = item.wrong; btn1.onclick = () => check(item.wrong);
+                btn2.innerText = item.correct; btn2.onclick = () => check(item.correct);
+            }
+        }
+
+        function check(choice) {
+            const timeDelta = Date.now() - state.startTime;
+            const isSpeed = timeDelta < 2200;
+            const fb = document.getElementById('feedback');
+
+            if (choice === state.currentQ.correct) {
+                state.combo++;
+                let gain = 10 + (state.combo * 2);
+                if(isSpeed) { gain += 5; document.getElementById('speed-feedback').innerText = "⚡ FLOW SPEED!"; }
+                xp += gain; localStorage.setItem('ffes_xp', xp);
+                document.getElementById('xp-val').innerText = xp;
+                
+                fb.innerText = "PRECISO!"; fb.style.color = "var(--success)"; fb.className = "visible";
+                playFX('win'); triggerCasino();
+                if(state.combo % 10 === 0) triggerRain();
+
+                const comboEl = document.getElementById('combo-feedback');
+                comboEl.innerText = `COMBO x${state.combo}`; comboEl.classList.add('show');
+                document.getElementById('progress-bar').style.width = (state.questionIndex + 1) + '%';
+                
+                setTimeout(() => { comboEl.classList.remove('show'); state.questionIndex++; generate(); }, 700);
+            } else {
+                state.combo = 0; xp = Math.max(0, xp - 5);
+                localStorage.setItem('ffes_xp', xp); document.getElementById('xp-val').innerText = xp;
+                fb.innerText = "ERRO DE FLUXO!"; fb.style.color = "var(--error)"; fb.className = "visible";
+                playFX('error');
+                const card = document.getElementById('game-card-element');
+                card.classList.add('shake-effect');
+                setTimeout(() => card.classList.remove('shake-effect'), 400);
+                document.getElementById('combo-feedback').classList.remove('show');
+            }
+        }
+
+        window.onload = generate;
+    </script>
+</body>
+</html>

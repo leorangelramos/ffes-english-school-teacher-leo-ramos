@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>FFES | Vocabulário Master: Family Tree</title>
+    <meta name="title" content="FFES | Vocabulário Master: Family Tree">
+    <meta name="description" content="Domine o vocabulário completo de família em inglês. De cunhados a tataravôs, aprenda com o sistema interativo e gamificado do método FFES.">
+    <meta name="keywords" content="membros da família em inglês, vocabulário família inglês, teacher leo ramos, ffes, árvore genealógica inglês, cunhado em inglês">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="Portuguese">
+    <meta name="author" content="Teacher Leo Ramos">
+    
+    <link rel="canonical" href="https://teacherleoramos.com.br/PWA/Pasta014/aulatema0001.html">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-M8ZG06010Q"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-M8ZG06010Q');
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LearningResource",
+      "name": "Vocabulário: Family Tree - FFES",
+      "description": "Treinamento interativo completo sobre vocabulário familiar em inglês (Family Members), abrangendo parentescos diretos, in-laws e gerações estendidas.",
+      "url": "https://teacherleoramos.com.br/PWA/Pasta014/aulatema0001.html",
+      "learningResourceType": "Interactive Resource",
+      "educationalAlignment": {
+        "@type": "AlignmentObject",
+        "alignmentType": "educationalSubject",
+        "targetName": "English Vocabulary"
+      },
+      "isPartOf": {
+        "@type": "CollectionPage",
+        "url": "https://teacherleoramos.com.br/PWA/Pasta014/indexpasta014.html"
+      }
+    }
+    </script>
+
+    <link rel="stylesheet" href="/CSS/style-app.css">
+
+    <style>
+        /* === ENGINE DE GAMIFICAÇÃO === */
+        .game-wrapper { width: 100%; max-width: 600px; display: flex; flex-direction: column; gap: 20px; z-index: 10; margin: 0 auto; }
+        .game-card { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); border: 2px solid #FFD700; border-radius: 24px; padding: 30px 20px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.5); min-height: 180px; display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; }
+        #display-sentence { font-size: 1.5rem; font-weight: 700; line-height: 1.4; color: #fff; text-shadow: 0 2px 10px rgba(0,0,0,0.5); z-index: 2; }
+        .gap { color: #FFD700; border-bottom: 3px solid #FFD700; padding: 0 8px; display: inline-block; min-width: 60px; }
+        
+        .game-controls { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; width: 100%; }
+        .btn-option { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255,255,255,0.2); color: #fff; padding: 20px; font-size: 1.1rem; font-weight: 800; border-radius: 16px; cursor: pointer; transition: all 0.2s ease; text-transform: uppercase; }
+        .btn-option:hover { border-color: #FFD700; background: rgba(255, 215, 0, 0.1); transform: translateY(-3px); }
+        .btn-option.correct { background: #00e676 !important; color: #000 !important; border-color: #00e676 !important; }
+        .btn-option.wrong { background: #ff1744 !important; opacity: 0.5; }
+
+        #feedback { height: 30px; text-align: center; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; transition: all 0.2s; opacity: 0; margin-bottom: 10px; }
+        #feedback.visible { opacity: 1; transform: translateY(-5px); }
+        
+        .xp-pill { background: rgba(0, 0, 0, 0.3); border: 1px solid #FFD700; padding: 5px 15px; border-radius: 50px; color: #FFD700; font-weight: 800; font-size: 1.1rem; margin-top: 10px; display: inline-block; }
+        .feedback-float { position: absolute; top: -15px; right: -10px; font-weight: 900; font-size: 0.9rem; color: #FFD700; background: rgba(0,0,0,0.8); padding: 5px 12px; border-radius: 20px; border: 1px solid #FFD700; opacity: 0; transform: translateY(10px); transition: all 0.3s ease; z-index: 5; }
+        .feedback-float.show { opacity: 1; transform: translateY(0) rotate(5deg); }
+        .speed-badge { position: absolute; bottom: 10px; width: 100%; left: 0; text-align: center; font-size: 0.7rem; color: #00e676; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; }
+
+        .progress-track { width: 100%; height: 5px; background: rgba(255,255,255,0.1); position: fixed; top: 0; left: 0; z-index: 1000; }
+        .progress-fill { height: 100%; background: #FFD700; width: 0%; transition: width 0.3s ease; box-shadow: 0 0 10px #FFD700; }
+
+        .casino-coin { position: fixed; width: 25px; height: 25px; background: #FFD700; border-radius: 50%; box-shadow: 0 0 12px rgba(255, 215, 0, 1); pointer-events: none; z-index: 9999; top: 50%; left: 50%; transform: translate(-50%, -50%); border: 2px solid #fff; }
+        @keyframes coin-explosion { 0% { transform: translate(-50%, -50%) scale(0.5); opacity: 1; } 100% { transform: translate(var(--tx), var(--ty)) scale(1.2) rotate(360deg); opacity: 0; } }
+        
+        .rain-coin { position: fixed; width: 30px; height: 30px; background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45" fill="%23FFD700" stroke="%23B8860B" stroke-width="5"/><text x="50" y="65" font-size="40" text-anchor="middle" fill="%23B8860B" font-family="Arial">$</text></svg>') no-repeat center; background-size: contain; pointer-events: none; z-index: 9999; top: -50px; animation: coin-drop linear forwards; }
+        @keyframes coin-drop { 0% { transform: translateY(0) rotate(0deg); opacity: 1; } 100% { transform: translateY(110vh) rotate(360deg); opacity: 0.8; } }
+        
+        @keyframes shake { 0%, 100% { transform: translateX(0); } 20%, 60% { transform: translateX(-8px); } 40%, 80% { transform: translateX(8px); } }
+        .shake-effect { animation: shake 0.4s ease-in-out; }
+
+        .btn-voltar { display: block; margin: 30px auto; padding: 15px 30px; background: transparent; border: 2px solid #FFD700; color: #FFD700; border-radius: 50px; text-decoration: none; font-weight: bold; text-align: center; max-width: 300px; text-transform: uppercase; transition: all 0.3s; }
+        .btn-voltar:hover { background: #FFD700; color: #000; }
+    </style>
+</head>
+<body>
+
+    <div class="progress-track"><div class="progress-fill" id="progress-bar"></div></div>
+
+    <header class="glass-header" style="text-align: center; padding: 20px;">
+        <h1 style="color: #fff; margin-bottom: 5px;">FAMILY <span style="color: #FFD700;">TREE</span></h1>
+        <p class="subtitle" style="color: #ccc;">A Árvore Genealógica (100 Desafios)</p>
+        <div class="xp-pill">XP: <span id="xp-val">0</span></div>
+        <div style="font-size: 0.8rem; color: #FFD700; margin-top: 5px;">Progresso: <span id="q-count">0</span> / 100</div>
+    </header>
+
+    <main style="max-width: 800px; margin: 20px auto; padding: 0 20px;">
+        <div id="game-container" class="game-wrapper">
+            <div id="feedback"></div>
+            
+            <div class="game-card" id="game-card-element">
+                <div id="combo-feedback" class="feedback-float">COMBO x2</div>
+                <div id="speed-feedback" class="speed-badge"></div>
+                <div id="display-sentence">Carregando DNA Lexical...</div>
+            </div>
+
+            <div class="game-controls" id="ab-controls">
+                <button id="btn1" class="btn-option" onclick="checkAnswer(1)">A</button>
+                <button id="btn2" class="btn-option" onclick="checkAnswer(2)">B</button>
+            </div>
+        </div>
+
+        <a href="indexpasta014.html" class="btn-voltar">⬅ Voltar ao Tema</a>
+    </main>
+
+    <script>
+        // === 1. BANCO DE DADOS MASSIÇO: FAMILY VOCABULARY ===
+        const vocabList = [
+            // Core Family
+            { en: "Father", pt: "Pai", wrongEn: "Uncle" }, { en: "Mother", pt: "Mãe", wrongEn: "Aunt" },
+            { en: "Son", pt: "Filho", wrongEn: "Nephew" }, { en: "Daughter", pt: "Filha", wrongEn: "Niece" },
+            { en: "Brother", pt: "Irmão", wrongEn: "Cousin" }, { en: "Sister", pt: "Irmã", wrongEn: "Wife" },
+            { en: "Siblings", pt: "Irmãos (no geral)", wrongEn: "Parents" }, { en: "Parents", pt: "Pais", wrongEn: "Relatives" },
+            
+            // Grandparents & Extended
+            { en: "Grandfather", pt: "Avô", wrongEn: "Great-grandfather" }, { en: "Grandmother", pt: "Avó", wrongEn: "Great-grandmother" },
+            { en: "Grandson", pt: "Neto", wrongEn: "Nephew" }, { en: "Granddaughter", pt: "Neta", wrongEn: "Niece" },
+            { en: "Uncle", pt: "Tio", wrongEn: "Father-in-law" }, { en: "Aunt", pt: "Tia", wrongEn: "Mother-in-law" },
+            { en: "Cousin", pt: "Primo / Prima", wrongEn: "Nephew" },
+            { en: "Nephew", pt: "Sobrinho", wrongEn: "Cousin" }, { en: "Niece", pt: "Sobrinha", wrongEn: "Aunt" },
+            
+            // In-Laws (A família do cônjuge)
+            { en: "Father-in-law", pt: "Sogro", wrongEn: "Stepfather" }, { en: "Mother-in-law", pt: "Sogra", wrongEn: "Stepmother" },
+            { en: "Brother-in-law", pt: "Cunhado", wrongEn: "Half-brother" }, { en: "Sister-in-law", pt: "Cunhada", wrongEn: "Stepsister" },
+            { en: "Son-in-law", pt: "Genro", wrongEn: "Stepson" }, { en: "Daughter-in-law", pt: "Nora", wrongEn: "Stepdaughter" },
+            
+            // Step-Family (Família por casamentos posteriores)
+            { en: "Stepfather", pt: "Padrasto", wrongEn: "Father-in-law" }, { en: "Stepmother", pt: "Madrasta", wrongEn: "Mother-in-law" },
+            { en: "Stepson", pt: "Enteado", wrongEn: "Son-in-law" }, { en: "Stepdaughter", pt: "Enteada", wrongEn: "Daughter-in-law" },
+            
+            // Half-siblings (Laço biológico parcial)
+            { en: "Half-brother", pt: "Meio-irmão (mesmo pai ou mãe)", wrongEn: "Stepbrother" },
+            { en: "Half-sister", pt: "Meia-irmã (mesmo pai ou mãe)", wrongEn: "Stepsister" },
+            
+            // Greats (As gerações passadas)
+            { en: "Great-grandfather", pt: "Bisavô", wrongEn: "Grandfather" }, { en: "Great-grandmother", pt: "Bisavó", wrongEn: "Grandmother" },
+            { en: "Great-grandson", pt: "Bisneto", wrongEn: "Grandson" }, { en: "Great-granddaughter", pt: "Bisneta", wrongEn: "Granddaughter" },
+            { en: "Great-great-grandfather", pt: "Tataravô", wrongEn: "Great-grandfather" }, 
+            { en: "Great-great-grandmother", pt: "Tataravó", wrongEn: "Great-grandmother" },
+            
+            // Outros
+            { en: "Godfather", pt: "Padrinho", wrongEn: "Stepfather" }, { en: "Godmother", pt: "Madrinha", wrongEn: "Stepmother" },
+            { en: "Godson", pt: "Afilhado", wrongEn: "Nephew" }, { en: "Goddaughter", pt: "Afilhada", wrongEn: "Niece" },
+            { en: "Twins", pt: "Gêmeos", wrongEn: "Siblings" }, { en: "Relatives", pt: "Parentes", wrongEn: "Parents" },
+            { en: "Ancestors", pt: "Ancestrais", wrongEn: "Relatives" }, { en: "Wife", pt: "Esposa", wrongEn: "Sister" },
+            { en: "Husband", pt: "Marido", wrongEn: "Brother" }
+        ];
+
+        // Lógica de Parentesco (Para forçar o raciocínio em inglês)
+        const logicQs = [
+            { q: "My mother's brother is my <span class='gap'>_____</span>.", correct: "Uncle", wrong: "Nephew" },
+            { q: "My father's father is my <span class='gap'>_____</span>.", correct: "Grandfather", wrong: "Great-grandfather" },
+            { q: "My sister's son is my <span class='gap'>_____</span>.", correct: "Nephew", wrong: "Cousin" },
+            { q: "My brother's daughter is my <span class='gap'>_____</span>.", correct: "Niece", wrong: "Aunt" },
+            { q: "My uncle's child is my <span class='gap'>_____</span>.", correct: "Cousin", wrong: "Nephew" },
+            { q: "My wife's mother is my <span class='gap'>_____</span>.", correct: "Mother-in-law", wrong: "Stepmother" },
+            { q: "My husband's brother is my <span class='gap'>_____</span>.", correct: "Brother-in-law", wrong: "Half-brother" },
+            { q: "My father's new wife (not my mom) is my <span class='gap'>_____</span>.", correct: "Stepmother", wrong: "Mother-in-law" },
+            { q: "A sibling who shares ONLY ONE parent with you is a <span class='gap'>_____</span>.", correct: "Half-brother", wrong: "Stepbrother" },
+            { q: "Your grandfather's father is your <span class='gap'>_____</span>.", correct: "Great-grandfather", wrong: "Great-great-grandfather" },
+            { q: "Your great-grandfather's father is your <span class='gap'>_____</span>.", correct: "Great-great-grandfather", wrong: "Great-grandfather" },
+            { q: "The man married to my daughter is my <span class='gap'>_____</span>.", correct: "Son-in-law", wrong: "Brother-in-law" }
+        ];
+
+        let database = [];
+        
+        // Gera as questões automáticas baseadas na lista massiça
+        vocabList.forEach(item => {
+            // Var 1: O que significa? (Inglês -> Português)
+            database.push({ q: `O que significa: <strong>"${item.en}"</strong>?`, correct: item.pt, wrong: vocabList[Math.floor(Math.random()*vocabList.length)].pt });
+            // Var 2: Como se diz? (Português -> Inglês)
+            database.push({ q: `Como se diz <strong>"${item.pt}"</strong>?`, correct: item.en, wrong: item.wrongEn });
+        });
+
+        // Adiciona as perguntas de raciocínio lógico
+        logicQs.forEach(lq => {
+            database.push({ q: `LÓGICA: <br><br> ${lq.q}`, correct: lq.correct, wrong: lq.wrong });
+        });
+
+        // Embaralha tudo e corta em 100 perguntas implacáveis
+        database = database.sort(() => Math.random() - 0.5).slice(0, 100);
+
+        // === 2. MOTOR DE ÁUDIO E EFEITOS ESPECIAIS ===
+        const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        function playAudio(type) {
+            if (audioCtx.state === 'suspended') { audioCtx.resume(); }
+            const t = audioCtx.currentTime;
+            if(type === 'win') {
+                const osc = audioCtx.createOscillator(); const gain = audioCtx.createGain();
+                osc.connect(gain); gain.connect(audioCtx.destination);
+                osc.type = 'sine'; osc.frequency.setValueAtTime(800, t);
+                gain.gain.setValueAtTime(0.05, t); gain.gain.exponentialRampToValueAtTime(0.01, t + 0.15);
+                osc.start(t); osc.stop(t + 0.15);
+            } else if(type === 'error') {
+                const osc = audioCtx.createOscillator(); const gain = audioCtx.createGain();
+                osc.connect(gain); gain.connect(audioCtx.destination);
+                osc.type = 'sawtooth'; osc.frequency.setValueAtTime(150, t); osc.frequency.linearRampToValueAtTime(100, t + 0.2);
+                gain.gain.setValueAtTime(0.05, t); gain.gain.exponentialRampToValueAtTime(0.01, t + 0.3);
+                osc.start(t); osc.stop(t + 0.3);
+            } else if(type === 'combo') {
+                const osc = audioCtx.createOscillator(); const gain = audioCtx.createGain();
+                osc.connect(gain); gain.connect(audioCtx.destination);
+                osc.type = 'square'; const baseFreq = Math.min(300 + (state.combo * 50), 1000);
+                osc.frequency.setValueAtTime(baseFreq, t); osc.frequency.linearRampToValueAtTime(baseFreq + 200, t + 0.15); 
+                gain.gain.setValueAtTime(0.05, t); gain.gain.exponentialRampToValueAtTime(0.01, t + 0.2);
+                osc.start(t); osc.stop(t + 0.2);
+            } else if(type === 'milestone') {
+                [523.25, 659.25, 783.99, 1046.50, 1318.5].forEach((f, i) => {
+                    const osc = audioCtx.createOscillator(); const gain = audioCtx.createGain();
+                    osc.type = 'triangle'; osc.frequency.setValueAtTime(f, t + (i * 0.08)); 
+                    gain.gain.setValueAtTime(0.1, t + (i * 0.08)); gain.gain.exponentialRampToValueAtTime(0.01, t + (i * 0.08) + 0.8);
+                    osc.connect(gain); gain.connect(audioCtx.destination);
+                    osc.start(t + (i * 0.08)); osc.stop(t + (i * 0.08) + 0.8);
+                });
+            }
+        }
+
+        function triggerCasinoEffect(amount = 15) {
+            for (let i = 0; i < amount; i++) {
+                const coin = document.createElement('div');
+                coin.classList.add('casino-coin');
+                const angle = Math.random() * Math.PI * 2;
+                const distance = 80 + Math.random() * 120; 
+                coin.style.setProperty('--tx', Math.cos(angle) * distance + 'px');
+                coin.style.setProperty('--ty', Math.sin(angle) * distance + 'px');
+                coin.style.animation = `coin-explosion ${0.6 + Math.random() * 0.4}s ease-out forwards`;
+                document.body.appendChild(coin);
+                setTimeout(() => coin.remove(), 1200);
+            }
+        }
+
+        function triggerCoinRain(amount = 60) {
+            for (let i = 0; i < amount; i++) {
+                const coin = document.createElement('div');
+                coin.classList.add('rain-coin');
+                coin.style.left = Math.random() * 100 + 'vw';
+                coin.style.animationDuration = (1.5 + Math.random() * 1.5) + 's';
+                coin.style.animationDelay = (Math.random() * 1.0) + 's';
+                document.body.appendChild(coin);
+                setTimeout(() => coin.remove(), 3000);
+            }
+        }
+
+        // === 3. CONTROLE DE ESTADO ===
+        let xp = parseInt(localStorage.getItem('ffes_xp') || 0);
+        document.getElementById('xp-val').innerText = xp;
+        let state = { currentQ: null, combo: 0, startTime: 0, questionIndex: 0 };
+
+        function startGame() { generate(); }
+
+        function generate() {
+            if(state.questionIndex >= 100) {
+                document.getElementById('display-sentence').innerHTML = "ÁRVORE GENEALÓGICA DOMINADA!<br><span style='color:#FFD700'>100/100</span>";
+                document.getElementById('ab-controls').style.display = 'none';
+                playAudio('milestone'); triggerCoinRain(100);
+                return;
+            }
+
+            document.querySelectorAll('.btn-option').forEach(b => b.className = 'btn-option');
+            document.getElementById('feedback').className = ''; 
+            document.getElementById('speed-feedback').innerText = "";
+            document.getElementById('q-count').innerText = state.questionIndex + 1;
+
+            const item = database[state.questionIndex];
+            state.currentQ = item;
+            state.startTime = Date.now();
+
+            document.getElementById('display-sentence').innerHTML = item.q;
+            
+            let wrongOption = item.wrong;
+            if(item.wrong === item.correct) wrongOption += " (Fake)";
+
+            if(Math.random() > 0.5) setOptions(item.correct, wrongOption, item.correct);
+            else setOptions(wrongOption, item.correct, item.correct);
+        }
+
+        function setOptions(txt1, txt2, correctVal) {
+            const btn1 = document.getElementById('btn1'); const btn2 = document.getElementById('btn2');
+            btn1.innerHTML = txt1; btn1.onclick = () => checkAnswer(txt1 === correctVal, btn1);
+            btn2.innerHTML = txt2; btn2.onclick = () => checkAnswer(txt2 === correctVal, btn2);
+        }
+
+        function checkAnswer(isCorrect, element) {
+            const fb = document.getElementById('feedback');
+            const timeDelta = Date.now() - state.startTime;
+            const isSpeed = timeDelta < 2500;
+
+            if (isCorrect) {
+                state.combo++;
+                let xpGain = 10 + (state.combo * 2);
+                if(isSpeed) xpGain += 5;
+                addXP(xpGain);
+                
+                fb.innerText = "PERFEITO!"; fb.style.color = "#00e676"; fb.className = "visible";
+                element.classList.add('correct');
+                triggerCasinoEffect(15);
+                
+                if (state.combo % 10 === 0) { playAudio('milestone'); triggerCoinRain(50); } 
+                else if (state.combo > 1) { playAudio('combo'); } 
+                else { playAudio('win'); }
+                
+                if(isSpeed) document.getElementById('speed-feedback').innerText = "⚡ HACKER SPEED!";
+
+                const comboEl = document.getElementById('combo-feedback');
+                comboEl.innerText = `COMBO x${state.combo}`; comboEl.classList.add('show');
+                document.getElementById('progress-bar').style.width = ((state.questionIndex + 1) % 100) + '%';
+
+                setTimeout(() => { comboEl.classList.remove('show'); state.questionIndex++; generate(); }, 1200);
+            } else {
+                state.combo = 0; addXP(-5);
+                fb.innerText = "ERRO: " + state.currentQ.correct.toUpperCase();
+                fb.style.color = "#ff1744"; fb.className = "visible";
+                element.classList.add('wrong');
+                playAudio('error');
+                const card = document.getElementById('game-card-element');
+                card.classList.add('shake-effect');
+                setTimeout(() => card.classList.remove('shake-effect'), 400);
+                document.getElementById('combo-feedback').classList.remove('show');
+            }
+        }
+
+        function addXP(val) {
+            xp = Math.max(0, xp + val); localStorage.setItem('ffes_xp', xp); document.getElementById('xp-val').innerText = xp;
+        }
+
+        window.onload = startGame;
+    </script>
+</body>
+</html>

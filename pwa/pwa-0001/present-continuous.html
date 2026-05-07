@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>FFES | Present Continuous: Ação em Tempo Real</title>
+    <meta name="title" content="FFES | Present Continuous: Ação em Tempo Real">
+    <meta name="description" content="Domine o Present Continuous com o método FFES. Treinamento de reflexo para afirmações, negações e perguntas com verbos cognatos.">
+    <meta name="keywords" content="present continuous, gramática inglês, gerúndio inglês, am is are, teacher leo ramos, ffes, inglês de alta performance">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="Portuguese">
+    <meta name="author" content="Teacher Leo Ramos">
+    <meta name="google-site-verification" content="9L-nEDj4G24e3JD1kt5bxcZ5_qHo9Q-03_DJkfIH_1M" />
+
+    
+    <link rel="canonical" href="https://teacherleoramos.com.br/PWA/Pasta001/presentcontinuous.html">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-M8ZG06010Q"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-M8ZG06010Q');
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LearningResource",
+      "name": "Simulador Present Continuous - FFES",
+      "description": "Treinamento dinâmico de estruturas contínuas (ING) com foco na automação dos auxiliares AM, IS e ARE.",
+      "url": "https://teacherleoramos.com.br/PWA/Pasta001/presentcontinuous.html",
+      "learningResourceType": "Interactive Resource",
+      "educationalAlignment": {
+        "@type": "AlignmentObject",
+        "alignmentType": "educationalSubject",
+        "targetName": "English Grammar - Present Continuous"
+      },
+      "isPartOf": {
+        "@type": "CollectionPage",
+        "url": "https://teacherleoramos.com.br/PWA/Pasta001/indexpasta001.html"
+      }
+    }
+    </script>
+
+    <link rel="stylesheet" href="/CSS/style-app.css">
+
+    <style>
+        /* === ENGINE DE GAMIFICAÇÃO - TEMA AZUL ELÉTRICO === */
+        :root { --main-color: #00b0ff; }
+        .game-wrapper { width: 100%; max-width: 600px; display: flex; flex-direction: column; gap: 15px; z-index: 10; margin: 0 auto; }
+        
+        .info-box { background: rgba(0, 176, 255, 0.05); border: 1px solid var(--main-color); border-radius: 16px; padding: 20px; margin-bottom: 20px; color: #ccc; font-size: 0.9rem; line-height: 1.5; }
+        .info-box h3 { color: var(--main-color); margin-bottom: 10px; text-transform: uppercase; font-size: 1rem; }
+        .info-box b { color: #fff; }
+
+        .game-card { background: rgba(0, 0, 0, 0.7); backdrop-filter: blur(10px); border: 2px solid var(--main-color); border-radius: 24px; padding: 30px 20px; text-align: center; box-shadow: 0 10px 40px rgba(0, 176, 255, 0.2); min-height: 180px; display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; }
+        
+        #display-sentence { font-size: 1.8rem; font-weight: 900; line-height: 1.4; color: #fff; text-shadow: 0 2px 10px rgba(0,0,0,0.8); z-index: 2; }
+        .gap { color: var(--main-color); border-bottom: 3px solid var(--main-color); padding: 0 10px; }
+        
+        .game-controls { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; width: 100%; }
+        .btn-option { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255,255,255,0.2); color: #fff; padding: 20px; font-size: 1.2rem; font-weight: 900; border-radius: 16px; cursor: pointer; transition: all 0.2s ease; text-transform: uppercase; line-height: 1.2;}
+        .btn-option:hover { border-color: var(--main-color); background: rgba(0, 176, 255, 0.1); transform: translateY(-3px); }
+        .btn-option.correct { background: #00e676 !important; color: #000 !important; border-color: #00e676 !important; }
+        .btn-option.wrong { background: #ff1744 !important; opacity: 0.5; }
+
+        #feedback { height: 30px; text-align: center; font-weight: 900; letter-spacing: 2px; text-transform: uppercase; transition: all 0.2s; opacity: 0; margin-bottom: 10px; }
+        #feedback.visible { opacity: 1; transform: translateY(-5px); }
+        
+        .xp-pill { background: rgba(0, 0, 0, 0.5); border: 1px solid var(--main-color); padding: 5px 15px; border-radius: 50px; color: var(--main-color); font-weight: 900; font-size: 1.1rem; margin-top: 10px; display: inline-block; }
+        .feedback-float { position: absolute; top: -15px; right: -10px; font-weight: 900; font-size: 0.9rem; color: #fff; background: var(--main-color); padding: 5px 12px; border-radius: 20px; border: 1px solid #fff; opacity: 0; transform: translateY(10px); transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); z-index: 5; }
+        .feedback-float.show { opacity: 1; transform: translateY(0) rotate(5deg); }
+        .speed-badge { position: absolute; bottom: 10px; width: 100%; left: 0; text-align: center; font-size: 0.75rem; color: #00e676; font-weight: 900; letter-spacing: 1px; text-transform: uppercase; }
+
+        .progress-track { width: 100%; height: 5px; background: rgba(255,255,255,0.1); position: fixed; top: 0; left: 0; z-index: 1000; }
+        .progress-fill { height: 100%; background: var(--main-color); width: 0%; transition: width 0.3s ease; box-shadow: 0 0 10px var(--main-color); }
+
+        .casino-coin { position: fixed; width: 25px; height: 25px; background: var(--main-color); border-radius: 50%; box-shadow: 0 0 15px var(--main-color); pointer-events: none; z-index: 9999; top: 50%; left: 50%; transform: translate(-50%, -50%); border: 2px solid #fff; }
+        @keyframes coin-explosion { 0% { transform: translate(-50%, -50%) scale(0.5); opacity: 1; } 100% { transform: translate(var(--tx), var(--ty)) scale(1.2) rotate(360deg); opacity: 0; } }
+        
+        .rain-coin { position: fixed; width: 35px; height: 35px; background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45" fill="%2300b0ff" stroke="white" stroke-width="5"/><text x="50" y="65" font-size="40" text-anchor="middle" font-weight="bold" fill="white" font-family="Arial">ING</text></svg>') no-repeat center; background-size: contain; pointer-events: none; z-index: 9999; top: -50px; animation: coin-drop linear forwards; }
+        @keyframes coin-drop { 0% { transform: translateY(0) rotate(0deg); opacity: 1; } 100% { transform: translateY(110vh) rotate(360deg); opacity: 0.8; } }
+        
+        @keyframes shake { 0%, 100% { transform: translateX(0); } 20%, 60% { transform: translateX(-8px); } 40%, 80% { transform: translateX(8px); } }
+        .shake-effect { animation: shake 0.4s ease-in-out; border-color: #ff1744 !important; }
+
+        .btn-voltar { display: block; margin: 30px auto; padding: 15px 30px; background: transparent; border: 2px solid var(--main-color); color: var(--main-color); border-radius: 50px; text-decoration: none; font-weight: 900; text-align: center; max-width: 300px; text-transform: uppercase; transition: all 0.3s; }
+        .btn-voltar:hover { background: var(--main-color); color: #000; }
+    </style>
+</head>
+<body>
+
+    <div class="progress-track"><div class="progress-fill" id="progress-bar"></div></div>
+
+    <header class="glass-header" style="text-align: center; padding: 20px;">
+        <h1 style="color: #fff; margin-bottom: 5px;">PRESENT <span style="color: var(--main-color);">CONTINUOUS</span></h1>
+        <p class="subtitle" style="color: #ccc;">Matrix de Ação: AM / IS / ARE + ING</p>
+        <div class="xp-pill">XP: <span id="xp-val">0</span></div>
+    </header>
+
+    <main style="max-width: 800px; margin: 0 auto; padding: 0 20px;">
+        
+        <div class="info-box">
+            <h3>📖 Dinâmica da Ação</h3>
+            <p>O Present Continuous descreve o que está acontecendo <b>agora</b>. A estrutura é sempre: [Be] + [Verbo-ING].</p>
+            <p>• <b>Afirmação:</b> I <b>am</b> adapt<b>ing</b>. / She <b>is</b> decid<b>ing</b>.</p>
+            <p>• <b>Negação:</b> We <b>are not</b> observ<b>ing</b>.</p>
+            <p>• <b>Pergunta:</b> <b>Are</b> you visit<b>ing</b>?</p>
+        </div>
+
+        <div id="game-container" class="game-wrapper">
+            <div id="feedback"></div>
+            
+            <div class="game-card" id="game-card-element">
+                <div id="combo-feedback" class="feedback-float">COMBO x2</div>
+                <div id="speed-feedback" class="speed-badge"></div>
+                <div id="display-sentence">Iniciando Protocolo Contínuo...</div>
+            </div>
+
+            <div class="game-controls" id="ab-controls">
+                <button id="btn1" class="btn-option" onclick="checkAnswer(1)"></button>
+                <button id="btn2" class="btn-option" onclick="checkAnswer(2)"></button>
+            </div>
+        </div>
+
+        <a href="indexpasta001.html" class="btn-voltar">⬅ Voltar ao Hub 01</a>
+    </main>
+
+    <script>
+        // === 1. BANCO DE DADOS: 200 VERBOS COGNATOS ===
+        const verbs = [
+            "adapting", "admitting", "adopting", "affecting", "altering", "analyzing", "appearing", "applying", "approving", "arguing",
+            "arresting", "assisting", "attracting", "calculating", "causing", "celebrating", "centering", "classifying", "collecting", "combining",
+            "commenting", "communicating", "comparing", "completing", "composing", "concentrating", "concluding", "confirming", "confusing", "connecting",
+            "considering", "consisting", "constructing", "consulting", "consuming", "contacting", "containing", "continuing", "contrasting", "contributing",
+            "controlling", "converting", "convincing", "copying", "correcting", "creating", "criticizing", "cultivating", "deciding", "declaring",
+            "decorating", "defending", "defining", "demonstrating", "depending", "describing", "designing", "detecting", "determining", "diagnosing",
+            "dictating", "differing", "directing", "disciplining", "discussing", "distinguishing", "distributing", "dividing", "documenting", "dominating",
+            "duplicating", "echoing", "editing", "educating", "effecting", "elaborating", "electing", "eliminating", "employing", "estimating",
+            "evacuating", "evoking", "exaggerating", "examining", "exclaiming", "excluding", "executing", "exercising", "exhibiting", "existing",
+            "expanding", "expecting", "experimenting", "explaining", "exploring", "exporting", "exposing", "expressing", "extending", "fabricating",
+            "facilitating", "factoring", "fascinating", "favoring", "figuring", "filtering", "finalizing", "financing", "fixing", "forming",
+            "formulating", "fragmenting", "frequenting", "functioning", "generating", "glamorizing", "grouping", "guaranteeing", "guiding", "hesitating",
+            "honoring", "hospitalizing", "humanizing", "identifying", "ignoring", "illustrating", "imagining", "imitating", "imploring", "importing",
+            "imposing", "impressing", "including", "indicating", "inducing", "infecting", "informing", "initiating", "injecting", "inserting",
+            "insisting", "inspecting", "inspiring", "installing", "instigating", "instituting", "instructing", "insulting", "integrating", "intensifying",
+            "interesting", "interpreting", "interrupting", "introducing", "invading", "inventing", "investigating", "inviting", "isolating", "justifying",
+            "limiting", "listing", "locating", "maintaining", "manipulating", "manufacturing", "marching", "marking", "mechanizing", "meditating",
+            "mentioning", "mobilizing", "modifying", "multiplying", "murmuring", "negating", "negotiating", "neutralizing", "noting", "notifying",
+            "objecting", "observing", "occupying", "occurring", "offering", "omitting", "operating", "organizing", "orienting", "originating",
+            "participating", "passing", "penetrating", "perfecting", "permitting", "persisting", "persuading", "planning", "planting", "practicing",
+            "preparing", "presenting", "preserving", "producing", "programming", "progressing", "projecting", "promoting", "pronouncing", "protecting"
+        ];
+
+        const subjects = [
+            { s: "I", be: "AM" },
+            { s: "YOU", be: "ARE" },
+            { s: "HE", be: "IS" },
+            { s: "SHE", be: "IS" },
+            { s: "WE", be: "ARE" },
+            { s: "THEY", be: "ARE" }
+        ];
+
+        let database = [];
+
+        // GERA 200 QUESTÕES (Afirmação, Negação ou Pergunta)
+        for (let i = 0; i < 200; i++) {
+            let verb = verbs[i % verbs.length];
+            let subObj = subjects[Math.floor(Math.random() * subjects.length)];
+            let type = Math.floor(Math.random() * 3); // 0: Aff, 1: Neg, 2: Quest
+            
+            let sentence = "";
+            let correct = "";
+            let wrong = "";
+
+            if (type === 0) { // AFIRMAÇÃO
+                sentence = `${subObj.s} ___ ${verb.toUpperCase()}`;
+                correct = `${subObj.s} ${subObj.be} ${verb.toUpperCase()}`;
+                wrong = `${subObj.s} ${subObj.be === 'IS' ? 'ARE' : 'IS'} ${verb.toUpperCase()}`;
+            } else if (type === 1) { // NEGAÇÃO
+                sentence = `${subObj.s} ___ NOT ${verb.toUpperCase()}`;
+                correct = `${subObj.s} ${subObj.be}`;
+                wrong = `${subObj.s} ${subObj.be === 'ARE' ? 'IS' : 'ARE'}`;
+            } else { // PERGUNTA
+                sentence = `___ ${subObj.s} ${verb.toUpperCase()}?`;
+                correct = subObj.be;
+                wrong = subObj.be === 'IS' ? 'ARE' : 'IS';
+            }
+            
+            database.push({ q: sentence, correct: correct, wrong: wrong });
+        }
+
+        database = database.sort(() => Math.random() - 0.5);
+
+        // === 2. MOTOR DE ÁUDIO E FX ===
+        const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        function playAudio(type) {
+            if (audioCtx.state === 'suspended') { audioCtx.resume(); }
+            const t = audioCtx.currentTime;
+            if(type === 'win') {
+                const osc = audioCtx.createOscillator(); const gain = audioCtx.createGain();
+                osc.connect(gain); gain.connect(audioCtx.destination);
+                osc.type = 'sine'; osc.frequency.setValueAtTime(1200, t);
+                gain.gain.setValueAtTime(0.05, t); gain.gain.exponentialRampToValueAtTime(0.01, t + 0.15);
+                osc.start(t); osc.stop(t + 0.15);
+            } else if(type === 'error') {
+                const osc = audioCtx.createOscillator(); const gain = audioCtx.createGain();
+                osc.connect(gain); gain.connect(audioCtx.destination);
+                osc.type = 'sawtooth'; osc.frequency.setValueAtTime(150, t); osc.frequency.linearRampToValueAtTime(100, t + 0.25);
+                gain.gain.setValueAtTime(0.08, t); gain.gain.exponentialRampToValueAtTime(0.01, t + 0.3);
+                osc.start(t); osc.stop(t + 0.3);
+            } else if(type === 'combo') {
+                const osc = audioCtx.createOscillator(); const gain = audioCtx.createGain();
+                osc.connect(gain); gain.connect(audioCtx.destination);
+                osc.type = 'square'; const baseFreq = Math.min(600 + (state.combo * 50), 1600);
+                osc.frequency.setValueAtTime(baseFreq, t); osc.frequency.linearRampToValueAtTime(baseFreq + 200, t + 0.15); 
+                gain.gain.setValueAtTime(0.05, t); gain.gain.exponentialRampToValueAtTime(0.01, t + 0.2);
+                osc.start(t); osc.stop(t + 0.2);
+            } else if(type === 'milestone') {
+                [523.25, 659.25, 783.99, 1046.50, 1318.5].forEach((f, i) => {
+                    const osc = audioCtx.createOscillator(); const gain = audioCtx.createGain();
+                    osc.type = 'triangle'; osc.frequency.setValueAtTime(f, t + (i * 0.08)); 
+                    gain.gain.setValueAtTime(0.1, t + (i * 0.08)); gain.gain.exponentialRampToValueAtTime(0.01, t + (i * 0.08) + 1.0);
+                    osc.connect(gain); gain.connect(audioCtx.destination);
+                    osc.start(t + (i * 0.08)); osc.stop(t + (i * 0.08) + 1.0);
+                });
+            }
+        }
+
+        function triggerCasinoEffect() {
+            for (let i = 0; i < 15; i++) {
+                const coin = document.createElement('div');
+                coin.classList.add('casino-coin');
+                const angle = Math.random() * Math.PI * 2;
+                const distance = 80 + Math.random() * 120; 
+                coin.style.setProperty('--tx', Math.cos(angle) * distance + 'px');
+                coin.style.setProperty('--ty', Math.sin(angle) * distance + 'px');
+                coin.style.animation = `coin-explosion ${0.4 + Math.random() * 0.4}s ease-out forwards`;
+                document.body.appendChild(coin);
+                setTimeout(() => coin.remove(), 1000);
+            }
+        }
+
+        function triggerCoinRain() {
+            for (let i = 0; i < 50; i++) {
+                const coin = document.createElement('div');
+                coin.classList.add('rain-coin');
+                coin.style.left = Math.random() * 100 + 'vw';
+                coin.style.animationDuration = (1.2 + Math.random() * 1.5) + 's';
+                coin.style.animationDelay = (Math.random() * 1.0) + 's';
+                document.body.appendChild(coin);
+                setTimeout(() => coin.remove(), 3000);
+            }
+        }
+
+        // === 3. CONTROLE DE ESTADO ===
+        let xp = parseInt(localStorage.getItem('ffes_xp') || 0);
+        document.getElementById('xp-val').innerText = xp;
+        let state = { currentQ: null, combo: 0, startTime: 0, questionIndex: 0 };
+
+        function startGame() { generate(); }
+
+        function generate() {
+            if(state.questionIndex >= 100) {
+                document.getElementById('display-sentence').innerHTML = "AÇÃO CONTÍNUA DOMINADA!<br><span style='color:#00e676; font-size:1.5rem;'>100/100</span>";
+                document.getElementById('ab-controls').style.display = 'none';
+                playAudio('milestone'); triggerCoinRain();
+                return;
+            }
+
+            document.getElementById('feedback').className = ''; 
+            document.getElementById('speed-feedback').innerText = "";
+            
+            const item = database[state.questionIndex];
+            state.currentQ = item;
+            state.startTime = Date.now();
+
+            document.getElementById('display-sentence').innerHTML = item.q.replace("___", "<span class='gap'>___</span>");
+            
+            let btn1 = document.getElementById('btn1');
+            let btn2 = document.getElementById('btn2');
+
+            if (Math.random() > 0.5) {
+                btn1.innerText = item.correct; btn1.onclick = () => check(item.correct);
+                btn2.innerText = item.wrong; btn2.onclick = () => check(item.wrong);
+            } else {
+                btn1.innerText = item.wrong; btn1.onclick = () => check(item.wrong);
+                btn2.innerText = item.correct; btn2.onclick = () => check(item.correct);
+            }
+        }
+
+        function check(choice) {
+            const fb = document.getElementById('feedback');
+            const timeDelta = Date.now() - state.startTime;
+            const isSpeed = timeDelta < 2200; 
+
+            if (choice === state.currentQ.correct) {
+                state.combo++;
+                let xpGain = 10 + (state.combo * 2); 
+                if(isSpeed) xpGain += 5;
+                addXP(xpGain);
+                
+                fb.innerText = "PRECISO!"; fb.style.color = "#00e676"; fb.className = "visible";
+                triggerCasinoEffect();
+                
+                if (state.combo % 10 === 0) { playAudio('milestone'); triggerCoinRain(); } 
+                else if (state.combo > 1) { playAudio('combo'); } 
+                else { playAudio('win'); }
+                
+                if(isSpeed) document.getElementById('speed-feedback').innerText = "⚡ ACTION SPEED!";
+
+                const comboEl = document.getElementById('combo-feedback');
+                comboEl.innerText = `COMBO x${state.combo}`; comboEl.classList.add('show');
+                document.getElementById('progress-bar').style.width = ((state.questionIndex + 1) % 100) + '%';
+
+                setTimeout(() => { comboEl.classList.remove('show'); state.questionIndex++; generate(); }, 800);
+            } else {
+                state.combo = 0; addXP(-5);
+                fb.innerText = "TRAVOU!"; fb.style.color = "#ff1744"; fb.className = "visible";
+                playAudio('error');
+                const card = document.getElementById('game-card-element');
+                card.classList.add('shake-effect');
+                setTimeout(() => card.classList.remove('shake-effect'), 400);
+                document.getElementById('combo-feedback').classList.remove('show');
+            }
+        }
+
+        function addXP(val) {
+            xp = Math.max(0, xp + val); 
+            localStorage.setItem('ffes_xp', xp); 
+            document.getElementById('xp-val').innerText = xp;
+        }
+
+        window.onload = startGame;
+    </script>
+</body>
+</html>

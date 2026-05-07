@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>FFES | Modais Missão 01: CAN, COULD, MAY</title>
+    <meta name="title" content="FFES | Modais Missão 01: CAN, COULD, MAY">
+    <meta name="description" content="Domine os verbos modais CAN, COULD e MAY. Treinamento de reflexo baseado em intenção comunicativa com o método de alta performance FFES.">
+    <meta name="keywords" content="verbos modais inglês, can vs could vs may, gramática inglês, teacher leo ramos, ffes, inglês rápido, polidez inglês">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="Portuguese">
+    <meta name="author" content="Teacher Leo Ramos">
+    <meta name="google-site-verification" content="9L-nEDj4G24e3JD1kt5bxcZ5_qHo9Q-03_DJkfIH_1M" />
+
+    
+    <link rel="canonical" href="https://teacherleoramos.com.br/PWA/Pasta001/modal01.html">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-M8ZG06010Q"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-M8ZG06010Q');
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LearningResource",
+      "name": "Simulador de Verbos Modais 01 - FFES",
+      "description": "Treinamento intensivo de diferenciação entre CAN, COULD e MAY baseado em contexto e intenção.",
+      "url": "https://teacherleoramos.com.br/PWA/Pasta001/modal01.html",
+      "learningResourceType": "Interactive Resource",
+      "educationalAlignment": {
+        "@type": "AlignmentObject",
+        "alignmentType": "educationalSubject",
+        "targetName": "English Modal Verbs"
+      },
+      "isPartOf": {
+        "@type": "CollectionPage",
+        "url": "https://teacherleoramos.com.br/PWA/Pasta001/indexpasta001.html"
+      }
+    }
+    </script>
+
+    <link rel="stylesheet" href="/CSS/style-app.css">
+
+    <style>
+        :root { --main-color: #e0e0e0; --success: #00e676; --error: #ff1744; }
+        .game-wrapper { width: 100%; max-width: 600px; display: flex; flex-direction: column; gap: 15px; margin: 0 auto; z-index: 10; position: relative; }
+        
+        .info-box { background: rgba(255, 255, 255, 0.05); border: 1px solid var(--main-color); border-radius: 16px; padding: 20px; margin-bottom: 20px; color: #ccc; font-size: 0.85rem; line-height: 1.4; text-align: left; }
+        .info-box h3 { color: #fff; margin-bottom: 8px; text-transform: uppercase; font-size: 0.95rem; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 5px; }
+        .info-box b { color: var(--main-color); }
+
+        .game-card { background: rgba(0, 0, 0, 0.8); backdrop-filter: blur(10px); border: 2px solid var(--main-color); border-radius: 24px; padding: 35px 20px; text-align: center; box-shadow: 0 10px 40px rgba(255, 255, 255, 0.1); min-height: 220px; display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; overflow: visible;}
+        
+        #display-sentence { font-size: 1.5rem; font-weight: 900; line-height: 1.4; color: #fff; text-shadow: 0 2px 10px rgba(0,0,0,0.8); margin-bottom: 10px;}
+        .intent-tag { font-size: 0.85rem; color: #ffea00; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 15px; background: rgba(255,234,0,0.1); padding: 4px 10px; border-radius: 4px; display: inline-block;}
+        .gap { color: var(--main-color); border-bottom: 3px solid var(--main-color); padding: 0 10px; font-style: italic; }
+        
+        .game-controls { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; width: 100%; margin-top: 20px; }
+        .btn-option { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255,255,255,0.2); color: #fff; padding: 20px; font-size: 1.2rem; font-weight: 900; border-radius: 16px; cursor: pointer; transition: all 0.2s ease; text-transform: uppercase; line-height: 1.2;}
+        .btn-option:hover { border-color: var(--main-color); background: rgba(255, 255, 255, 0.1); transform: translateY(-3px); }
+        .btn-option.correct { background: var(--success) !important; color: #000 !important; border-color: var(--success) !important; }
+        .btn-option.wrong { background: var(--error) !important; opacity: 0.5; }
+
+        #feedback { height: 30px; text-align: center; font-weight: 900; letter-spacing: 2px; text-transform: uppercase; transition: all 0.2s; opacity: 0; margin-bottom: 10px; }
+        #feedback.visible { opacity: 1; transform: translateY(-5px); }
+        
+        .xp-pill { background: rgba(0, 0, 0, 0.5); border: 1px solid var(--main-color); padding: 5px 15px; border-radius: 50px; color: #fff; font-weight: 900; font-size: 1.1rem; margin-top: 10px; display: inline-block; }
+        .feedback-float { position: absolute; top: -15px; right: -10px; font-weight: 900; font-size: 0.9rem; color: #000; background: #fff; padding: 5px 12px; border-radius: 20px; border: 1px solid #fff; opacity: 0; transform: translateY(10px); transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); z-index: 5; box-shadow: 0 0 15px #fff; }
+        .feedback-float.show { opacity: 1; transform: translateY(0) rotate(5deg); }
+        .speed-badge { position: absolute; bottom: 10px; width: 100%; left: 0; text-align: center; font-size: 0.75rem; color: var(--success); font-weight: 900; letter-spacing: 1px; text-transform: uppercase; }
+
+        .progress-track { width: 100%; height: 5px; background: rgba(255,255,255,0.1); position: fixed; top: 0; left: 0; z-index: 1000; }
+        .progress-fill { height: 100%; background: #fff; width: 0%; transition: width 0.3s ease; }
+
+        /* CASINO EFFECTS */
+        .casino-coin { position: fixed; width: 25px; height: 25px; background: #fff; border-radius: 50%; box-shadow: 0 0 15px #fff; pointer-events: none; z-index: 9999; top: 50%; left: 50%; transform: translate(-50%, -50%); border: 2px solid #ddd; }
+        @keyframes coin-explosion { 0% { transform: translate(-50%, -50%) scale(0.5); opacity: 1; } 100% { transform: translate(var(--tx), var(--ty)) scale(1.2) rotate(360deg); opacity: 0; } }
+        
+        .rain-coin { position: fixed; width: 35px; height: 35px; background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45" fill="white" stroke="gray" stroke-width="5"/><text x="50" y="65" font-size="20" text-anchor="middle" font-weight="bold" fill="black" font-family="Arial">MODAL</text></svg>') no-repeat center; background-size: contain; pointer-events: none; z-index: 9999; top: -50px; animation: coin-drop linear forwards; }
+        @keyframes coin-drop { 0% { transform: translateY(0) rotate(0deg); opacity: 1; } 100% { transform: translateY(110vh) rotate(360deg); opacity: 0.8; } }
+        
+        @keyframes shake { 0%, 100% { transform: translateX(0); } 20%, 60% { transform: translateX(-8px); } 40%, 80% { transform: translateX(8px); } }
+        .shake-effect { animation: shake 0.4s ease-in-out; border-color: var(--error) !important; }
+
+        .btn-voltar { display: block; margin: 30px auto; padding: 15px 30px; background: transparent; border: 2px solid #fff; color: #fff; border-radius: 50px; text-decoration: none; font-weight: 900; text-align: center; max-width: 300px; text-transform: uppercase; transition: all 0.3s; }
+        .btn-voltar:hover { background: #fff; color: #000; }
+    </style>
+</head>
+<body>
+
+    <div class="progress-track"><div class="progress-fill" id="progress-bar"></div></div>
+
+    <header class="glass-header" style="text-align: center; padding: 20px;">
+        <h1 style="color: #fff; margin-bottom: 5px;">MODAL <span style="color: #aaa;">MISSÃO 01</span></h1>
+        <p class="subtitle" style="color: #ccc;">CAN, COULD e MAY: O QG da Intenção</p>
+        <div class="xp-pill">XP: <span id="xp-val">0</span></div>
+    </header>
+
+    <main style="max-width: 800px; margin: 0 auto; padding: 0 20px;">
+        
+        <div class="info-box">
+            <h3>📖 Estratégia de Combate</h3>
+            <p>• <b>CAN:</b> Habilidade ou Permissão Informal. <i>(I <b>can</b> play)</i></p>
+            <p>• <b>COULD:</b> Habilidade no Passado ou Pedido Polido. <i>(<b>Could</b> you help?)</i></p>
+            <p>• <b>MAY:</b> Permissão Formal ou Possibilidade. <i>(<b>May</b> I come in?)</i></p>
+            <p><b>IMPORTANTE:</b> Siga a <u>[INTENÇÃO]</u> na frase para não errar!</p>
+        </div>
+
+        <div id="game-container" class="game-wrapper">
+            <div id="feedback"></div>
+            
+            <div class="game-card" id="game-card-element">
+                <div id="combo-feedback" class="feedback-float">COMBO x2</div>
+                <div id="speed-feedback" class="speed-badge"></div>
+                <div id="intent-tag" class="intent-tag">CARREGANDO...</div>
+                <div id="display-sentence">Iniciando Protocolo de Intenção...</div>
+            </div>
+
+            <div class="game-controls" id="ab-controls">
+                <button id="btn1" class="btn-option"></button>
+                <button id="btn2" class="btn-option"></button>
+            </div>
+        </div>
+
+        <a href="indexpasta001.html" class="btn-voltar">⬅ Voltar ao Hub 01</a>
+    </main>
+
+    <script>
+        // === 1. BANCO DE DADOS: INTENÇÃO PURA ===
+        const dbRaw = [
+            { q: "I ___ adapt to this system. [Habilidade]", ans: "CAN", wrong: "MAY" },
+            { q: "___ you repeat that, please? [Pedido Polido]", ans: "COULD", wrong: "CAN" },
+            { q: "___ I enter the room? [Permissão Formal]", ans: "MAY", wrong: "CAN" },
+            { q: "I ___ swim when I was ten. [Habilidade Passada]", ans: "COULD", wrong: "MAY" },
+            { q: "You ___ not use my phone. [Proibição Informal]", ans: "CAN", wrong: "COULD" },
+            { q: "It ___ rain this afternoon. [Possibilidade]", ans: "MAY", wrong: "CAN" },
+            { q: "___ you help me with this? [Pedido Polido]", ans: "COULD", wrong: "CAN" },
+            { q: "I ___ speak three languages. [Habilidade]", ans: "CAN", wrong: "MAY" },
+            { q: "She ___ not arrive on time. [Possibilidade Negativa]", ans: "MAY", wrong: "CAN" },
+            { q: "___ I use your pen? [Permissão Informal]", ans: "CAN", wrong: "COULD" },
+            { q: "We ___ play soccer well. [Habilidade]", ans: "CAN", wrong: "MAY" },
+            { q: "He ___ run very fast last year. [Habilidade Passada]", ans: "COULD", wrong: "CAN" },
+            { q: "___ I speak to the manager? [Permissão Formal]", ans: "MAY", wrong: "CAN" },
+            { q: "They ___ not complete the task. [Incapacidade]", ans: "CAN", wrong: "COULD" },
+            { q: "I ___ assist you tomorrow. [Possibilidade/Disponibilidade]", ans: "CAN", wrong: "COULD" },
+            { q: "___ you open the door? [Pedido Polido]", ans: "COULD", wrong: "CAN" },
+            { q: "You ___ leave the class now. [Permissão Formal]", ans: "MAY", wrong: "COULD" },
+            { q: "I ___ not see anything without glasses. [Incapacidade]", ans: "CAN", wrong: "MAY" },
+            { q: "They ___ solve the problem yesterday. [Habilidade Passada]", ans: "COULD", wrong: "CAN" },
+            { q: "___ I borrow your car? [Permissão Informal]", ans: "CAN", wrong: "MAY" }
+            // O sistema multiplicará essas intenções por verbos cognatos via loop para chegar em 200.
+        ];
+
+        const cognates = ["accept", "analyze", "approve", "calculate", "celebrate", "classify", "complete", "confirm", "control", "decide", "declare", "defend", "describe", "design", "detect", "direct", "discuss", "divide", "eliminate", "examine"];
+
+        let database = [];
+        // GERAÇÃO MATRICIAL (200 QUESTÕES)
+        for(let i=0; i<200; i++) {
+            let base = dbRaw[i % dbRaw.length];
+            let verb = cognates[Math.floor(Math.random() * cognates.length)];
+            let sentence = base.q.replace("adapt", verb).replace("speak", verb).replace("swim", verb).replace("help", verb).replace("use", verb);
+            database.push({
+                q: sentence.split(" [")[0],
+                intent: base.q.match(/\[(.*?)\]/)[1],
+                ans: base.ans,
+                wrong: base.wrong
+            });
+        }
+        database = database.sort(() => Math.random() - 0.5);
+
+        // === 2. AUDIO ENGINE ===
+        const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        function playFX(type) {
+            if (audioCtx.state === 'suspended') audioCtx.resume();
+            const t = audioCtx.currentTime;
+            const osc = audioCtx.createOscillator();
+            const gain = audioCtx.createGain();
+            osc.connect(gain); gain.connect(audioCtx.destination);
+            
+            if(type === 'win') {
+                osc.type = 'sine'; osc.frequency.setValueAtTime(1400, t);
+                gain.gain.setValueAtTime(0.1, t); gain.gain.exponentialRampToValueAtTime(0.01, t + 0.2);
+                osc.start(t); osc.stop(t + 0.2);
+            } else if(type === 'error') {
+                osc.type = 'sawtooth'; osc.frequency.setValueAtTime(130, t);
+                gain.gain.setValueAtTime(0.1, t); gain.gain.exponentialRampToValueAtTime(0.01, t + 0.4);
+                osc.start(t); osc.stop(t + 0.4);
+            } else if(type === 'combo') {
+                osc.type = 'square'; osc.frequency.setValueAtTime(800 + (state.combo * 40), t);
+                gain.gain.setValueAtTime(0.05, t); gain.gain.exponentialRampToValueAtTime(0.01, t + 0.1);
+                osc.start(t); osc.stop(t + 0.1);
+            }
+        }
+
+        // === 3. VISUAL EFFECTS ===
+        function triggerCasino() {
+            for (let i = 0; i < 15; i++) {
+                const coin = document.createElement('div');
+                coin.classList.add('casino-coin');
+                const angle = Math.random() * Math.PI * 2;
+                const dist = 80 + Math.random() * 120;
+                coin.style.setProperty('--tx', Math.cos(angle) * dist + 'px');
+                coin.style.setProperty('--ty', Math.sin(angle) * dist + 'px');
+                coin.style.animation = `coin-explosion 0.5s ease-out forwards`;
+                document.body.appendChild(coin);
+                setTimeout(() => coin.remove(), 600);
+            }
+        }
+
+        function triggerRain() {
+            for (let i = 0; i < 40; i++) {
+                const coin = document.createElement('div');
+                coin.classList.add('rain-coin');
+                coin.style.left = Math.random() * 100 + 'vw';
+                coin.style.animationDuration = (1 + Math.random() * 1.5) + 's';
+                document.body.appendChild(coin);
+                setTimeout(() => coin.remove(), 2500);
+            }
+        }
+
+        // === 4. STATE & LOGIC ===
+        let xp = parseInt(localStorage.getItem('ffes_xp') || 0);
+        document.getElementById('xp-val').innerText = xp;
+        let state = { currentQ: null, combo: 0, startTime: 0, questionIndex: 0 };
+
+        function generate() {
+            if(state.questionIndex >= 100) {
+                document.getElementById('display-sentence').innerHTML = "MISSÃO CUMPRIDA!<br><span style='color:var(--success);'>100/100</span>";
+                document.getElementById('ab-controls').style.display = 'none';
+                document.getElementById('intent-tag').style.display = 'none';
+                return;
+            }
+            const fb = document.getElementById('feedback');
+            fb.className = ''; document.getElementById('speed-feedback').innerText = "";
+            
+            const item = database[state.questionIndex];
+            state.currentQ = item;
+            state.startTime = Date.now();
+
+            document.getElementById('intent-tag').innerText = item.intent;
+            document.getElementById('display-sentence').innerHTML = item.q.replace("___", "<span class='gap'>___</span>");
+            
+            let btn1 = document.getElementById('btn1');
+            let btn2 = document.getElementById('btn2');
+            if (Math.random() > 0.5) {
+                btn1.innerText = item.ans; btn1.onclick = () => check(item.ans);
+                btn2.innerText = item.wrong; btn2.onclick = () => check(item.wrong);
+            } else {
+                btn1.innerText = item.wrong; btn1.onclick = () => check(item.wrong);
+                btn2.innerText = item.ans; btn2.onclick = () => check(item.ans);
+            }
+        }
+
+        function check(choice) {
+            const timeDelta = Date.now() - state.startTime;
+            const isSpeed = timeDelta < 2200;
+            const fb = document.getElementById('feedback');
+
+            if (choice === state.currentQ.ans) {
+                state.combo++;
+                let gain = 10 + (state.combo * 2);
+                if(isSpeed) { gain += 5; document.getElementById('speed-feedback').innerText = "⚡ INTENTION SPEED!"; }
+                xp += gain; localStorage.setItem('ffes_xp', xp);
+                document.getElementById('xp-val').innerText = xp;
+                
+                fb.innerText = "SINCRO!"; fb.style.color = "var(--success)"; fb.className = "visible";
+                playFX('win'); triggerCasino();
+                if(state.combo % 10 === 0) triggerRain();
+
+                const comboEl = document.getElementById('combo-feedback');
+                comboEl.innerText = `COMBO x${state.combo}`; comboEl.classList.add('show');
+                document.getElementById('progress-bar').style.width = (state.questionIndex + 1) + '%';
+                
+                setTimeout(() => { comboEl.classList.remove('show'); state.questionIndex++; generate(); }, 750);
+            } else {
+                state.combo = 0; xp = Math.max(0, xp - 5);
+                localStorage.setItem('ffes_xp', xp); document.getElementById('xp-val').innerText = xp;
+                fb.innerText = "ERRO DE SENTIDO!"; fb.style.color = "var(--error)"; fb.className = "visible";
+                playFX('error');
+                const card = document.getElementById('game-card-element');
+                card.classList.add('shake-effect');
+                setTimeout(() => card.classList.remove('shake-effect'), 400);
+                document.getElementById('combo-feedback').classList.remove('show');
+            }
+        }
+
+        window.onload = generate;
+    </script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>FFES | Modais Missão 02: MUST, SHOULD, MIGHT</title>
+    <meta name="title" content="FFES | Modais Missão 02: MUST, SHOULD, MIGHT">
+    <meta name="description" content="Domine os modais de obrigação, conselho e possibilidade. Treinamento de reflexo baseado em intenção com o método FFES.">
+    <meta name="keywords" content="verbos modais, must vs should vs might, conselhos em inglês, gramática inglês, teacher leo ramos, ffes">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="Portuguese">
+    <meta name="author" content="Teacher Leo Ramos">
+    <meta name="google-site-verification" content="9L-nEDj4G24e3JD1kt5bxcZ5_qHo9Q-03_DJkfIH_1M" />
+
+    
+    <link rel="canonical" href="https://teacherleoramos.com.br/PWA/Pasta001/modal02.html">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-M8ZG06010Q"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-M8ZG06010Q');
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LearningResource",
+      "name": "Simulador de Verbos Modais 02 - FFES",
+      "description": "Treinamento intensivo focado na diferenciação entre MUST, SHOULD e MIGHT baseado em contexto obrigatório.",
+      "url": "https://teacherleoramos.com.br/PWA/Pasta001/modal02.html",
+      "learningResourceType": "Interactive Resource",
+      "educationalAlignment": {
+        "@type": "AlignmentObject",
+        "alignmentType": "educationalSubject",
+        "targetName": "English Modal Verbs"
+      },
+      "isPartOf": {
+        "@type": "CollectionPage",
+        "url": "https://teacherleoramos.com.br/PWA/Pasta001/indexpasta001.html"
+      }
+    }
+    </script>
+
+    <link rel="stylesheet" href="/CSS/style-app.css">
+
+    <style>
+        :root { --main-color: #e0e0e0; --success: #00e676; --error: #ff1744; --intent-color: #ffea00; }
+        .game-wrapper { width: 100%; max-width: 600px; display: flex; flex-direction: column; gap: 15px; margin: 0 auto; z-index: 10; position: relative; }
+        
+        .info-box { background: rgba(255, 255, 255, 0.05); border: 1px solid var(--main-color); border-radius: 16px; padding: 20px; margin-bottom: 20px; color: #ccc; font-size: 0.85rem; line-height: 1.4; text-align: left; }
+        .info-box h3 { color: #fff; margin-bottom: 8px; text-transform: uppercase; font-size: 0.95rem; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 5px; }
+        .info-box b { color: var(--success); }
+
+        .game-card { background: rgba(0, 0, 0, 0.8); backdrop-filter: blur(10px); border: 2px solid var(--main-color); border-radius: 24px; padding: 35px 20px; text-align: center; box-shadow: 0 10px 40px rgba(255, 255, 255, 0.1); min-height: 220px; display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; overflow: visible;}
+        
+        #display-sentence { font-size: 1.5rem; font-weight: 900; line-height: 1.4; color: #fff; text-shadow: 0 2px 10px rgba(0,0,0,0.8); margin-bottom: 10px;}
+        .intent-tag { font-size: 0.85rem; color: var(--intent-color); font-weight: 800; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 15px; background: rgba(255,234,0,0.1); padding: 4px 10px; border-radius: 4px; display: inline-block;}
+        .gap { color: var(--main-color); border-bottom: 3px solid var(--main-color); padding: 0 10px; font-style: italic; }
+        
+        .game-controls { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; width: 100%; margin-top: 20px; }
+        .btn-option { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255,255,255,0.2); color: #fff; padding: 20px; font-size: 1.2rem; font-weight: 900; border-radius: 16px; cursor: pointer; transition: all 0.2s ease; text-transform: uppercase; line-height: 1.2;}
+        .btn-option:hover { border-color: var(--main-color); background: rgba(255, 255, 255, 0.1); transform: translateY(-3px); }
+        .btn-option.correct { background: var(--success) !important; color: #000 !important; border-color: var(--success) !important; }
+        .btn-option.wrong { background: var(--error) !important; opacity: 0.5; }
+
+        #feedback { height: 30px; text-align: center; font-weight: 900; letter-spacing: 2px; text-transform: uppercase; transition: all 0.2s; opacity: 0; margin-bottom: 10px; }
+        #feedback.visible { opacity: 1; transform: translateY(-5px); }
+        
+        .xp-pill { background: rgba(0, 0, 0, 0.5); border: 1px solid var(--main-color); padding: 5px 15px; border-radius: 50px; color: #fff; font-weight: 900; font-size: 1.1rem; margin-top: 10px; display: inline-block; }
+        .feedback-float { position: absolute; top: -15px; right: -10px; font-weight: 900; font-size: 0.9rem; color: #000; background: #fff; padding: 5px 12px; border-radius: 20px; border: 1px solid #fff; opacity: 0; transform: translateY(10px); transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); z-index: 5; box-shadow: 0 0 15px #fff; }
+        .feedback-float.show { opacity: 1; transform: translateY(0) rotate(5deg); }
+        
+        .progress-track { width: 100%; height: 5px; background: rgba(255,255,255,0.1); position: fixed; top: 0; left: 0; z-index: 1000; }
+        .progress-fill { height: 100%; background: #fff; width: 0%; transition: width 0.3s ease; }
+
+        /* CASINO EFFECTS */
+        .casino-coin { position: fixed; width: 25px; height: 25px; background: #fff; border-radius: 50%; box-shadow: 0 0 15px #fff; pointer-events: none; z-index: 9999; top: 50%; left: 50%; transform: translate(-50%, -50%); border: 2px solid #ddd; }
+        @keyframes coin-explosion { 0% { transform: translate(-50%, -50%) scale(0.5); opacity: 1; } 100% { transform: translate(var(--tx), var(--ty)) scale(1.2) rotate(360deg); opacity: 0; } }
+        
+        .rain-coin { position: fixed; width: 35px; height: 35px; background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45" fill="white" stroke="gray" stroke-width="5"/><text x="50" y="65" font-size="25" text-anchor="middle" font-weight="bold" fill="black" font-family="Arial">OBLIG</text></svg>') no-repeat center; background-size: contain; pointer-events: none; z-index: 9999; top: -50px; animation: coin-drop linear forwards; }
+        @keyframes coin-drop { 0% { transform: translateY(0) rotate(0deg); opacity: 1; } 100% { transform: translateY(110vh) rotate(360deg); opacity: 0.8; } }
+        
+        @keyframes shake { 0%, 100% { transform: translateX(0); } 20%, 60% { transform: translateX(-8px); } 40%, 80% { transform: translateX(8px); } }
+        .shake-effect { animation: shake 0.4s ease-in-out; border-color: var(--error) !important; }
+
+        .btn-voltar { display: block; margin: 30px auto; padding: 15px 30px; background: transparent; border: 2px solid #fff; color: #fff; border-radius: 50px; text-decoration: none; font-weight: 900; text-align: center; max-width: 300px; text-transform: uppercase; transition: all 0.3s; }
+        .btn-voltar:hover { background: #fff; color: #000; }
+    </style>
+</head>
+<body>
+
+    <div class="progress-track"><div class="progress-fill" id="progress-bar"></div></div>
+
+    <header class="glass-header" style="text-align: center; padding: 20px;">
+        <h1 style="color: #fff; margin-bottom: 5px;">MODAL <span style="color: #aaa;">MISSÃO 02</span></h1>
+        <p class="subtitle" style="color: #ccc;">MUST, SHOULD e MIGHT: Alvos de Intenção</p>
+        <div class="xp-pill">XP: <span id="xp-val">0</span></div>
+    </header>
+
+    <main style="max-width: 800px; margin: 0 auto; padding: 0 20px;">
+        
+        <div class="info-box">
+            <h3>📖 Estratégia de Combate</h3>
+            <p>• <b>MUST:</b> Obrigação ou Necessidade Absoluta. <i>(You <b>must</b> study)</i></p>
+            <p>• <b>SHOULD:</b> Conselho ou Recomendação. <i>(You <b>should</b> rest)</i></p>
+            <p>• <b>MIGHT:</b> Possibilidade Remota ou Dúvida. <i>(It <b>might</b> happen)</i></p>
+            <p><b>IMPORTANTE:</b> O radar <u>[INTENÇÃO]</u> indicará qual arma usar.</p>
+        </div>
+
+        <div id="game-container" class="game-wrapper">
+            <div id="feedback"></div>
+            
+            <div class="game-card" id="game-card-element">
+                <div id="combo-feedback" class="feedback-float">COMBO x2</div>
+                <div id="intent-tag" class="intent-tag">CARREGANDO...</div>
+                <div id="display-sentence">Iniciando Varredura de Modais...</div>
+            </div>
+
+            <div class="game-controls" id="ab-controls">
+                <button id="btn1" class="btn-option"></button>
+                <button id="btn2" class="btn-option"></button>
+            </div>
+        </div>
+
+        <a href="indexpasta001.html" class="btn-voltar">⬅ Voltar ao Hub 01</a>
+    </main>
+
+    <script>
+        // === 1. BANCO DE DADOS: INTENÇÃO PURA ===
+        const dbRaw = [
+            { q: "You ___ decide now. [Obrigação]", ans: "MUST", wrong: "MIGHT" },
+            { q: "You ___ consult a specialist. [Conselho]", ans: "SHOULD", wrong: "MUST" },
+            { q: "It ___ rain later today. [Possibilidade]", ans: "MIGHT", wrong: "MUST" },
+            { q: "We ___ complete the analysis. [Obrigação]", ans: "MUST", wrong: "SHOULD" },
+            { q: "He ___ apologize for that. [Conselho]", ans: "SHOULD", wrong: "MIGHT" },
+            { q: "She ___ visit us next week. [Dúvida/Possibilidade]", ans: "MIGHT", wrong: "MUST" },
+            { q: "I ___ adapt to this situation. [Necessidade]", ans: "MUST", wrong: "MIGHT" },
+            { q: "You ___ not smoke here. [Proibição/Obrigação]", ans: "MUST", wrong: "MIGHT" },
+            { q: "___ I start the presentation? [Dúvida/Conselho]", ans: "SHOULD", wrong: "MUST" },
+            { q: "They ___ approve the project. [Possibilidade]", ans: "MIGHT", wrong: "MUST" },
+            { q: "I ___ study more often. [Conselho Próprio]", ans: "SHOULD", wrong: "MIGHT" },
+            { q: "You ___ obey the regulations. [Obrigação]", ans: "MUST", wrong: "SHOULD" },
+            { q: "It ___ not work as expected. [Possibilidade Negativa]", ans: "MIGHT", wrong: "MUST" },
+            { q: "We ___ consider all options. [Conselho]", ans: "SHOULD", wrong: "MUST" },
+            { q: "You ___ pay the bills. [Necessidade]", ans: "MUST", wrong: "MIGHT" },
+            { q: "She ___ take a vacation. [Recomendação]", ans: "SHOULD", wrong: "MUST" },
+            { q: "He ___ arrive late tonight. [Possibilidade]", ans: "MIGHT", wrong: "SHOULD" },
+            { q: "___ we invite the director? [Pedido de Conselho]", ans: "SHOULD", wrong: "MIGHT" },
+            { q: "I ___ finish this by midnight. [Obrigação]", ans: "MUST", wrong: "MIGHT" },
+            { q: "They ___ suggest a new plan. [Conselho]", ans: "SHOULD", wrong: "MUST" }
+        ];
+
+        const cognates = ["analyze", "confirm", "control", "defend", "describe", "direct", "discuss", "eliminate", "examine", "formulate", "ignore", "illustrate", "imagine", "indicate", "inform", "inspect", "install", "observe", "organize", "prepare"];
+
+        let database = [];
+        // GERAÇÃO MATRICIAL (200 QUESTÕES)
+        for(let i=0; i<200; i++) {
+            let base = dbRaw[i % dbRaw.length];
+            let verb = cognates[Math.floor(Math.random() * cognates.length)];
+            let sentence = base.q.replace("decide", verb).replace("consult", verb).replace("complete", verb).replace("apologize", verb).replace("visit", verb);
+            database.push({
+                q: sentence.split(" [")[0],
+                intent: base.q.match(/\[(.*?)\]/)[1],
+                ans: base.ans,
+                wrong: base.wrong
+            });
+        }
+        database = database.sort(() => Math.random() - 0.5);
+
+        // === 2. AUDIO ENGINE ===
+        const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        function playFX(type) {
+            if (audioCtx.state === 'suspended') audioCtx.resume();
+            const t = audioCtx.currentTime;
+            const osc = audioCtx.createOscillator();
+            const gain = audioCtx.createGain();
+            osc.connect(gain); gain.connect(audioCtx.destination);
+            
+            if(type === 'win') {
+                osc.type = 'sine'; osc.frequency.setValueAtTime(1400, t);
+                gain.gain.setValueAtTime(0.1, t); gain.gain.exponentialRampToValueAtTime(0.01, t + 0.2);
+                osc.start(t); osc.stop(t + 0.2);
+            } else if(type === 'error') {
+                osc.type = 'sawtooth'; osc.frequency.setValueAtTime(130, t);
+                gain.gain.setValueAtTime(0.1, t); gain.gain.exponentialRampToValueAtTime(0.01, t + 0.4);
+                osc.start(t); osc.stop(t + 0.4);
+            } else if(type === 'combo') {
+                osc.type = 'square'; osc.frequency.setValueAtTime(800 + (state.combo * 40), t);
+                gain.gain.setValueAtTime(0.05, t); gain.gain.exponentialRampToValueAtTime(0.01, t + 0.1);
+                osc.start(t); osc.stop(t + 0.1);
+            }
+        }
+
+        // === 3. VISUAL EFFECTS ===
+        function triggerCasino() {
+            for (let i = 0; i < 15; i++) {
+                const coin = document.createElement('div');
+                coin.classList.add('casino-coin');
+                const angle = Math.random() * Math.PI * 2;
+                const dist = 80 + Math.random() * 120;
+                coin.style.setProperty('--tx', Math.cos(angle) * dist + 'px');
+                coin.style.setProperty('--ty', Math.sin(angle) * dist + 'px');
+                coin.style.animation = `coin-explosion 0.5s ease-out forwards`;
+                document.body.appendChild(coin);
+                setTimeout(() => coin.remove(), 600);
+            }
+        }
+
+        function triggerRain() {
+            for (let i = 0; i < 40; i++) {
+                const coin = document.createElement('div');
+                coin.classList.add('rain-coin');
+                coin.style.left = Math.random() * 100 + 'vw';
+                coin.style.animationDuration = (1 + Math.random() * 1.5) + 's';
+                document.body.appendChild(coin);
+                setTimeout(() => coin.remove(), 2500);
+            }
+        }
+
+        // === 4. STATE & LOGIC ===
+        let xp = parseInt(localStorage.getItem('ffes_xp') || 0);
+        document.getElementById('xp-val').innerText = xp;
+        let state = { currentQ: null, combo: 0, startTime: 0, questionIndex: 0 };
+
+        function generate() {
+            if(state.questionIndex >= 100) {
+                document.getElementById('display-sentence').innerHTML = "MÓDULO 02 CONCLUÍDO!<br><span style='color:var(--success);'>100/100</span>";
+                document.getElementById('ab-controls').style.display = 'none';
+                document.getElementById('intent-tag').style.display = 'none';
+                return;
+            }
+            const fb = document.getElementById('feedback');
+            fb.className = '';
+            
+            const item = database[state.questionIndex];
+            state.currentQ = item;
+            state.startTime = Date.now();
+
+            document.getElementById('intent-tag').innerText = item.intent;
+            document.getElementById('display-sentence').innerHTML = item.q.replace("___", "<span class='gap'>___</span>");
+            
+            let btn1 = document.getElementById('btn1');
+            let btn2 = document.getElementById('btn2');
+            if (Math.random() > 0.5) {
+                btn1.innerText = item.ans; btn1.onclick = () => check(item.ans);
+                btn2.innerText = item.wrong; btn2.onclick = () => check(item.wrong);
+            } else {
+                btn1.innerText = item.wrong; btn1.onclick = () => check(item.wrong);
+                btn2.innerText = item.ans; btn2.onclick = () => check(item.ans);
+            }
+        }
+
+        function check(choice) {
+            const fb = document.getElementById('feedback');
+            if (choice === state.currentQ.ans) {
+                state.combo++;
+                xp += 10 + (state.combo * 2); 
+                localStorage.setItem('ffes_xp', xp);
+                document.getElementById('xp-val').innerText = xp;
+                
+                fb.innerText = "PRECISO!"; fb.style.color = "var(--success)"; fb.className = "visible";
+                playFX('win'); triggerCasino();
+                if(state.combo % 10 === 0) triggerRain();
+
+                const comboEl = document.getElementById('combo-feedback');
+                comboEl.innerText = `COMBO x${state.combo}`; comboEl.classList.add('show');
+                document.getElementById('progress-bar').style.width = (state.questionIndex + 1) + '%';
+                
+                setTimeout(() => { comboEl.classList.remove('show'); state.questionIndex++; generate(); }, 750);
+            } else {
+                state.combo = 0; xp = Math.max(0, xp - 5);
+                localStorage.setItem('ffes_xp', xp); document.getElementById('xp-val').innerText = xp;
+                fb.innerText = "ALVO ERRADO!"; fb.style.color = "var(--error)"; fb.className = "visible";
+                playFX('error');
+                const card = document.getElementById('game-card-element');
+                card.classList.add('shake-effect');
+                setTimeout(() => card.classList.remove('shake-effect'), 400);
+                document.getElementById('combo-feedback').classList.remove('show');
+            }
+        }
+
+        window.onload = generate;
+    </script>
+</body>
+</html>

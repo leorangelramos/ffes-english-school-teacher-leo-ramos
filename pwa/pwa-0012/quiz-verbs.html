@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>FFES | A Prova dos 200 Verbos</title>
+    <meta name="title" content="FFES | A Prova dos 200 Verbos">
+    <meta name="description" content="100 questões implacáveis extraídas de um banco de 200 verbos fundamentais. Domine o vocabulário de base em inglês.">
+    <meta name="keywords" content="quiz de verbos, aprender verbos em inglês, teacher leo ramos, ffes, vocabulário inglês">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="Portuguese">
+    <meta name="author" content="Teacher Leo Ramos">
+    
+    <link rel="canonical" href="https://teacherleoramos.com.br/PWA/Pasta012/quiz03verbs.html">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-M8ZG06010Q"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-M8ZG06010Q');
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LearningResource",
+      "name": "Simulador de Verbos Essenciais - FFES",
+      "description": "Simulador dinâmico de vocabulário que sorteia 100 desafios a partir de um banco de dados de 200 verbos normais de alta frequência no inglês.",
+      "url": "https://teacherleoramos.com.br/PWA/Pasta012/quiz03verbs.html",
+      "learningResourceType": "Quiz",
+      "educationalAlignment": {
+        "@type": "AlignmentObject",
+        "alignmentType": "educationalSubject",
+        "targetName": "English Vocabulary"
+      },
+      "isPartOf": {
+        "@type": "CollectionPage",
+        "url": "https://teacherleoramos.com.br/PWA/Pasta012/indexpasta012.html"
+      }
+    }
+    </script>
+
+    <link rel="stylesheet" href="/CSS/style-app.css">
+
+    <style>
+        /* === ENGINE DE GAMIFICAÇÃO - TEMA TITANIUM / NEON GREEN === */
+        .game-wrapper { width: 100%; max-width: 600px; display: flex; flex-direction: column; gap: 20px; z-index: 10; margin: 0 auto; }
+        
+        .game-card { background: rgba(0, 0, 0, 0.7); backdrop-filter: blur(10px); border: 2px solid #00e676; border-radius: 24px; padding: 30px 20px; text-align: center; box-shadow: 0 10px 40px rgba(0, 230, 118, 0.2); min-height: 180px; display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; }
+        
+        #display-sentence { font-size: 1.6rem; font-weight: 700; line-height: 1.4; color: #fff; text-shadow: 0 2px 10px rgba(0,0,0,0.8); z-index: 2; }
+        .gap { color: #00e676; font-weight: 900; }
+        
+        .game-controls { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; width: 100%; }
+        .btn-option { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255,255,255,0.2); color: #fff; padding: 20px; font-size: 1.2rem; font-weight: 900; border-radius: 16px; cursor: pointer; transition: all 0.2s ease; text-transform: uppercase; letter-spacing: 1px;}
+        .btn-option:hover { border-color: #00e676; background: rgba(0, 230, 118, 0.1); transform: translateY(-3px); }
+        .btn-option.correct { background: #00e676 !important; color: #000 !important; border-color: #00e676 !important; }
+        .btn-option.wrong { background: #ff1744 !important; opacity: 0.5; }
+
+        #feedback { height: 30px; text-align: center; font-weight: 900; letter-spacing: 2px; text-transform: uppercase; transition: all 0.2s; opacity: 0; margin-bottom: 10px; }
+        #feedback.visible { opacity: 1; transform: translateY(-5px); }
+        
+        .xp-pill { background: rgba(0, 0, 0, 0.5); border: 1px solid #00e676; padding: 5px 15px; border-radius: 50px; color: #00e676; font-weight: 900; font-size: 1.1rem; margin-top: 10px; display: inline-block; }
+        .feedback-float { position: absolute; top: -15px; right: -10px; font-weight: 900; font-size: 0.9rem; color: #000; background: #00e676; padding: 5px 12px; border-radius: 20px; border: 1px solid #fff; opacity: 0; transform: translateY(10px); transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); z-index: 5; box-shadow: 0 0 10px #00e676;}
+        .feedback-float.show { opacity: 1; transform: translateY(0) rotate(5deg); }
+        .speed-badge { position: absolute; bottom: 10px; width: 100%; left: 0; text-align: center; font-size: 0.75rem; color: #00e676; font-weight: 900; letter-spacing: 1px; text-transform: uppercase; }
+
+        .progress-track { width: 100%; height: 5px; background: rgba(255,255,255,0.1); position: fixed; top: 0; left: 0; z-index: 1000; }
+        .progress-fill { height: 100%; background: #00e676; width: 0%; transition: width 0.3s ease; box-shadow: 0 0 10px #00e676; }
+
+        .casino-coin { position: fixed; width: 25px; height: 25px; background: #00e676; border-radius: 50%; box-shadow: 0 0 15px rgba(0, 230, 118, 1); pointer-events: none; z-index: 9999; top: 50%; left: 50%; transform: translate(-50%, -50%); border: 2px solid #fff; }
+        @keyframes coin-explosion { 0% { transform: translate(-50%, -50%) scale(0.5); opacity: 1; } 100% { transform: translate(var(--tx), var(--ty)) scale(1.2) rotate(360deg); opacity: 0; } }
+        
+        .rain-coin { position: fixed; width: 35px; height: 35px; background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45" fill="%2300e676" stroke="%23fff" stroke-width="5"/><text x="50" y="65" font-size="40" text-anchor="middle" font-weight="bold" fill="%23000" font-family="Arial">XP</text></svg>') no-repeat center; background-size: contain; pointer-events: none; z-index: 9999; top: -50px; animation: coin-drop linear forwards; }
+        @keyframes coin-drop { 0% { transform: translateY(0) rotate(0deg); opacity: 1; } 100% { transform: translateY(110vh) rotate(360deg); opacity: 0.8; } }
+        
+        @keyframes shake { 0%, 100% { transform: translateX(0); } 20%, 60% { transform: translateX(-8px); } 40%, 80% { transform: translateX(8px); } }
+        .shake-effect { animation: shake 0.4s ease-in-out; border-color: #ff1744 !important; box-shadow: 0 0 20px rgba(255, 23, 68, 0.5) !important;}
+
+        .btn-voltar { display: block; margin: 30px auto; padding: 15px 30px; background: transparent; border: 2px solid #00e676; color: #00e676; border-radius: 50px; text-decoration: none; font-weight: 900; text-align: center; max-width: 300px; text-transform: uppercase; transition: all 0.3s; }
+        .btn-voltar:hover { background: #00e676; color: #000; box-shadow: 0 0 15px #00e676;}
+    </style>
+</head>
+<body>
+
+    <div class="progress-track"><div class="progress-fill" id="progress-bar"></div></div>
+
+    <header class="glass-header" style="text-align: center; padding: 20px;">
+        <h1 style="color: #fff; margin-bottom: 5px;">MÁQUINA DE <span style="color: #00e676;">VERBOS</span></h1>
+        <p class="subtitle" style="color: #ccc;">Banco de 200 / Executando 100 Desafios</p>
+        <div class="xp-pill">XP: <span id="xp-val">0</span></div>
+        <div style="font-size: 0.85rem; font-weight: bold; color: #00e676; margin-top: 5px;">Ameaças Neutalizadas: <span id="q-count">0</span> / 100</div>
+    </header>
+
+    <main style="max-width: 800px; margin: 20px auto; padding: 0 20px;">
+        <div id="game-container" class="game-wrapper">
+            <div id="feedback"></div>
+            
+            <div class="game-card" id="game-card-element">
+                <div id="combo-feedback" class="feedback-float">COMBO x2</div>
+                <div id="speed-feedback" class="speed-badge"></div>
+                <div id="display-sentence">Compilando 200 Verbos Nucleares...</div>
+            </div>
+
+            <div class="game-controls" id="ab-controls">
+                <button id="btn1" class="btn-option" onclick="checkAnswer(1)">A</button>
+                <button id="btn2" class="btn-option" onclick="checkAnswer(2)">B</button>
+            </div>
+        </div>
+
+        <a href="indexpasta012.html" class="btn-voltar">⬅ Sair do Simulador</a>
+    </main>
+
+    <script>
+        // === 1. BANCO DE DADOS BRUTAL: 200 VERBOS (Sem Phrasal Verbs) ===
+        const rawVerbs = [
+            "accept|aceitar", "achieve|alcançar", "add|adicionar", "admit|admitir", "affect|afetar", "afford|bancar (ter dinheiro)", "agree|concordar", "allow|permitir", "answer|responder", "appear|aparecer",
+            "apply|aplicar", "argue|discutir", "arrive|chegar", "ask|perguntar", "avoid|evitar", "base|basear", "be|ser/estar", "beat|bater/derrotar", "become|tornar-se", "begin|começar",
+            "believe|acreditar", "belong|pertencer", "break|quebrar", "build|construir", "burn|queimar", "buy|comprar", "call|chamar/ligar", "care|importar-se", "carry|carregar", "catch|pegar/capturar",
+            "cause|causar", "change|mudar", "charge|cobrar", "check|verificar", "choose|escolher", "claim|reivindicar", "clean|limpar", "clear|clarear", "climb|escalar", "close|fechar",
+            "collect|coletar", "come|vir", "compare|comparar", "complain|reclamar", "complete|completar", "confirm|confirmar", "connect|conectar", "consider|considerar", "consist|consistir", "contain|conter",
+            "continue|continuar", "control|controlar", "cook|cozinhar", "copy|copiar", "correct|corrigir", "cost|custar", "count|contar", "cover|cobrir", "create|criar", "cross|cruzar",
+            "cry|chorar", "cut|cortar", "damage|danificar", "dance|dançar", "deal|lidar", "decide|decidir", "deliver|entregar", "demand|exigir", "deny|negar", "depend|depender",
+            "describe|descrever", "design|projetar", "destroy|destruir", "develop|desenvolver", "die|morrer", "disappear|desaparecer", "discover|descobrir", "discuss|debater", "divide|dividir", "do|fazer (ação)",
+            "draw|desenhar", "dream|sonhar", "dress|vestir", "drink|beber", "drive|dirigir", "drop|deixar cair", "eat|comer", "encourage|encorajar", "end|terminar", "enjoy|aproveitar",
+            "examine|examinar", "exist|existir", "expect|esperar (expectativa)", "experience|vivenciar", "explain|explicar", "express|expressar", "face|enfrentar", "fail|falhar", "fall|cair", "fasten|apertar/fixar",
+            "feed|alimentar", "feel|sentir", "fight|lutar", "fill|encher", "find|encontrar", "finish|terminar", "fit|caber", "fly|voar", "fold|dobrar", "follow|seguir",
+            "force|forçar", "forget|esquecer", "forgive|perdoar", "form|formar", "gain|ganhar (peso/tempo)", "get|obter/receber", "give|dar", "go|ir", "grow|crescer", "guess|adivinhar",
+            "handle|manusear", "happen|acontecer", "hate|odiar", "have|ter", "head|liderar/guiar", "hear|ouvir", "help|ajudar", "hide|esconder", "hit|bater/atingir", "hold|segurar",
+            "hope|ter esperança", "hurt|machucar", "identify|identificar", "imagine|imaginar", "improve|melhorar", "include|incluir", "increase|aumentar", "indicate|indicar", "influence|influenciar", "inform|informar",
+            "intend|ter a intenção", "introduce|apresentar", "invite|convidar", "involve|envolver", "join|juntar-se", "jump|pular", "keep|manter", "kick|chutar", "kill|matar", "know|saber/conhecer",
+            "laugh|rir", "lead|liderar", "learn|aprender", "leave|partir/deixar", "lend|emprestar", "let|deixar/permitir", "lie|mentir/deitar", "like|gostar", "limit|limitar", "listen|ouvir (com atenção)",
+            "live|viver", "look|olhar", "lose|perder", "love|amar", "make|fazer (criar)", "manage|gerenciar/conseguir", "mark|marcar", "matter|importar", "mean|significar", "measure|medir",
+            "meet|encontrar", "mention|mencionar", "mind|importar-se", "miss|sentir falta/perder", "move|mover", "need|precisar", "notice|notar", "obtain|obter", "occur|ocorrer", "offer|oferecer",
+            "open|abrir", "order|ordenar/pedir", "own|possuir", "pass|passar", "pay|pagar", "perform|executar", "pick|escolher/pegar", "place|colocar", "plan|planejar", "play|jogar/tocar",
+            "point|apontar", "prefer|preferir", "prepare|preparar", "present|apresentar", "press|pressionar", "prevent|prevenir", "produce|produzir", "promise|prometer", "protect|proteger", "prove|provar"
+        ];
+
+        let database = [];
+        
+        // Transformar as 200 Strings em Objetos Multidirecionais
+        rawVerbs.forEach(v => {
+            let parts = v.split('|');
+            let en = parts[0]; let pt = parts[1];
+            
+            // Pega um verbo aleatório para ser a resposta errada
+            let randomWrong = rawVerbs[Math.floor(Math.random() * rawVerbs.length)].split('|');
+            while(randomWrong[0] === en) {
+                randomWrong = rawVerbs[Math.floor(Math.random() * rawVerbs.length)].split('|');
+            }
+
+            // Injeção Direta: Inglês para Português
+            database.push({ 
+                q: `O que significa a ação: <br><span class='gap'>${en.toUpperCase()}</span> ?`, 
+                correct: pt, 
+                wrong: randomWrong[1] 
+            });
+
+            // Lógica Reversa: Português para Inglês
+            database.push({ 
+                q: `Como se diz o verbo <br><span class='gap'>${pt.toUpperCase()}</span> ?`, 
+                correct: en, 
+                wrong: randomWrong[0] 
+            });
+        });
+
+        // O algoritmo agora tem 400 questões geradas (2 por verbo).
+        // Vamos embaralhar tudo e fatiar APENAS AS 100 PRIMEIRAS para gerar a Prova.
+        database = database.sort(() => Math.random() - 0.5).slice(0, 100);
+
+        // === 2. MOTOR DE ÁUDIO E EFEITOS (DOPAMINA DO SISTEMA) ===
+        const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        function playAudio(type) {
+            if (audioCtx.state === 'suspended') { audioCtx.resume(); }
+            const t = audioCtx.currentTime;
+            if(type === 'win') {
+                const osc = audioCtx.createOscillator(); const gain = audioCtx.createGain();
+                osc.connect(gain); gain.connect(audioCtx.destination);
+                osc.type = 'sine'; osc.frequency.setValueAtTime(900, t);
+                gain.gain.setValueAtTime(0.05, t); gain.gain.exponentialRampToValueAtTime(0.01, t + 0.15);
+                osc.start(t); osc.stop(t + 0.15);
+            } else if(type === 'error') {
+                const osc = audioCtx.createOscillator(); const gain = audioCtx.createGain();
+                osc.connect(gain); gain.connect(audioCtx.destination);
+                osc.type = 'sawtooth'; osc.frequency.setValueAtTime(120, t); osc.frequency.linearRampToValueAtTime(80, t + 0.25);
+                gain.gain.setValueAtTime(0.08, t); gain.gain.exponentialRampToValueAtTime(0.01, t + 0.3);
+                osc.start(t); osc.stop(t + 0.3);
+            } else if(type === 'combo') {
+                const osc = audioCtx.createOscillator(); const gain = audioCtx.createGain();
+                osc.connect(gain); gain.connect(audioCtx.destination);
+                osc.type = 'square'; const baseFreq = Math.min(400 + (state.combo * 50), 1200);
+                osc.frequency.setValueAtTime(baseFreq, t); osc.frequency.linearRampToValueAtTime(baseFreq + 200, t + 0.15); 
+                gain.gain.setValueAtTime(0.05, t); gain.gain.exponentialRampToValueAtTime(0.01, t + 0.2);
+                osc.start(t); osc.stop(t + 0.2);
+            } else if(type === 'milestone') {
+                [523.25, 659.25, 783.99, 1046.50, 1318.5].forEach((f, i) => {
+                    const osc = audioCtx.createOscillator(); const gain = audioCtx.createGain();
+                    osc.type = 'triangle'; osc.frequency.setValueAtTime(f, t + (i * 0.08)); 
+                    gain.gain.setValueAtTime(0.1, t + (i * 0.08)); gain.gain.exponentialRampToValueAtTime(0.01, t + (i * 0.08) + 1.0);
+                    osc.connect(gain); gain.connect(audioCtx.destination);
+                    osc.start(t + (i * 0.08)); osc.stop(t + (i * 0.08) + 1.0);
+                });
+            }
+        }
+
+        function triggerCasinoEffect(amount = 20) {
+            for (let i = 0; i < amount; i++) {
+                const coin = document.createElement('div');
+                coin.classList.add('casino-coin');
+                const angle = Math.random() * Math.PI * 2;
+                const distance = 80 + Math.random() * 150; 
+                coin.style.setProperty('--tx', Math.cos(angle) * distance + 'px');
+                coin.style.setProperty('--ty', Math.sin(angle) * distance + 'px');
+                coin.style.animation = `coin-explosion ${0.5 + Math.random() * 0.5}s ease-out forwards`;
+                document.body.appendChild(coin);
+                setTimeout(() => coin.remove(), 1000);
+            }
+        }
+
+        function triggerCoinRain(amount = 80) {
+            for (let i = 0; i < amount; i++) {
+                const coin = document.createElement('div');
+                coin.classList.add('rain-coin');
+                coin.style.left = Math.random() * 100 + 'vw';
+                coin.style.animationDuration = (1.5 + Math.random() * 1.5) + 's';
+                coin.style.animationDelay = (Math.random() * 1.0) + 's';
+                document.body.appendChild(coin);
+                setTimeout(() => coin.remove(), 3500);
+            }
+        }
+
+        // === 3. CONTROLE DE ESTADO E EXECUÇÃO ===
+        let xp = parseInt(localStorage.getItem('ffes_xp') || 0);
+        document.getElementById('xp-val').innerText = xp;
+        let state = { currentQ: null, combo: 0, startTime: 0, questionIndex: 0 };
+
+        function startGame() { generate(); }
+
+        function generate() {
+            if(state.questionIndex >= 100) {
+                document.getElementById('display-sentence').innerHTML = "BANCO DE VERBOS DOMINADO!<br><span style='color:#00e676'>100/100</span>";
+                document.getElementById('ab-controls').style.display = 'none';
+                playAudio('milestone'); triggerCoinRain(100);
+                return;
+            }
+
+            document.querySelectorAll('.btn-option').forEach(b => b.className = 'btn-option');
+            document.getElementById('feedback').className = ''; 
+            document.getElementById('speed-feedback').innerText = "";
+            document.getElementById('q-count').innerText = state.questionIndex + 1;
+
+            const item = database[state.questionIndex];
+            state.currentQ = item;
+            state.startTime = Date.now();
+
+            document.getElementById('display-sentence').innerHTML = item.q;
+            
+            if(Math.random() > 0.5) setOptions(item.correct, item.wrong, item.correct);
+            else setOptions(item.wrong, item.correct, item.correct);
+        }
+
+        function setOptions(txt1, txt2, correctVal) {
+            const btn1 = document.getElementById('btn1'); const btn2 = document.getElementById('btn2');
+            btn1.innerHTML = txt1; btn1.onclick = () => checkAnswer(txt1 === correctVal, btn1);
+            btn2.innerHTML = txt2; btn2.onclick = () => checkAnswer(txt2 === correctVal, btn2);
+        }
+
+        function checkAnswer(isCorrect, element) {
+            const fb = document.getElementById('feedback');
+            const timeDelta = Date.now() - state.startTime;
+            const isSpeed = timeDelta < 2500; 
+
+            if (isCorrect) {
+                state.combo++;
+                let xpGain = 15 + (state.combo * 3); 
+                if(isSpeed) xpGain += 10;
+                addXP(xpGain);
+                
+                fb.innerText = "PRECISO!"; fb.style.color = "#00e676"; fb.className = "visible";
+                element.classList.add('correct');
+                triggerCasinoEffect(20);
+                
+                if (state.combo % 10 === 0) { playAudio('milestone'); triggerCoinRain(40); } 
+                else if (state.combo > 1) { playAudio('combo'); } 
+                else { playAudio('win'); }
+                
+                if(isSpeed) document.getElementById('speed-feedback').innerText = "⚡ HACKER SPEED!";
+
+                const comboEl = document.getElementById('combo-feedback');
+                comboEl.innerText = `COMBO x${state.combo}`; comboEl.classList.add('show');
+                document.getElementById('progress-bar').style.width = ((state.questionIndex + 1) % 100) + '%';
+
+                setTimeout(() => { comboEl.classList.remove('show'); state.questionIndex++; generate(); }, 1200);
+            } else {
+                state.combo = 0; 
+                addXP(-10); 
+                fb.innerText = "FALHA CRÍTICA: " + state.currentQ.correct.toUpperCase();
+                fb.style.color = "#ff1744"; fb.className = "visible";
+                element.classList.add('wrong');
+                playAudio('error');
+                
+                const card = document.getElementById('game-card-element');
+                card.classList.add('shake-effect');
+                setTimeout(() => card.classList.remove('shake-effect'), 400);
+                document.getElementById('combo-feedback').classList.remove('show');
+            }
+        }
+
+        function addXP(val) {
+            xp = Math.max(0, xp + val); 
+            localStorage.setItem('ffes_xp', xp); 
+            document.getElementById('xp-val').innerText = xp;
+        }
+
+        window.onload = startGame;
+    </script>
+</body>
+</html>

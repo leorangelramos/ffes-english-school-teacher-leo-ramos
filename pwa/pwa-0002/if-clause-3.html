@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>FFES | Third Conditional Master: A Matrix do Arrependimento</title>
+    <meta name="title" content="FFES | Third Conditional Master: A Matrix do Arrependimento">
+    <meta name="description" content="Domine a Third Conditional (If Clause). Treinamento de alta performance para situações hipotéticas no passado. Método FFES.">
+    <meta name="keywords" content="third conditional, if clauses, had would have, gramática inglês, teacher leo ramos, ffes, inglês avançado">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="Portuguese">
+    <meta name="author" content="Teacher Leo Ramos">
+    <meta name="google-site-verification" content="9L-nEDj4G24e3JD1kt5bxcZ5_qHo9Q-03_DJkfIH_1M" />
+
+    
+    <link rel="canonical" href="https://teacherleoramos.com.br/PWA/Pasta002/conditionalthird.html">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-M8ZG06010Q"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-M8ZG06010Q');
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LearningResource",
+      "name": "Simulador Third Conditional - FFES",
+      "description": "Desafio de lógica focado na estrutura If + Past Perfect, Would Have + Participle.",
+      "url": "https://teacherleoramos.com.br/PWA/Pasta002/conditionalthird.html",
+      "learningResourceType": "Interactive Resource",
+      "educationalAlignment": {
+        "@type": "AlignmentObject",
+        "alignmentType": "educationalSubject",
+        "targetName": "English Grammar - Third Conditional"
+      },
+      "isPartOf": {
+        "@type": "CollectionPage",
+        "url": "https://teacherleoramos.com.br/PWA/Pasta002/indexpasta002.html"
+      }
+    }
+    </script>
+
+    <link rel="stylesheet" href="/CSS/style-app.css">
+
+    <style>
+        :root { --main-color: #7c4dff; --success: #00e676; --error: #ff1744; --bg-card: rgba(0, 0, 0, 0.9); }
+        .game-wrapper { width: 100%; max-width: 600px; display: flex; flex-direction: column; gap: 15px; margin: 0 auto; z-index: 10; position: relative; }
+        
+        /* Briefing de Realidade Alternativa */
+        .info-box { background: rgba(124, 77, 255, 0.05); border: 1px solid var(--main-color); border-radius: 16px; padding: 20px; margin-bottom: 20px; color: #ccc; font-size: 0.85rem; line-height: 1.4; text-align: left; }
+        .info-box h3 { color: var(--main-color); margin-bottom: 8px; text-transform: uppercase; font-size: 0.95rem; border-bottom: 1px solid rgba(124, 77, 255, 0.2); padding-bottom: 5px; }
+        .info-box code { color: #ffea00; background: rgba(0,0,0,0.3); padding: 2px 4px; border-radius: 4px; }
+
+        .game-card { background: var(--bg-card); backdrop-filter: blur(10px); border: 2px solid var(--main-color); border-radius: 24px; padding: 35px 20px; text-align: center; box-shadow: 0 10px 40px rgba(124, 77, 255, 0.3); min-height: 220px; display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; overflow: visible;}
+        
+        #display-sentence { font-size: 1.25rem; font-weight: 900; line-height: 1.5; color: #fff; text-shadow: 0 2px 10px rgba(0,0,0,0.8); }
+        .gap { color: var(--main-color); border-bottom: 3px solid var(--main-color); padding: 0 5px; }
+        
+        .game-controls { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; width: 100%; margin-top: 20px; }
+        .btn-option { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255,255,255,0.2); color: #fff; padding: 15px 10px; font-size: 0.85rem; font-weight: 900; border-radius: 12px; cursor: pointer; transition: all 0.2s ease; text-transform: uppercase; line-height: 1.2;}
+        .btn-option:hover { border-color: var(--main-color); background: rgba(124, 77, 255, 0.1); transform: translateY(-3px); }
+        .btn-option.correct { background: var(--success) !important; color: #000 !important; border-color: var(--success) !important; }
+        .btn-option.wrong { background: var(--error) !important; opacity: 0.5; }
+
+        #feedback { height: 30px; text-align: center; font-weight: 900; letter-spacing: 2px; text-transform: uppercase; transition: all 0.2s; opacity: 0; margin-bottom: 10px; }
+        #feedback.visible { opacity: 1; transform: translateY(-5px); }
+        
+        .xp-pill { background: rgba(0, 0, 0, 0.5); border: 1px solid var(--main-color); padding: 5px 15px; border-radius: 50px; color: var(--main-color); font-weight: 900; font-size: 1.1rem; margin-top: 10px; display: inline-block; }
+        .feedback-float { position: absolute; top: -15px; right: -10px; font-weight: 900; font-size: 0.8rem; color: #000; background: #fff; padding: 5px 12px; border-radius: 20px; opacity: 0; transform: translateY(10px); transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); z-index: 5; box-shadow: 0 0 15px var(--main-color); }
+        .feedback-float.show { opacity: 1; transform: translateY(0) rotate(5deg); }
+
+        .progress-track { width: 100%; height: 5px; background: rgba(255,255,255,0.1); position: fixed; top: 0; left: 0; z-index: 1000; }
+        .progress-fill { height: 100%; background: var(--main-color); width: 0%; transition: width 0.3s ease; }
+
+        /* CASINO EFFECTS */
+        .casino-coin { position: fixed; width: 25px; height: 25px; background: var(--main-color); border-radius: 50%; box-shadow: 0 0 15px var(--main-color); pointer-events: none; z-index: 9999; top: 50%; left: 50%; transform: translate(-50%, -50%); border: 2px solid #fff; }
+        @keyframes coin-explosion { 0% { transform: translate(-50%, -50%) scale(0.5); opacity: 1; } 100% { transform: translate(var(--tx), var(--ty)) scale(1.2) rotate(360deg); opacity: 0; } }
+        
+        .rain-coin { position: fixed; width: 35px; height: 35px; background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45" fill="%237c4dff" stroke="white" stroke-width="5"/><text x="50" y="65" font-size="20" text-anchor="middle" font-weight="bold" fill="white" font-family="Arial">PAST</text></svg>') no-repeat center; background-size: contain; pointer-events: none; z-index: 9999; top: -50px; animation: coin-drop linear forwards; }
+        @keyframes coin-drop { 0% { transform: translateY(0) rotate(0deg); opacity: 1; } 100% { transform: translateY(110vh) rotate(360deg); opacity: 0.8; } }
+        
+        @keyframes shake { 0%, 100% { transform: translateX(0); } 20%, 60% { transform: translateX(-8px); } 40%, 80% { transform: translateX(8px); } }
+        .shake-effect { animation: shake 0.4s ease-in-out; border-color: var(--error) !important; }
+
+        .btn-voltar { display: block; margin: 30px auto; padding: 15px 30px; background: transparent; border: 2px solid var(--main-color); color: var(--main-color); border-radius: 50px; text-decoration: none; font-weight: 900; text-align: center; max-width: 300px; text-transform: uppercase; transition: all 0.3s; }
+        .btn-voltar:hover { background: var(--main-color); color: #000; }
+    </style>
+</head>
+<body>
+
+    <div class="progress-track"><div class="progress-fill" id="progress-bar"></div></div>
+
+    <header class="glass-header" style="text-align: center; padding: 20px;">
+        <h1 style="color: #fff; margin-bottom: 5px;">THIRD <span style="color: var(--main-color);">CONDITIONAL</span></h1>
+        <p class="subtitle" style="color: #ccc;">Matrix do Impossível: If + Past Perfect, WOULD HAVE</p>
+        <div class="xp-pill">XP: <span id="xp-val">0</span></div>
+    </header>
+
+    <main style="max-width: 800px; margin: 0 auto; padding: 0 20px;">
+        
+        <div class="info-box">
+            <h3>📖 Briefing: Arrependimento Hipotético</h3>
+            <p>A Third Conditional fala de algo que <b>não aconteceu</b> no passado.</p>
+            <p>• <b>NO LADO DO IF:</b> Use <code>HAD</code> + 3ª Coluna. <br><i>Ex: If I <b>had gone</b>... (Nunca use Would Have aqui!)</i></p>
+            <p>• <b>NO RESULTADO:</b> Use <code>WOULD HAVE</code> + 3ª Coluna. <br><i>Ex: ...I <b>would have seen</b> him.</i></p>
+            <p><b>ALERTA DE BUG:</b> O cérebro quer repetir o "would have" no If. Não caia nessa armadilha!</p>
+        </div>
+
+        <div id="game-container" class="game-wrapper">
+            <div id="feedback"></div>
+            
+            <div class="game-card" id="game-card-element">
+                <div id="combo-feedback" class="feedback-float">COMBO x2</div>
+                <div id="speed-feedback" style="font-size: 0.7rem; color: var(--success); font-weight: 900;"></div>
+                <div id="display-sentence">Sincronizando Realidades Paralelas...</div>
+            </div>
+
+            <div class="game-controls" id="ab-controls">
+                <button id="btn1" class="btn-option"></button>
+                <button id="btn2" class="btn-option"></button>
+            </div>
+        </div>
+
+        <a href="indexpasta002.html" class="btn-voltar">⬅ Voltar ao Hub 02</a>
+    </main>
+
+    <script>
+        // === 1. BANCO DE DADOS: VERBOS IRREGULARES (Base | Past | Participle) ===
+        const irregulars = [
+            ["go", "went", "gone"], ["see", "saw", "seen"], ["eat", "ate", "eaten"], ["do", "did", "done"], ["write", "wrote", "written"],
+            ["speak", "spoke", "spoken"], ["take", "took", "taken"], ["buy", "bought", "bought"], ["come", "came", "come"], ["drink", "drank", "drunk"],
+            ["drive", "drove", "driven"], ["fall", "fell", "fallen"], ["forget", "forgot", "forgotten"], ["get", "got", "gotten"], ["give", "gave", "given"],
+            ["know", "knew", "known"], ["make", "made", "made"], ["read", "read", "read"], ["run", "ran", "run"], ["sing", "sang", "sung"],
+            ["sleep", "slept", "slept"], ["swim", "swam", "swum"], ["think", "thought", "thought"], ["win", "won", "won"], ["tell", "told", "told"]
+        ];
+
+        const subjects = ["I", "YOU", "HE", "SHE", "WE", "THEY"];
+
+        let database = [];
+
+        // GERAÇÃO DE 200 DESAFIOS (IF CLAUSE vs RESULT CLAUSE)
+        for (let i = 0; i < 200; i++) {
+            let v1 = irregulars[i % irregulars.length];
+            let v2 = irregulars[(i+1) % irregulars.length];
+            let s1 = subjects[Math.floor(Math.random() * subjects.length)];
+            let s2 = subjects[Math.floor(Math.random() * subjects.length)];
+            let type = Math.floor(Math.random() * 4); 
+
+            if (type === 0) { // Testa "No Would Have in If"
+                database.push({
+                    q: `IF ${s1} ___ ${v1[2].toUpperCase()} , ${s2} WOULD HAVE ${v2[2].toUpperCase()}.`,
+                    correct: "HAD",
+                    wrong: "WOULD HAVE"
+                });
+            } else if (type === 1) { // Testa o "Would Have" no resultado
+                database.push({
+                    q: `${s1} ___ ${v1[2].toUpperCase()} IF ${s2} HAD ${v2[2].toUpperCase()}.`,
+                    correct: "WOULD HAVE",
+                    wrong: "HAD"
+                });
+            } else if (type === 2) { // Testa o Particípio vs Past no If
+                database.push({
+                    q: `IF ${s1} HAD ___ , ${s2} WOULD HAVE BEEN HAPPY. (${v1[0]})`,
+                    correct: v1[2].toUpperCase(),
+                    wrong: v1[1].toUpperCase()
+                });
+            } else { // Negação (Hadn't vs Wouldn't Have)
+                database.push({
+                    q: `IF ${s1} ___ ${v1[2].toUpperCase()}, WE WOULD HAVE ARRIVED LATE.`,
+                    correct: "HADN'T",
+                    wrong: "WOULDN'T HAVE"
+                });
+            }
+        }
+        database = database.sort(() => Math.random() - 0.5);
+
+        // === 2. AUDIO ENGINE ===
+        const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        function playFX(type) {
+            if (audioCtx.state === 'suspended') audioCtx.resume();
+            const t = audioCtx.currentTime;
+            const osc = audioCtx.createOscillator();
+            const gain = audioCtx.createGain();
+            osc.connect(gain); gain.connect(audioCtx.destination);
+            
+            if(type === 'win') {
+                osc.type = 'sine'; osc.frequency.setValueAtTime(1200, t);
+                gain.gain.setValueAtTime(0.1, t); gain.gain.exponentialRampToValueAtTime(0.01, t + 0.2);
+                osc.start(t); osc.stop(t + 0.2);
+            } else if(type === 'error') {
+                osc.type = 'sawtooth'; osc.frequency.setValueAtTime(140, t);
+                gain.gain.setValueAtTime(0.1, t); gain.gain.exponentialRampToValueAtTime(0.01, t + 0.4);
+                osc.start(t); osc.stop(t + 0.4);
+            } else if(type === 'combo') {
+                osc.type = 'square'; osc.frequency.setValueAtTime(800 + (state.combo * 50), t);
+                gain.gain.setValueAtTime(0.05, t); gain.gain.exponentialRampToValueAtTime(0.01, t + 0.1);
+                osc.start(t); osc.stop(t + 0.1);
+            }
+        }
+
+        // === 3. VISUAL EFFECTS ===
+        function triggerCasino() {
+            for (let i = 0; i < 15; i++) {
+                const coin = document.createElement('div');
+                coin.classList.add('casino-coin');
+                const angle = Math.random() * Math.PI * 2;
+                const dist = 80 + Math.random() * 120;
+                coin.style.setProperty('--tx', Math.cos(angle) * dist + 'px');
+                coin.style.setProperty('--ty', Math.sin(angle) * dist + 'px');
+                coin.style.animation = `coin-explosion 0.5s ease-out forwards`;
+                document.body.appendChild(coin);
+                setTimeout(() => coin.remove(), 600);
+            }
+        }
+
+        function triggerRain() {
+            for (let i = 0; i < 40; i++) {
+                const coin = document.createElement('div');
+                coin.classList.add('rain-coin');
+                coin.style.left = Math.random() * 100 + 'vw';
+                coin.style.animationDuration = (1 + Math.random() * 1.5) + 's';
+                document.body.appendChild(coin);
+                setTimeout(() => coin.remove(), 2500);
+            }
+        }
+
+        // === 4. STATE & LOGIC ===
+        let xp = parseInt(localStorage.getItem('ffes_xp') || 0);
+        document.getElementById('xp-val').innerText = xp;
+        let state = { currentQ: null, combo: 0, startTime: 0, questionIndex: 0 };
+
+        function generate() {
+            if(state.questionIndex >= 100) {
+                document.getElementById('display-sentence').innerHTML = "IMPOSSÍVEL DOMINADO!<br><span style='color:var(--success);'>100/100</span>";
+                document.getElementById('ab-controls').style.display = 'none';
+                return;
+            }
+            const fb = document.getElementById('feedback');
+            fb.className = ''; document.getElementById('speed-feedback').innerText = "";
+            
+            const item = database[state.questionIndex];
+            state.currentQ = item;
+            state.startTime = Date.now();
+
+            document.getElementById('display-sentence').innerHTML = item.q.replace("___", "<span class='gap'>___</span>");
+            
+            let btn1 = document.getElementById('btn1');
+            let btn2 = document.getElementById('btn2');
+            if (Math.random() > 0.5) {
+                btn1.innerText = item.correct; btn1.onclick = () => check(item.correct);
+                btn2.innerText = item.wrong; btn2.onclick = () => check(item.wrong);
+            } else {
+                btn1.innerText = item.wrong; btn1.onclick = () => check(item.wrong);
+                btn2.innerText = item.correct; btn2.onclick = () => check(item.correct);
+            }
+        }
+
+        function check(choice) {
+            const timeDelta = Date.now() - state.startTime;
+            const isSpeed = timeDelta < 2800; // Tempo maior para Third Conditional
+            const fb = document.getElementById('feedback');
+
+            if (choice === state.currentQ.correct) {
+                state.combo++;
+                let gain = 20 + (state.combo * 5); 
+                if(isSpeed) { gain += 15; document.getElementById('speed-feedback').innerText = "⚡ PARADOX SPEED!"; }
+                xp += gain; localStorage.setItem('ffes_xp', xp);
+                document.getElementById('xp-val').innerText = xp;
+                
+                fb.innerText = "PRECISO!"; fb.style.color = "var(--success)"; fb.className = "visible";
+                playFX('win'); triggerCasino();
+                if(state.combo % 5 === 0) triggerRain();
+
+                const comboEl = document.getElementById('combo-feedback');
+                comboEl.innerText = `COMBO x${state.combo}`; comboEl.classList.add('show');
+                document.getElementById('progress-bar').style.width = (state.questionIndex + 1) + '%';
+                
+                setTimeout(() => { comboEl.classList.remove('show'); state.questionIndex++; generate(); }, 800);
+            } else {
+                state.combo = 0; xp = Math.max(0, xp - 20);
+                localStorage.setItem('ffes_xp', xp); document.getElementById('xp-val').innerText = xp;
+                fb.innerText = "ERRO TEMPORAL!"; fb.style.color = "var(--error)"; fb.className = "visible";
+                playFX('error');
+                const card = document.getElementById('game-card-element');
+                card.classList.add('shake-effect');
+                setTimeout(() => card.classList.remove('shake-effect'), 400);
+                document.getElementById('combo-feedback').classList.remove('show');
+            }
+        }
+
+        window.onload = generate;
+    </script>
+</body>
+</html>

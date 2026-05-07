@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>FFES | O Quiz Definitivo de Pronomes (100 Questões)</title>
+    <meta name="title" content="FFES | O Quiz Definitivo de Pronomes (100 Questões)">
+    <meta name="description" content="A Prova Final. Sobreviva a 100 questões implacáveis misturando Pronomes Pessoais, Objetos, Possessivos e Reflexivos. Método FFES de alta performance.">
+    <meta name="keywords" content="quiz de pronomes, pronomes em inglês, possessive pronouns, reflexive pronouns, teacher leo ramos, ffes, gramática avançada">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="Portuguese">
+    <meta name="author" content="Teacher Leo Ramos">
+    
+    <link rel="canonical" href="https://teacherleoramos.com.br/PWA/Pasta013/quiz04pronoms.html">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-M8ZG06010Q"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-M8ZG06010Q');
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LearningResource",
+      "name": "A Prova Final: Pronomes em Inglês - FFES",
+      "description": "Simulador gramatical de alto impacto com 100 questões focadas em todos os tipos de pronomes do idioma inglês.",
+      "url": "https://teacherleoramos.com.br/PWA/Pasta013/quiz04pronoms.html",
+      "learningResourceType": "Quiz",
+      "educationalAlignment": {
+        "@type": "AlignmentObject",
+        "alignmentType": "educationalSubject",
+        "targetName": "English Grammar - Pronouns"
+      },
+      "isPartOf": {
+        "@type": "CollectionPage",
+        "url": "https://teacherleoramos.com.br/PWA/Pasta013/indexpasta013.html"
+      }
+    }
+    </script>
+
+    <link rel="stylesheet" href="/CSS/style-app.css">
+
+    <style>
+        /* === ENGINE DE GAMIFICAÇÃO - BOSS FIGHT TEMA DOURADO === */
+        .game-wrapper { width: 100%; max-width: 600px; display: flex; flex-direction: column; gap: 20px; z-index: 10; margin: 0 auto; }
+        
+        .game-card { background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(10px); border: 2px solid #FFD700; border-radius: 24px; padding: 30px 20px; text-align: center; box-shadow: 0 10px 40px rgba(255, 215, 0, 0.2); min-height: 180px; display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; }
+        
+        #display-sentence { font-size: 1.5rem; font-weight: 700; line-height: 1.4; color: #fff; text-shadow: 0 2px 10px rgba(0,0,0,0.8); z-index: 2; }
+        .gap { color: #FFD700; border-bottom: 3px solid #FFD700; padding: 0 8px; display: inline-block; min-width: 60px; font-style: italic; }
+        
+        .game-controls { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; width: 100%; }
+        .btn-option { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255,255,255,0.2); color: #fff; padding: 20px; font-size: 1.1rem; font-weight: 900; border-radius: 16px; cursor: pointer; transition: all 0.2s ease; text-transform: uppercase; letter-spacing: 1px;}
+        .btn-option:hover { border-color: #FFD700; background: rgba(255, 215, 0, 0.1); transform: translateY(-3px); }
+        .btn-option.correct { background: #00e676 !important; color: #000 !important; border-color: #00e676 !important; }
+        .btn-option.wrong { background: #ff1744 !important; opacity: 0.5; }
+
+        #feedback { height: 30px; text-align: center; font-weight: 900; letter-spacing: 2px; text-transform: uppercase; transition: all 0.2s; opacity: 0; margin-bottom: 10px; }
+        #feedback.visible { opacity: 1; transform: translateY(-5px); }
+        
+        .xp-pill { background: rgba(0, 0, 0, 0.5); border: 1px solid #FFD700; padding: 5px 15px; border-radius: 50px; color: #FFD700; font-weight: 900; font-size: 1.1rem; margin-top: 10px; display: inline-block; }
+        .feedback-float { position: absolute; top: -15px; right: -10px; font-weight: 900; font-size: 0.9rem; color: #000; background: #FFD700; padding: 5px 12px; border-radius: 20px; border: 1px solid #fff; opacity: 0; transform: translateY(10px); transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); z-index: 5; box-shadow: 0 0 10px #FFD700;}
+        .feedback-float.show { opacity: 1; transform: translateY(0) rotate(5deg); }
+        .speed-badge { position: absolute; bottom: 10px; width: 100%; left: 0; text-align: center; font-size: 0.75rem; color: #00e676; font-weight: 900; letter-spacing: 1px; text-transform: uppercase; }
+
+        .progress-track { width: 100%; height: 5px; background: rgba(255,255,255,0.1); position: fixed; top: 0; left: 0; z-index: 1000; }
+        .progress-fill { height: 100%; background: #FFD700; width: 0%; transition: width 0.3s ease; box-shadow: 0 0 10px #FFD700; }
+
+        /* Animações Visuais Letais */
+        .casino-coin { position: fixed; width: 25px; height: 25px; background: #FFD700; border-radius: 50%; box-shadow: 0 0 15px rgba(255, 215, 0, 1); pointer-events: none; z-index: 9999; top: 50%; left: 50%; transform: translate(-50%, -50%); border: 2px solid #fff; }
+        @keyframes coin-explosion { 0% { transform: translate(-50%, -50%) scale(0.5); opacity: 1; } 100% { transform: translate(var(--tx), var(--ty)) scale(1.2) rotate(360deg); opacity: 0; } }
+        
+        .rain-coin { position: fixed; width: 35px; height: 35px; background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45" fill="%23FFD700" stroke="%23fff" stroke-width="5"/><text x="50" y="65" font-size="40" text-anchor="middle" font-weight="bold" fill="%23000" font-family="Arial">XP</text></svg>') no-repeat center; background-size: contain; pointer-events: none; z-index: 9999; top: -50px; animation: coin-drop linear forwards; }
+        @keyframes coin-drop { 0% { transform: translateY(0) rotate(0deg); opacity: 1; } 100% { transform: translateY(110vh) rotate(360deg); opacity: 0.8; } }
+        
+        @keyframes shake { 0%, 100% { transform: translateX(0); } 20%, 60% { transform: translateX(-8px); } 40%, 80% { transform: translateX(8px); } }
+        .shake-effect { animation: shake 0.4s ease-in-out; border-color: #ff1744 !important; box-shadow: 0 0 20px rgba(255, 23, 68, 0.5) !important;}
+
+        .btn-voltar { display: block; margin: 30px auto; padding: 15px 30px; background: transparent; border: 2px solid #FFD700; color: #FFD700; border-radius: 50px; text-decoration: none; font-weight: 900; text-align: center; max-width: 300px; text-transform: uppercase; transition: all 0.3s; }
+        .btn-voltar:hover { background: #FFD700; color: #000; box-shadow: 0 0 15px #FFD700;}
+    </style>
+</head>
+<body>
+
+    <div class="progress-track"><div class="progress-fill" id="progress-bar"></div></div>
+
+    <header class="glass-header" style="text-align: center; padding: 20px;">
+        <h1 style="color: #fff; margin-bottom: 5px;">PROVA FINAL: <span style="color: #FFD700;">PRONOMES</span></h1>
+        <p class="subtitle" style="color: #ccc;">Sobreviva aos 100 Desafios</p>
+        <div class="xp-pill">XP: <span id="xp-val">0</span></div>
+        <div style="font-size: 0.85rem; font-weight: bold; color: #FFD700; margin-top: 5px;">Nível de Ameaça: <span id="q-count">0</span> / 100</div>
+    </header>
+
+    <main style="max-width: 800px; margin: 20px auto; padding: 0 20px;">
+        <div id="game-container" class="game-wrapper">
+            <div id="feedback"></div>
+            
+            <div class="game-card" id="game-card-element">
+                <div id="combo-feedback" class="feedback-float">COMBO x2</div>
+                <div id="speed-feedback" class="speed-badge"></div>
+                <div id="display-sentence">Carregando Matriz Gramatical...</div>
+            </div>
+
+            <div class="game-controls" id="ab-controls">
+                <button id="btn1" class="btn-option" onclick="checkAnswer(1)">A</button>
+                <button id="btn2" class="btn-option" onclick="checkAnswer(2)">B</button>
+            </div>
+        </div>
+
+        <a href="indexpasta013.html" class="btn-voltar">⬅ Abortar Simulação</a>
+    </main>
+
+    <script>
+        // === 1. BANCO DE DADOS DE ALTA DIFICULDADE (25 NÚCLEOS DE PRONOMES) ===
+        // O algoritmo vai mutar esses 25 conceitos em exatas 100 perguntas letais.
+        const corePronouns = [
+            { id: 1, type: "Possessive Pronoun", en: "mine", pt: "meu/minha (no final da frase)", trap: "my", phrase: "This car is not yours, it is <span class='gap'>_____</span>." },
+            { id: 2, type: "Reflexive", en: "herself", pt: "ela mesma (sozinha)", trap: "her", phrase: "She fixed the engine completely by <span class='gap'>_____</span>." },
+            { id: 3, type: "Possessive Pronoun", en: "theirs", pt: "deles/delas (no final da frase)", trap: "their", phrase: "Our team won, but <span class='gap'>_____</span> lost." },
+            { id: 4, type: "Object Pronoun", en: "him", pt: "ele (recebe a ação / após preposição)", trap: "he", phrase: "This secret is just between you and <span class='gap'>_____</span>." },
+            { id: 5, type: "Object Pronoun", en: "us", pt: "nós (recebe a ação)", trap: "we", phrase: "The teacher gave <span class='gap'>_____</span> a lot of homework." },
+            { id: 6, type: "Possessive Adjective", en: "its", pt: "dele/dela (para coisas/animais)", trap: "it's", phrase: "The dog wagged <span class='gap'>_____</span> tail." },
+            { id: 7, type: "Reflexive", en: "myself", pt: "a mim mesmo(a)", trap: "me", phrase: "I accidentally cut <span class='gap'>_____</span> with the knife." },
+            { id: 8, type: "Possessive Pronoun", en: "yours", pt: "seu/sua (no final da frase)", trap: "your", phrase: "I found my phone, but is this one <span class='gap'>_____</span>?" },
+            { id: 9, type: "Possessive Pronoun", en: "hers", pt: "dela (sem substantivo depois)", trap: "her", phrase: "That brilliant idea was <span class='gap'>_____</span>." },
+            { id: 10, type: "Reflexive", en: "themselves", pt: "eles mesmos", trap: "them", phrase: "They built the entire house by <span class='gap'>_____</span>." },
+            { id: 11, type: "Object Pronoun", en: "me", pt: "mim (após preposições/verbos)", trap: "I", phrase: "He is much taller than <span class='gap'>_____</span>." },
+            { id: 12, type: "Reflexive", en: "ourselves", pt: "nós mesmos", trap: "us", phrase: "We need to protect <span class='gap'>_____</span> from the storm." },
+            { id: 13, type: "Object Pronoun", en: "them", pt: "eles/elas (recebem a ação)", trap: "they", phrase: "Where are my keys? I can't find <span class='gap'>_____</span>." },
+            { id: 14, type: "Subject Pronoun", en: "She", pt: "Ela (pratica a ação)", trap: "Her", phrase: "<span class='gap'>_____</span> and I went to the movies together." }, // Pegadinha clássica Her and I vs She and I
+            { id: 15, type: "Possessive Pronoun", en: "ours", pt: "nosso/nossa (no final da frase)", trap: "our", phrase: "This problem is not theirs, it is <span class='gap'>_____</span>." },
+            { id: 16, type: "Reflexive", en: "itself", pt: "ele mesmo (coisas/animais)", trap: "it", phrase: "The computer restarted <span class='gap'>_____</span> automatically." },
+            { id: 17, type: "Reflexive", en: "yourself", pt: "você mesmo(a) (singular)", trap: "yours", phrase: "Did you bake this cake <span class='gap'>_____</span>?" },
+            { id: 18, type: "Reflexive", en: "yourselves", pt: "vocês mesmos (plural)", trap: "yourself", phrase: "Come in, guys! Make <span class='gap'>_____</span> at home." },
+            { id: 19, type: "Possessive (Both)", en: "his", pt: "dele", trap: "him", phrase: "John left <span class='gap'>_____</span> wallet on the table." },
+            { id: 20, type: "Object Pronoun", en: "her", pt: "dela / a ela", trap: "hers", phrase: "I called <span class='gap'>_____</span> three times yesterday." },
+            { id: 21, type: "Subject Pronoun", en: "They", pt: "Eles/Elas (praticam a ação)", trap: "Them", phrase: "<span class='gap'>_____</span> are arriving at the airport now." },
+            { id: 22, type: "Subject Pronoun", en: "We", pt: "Nós (praticamos a ação)", trap: "Us", phrase: "<span class='gap'>_____</span> Brazilians love a good barbecue." },
+            { id: 23, type: "Object Pronoun", en: "it", pt: "isso/ele/ela (recebe a ação - coisas)", trap: "its", phrase: "Don't touch the oven! You will break <span class='gap'>_____</span>." },
+            { id: 24, type: "Possessive Adjective", en: "their", pt: "deles/delas (com substantivo depois)", trap: "theirs", phrase: "I really like <span class='gap'>_____</span> new house." },
+            { id: 25, type: "Subject Trap", en: "I", pt: "Eu (sujeito composto)", trap: "me", phrase: "My brother and <span class='gap'>_____</span> are going to the gym." } // Outra pegadinha clássica
+        ];
+
+        let database = [];
+        
+        // MOTOR DE GERAÇÃO: 25 Núcleos x 4 Variações = 100 Questões Fatais.
+        corePronouns.forEach(item => {
+            // VARIAÇÃO 1: Preenchimento de Lacuna (Teste de Contexto Real)
+            database.push({ q: `Preencha a lacuna: <br><br> "${item.phrase}"`, correct: item.en, wrong: item.trap });
+            
+            // VARIAÇÃO 2: Identificação Direta (Inglês -> Português)
+            database.push({ q: `Qual o significado e uso correto de: <strong>"${item.en.toUpperCase()}"</strong>?`, correct: item.pt, wrong: corePronouns[Math.floor(Math.random()*corePronouns.length)].pt });
+            
+            // VARIAÇÃO 3: Lógica Reversa (Português -> Inglês)
+            // Se o item for "its", garantimos que a resposta errada faça sentido como pegadinha
+            database.push({ q: `Como se diz <strong>"${item.pt}"</strong> em inglês?`, correct: item.en, wrong: (item.trap === "it's" ? "it's" : item.trap) });
+            
+            // VARIAÇÃO 4: Regra Gramatical (O tipo de pronome)
+            database.push({ q: `O pronome <strong>"${item.en}"</strong> é classificado como:`, correct: item.type, wrong: (item.type === "Reflexive" ? "Subject Pronoun" : "Reflexive") });
+        });
+
+        // Embaralhar as 100 questões
+        database = database.sort(() => Math.random() - 0.5).slice(0, 100);
+
+        // === 2. MOTOR DE ÁUDIO E EFEITOS (O SISTEMA DE DOPAMINA) ===
+        const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        function playAudio(type) {
+            if (audioCtx.state === 'suspended') { audioCtx.resume(); }
+            const t = audioCtx.currentTime;
+            if(type === 'win') {
+                const osc = audioCtx.createOscillator(); const gain = audioCtx.createGain();
+                osc.connect(gain); gain.connect(audioCtx.destination);
+                osc.type = 'sine'; osc.frequency.setValueAtTime(900, t);
+                gain.gain.setValueAtTime(0.05, t); gain.gain.exponentialRampToValueAtTime(0.01, t + 0.15);
+                osc.start(t); osc.stop(t + 0.15);
+            } else if(type === 'error') {
+                const osc = audioCtx.createOscillator(); const gain = audioCtx.createGain();
+                osc.connect(gain); gain.connect(audioCtx.destination);
+                osc.type = 'sawtooth'; osc.frequency.setValueAtTime(120, t); osc.frequency.linearRampToValueAtTime(80, t + 0.25);
+                gain.gain.setValueAtTime(0.08, t); gain.gain.exponentialRampToValueAtTime(0.01, t + 0.3);
+                osc.start(t); osc.stop(t + 0.3);
+            } else if(type === 'combo') {
+                const osc = audioCtx.createOscillator(); const gain = audioCtx.createGain();
+                osc.connect(gain); gain.connect(audioCtx.destination);
+                osc.type = 'square'; const baseFreq = Math.min(400 + (state.combo * 50), 1200);
+                osc.frequency.setValueAtTime(baseFreq, t); osc.frequency.linearRampToValueAtTime(baseFreq + 200, t + 0.15); 
+                gain.gain.setValueAtTime(0.05, t); gain.gain.exponentialRampToValueAtTime(0.01, t + 0.2);
+                osc.start(t); osc.stop(t + 0.2);
+            } else if(type === 'milestone') {
+                [523.25, 659.25, 783.99, 1046.50, 1318.5].forEach((f, i) => {
+                    const osc = audioCtx.createOscillator(); const gain = audioCtx.createGain();
+                    osc.type = 'triangle'; osc.frequency.setValueAtTime(f, t + (i * 0.08)); 
+                    gain.gain.setValueAtTime(0.1, t + (i * 0.08)); gain.gain.exponentialRampToValueAtTime(0.01, t + (i * 0.08) + 1.0);
+                    osc.connect(gain); gain.connect(audioCtx.destination);
+                    osc.start(t + (i * 0.08)); osc.stop(t + (i * 0.08) + 1.0);
+                });
+            }
+        }
+
+        function triggerCasinoEffect(amount = 20) {
+            for (let i = 0; i < amount; i++) {
+                const coin = document.createElement('div');
+                coin.classList.add('casino-coin');
+                const angle = Math.random() * Math.PI * 2;
+                const distance = 80 + Math.random() * 150; 
+                coin.style.setProperty('--tx', Math.cos(angle) * distance + 'px');
+                coin.style.setProperty('--ty', Math.sin(angle) * distance + 'px');
+                coin.style.animation = `coin-explosion ${0.5 + Math.random() * 0.5}s ease-out forwards`;
+                document.body.appendChild(coin);
+                setTimeout(() => coin.remove(), 1000);
+            }
+        }
+
+        function triggerCoinRain(amount = 80) {
+            for (let i = 0; i < amount; i++) {
+                const coin = document.createElement('div');
+                coin.classList.add('rain-coin');
+                coin.style.left = Math.random() * 100 + 'vw';
+                coin.style.animationDuration = (1.5 + Math.random() * 1.5) + 's';
+                coin.style.animationDelay = (Math.random() * 1.0) + 's';
+                document.body.appendChild(coin);
+                setTimeout(() => coin.remove(), 3500);
+            }
+        }
+
+        // === 3. CONTROLE DE ESTADO E MECÂNICA ===
+        let xp = parseInt(localStorage.getItem('ffes_xp') || 0);
+        document.getElementById('xp-val').innerText = xp;
+        let state = { currentQ: null, combo: 0, startTime: 0, questionIndex: 0 };
+
+        function startGame() { generate(); }
+
+        function generate() {
+            if(state.questionIndex >= 100) {
+                document.getElementById('display-sentence').innerHTML = "SOBERANIA GRAMATICAL ATINGIDA!<br><span style='color:#00e676'>100/100</span>";
+                document.getElementById('ab-controls').style.display = 'none';
+                playAudio('milestone'); triggerCoinRain(100);
+                return;
+            }
+
+            document.querySelectorAll('.btn-option').forEach(b => b.className = 'btn-option');
+            document.getElementById('feedback').className = ''; 
+            document.getElementById('speed-feedback').innerText = "";
+            document.getElementById('q-count').innerText = state.questionIndex + 1;
+
+            const item = database[state.questionIndex];
+            state.currentQ = item;
+            state.startTime = Date.now();
+
+            document.getElementById('display-sentence').innerHTML = item.q;
+            
+            let wrongOption = item.wrong;
+            if(item.wrong === item.correct) wrongOption += " (Trap)";
+
+            if(Math.random() > 0.5) setOptions(item.correct, wrongOption, item.correct);
+            else setOptions(wrongOption, item.correct, item.correct);
+        }
+
+        function setOptions(txt1, txt2, correctVal) {
+            const btn1 = document.getElementById('btn1'); const btn2 = document.getElementById('btn2');
+            btn1.innerHTML = txt1; btn1.onclick = () => checkAnswer(txt1 === correctVal, btn1);
+            btn2.innerHTML = txt2; btn2.onclick = () => checkAnswer(txt2 === correctVal, btn2);
+        }
+
+        function checkAnswer(isCorrect, element) {
+            const fb = document.getElementById('feedback');
+            const timeDelta = Date.now() - state.startTime;
+            const isSpeed = timeDelta < 2500; // Resposta Hacker Speed
+
+            if (isCorrect) {
+                state.combo++;
+                // Pontuação brutal para a Prova Final
+                let xpGain = 15 + (state.combo * 3); 
+                if(isSpeed) xpGain += 10;
+                addXP(xpGain);
+                
+                fb.innerText = "LETAL!"; fb.style.color = "#00e676"; fb.className = "visible";
+                element.classList.add('correct');
+                triggerCasinoEffect(20);
+                
+                if (state.combo % 10 === 0) { playAudio('milestone'); triggerCoinRain(40); } 
+                else if (state.combo > 1) { playAudio('combo'); } 
+                else { playAudio('win'); }
+                
+                if(isSpeed) document.getElementById('speed-feedback').innerText = "⚡ MÁQUINA DE PRECISÃO!";
+
+                const comboEl = document.getElementById('combo-feedback');
+                comboEl.innerText = `COMBO x${state.combo}`; comboEl.classList.add('show');
+                document.getElementById('progress-bar').style.width = ((state.questionIndex + 1) % 100) + '%';
+
+                setTimeout(() => { comboEl.classList.remove('show'); state.questionIndex++; generate(); }, 1200);
+            } else {
+                state.combo = 0; 
+                addXP(-10); // Punição rigorosa
+                fb.innerText = "FALHA CRÍTICA: " + state.currentQ.correct.toUpperCase();
+                fb.style.color = "#ff1744"; fb.className = "visible";
+                element.classList.add('wrong');
+                playAudio('error');
+                
+                const card = document.getElementById('game-card-element');
+                card.classList.add('shake-effect');
+                setTimeout(() => card.classList.remove('shake-effect'), 400);
+                document.getElementById('combo-feedback').classList.remove('show');
+            }
+        }
+
+        function addXP(val) {
+            xp = Math.max(0, xp + val); 
+            localStorage.setItem('ffes_xp', xp); 
+            document.getElementById('xp-val').innerText = xp;
+        }
+
+        window.onload = startGame;
+    </script>
+</body>
+</html>

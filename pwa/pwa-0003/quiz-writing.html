@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>FFES | Type Sniper: Simulador de Escrita Rápida</title>
+    <meta name="title" content="FFES | Type Sniper: Simulador de Escrita Rápida">
+    <meta name="description" content="Automatize a escrita. 100 frases curtas em inglês para você digitar sob pressão e criar memória muscular.">
+    <meta name="keywords" content="escrever em inglês, praticar writing inglês, teacher leo ramos, ffes, simulador de digitação">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="Portuguese">
+    <meta name="author" content="Teacher Leo Ramos">
+    
+    <link rel="canonical" href="https://teacherleoramos.com.br/PWA/Pasta003/quiz13writing.html">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-M8ZG06010Q"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-M8ZG06010Q');
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LearningResource",
+      "name": "Simulador Type Sniper - FFES",
+      "description": "Ferramenta de treinamento para escrita em inglês (Writing) exigindo digitação rápida de 100 frases curtas.",
+      "url": "https://teacherleoramos.com.br/PWA/Pasta003/quiz13writing.html",
+      "learningResourceType": "Writing Exercise",
+      "educationalAlignment": {
+        "@type": "AlignmentObject",
+        "alignmentType": "educationalSubject",
+        "targetName": "English Writing Skills"
+      },
+      "isPartOf": {
+        "@type": "CollectionPage",
+        "url": "https://teacherleoramos.com.br/PWA/Pasta003/indexpasta003.html"
+      }
+    }
+    </script>
+
+    <link rel="stylesheet" href="/CSS/style-app.css">
+
+    <style>
+        /* === ENGINE DE GAMIFICAÇÃO - TEMA AMARELO CYBERPUNK === */
+        .game-wrapper { width: 100%; max-width: 600px; display: flex; flex-direction: column; gap: 15px; z-index: 10; margin: 0 auto; }
+        
+        .game-card { background: rgba(0, 0, 0, 0.8); backdrop-filter: blur(10px); border: 2px solid #ffea00; border-radius: 24px; padding: 40px 20px; text-align: center; box-shadow: 0 10px 40px rgba(255, 234, 0, 0.2); min-height: 220px; display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; }
+        
+        #display-sentence { font-size: 1.8rem; font-weight: 900; line-height: 1.3; color: #fff; text-shadow: 0 2px 10px rgba(0,0,0,0.8); z-index: 2; margin-bottom: 25px;}
+        
+        /* Input de Digitação */
+        .type-input { width: 100%; background: #111; border: 2px solid #ffea00; color: #ffea00; font-size: 1.5rem; font-weight: 900; padding: 15px; border-radius: 12px; text-align: center; outline: none; text-transform: lowercase; box-shadow: inset 0 0 10px rgba(0,0,0,0.8); transition: all 0.3s;}
+        .type-input:focus { background: #000; box-shadow: 0 0 15px rgba(255, 234, 0, 0.5); }
+        .type-input.error { border-color: #ff1744; color: #ff1744; animation: shake 0.4s; }
+        .type-input.success { border-color: #00e676; color: #00e676; }
+
+        .btn-submit { background: #ffea00; color: #000; border: none; padding: 15px 40px; font-size: 1.2rem; font-weight: 900; border-radius: 50px; cursor: pointer; text-transform: uppercase; margin-top: 15px; width: 100%; transition: all 0.2s;}
+        .btn-submit:active { transform: scale(0.95); }
+
+        #feedback { height: 30px; text-align: center; font-weight: 900; letter-spacing: 2px; text-transform: uppercase; transition: all 0.2s; opacity: 0; margin-bottom: 5px; }
+        #feedback.visible { opacity: 1; transform: translateY(-5px); }
+        
+        .xp-pill { background: rgba(0, 0, 0, 0.5); border: 1px solid #ffea00; padding: 5px 15px; border-radius: 50px; color: #ffea00; font-weight: 900; font-size: 1.1rem; margin-top: 10px; display: inline-block; }
+        .feedback-float { position: absolute; top: -15px; right: -10px; font-weight: 900; font-size: 0.9rem; color: #000; background: #ffea00; padding: 5px 12px; border-radius: 20px; border: 1px solid #fff; opacity: 0; transform: translateY(10px); transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); z-index: 5; box-shadow: 0 0 10px #ffea00;}
+        .feedback-float.show { opacity: 1; transform: translateY(0) rotate(5deg); }
+        .speed-badge { position: absolute; bottom: 10px; width: 100%; left: 0; text-align: center; font-size: 0.75rem; color: #00e676; font-weight: 900; letter-spacing: 1px; text-transform: uppercase; }
+
+        .progress-track { width: 100%; height: 5px; background: rgba(255,255,255,0.1); position: fixed; top: 0; left: 0; z-index: 1000; }
+        .progress-fill { height: 100%; background: #ffea00; width: 0%; transition: width 0.3s ease; box-shadow: 0 0 10px #ffea00; }
+
+        .casino-coin { position: fixed; width: 25px; height: 25px; background: #ffea00; border-radius: 50%; box-shadow: 0 0 15px rgba(255, 234, 0, 1); pointer-events: none; z-index: 9999; top: 50%; left: 50%; transform: translate(-50%, -50%); border: 2px solid #fff; }
+        @keyframes coin-explosion { 0% { transform: translate(-50%, -50%) scale(0.5); opacity: 1; } 100% { transform: translate(var(--tx), var(--ty)) scale(1.2) rotate(360deg); opacity: 0; } }
+        
+        .rain-coin { position: fixed; width: 35px; height: 35px; background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45" fill="%23ffea00" stroke="%23000" stroke-width="5"/><text x="50" y="65" font-size="40" text-anchor="middle" font-weight="bold" fill="%23000" font-family="Arial">XP</text></svg>') no-repeat center; background-size: contain; pointer-events: none; z-index: 9999; top: -50px; animation: coin-drop linear forwards; }
+        @keyframes coin-drop { 0% { transform: translateY(0) rotate(0deg); opacity: 1; } 100% { transform: translateY(110vh) rotate(360deg); opacity: 0.8; } }
+        
+        @keyframes shake { 0%, 100% { transform: translateX(0); } 20%, 60% { transform: translateX(-8px); } 40%, 80% { transform: translateX(8px); } }
+
+        .btn-voltar { display: block; margin: 30px auto; padding: 15px 30px; background: transparent; border: 2px solid #ffea00; color: #ffea00; border-radius: 50px; text-decoration: none; font-weight: 900; text-align: center; max-width: 300px; text-transform: uppercase; transition: all 0.3s; }
+        .btn-voltar:hover { background: #ffea00; color: #000; box-shadow: 0 0 15px #ffea00;}
+    </style>
+</head>
+<body>
+
+    <div class="progress-track"><div class="progress-fill" id="progress-bar"></div></div>
+
+    <header class="glass-header" style="text-align: center; padding: 20px;">
+        <h1 style="color: #fff; margin-bottom: 5px;">TYPE <span style="color: #ffea00;">SNIPER</span></h1>
+        <p class="subtitle" style="color: #ccc;">Digite a tradução (2 a 4 palavras)</p>
+        <div class="xp-pill">XP: <span id="xp-val">0</span></div>
+        <div style="font-size: 0.85rem; font-weight: bold; color: #ffea00; margin-top: 5px;">Códigos Digitados: <span id="q-count">0</span> / 100</div>
+    </header>
+
+    <main style="max-width: 800px; margin: 20px auto; padding: 0 20px;">
+        <div id="game-container" class="game-wrapper">
+            <div id="feedback"></div>
+            
+            <div class="game-card" id="game-card-element">
+                <div id="combo-feedback" class="feedback-float">COMBO x2</div>
+                <div id="speed-feedback" class="speed-badge"></div>
+                
+                <div id="display-sentence">Carregando Terminal...</div>
+                
+                <input type="text" id="type-input" class="type-input" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Type in English...">
+                <button class="btn-submit" onclick="validateTyping()">ENVIAR (ENTER)</button>
+            </div>
+        </div>
+
+        <a href="indexpasta003.html" class="btn-voltar">⬅ Abortar Simulação</a>
+    </main>
+
+    <script>
+        // === 1. BANCO DE DADOS: 200 FRASES ULTRACURTAS (2 a 4 Palavras) ===
+        // Foco em estrutura bruta. Sem firulas.
+        const rawDB = [
+            "Eu sou feliz|I am happy", "Você é rápido|You are fast", "Ele é alto|He is tall", "Ela é linda|She is beautiful", "Nós somos amigos|We are friends",
+            "Eles estão aqui|They are here", "Eu tenho tempo|I have time", "Você tem dinheiro|You have money", "Ele tem um carro|He has a car", "Ela tem um gato|She has a cat",
+            "Nós temos água|We have water", "Eles têm comida|They have food", "Eu gosto disso|I like it", "Você gosta de mim|You like me", "Ele gosta dela|He likes her",
+            "Ela gosta dele|She likes him", "Nós gostamos de pizza|We like pizza", "Eles gostam de jogar|They like to play", "Eu quero ir|I want to go", "Você quer ficar|You want to stay",
+            "Ele quer comer|He wants to eat", "Ela quer dormir|She wants to sleep", "Nós queremos ajudar|We want to help", "Eles querem vencer|They want to win", "Eu preciso disso|I need this",
+            "Você precisa de mim|You need me", "Ele precisa de tempo|He needs time", "Ela precisa de ajuda|She needs help", "Nós precisamos ir|We need to go", "Eles precisam estudar|They need to study",
+            "Eu não sei|I do not know", "Você não entende|You do not understand", "Ele não liga|He does not care", "Ela não trabalha|She does not work", "Nós não vamos|We do not go",
+            "Eles não ajudam|They do not help", "Eu posso ir|I can go", "Você pode ajudar|You can help", "Ele pode nadar|He can swim", "Ela pode cantar|She can sing",
+            "Nós podemos vencer|We can win", "Eles podem tentar|They can try", "Venha aqui|Come here", "Vá embora|Go away", "Sente-se|Sit down",
+            "Levante-se|Stand up", "Pare com isso|Stop that", "Me ajude|Help me", "Ligue para mim|Call me", "Me diga|Tell me",
+            "Bom dia|Good morning", "Boa noite|Good night", "Até logo|See you later", "Boa sorte|Good luck", "Divirta-se|Have fun",
+            "Cuide-se|Take care", "Com licença|Excuse me", "Me desculpe|I am sorry", "Eu concordo|I agree", "Eu discordo|I disagree",
+            "Isso é verdade|That is true", "Isso é falso|That is false", "Estou cansado|I am tired", "Estou doente|I am sick", "Estou com fome|I am hungry",
+            "Abra a porta|Open the door", "Feche a janela|Close the window", "Ligue a luz|Turn on the light", "Desligue a TV|Turn off the TV", "Lave as mãos|Wash your hands",
+            "Limpe o quarto|Clean the room", "Onde você está|Where are you", "O que é isso|What is this", "Quem é você|Who are you", "Por que não|Why not",
+            "Como assim|How come", "Quanto custa|How much is it", "Que horas são|What time is it", "Eu trabalho aqui|I work here", "Você estuda lá|You study there",
+            "Ele mora aqui|He lives here", "Ela dirige rápido|She drives fast", "Nós lemos muito|We read a lot", "Eles escrevem bem|They write well", "Eu vi você|I saw you",
+            "Você fez isso|You did it", "Ele foi lá|He went there", "Ela comeu tudo|She ate everything", "Nós bebemos água|We drank water", "Eles dormiram bem|They slept well",
+            "Eu vou tentar|I will try", "Você vai vencer|You will win", "Ele vai ligar|He will call", "Ela vai ajudar|She will help", "Nós vamos ver|We will see",
+            "Eles vão voltar|They will return", "Está chovendo|It is raining", "Está nevando|It is snowing", "Está frio|It is cold", "Está quente|It is hot",
+            "É cedo|It is early", "É tarde|It is late", "Não se preocupe|Do not worry", "Não chore|Do not cry", "Não fale|Do not talk",
+            "Não toque|Do not touch", "Deixe-me ir|Let me go", "Vamos começar|Let us start", "Eu amo você|I love you", "Você me ama|You love me",
+            "Ele a ama|He loves her", "Ela o ama|She loves him", "Nós os amamos|We love them", "Eles nos amam|They love us", "Eu ligo depois|I call later",
+            "Você fala muito|You talk a lot", "Ele corre rápido|He runs fast", "Ela anda devagar|She walks slowly", "Nós cantamos mal|We sing badly", "Eles riem alto|They laugh loudly",
+            "Eu perdi|I lost", "Você ganhou|You won", "Ele falhou|He failed", "Ela passou|She passed", "Nós tentamos|We tried",
+            "Eles desistiram|They gave up", "Olhe para mim|Look at me", "Ouça-me|Listen to me", "Fale comigo|Talk to me", "Trabalhe comigo|Work with me",
+            "Fique comigo|Stay with me", "Vá comigo|Go with me", "Eu sou forte|I am strong", "Você é fraco|You are weak", "Ele é jovem|He is young",
+            "Ela é velha|She is old", "Nós somos novos|We are new", "Eles são ricos|They are rich", "Eu não sou|I am not", "Você não é|You are not",
+            "Ele não é|He is not", "Ela não é|She is not", "Nós não somos|We are not", "Eles não são|They are not", "Eu não tenho|I do not have",
+            "Você não tem|You do not have", "Ele não tem|He does not have", "Ela não tem|She does not have", "Nós não temos|We do not have", "Eles não têm|They do not have",
+            "Eu vou|I will go", "Você vai|You will go", "Ele vai|He will go", "Ela vai|She will go", "Nós vamos|We will go",
+            "Eles vão|They will go", "Pegue isso|Take this", "Me dê isso|Give me that", "Mostre-me|Show me", "Não minta|Do not lie",
+            "Fique aqui|Stay here", "Espere por mim|Wait for me", "Está tudo bem|It is okay", "Eu estou pronto|I am ready", "Você está certo|You are right",
+            "Ele está errado|He is wrong", "Tente de novo|Try again", "Acredite em mim|Believe in me", "Confie neles|Trust them", "Olhe para cima|Look up",
+            "Olhe para baixo|Look down", "Leia o livro|Read the book", "Escreva uma carta|Write a letter", "Coma a maçã|Eat the apple", "Beba o leite|Drink the milk",
+            "Eu esqueci|I forgot", "Você lembrou|You remembered", "Nós ganhamos|We won", "Eles perderam|They lost", "Eu preciso disso|I need it",
+            "Você quer isso|You want it", "Ela gosta disso|She likes it", "Ele odeia isso|He hates it", "Nós vemos isso|We see it", "Eles fazem isso|They do it"
+        ];
+
+        let database = [];
+        rawDB.forEach(item => {
+            let parts = item.split('|');
+            database.push({ pt: parts[0], en: parts[1] });
+        });
+
+        // Embaralha as 200 e corta em 100
+        database = database.sort(() => Math.random() - 0.5).slice(0, 100);
+
+        // === 2. MOTOR DE ÁUDIO E EFEITOS DOPAMINA ===
+        const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        function playAudio(type) {
+            if (audioCtx.state === 'suspended') { audioCtx.resume(); }
+            const t = audioCtx.currentTime;
+            if(type === 'win') {
+                const osc = audioCtx.createOscillator(); const gain = audioCtx.createGain();
+                osc.connect(gain); gain.connect(audioCtx.destination);
+                osc.type = 'sine'; osc.frequency.setValueAtTime(1000, t);
+                gain.gain.setValueAtTime(0.05, t); gain.gain.exponentialRampToValueAtTime(0.01, t + 0.15);
+                osc.start(t); osc.stop(t + 0.15);
+            } else if(type === 'error') {
+                const osc = audioCtx.createOscillator(); const gain = audioCtx.createGain();
+                osc.connect(gain); gain.connect(audioCtx.destination);
+                osc.type = 'sawtooth'; osc.frequency.setValueAtTime(150, t); osc.frequency.linearRampToValueAtTime(100, t + 0.25);
+                gain.gain.setValueAtTime(0.08, t); gain.gain.exponentialRampToValueAtTime(0.01, t + 0.3);
+                osc.start(t); osc.stop(t + 0.3);
+            } else if(type === 'combo') {
+                const osc = audioCtx.createOscillator(); const gain = audioCtx.createGain();
+                osc.connect(gain); gain.connect(audioCtx.destination);
+                osc.type = 'square'; const baseFreq = Math.min(600 + (state.combo * 50), 1600);
+                osc.frequency.setValueAtTime(baseFreq, t); osc.frequency.linearRampToValueAtTime(baseFreq + 200, t + 0.15); 
+                gain.gain.setValueAtTime(0.05, t); gain.gain.exponentialRampToValueAtTime(0.01, t + 0.2);
+                osc.start(t); osc.stop(t + 0.2);
+            } else if(type === 'milestone') {
+                [523.25, 659.25, 783.99, 1046.50, 1318.5].forEach((f, i) => {
+                    const osc = audioCtx.createOscillator(); const gain = audioCtx.createGain();
+                    osc.type = 'triangle'; osc.frequency.setValueAtTime(f, t + (i * 0.08)); 
+                    gain.gain.setValueAtTime(0.1, t + (i * 0.08)); gain.gain.exponentialRampToValueAtTime(0.01, t + (i * 0.08) + 1.0);
+                    osc.connect(gain); gain.connect(audioCtx.destination);
+                    osc.start(t + (i * 0.08)); osc.stop(t + (i * 0.08) + 1.0);
+                });
+            }
+        }
+
+        function triggerCasinoEffect(amount = 15) {
+            for (let i = 0; i < amount; i++) {
+                const coin = document.createElement('div');
+                coin.classList.add('casino-coin');
+                const angle = Math.random() * Math.PI * 2;
+                const distance = 80 + Math.random() * 120; 
+                coin.style.setProperty('--tx', Math.cos(angle) * distance + 'px');
+                coin.style.setProperty('--ty', Math.sin(angle) * distance + 'px');
+                coin.style.animation = `coin-explosion ${0.4 + Math.random() * 0.4}s ease-out forwards`;
+                document.body.appendChild(coin);
+                setTimeout(() => coin.remove(), 1000);
+            }
+        }
+
+        function triggerCoinRain(amount = 80) {
+            for (let i = 0; i < amount; i++) {
+                const coin = document.createElement('div');
+                coin.classList.add('rain-coin');
+                coin.style.left = Math.random() * 100 + 'vw';
+                coin.style.animationDuration = (1.2 + Math.random() * 1.5) + 's';
+                coin.style.animationDelay = (Math.random() * 1.0) + 's';
+                document.body.appendChild(coin);
+                setTimeout(() => coin.remove(), 3000);
+            }
+        }
+
+        // === 3. CONTROLE DE ESTADO, EXECUÇÃO E VALIDAÇÃO ===
+        let xp = parseInt(localStorage.getItem('ffes_xp') || 0);
+        document.getElementById('xp-val').innerText = xp;
+        let state = { currentQ: null, combo: 0, startTime: 0, questionIndex: 0 };
+        const inputField = document.getElementById('type-input');
+
+        // Permite usar o ENTER para enviar
+        inputField.addEventListener("keypress", function(event) {
+            if (event.key === "Enter") { event.preventDefault(); validateTyping(); }
+        });
+
+        function startGame() { generate(); }
+
+        function generate() {
+            if(state.questionIndex >= 100) {
+                document.getElementById('display-sentence').innerHTML = "CÓDIGO FINALIZADO!<br><span style='color:#ffea00; font-size:1.5rem;'>100/100</span>";
+                inputField.style.display = 'none';
+                document.querySelector('.btn-submit').style.display = 'none';
+                playAudio('milestone'); triggerCoinRain(100);
+                return;
+            }
+
+            document.getElementById('feedback').className = ''; 
+            document.getElementById('speed-feedback').innerText = "";
+            document.getElementById('q-count').innerText = state.questionIndex + 1;
+            
+            inputField.value = "";
+            inputField.className = "type-input";
+            inputField.focus(); // Foco automático para não perder tempo
+
+            const item = database[state.questionIndex];
+            state.currentQ = item;
+            state.startTime = Date.now();
+
+            document.getElementById('display-sentence').innerHTML = item.pt;
+        }
+
+        function cleanString(str) {
+            // Remove pontuação e espaços duplos
+            let s = str.toLowerCase().replace(/[.,!?'']/g, '').replace(/\s+/g, ' ').trim();
+            // Aceitar contrações substituindo-as pela forma completa
+            s = s.replace(/\bim\b/g, "i am")
+                 .replace(/\bdont\b/g, "do not")
+                 .replace(/\bdoesnt\b/g, "does not")
+                 .replace(/\bcant\b/g, "cannot")
+                 .replace(/\bwon't\b/g, "will not")
+                 .replace(/\blets\b/g, "let us")
+                 .replace(/\byoure\b/g, "you are")
+                 .replace(/\bhes\b/g, "he is")
+                 .replace(/\bshes\b/g, "she is")
+                 .replace(/\bwere\b/g, "we are")
+                 .replace(/\btheyre\b/g, "they are")
+                 .replace(/\bits\b/g, "it is");
+            return s;
+        }
+
+        function validateTyping() {
+            const fb = document.getElementById('feedback');
+            const timeDelta = Date.now() - state.startTime;
+            
+            // Hacker Speed em digitação é maior (7 segundos)
+            const isSpeed = timeDelta < 7000; 
+
+            let userVal = cleanString(inputField.value);
+            let targetVal = cleanString(state.currentQ.en);
+
+            if (userVal === targetVal && userVal !== "") {
+                state.combo++;
+                let xpGain = 20 + (state.combo * 4); // Digitar exige mais, vale mais XP
+                if(isSpeed) xpGain += 10;
+                addXP(xpGain);
+                
+                fb.innerText = "CÓDIGO ACEITO!"; fb.style.color = "#00e676"; fb.className = "visible";
+                inputField.classList.add('success');
+                triggerCasinoEffect(20);
+                
+                if (state.combo % 10 === 0) { playAudio('milestone'); triggerCoinRain(40); } 
+                else if (state.combo > 1) { playAudio('combo'); } 
+                else { playAudio('win'); }
+                
+                if(isSpeed) document.getElementById('speed-feedback').innerText = "⚡ FAST TYPER!";
+
+                const comboEl = document.getElementById('combo-feedback');
+                comboEl.innerText = `COMBO x${state.combo}`; comboEl.classList.add('show');
+                document.getElementById('progress-bar').style.width = ((state.questionIndex + 1) % 100) + '%';
+
+                setTimeout(() => { comboEl.classList.remove('show'); state.questionIndex++; generate(); }, 800);
+            } else {
+                state.combo = 0; 
+                addXP(-10); 
+                // Mostra a resposta correta para o aluno não ficar travado
+                fb.innerHTML = `FALHA! CORRETO: <span style="color:#fff;">${state.currentQ.en.toUpperCase()}</span>`;
+                fb.style.color = "#ff1744"; fb.className = "visible";
+                inputField.classList.add('error');
+                playAudio('error');
+                
+                const card = document.getElementById('game-card-element');
+                card.classList.add('shake-effect');
+                setTimeout(() => card.classList.remove('shake-effect'), 400);
+                document.getElementById('combo-feedback').classList.remove('show');
+                
+                // Limpa o input e força ele a tentar de novo OU avança dependendo da sua preferência. 
+                // Aqui vamos avançar para não travar o fluxo.
+                setTimeout(() => { comboEl.classList.remove('show'); state.questionIndex++; generate(); }, 2500);
+            }
+        }
+
+        function addXP(val) {
+            xp = Math.max(0, xp + val); 
+            localStorage.setItem('ffes_xp', xp); 
+            document.getElementById('xp-val').innerText = xp;
+        }
+
+        window.onload = startGame;
+    </script>
+</body>
+</html>

@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>FFES | Speed Fire: 300 Desafios Básicos</title>
+    <meta name="title" content="FFES | Speed Fire: 300 Desafios Básicos">
+    <meta name="description" content="Automatize o básico. 100 testes ultrarrápidos sorteados de um banco de 300 perguntas fundamentais.">
+    <meta name="keywords" content="exercícios básicos inglês, quiz verbo to be, teacher leo ramos, ffes, automação gramatical">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="Portuguese">
+    <meta name="author" content="Teacher Leo Ramos">
+    
+    <link rel="canonical" href="https://teacherleoramos.com.br/PWA/Pasta007/quiz09quick.html">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-M8ZG06010Q"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-M8ZG06010Q');
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LearningResource",
+      "name": "Simulador Speed Fire - FFES",
+      "description": "Banco de 300 exercícios rápidos para automação de estruturas básicas da língua inglesa (A/B options).",
+      "url": "https://teacherleoramos.com.br/PWA/Pasta007/quiz09quick.html",
+      "learningResourceType": "Quiz",
+      "educationalAlignment": {
+        "@type": "AlignmentObject",
+        "alignmentType": "educationalSubject",
+        "targetName": "Basic English Grammar Automation"
+      },
+      "isPartOf": {
+        "@type": "CollectionPage",
+        "url": "https://teacherleoramos.com.br/PWA/Pasta007/indexpasta007.html"
+      }
+    }
+    </script>
+
+    <link rel="stylesheet" href="/CSS/style-app.css">
+
+    <style>
+        /* === ENGINE DE GAMIFICAÇÃO - TEMA ROSA CHOQUE === */
+        .game-wrapper { width: 100%; max-width: 600px; display: flex; flex-direction: column; gap: 20px; z-index: 10; margin: 0 auto; }
+        
+        .game-card { background: rgba(0, 0, 0, 0.7); backdrop-filter: blur(10px); border: 2px solid #ff007f; border-radius: 24px; padding: 30px 20px; text-align: center; box-shadow: 0 10px 40px rgba(255, 0, 127, 0.2); min-height: 180px; display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; }
+        
+        #display-sentence { font-size: 2.2rem; font-weight: 900; line-height: 1.4; color: #fff; text-shadow: 0 2px 10px rgba(0,0,0,0.8); z-index: 2; letter-spacing: 1px;}
+        .gap { color: #ff007f; font-weight: 900; border-bottom: 4px solid #ff007f; display: inline-block; min-width: 60px; text-shadow: 0 0 10px rgba(255, 0, 127, 0.5);}
+        
+        .game-controls { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; width: 100%; }
+        .btn-option { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255,255,255,0.2); color: #fff; padding: 20px; font-size: 1.5rem; font-weight: 900; border-radius: 16px; cursor: pointer; transition: all 0.2s ease; text-transform: lowercase;}
+        .btn-option:hover { border-color: #ff007f; background: rgba(255, 0, 127, 0.1); transform: translateY(-3px); }
+        .btn-option.correct { background: #00e676 !important; color: #000 !important; border-color: #00e676 !important; }
+        .btn-option.wrong { background: #ff1744 !important; opacity: 0.5; }
+
+        #feedback { height: 30px; text-align: center; font-weight: 900; letter-spacing: 2px; text-transform: uppercase; transition: all 0.2s; opacity: 0; margin-bottom: 10px; }
+        #feedback.visible { opacity: 1; transform: translateY(-5px); }
+        
+        .xp-pill { background: rgba(0, 0, 0, 0.5); border: 1px solid #ff007f; padding: 5px 15px; border-radius: 50px; color: #ff007f; font-weight: 900; font-size: 1.1rem; margin-top: 10px; display: inline-block; }
+        .feedback-float { position: absolute; top: -15px; right: -10px; font-weight: 900; font-size: 0.9rem; color: #fff; background: #ff007f; padding: 5px 12px; border-radius: 20px; border: 1px solid #fff; opacity: 0; transform: translateY(10px); transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); z-index: 5; box-shadow: 0 0 10px #ff007f;}
+        .feedback-float.show { opacity: 1; transform: translateY(0) rotate(5deg); }
+        .speed-badge { position: absolute; bottom: 10px; width: 100%; left: 0; text-align: center; font-size: 0.75rem; color: #00e676; font-weight: 900; letter-spacing: 1px; text-transform: uppercase; }
+
+        .progress-track { width: 100%; height: 5px; background: rgba(255,255,255,0.1); position: fixed; top: 0; left: 0; z-index: 1000; }
+        .progress-fill { height: 100%; background: #ff007f; width: 0%; transition: width 0.3s ease; box-shadow: 0 0 10px #ff007f; }
+
+        .casino-coin { position: fixed; width: 25px; height: 25px; background: #ff007f; border-radius: 50%; box-shadow: 0 0 15px rgba(255, 0, 127, 1); pointer-events: none; z-index: 9999; top: 50%; left: 50%; transform: translate(-50%, -50%); border: 2px solid #fff; }
+        @keyframes coin-explosion { 0% { transform: translate(-50%, -50%) scale(0.5); opacity: 1; } 100% { transform: translate(var(--tx), var(--ty)) scale(1.2) rotate(360deg); opacity: 0; } }
+        
+        .rain-coin { position: fixed; width: 35px; height: 35px; background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45" fill="%23ff007f" stroke="%23fff" stroke-width="5"/><text x="50" y="65" font-size="40" text-anchor="middle" font-weight="bold" fill="%23fff" font-family="Arial">XP</text></svg>') no-repeat center; background-size: contain; pointer-events: none; z-index: 9999; top: -50px; animation: coin-drop linear forwards; }
+        @keyframes coin-drop { 0% { transform: translateY(0) rotate(0deg); opacity: 1; } 100% { transform: translateY(110vh) rotate(360deg); opacity: 0.8; } }
+        
+        @keyframes shake { 0%, 100% { transform: translateX(0); } 20%, 60% { transform: translateX(-8px); } 40%, 80% { transform: translateX(8px); } }
+        .shake-effect { animation: shake 0.4s ease-in-out; border-color: #ff1744 !important; box-shadow: 0 0 20px rgba(255, 23, 68, 0.5) !important;}
+
+        .btn-voltar { display: block; margin: 30px auto; padding: 15px 30px; background: transparent; border: 2px solid #ff007f; color: #ff007f; border-radius: 50px; text-decoration: none; font-weight: 900; text-align: center; max-width: 300px; text-transform: uppercase; transition: all 0.3s; }
+        .btn-voltar:hover { background: #ff007f; color: #fff; box-shadow: 0 0 15px #ff007f;}
+    </style>
+</head>
+<body>
+
+    <div class="progress-track"><div class="progress-fill" id="progress-bar"></div></div>
+
+    <header class="glass-header" style="text-align: center; padding: 20px;">
+        <h1 style="color: #fff; margin-bottom: 5px;">SPEED <span style="color: #ff007f;">FIRE</span></h1>
+        <p class="subtitle" style="color: #ccc;">Banco de 300 / Automação da Base</p>
+        <div class="xp-pill">XP: <span id="xp-val">0</span></div>
+        <div style="font-size: 0.85rem; font-weight: bold; color: #ff007f; margin-top: 5px;">Tiros Certos: <span id="q-count">0</span> / 100</div>
+    </header>
+
+    <main style="max-width: 800px; margin: 20px auto; padding: 0 20px;">
+        <div id="game-container" class="game-wrapper">
+            <div id="feedback"></div>
+            
+            <div class="game-card" id="game-card-element">
+                <div id="combo-feedback" class="feedback-float">COMBO x2</div>
+                <div id="speed-feedback" class="speed-badge"></div>
+                <div id="display-sentence" style="display:flex; justify-content:center; align-items:center; height:100px;">
+                    Carregando Arsenal...
+                </div>
+            </div>
+
+            <div class="game-controls" id="ab-controls">
+                <button id="btn1" class="btn-option" onclick="checkAnswer(1)"></button>
+                <button id="btn2" class="btn-option" onclick="checkAnswer(2)"></button>
+            </div>
+        </div>
+
+        <a href="indexpasta007.html" class="btn-voltar">⬅ Abortar Missão</a>
+    </main>
+
+    <script>
+        // === 1. BANCO DE DADOS: 300 QUESTÕES BÁSICAS (FÁCEIS E DIRETAS) ===
+        // Formato: "Frase___|Correta|Errada"
+        const rawDB = [
+            "I ___ a student.|am|is", "You ___ my friend.|are|is", "He ___ a boy.|is|are", "She ___ a girl.|is|am", "It ___ a dog.|is|are", 
+            "We ___ happy.|are|is", "They ___ ready.|are|am", "I ___ not tired.|am|are", "He ___ not late.|is|are", "They ___ not here.|are|is",
+            "___ I late?|Am|Is", "___ you ready?|Are|Is", "___ he tall?|Is|Are", "___ she smart?|Is|Am", "___ it hot?|Is|Are", 
+            "___ we lost?|Are|Is", "___ they new?|Are|Am", "I ___ a car.|have|has", "You ___ a book.|have|has", "He ___ a dog.|has|have",
+            "She ___ a cat.|has|have", "It ___ a tail.|has|have", "We ___ a problem.|have|has", "They ___ a house.|have|has", "I ___ like it.|do not|does not",
+            "You ___ want it.|do not|does not", "He ___ know.|does not|do not", "She ___ care.|does not|do not", "It ___ work.|does not|do not", "We ___ go.|do not|does not",
+            "They ___ sleep.|do not|does not", "___ I know you?|Do|Does", "___ you like pizza?|Do|Does", "___ he play tennis?|Does|Do", "___ she drink coffee?|Does|Do",
+            "___ it rain here?|Does|Do", "___ we need this?|Do|Does", "___ they watch TV?|Do|Does", "I need ___ apple.|an|a", "He wants ___ car.|a|an",
+            "She has ___ umbrella.|an|a", "It is ___ book.|a|an", "I saw ___ elephant.|an|a", "You are ___ teacher.|a|an", "We have ___ hour.|an|a",
+            "Two ___|boys|boyes", "Three ___|boxes|boxs", "Four ___|babies|babys", "Five ___|watches|watchs", "Six ___|cars|cares",
+            "Seven ___|days|dayes", "Many ___|cities|citys", "Some ___|glasses|glass", "All the ___|buses|bus", "Look at ___|me|I",
+            "Give it to ___|him|he", "Listen to ___|her|she", "Play with ___|us|we", "Wait for ___|them|they", "Talk to ___|you|your",
+            "___ is my book.|This|These", "___ are my shoes.|These|This", "___ is your pen.|That|Those", "___ are your bags.|Those|That", "He is ___ home.|at|in",
+            "The book is ___ the table.|on|in", "She is ___ the car.|in|on", "I work ___ Monday.|on|in", "See you ___ night.|at|in", "Born ___ 1990.|in|on",
+            "I ___ play soccer.|can|cans", "He ___ swim.|can|cans", "They ___ come.|can|cans", "___ you help me?|Can|Do", "I ___ to go.|want|wants",
+            "She ___ to sleep.|wants|want", "He ___ apples.|likes|like", "We ___ English.|study|studies", "They ___ fast.|run|runs", "I ___ water.|drink|drinks",
+            "The dog ___ meat.|eats|eat", "My mother ___ well.|cooks|cook", "His father ___ hard.|works|work", "I ___ a question.|have|has", "She ___ a sister.|has|have",
+            "Where ___ you?|are|is", "Who ___ he?|is|are", "What ___ this?|is|are", "When ___ the party?|is|are", "Why ___ you sad?|are|is",
+            "How ___ you?|are|is", "How old ___ she?|is|are", "Where ___ they?|are|am", "What ___ your name?|is|are", "Who ___ I?|am|are",
+            "I ___ reading.|am|is", "She ___ talking.|is|are", "He ___ walking.|is|am", "They ___ sleeping.|are|is", "We ___ eating.|are|am",
+            "You ___ joking.|are|is", "It ___ raining.|is|are", "I ___ yesterday.|went|go", "She ___ me.|saw|see", "He ___ a book.|read|reads",
+            "They ___ pizza.|ate|eat", "We ___ milk.|drank|drink", "You ___ it.|did|do", "I ___ here.|was|were", "She ___ happy.|was|were",
+            "He ___ sad.|was|were", "It ___ cold.|was|were", "We ___ late.|were|was", "You ___ right.|were|was", "They ___ friends.|were|was",
+            "I ___ not go.|did|do", "She ___ not see.|did|does", "He ___ not come.|did|do", "We ___ not pay.|did|does", "They ___ not win.|did|do",
+            "___ you work?|Did|Doed", "___ she call?|Did|Doesed", "___ he arrive?|Did|Dided", "I ___ go tomorrow.|will|wills", "She ___ help.|will|will to",
+            "He ___ pay.|will|wills", "We ___ stay.|will|will to", "They ___ leave.|will|wills", "I ___ not know.|do|does", "She ___ not sleep.|does|do",
+            "Look ___ the sky.|at|to", "Listen ___ the song.|to|at", "Wait ___ me.|for|to", "Pay ___ the food.|for|to", "Think ___ it.|about|in",
+            "Talk ___ him.|to|at", "Smile ___ me.|at|to", "Good ___ sports.|at|in", "Bad ___ math.|at|in", "Interested ___ art.|in|on",
+            "Afraid ___ dogs.|of|from", "Married ___ John.|to|with", "Different ___ this.|from|of", "Similar ___ that.|to|with", "Famous ___ coffee.|for|by",
+            "Full ___ water.|of|with", "Tired ___ waiting.|of|from", "Sorry ___ that.|for|of", "Ready ___ this.|for|to", "I ___ up early.|wake|wakes",
+            "She ___ breakfast.|makes|make", "He ___ a shower.|takes|take", "We ___ to work.|go|goes", "They ___ lunch.|have|has", "I ___ TV.|watch|watches",
+            "She ___ a book.|reads|read", "He ___ to music.|listens|listen", "We ___ home.|arrive|arrives", "They ___ dinner.|cook|cooks", "I ___ to bed.|go|goes",
+            "Red and blue ___ colors.|are|is", "One, two, ___|three|tree", "Monday, Tuesday, ___|Wednesday|Wensday", "January, February, ___|March|Marth", "Spring, Summer, ___|Autumn|Autum",
+            "My favorite color ___ blue.|is|are", "I have two ___|sisters|sister", "She has one ___|brother|brothers", "We have three ___|cars|car", "They have four ___|dogs|dog",
+            "This is ___ apple.|an|a", "That is ___ tree.|a|an", "It is ___ orange.|an|a", "She is ___ nurse.|a|an", "He is ___ doctor.|a|an",
+            "I am ___ engineer.|an|a", "You are ___ pilot.|a|an", "We are ___ students.|teachers|teacher", "They are ___ friends.|good|goods", "I am ___ tired.|very|much",
+            "She is ___ pretty.|very|much", "He is ___ tall.|very|much", "It is ___ small.|too|two", "We are ___ happy.|so|such", "They are ___ fast.|too|two",
+            "I walk ___ slowly.|very|much", "She sings ___ well.|very|much", "He plays ___ badly.|very|much", "It works ___ perfectly.|very|much", "We run ___ fast.|too|two",
+            "I like ___|apples|apple", "She likes ___|cats|cat", "He hates ___|spiders|spider", "We love ___|pizza|pizzas", "They eat ___|meat|meats",
+            "I drink ___|water|waters", "She drinks ___|milk|milks", "He buys ___|bread|breads", "We sell ___|cars|car", "They make ___|shoes|shoe",
+            "I ___ a mistake.|made|did", "She ___ a favor.|did|made", "He ___ his homework.|did|made", "We ___ a cake.|made|did", "They ___ their best.|did|made",
+            "I ___ breakfast.|had|did", "She ___ a shower.|took|made", "He ___ a photo.|took|made", "We ___ a walk.|took|did", "They ___ a bus.|took|did",
+            "I ___ my hands.|wash|washes", "She ___ her teeth.|brushes|brush", "He ___ his face.|cleans|clean", "We ___ our room.|tidy|tidies", "They ___ their clothes.|iron|irons",
+            "I am ___ home.|at|in", "She is ___ school.|at|in", "He is ___ work.|at|in", "We are ___ the park.|in|on", "They are ___ the street.|on|in",
+            "The book is ___ the box.|in|on", "The picture is ___ the wall.|on|in", "The cat is ___ the table.|under|in", "The bird is ___ the sky.|in|on", "The fish is ___ the water.|in|on",
+            "I go ___ car.|by|in", "She goes ___ bus.|by|on", "He goes ___ train.|by|on", "We go ___ plane.|by|in", "They go ___ foot.|on|by",
+            "I need ___ help.|some|any", "Do you need ___ help?|any|some", "I don't have ___ money.|any|some", "She has ___ friends.|some|any", "Does she have ___ friends?|any|some",
+            "There ___ a pen here.|is|are", "There ___ two pens.|are|is", "___ there a book?|Is|Are", "___ there many cars?|Are|Is", "There ___ no time.|is|are",
+            "I have ___ time.|much|many", "She has ___ books.|many|much", "He has ___ money.|a lot of|many", "We have ___ water.|a little|a few", "They have ___ friends.|a few|a little",
+            "How ___ is it?|much|many", "How ___ cars?|many|much", "How ___ time?|much|many", "How ___ people?|many|much", "How ___ water?|much|many",
+            "This is ___ than that.|better|gooder", "She is ___ than him.|taller|tallest", "He is ___ than me.|older|oldest", "My car is ___ than yours.|faster|fastest", "It is ___ than before.|worse|badder",
+            "This is the ___ book.|best|better", "She is the ___ girl.|tallest|taller", "He is the ___ boy.|oldest|older", "My car is the ___|fastest|faster", "It is the ___ day.|worst|worse",
+            "I ___ a bird now.|see|am seeing", "She ___ a song now.|hears|is hearing", "He ___ the food now.|tastes|is tasting", "We ___ you now.|understand|are understanding", "They ___ it now.|know|are knowing",
+            "I ___ tomorrow.|will go|go", "She ___ later.|will call|calls", "He ___ soon.|will arrive|arrives", "We ___ next week.|will travel|travels", "They ___ next year.|will finish|finishes",
+            "I am ___ play.|going to|going", "She is ___ sleep.|going to|going", "He is ___ eat.|going to|going", "We are ___ watch.|going to|going", "They are ___ run.|going to|going",
+            "___ me the truth.|Tell|Say", "___ a story.|Tell|Say", "___ something.|Say|Tell", "___ a word.|Say|Tell", "___ him to come.|Tell|Say",
+            "I ___ him yesterday.|met|meet", "She ___ me last week.|told|tell", "He ___ a letter.|wrote|write", "We ___ a song.|sang|sing", "They ___ home.|went|go",
+            "I have ___ it.|done|did", "She has ___ it.|seen|saw", "He has ___ it.|eaten|ate", "We have ___ it.|taken|took", "They have ___ it.|gone|went",
+            "I had ___ it.|done|did", "She had ___ it.|seen|saw", "He had ___ it.|eaten|ate", "We had ___ it.|taken|took", "They had ___ it.|gone|went",
+            "I would ___ go.|like to|like", "She would ___ play.|love to|love", "He would ___ stay.|prefer to|prefer", "We would ___ wait.|rather|rather to", "They would ___ leave.|rather|rather to",
+            "I ___ do it.|can|cans", "She ___ do it.|must|musts", "He ___ do it.|should|shoulds", "We ___ do it.|will|wills", "They ___ do it.|might|mights",
+            "I ___ a doctor.|am|is", "She ___ a nurse.|is|are", "He ___ a pilot.|is|am", "We ___ actors.|are|is", "They ___ writers.|are|am",
+            "It ___ good.|is|are", "The car ___ red.|is|are", "The apples ___ green.|are|is", "The water ___ cold.|is|are", "The dogs ___ fast.|are|is"
+        ];
+
+        let database = [];
+        
+        // Conversão do formato "Frase___|Correct|Wrong" para o objeto de jogo
+        rawDB.forEach(item => {
+            let parts = item.split('|');
+            let phrase = parts[0].replace("___", "<span class='gap'>_____</span>");
+            let correct = parts[1];
+            let wrong = parts[2];
+            
+            database.push({ q: phrase, correct: correct, wrong: wrong });
+        });
+
+        // O sistema agora possui 300 questões. Embaralha e corta para 100 por sessão.
+        database = database.sort(() => Math.random() - 0.5).slice(0, 100);
+
+        // === 2. MOTOR DE ÁUDIO E EFEITOS DOPAMINA ===
+        const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        function playAudio(type) {
+            if (audioCtx.state === 'suspended') { audioCtx.resume(); }
+            const t = audioCtx.currentTime;
+            if(type === 'win') {
+                const osc = audioCtx.createOscillator(); const gain = audioCtx.createGain();
+                osc.connect(gain); gain.connect(audioCtx.destination);
+                osc.type = 'sine'; osc.frequency.setValueAtTime(1200, t);
+                gain.gain.setValueAtTime(0.05, t); gain.gain.exponentialRampToValueAtTime(0.01, t + 0.15);
+                osc.start(t); osc.stop(t + 0.15);
+            } else if(type === 'error') {
+                const osc = audioCtx.createOscillator(); const gain = audioCtx.createGain();
+                osc.connect(gain); gain.connect(audioCtx.destination);
+                osc.type = 'sawtooth'; osc.frequency.setValueAtTime(150, t); osc.frequency.linearRampToValueAtTime(100, t + 0.25);
+                gain.gain.setValueAtTime(0.08, t); gain.gain.exponentialRampToValueAtTime(0.01, t + 0.3);
+                osc.start(t); osc.stop(t + 0.3);
+            } else if(type === 'combo') {
+                const osc = audioCtx.createOscillator(); const gain = audioCtx.createGain();
+                osc.connect(gain); gain.connect(audioCtx.destination);
+                osc.type = 'square'; const baseFreq = Math.min(600 + (state.combo * 50), 1600);
+                osc.frequency.setValueAtTime(baseFreq, t); osc.frequency.linearRampToValueAtTime(baseFreq + 200, t + 0.15); 
+                gain.gain.setValueAtTime(0.05, t); gain.gain.exponentialRampToValueAtTime(0.01, t + 0.2);
+                osc.start(t); osc.stop(t + 0.2);
+            } else if(type === 'milestone') {
+                [523.25, 659.25, 783.99, 1046.50, 1318.5].forEach((f, i) => {
+                    const osc = audioCtx.createOscillator(); const gain = audioCtx.createGain();
+                    osc.type = 'triangle'; osc.frequency.setValueAtTime(f, t + (i * 0.08)); 
+                    gain.gain.setValueAtTime(0.1, t + (i * 0.08)); gain.gain.exponentialRampToValueAtTime(0.01, t + (i * 0.08) + 1.0);
+                    osc.connect(gain); gain.connect(audioCtx.destination);
+                    osc.start(t + (i * 0.08)); osc.stop(t + (i * 0.08) + 1.0);
+                });
+            }
+        }
+
+        function triggerCasinoEffect(amount = 15) {
+            for (let i = 0; i < amount; i++) {
+                const coin = document.createElement('div');
+                coin.classList.add('casino-coin');
+                const angle = Math.random() * Math.PI * 2;
+                const distance = 80 + Math.random() * 120; 
+                coin.style.setProperty('--tx', Math.cos(angle) * distance + 'px');
+                coin.style.setProperty('--ty', Math.sin(angle) * distance + 'px');
+                coin.style.animation = `coin-explosion ${0.4 + Math.random() * 0.4}s ease-out forwards`;
+                document.body.appendChild(coin);
+                setTimeout(() => coin.remove(), 1000);
+            }
+        }
+
+        function triggerCoinRain(amount = 80) {
+            for (let i = 0; i < amount; i++) {
+                const coin = document.createElement('div');
+                coin.classList.add('rain-coin');
+                coin.style.left = Math.random() * 100 + 'vw';
+                coin.style.animationDuration = (1.2 + Math.random() * 1.5) + 's';
+                coin.style.animationDelay = (Math.random() * 1.0) + 's';
+                document.body.appendChild(coin);
+                setTimeout(() => coin.remove(), 3000);
+            }
+        }
+
+        // === 3. CONTROLE DE ESTADO E EXECUÇÃO ===
+        let xp = parseInt(localStorage.getItem('ffes_xp') || 0);
+        document.getElementById('xp-val').innerText = xp;
+        let state = { currentQ: null, combo: 0, startTime: 0, questionIndex: 0 };
+
+        function startGame() { generate(); }
+
+        function generate() {
+            if(state.questionIndex >= 100) {
+                document.getElementById('display-sentence').innerHTML = "BASE AUTOMATIZADA!<br><span style='color:#ff007f; font-size:1.5rem;'>100/100</span>";
+                document.getElementById('ab-controls').style.display = 'none';
+                playAudio('milestone'); triggerCoinRain(100);
+                return;
+            }
+
+            document.querySelectorAll('.btn-option').forEach(b => b.className = 'btn-option');
+            document.getElementById('feedback').className = ''; 
+            document.getElementById('speed-feedback').innerText = "";
+            document.getElementById('q-count').innerText = state.questionIndex + 1;
+
+            const item = database[state.questionIndex];
+            state.currentQ = item;
+            state.startTime = Date.now();
+
+            document.getElementById('display-sentence').innerHTML = item.q;
+            
+            if(Math.random() > 0.5) setOptions(item.correct, item.wrong, item.correct);
+            else setOptions(item.wrong, item.correct, item.correct);
+        }
+
+        function setOptions(txt1, txt2, correctVal) {
+            const btn1 = document.getElementById('btn1'); const btn2 = document.getElementById('btn2');
+            btn1.innerHTML = txt1; btn1.onclick = () => checkAnswer(txt1 === correctVal, btn1);
+            btn2.innerHTML = txt2; btn2.onclick = () => checkAnswer(txt2 === correctVal, btn2);
+        }
+
+        function checkAnswer(isCorrect, element) {
+            const fb = document.getElementById('feedback');
+            const timeDelta = Date.now() - state.startTime;
+            
+            // Hacker Speed para nível básico é extremamente punitivo: 1.5 segundos
+            const isSpeed = timeDelta < 1500; 
+
+            if (isCorrect) {
+                state.combo++;
+                let xpGain = 5 + (state.combo * 2); // XP base menor para nível fácil
+                if(isSpeed) xpGain += 5;
+                addXP(xpGain);
+                
+                fb.innerText = "BOOM!"; fb.style.color = "#00e676"; fb.className = "visible";
+                element.classList.add('correct');
+                triggerCasinoEffect(15);
+                
+                if (state.combo % 10 === 0) { playAudio('milestone'); triggerCoinRain(40); } 
+                else if (state.combo > 1) { playAudio('combo'); } 
+                else { playAudio('win'); }
+                
+                if(isSpeed) document.getElementById('speed-feedback').innerText = "⚡ SPEED FIRE!";
+
+                const comboEl = document.getElementById('combo-feedback');
+                comboEl.innerText = `COMBO x${state.combo}`; comboEl.classList.add('show');
+                document.getElementById('progress-bar').style.width = ((state.questionIndex + 1) % 100) + '%';
+
+                setTimeout(() => { comboEl.classList.remove('show'); state.questionIndex++; generate(); }, 800); // Transição super rápida
+            } else {
+                state.combo = 0; 
+                addXP(-5); 
+                fb.innerText = "LENTO!";
+                fb.style.color = "#ff1744"; fb.className = "visible";
+                element.classList.add('wrong');
+                playAudio('error');
+                
+                const card = document.getElementById('game-card-element');
+                card.classList.add('shake-effect');
+                setTimeout(() => card.classList.remove('shake-effect'), 400);
+                document.getElementById('combo-feedback').classList.remove('show');
+            }
+        }
+
+        function addXP(val) {
+            xp = Math.max(0, xp + val); 
+            localStorage.setItem('ffes_xp', xp); 
+            document.getElementById('xp-val').innerText = xp;
+        }
+
+        window.onload = startGame;
+    </script>
+</body>
+</html>

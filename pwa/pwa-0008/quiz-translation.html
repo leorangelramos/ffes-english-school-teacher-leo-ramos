@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>FFES | Translation Sniper: Múltipla Escolha</title>
+    <meta name="title" content="FFES | Translation Sniper: Múltipla Escolha">
+    <meta name="description" content="100 desafios de múltipla escolha. Teste seu reflexo gramatical e elimine a tradução literal com o método FFES.">
+    <meta name="keywords" content="múltipla escolha inglês, exercícios de inglês, teacher leo ramos, ffes, tradução inglês">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="Portuguese">
+    <meta name="author" content="Teacher Leo Ramos">
+    
+    <link rel="canonical" href="https://teacherleoramos.com.br/PWA/Pasta008/quiz08multiple.html">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-M8ZG06010Q"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-M8ZG06010Q');
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LearningResource",
+      "name": "Simulador Translation Sniper - FFES",
+      "description": "Banco de 200 exercícios de múltipla escolha A/B testando precisão de tradução e fluência gramatical.",
+      "url": "https://teacherleoramos.com.br/PWA/Pasta008/quiz08multiple.html",
+      "learningResourceType": "Quiz",
+      "educationalAlignment": {
+        "@type": "AlignmentObject",
+        "alignmentType": "educationalSubject",
+        "targetName": "English Translation and Grammar"
+      },
+      "isPartOf": {
+        "@type": "CollectionPage",
+        "url": "https://teacherleoramos.com.br/PWA/Pasta008/indexpasta008.html"
+      }
+    }
+    </script>
+
+    <link rel="stylesheet" href="/CSS/style-app.css">
+
+    <style>
+        /* === ENGINE DE GAMIFICAÇÃO - TEMA LARANJA NEON === */
+        .game-wrapper { width: 100%; max-width: 600px; display: flex; flex-direction: column; gap: 20px; z-index: 10; margin: 0 auto; }
+        
+        .game-card { background: rgba(0, 0, 0, 0.7); backdrop-filter: blur(10px); border: 2px solid #ff9100; border-radius: 24px; padding: 30px 20px; text-align: center; box-shadow: 0 10px 40px rgba(255, 145, 0, 0.2); min-height: 180px; display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; }
+        
+        #display-sentence { font-size: 1.5rem; font-weight: 700; line-height: 1.4; color: #fff; text-shadow: 0 2px 10px rgba(0,0,0,0.8); z-index: 2; letter-spacing: 0.5px;}
+        .highlight-focus { color: #ff9100; font-weight: 900; border-bottom: 2px dashed #ff9100; }
+        
+        .game-controls { display: flex; flex-direction: column; gap: 15px; width: 100%; }
+        .btn-option { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255,255,255,0.2); color: #fff; padding: 20px; font-size: 1.2rem; font-weight: 900; border-radius: 16px; cursor: pointer; transition: all 0.2s ease; line-height: 1.3;}
+        .btn-option:hover { border-color: #ff9100; background: rgba(255, 145, 0, 0.1); transform: translateY(-3px); }
+        .btn-option.correct { background: #00e676 !important; color: #000 !important; border-color: #00e676 !important; }
+        .btn-option.wrong { background: #ff1744 !important; opacity: 0.5; }
+
+        #feedback { height: 30px; text-align: center; font-weight: 900; letter-spacing: 2px; text-transform: uppercase; transition: all 0.2s; opacity: 0; margin-bottom: 10px; }
+        #feedback.visible { opacity: 1; transform: translateY(-5px); }
+        
+        .xp-pill { background: rgba(0, 0, 0, 0.5); border: 1px solid #ff9100; padding: 5px 15px; border-radius: 50px; color: #ff9100; font-weight: 900; font-size: 1.1rem; margin-top: 10px; display: inline-block; }
+        .feedback-float { position: absolute; top: -15px; right: -10px; font-weight: 900; font-size: 0.9rem; color: #000; background: #ff9100; padding: 5px 12px; border-radius: 20px; border: 1px solid #fff; opacity: 0; transform: translateY(10px); transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); z-index: 5; box-shadow: 0 0 10px #ff9100;}
+        .feedback-float.show { opacity: 1; transform: translateY(0) rotate(5deg); }
+        .speed-badge { position: absolute; bottom: 10px; width: 100%; left: 0; text-align: center; font-size: 0.75rem; color: #00e676; font-weight: 900; letter-spacing: 1px; text-transform: uppercase; }
+
+        .progress-track { width: 100%; height: 5px; background: rgba(255,255,255,0.1); position: fixed; top: 0; left: 0; z-index: 1000; }
+        .progress-fill { height: 100%; background: #ff9100; width: 0%; transition: width 0.3s ease; box-shadow: 0 0 10px #ff9100; }
+
+        .casino-coin { position: fixed; width: 25px; height: 25px; background: #ff9100; border-radius: 50%; box-shadow: 0 0 15px rgba(255, 145, 0, 1); pointer-events: none; z-index: 9999; top: 50%; left: 50%; transform: translate(-50%, -50%); border: 2px solid #fff; }
+        @keyframes coin-explosion { 0% { transform: translate(-50%, -50%) scale(0.5); opacity: 1; } 100% { transform: translate(var(--tx), var(--ty)) scale(1.2) rotate(360deg); opacity: 0; } }
+        
+        .rain-coin { position: fixed; width: 35px; height: 35px; background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45" fill="%23ff9100" stroke="%23fff" stroke-width="5"/><text x="50" y="65" font-size="40" text-anchor="middle" font-weight="bold" fill="%23000" font-family="Arial">XP</text></svg>') no-repeat center; background-size: contain; pointer-events: none; z-index: 9999; top: -50px; animation: coin-drop linear forwards; }
+        @keyframes coin-drop { 0% { transform: translateY(0) rotate(0deg); opacity: 1; } 100% { transform: translateY(110vh) rotate(360deg); opacity: 0.8; } }
+        
+        @keyframes shake { 0%, 100% { transform: translateX(0); } 20%, 60% { transform: translateX(-8px); } 40%, 80% { transform: translateX(8px); } }
+        .shake-effect { animation: shake 0.4s ease-in-out; border-color: #ff1744 !important; box-shadow: 0 0 20px rgba(255, 23, 68, 0.5) !important;}
+
+        .btn-voltar { display: block; margin: 30px auto; padding: 15px 30px; background: transparent; border: 2px solid #ff9100; color: #ff9100; border-radius: 50px; text-decoration: none; font-weight: 900; text-align: center; max-width: 300px; text-transform: uppercase; transition: all 0.3s; }
+        .btn-voltar:hover { background: #ff9100; color: #000; box-shadow: 0 0 15px #ff9100;}
+    </style>
+</head>
+<body>
+
+    <div class="progress-track"><div class="progress-fill" id="progress-bar"></div></div>
+
+    <header class="glass-header" style="text-align: center; padding: 20px;">
+        <h1 style="color: #fff; margin-bottom: 5px;">TRANSLATION <span style="color: #ff9100;">SNIPER</span></h1>
+        <p class="subtitle" style="color: #ccc;">Escolha a opção correta (A ou B)</p>
+        <div class="xp-pill">XP: <span id="xp-val">0</span></div>
+        <div style="font-size: 0.85rem; font-weight: bold; color: #ff9100; margin-top: 5px;">Decisões Tomadas: <span id="q-count">0</span> / 100</div>
+    </header>
+
+    <main style="max-width: 800px; margin: 20px auto; padding: 0 20px;">
+        <div id="game-container" class="game-wrapper">
+            <div id="feedback"></div>
+            
+            <div class="game-card" id="game-card-element">
+                <div id="combo-feedback" class="feedback-float">COMBO x2</div>
+                <div id="speed-feedback" class="speed-badge"></div>
+                <div id="display-sentence" style="display:flex; justify-content:center; align-items:center; min-height:100px;">
+                    Carregando Matriz de Escolha...
+                </div>
+            </div>
+
+            <div class="game-controls" id="ab-controls">
+                <button id="btn1" class="btn-option" onclick="checkAnswer(1)"></button>
+                <button id="btn2" class="btn-option" onclick="checkAnswer(2)"></button>
+            </div>
+        </div>
+
+        <a href="indexpasta008.html" class="btn-voltar">⬅ Sair da Missão</a>
+    </main>
+
+    <script>
+        // === 1. BANCO DE DADOS: 200 QUESTÕES DE MÚLTIPLA ESCOLHA ===
+        const rawDB = [
+            "Como se diz 'De nada'?|You're welcome|Of nothing", "Traduza: 'I have 20 years' está correto?|Não, o correto é 'I am 20'|Sim, está perfeito",
+            "Como pedir uma informação?|Can you help me?|You help me?", "Traduza: 'Eu concordo com você'|I agree with you|I am agree with you",
+            "Significado de 'Pretend'|Fingir|Pretender", "Significado de 'Actually'|Na verdade|Atualmente",
+            "Como se diz 'Pais' (Pai e Mãe)?|Parents|Relatives", "Como se diz 'Parentes'?|Relatives|Parents",
+            "Complete: 'She is ___ doctor.'|a|an", "Complete: 'He is ___ honest man.'|an|a",
+            "Como se diz 'Eu perdi o ônibus'?|I missed the bus|I lost the bus", "Como se diz 'Eu tenho muito trabalho'?|I have a lot of work|I have a lot of works",
+            "Traduza 'É a sua vez'|It's your turn|It's your time", "Significado de 'Watch out!'|Cuidado!|Olhe para fora!",
+            "Traduza 'Depende de você'|It depends on you|It depends of you", "Complete: 'I am good ___ English.'|at|in",
+            "Qual o plural de 'Person'?|People|Persons", "Qual o plural de 'Child'?|Children|Childs",
+            "Qual o plural de 'Mouse'?|Mice|Mouses", "Traduza 'Eu também'|Me too|I also",
+            "Como se diz 'Com licença'?|Excuse me|License me", "Como se diz 'Saúde!' (quando alguém espirra)?|Bless you!|Health!",
+            "Traduza 'Fique à vontade'|Make yourself at home|Be comfortable", "Significado de 'Never mind'|Deixa pra lá|Nunca mente",
+            "Significado de 'So far so good'|Até agora tudo bem|Tão longe tão bom", "Traduza 'Eu não me importo'|I don't mind|I don't care about",
+            "Complete: 'She went to school ___ foot.'|on|by", "Complete: 'He traveled ___ bus.'|by|in",
+            "Como dizer 'Em breve'?|Soon|Short", "Traduza 'Mais ou menos'|So so|More or less",
+            "Como se diz 'Gêmeos'?|Twins|Doubles", "Como se diz 'Sobrinho'?|Nephew|Cousin",
+            "Significado de 'Take your time'|Não tenha pressa|Pegue o seu tempo", "Traduza 'A propósito'|By the way|About the purpose",
+            "Significado de 'To make sense'|Fazer sentido|Fazer sentir", "Complete: 'I am looking forward ___ seeing you.'|to|for",
+            "Como se diz 'Sinto sua falta'?|I miss you|I feel your missing", "Traduza 'Dar um tempo' (descansar)|Take a break|Give a time",
+            "Significado de 'To give up'|Desistir|Dar para cima", "Significado de 'To go on'|Continuar|Ir para frente",
+            "Complete: 'He ___ English every day.'|studies|study", "Complete: 'They ___ here.'|don't work|doesn't work",
+            "Como perguntar 'Quantos anos você tem?'|How old are you?|How many years do you have?", "Traduza 'Eu tenho uma dúvida'|I have a question|I have a doubt",
+            "Significado de 'To realize'|Perceber|Realizar (um sonho)", "Como dizer 'Conhecer alguém' (pela primeira vez)?|To meet|To know",
+            "Complete: '___ is your favorite color?'|What|Which", "Complete: '___ is your brother?' (onde)|Where|Who",
+            "Traduza 'Quem é esse?'|Who is that?|Whose is that?", "Como se diz 'De quem é este livro?'|Whose book is this?|Who book is this?",
+            "Significado de 'To apologize'|Pedir desculpas|Apoligizar", "Traduza 'Boa sorte'|Good luck|Good chance",
+            "Significado de 'As soon as possible'|O mais rápido possível|Tão cedo quanto possível", "Traduza 'Cair fora' (gíria)|Get out|Fall out",
+            "Como dizer 'Me avise'|Let me know|Advise me", "Significado de 'For sure'|Com certeza|Por certo",
+            "Como dizer 'Não se preocupe'|Don't worry|Don't care", "Traduza 'Vale a pena'|It's worth it|It's valids",
+            "Complete: 'I was born ___ May.'|in|on", "Complete: 'I was born ___ May 10th.'|on|in",
+            "Como dizer 'Estou com fome'|I am hungry|I have hunger", "Como dizer 'Estou com sede'|I am thirsty|I have thirst",
+            "Traduza 'Café da manhã'|Breakfast|Morning coffee", "Significado de 'To take place'|Acontecer (evento)|Tomar o lugar",
+            "Significado de 'To look after'|Cuidar de|Olhar depois", "Como dizer 'Procurar algo'|Look for|Look to",
+            "Traduza 'Aguentar firme'|Hang in there|Hold firm", "Significado de 'To pass away'|Falecer|Passar longe",
+            "Como dizer 'Emagrecer'|Lose weight|Thin down", "Como dizer 'Engordar'|Gain weight|Get fat",
+            "Complete: 'She is taller ___ me.'|than|then", "Complete: 'He is the ___ in the class.'|tallest|most tall",
+            "Traduza 'Eu costumava jogar'|I used to play|I usually played", "Significado de 'To get used to'|Acostumar-se com|Ficar usado para",
+            "Traduza 'Sem problemas'|No problem|Without problems", "Como dizer 'Com certeza não'|Absolutely not|With sure not",
+            "Significado de 'To figure out'|Descobrir / Entender|Figurar fora", "Significado de 'To point out'|Apontar (algo / destacar)|Ponto fora",
+            "Complete: 'I went ___ home.'|home|to home", "Complete: 'I arrived ___ London.'|in|to",
+            "Traduza 'Me faça um favor'|Do me a favor|Make me a favor", "Como se diz 'Tirar uma foto'?|Take a picture|Make a photo",
+            "Significado de 'To make up your mind'|Decidir-se|Fazer a mente", "Significado de 'To show up'|Aparecer (chegar)|Mostrar acima",
+            "Como dizer 'Não é da sua conta'|It's none of your business|It's not your account", "Traduza 'Adivinha!'|Guess what!|Guess that!",
+            "Significado de 'By heart'|De cor / Memorizado|De coração", "Como dizer 'De propósito'|On purpose|By purpose",
+            "Traduza 'Por acaso'|By chance|On chance", "Significado de 'Out of nowhere'|Do nada|Fora de lugar nenhum",
+            "Como dizer 'Dar uma olhada'|Take a look|Give a look", "Significado de 'To check out'|Verificar / Pagar o hotel|Checar fora",
+            "Traduza 'Cedo ou tarde'|Sooner or later|Early or late", "Significado de 'To run out of'|Ficar sem (algo)|Correr para fora de",
+            "Como dizer 'Eu não aguento mais'|I can't stand it anymore|I can't hold it more", "Traduza 'Estar apaixonado'|To be in love|To stay passionate",
+            "Significado de 'To break up'|Terminar um relacionamento|Quebrar para cima", "Significado de 'To turn on'|Ligar (aparelho)|Virar em",
+            "Complete: 'Please, turn ___ the light.'|off|out", "Complete: 'Can you turn ___ the volume?' (aumentar)|up|on",
+            "Como dizer 'Experimentar uma roupa'|Try it on|Test it", "Traduza 'De vez em quando'|From time to time|Of time in time",
+            "Significado de 'Once in a blue moon'|Raramente|Uma vez na lua azul", "Como dizer 'Apenas brincando'|Just kidding|Only playing",
+            "Traduza 'O mesmo para você'|Same to you|Same for you", "Significado de 'To let someone down'|Decepcionar alguém|Deixar alguém para baixo",
+            "Como dizer 'Entrar no carro'|Get in|Get on", "Como dizer 'Entrar no ônibus'|Get on|Get in",
+            "Traduza 'Pelo menos'|At least|By the less", "Significado de 'At last'|Finalmente|No último",
+            "Como dizer 'De qualquer forma'|Anyway|Any form", "Traduza 'Como assim?'|How come?|Like this?",
+            "Significado de 'To look forward to'|Aguardar ansiosamente|Olhar para frente", "Significado de 'To catch up'|Bater papo / Alcançar|Pegar para cima",
+            "Complete: '___ me the truth.'|Tell|Say", "Complete: 'Did you ___ that?'|say|tell",
+            "Como dizer 'Em primeiro lugar'|First of all|In first place", "Traduza 'Até onde eu sei'|As far as I know|Until where I know",
+            "Significado de 'To be about to'|Estar prestes a|Ser sobre", "Como dizer 'Mudar de ideia'|Change my mind|Change my idea",
+            "Traduza 'Fazer sentido'|Make sense|Do sense", "Significado de 'To fall asleep'|Cair no sono / Dormir|Cair dormindo",
+            "Como dizer 'Ter vergonha'|To be ashamed|To have shame", "Traduza 'Ter medo'|To be afraid|To have fear",
+            "Significado de 'To be right'|Estar certo (razão)|Ter razão", "Significado de 'To be wrong'|Estar errado|Ter erro",
+            "Como dizer 'Prestar atenção'|Pay attention|Lend attention", "Traduza 'Ter cuidado'|Be careful|Have care",
+            "Significado de 'To be in a hurry'|Estar com pressa|Ter pressa", "Como dizer 'Ficar com raiva'|Get angry|Stay angry",
+            "Traduza 'Ter sorte'|To be lucky|To have luck", "Significado de 'To make sure'|Garantir / Certificar-se|Fazer certeza",
+            "Como dizer 'Fazer o seu melhor'|Do your best|Make your best", "Traduza 'Fazer um esforço'|Make an effort|Do an effort",
+            "Significado de 'To make friends'|Fazer amigos|Do friends", "Significado de 'To do business'|Fazer negócios|Make business",
+            "Complete: 'I have known him ___ 5 years.'|for|since", "Complete: 'I have lived here ___ 2010.'|since|for",
+            "Como dizer 'Lavar a louça'|Do the dishes|Make the dishes", "Traduza 'Lavar a roupa'|Do the laundry|Wash the clothes",
+            "Significado de 'To take a shower'|Tomar banho|Pegar um banho", "Significado de 'To make a bed'|Arrumar a cama|Fazer uma cama",
+            "Como dizer 'Eu te ligo de volta'|I will call you back|I call you behind", "Traduza 'Avisar'|Let someone know|Warn someone",
+            "Significado de 'To stand out'|Destacar-se|Ficar de pé fora", "Como dizer 'Estar de folga'|Have a day off|Be of break",
+            "Traduza 'Do zero' (começar algo)|From scratch|From zero", "Significado de 'So far'|Até agora|Tão longe",
+            "Como dizer 'Lado a lado'|Side by side|Lade by lade", "Traduza 'Trabalho de meio período'|Part-time job|Half-time job",
+            "Significado de 'Full-time job'|Trabalho em tempo integral|Trabalho cheio", "Significado de 'To work out'|Malhar / Dar certo|Trabalhar fora",
+            "Complete: 'I am looking ___ my keys.' (procurando)|for|at", "Complete: 'Are you listening ___ me?'|to|at",
+            "Como dizer 'Em breve'|Very soon|In brief", "Traduza 'Fazer barulho'|Make noise|Do noise",
+            "Significado de 'To make a decision'|Tomar uma decisão|Fazer uma decisão", "Como dizer 'Isso não importa'|It doesn't matter|It doesn't import",
+            "Traduza 'É óbvio'|It's obvious|It's obv", "Significado de 'To get rid of'|Livrar-se de|Obter livre de",
+            "Como dizer 'Superar alguém'|Get over someone|Pass over someone", "Traduza 'Levar a sério'|Take it seriously|Bring it serious",
+            "Significado de 'To take advantage of'|Tirar vantagem / Aproveitar|Pegar vantagem", "Significado de 'To be out of order'|Estar quebrado / Fora de serviço|Estar fora de ordem",
+            "Complete: 'He is married ___ my sister.'|to|with", "Complete: 'She is angry ___ me.'|with|for",
+            "Como dizer 'Ser parecido com' (familiar)|Take after|Look similar", "Traduza 'Crescer' (pessoas)|Grow up|Grow on",
+            "Significado de 'To bring up'|Mencionar um assunto / Criar filhos|Trazer para cima", "Como dizer 'Cancelar'|Call off|Call down",
+            "Traduza 'Adiar'|Put off|Put later", "Significado de 'To set up'|Configurar / Organizar|Ajustar acima",
+            "Significado de 'To back up'|Apoiar / Fazer backup|Ir para trás", "Como dizer 'Cair fora'|Back off|Fall out",
+            "Traduza 'Acabar sendo'|Turn out|End out", "Significado de 'To calm down'|Acalmar-se|Acalmar abaixo",
+            "Complete: 'I agree ___ the contract.'|with|to", "Complete: 'Welcome ___ Brazil.'|to|in",
+            "Como dizer 'Passar no teste'|Pass the test|Pass in the test", "Traduza 'De repente'|Suddenly|From sudden",
+            "Significado de 'All of a sudden'|De repente|Tudo de um súbito", "Como dizer 'Por outro lado'|On the other hand|In the other hand",
+            "Traduza 'Além disso'|Besides|Beyond this", "Significado de 'Anyway'|De qualquer forma|Qualquer caminho",
+            "Significado de 'Although'|Apesar de|Embora que", "Como dizer 'A não ser que'|Unless|At least",
+            "Traduza 'Pelo contrário'|On the contrary|For the opposite", "Significado de 'However'|No entanto|Como nunca",
+            "Como dizer 'Portanto'|Therefore|So that", "Traduza 'Assim que' (logo que)|As soon as|So that",
+            "Significado de 'Even though'|Embora|Mesmo se", "Significado de 'Instead of'|Em vez de|No lugar de",
+            "Complete: 'He came ___ his illness.'|despite|despite of", "Complete: 'I will go ___ you come or not.'|whether|if",
+            "Como dizer 'Enquanto isso'|Meanwhile|While this", "Traduza 'Por enquanto'|For now|By while",
+            "Significado de 'Nowadays'|Hoje em dia|Atualmente"
+        ];
+
+        let database = [];
+        
+        // Conversão do Array de Strings para Objetos Multiplos
+        rawDB.forEach(item => {
+            let parts = item.split('|');
+            let question = parts[0];
+            let correct = parts[1];
+            let wrong = parts[2];
+            
+            // Opcional: Adicionar um toque visual se tiver aspas ou destaques
+            let formattedQ = `<span class="highlight-focus">DECISÃO:</span><br>${question}`;
+            
+            database.push({ 
+                q: formattedQ, 
+                correct: correct, 
+                wrong: wrong 
+            });
+        });
+
+        // Embaralhar as 200 questões e fatiar apenas 100 para o "Simulador de Guerra"
+        database = database.sort(() => Math.random() - 0.5).slice(0, 100);
+
+        // === 2. MOTOR DE ÁUDIO E EFEITOS DOPAMINA ===
+        const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        function playAudio(type) {
+            if (audioCtx.state === 'suspended') { audioCtx.resume(); }
+            const t = audioCtx.currentTime;
+            if(type === 'win') {
+                const osc = audioCtx.createOscillator(); const gain = audioCtx.createGain();
+                osc.connect(gain); gain.connect(audioCtx.destination);
+                osc.type = 'sine'; osc.frequency.setValueAtTime(1000, t);
+                gain.gain.setValueAtTime(0.05, t); gain.gain.exponentialRampToValueAtTime(0.01, t + 0.15);
+                osc.start(t); osc.stop(t + 0.15);
+            } else if(type === 'error') {
+                const osc = audioCtx.createOscillator(); const gain = audioCtx.createGain();
+                osc.connect(gain); gain.connect(audioCtx.destination);
+                osc.type = 'sawtooth'; osc.frequency.setValueAtTime(120, t); osc.frequency.linearRampToValueAtTime(80, t + 0.25);
+                gain.gain.setValueAtTime(0.08, t); gain.gain.exponentialRampToValueAtTime(0.01, t + 0.3);
+                osc.start(t); osc.stop(t + 0.3);
+            } else if(type === 'combo') {
+                const osc = audioCtx.createOscillator(); const gain = audioCtx.createGain();
+                osc.connect(gain); gain.connect(audioCtx.destination);
+                osc.type = 'square'; const baseFreq = Math.min(500 + (state.combo * 60), 1500);
+                osc.frequency.setValueAtTime(baseFreq, t); osc.frequency.linearRampToValueAtTime(baseFreq + 200, t + 0.15); 
+                gain.gain.setValueAtTime(0.05, t); gain.gain.exponentialRampToValueAtTime(0.01, t + 0.2);
+                osc.start(t); osc.stop(t + 0.2);
+            } else if(type === 'milestone') {
+                [523.25, 659.25, 783.99, 1046.50, 1318.5].forEach((f, i) => {
+                    const osc = audioCtx.createOscillator(); const gain = audioCtx.createGain();
+                    osc.type = 'triangle'; osc.frequency.setValueAtTime(f, t + (i * 0.08)); 
+                    gain.gain.setValueAtTime(0.1, t + (i * 0.08)); gain.gain.exponentialRampToValueAtTime(0.01, t + (i * 0.08) + 1.0);
+                    osc.connect(gain); gain.connect(audioCtx.destination);
+                    osc.start(t + (i * 0.08)); osc.stop(t + (i * 0.08) + 1.0);
+                });
+            }
+        }
+
+        function triggerCasinoEffect(amount = 20) {
+            for (let i = 0; i < amount; i++) {
+                const coin = document.createElement('div');
+                coin.classList.add('casino-coin');
+                const angle = Math.random() * Math.PI * 2;
+                const distance = 80 + Math.random() * 150; 
+                coin.style.setProperty('--tx', Math.cos(angle) * distance + 'px');
+                coin.style.setProperty('--ty', Math.sin(angle) * distance + 'px');
+                coin.style.animation = `coin-explosion ${0.4 + Math.random() * 0.4}s ease-out forwards`;
+                document.body.appendChild(coin);
+                setTimeout(() => coin.remove(), 1000);
+            }
+        }
+
+        function triggerCoinRain(amount = 80) {
+            for (let i = 0; i < amount; i++) {
+                const coin = document.createElement('div');
+                coin.classList.add('rain-coin');
+                coin.style.left = Math.random() * 100 + 'vw';
+                coin.style.animationDuration = (1.2 + Math.random() * 1.5) + 's';
+                coin.style.animationDelay = (Math.random() * 1.0) + 's';
+                document.body.appendChild(coin);
+                setTimeout(() => coin.remove(), 3000);
+            }
+        }
+
+        // === 3. CONTROLE DE ESTADO E EXECUÇÃO ===
+        let xp = parseInt(localStorage.getItem('ffes_xp') || 0);
+        document.getElementById('xp-val').innerText = xp;
+        let state = { currentQ: null, combo: 0, startTime: 0, questionIndex: 0 };
+
+        function startGame() { generate(); }
+
+        function generate() {
+            if(state.questionIndex >= 100) {
+                document.getElementById('display-sentence').innerHTML = "NÍVEL CONCLUÍDO!<br><span style='color:#ff9100; font-size:1.5rem;'>100/100</span>";
+                document.getElementById('ab-controls').style.display = 'none';
+                playAudio('milestone'); triggerCoinRain(100);
+                return;
+            }
+
+            document.querySelectorAll('.btn-option').forEach(b => b.className = 'btn-option');
+            document.getElementById('feedback').className = ''; 
+            document.getElementById('speed-feedback').innerText = "";
+            document.getElementById('q-count').innerText = state.questionIndex + 1;
+
+            const item = database[state.questionIndex];
+            state.currentQ = item;
+            state.startTime = Date.now();
+
+            document.getElementById('display-sentence').innerHTML = item.q;
+            
+            if(Math.random() > 0.5) setOptions(item.correct, item.wrong, item.correct);
+            else setOptions(item.wrong, item.correct, item.correct);
+        }
+
+        function setOptions(txt1, txt2, correctVal) {
+            const btn1 = document.getElementById('btn1'); const btn2 = document.getElementById('btn2');
+            btn1.innerHTML = txt1; btn1.onclick = () => checkAnswer(txt1 === correctVal, btn1);
+            btn2.innerHTML = txt2; btn2.onclick = () => checkAnswer(txt2 === correctVal, btn2);
+        }
+
+        function checkAnswer(isCorrect, element) {
+            const fb = document.getElementById('feedback');
+            const timeDelta = Date.now() - state.startTime;
+            
+            // Tempo Hacker Speed
+            const isSpeed = timeDelta < 2500; 
+
+            if (isCorrect) {
+                state.combo++;
+                let xpGain = 10 + (state.combo * 2); 
+                if(isSpeed) xpGain += 5;
+                addXP(xpGain);
+                
+                fb.innerText = "CERTEIRO!"; fb.style.color = "#00e676"; fb.className = "visible";
+                element.classList.add('correct');
+                triggerCasinoEffect(20);
+                
+                if (state.combo % 10 === 0) { playAudio('milestone'); triggerCoinRain(40); } 
+                else if (state.combo > 1) { playAudio('combo'); } 
+                else { playAudio('win'); }
+                
+                if(isSpeed) document.getElementById('speed-feedback').innerText = "⚡ AÇÃO RÁPIDA!";
+
+                const comboEl = document.getElementById('combo-feedback');
+                comboEl.innerText = `COMBO x${state.combo}`; comboEl.classList.add('show');
+                document.getElementById('progress-bar').style.width = ((state.questionIndex + 1) % 100) + '%';
+
+                setTimeout(() => { comboEl.classList.remove('show'); state.questionIndex++; generate(); }, 1000);
+            } else {
+                state.combo = 0; 
+                addXP(-5); 
+                fb.innerText = "ERRO GRAVE!";
+                fb.style.color = "#ff1744"; fb.className = "visible";
+                element.classList.add('wrong');
+                playAudio('error');
+                
+                const card = document.getElementById('game-card-element');
+                card.classList.add('shake-effect');
+                setTimeout(() => card.classList.remove('shake-effect'), 400);
+                document.getElementById('combo-feedback').classList.remove('show');
+            }
+        }
+
+        function addXP(val) {
+            xp = Math.max(0, xp + val); 
+            localStorage.setItem('ffes_xp', xp); 
+            document.getElementById('xp-val').innerText = xp;
+        }
+
+        window.onload = startGame;
+    </script>
+</body>
+</html>

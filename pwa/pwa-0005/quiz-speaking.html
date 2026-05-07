@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>FFES | Vocal Sniper: Simulador de Speaking</title>
+    <meta name="title" content="FFES | Vocal Sniper: Simulador de Speaking">
+    <meta name="description" content="Treinamento de fala validadado por Inteligência Artificial. 50 frases curtas para você destravar a pronúncia em inglês.">
+    <meta name="keywords" content="exercícios de speaking, treinar fala em inglês, teacher leo ramos, ffes, IA inglês">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="Portuguese">
+    <meta name="author" content="Teacher Leo Ramos">
+    
+    <link rel="canonical" href="https://teacherleoramos.com.br/PWA/Pasta005/quiz11speaking.html">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-M8ZG06010Q"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-M8ZG06010Q');
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LearningResource",
+      "name": "Simulador Vocal Sniper - FFES",
+      "description": "Ferramenta de treinamento de fala (Speaking) utilizando reconhecimento de voz nativo para validar a pronúncia de 50 frases curtas em inglês.",
+      "url": "https://teacherleoramos.com.br/PWA/Pasta005/quiz11speaking.html",
+      "learningResourceType": "Speaking Exercise",
+      "educationalAlignment": {
+        "@type": "AlignmentObject",
+        "alignmentType": "educationalSubject",
+        "targetName": "English Speaking & Pronunciation"
+      },
+      "isPartOf": {
+        "@type": "CollectionPage",
+        "url": "https://teacherleoramos.com.br/PWA/Pasta005/indexpasta005.html"
+      }
+    }
+    </script>
+
+    <link rel="stylesheet" href="/CSS/style-app.css">
+
+    <style>
+        /* === ENGINE DE GAMIFICAÇÃO - TEMA ONDA SONORA (TEAL) === */
+        .game-wrapper { width: 100%; max-width: 600px; display: flex; flex-direction: column; gap: 20px; z-index: 10; margin: 0 auto; }
+        
+        .game-card { background: rgba(0, 0, 0, 0.7); backdrop-filter: blur(10px); border: 2px solid #1de9b6; border-radius: 24px; padding: 40px 20px; text-align: center; box-shadow: 0 10px 40px rgba(29, 233, 182, 0.2); min-height: 200px; display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; }
+        
+        #display-sentence { font-size: 2.2rem; font-weight: 900; line-height: 1.2; color: #fff; text-shadow: 0 2px 10px rgba(0,0,0,0.8); z-index: 2; letter-spacing: 1px; margin-bottom: 10px;}
+        #pt-translation { font-size: 1rem; color: #1de9b6; text-transform: uppercase; font-weight: 700; letter-spacing: 2px;}
+        
+        /* Botão de Gravação Nativa */
+        .btn-record { background: linear-gradient(135deg, #1de9b6, #00bfa5); border: 2px solid #fff; color: #000; padding: 20px 40px; border-radius: 50px; font-size: 1.5rem; font-weight: 900; cursor: pointer; box-shadow: 0 0 20px rgba(29, 233, 182, 0.5); transition: all 0.2s; display: flex; align-items: center; gap: 15px; text-transform: uppercase; width: 100%; justify-content: center; margin-top: 15px;}
+        .btn-record:hover { transform: scale(1.05); box-shadow: 0 0 30px rgba(29, 233, 182, 1); }
+        .btn-record:active { transform: scale(0.95); }
+        .btn-record.recording { background: #ff1744 !important; box-shadow: 0 0 30px #ff1744; color: #fff; border-color: #ff1744; animation: pulse-red 1s infinite; }
+        
+        @keyframes pulse-red { 0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); } }
+
+        #feedback { height: 30px; text-align: center; font-weight: 900; letter-spacing: 2px; text-transform: uppercase; transition: all 0.2s; opacity: 0; margin-bottom: 5px; }
+        #feedback.visible { opacity: 1; transform: translateY(-5px); }
+        
+        .xp-pill { background: rgba(0, 0, 0, 0.5); border: 1px solid #1de9b6; padding: 5px 15px; border-radius: 50px; color: #1de9b6; font-weight: 900; font-size: 1.1rem; margin-top: 10px; display: inline-block; }
+        .feedback-float { position: absolute; top: -15px; right: -10px; font-weight: 900; font-size: 0.9rem; color: #000; background: #1de9b6; padding: 5px 12px; border-radius: 20px; border: 1px solid #fff; opacity: 0; transform: translateY(10px); transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); z-index: 5; box-shadow: 0 0 10px #1de9b6;}
+        .feedback-float.show { opacity: 1; transform: translateY(0) rotate(5deg); }
+        
+        .progress-track { width: 100%; height: 5px; background: rgba(255,255,255,0.1); position: fixed; top: 0; left: 0; z-index: 1000; }
+        .progress-fill { height: 100%; background: #1de9b6; width: 0%; transition: width 0.3s ease; box-shadow: 0 0 10px #1de9b6; }
+
+        .casino-coin { position: fixed; width: 25px; height: 25px; background: #1de9b6; border-radius: 50%; box-shadow: 0 0 15px rgba(29, 233, 182, 1); pointer-events: none; z-index: 9999; top: 50%; left: 50%; transform: translate(-50%, -50%); border: 2px solid #fff; }
+        @keyframes coin-explosion { 0% { transform: translate(-50%, -50%) scale(0.5); opacity: 1; } 100% { transform: translate(var(--tx), var(--ty)) scale(1.2) rotate(360deg); opacity: 0; } }
+        
+        .rain-coin { position: fixed; width: 35px; height: 35px; background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45" fill="%231de9b6" stroke="%23fff" stroke-width="5"/><text x="50" y="65" font-size="40" text-anchor="middle" font-weight="bold" fill="%23000" font-family="Arial">XP</text></svg>') no-repeat center; background-size: contain; pointer-events: none; z-index: 9999; top: -50px; animation: coin-drop linear forwards; }
+        @keyframes coin-drop { 0% { transform: translateY(0) rotate(0deg); opacity: 1; } 100% { transform: translateY(110vh) rotate(360deg); opacity: 0.8; } }
+        
+        @keyframes shake { 0%, 100% { transform: translateX(0); } 20%, 60% { transform: translateX(-8px); } 40%, 80% { transform: translateX(8px); } }
+        .shake-effect { animation: shake 0.4s ease-in-out; border-color: #ff1744 !important; box-shadow: 0 0 20px rgba(255, 23, 68, 0.5) !important;}
+
+        .btn-voltar { display: block; margin: 30px auto; padding: 15px 30px; background: transparent; border: 2px solid #1de9b6; color: #1de9b6; border-radius: 50px; text-decoration: none; font-weight: 900; text-align: center; max-width: 300px; text-transform: uppercase; transition: all 0.3s; }
+        .btn-voltar:hover { background: #1de9b6; color: #000; box-shadow: 0 0 15px #1de9b6;}
+
+        #debug-text { font-size: 0.85rem; color: #888; margin-top: 10px; min-height: 20px; font-family: monospace;}
+    </style>
+</head>
+<body>
+
+    <div class="progress-track"><div class="progress-fill" id="progress-bar"></div></div>
+
+    <header class="glass-header" style="text-align: center; padding: 20px;">
+        <h1 style="color: #fff; margin-bottom: 5px;">VOCAL <span style="color: #1de9b6;">SNIPER</span></h1>
+        <p class="subtitle" style="color: #ccc;">Fale Alto e Claro (50 Alvos)</p>
+        <div class="xp-pill">XP: <span id="xp-val">0</span></div>
+        <div style="font-size: 0.85rem; font-weight: bold; color: #1de9b6; margin-top: 5px;">Alvos Destruídos: <span id="q-count">0</span> / 50</div>
+    </header>
+
+    <main style="max-width: 800px; margin: 20px auto; padding: 0 20px;">
+        <div id="game-container" class="game-wrapper">
+            <div id="feedback"></div>
+            
+            <div class="game-card" id="game-card-element">
+                <div id="combo-feedback" class="feedback-float">COMBO x2</div>
+                
+                <div id="display-sentence">Carregando IA...</div>
+                <div id="pt-translation"></div>
+                
+                <button class="btn-record" id="btn-record" onclick="toggleRecording()">
+                    🎤 GRAVAR VOZ
+                </button>
+                <div id="debug-text">Aguardando comando...</div>
+            </div>
+        </div>
+
+        <a href="indexpasta005.html" class="btn-voltar">⬅ Abortar Missão</a>
+    </main>
+
+    <script>
+        // === 1. BANCO DE DADOS: 50 FRASES CURTAS (3 a 4 palavras) ===
+        const rawDB = [
+            "I want to go.|Eu quero ir.", "She is my friend.|Ela é minha amiga.", "He is very tall.|Ele é muito alto.", "We love to play.|Nós amamos brincar.", "They are coming now.|Eles estão vindo agora.",
+            "What is your name?|Qual o seu nome?", "Where do you live?|Onde você mora?", "How old are you?|Quantos anos você tem?", "I need some water.|Eu preciso de água.", "Give me a break.|Me dê um tempo.",
+            "Please help me now.|Por favor me ajude agora.", "Look at this car.|Olhe para este carro.", "I do not know.|Eu não sei.", "She does not like.|Ela não gosta.", "Open the door please.|Abra a porta por favor.",
+            "Close the window now.|Feche a janela agora.", "This is for you.|Isto é para você.", "That is my book.|Aquele é meu livro.", "Turn on the light.|Acenda a luz.", "Turn off the TV.|Desligue a TV.",
+            "I have a dog.|Eu tenho um cachorro.", "She has a cat.|Ela tem um gato.", "We are very happy.|Nós estamos muito felizes.", "You are my brother.|Você é meu irmão.", "Let me see it.|Deixe-me ver isso.",
+            "Do you like pizza?|Você gosta de pizza?", "I can do this.|Eu posso fazer isso.", "You must go home.|Você deve ir para casa.", "I will call you.|Eu vou te ligar.", "Wait for me here.|Espere por mim aqui.",
+            "Come with me now.|Venha comigo agora.", "I lost my keys.|Eu perdi minhas chaves.", "She is a doctor.|Ela é médica.", "He works very hard.|Ele trabalha muito duro.", "See you very soon.|Vejo você muito em breve.",
+            "Have a good day.|Tenha um bom dia.", "I am so sorry.|Eu sinto muito.", "Thank you very much.|Muito obrigado.", "You are so welcome.|De nada.", "It is too late.|É tarde demais.",
+            "The sky is blue.|O céu é azul.", "I feel very tired.|Me sinto muito cansado.", "Let us go out.|Vamos sair.", "Do not do that.|Não faça aquilo.", "Read this book please.|Leia este livro por favor.",
+            "I understand you now.|Eu te entendo agora.", "He is not here.|Ele não está aqui.", "We need more time.|Precisamos de mais tempo.", "Play the music loud.|Toque a música alto.", "Take it easy man.|Pegue leve cara."
+        ];
+
+        let database = [];
+        rawDB.forEach(item => {
+            let parts = item.split('|');
+            // Remove pontuação para facilitar a validação da IA
+            let cleanEn = parts[0].replace(/[^\w\s\']/gi, '').toLowerCase().trim();
+            database.push({ en: parts[0], cleanEn: cleanEn, pt: parts[1] });
+        });
+
+        // O módulo tem exatas 50. Embaralha.
+        database = database.sort(() => Math.random() - 0.5);
+
+        // === 2. MOTOR DE ÁUDIO E EFEITOS DOPAMINA ===
+        const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        function playFX(type) {
+            if (audioCtx.state === 'suspended') { audioCtx.resume(); }
+            const t = audioCtx.currentTime;
+            if(type === 'win') {
+                const osc = audioCtx.createOscillator(); const gain = audioCtx.createGain();
+                osc.connect(gain); gain.connect(audioCtx.destination);
+                osc.type = 'sine'; osc.frequency.setValueAtTime(1200, t);
+                gain.gain.setValueAtTime(0.05, t); gain.gain.exponentialRampToValueAtTime(0.01, t + 0.15);
+                osc.start(t); osc.stop(t + 0.15);
+            } else if(type === 'error') {
+                const osc = audioCtx.createOscillator(); const gain = audioCtx.createGain();
+                osc.connect(gain); gain.connect(audioCtx.destination);
+                osc.type = 'sawtooth'; osc.frequency.setValueAtTime(150, t); osc.frequency.linearRampToValueAtTime(100, t + 0.25);
+                gain.gain.setValueAtTime(0.08, t); gain.gain.exponentialRampToValueAtTime(0.01, t + 0.3);
+                osc.start(t); osc.stop(t + 0.3);
+            } else if(type === 'combo') {
+                const osc = audioCtx.createOscillator(); const gain = audioCtx.createGain();
+                osc.connect(gain); gain.connect(audioCtx.destination);
+                osc.type = 'square'; const baseFreq = Math.min(600 + (state.combo * 50), 1600);
+                osc.frequency.setValueAtTime(baseFreq, t); osc.frequency.linearRampToValueAtTime(baseFreq + 200, t + 0.15); 
+                gain.gain.setValueAtTime(0.05, t); gain.gain.exponentialRampToValueAtTime(0.01, t + 0.2);
+                osc.start(t); osc.stop(t + 0.2);
+            } else if(type === 'milestone') {
+                [523.25, 659.25, 783.99, 1046.50, 1318.5].forEach((f, i) => {
+                    const osc = audioCtx.createOscillator(); const gain = audioCtx.createGain();
+                    osc.type = 'triangle'; osc.frequency.setValueAtTime(f, t + (i * 0.08)); 
+                    gain.gain.setValueAtTime(0.1, t + (i * 0.08)); gain.gain.exponentialRampToValueAtTime(0.01, t + (i * 0.08) + 1.0);
+                    osc.connect(gain); gain.connect(audioCtx.destination);
+                    osc.start(t + (i * 0.08)); osc.stop(t + (i * 0.08) + 1.0);
+                });
+            }
+        }
+
+        function triggerCasinoEffect(amount = 15) {
+            for (let i = 0; i < amount; i++) {
+                const coin = document.createElement('div');
+                coin.classList.add('casino-coin');
+                const angle = Math.random() * Math.PI * 2;
+                const distance = 80 + Math.random() * 120; 
+                coin.style.setProperty('--tx', Math.cos(angle) * distance + 'px');
+                coin.style.setProperty('--ty', Math.sin(angle) * distance + 'px');
+                coin.style.animation = `coin-explosion ${0.4 + Math.random() * 0.4}s ease-out forwards`;
+                document.body.appendChild(coin);
+                setTimeout(() => coin.remove(), 1000);
+            }
+        }
+
+        function triggerCoinRain(amount = 80) {
+            for (let i = 0; i < amount; i++) {
+                const coin = document.createElement('div');
+                coin.classList.add('rain-coin');
+                coin.style.left = Math.random() * 100 + 'vw';
+                coin.style.animationDuration = (1.2 + Math.random() * 1.5) + 's';
+                coin.style.animationDelay = (Math.random() * 1.0) + 's';
+                document.body.appendChild(coin);
+                setTimeout(() => coin.remove(), 3000);
+            }
+        }
+
+        // === 3. MOTOR DE RECONHECIMENTO DE VOZ (SPEECH RECOGNITION API) ===
+        const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+        let recognition;
+        let isRecording = false;
+
+        if (SpeechRecognition) {
+            recognition = new SpeechRecognition();
+            recognition.continuous = false;
+            recognition.interimResults = false;
+            recognition.lang = 'en-US'; // Força a IA a ouvir em Inglês
+
+            recognition.onresult = function(event) {
+                const transcript = event.results[0][0].transcript.toLowerCase().replace(/[^\w\s\']/gi, '').trim();
+                document.getElementById('debug-text').innerText = `Você disse: "${transcript}"`;
+                validateSpeech(transcript);
+                stopRecordingUI();
+            };
+
+            recognition.onerror = function(event) {
+                document.getElementById('debug-text').innerText = "Erro no microfone: " + event.error;
+                stopRecordingUI();
+            };
+
+            recognition.onend = function() {
+                stopRecordingUI();
+            };
+        } else {
+            // Fallback se o navegador não suportar (ex: iOS antigo)
+            document.getElementById('debug-text').innerText = "Navegador incompatível com gravação. Fale em voz alta e clique para avançar.";
+        }
+
+        function toggleRecording() {
+            if(!SpeechRecognition) {
+                // Fallback Mode (Apenas avança a pergunta fingindo sucesso)
+                validateSpeech(state.currentQ.cleanEn); 
+                return;
+            }
+
+            if (isRecording) {
+                recognition.stop();
+                stopRecordingUI();
+            } else {
+                try {
+                    recognition.start();
+                    isRecording = true;
+                    document.getElementById('btn-record').classList.add('recording');
+                    document.getElementById('btn-record').innerHTML = "🛑 OUVINDO...";
+                    document.getElementById('debug-text').innerText = "Fale agora...";
+                } catch(e) {
+                    console.log("Erro ao iniciar REC", e);
+                }
+            }
+        }
+
+        function stopRecordingUI() {
+            isRecording = false;
+            document.getElementById('btn-record').classList.remove('recording');
+            document.getElementById('btn-record').innerHTML = "🎤 GRAVAR VOZ";
+        }
+
+        // === 4. CONTROLE DE ESTADO E EXECUÇÃO ===
+        let xp = parseInt(localStorage.getItem('ffes_xp') || 0);
+        document.getElementById('xp-val').innerText = xp;
+        let state = { currentQ: null, combo: 0, questionIndex: 0 };
+
+        function startGame() { generate(); }
+
+        function generate() {
+            if(state.questionIndex >= 50) {
+                document.getElementById('display-sentence').innerHTML = "FALA DESTRAVADA!<br><span style='color:#1de9b6; font-size:1.5rem;'>50/50</span>";
+                document.getElementById('pt-translation').innerText = "";
+                document.getElementById('btn-record').style.display = 'none';
+                document.getElementById('debug-text').style.display = 'none';
+                playFX('milestone'); triggerCoinRain(100);
+                return;
+            }
+
+            document.getElementById('feedback').className = ''; 
+            document.getElementById('q-count').innerText = state.questionIndex + 1;
+            document.getElementById('debug-text').innerText = "Aguardando comando...";
+
+            const item = database[state.questionIndex];
+            state.currentQ = item;
+
+            document.getElementById('display-sentence').innerText = item.en;
+            document.getElementById('pt-translation').innerText = item.pt;
+        }
+
+        function validateSpeech(userTranscript) {
+            const fb = document.getElementById('feedback');
+            const target = state.currentQ.cleanEn;
+
+            // Lógica de "Fuzzy Match" simples. Se ele acertou a maior parte da frase, passa.
+            if (userTranscript === target || target.includes(userTranscript) && userTranscript.length > 3 || userTranscript.includes(target)) {
+                state.combo++;
+                let xpGain = 20 + (state.combo * 5); // Falar vale muito mais XP que clicar!
+                addXP(xpGain);
+                
+                fb.innerText = "PRONÚNCIA EXATA!"; fb.style.color = "#00e676"; fb.className = "visible";
+                triggerCasinoEffect(20);
+                
+                if (state.combo % 10 === 0) { playFX('milestone'); triggerCoinRain(40); } 
+                else if (state.combo > 1) { playFX('combo'); } 
+                else { playFX('win'); }
+                
+                const comboEl = document.getElementById('combo-feedback');
+                comboEl.innerText = `COMBO x${state.combo}`; comboEl.classList.add('show');
+                document.getElementById('progress-bar').style.width = ((state.questionIndex + 1) * 2) + '%';
+
+                setTimeout(() => { comboEl.classList.remove('show'); state.questionIndex++; generate(); }, 1500);
+            } else {
+                state.combo = 0; 
+                addXP(-10); // Punição por gaguejar/errar
+                fb.innerText = "FALHA NA COMUNICAÇÃO!";
+                fb.style.color = "#ff1744"; fb.className = "visible";
+                playFX('error');
+                
+                const card = document.getElementById('game-card-element');
+                card.classList.add('shake-effect');
+                setTimeout(() => card.classList.remove('shake-effect'), 400);
+                document.getElementById('combo-feedback').classList.remove('show');
+            }
+        }
+
+        function addXP(val) {
+            xp = Math.max(0, xp + val); 
+            localStorage.setItem('ffes_xp', xp); 
+            document.getElementById('xp-val').innerText = xp;
+        }
+
+        window.onload = startGame;
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>FFES | Reading Sniper: 100 Micro-Textos</title>
+    <meta name="title" content="FFES | Reading Sniper: 100 Micro-Textos">
+    <meta name="description" content="100 textos fáceis de 3 parágrafos para automatizar a leitura em inglês.">
+    <meta name="keywords" content="leitura em inglês, textos fáceis inglês, aprender inglês lendo, teacher leo ramos, ffes">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="Portuguese">
+    <meta name="author" content="Teacher Leo Ramos">
+    
+    <link rel="canonical" href="https://teacherleoramos.com.br/PWA/Pasta004/quiz12reading.html">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-M8ZG06010Q"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-M8ZG06010Q');
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LearningResource",
+      "name": "Simulador Reading Sniper - FFES",
+      "description": "Simulador de leitura dinâmica gerando 100 micro-textos fáceis para treinamento de compreensão estrutural.",
+      "url": "https://teacherleoramos.com.br/PWA/Pasta004/quiz12reading.html",
+      "learningResourceType": "Reading Comprehension Quiz",
+      "educationalAlignment": {
+        "@type": "AlignmentObject",
+        "alignmentType": "educationalSubject",
+        "targetName": "English Reading Comprehension"
+      },
+      "isPartOf": {
+        "@type": "CollectionPage",
+        "url": "https://teacherleoramos.com.br/PWA/Pasta004/indexpasta004.html"
+      }
+    }
+    </script>
+
+    <link rel="stylesheet" href="/CSS/style-app.css">
+
+    <style>
+        /* === ENGINE DE GAMIFICAÇÃO - TEMA ÂMBAR (ILUMINAÇÃO) === */
+        .game-wrapper { width: 100%; max-width: 600px; display: flex; flex-direction: column; gap: 15px; z-index: 10; margin: 0 auto; }
+        
+        .game-card { background: rgba(0, 0, 0, 0.8); backdrop-filter: blur(10px); border: 2px solid #ffb300; border-radius: 24px; padding: 25px 20px; text-align: center; box-shadow: 0 10px 40px rgba(255, 179, 0, 0.2); display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; }
+        
+        /* A CAIXA DO TEXTO */
+        .reading-box { background: rgba(255, 255, 255, 0.05); padding: 20px; border-radius: 12px; border-left: 4px solid #ffb300; text-align: left; width: 100%; margin-bottom: 20px; font-size: 1.15rem; line-height: 1.6; color: #e0e0e0; box-shadow: inset 0 0 10px rgba(0,0,0,0.5);}
+        .reading-box p { margin: 0 0 10px 0; }
+        .reading-box p:last-child { margin: 0; }
+
+        #display-sentence { font-size: 1.3rem; font-weight: 900; line-height: 1.4; color: #fff; text-shadow: 0 2px 5px rgba(0,0,0,0.8); z-index: 2;}
+        
+        .game-controls { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; width: 100%; }
+        .btn-option { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255,255,255,0.2); color: #fff; padding: 15px; font-size: 1.1rem; font-weight: 900; border-radius: 16px; cursor: pointer; transition: all 0.2s ease; text-transform: uppercase;}
+        .btn-option:hover { border-color: #ffb300; background: rgba(255, 179, 0, 0.1); transform: translateY(-3px); }
+        .btn-option.correct { background: #00e676 !important; color: #000 !important; border-color: #00e676 !important; }
+        .btn-option.wrong { background: #ff1744 !important; opacity: 0.5; }
+
+        #feedback { height: 30px; text-align: center; font-weight: 900; letter-spacing: 2px; text-transform: uppercase; transition: all 0.2s; opacity: 0; margin-bottom: 5px; }
+        #feedback.visible { opacity: 1; transform: translateY(-5px); }
+        
+        .xp-pill { background: rgba(0, 0, 0, 0.5); border: 1px solid #ffb300; padding: 5px 15px; border-radius: 50px; color: #ffb300; font-weight: 900; font-size: 1.1rem; margin-top: 10px; display: inline-block; }
+        .feedback-float { position: absolute; top: -15px; right: -10px; font-weight: 900; font-size: 0.9rem; color: #000; background: #ffb300; padding: 5px 12px; border-radius: 20px; border: 1px solid #fff; opacity: 0; transform: translateY(10px); transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); z-index: 5; box-shadow: 0 0 10px #ffb300;}
+        .feedback-float.show { opacity: 1; transform: translateY(0) rotate(5deg); }
+        .speed-badge { position: absolute; bottom: 10px; width: 100%; left: 0; text-align: center; font-size: 0.75rem; color: #00e676; font-weight: 900; letter-spacing: 1px; text-transform: uppercase; }
+
+        .progress-track { width: 100%; height: 5px; background: rgba(255,255,255,0.1); position: fixed; top: 0; left: 0; z-index: 1000; }
+        .progress-fill { height: 100%; background: #ffb300; width: 0%; transition: width 0.3s ease; box-shadow: 0 0 10px #ffb300; }
+
+        .casino-coin { position: fixed; width: 25px; height: 25px; background: #ffb300; border-radius: 50%; box-shadow: 0 0 15px rgba(255, 179, 0, 1); pointer-events: none; z-index: 9999; top: 50%; left: 50%; transform: translate(-50%, -50%); border: 2px solid #fff; }
+        @keyframes coin-explosion { 0% { transform: translate(-50%, -50%) scale(0.5); opacity: 1; } 100% { transform: translate(var(--tx), var(--ty)) scale(1.2) rotate(360deg); opacity: 0; } }
+        
+        .rain-coin { position: fixed; width: 35px; height: 35px; background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45" fill="%23ffb300" stroke="%23fff" stroke-width="5"/><text x="50" y="65" font-size="40" text-anchor="middle" font-weight="bold" fill="%23000" font-family="Arial">XP</text></svg>') no-repeat center; background-size: contain; pointer-events: none; z-index: 9999; top: -50px; animation: coin-drop linear forwards; }
+        @keyframes coin-drop { 0% { transform: translateY(0) rotate(0deg); opacity: 1; } 100% { transform: translateY(110vh) rotate(360deg); opacity: 0.8; } }
+        
+        @keyframes shake { 0%, 100% { transform: translateX(0); } 20%, 60% { transform: translateX(-8px); } 40%, 80% { transform: translateX(8px); } }
+        .shake-effect { animation: shake 0.4s ease-in-out; border-color: #ff1744 !important; box-shadow: 0 0 20px rgba(255, 23, 68, 0.5) !important;}
+
+        .btn-voltar { display: block; margin: 30px auto; padding: 15px 30px; background: transparent; border: 2px solid #ffb300; color: #ffb300; border-radius: 50px; text-decoration: none; font-weight: 900; text-align: center; max-width: 300px; text-transform: uppercase; transition: all 0.3s; }
+        .btn-voltar:hover { background: #ffb300; color: #000; box-shadow: 0 0 15px #ffb300;}
+    </style>
+</head>
+<body>
+
+    <div class="progress-track"><div class="progress-fill" id="progress-bar"></div></div>
+
+    <header class="glass-header" style="text-align: center; padding: 20px;">
+        <h1 style="color: #fff; margin-bottom: 5px;">READING <span style="color: #ffb300;">SNIPER</span></h1>
+        <p class="subtitle" style="color: #ccc;">Micro-Textos Fáceis (100 Desafios)</p>
+        <div class="xp-pill">XP: <span id="xp-val">0</span></div>
+        <div style="font-size: 0.85rem; font-weight: bold; color: #ffb300; margin-top: 5px;">Textos Lidos: <span id="q-count">0</span> / 100</div>
+    </header>
+
+    <main style="max-width: 800px; margin: 20px auto; padding: 0 20px;">
+        <div id="game-container" class="game-wrapper">
+            <div id="feedback"></div>
+            
+            <div class="game-card" id="game-card-element">
+                <div id="combo-feedback" class="feedback-float">COMBO x2</div>
+                <div id="speed-feedback" class="speed-badge"></div>
+                
+                <div class="reading-box" id="reading-text">
+                    Carregando matriz de texto...
+                </div>
+
+                <div id="display-sentence">Preparando pergunta...</div>
+            </div>
+
+            <div class="game-controls" id="ab-controls">
+                <button id="btn1" class="btn-option" onclick="checkAnswer(1)"></button>
+                <button id="btn2" class="btn-option" onclick="checkAnswer(2)"></button>
+            </div>
+        </div>
+
+        <a href="indexpasta004.html" class="btn-voltar">⬅ Abortar Missão</a>
+    </main>
+
+    <script>
+        // === 1. BANCO DE DADOS: GERADOR MATRICIAL DE 100 TEXTOS ===
+        // Para não sobrecarregar o HTML, usamos 25 moldes e 4 variações = 100 textos únicos e curtos.
+        
+        const templates = [
+            {
+                t: "My name is [N]. <br><br>I am [A] years old. <br><br>I live in [P].",
+                q: "Where does [N] live?",
+                ans: "[P]", wrong: "[W]"
+            },
+            {
+                t: "This is my dog, [N]. <br><br>He is very [A]. <br><br>He loves to eat [P].",
+                q: "What does the dog love to eat?",
+                ans: "[P]", wrong: "[W]"
+            },
+            {
+                t: "[N] works in a big office. <br><br>He wakes up at [A] AM every day. <br><br>He drinks [P] in the morning.",
+                q: "What time does [N] wake up?",
+                ans: "[A] AM", wrong: "10 AM"
+            },
+            {
+                t: "I have a friend named [N]. <br><br>She has a blue [A]. <br><br>We drive it to [P].",
+                q: "What color is the [A]?",
+                ans: "Blue", wrong: "Red"
+            },
+            {
+                t: "Yesterday, [N] went to the store. <br><br>He bought [A] apples. <br><br>Then he went back to [P].",
+                q: "How many apples did he buy?",
+                ans: "[A]", wrong: "10"
+            },
+            {
+                t: "My favorite color is [N]. <br><br>My favorite number is [A]. <br><br>My favorite city is [P].",
+                q: "What is the favorite color?",
+                ans: "[N]", wrong: "[W]"
+            },
+            {
+                t: "[N] is reading a book. <br><br>The book has [A] pages. <br><br>The book is about [P].",
+                q: "What is the book about?",
+                ans: "[P]", wrong: "[W]"
+            },
+            {
+                t: "We travel to [P] every summer. <br><br>We stay there for [A] weeks. <br><br>My friend [N] goes with us.",
+                q: "Who goes with them?",
+                ans: "[N]", wrong: "[W]"
+            },
+            {
+                t: "There is a cat in the [P]. <br><br>The cat is sleeping on a [A]. <br><br>Its name is [N].",
+                q: "Where is the cat?",
+                ans: "In the [P]", wrong: "In the car"
+            },
+            {
+                t: "[N] loves to play sports. <br><br>His favorite sport is [P]. <br><br>He plays [A] days a week.",
+                q: "What is his favorite sport?",
+                ans: "[P]", wrong: "[W]"
+            },
+            {
+                t: "Today is [N]'s birthday. <br><br>She is turning [A]. <br><br>The party is in [P].",
+                q: "Whose birthday is it?",
+                ans: "[N]", wrong: "[W]"
+            },
+            {
+                t: "I need to buy a new [N]. <br><br>The old one is [A] years old. <br><br>I will go to [P] to buy it.",
+                q: "Where will he go to buy it?",
+                ans: "To [P]", wrong: "To [W]"
+            },
+            {
+                t: "The weather in [P] is nice. <br><br>It is [A] degrees today. <br><br>My friend [N] likes the sun.",
+                q: "How is the weather?",
+                ans: "Nice", wrong: "Rainy"
+            },
+            {
+                t: "[N] is cooking dinner. <br><br>She is making [P]. <br><br>It takes [A] minutes to cook.",
+                q: "What is she making?",
+                ans: "[P]", wrong: "[W]"
+            },
+            {
+                t: "Look at the [N]. <br><br>It is flying very [A]. <br><br>It is going to [P].",
+                q: "What is flying?",
+                ans: "The [N]", wrong: "The [W]"
+            },
+            {
+                t: "My school is in [P]. <br><br>I study [N] there. <br><br>I have [A] classes today.",
+                q: "How many classes does he have?",
+                ans: "[A]", wrong: "20"
+            },
+            {
+                t: "The movie starts at [A] PM. <br><br>It is a movie about [P]. <br><br>I am watching it with [N].",
+                q: "What time does the movie start?",
+                ans: "[A] PM", wrong: "Midnight"
+            },
+            {
+                t: "[N] has a big family. <br><br>He has [A] sisters. <br><br>They all live in [P].",
+                q: "How many sisters does he have?",
+                ans: "[A]", wrong: "None"
+            },
+            {
+                t: "We ordered food from [P]. <br><br>We ordered [A] pizzas. <br><br>The delivery boy is [N].",
+                q: "How many pizzas did they order?",
+                ans: "[A]", wrong: "1"
+            },
+            {
+                t: "I have a job in [P]. <br><br>My boss is [N]. <br><br>I work [A] hours a day.",
+                q: "Who is the boss?",
+                ans: "[N]", wrong: "[W]"
+            },
+            {
+                t: "The train to [P] is late. <br><br>It will arrive in [A] minutes. <br><br>[N] is waiting at the station.",
+                q: "Who is waiting at the station?",
+                ans: "[N]", wrong: "[W]"
+            },
+            {
+                t: "I drink [A] cups of water a day. <br><br>I buy water from [P]. <br><br>My doctor, [N], told me to do this.",
+                q: "What did the doctor tell him?",
+                ans: "Drink water", wrong: "Eat cake"
+            },
+            {
+                t: "[N] is learning English. <br><br>She studies for [A] hours. <br><br>She uses the app [P].",
+                q: "What app does she use?",
+                ans: "[P]", wrong: "[W]"
+            },
+            {
+                t: "My car is broken. <br><br>I took it to [P]. <br><br>The mechanic [N] said it will cost [A] dollars.",
+                q: "How much will it cost?",
+                ans: "[A] dollars", wrong: "Free"
+            },
+            {
+                t: "The concert is in [P]. <br><br>The band is called [N]. <br><br>The ticket costs [A] dollars.",
+                q: "Where is the concert?",
+                ans: "In [P]", wrong: "In [W]"
+            }
+        ];
+
+        // Dicionários para as 4 variações de cada template (25 x 4 = 100)
+        const dicts = [
+            { N: "John", A: "25", P: "London", W: "Paris" },
+            { N: "Sarah", A: "30", P: "New York", W: "Tokyo" },
+            { N: "Mike", A: "40", P: "Miami", W: "Berlin" },
+            { N: "Anna", A: "18", P: "Texas", W: "Rome" }
+        ];
+
+        let database = [];
+        
+        templates.forEach(temp => {
+            dicts.forEach(dict => {
+                let txt = temp.t.replace(/\[N\]/g, dict.N).replace(/\[A\]/g, dict.A).replace(/\[P\]/g, dict.P);
+                let que = temp.q.replace(/\[N\]/g, dict.N).replace(/\[A\]/g, dict.A).replace(/\[P\]/g, dict.P);
+                let ans = temp.ans.replace(/\[N\]/g, dict.N).replace(/\[A\]/g, dict.A).replace(/\[P\]/g, dict.P);
+                let wrg = temp.wrong.replace(/\[N\]/g, dict.N).replace(/\[A\]/g, dict.A).replace(/\[W\]/g, dict.W);
+                
+                database.push({ text: txt, q: que, correct: ans, wrong: wrg });
+            });
+        });
+
+        // Embaralha as 100 questões geradas
+        database = database.sort(() => Math.random() - 0.5);
+
+        // === 2. MOTOR DE ÁUDIO E EFEITOS DOPAMINA ===
+        const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        function playAudio(type) {
+            if (audioCtx.state === 'suspended') { audioCtx.resume(); }
+            const t = audioCtx.currentTime;
+            if(type === 'win') {
+                const osc = audioCtx.createOscillator(); const gain = audioCtx.createGain();
+                osc.connect(gain); gain.connect(audioCtx.destination);
+                osc.type = 'sine'; osc.frequency.setValueAtTime(1000, t);
+                gain.gain.setValueAtTime(0.05, t); gain.gain.exponentialRampToValueAtTime(0.01, t + 0.15);
+                osc.start(t); osc.stop(t + 0.15);
+            } else if(type === 'error') {
+                const osc = audioCtx.createOscillator(); const gain = audioCtx.createGain();
+                osc.connect(gain); gain.connect(audioCtx.destination);
+                osc.type = 'sawtooth'; osc.frequency.setValueAtTime(150, t); osc.frequency.linearRampToValueAtTime(100, t + 0.25);
+                gain.gain.setValueAtTime(0.08, t); gain.gain.exponentialRampToValueAtTime(0.01, t + 0.3);
+                osc.start(t); osc.stop(t + 0.3);
+            } else if(type === 'combo') {
+                const osc = audioCtx.createOscillator(); const gain = audioCtx.createGain();
+                osc.connect(gain); gain.connect(audioCtx.destination);
+                osc.type = 'square'; const baseFreq = Math.min(600 + (state.combo * 50), 1600);
+                osc.frequency.setValueAtTime(baseFreq, t); osc.frequency.linearRampToValueAtTime(baseFreq + 200, t + 0.15); 
+                gain.gain.setValueAtTime(0.05, t); gain.gain.exponentialRampToValueAtTime(0.01, t + 0.2);
+                osc.start(t); osc.stop(t + 0.2);
+            } else if(type === 'milestone') {
+                [523.25, 659.25, 783.99, 1046.50, 1318.5].forEach((f, i) => {
+                    const osc = audioCtx.createOscillator(); const gain = audioCtx.createGain();
+                    osc.type = 'triangle'; osc.frequency.setValueAtTime(f, t + (i * 0.08)); 
+                    gain.gain.setValueAtTime(0.1, t + (i * 0.08)); gain.gain.exponentialRampToValueAtTime(0.01, t + (i * 0.08) + 1.0);
+                    osc.connect(gain); gain.connect(audioCtx.destination);
+                    osc.start(t + (i * 0.08)); osc.stop(t + (i * 0.08) + 1.0);
+                });
+            }
+        }
+
+        function triggerCasinoEffect(amount = 15) {
+            for (let i = 0; i < amount; i++) {
+                const coin = document.createElement('div');
+                coin.classList.add('casino-coin');
+                const angle = Math.random() * Math.PI * 2;
+                const distance = 80 + Math.random() * 120; 
+                coin.style.setProperty('--tx', Math.cos(angle) * distance + 'px');
+                coin.style.setProperty('--ty', Math.sin(angle) * distance + 'px');
+                coin.style.animation = `coin-explosion ${0.4 + Math.random() * 0.4}s ease-out forwards`;
+                document.body.appendChild(coin);
+                setTimeout(() => coin.remove(), 1000);
+            }
+        }
+
+        function triggerCoinRain(amount = 80) {
+            for (let i = 0; i < amount; i++) {
+                const coin = document.createElement('div');
+                coin.classList.add('rain-coin');
+                coin.style.left = Math.random() * 100 + 'vw';
+                coin.style.animationDuration = (1.2 + Math.random() * 1.5) + 's';
+                coin.style.animationDelay = (Math.random() * 1.0) + 's';
+                document.body.appendChild(coin);
+                setTimeout(() => coin.remove(), 3000);
+            }
+        }
+
+        // === 3. CONTROLE DE ESTADO E EXECUÇÃO ===
+        let xp = parseInt(localStorage.getItem('ffes_xp') || 0);
+        document.getElementById('xp-val').innerText = xp;
+        let state = { currentQ: null, combo: 0, startTime: 0, questionIndex: 0 };
+
+        function startGame() { generate(); }
+
+        function generate() {
+            if(state.questionIndex >= 100) {
+                document.getElementById('reading-text').style.display = 'none';
+                document.getElementById('display-sentence').innerHTML = "LEITURA AUTOMATIZADA!<br><span style='color:#ffb300; font-size:1.5rem;'>100/100</span>";
+                document.getElementById('ab-controls').style.display = 'none';
+                playAudio('milestone'); triggerCoinRain(100);
+                return;
+            }
+
+            document.querySelectorAll('.btn-option').forEach(b => b.className = 'btn-option');
+            document.getElementById('feedback').className = ''; 
+            document.getElementById('speed-feedback').innerText = "";
+            document.getElementById('q-count').innerText = state.questionIndex + 1;
+
+            const item = database[state.questionIndex];
+            state.currentQ = item;
+            state.startTime = Date.now();
+
+            document.getElementById('reading-text').innerHTML = `<p>${item.text}</p>`;
+            document.getElementById('display-sentence').innerHTML = item.q;
+            
+            if(Math.random() > 0.5) setOptions(item.correct, item.wrong, item.correct);
+            else setOptions(item.wrong, item.correct, item.correct);
+        }
+
+        function setOptions(txt1, txt2, correctVal) {
+            const btn1 = document.getElementById('btn1'); const btn2 = document.getElementById('btn2');
+            btn1.innerHTML = txt1; btn1.onclick = () => checkAnswer(txt1 === correctVal, btn1);
+            btn2.innerHTML = txt2; btn2.onclick = () => checkAnswer(txt2 === correctVal, btn2);
+        }
+
+        function checkAnswer(isCorrect, element) {
+            const fb = document.getElementById('feedback');
+            const timeDelta = Date.now() - state.startTime;
+            
+            // Hacker Speed ajustado para 8 segundos (Tempo de Ler 3 linhas e clicar)
+            const isSpeed = timeDelta < 8000; 
+
+            if (isCorrect) {
+                state.combo++;
+                let xpGain = 10 + (state.combo * 2); 
+                if(isSpeed) xpGain += 5;
+                addXP(xpGain);
+                
+                fb.innerText = "COMPREENDIDO!"; fb.style.color = "#00e676"; fb.className = "visible";
+                element.classList.add('correct');
+                triggerCasinoEffect(15);
+                
+                if (state.combo % 10 === 0) { playAudio('milestone'); triggerCoinRain(40); } 
+                else if (state.combo > 1) { playAudio('combo'); } 
+                else { playAudio('win'); }
+                
+                if(isSpeed) document.getElementById('speed-feedback').innerText = "⚡ LEITURA RÁPIDA!";
+
+                const comboEl = document.getElementById('combo-feedback');
+                comboEl.innerText = `COMBO x${state.combo}`; comboEl.classList.add('show');
+                document.getElementById('progress-bar').style.width = ((state.questionIndex + 1) % 100) + '%';
+
+                setTimeout(() => { comboEl.classList.remove('show'); state.questionIndex++; generate(); }, 1000);
+            } else {
+                state.combo = 0; 
+                addXP(-5); 
+                fb.innerText = "FALHA DE LEITURA!";
+                fb.style.color = "#ff1744"; fb.className = "visible";
+                element.classList.add('wrong');
+                playAudio('error');
+                
+                const card = document.getElementById('game-card-element');
+                card.classList.add('shake-effect');
+                setTimeout(() => card.classList.remove('shake-effect'), 400);
+                document.getElementById('combo-feedback').classList.remove('show');
+            }
+        }
+
+        function addXP(val) {
+            xp = Math.max(0, xp + val); 
+            localStorage.setItem('ffes_xp', xp); 
+            document.getElementById('xp-val').innerText = xp;
+        }
+
+        window.onload = startGame;
+    </script>
+</body>
+</html>

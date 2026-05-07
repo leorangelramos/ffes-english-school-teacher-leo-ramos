@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>FFES | Gap Sniper: Treino de Reflexo (2 a 5 palavras)</title>
+    <meta name="title" content="FFES | Gap Sniper: Treino de Reflexo (2 a 5 palavras)">
+    <meta name="description" content="100 desafios rápidos. Frases ultracurtas. Treine seu reflexo gramatical e elimine a tradução mental com o método FFES.">
+    <meta name="keywords" content="exercícios de lacunas inglês, aprender inglês rápido, frases curtas inglês, teacher leo ramos, ffes">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="Portuguese">
+    <meta name="author" content="Teacher Leo Ramos">
+    
+    <link rel="canonical" href="https://teacherleoramos.com.br/PWA/Pasta009/quiz07gaps.html">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-M8ZG06010Q"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-M8ZG06010Q');
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LearningResource",
+      "name": "Simulador Gap Sniper - FFES",
+      "description": "Banco de 200 exercícios de alta velocidade focados em frases de 2 a 5 palavras para treinar reflexos gramaticais.",
+      "url": "https://teacherleoramos.com.br/PWA/Pasta009/quiz07gaps.html",
+      "learningResourceType": "Quiz",
+      "educationalAlignment": {
+        "@type": "AlignmentObject",
+        "alignmentType": "educationalSubject",
+        "targetName": "English Structural Reflexes"
+      },
+      "isPartOf": {
+        "@type": "CollectionPage",
+        "url": "https://teacherleoramos.com.br/PWA/Pasta009/indexpasta009.html"
+      }
+    }
+    </script>
+
+    <link rel="stylesheet" href="/CSS/style-app.css">
+
+    <style>
+        /* === ENGINE DE GAMIFICAÇÃO - TEMA CIANO NEON === */
+        .game-wrapper { width: 100%; max-width: 600px; display: flex; flex-direction: column; gap: 20px; z-index: 10; margin: 0 auto; }
+        
+        .game-card { background: rgba(0, 0, 0, 0.7); backdrop-filter: blur(10px); border: 2px solid #00e5ff; border-radius: 24px; padding: 30px 20px; text-align: center; box-shadow: 0 10px 40px rgba(0, 229, 255, 0.2); min-height: 180px; display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; }
+        
+        #display-sentence { font-size: 2rem; font-weight: 900; line-height: 1.4; color: #fff; text-shadow: 0 2px 10px rgba(0,0,0,0.8); z-index: 2; letter-spacing: 1px;}
+        .gap { color: #00e5ff; font-weight: 900; border-bottom: 4px solid #00e5ff; display: inline-block; min-width: 80px; text-shadow: 0 0 10px rgba(0, 229, 255, 0.5);}
+        
+        .game-controls { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; width: 100%; }
+        .btn-option { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255,255,255,0.2); color: #fff; padding: 20px; font-size: 1.4rem; font-weight: 900; border-radius: 16px; cursor: pointer; transition: all 0.2s ease; text-transform: lowercase;}
+        .btn-option:hover { border-color: #00e5ff; background: rgba(0, 229, 255, 0.1); transform: translateY(-3px); }
+        .btn-option.correct { background: #00e676 !important; color: #000 !important; border-color: #00e676 !important; }
+        .btn-option.wrong { background: #ff1744 !important; opacity: 0.5; }
+
+        #feedback { height: 30px; text-align: center; font-weight: 900; letter-spacing: 2px; text-transform: uppercase; transition: all 0.2s; opacity: 0; margin-bottom: 10px; }
+        #feedback.visible { opacity: 1; transform: translateY(-5px); }
+        
+        .xp-pill { background: rgba(0, 0, 0, 0.5); border: 1px solid #00e5ff; padding: 5px 15px; border-radius: 50px; color: #00e5ff; font-weight: 900; font-size: 1.1rem; margin-top: 10px; display: inline-block; }
+        .feedback-float { position: absolute; top: -15px; right: -10px; font-weight: 900; font-size: 0.9rem; color: #000; background: #00e5ff; padding: 5px 12px; border-radius: 20px; border: 1px solid #fff; opacity: 0; transform: translateY(10px); transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); z-index: 5; box-shadow: 0 0 10px #00e5ff;}
+        .feedback-float.show { opacity: 1; transform: translateY(0) rotate(5deg); }
+        .speed-badge { position: absolute; bottom: 10px; width: 100%; left: 0; text-align: center; font-size: 0.75rem; color: #00e676; font-weight: 900; letter-spacing: 1px; text-transform: uppercase; }
+
+        .progress-track { width: 100%; height: 5px; background: rgba(255,255,255,0.1); position: fixed; top: 0; left: 0; z-index: 1000; }
+        .progress-fill { height: 100%; background: #00e5ff; width: 0%; transition: width 0.3s ease; box-shadow: 0 0 10px #00e5ff; }
+
+        .casino-coin { position: fixed; width: 25px; height: 25px; background: #00e5ff; border-radius: 50%; box-shadow: 0 0 15px rgba(0, 229, 255, 1); pointer-events: none; z-index: 9999; top: 50%; left: 50%; transform: translate(-50%, -50%); border: 2px solid #fff; }
+        @keyframes coin-explosion { 0% { transform: translate(-50%, -50%) scale(0.5); opacity: 1; } 100% { transform: translate(var(--tx), var(--ty)) scale(1.2) rotate(360deg); opacity: 0; } }
+        
+        .rain-coin { position: fixed; width: 35px; height: 35px; background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45" fill="%2300e5ff" stroke="%23fff" stroke-width="5"/><text x="50" y="65" font-size="40" text-anchor="middle" font-weight="bold" fill="%23000" font-family="Arial">XP</text></svg>') no-repeat center; background-size: contain; pointer-events: none; z-index: 9999; top: -50px; animation: coin-drop linear forwards; }
+        @keyframes coin-drop { 0% { transform: translateY(0) rotate(0deg); opacity: 1; } 100% { transform: translateY(110vh) rotate(360deg); opacity: 0.8; } }
+        
+        @keyframes shake { 0%, 100% { transform: translateX(0); } 20%, 60% { transform: translateX(-8px); } 40%, 80% { transform: translateX(8px); } }
+        .shake-effect { animation: shake 0.4s ease-in-out; border-color: #ff1744 !important; box-shadow: 0 0 20px rgba(255, 23, 68, 0.5) !important;}
+
+        .btn-voltar { display: block; margin: 30px auto; padding: 15px 30px; background: transparent; border: 2px solid #00e5ff; color: #00e5ff; border-radius: 50px; text-decoration: none; font-weight: 900; text-align: center; max-width: 300px; text-transform: uppercase; transition: all 0.3s; }
+        .btn-voltar:hover { background: #00e5ff; color: #000; box-shadow: 0 0 15px #00e5ff;}
+    </style>
+</head>
+<body>
+
+    <div class="progress-track"><div class="progress-fill" id="progress-bar"></div></div>
+
+    <header class="glass-header" style="text-align: center; padding: 20px;">
+        <h1 style="color: #fff; margin-bottom: 5px;">GAP <span style="color: #00e5ff;">SNIPER</span></h1>
+        <p class="subtitle" style="color: #ccc;">Reflexo de Trincheira (2 a 5 Palavras)</p>
+        <div class="xp-pill">XP: <span id="xp-val">0</span></div>
+        <div style="font-size: 0.85rem; font-weight: bold; color: #00e5ff; margin-top: 5px;">Alvos Atingidos: <span id="q-count">0</span> / 100</div>
+    </header>
+
+    <main style="max-width: 800px; margin: 20px auto; padding: 0 20px;">
+        <div id="game-container" class="game-wrapper">
+            <div id="feedback"></div>
+            
+            <div class="game-card" id="game-card-element">
+                <div id="combo-feedback" class="feedback-float">COMBO x2</div>
+                <div id="speed-feedback" class="speed-badge"></div>
+                <div id="display-sentence" style="display:flex; justify-content:center; align-items:center; height:100px;">
+                    Carregando Lacunas...
+                </div>
+            </div>
+
+            <div class="game-controls" id="ab-controls">
+                <button id="btn1" class="btn-option" onclick="checkAnswer(1)"></button>
+                <button id="btn2" class="btn-option" onclick="checkAnswer(2)"></button>
+            </div>
+        </div>
+
+        <a href="indexpasta009.html" class="btn-voltar">⬅ Sair da Missão</a>
+    </main>
+
+    <script>
+        // === 1. BANCO DE DADOS: 200 FRASES (Máx 5 palavras, Mín 2 palavras) ===
+        // Isso força reconhecimento de padrão instintivo.
+        const rawDB = [
+            // Verbo to Be / Pronomes
+            "I ___ ready.|am|is", "You ___ late.|are|is", "He ___ tall.|is|are", "She ___ smart.|is|am",
+            "It ___ cold.|is|are", "We ___ tired.|are|is", "They ___ here.|are|am", "I ___ not.|am|is",
+            "Are you ___?|sure|sures", "Is he ___?|mad|mads", "Is she ___?|sad|sads", "Is it ___?|hot|hots",
+            "Are we ___?|lost|losed", "Are they ___?|new|news", "This is ___.|mine|my", "That is ___.|yours|your",
+            "These are ___.|bad|badly", "Those are ___.|good|goods", "It is ___.|true|truly", "You are ___.|right|rights",
+            
+            // Verbos de Ação / Rotina
+            "I ___ it.|like|likes", "Do you ___?|care|cares", "He ___ me.|knows|know", "She ___ this.|wants|want",
+            "We ___ help.|need|needs", "They ___ well.|play|plays", "Go ___ now.|away|way", "Stop ___ that.|doing|do",
+            "Look ___ me.|at|to", "Listen to ___.|her|she", "Walk with ___.|us|we", "Talk to ___.|him|he",
+            "Read the ___.|book|books", "Write a ___.|letter|letters", "Drive the ___.|car|cars", "Open the ___.|door|doors",
+            "Close the ___.|window|windows", "Turn it ___.|on|in", "Turn it ___.|off|of", "Wait for ___.|me|I",
+            
+            // Modais
+            "I ___ swim.|can|cans", "You ___ go.|must|musts", "He ___ stay.|should|shoulds", "She ___ win.|will|wills",
+            "It ___ rain.|might|mights", "We ___ help.|would|woulds", "They ___ try.|could|coulds", "Can you ___?|fly|flies",
+            "Must I ___?|pay|pays", "Should we ___?|wait|waits", "Will they ___?|come|comes", "I ___ see.|cannot|cannots",
+            "You must ___.|not|no", "He shouldn't ___.|talk|talks", "She ___ cry.|won't|willn't", "It couldn't ___.|be|is",
+            "We wouldn't ___.|know|knows", "They may ___.|leave|leaves", "I shall ___.|pass|passes", "Can it ___?|work|works",
+            
+            // Preposições
+            "Go to ___.|bed|the bed", "He is ___.|at home|in home", "In the ___.|box|boxes", "On the ___.|table|tables",
+            "Listen ___ this.|to|at", "Think ___ it.|about|on", "Depend ___ me.|on|of", "Believe ___ God.|in|on",
+            "Good ___ math.|at|in", "Afraid ___ dogs.|of|from", "Married ___ her.|to|with", "Arrive ___ London.|in|at",
+            "Arrive ___ school.|at|in", "Ask ___ help.|for|to", "Pay ___ it.|for|to", "Smile ___ me.|at|to",
+            "Belong ___ me.|to|for", "Wait ___ him.|for|to", "Look ___ that.|at|in", "Talk ___ them.|to|on",
+            
+            // Adjetivos / Advérbios
+            "He is ___.|very tall|very tallly", "She runs ___.|fast|fastly", "They are ___.|good|well", "I speak ___.|well|good",
+            "It is ___.|too easy|two easy", "He is ___.|so tired|such tired", "You are ___.|very kind|much kind", "She is ___.|quite young|quiet young",
+            "Work ___.|hard|hardly", "It looks ___.|bad|badly", "Tastes ___.|good|well", "Feels ___.|nice|nicely",
+            "He drives ___.|safely|safe", "Be ___.|careful|carefully", "Speak ___.|quietly|quiet", "It is ___.|wrong|wrongly",
+            "You did ___.|great|greatly", "I am ___.|happy|happily", "Act ___.|normal|normally", "She is ___.|beautiful|beautifully",
+            
+            // Perguntas Rápidas
+            "Who is ___?|he|him", "What is ___?|that|those", "Where are ___?|they|them", "When is ___?|it|its",
+            "Why are ___?|you|your", "How are ___?|you|yours", "Which is ___?|it|its", "Whose is ___?|this|these",
+            "Do you ___?|know|knows", "Does he ___?|care|cares", "Did she ___?|go|went", "Are we ___?|late|lately",
+            "Is it ___?|true|truly", "Can they ___?|swim|swims", "Will you ___?|come|comes", "Should I ___?|stay|stays",
+            "Must we ___?|pay|pays", "Have you ___?|seen|see", "Has she ___?|left|leave", "Had they ___?|eaten|ate",
+            
+            // Negativas e Fixas
+            "I do ___.|not|no", "He does ___.|not|no", "She did ___.|not|no", "We are ___.|not|no",
+            "They were ___.|not|no", "I have ___.|no money|not money", "He has ___.|no time|not time", "She is ___.|never late|ever late",
+            "We rarely ___.|go|goes", "They seldom ___.|win|wins", "Do ___ cry.|not|no", "Let's ___ go.|not|no",
+            "Have ___ fear.|no|not", "Say ___ more.|no|not", "See ___ evil.|no|not", "Hear ___ sound.|no|not",
+            "Make ___ mistake.|no|not", "Take ___ prisoners.|no|not", "Leave ___ trace.|no|not", "Show ___ mercy.|no|not",
+            
+            // Phrasal Verbs (Ações Duplas Curtas)
+            "Wake ___.|up|down", "Sit ___.|down|up", "Stand ___.|up|in", "Go ___.|away|way",
+            "Come ___.|in|on", "Get ___.|out|in", "Look ___.|out|in", "Watch ___.|out|in",
+            "Give ___.|up|down", "Keep ___.|on|in", "Hold ___.|on|in", "Move ___.|on|up",
+            "Turn ___.|around|round", "Break ___.|down|up", "Fall ___.|down|up", "Grow ___.|up|down",
+            "Hurry ___.|up|down", "Slow ___.|down|up", "Calm ___.|down|up", "Shut ___.|up|down",
+            
+            // Quantificadores e Artigos
+            "I need ___.|a car|an car", "He is ___.|an idiot|a idiot", "She has ___.|an apple|a apple", "We want ___.|some water|a water",
+            "They have ___.|any money|an money", "Do you have ___?|any|some", "I have ___.|many friends|much friends", "She has ___.|much time|many time",
+            "We need ___.|a few days|a little days", "They have ___.|little hope|few hope", "Give me ___.|that one|those one", "I want ___.|these shoes|this shoes",
+            "Take ___ book.|every|all", "All ___ know.|people|person", "Every ___ counts.|day|days", "I saw ___.|both birds|each birds",
+            "Each ___ left.|of them|of they", "Choose ___ one.|either|both", "Neither ___ works.|one|ones", "I have ___.|no idea|not idea",
+            
+            // Random Punchy Phrases
+            "Let me ___.|go|goes", "Make him ___.|pay|pays", "Help us ___.|win|wins", "See you ___.|later|late",
+            "Talk to ___.|me|I", "Call her ___.|now|then", "Send it ___.|back|front", "Take it ___.|easy|easily",
+            "Keep it ___.|real|really", "Stay with ___.|us|we", "Leave them ___.|alone|lonely", "Find the ___.|keys|keying",
+            "Lock the ___.|door|doors", "Wash your ___.|hands|hand", "Brush your ___.|teeth|tooth", "Clean the ___.|room|rooms",
+            "Fix the ___.|car|cars", "Buy some ___.|food|foods", "Drink some ___.|water|waters", "Enjoy the ___.|trip|trips"
+        ];
+
+        let database = [];
+        
+        // Conversão do Array cru em Objetos de Jogo (Separando a Lacuna)
+        rawDB.forEach(item => {
+            let parts = item.split('|');
+            let phrase = parts[0];
+            let correct = parts[1];
+            let wrong = parts[2];
+            
+            // O HTML da lacuna com estilo forte
+            let formattedPhrase = phrase.replace("___", "<span class='gap'>_____</span>");
+            
+            database.push({ 
+                q: formattedPhrase, 
+                correct: correct, 
+                wrong: wrong 
+            });
+        });
+
+        // Embaralhar as 200 questões e fatiar apenas 100 para o "Simulador de Guerra"
+        database = database.sort(() => Math.random() - 0.5).slice(0, 100);
+
+        // === 2. MOTOR DE ÁUDIO E EFEITOS DOPAMINA ===
+        const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        function playAudio(type) {
+            if (audioCtx.state === 'suspended') { audioCtx.resume(); }
+            const t = audioCtx.currentTime;
+            if(type === 'win') {
+                const osc = audioCtx.createOscillator(); const gain = audioCtx.createGain();
+                osc.connect(gain); gain.connect(audioCtx.destination);
+                osc.type = 'sine'; osc.frequency.setValueAtTime(1000, t);
+                gain.gain.setValueAtTime(0.05, t); gain.gain.exponentialRampToValueAtTime(0.01, t + 0.15);
+                osc.start(t); osc.stop(t + 0.15);
+            } else if(type === 'error') {
+                const osc = audioCtx.createOscillator(); const gain = audioCtx.createGain();
+                osc.connect(gain); gain.connect(audioCtx.destination);
+                osc.type = 'sawtooth'; osc.frequency.setValueAtTime(120, t); osc.frequency.linearRampToValueAtTime(80, t + 0.25);
+                gain.gain.setValueAtTime(0.08, t); gain.gain.exponentialRampToValueAtTime(0.01, t + 0.3);
+                osc.start(t); osc.stop(t + 0.3);
+            } else if(type === 'combo') {
+                const osc = audioCtx.createOscillator(); const gain = audioCtx.createGain();
+                osc.connect(gain); gain.connect(audioCtx.destination);
+                osc.type = 'square'; const baseFreq = Math.min(500 + (state.combo * 60), 1500);
+                osc.frequency.setValueAtTime(baseFreq, t); osc.frequency.linearRampToValueAtTime(baseFreq + 200, t + 0.15); 
+                gain.gain.setValueAtTime(0.05, t); gain.gain.exponentialRampToValueAtTime(0.01, t + 0.2);
+                osc.start(t); osc.stop(t + 0.2);
+            } else if(type === 'milestone') {
+                [523.25, 659.25, 783.99, 1046.50, 1318.5].forEach((f, i) => {
+                    const osc = audioCtx.createOscillator(); const gain = audioCtx.createGain();
+                    osc.type = 'triangle'; osc.frequency.setValueAtTime(f, t + (i * 0.08)); 
+                    gain.gain.setValueAtTime(0.1, t + (i * 0.08)); gain.gain.exponentialRampToValueAtTime(0.01, t + (i * 0.08) + 1.0);
+                    osc.connect(gain); gain.connect(audioCtx.destination);
+                    osc.start(t + (i * 0.08)); osc.stop(t + (i * 0.08) + 1.0);
+                });
+            }
+        }
+
+        function triggerCasinoEffect(amount = 20) {
+            for (let i = 0; i < amount; i++) {
+                const coin = document.createElement('div');
+                coin.classList.add('casino-coin');
+                const angle = Math.random() * Math.PI * 2;
+                const distance = 80 + Math.random() * 150; 
+                coin.style.setProperty('--tx', Math.cos(angle) * distance + 'px');
+                coin.style.setProperty('--ty', Math.sin(angle) * distance + 'px');
+                coin.style.animation = `coin-explosion ${0.4 + Math.random() * 0.4}s ease-out forwards`;
+                document.body.appendChild(coin);
+                setTimeout(() => coin.remove(), 1000);
+            }
+        }
+
+        function triggerCoinRain(amount = 80) {
+            for (let i = 0; i < amount; i++) {
+                const coin = document.createElement('div');
+                coin.classList.add('rain-coin');
+                coin.style.left = Math.random() * 100 + 'vw';
+                coin.style.animationDuration = (1.2 + Math.random() * 1.5) + 's';
+                coin.style.animationDelay = (Math.random() * 1.0) + 's';
+                document.body.appendChild(coin);
+                setTimeout(() => coin.remove(), 3000);
+            }
+        }
+
+        // === 3. CONTROLE DE ESTADO E EXECUÇÃO ===
+        let xp = parseInt(localStorage.getItem('ffes_xp') || 0);
+        document.getElementById('xp-val').innerText = xp;
+        let state = { currentQ: null, combo: 0, startTime: 0, questionIndex: 0 };
+
+        function startGame() { generate(); }
+
+        function generate() {
+            if(state.questionIndex >= 100) {
+                document.getElementById('display-sentence').innerHTML = "REFLEXO MÁXIMO ATINGIDO!<br><span style='color:#00e5ff; font-size:1.5rem;'>100/100</span>";
+                document.getElementById('ab-controls').style.display = 'none';
+                playAudio('milestone'); triggerCoinRain(100);
+                return;
+            }
+
+            document.querySelectorAll('.btn-option').forEach(b => b.className = 'btn-option');
+            document.getElementById('feedback').className = ''; 
+            document.getElementById('speed-feedback').innerText = "";
+            document.getElementById('q-count').innerText = state.questionIndex + 1;
+
+            const item = database[state.questionIndex];
+            state.currentQ = item;
+            state.startTime = Date.now();
+
+            document.getElementById('display-sentence').innerHTML = item.q;
+            
+            if(Math.random() > 0.5) setOptions(item.correct, item.wrong, item.correct);
+            else setOptions(item.wrong, item.correct, item.correct);
+        }
+
+        function setOptions(txt1, txt2, correctVal) {
+            const btn1 = document.getElementById('btn1'); const btn2 = document.getElementById('btn2');
+            btn1.innerHTML = txt1; btn1.onclick = () => checkAnswer(txt1 === correctVal, btn1);
+            btn2.innerHTML = txt2; btn2.onclick = () => checkAnswer(txt2 === correctVal, btn2);
+        }
+
+        function checkAnswer(isCorrect, element) {
+            const fb = document.getElementById('feedback');
+            const timeDelta = Date.now() - state.startTime;
+            
+            // Tempo Hacker Speed reduzido (apenas 2 segundos) pois as frases são minúsculas
+            const isSpeed = timeDelta < 2000; 
+
+            if (isCorrect) {
+                state.combo++;
+                let xpGain = 10 + (state.combo * 2); 
+                if(isSpeed) xpGain += 5;
+                addXP(xpGain);
+                
+                fb.innerText = "BULLSEYE!"; fb.style.color = "#00e676"; fb.className = "visible";
+                element.classList.add('correct');
+                triggerCasinoEffect(20);
+                
+                if (state.combo % 10 === 0) { playAudio('milestone'); triggerCoinRain(40); } 
+                else if (state.combo > 1) { playAudio('combo'); } 
+                else { playAudio('win'); }
+                
+                if(isSpeed) document.getElementById('speed-feedback').innerText = "⚡ HACKER SPEED!";
+
+                const comboEl = document.getElementById('combo-feedback');
+                comboEl.innerText = `COMBO x${state.combo}`; comboEl.classList.add('show');
+                document.getElementById('progress-bar').style.width = ((state.questionIndex + 1) % 100) + '%';
+
+                setTimeout(() => { comboEl.classList.remove('show'); state.questionIndex++; generate(); }, 1000);
+            } else {
+                state.combo = 0; 
+                addXP(-5); // Punição por errar frase curta
+                fb.innerText = "MISS!";
+                fb.style.color = "#ff1744"; fb.className = "visible";
+                element.classList.add('wrong');
+                playAudio('error');
+                
+                const card = document.getElementById('game-card-element');
+                card.classList.add('shake-effect');
+                setTimeout(() => card.classList.remove('shake-effect'), 400);
+                document.getElementById('combo-feedback').classList.remove('show');
+            }
+        }
+
+        function addXP(val) {
+            xp = Math.max(0, xp + val); 
+            localStorage.setItem('ffes_xp', xp); 
+            document.getElementById('xp-val').innerText = xp;
+        }
+
+        window.onload = startGame;
+    </script>
+</body>
+</html>

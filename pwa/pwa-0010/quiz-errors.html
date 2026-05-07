@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>FFES | Error Sniper: O Caça-Erros</title>
+    <meta name="title" content="FFES | Error Sniper: O Caça-Erros">
+    <meta name="description" content="100 desafios implacáveis de auditoria gramatical. Encontre e elimine os piores vícios de linguagem e erros comuns do inglês.">
+    <meta name="keywords" content="quiz caça erros inglês, corrigir gramática inglês, erros comuns brasileiros inglês, teacher leo ramos, ffes">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="Portuguese">
+    <meta name="author" content="Teacher Leo Ramos">
+    
+    <link rel="canonical" href="https://teacherleoramos.com.br/PWA/Pasta010/quiz06errors.html">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-M8ZG06010Q"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-M8ZG06010Q');
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LearningResource",
+      "name": "Simulador Error Sniper - FFES",
+      "description": "Ferramenta de auditoria que submete o aluno a 100 testes rápidos para identificar e corrigir erros clássicos no idioma inglês.",
+      "url": "https://teacherleoramos.com.br/PWA/Pasta010/quiz06errors.html",
+      "learningResourceType": "Quiz",
+      "educationalAlignment": {
+        "@type": "AlignmentObject",
+        "alignmentType": "educationalSubject",
+        "targetName": "English Grammar Correction"
+      },
+      "isPartOf": {
+        "@type": "CollectionPage",
+        "url": "https://teacherleoramos.com.br/PWA/Pasta010/indexpasta010.html"
+      }
+    }
+    </script>
+
+    <link rel="stylesheet" href="/CSS/style-app.css">
+
+    <style>
+        /* === ENGINE DE GAMIFICAÇÃO - TEMA ALERTA VERMELHO === */
+        .game-wrapper { width: 100%; max-width: 600px; display: flex; flex-direction: column; gap: 20px; z-index: 10; margin: 0 auto; }
+        
+        .game-card { background: rgba(0, 0, 0, 0.7); backdrop-filter: blur(10px); border: 2px solid #ff3d00; border-radius: 24px; padding: 30px 20px; text-align: center; box-shadow: 0 10px 40px rgba(255, 61, 0, 0.2); min-height: 180px; display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; }
+        
+        #display-sentence { font-size: 1.4rem; font-weight: 700; line-height: 1.4; color: #fff; text-shadow: 0 2px 10px rgba(0,0,0,0.8); z-index: 2; }
+        .highlight-alert { color: #ff3d00; font-weight: 900; text-transform: uppercase; letter-spacing: 1px; }
+        
+        .game-controls { display: flex; flex-direction: column; gap: 15px; width: 100%; }
+        .btn-option { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255,255,255,0.2); color: #fff; padding: 20px; font-size: 1.15rem; font-weight: 700; border-radius: 16px; cursor: pointer; transition: all 0.2s ease; line-height: 1.3;}
+        .btn-option:hover { border-color: #ff3d00; background: rgba(255, 61, 0, 0.1); transform: translateY(-3px); }
+        .btn-option.correct { background: #00e676 !important; color: #000 !important; border-color: #00e676 !important; font-weight: 900; }
+        .btn-option.wrong { background: #ff1744 !important; opacity: 0.5; }
+
+        #feedback { height: 30px; text-align: center; font-weight: 900; letter-spacing: 2px; text-transform: uppercase; transition: all 0.2s; opacity: 0; margin-bottom: 10px; }
+        #feedback.visible { opacity: 1; transform: translateY(-5px); }
+        
+        .xp-pill { background: rgba(0, 0, 0, 0.5); border: 1px solid #ff3d00; padding: 5px 15px; border-radius: 50px; color: #ff3d00; font-weight: 900; font-size: 1.1rem; margin-top: 10px; display: inline-block; }
+        .feedback-float { position: absolute; top: -15px; right: -10px; font-weight: 900; font-size: 0.9rem; color: #fff; background: #ff3d00; padding: 5px 12px; border-radius: 20px; border: 1px solid #fff; opacity: 0; transform: translateY(10px); transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); z-index: 5; box-shadow: 0 0 10px #ff3d00;}
+        .feedback-float.show { opacity: 1; transform: translateY(0) rotate(5deg); }
+        .speed-badge { position: absolute; bottom: 10px; width: 100%; left: 0; text-align: center; font-size: 0.75rem; color: #00e676; font-weight: 900; letter-spacing: 1px; text-transform: uppercase; }
+
+        .progress-track { width: 100%; height: 5px; background: rgba(255,255,255,0.1); position: fixed; top: 0; left: 0; z-index: 1000; }
+        .progress-fill { height: 100%; background: #ff3d00; width: 0%; transition: width 0.3s ease; box-shadow: 0 0 10px #ff3d00; }
+
+        .casino-coin { position: fixed; width: 25px; height: 25px; background: #ff3d00; border-radius: 50%; box-shadow: 0 0 15px rgba(255, 61, 0, 1); pointer-events: none; z-index: 9999; top: 50%; left: 50%; transform: translate(-50%, -50%); border: 2px solid #fff; }
+        @keyframes coin-explosion { 0% { transform: translate(-50%, -50%) scale(0.5); opacity: 1; } 100% { transform: translate(var(--tx), var(--ty)) scale(1.2) rotate(360deg); opacity: 0; } }
+        
+        .rain-coin { position: fixed; width: 35px; height: 35px; background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45" fill="%23ff3d00" stroke="%23fff" stroke-width="5"/><text x="50" y="65" font-size="40" text-anchor="middle" font-weight="bold" fill="%23fff" font-family="Arial">XP</text></svg>') no-repeat center; background-size: contain; pointer-events: none; z-index: 9999; top: -50px; animation: coin-drop linear forwards; }
+        @keyframes coin-drop { 0% { transform: translateY(0) rotate(0deg); opacity: 1; } 100% { transform: translateY(110vh) rotate(360deg); opacity: 0.8; } }
+        
+        @keyframes shake { 0%, 100% { transform: translateX(0); } 20%, 60% { transform: translateX(-8px); } 40%, 80% { transform: translateX(8px); } }
+        .shake-effect { animation: shake 0.4s ease-in-out; border-color: #ff1744 !important; box-shadow: 0 0 20px rgba(255, 23, 68, 0.5) !important;}
+
+        .btn-voltar { display: block; margin: 30px auto; padding: 15px 30px; background: transparent; border: 2px solid #ff3d00; color: #ff3d00; border-radius: 50px; text-decoration: none; font-weight: 900; text-align: center; max-width: 300px; text-transform: uppercase; transition: all 0.3s; }
+        .btn-voltar:hover { background: #ff3d00; color: #fff; box-shadow: 0 0 15px #ff3d00;}
+    </style>
+</head>
+<body>
+
+    <div class="progress-track"><div class="progress-fill" id="progress-bar"></div></div>
+
+    <header class="glass-header" style="text-align: center; padding: 20px;">
+        <h1 style="color: #fff; margin-bottom: 5px;">ERROR <span style="color: #ff3d00;">SNIPER</span></h1>
+        <p class="subtitle" style="color: #ccc;">Auditoria Gramatical de Elite</p>
+        <div class="xp-pill">XP: <span id="xp-val">0</span></div>
+        <div style="font-size: 0.85rem; font-weight: bold; color: #ff3d00; margin-top: 5px;">Erros Eliminados: <span id="q-count">0</span> / 100</div>
+    </header>
+
+    <main style="max-width: 800px; margin: 20px auto; padding: 0 20px;">
+        <div id="game-container" class="game-wrapper">
+            <div id="feedback"></div>
+            
+            <div class="game-card" id="game-card-element">
+                <div id="combo-feedback" class="feedback-float">COMBO x2</div>
+                <div id="speed-feedback" class="speed-badge"></div>
+                <div id="display-sentence">Iniciando Escaneamento Sintático...</div>
+            </div>
+
+            <div class="game-controls" id="ab-controls">
+                <button id="btn1" class="btn-option" onclick="checkAnswer(1)"></button>
+                <button id="btn2" class="btn-option" onclick="checkAnswer(2)"></button>
+            </div>
+        </div>
+
+        <a href="indexpasta010.html" class="btn-voltar">⬅ Abortar Auditoria</a>
+    </main>
+
+    <script>
+        // === 1. BANCO DE DADOS DE AUDITORIA: OS PIORES VÍCIOS DE LINGUAGEM ===
+        const errorTraps = [
+            { c: "I am 20 years old.", w: "I have 20 years." },
+            { c: "She is married to a doctor.", w: "She is married with a doctor." },
+            { c: "It depends on the weather.", w: "It depends of the weather." },
+            { c: "I listen to music every day.", w: "I listen music every day." },
+            { c: "I missed the bus this morning.", w: "I lost the bus this morning." },
+            { c: "Can I ask a question?", w: "Can I make a question?" },
+            { c: "I made a mistake.", w: "I did a mistake." },
+            { c: "I agree with you.", w: "I am agree with you." },
+            { c: "Can you explain it to me?", w: "Can you explain me?" },
+            { c: "I need some information.", w: "I need some informations." },
+            { c: "Let me give you some advice.", w: "Let me give you an advice." },
+            { c: "We need new equipment.", w: "We need new equipments." },
+            { c: "People are crazy.", w: "Peoples is crazy." },
+            { c: "Everybody is here.", w: "Everybody are here." },
+            { c: "He doesn't like pizza.", w: "He don't like pizza." },
+            { c: "She goes to work by car.", w: "She go to work by car." },
+            { c: "Did you go to the party?", w: "Did you went to the party?" },
+            { c: "I didn't see him.", w: "I didn't saw him." },
+            { c: "I will go tomorrow.", w: "I will to go tomorrow." },
+            { c: "I must study hard.", w: "I must to study hard." },
+            { c: "I have been here for 3 hours.", w: "I am here since 3 hours." },
+            { c: "I look forward to seeing you.", w: "I look forward to see you." },
+            { c: "I am good at playing tennis.", w: "I am good in playing tennis." },
+            { c: "She is afraid of dogs.", w: "She is afraid from dogs." },
+            { c: "This is my house.", w: "This house is mine house." },
+            { c: "Whose book is this?", w: "Who book is this?" },
+            { c: "I like it very much.", w: "I like very much." },
+            { c: "I play tennis.", w: "I play to tennis." },
+            { c: "She works as a nurse.", w: "She works like a nurse." },
+            { c: "He told me the truth.", w: "He said me the truth." },
+            { c: "We discussed the problem.", w: "We discussed about the problem." },
+            { c: "I arrived in London.", w: "I arrived to London." },
+            { c: "I am going home.", w: "I am going to home." },
+            { c: "There is a cat in the garden.", w: "Have a cat in the garden." },
+            { c: "I have a lot of homework.", w: "I have a lot of homeworks." },
+            { c: "Could you do me a favor?", w: "Could you make me a favor?" },
+            { c: "I usually go to bed at midnight.", w: "I usually go to sleep at midnight." },
+            { c: "She smiled at me.", w: "She smiled to me." },
+            { c: "I paid for the meal.", w: "I paid the meal." },
+            { c: "I prefer coffee to tea.", w: "I prefer coffee than tea." },
+            { c: "He lacks experience.", w: "He lacks of experience." },
+            { c: "Despite the rain, we went out.", w: "Despite of the rain, we went out." },
+            { c: "She is the same age as me.", w: "She is the same age than me." },
+            { c: "I want to take a picture.", w: "I want to take a photo." }, // Not entirely wrong, but usually "take a picture/photo" not "make a photo"
+            { c: "I want to take a photo.", w: "I want to make a photo." },
+            { c: "We had a lot of fun.", w: "We had very fun." },
+            { c: "She is very beautiful.", w: "She is very beautifully." },
+            { c: "I am interested in art.", w: "I am interested on art." },
+            { c: "I am tired of waiting.", w: "I am tired from waiting." },
+            { c: "They are looking at the sky.", w: "They are looking the sky." }
+        ];
+
+        let database = [];
+        
+        // Multiplicador de Foco: Gera 100 perguntas baseadas nas armadilhas
+        errorTraps.forEach(item => {
+            // TIPO 1: Identifique o Correto
+            database.push({ 
+                q: `<span class="highlight-alert">AUDITORIA:</span><br>Qual é a frase estruturalmente PERFEITA?`, 
+                correct: item.c, 
+                wrong: item.w 
+            });
+            
+            // TIPO 2: Identifique o Erro Fatal (Lógica Invertida)
+            database.push({ 
+                q: `<span class="highlight-alert">ELIMINAR AMEAÇA:</span><br>Qual destas frases contém um ERRO GRAMATICAL FATAL?`, 
+                correct: item.w, 
+                wrong: item.c 
+            });
+        });
+
+        // Embaralhar as 100 questões (50 pares x 2 tipos = 100 perguntas)
+        database = database.sort(() => Math.random() - 0.5).slice(0, 100);
+
+        // === 2. MOTOR DE ÁUDIO E EFEITOS DOPAMINA ===
+        const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        function playAudio(type) {
+            if (audioCtx.state === 'suspended') { audioCtx.resume(); }
+            const t = audioCtx.currentTime;
+            if(type === 'win') {
+                const osc = audioCtx.createOscillator(); const gain = audioCtx.createGain();
+                osc.connect(gain); gain.connect(audioCtx.destination);
+                osc.type = 'sine'; osc.frequency.setValueAtTime(900, t);
+                gain.gain.setValueAtTime(0.05, t); gain.gain.exponentialRampToValueAtTime(0.01, t + 0.15);
+                osc.start(t); osc.stop(t + 0.15);
+            } else if(type === 'error') {
+                const osc = audioCtx.createOscillator(); const gain = audioCtx.createGain();
+                osc.connect(gain); gain.connect(audioCtx.destination);
+                osc.type = 'sawtooth'; osc.frequency.setValueAtTime(120, t); osc.frequency.linearRampToValueAtTime(80, t + 0.25);
+                gain.gain.setValueAtTime(0.08, t); gain.gain.exponentialRampToValueAtTime(0.01, t + 0.3);
+                osc.start(t); osc.stop(t + 0.3);
+            } else if(type === 'combo') {
+                const osc = audioCtx.createOscillator(); const gain = audioCtx.createGain();
+                osc.connect(gain); gain.connect(audioCtx.destination);
+                osc.type = 'square'; const baseFreq = Math.min(400 + (state.combo * 50), 1200);
+                osc.frequency.setValueAtTime(baseFreq, t); osc.frequency.linearRampToValueAtTime(baseFreq + 200, t + 0.15); 
+                gain.gain.setValueAtTime(0.05, t); gain.gain.exponentialRampToValueAtTime(0.01, t + 0.2);
+                osc.start(t); osc.stop(t + 0.2);
+            } else if(type === 'milestone') {
+                [523.25, 659.25, 783.99, 1046.50, 1318.5].forEach((f, i) => {
+                    const osc = audioCtx.createOscillator(); const gain = audioCtx.createGain();
+                    osc.type = 'triangle'; osc.frequency.setValueAtTime(f, t + (i * 0.08)); 
+                    gain.gain.setValueAtTime(0.1, t + (i * 0.08)); gain.gain.exponentialRampToValueAtTime(0.01, t + (i * 0.08) + 1.0);
+                    osc.connect(gain); gain.connect(audioCtx.destination);
+                    osc.start(t + (i * 0.08)); osc.stop(t + (i * 0.08) + 1.0);
+                });
+            }
+        }
+
+        function triggerCasinoEffect(amount = 20) {
+            for (let i = 0; i < amount; i++) {
+                const coin = document.createElement('div');
+                coin.classList.add('casino-coin');
+                const angle = Math.random() * Math.PI * 2;
+                const distance = 80 + Math.random() * 150; 
+                coin.style.setProperty('--tx', Math.cos(angle) * distance + 'px');
+                coin.style.setProperty('--ty', Math.sin(angle) * distance + 'px');
+                coin.style.animation = `coin-explosion ${0.5 + Math.random() * 0.5}s ease-out forwards`;
+                document.body.appendChild(coin);
+                setTimeout(() => coin.remove(), 1000);
+            }
+        }
+
+        function triggerCoinRain(amount = 80) {
+            for (let i = 0; i < amount; i++) {
+                const coin = document.createElement('div');
+                coin.classList.add('rain-coin');
+                coin.style.left = Math.random() * 100 + 'vw';
+                coin.style.animationDuration = (1.5 + Math.random() * 1.5) + 's';
+                coin.style.animationDelay = (Math.random() * 1.0) + 's';
+                document.body.appendChild(coin);
+                setTimeout(() => coin.remove(), 3500);
+            }
+        }
+
+        // === 3. CONTROLE DE ESTADO E EXECUÇÃO ===
+        let xp = parseInt(localStorage.getItem('ffes_xp') || 0);
+        document.getElementById('xp-val').innerText = xp;
+        let state = { currentQ: null, combo: 0, startTime: 0, questionIndex: 0 };
+
+        function startGame() { generate(); }
+
+        function generate() {
+            if(state.questionIndex >= 100) {
+                document.getElementById('display-sentence').innerHTML = "SISTEMA PURIFICADO!<br><span style='color:#00e676'>100/100</span>";
+                document.getElementById('ab-controls').style.display = 'none';
+                playAudio('milestone'); triggerCoinRain(100);
+                return;
+            }
+
+            document.querySelectorAll('.btn-option').forEach(b => b.className = 'btn-option');
+            document.getElementById('feedback').className = ''; 
+            document.getElementById('speed-feedback').innerText = "";
+            document.getElementById('q-count').innerText = state.questionIndex + 1;
+
+            const item = database[state.questionIndex];
+            state.currentQ = item;
+            state.startTime = Date.now();
+
+            document.getElementById('display-sentence').innerHTML = item.q;
+            
+            if(Math.random() > 0.5) setOptions(item.correct, item.wrong, item.correct);
+            else setOptions(item.wrong, item.correct, item.correct);
+        }
+
+        function setOptions(txt1, txt2, correctVal) {
+            const btn1 = document.getElementById('btn1'); const btn2 = document.getElementById('btn2');
+            btn1.innerHTML = txt1; btn1.onclick = () => checkAnswer(txt1 === correctVal, btn1);
+            btn2.innerHTML = txt2; btn2.onclick = () => checkAnswer(txt2 === correctVal, btn2);
+        }
+
+        function checkAnswer(isCorrect, element) {
+            const fb = document.getElementById('feedback');
+            const timeDelta = Date.now() - state.startTime;
+            const isSpeed = timeDelta < 3000; // Tempo de Hacker Speed ajustado por serem frases longas
+
+            if (isCorrect) {
+                state.combo++;
+                let xpGain = 15 + (state.combo * 3); 
+                if(isSpeed) xpGain += 10;
+                addXP(xpGain);
+                
+                fb.innerText = "AMEAÇA ELIMINADA!"; fb.style.color = "#00e676"; fb.className = "visible";
+                element.classList.add('correct');
+                triggerCasinoEffect(20);
+                
+                if (state.combo % 10 === 0) { playAudio('milestone'); triggerCoinRain(40); } 
+                else if (state.combo > 1) { playAudio('combo'); } 
+                else { playAudio('win'); }
+                
+                if(isSpeed) document.getElementById('speed-feedback').innerText = "⚡ REFLEXO AUDITOR!";
+
+                const comboEl = document.getElementById('combo-feedback');
+                comboEl.innerText = `COMBO x${state.combo}`; comboEl.classList.add('show');
+                document.getElementById('progress-bar').style.width = ((state.questionIndex + 1) % 100) + '%';
+
+                setTimeout(() => { comboEl.classList.remove('show'); state.questionIndex++; generate(); }, 1400);
+            } else {
+                state.combo = 0; 
+                addXP(-10); // Punição rigorosa
+                fb.innerText = "FALHA GRAVE!";
+                fb.style.color = "#ff1744"; fb.className = "visible";
+                element.classList.add('wrong');
+                playAudio('error');
+                
+                const card = document.getElementById('game-card-element');
+                card.classList.add('shake-effect');
+                setTimeout(() => card.classList.remove('shake-effect'), 400);
+                document.getElementById('combo-feedback').classList.remove('show');
+            }
+        }
+
+        function addXP(val) {
+            xp = Math.max(0, xp + val); 
+            localStorage.setItem('ffes_xp', xp); 
+            document.getElementById('xp-val').innerText = xp;
+        }
+
+        window.onload = startGame;
+    </script>
+</body>
+</html>
