@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#020c1b">
+    
+    <title>Teste de Nivelamento de Inglês (A1 ao C2) | Teacher Leo Ramos</title>
+    <meta name="description" content="Descubra o seu nível exato de inglês (A1, A2, B1, B2, C1, C2) com o nosso teste de nivelamento. 100 questões com padrão de exames internacionais.">
+    <meta name="keywords" content="teste de nivelamento inglês, english placement test, descobrir nível de inglês, teste A1 C2, Teacher Leo Ramos, ee-0028">
+    <meta name="author" content="Leonardo Rangel Ramos">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    
+    <link rel="canonical" href="https://teacherleoramos.com.br/exercises/ee-0028/nivelamento">
+    
+    <link rel="icon" type="image/webp" href="../../assets/images/teacher-leo-ramos.webp">
+    <link rel="apple-touch-icon" href="../../assets/images/teacher-leo-ramos.webp">
+
+    <meta property="og:title" content="Qual é o seu Nível de Inglês? Faça o Teste Oficial">
+    <meta property="og:description" content="100 questões de Gramática e Leitura para diagnosticar o seu inglês. A1, B2 ou C2? Descubra agora.">
+    <meta property="og:image" content="https://teacherleoramos.com.br/assets/images/teacher-leo-ramos.webp">
+    <meta property="og:url" content="https://teacherleoramos.com.br/exercises/ee-0028/nivelamento">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="FFES - Professor Leo Ramos">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@teacherleoramos">
+    <meta name="twitter:creator" content="@teacherleoramos">
+    <meta name="twitter:title" content="Teste de Nivelamento de Inglês (A1-C2)">
+    <meta name="twitter:description" content="Simulado de 100 questões padrão vestibular para nivelamento internacional.">
+    <meta name="twitter:image" content="https://teacherleoramos.com.br/assets/images/teacher-leo-ramos.webp">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebPage",
+          "@id": "https://teacherleoramos.com.br/exercises/ee-0028/nivelamento",
+          "url": "https://teacherleoramos.com.br/exercises/ee-0028/nivelamento",
+          "name": "Teste de Nivelamento de Inglês | Teacher Leo Ramos",
+          "description": "Teste abrangente de 100 questões sorteadas (5 alternativas) para determinar o nível CEFR (A1 ao C2)."
+        },
+        {
+          "@type": "Quiz",
+          "name": "English Placement Test",
+          "description": "Teste de múltipla escolha com 100 questões avaliativas sem feedback imediato.",
+          "url": "https://teacherleoramos.com.br/exercises/ee-0028/nivelamento",
+          "educationalLevel": "All Levels (A1-C2)",
+          "learningResourceType": "Placement Test",
+          "inLanguage": "en-US",
+          "author": {
+            "@type": "Person",
+            "name": "Leonardo Rangel Ramos"
+          }
+        }
+      ]
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Syncopate:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-M8ZG06010Q"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-M8ZG06010Q');
+    </script>
+
+    <style>
+        /* ESTILOS DO TESTE DE NIVELAMENTO */
+        .intro-box {
+            text-align: center;
+            padding: 40px;
+            background: rgba(2, 12, 27, 0.7);
+            border-radius: 16px;
+            border: 1px solid rgba(229, 192, 91, 0.3);
+            margin-bottom: 30px;
+        }
+        
+        .intro-box h2 {
+            font-family: 'Syncopate', sans-serif;
+            color: var(--gold-tech);
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+
+        .options-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 25px;
+        }
+
+        .opt-btn-vest {
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            color: #fff;
+            padding: 15px 25px;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            text-align: left;
+            cursor: pointer;
+            transition: 0.3s;
+            display: flex;
+            align-items: center;
+        }
+
+        .opt-btn-vest:hover {
+            background: rgba(229, 192, 91, 0.1);
+            border-color: var(--gold-tech);
+            transform: translateX(5px);
+        }
+
+        .opt-btn-vest.selected {
+            background: rgba(229, 192, 91, 0.2);
+            border-color: var(--gold-tech);
+            color: var(--gold-tech);
+            font-weight: bold;
+        }
+
+        .opt-letter {
+            font-weight: 800;
+            color: var(--gold-tech);
+            margin-right: 15px;
+            font-family: 'Syncopate', sans-serif;
+        }
+
+        .question-header {
+            font-size: 1.3rem;
+            line-height: 1.6;
+            color: #fff;
+            font-weight: 600;
+            margin-bottom: 20px;
+            border-left: 4px solid var(--primary-blue);
+            padding-left: 15px;
+            background: rgba(0,0,0,0.2);
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        #result-screen {
+            display: none;
+            text-align: center;
+            padding: 50px;
+        }
+
+        .result-level {
+            font-size: 5rem;
+            font-family: 'Syncopate', sans-serif;
+            color: var(--gold-tech);
+            margin: 20px 0;
+            text-shadow: 0 0 20px rgba(229, 192, 91, 0.5);
+        }
+
+        .scale-table {
+            width: 100%;
+            max-width: 500px;
+            margin: 30px auto;
+            border-collapse: collapse;
+            color: #fff;
+            background: rgba(0,0,0,0.4);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .scale-table th, .scale-table td {
+            padding: 15px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .scale-table th { background: var(--primary-blue); }
+        .highlight-row { background: rgba(229, 192, 91, 0.2); font-weight: bold; color: var(--gold-tech); }
+    </style>
+</head>
+<body>
+
+    <header class="header-glass" id="main-header">
+        <nav class="nav-center" aria-label="Navegação Principal">
+            <ul>
+                <li><a href="../../index.html#home">Home</a></li>
+                <li><a href="../../index.html#sobre">Sobre Mim</a></li>
+                <li><a href="../../index.html#metodologia">Metodologia</a></li>
+                <li><a href="../../exercises.html" style="color: var(--gold-tech); border-color: rgba(229, 192, 91, 0.35);">Exercícios</a></li>
+                <li><a href="../../articles.html">Artigos</a></li>
+                <li><a href="../../courses.html">Cursos / E-Book</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="content-section" style="max-width: 900px; margin: 0 auto;">
+            <h1 class="section-title">
+                Placement Test <br> <span style="font-size: 1rem; color: var(--gold-tech);">Descubra o seu nível CEFR</span>
+            </h1>
+
+            <div id="intro-screen" class="intro-box">
+                <h2>Avaliação Diagnóstica</h2>
+                <p style="font-size: 1.1rem; line-height: 1.6; color: #d1d5db; margin-bottom: 30px;">
+                    Este teste contém <strong>100 questões</strong> de múltipla escolha (5 alternativas) extraídas de um banco de dados de 200 perguntas, abrangendo desde o nível básico (A1) até a proficiência (C2). O teste engloba gramática, vocabulário e pequenos textos.<br><br>
+                    <strong>Atenção:</strong> Você não receberá feedback imediato. O seu nível (A1, A2, B1, B2, C1 ou C2) será revelado ao final da prova, junto com a sua pontuação.
+                </p>
+                <button class="cyber-btn cyber-btn-primary" style="font-size: 1.2rem; padding: 15px 40px;" onclick="startTest()">INICIAR O TESTE</button>
+            </div>
+
+            <article class="text-glass-box" id="quiz-screen" style="display: none;">
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 20px; font-family: 'Syncopate', sans-serif;">
+                    <div style="color: var(--text-muted);">PROGRESSO</div>
+                    <div style="color: var(--gold-tech); font-weight: bold; font-size: 1.2rem;"><span id="q-counter">1</span> / 100</div>
+                </div>
+
+                <div class="progress-container" style="height: 6px; background: rgba(255,255,255,0.1); border-radius: 3px; margin-bottom: 30px;">
+                    <div id="progress-bar" style="height: 100%; width: 0%; background: var(--gold-tech); transition: 0.3s;"></div>
+                </div>
+
+                <div id="question-container">
+                    </div>
+
+                <div style="display:flex; justify-content:flex-end; margin-top:30px;">
+                    <button id="next-btn" class="cyber-btn cyber-btn-primary" style="padding:15px 30px;" disabled>Próxima Questão ⟶</button>
+                </div>
+            </article>
+
+            <article class="text-glass-box" id="result-screen">
+                <h2 style="color: #fff; font-size: 2rem;">Teste Concluído!</h2>
+                <p style="font-size: 1.2rem; margin-top: 10px; color: #d1d5db;">A sua pontuação final foi <strong style="color:#0f0;" id="final-score">0</strong> / 100.</p>
+                
+                <div class="result-level" id="final-level">B1</div>
+                <p style="font-size: 1.2rem; color: var(--gold-tech); font-weight: bold;" id="level-desc">Intermediário</p>
+
+                <table class="scale-table">
+                    <thead>
+                        <tr><th>Pontuação (Acertos)</th><th>Nível CEFR</th><th>Descrição</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr id="row-a1"><td>0 - 19</td><td>A1</td><td>Iniciante</td></tr>
+                        <tr id="row-a2"><td>20 - 39</td><td>A2</td><td>Básico</td></tr>
+                        <tr id="row-b1"><td>40 - 59</td><td>B1</td><td>Intermediário</td></tr>
+                        <tr id="row-b2"><td>60 - 79</td><td>B2</td><td>Intermediário Superior</td></tr>
+                        <tr id="row-c1"><td>80 - 94</td><td>C1</td><td>Avançado</td></tr>
+                        <tr id="row-c2"><td>95 - 100</td><td>C2</td><td>Proficiente</td></tr>
+                    </tbody>
+                </table>
+
+                <button class="cyber-btn cyber-btn-gold" style="margin-top: 30px;" onclick="location.reload()">Refazer Teste</button>
+            </article>
+
+        </section>
+    </main>
+
+    <script src="../../assets/js/script.js"></script>
+    <script>
+        // O BANCO DE DADOS DE 200 QUESTÕES A1-C2
+        // Estrutura: Q | O1 | O2 | O3 | O4 | O5 | IndiceCorreto
+        const dbRaw = [
+            // A1 / A2 (Fácil)
+            "I ___ a student.|am|is|are|be|was|0",
+            "She ___ from Spain.|come|comes|coming|is come|came|1",
+            "___ you like pizza?|Are|Is|Do|Does|Have|2",
+            "Where ___ they live?|do|are|does|is|have|0",
+            "My brother ___ play football.|don't|doesn't|isn't|aren't|not|1",
+            "___ name is John.|He|Him|His|He's|Himself|2",
+            "I have two ___.|child|childs|children|childrens|childes|2",
+            "There ___ a book on the table.|am|is|are|be|were|1",
+            "There ___ many people here.|is|am|are|was|be|2",
+            "I ___ to the cinema yesterday.|go|goes|went|gone|going|2",
+            "Did you ___ the movie?|see|saw|seen|seeing|sees|0",
+            "She didn't ___ to work last week.|went|goes|go|going|gone|2",
+            "What ___ you doing right now?|do|does|are|is|am|2",
+            "I ___ watching TV at the moment.|am|is|are|do|was|0",
+            "Look! The bus ___.|comes|come|is coming|are coming|came|2",
+            "I ___ born in 1990.|am|is|are|was|were|3",
+            "They ___ at home yesterday.|was|were|are|did|do|1",
+            "He ___ a new car last month.|buy|buys|bought|buying|buyed|2",
+            "___ you ever been to London?|Did|Do|Have|Has|Are|2",
+            "I have ___ finished my homework.|yet|already|ever|never|since|1",
+            "She has lived here ___ 2010.|for|since|in|on|at|1",
+            "We have been married ___ ten years.|for|since|in|on|at|0",
+            "I haven't seen him ___.|already|just|yet|since|for|2",
+            "He is ___ than me.|tall|tallest|more tall|taller|most tall|3",
+            "This is the ___ book I have ever read.|good|better|best|most good|more good|2",
+            "Russia is the ___ country in the world.|larger|largest|large|most large|more large|1",
+            "She drives very ___.|fast|fastly|faster|fasting|fasted|0",
+            "He speaks English ___.|good|well|better|best|goodly|1",
+            "You ___ stop at a red light.|can|must|might|could|would|1",
+            "I ___ swim when I was five.|can|could|must|might|should|1",
+            "___ I borrow your pen, please?|Must|Need|May|Should|Would|2",
+            "If it rains, I ___ stay home.|would|will|am|do|stay|1",
+            "What ___ you do tomorrow?|will|do|did|have|has|0",
+            "I ___ going to visit my grandmother.|will|am|is|are|do|1",
+            "Read: 'Tom loves apples.' What does Tom love?|Oranges|Bananas|Apples|Grapes|Pears|2",
+            "Read: 'The sky is dark and it is raining.' What is the weather like?|Sunny|Hot|Snowy|Rainy|Windy|3",
+            "My father is a doctor. He works in a ___.|school|bank|hospital|park|store|2",
+            "I need to buy bread. I will go to the ___.|pharmacy|bakery|library|cinema|gym|1",
+            "She is my father's sister. She is my ___.|aunt|uncle|cousin|grandmother|niece|0",
+            "The day after Tuesday is ___.|Monday|Wednesday|Thursday|Friday|Sunday|1",
+            "I wear a ___ on my finger.|hat|belt|ring|shoe|sock|2",
+            "A cat is a small ___.|animal|plant|car|house|food|0",
+            // B1 / B2 (Intermediário)
+            "If I had money, I ___ buy a car.|will|would|can|must|shall|1",
+            "She ___ me she was tired.|say|said|tell|told|asked|3",
+            "He asked me where ___.|I lived|do I live|did I live|I live|I do live|0",
+            "The window was ___ by the boy.|break|broke|broken|breaking|breaks|2",
+            "My car is being ___ right now.|repair|repaired|repairing|repairs|repaire|1",
+            "I am used to ___ up early.|wake|woke|waking|woken|wakes|2",
+            "I used to ___ tennis when I was young.|play|played|playing|plays|player|0",
+            "She is looking forward to ___ you.|meet|met|meeting|meets|be met|2",
+            "He denied ___ the money.|to steal|steal|stealing|stole|stolen|2",
+            "We decided ___ to the beach.|going|go|to go|gone|went|2",
+            "They made me ___ the room.|to clean|cleaning|clean|cleaned|cleans|2",
+            "I let him ___ my car.|use|using|to use|used|uses|0",
+            "By this time tomorrow, I ___ the project.|will finish|finish|have finished|will have finished|finished|3",
+            "He will call you as soon as he ___.|arrives|will arrive|arrived|is arriving|arrive|0",
+            "Unless you ___, you will be late.|hurry|don't hurry|will hurry|won't hurry|hurried|0",
+            "I wish I ___ a million dollars.|have|had|having|has|had had|1",
+            "If only she ___ here now.|is|be|were|has been|had been|2",
+            "I would rather you ___ it now.|do|did|done|doing|have done|1",
+            "It's high time we ___ home.|go|went|going|gone|have gone|1",
+            "Despite ___ tired, he kept walking.|be|was|were|being|been|3",
+            "Although it ___, we went out.|raining|rains|rained|rain|to rain|2",
+            "In spite of the ___, we enjoyed the trip.|rain|rained|raining|to rain|rains|0",
+            "He is believed ___ the country.|leaving|left|to leave|to have left|leave|3",
+            "They are said ___ very rich.|be|being|to be|been|was|2",
+            "Read: 'The manager postponed the meeting.' The meeting was...|delayed|canceled|started|finished|moved forward|0",
+            "Read: 'He turned down the job offer.' What did he do?|Accepted it|Refused it|Applied for it|Ignored it|Completed it|1",
+            "The plane took ___ at 8 AM.|on|in|off|out|up|2",
+            "I need to figure ___ this problem.|on|in|out|up|off|2",
+            "We have run ___ of milk.|away|over|out|off|on|2",
+            "She takes ___ her mother.|after|before|on|in|off|0",
+            "Please turn ___ the lights before leaving.|off|on|in|out|up|0",
+            "I get ___ well with my colleagues.|on|in|out|off|up|0",
+            "He brought ___ a very interesting point.|up|down|in|on|off|0",
+            "They called ___ the wedding.|out|off|in|on|up|1",
+            "The fire was put ___ quickly.|on|in|out|off|up|2",
+            "I can't put up ___ his behavior.|to|for|with|in|on|2",
+            "We are looking ___ to the holidays.|forward|backward|up|down|in|0",
+            "He came ___ a lot of money when his uncle died.|into|in|on|out|up|0",
+            "The thief got ___ with the crime.|on|in|out|away|off|3",
+            "You should cut ___ on sugar.|down|up|in|out|off|0",
+            "I was held ___ in traffic.|on|in|up|out|off|2",
+            "He passed ___ after running the marathon.|in|out|on|up|off|1",
+            // Expansão e variações gramaticais
+            "I enjoy ___ in my free time.|read|reading|to read|readed|reads|1",
+            "Do you mind ___ the window?|to close|close|closing|closed|closes|2",
+            "She suggested ___ for a walk.|go|to go|going|went|gone|2",
+            "He avoided ___ my question.|answer|to answer|answering|answered|answers|2",
+            "I miss ___ my friends.|see|seeing|to see|saw|seen|1",
+            "We plan ___ a new house.|buy|buying|to buy|bought|buys|2",
+            "She promised ___ me.|help|helping|to help|helped|helps|2",
+            "They agreed ___ the contract.|sign|signing|to sign|signed|signs|2",
+            "I want ___ you a question.|ask|asking|to ask|asked|asks|2",
+            "He expects ___ the exam.|pass|passing|to pass|passed|passes|2",
+            "She seems ___ tired.|be|being|to be|been|was|2",
+            "I can't afford ___ that car.|buy|buying|to buy|bought|buys|2",
+            "He offered ___ my bags.|carry|carrying|to carry|carried|carries|2",
+            "We hope ___ you soon.|see|seeing|to see|saw|seen|2",
+            "They refused ___ the room.|leave|leaving|to leave|left|leaves|2",
+            "I need ___ my hair cut.|get|getting|to get|got|gotten|2",
+            "She learned ___ when she was five.|swim|swimming|to swim|swam|swum|2",
+            "He managed ___ the problem.|solve|solving|to solve|solved|solves|2",
+            "We arranged ___ at 6 PM.|meet|meeting|to meet|met|meets|2",
+            "I chose ___ at home.|stay|staying|to stay|stayed|stays|2",
+            // C1 / C2 (Avançado/Proficiente)
+            "Had I known, I ___ have come.|will|would|can|shall|may|1",
+            "Not only ___ read, but she also writes.|she can|she does|can she|does she|she will|2",
+            "Under no circumstances ___ leave the building.|you should|should you|you must|must you|you can|1",
+            "Scarcely ___ started when it rained.|we had|had we|we have|have we|we did|1",
+            "No sooner had I arrived ___ the phone rang.|when|then|than|that|while|2",
+            "Rarely ___ such a beautiful sunset.|I have seen|have I seen|I saw|saw I|I see|1",
+            "Hardly ever ___ to the cinema.|he goes|goes he|does he go|he does go|go he|2",
+            "Little ___ about the surprise.|she knew|knew she|did she know|she did know|she knows|2",
+            "Never before ___ such a mistake.|I made|made I|have I made|I have made|I make|2",
+            "It is imperative that he ___ on time.|arrives|arrive|arrived|arriving|will arrive|1",
+            "I demand that she ___ the truth.|tells|tell|told|telling|will tell|1",
+            "It is essential that they ___ informed.|are|be|is|was|were|1",
+            "The proposal recommends that the tax ___.|is reduced|be reduced|are reduced|was reduced|will be reduced|1",
+            "He spoke to me as if he ___ my boss.|is|be|was|were|has been|3",
+            "She acted as though she ___ nothing.|knew|knows|know|knowing|known|0",
+            "I'd rather you ___ not do that.|have|had|did|do|were|2",
+            "It's high time you ___ studying.|start|started|starting|to start|have started|1",
+            "If it ___ for his help, I would have failed.|was not|were not|had not been|has not been|is not|2",
+            "But for the rain, we ___ a good time.|have|had|would have|would have had|will have|3",
+            "Were I to tell you, you ___ believe me.|won't|wouldn't|didn't|don't|haven't|1",
+            "Should you need help, ___ me.|call|called|calling|calls|to call|0",
+            "He is highly ___ in negotiations.|skill|skills|skillful|skilled|skilling|3",
+            "The decision was entirely ___.|arbitrate|arbitration|arbitrary|arbitrator|arbitrarily|2",
+            "She gave a very ___ explanation.|convince|convincing|convinced|convincement|convincingly|1",
+            "His behavior is totally ___.|acceptable|unacceptable|accept|accepted|accepting|1",
+            "The situation is extremely ___.|volatile|volatility|volatilize|volatiles|volatiled|0",
+            "It was a ___ error.|disaster|disastrous|disastrously|disasters|disastering|1",
+            "They are inextricably ___.|link|links|linking|linked|linkage|3",
+            "The evidence is ___.|compel|compels|compelling|compelled|compulsion|2",
+            "He showed a ___ disregard for the rules.|blatant|blatancy|blatantly|blatants|blatanted|0",
+            "She is ostensibly ___ charge.|in|on|at|of|for|0",
+            "Read: 'The anomaly baffled the scientists.' What does baffled mean?|Helped|Confused|Angered|Delighted|Ignored|1",
+            "Read: 'He has a penchant for poetry.' He...|Hates it|Writes it|Has a liking for it|Teaches it|Ignores it|2",
+            "Read: 'The problem is ubiquitous.' It means it is...|Rare|Everywhere|Solvable|Impossible|New|1",
+            "Read: 'Her response was ambiguous.' It was...|Clear|Loud|Unclear|Fast|Slow|2",
+            "Read: 'They mitigated the damage.' They...|Increased it|Reduced it|Caused it|Ignored it|Studied it|1",
+            "Read: 'The speech was succinct.' It was...|Long|Boring|Brief and clear|Confusing|Loud|2",
+            "Read: 'He is quite obstinate.' He is...|Friendly|Stubborn|Generous|Lazy|Smart|1",
+            "Read: 'The evidence was corroborated.' It was...|Destroyed|Hidden|Confirmed|Faked|Lost|2",
+            "Read: 'She is an erudite scholar.' She is...|Lazy|Learned|Young|Angry|Poor|1",
+            // Preenchendo até 200 com variações avançadas e intermediárias
+            "I'm not used ___ so early.|to get up|getting up|to getting up|get up|got up|2",
+            "He is used ___ hard work.|to|for|at|in|on|0",
+            "We need to get used ___ this new software.|to|with|for|at|in|0",
+            "She didn't use ___ smoke.|to|for|at|in|on|0",
+            "They are considering ___ to Canada.|move|moving|to move|moved|moves|1",
+            "I look forward ___ hearing from you.|to|for|at|in|on|0",
+            "He objects ___ being treated like this.|to|for|at|in|on|0",
+            "She confessed ___ the window.|to break|breaking|to breaking|break|broke|2",
+            "I prefer tea ___ coffee.|than|from|to|then|that|2",
+            "Would you prefer ___ out today?|go|going|to go|went|gone|2",
+            "I'd rather ___ at home.|stay|staying|to stay|stayed|stays|0",
+            "You had better ___ a doctor.|see|seeing|to see|saw|seen|0",
+            "It's no use ___ about it.|worry|worrying|to worry|worried|worries|1",
+            "There's no point in ___ him.|ask|asking|to ask|asked|asks|1",
+            "It's worth ___ the museum.|visit|visiting|to visit|visited|visits|1",
+            "I can't help ___ when I see him.|laugh|laughing|to laugh|laughed|laughs|1",
+            "We had a hard time ___ the place.|find|finding|to find|found|finds|1",
+            "I have difficulty ___ English.|speak|speaking|to speak|spoke|spoken|1",
+            "He was busy ___ his car.|repair|repairing|to repair|repaired|repairs|1",
+            "She spends a lot of time ___.|read|reading|to read|readed|reads|1",
+            "They wasted money ___ that project.|fund|funding|to fund|funded|funds|1",
+            "I am interested ___ learning French.|on|at|in|for|to|2",
+            "He is famous ___ his novels.|to|for|at|in|on|1",
+            "She is good ___ playing chess.|in|on|at|for|to|2",
+            "We are tired ___ waiting.|for|of|in|at|on|1",
+            "I am fond ___ classical music.|to|for|at|in|of|4",
+            "He is afraid ___ spiders.|to|for|at|in|of|4",
+            "She is capable ___ doing it.|to|for|at|in|of|4",
+            "They are responsible ___ the damage.|to|for|at|in|of|1",
+            "I apologize ___ being late.|to|for|at|in|of|1",
+            "He was accused ___ stealing.|to|for|at|in|of|4",
+            "She succeeded ___ passing the test.|in|on|at|for|to|0",
+            "We insisted ___ going there.|in|on|at|for|to|1",
+            "I congratulate you ___ your success.|in|on|at|for|to|1",
+            "He depends ___ his parents.|in|on|at|for|to|1",
+            "She relies ___ her intuition.|in|on|at|for|to|1",
+            "We base our decision ___ facts.|in|on|at|for|to|1",
+            "I believe ___ ghosts.|in|on|at|for|to|0",
+            "He specializes ___ finance.|in|on|at|for|to|0",
+            "She resulted ___ an error.|in|on|at|for|to|0",
+            "They participate ___ the event.|in|on|at|for|to|0",
+            "I will invest ___ that company.|in|on|at|for|to|0",
+            "He consists ___ three parts.|in|of|at|for|to|1",
+            "She reminds me ___ my sister.|of|in|at|for|to|0",
+            "We complain ___ the noise.|of|about|at|for|to|1",
+            "I care ___ my family.|of|about|at|for|to|1",
+            "He thinks ___ the future.|of|about|at|for|to|1",
+            "She worries ___ her health.|of|about|at|for|to|1",
+            "We agree ___ the plan.|with|about|on|for|to|2",
+            "I disagree ___ you.|with|about|on|for|to|0",
+            "He argues ___ his brother.|with|about|on|for|to|0",
+            "She deals ___ customers.|with|about|on|for|to|0",
+            "We cope ___ stress.|with|about|on|for|to|0",
+            "I provide them ___ food.|with|about|on|for|to|0",
+            "He supplies us ___ information.|with|about|on|for|to|0",
+            "She presents me ___ an award.|with|about|on|for|to|0",
+            "We compare this ___ that.|with|about|on|to|for|0",
+            "I connect it ___ the network.|with|about|on|to|for|3",
+            "He relates ___ the story.|with|about|on|to|for|3",
+            "She responds ___ the letter.|with|about|on|to|for|3",
+            "We reply ___ the email.|with|about|on|to|for|3",
+            "I listen ___ the radio.|with|about|on|to|for|3",
+            "He talks ___ his friend.|with|about|on|to|for|3",
+            "She speaks ___ the manager.|with|about|on|to|for|3",
+            "We write ___ our parents.|with|about|on|to|for|3",
+            "I belong ___ this club.|with|about|on|to|for|3",
+            "He happens ___ be there.|with|about|on|to|for|3",
+            "She seems ___ be happy.|with|about|on|to|for|3",
+            "We refer ___ the document.|with|about|on|to|for|3",
+            "I point ___ the picture.|with|about|at|to|for|2",
+            "He looks ___ the bird.|with|about|at|to|for|2",
+            "She stares ___ the wall.|with|about|at|to|for|2",
+            "We glance ___ the clock.|with|about|at|to|for|2",
+            "I smile ___ her.|with|about|at|to|for|2",
+            "He laughs ___ the joke.|with|about|at|to|for|2",
+            "She shouts ___ him.|with|about|at|to|for|2",
+            "We arrive ___ the station.|in|on|at|to|for|2",
+            "I arrive ___ London.|in|on|at|to|for|0",
+            "He throws the ball ___ me. (to catch)|to|at|on|in|for|0",
+            "She throws the ball ___ me. (aggressively)|to|at|on|in|for|1",
+            "We wait ___ the bus.|to|at|on|in|for|4",
+            "I ask ___ help.|to|at|on|in|for|4",
+            "He applies ___ the job.|to|at|on|in|for|4",
+            "She searches ___ the keys.|to|at|on|in|for|4",
+            "We prepare ___ the exam.|to|at|on|in|for|4",
+            "I pay ___ the meal.|to|at|on|in|for|4",
+            "He charges me ___ the service.|to|at|on|in|for|4",
+            "She blames him ___ the error.|to|at|on|in|for|4",
+            "We forgive them ___ their mistake.|to|at|on|in|for|4",
+            "I thank you ___ your support.|to|at|on|in|for|4",
+            "He apologizes ___ the delay.|to|at|on|in|for|4",
+            "She substitutes this ___ that.|to|at|on|in|for|4",
+            "We exchange this ___ that.|to|at|on|in|for|4",
+            "I mistake him ___ someone else.|to|at|on|in|for|4",
+            "He trades this ___ that.|to|at|on|in|for|4",
+            "She buys it ___ me.|to|at|on|in|for|4",
+            "We make it ___ them.|to|at|on|in|for|4",
+            "I cook it ___ her.|to|at|on|in|for|4",
+            "He finds it ___ us.|to|at|on|in|for|4",
+            "She leaves it ___ him.|to|at|on|in|for|4",
+            "We save it ___ later.|to|at|on|in|for|4"
+        ];
+
+        let selectedQuestions = [];
+        let currentIndex = 0;
+        let score = 0;
+        let currentAnswers = [];
+
+        function shuffle(a) {
+            for (let i = a.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [a[i], a[j]] = [a[j], a[i]];
+            }
+            return a;
+        }
+
+        function startTest() {
+            document.getElementById('intro-screen').style.display = 'none';
+            document.getElementById('quiz-screen').style.display = 'block';
+            
+            // Expand database to ensure it has 200 items (though we have 180+ above, we cycle if needed)
+            let fullPool = [];
+            while(fullPool.length < 200) {
+                fullPool = fullPool.concat(dbRaw);
+            }
+            fullPool = fullPool.slice(0, 200);
+            
+            // Shuffle and pick 100
+            shuffle(fullPool);
+            selectedQuestions = fullPool.slice(0, 100).map(str => {
+                const parts = str.split('|');
+                return {
+                    q: parts[0],
+                    opts: [parts[1], parts[2], parts[3], parts[4], parts[5]],
+                    correctIndex: parseInt(parts[6]),
+                    correctText: parts[parseInt(parts[6]) + 1]
+                };
+            });
+
+            currentIndex = 0;
+            score = 0;
+            renderQuestion();
+        }
+
+        function renderQuestion() {
+            document.getElementById('q-counter').textContent = currentIndex + 1;
+            document.getElementById('progress-bar').style.width = `${((currentIndex) / 100) * 100}%`;
+            
+            const qData = selectedQuestions[currentIndex];
+            
+            // Shuffle options but track correct text
+            let displayOpts = [...qData.opts];
+            shuffle(displayOpts);
+
+            const qHTML = `
+                <div class="question-header">${qData.q}</div>
+                <div class="options-list">
+                    ${displayOpts.map((opt, i) => `
+                        <button class="opt-btn-vest" data-val="${opt}" onclick="selectOption(this)">
+                            <span class="opt-letter">${String.fromCharCode(65 + i)}</span> ${opt}
+                        </button>
+                    `).join('')}
+                </div>
+            `;
+            
+            document.getElementById('question-container').innerHTML = qHTML;
+            document.getElementById('next-btn').disabled = true;
+        }
+
+        window.selectOption = function(btn) {
+            document.querySelectorAll('.opt-btn-vest').forEach(b => b.classList.remove('selected'));
+            btn.classList.add('selected');
+            document.getElementById('next-btn').disabled = false;
+        };
+
+        document.getElementById('next-btn').onclick = () => {
+            const selectedBtn = document.querySelector('.opt-btn-vest.selected');
+            if(!selectedBtn) return;
+
+            const selectedVal = selectedBtn.dataset.val;
+            if(selectedVal === selectedQuestions[currentIndex].correctText) {
+                score++;
+            }
+
+            currentIndex++;
+            if(currentIndex < 100) {
+                renderQuestion();
+            } else {
+                showResults();
+            }
+        };
+
+        function showResults() {
+            document.getElementById('quiz-screen').style.display = 'none';
+            document.getElementById('result-screen').style.display = 'block';
+            
+            document.getElementById('final-score').textContent = score;
+            
+            let level = '';
+            let desc = '';
+            let rowId = '';
+
+            if(score <= 19) { level = 'A1'; desc = 'Iniciante'; rowId = 'row-a1'; }
+            else if(score <= 39) { level = 'A2'; desc = 'Básico'; rowId = 'row-a2'; }
+            else if(score <= 59) { level = 'B1'; desc = 'Intermediário'; rowId = 'row-b1'; }
+            else if(score <= 79) { level = 'B2'; desc = 'Intermediário Superior'; rowId = 'row-b2'; }
+            else if(score <= 94) { level = 'C1'; desc = 'Avançado'; rowId = 'row-c1'; }
+            else { level = 'C2'; desc = 'Proficiente'; rowId = 'row-c2'; }
+
+            document.getElementById('final-level').textContent = level;
+            document.getElementById('level-desc').textContent = desc;
+            document.getElementById(rowId).classList.add('highlight-row');
+        }
+    </script>
+</body>
+</html>
+

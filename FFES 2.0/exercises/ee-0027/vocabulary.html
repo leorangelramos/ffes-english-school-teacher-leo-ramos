@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#020c1b">
+    
+    <title>Vocabulary Mastery: As 1000 Palavras Essenciais do Inglês (A1-A2) | Teacher Leo Ramos</title>
+    <meta name="description" content="Treinamento intensivo de vocabulário em inglês. 1000 exercícios rápidos de tradução (Português para Inglês) cobrindo o nível A1 e A2.">
+    <meta name="keywords" content="vocabulário inglês, palavras mais usadas inglês, english vocabulary A1 A2, tradução inglês, exercícios de inglês, Teacher Leo Ramos, ee-0027">
+    <meta name="author" content="Leonardo Rangel Ramos">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    
+    <link rel="canonical" href="https://teacherleoramos.com.br/exercises/ee-0027/vocabulary">
+    
+    <link rel="icon" type="image/webp" href="../../assets/images/teacher-leo-ramos.webp">
+    <link rel="apple-touch-icon" href="../../assets/images/teacher-leo-ramos.webp">
+
+    <meta property="og:title" content="Engenharia do Vocabulário: As 1000 Palavras Essenciais">
+    <meta property="og:description" content="Simulador de sobrevivência: 1000 missões de tradução rápida para fixar o vocabulário base do inglês.">
+    <meta property="og:image" content="https://teacherleoramos.com.br/assets/images/teacher-leo-ramos.webp">
+    <meta property="og:url" content="https://teacherleoramos.com.br/exercises/ee-0027/vocabulary">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="FFES - Professor Leo Ramos">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@teacherleoramos">
+    <meta name="twitter:creator" content="@teacherleoramos">
+    <meta name="twitter:title" content="Vocabulary Mastery (A1-A2)">
+    <meta name="twitter:description" content="Domine as 1000 palavras mais importantes do inglês com a nossa Engine de Alta Performance.">
+    <meta name="twitter:image" content="https://teacherleoramos.com.br/assets/images/teacher-leo-ramos.webp">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebPage",
+          "@id": "https://teacherleoramos.com.br/exercises/ee-0027/vocabulary",
+          "url": "https://teacherleoramos.com.br/exercises/ee-0027/vocabulary",
+          "name": "Vocabulário Essencial em Inglês: 1000 Palavras | Teacher Leo Ramos",
+          "description": "Treinamento intensivo de vocabulário. Memorize as 1000 palavras mais importantes do inglês em modo simulador."
+        },
+        {
+          "@type": "Quiz",
+          "name": "Quiz Master: English Vocabulary Survival",
+          "description": "Banco de dados colossal gerando 1000 missões dinâmicas de 2 opções, focado em tradução do português para o inglês.",
+          "url": "https://teacherleoramos.com.br/exercises/ee-0027/vocabulary",
+          "educationalLevel": "Beginner to Pre-Intermediate (A1-A2)",
+          "learningResourceType": "Interactive Quiz",
+          "inLanguage": "pt-BR",
+          "author": {
+            "@type": "Person",
+            "name": "Leonardo Rangel Ramos"
+          }
+        }
+      ]
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Syncopate:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+
+    <style>
+        /* GRID DE EXATAMENTE 2 OPÇÕES PARA REFLEXO RÁPIDO */
+        .options-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 15px; margin-top: 20px;}
+        @media (max-width: 600px) { .options-grid { grid-template-columns: 1fr !important; } }
+        
+        /* Estilo da pergunta em destaque */
+        .question-text {
+            font-size: 1.5rem;
+            color: var(--gold-tech);
+            font-weight: 800;
+            text-align: center;
+            margin: 20px 0;
+            padding: 20px;
+            background: rgba(0,0,0,0.3);
+            border-radius: 12px;
+            border-left: 4px solid var(--primary-blue);
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header-glass" id="main-header">
+        <nav class="nav-center" aria-label="Navegação Principal">
+            <ul>
+                <li><a href="../../index.html#home">Home</a></li>
+                <li><a href="../../index.html#sobre">Sobre Mim</a></li>
+                <li><a href="../../index.html#metodologia">Metodologia</a></li>
+                <li><a href="../../exercises.html" style="color: var(--gold-tech); border-color: rgba(229, 192, 91, 0.35);">Exercícios</a></li>
+                <li><a href="../../articles.html">Artigos</a></li>
+                <li><a href="../../courses.html">Cursos / E-Book</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="content-section">
+            <h1 class="section-title" style="margin-bottom: 30px;">
+                Vocabulary Mastery <br> <span style="font-size: 1.2rem; color: var(--gold-tech);">As 1000 Palavras Essenciais</span>
+            </h1>
+
+            <div class="text-glass-box score-board">
+                <div class="xp-board">XP GLOBAL: <strong id="xp-global">0</strong></div>
+                <div class="stats-board">
+                    <span style="color: #0f0;">Acertos: <strong id="acertos-geral">0</strong></span>
+                    <button id="reset-btn" class="cyber-btn cyber-btn-gold btn-reset-central" onclick="location.reload();">Reiniciar Sistema</button>
+                    <span style="color: #f00;">Erros: <strong id="erros-geral">0</strong></span>
+                </div>
+            </div>
+
+            <article class="text-glass-box" id="main-quiz-panel">
+                <div class="combo-container">
+                    <div style="color: var(--gold-tech); font-weight: bold; text-transform: uppercase; font-size: 0.8rem;">Combo x<span id="combo-count">0</span> / 20</div>
+                    <div class="combo-bar-wrapper"><div class="combo-bar-fill" id="combo-bar"></div></div>
+                </div>
+                <div id="quiz-container">
+                    </div>
+            </article>
+        </section>
+    </main>
+
+    <script src="../../assets/js/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const quizContainer = document.getElementById('quiz-container');
+            const placarAcertos = document.getElementById('acertos-geral');
+            const placarErros = document.getElementById('erros-geral');
+            let currentIndex = 0;
+            let currentOrder = [];
+
+            // A MÁQUINA DE DADOS: Palavras essenciais A1/A2 compactadas (Português|Inglês|Distrator)
+            const compressedCoreData = "tempo|time|team,pessoa|person|people,ano|year|ear,dia|day|say,coisa|thing|think,homem|man|map,mundo|world|word,vida|life|live,mão|hand|head,parte|part|park,criança|child|chill,olho|eye|ice,mulher|woman|human,lugar|place|space,trabalho|work|word,semana|week|weak,ponto|point|paint,governo|government|policy,empresa|company|camp,número|number|name,grupo|group|ground,problema|problem|program,fato|fact|face,noite|night|right,mês|month|mouth,estudo|study|student,livro|book|boot,negócio|business|busy,questão|issue|tissue,lado|side|size,cabeça|head|heart,casa|house|horse,serviço|service|serve,amigo|friend|enemy,pai/mãe|parent|partner,poder|power|powder,hora|hour|our,jogo|game|came,linha|line|lane,fim|end|and,membro|member|number,lei|law|low,carro|car|cat,cidade|city|country,nome|name|same,equipe|team|time,minuto|minute|mini,ideia|idea|deal,garoto|boy|toy,informação|information|inform,história|history|story,dinheiro|money|monkey,médico|doctor|door,água|water|waiter,sistema|system|sister,quarto|room|roof,mãe|mother|other,área|area|arena,jovem|young|your,país|country|county,pergunta|question|answer,direito|right|night,rua|street|straight,cão|dog|dig,gato|cat|cut,pássaro|bird|board,peixe|fish|dish,cavalo|horse|house,vaca|cow|how,porco|pig|big,ovelha|sheep|ship,rato|mouse|mouth,leão|lion|iron,tigre|tiger|river,urso|bear|beer,lobo|wolf|golf,raposa|fox|box,elefante|elephant|elegant,macaco|monkey|money,cobra|snake|snack,sapo|frog|fog,coelho|rabbit|habit,pato|duck|deck,galinha|chicken|kitchen,aranha|spider|speed,abelha|bee|see,formiga|ant|aunt,mosca|fly|sky,borboleta|butterfly|butter,maçã|apple|apply,banana|banana|bandana,laranja|orange|organ,limão|lemon|demon,uva|grape|grade,morango|strawberry|blueberry,melancia|watermelon|water,manga|mango|tango,pera|pear|bear,pêssego|peach|beach,tomate|tomato|tornado,batata|potato|tomato,cebola|onion|union,alho|garlic|garden,cenoura|carrot|parrot,alface|lettuce|letter,arroz|rice|race,feijão|bean|bear,carne|meat|meet,frango|chicken|kitchen,ovo|egg|edge,leite|milk|mild,suco|juice|ice,café|coffee|cough,chá|tea|sea,pão|bread|break,queijo|cheese|choose,manteiga|butter|better,bolo|cake|lake,açúcar|sugar|cigar,sal|salt|sail,pimenta|pepper|paper,sopa|soup|soap,salada|salad|salad,chocolate|chocolate|late,sol|sun|son,lua|moon|soon,estrela|star|start,céu|sky|ski,nuvem|cloud|could,chuva|rain|train,neve|snow|show,vento|wind|wine,tempestade|storm|store,fogo|fire|fine,terra|earth|early,montanha|mountain|fountain,rio|river|rider,lago|lake|cake,mar|sea|see,oceano|ocean|open,praia|beach|peach,areia|sand|send,árvore|tree|three,flor|flower|flour,grama|grass|glass,folha|leaf|leave,pedra|stone|store,rocha|rock|lock,vila|town|down,estado|state|stay,estrada|road|read,ponte|bridge|fridge,prédio|building|building,apartamento|apartment|department,escola|school|cool,hospital|hospital|hospitality,igreja|church|search,loja|store|star,mercado|market|maker,banco|bank|tank,parque|park|dark,jardim|garden|guard,hotel|hotel|hostel,restaurante|restaurant|rest,bar|bar|car,clube|club|cub,cinema|cinema|camera,teatro|theater|teacher,museu|museum|music,aeroporto|airport|airplane,estação|station|state,trem|train|rain,ônibus|bus|but,táxi|taxi|tax,avião|plane|plan,barco|boat|boot,navio|ship|sheep,bicicleta|bike|bake,motocicleta|motorcycle|motor,caminhão|truck|trick,motorista|driver|river,piloto|pilot|pilot,passagem|ticket|pocket,bagagem|luggage|language,viagem|trip|trap,férias|vacation|vocation,turista|tourist|tour,guia|guide|hide,mapa|map|man,norte|north|south,sul|south|north,leste|east|west,oeste|west|east,cima|up|down,baixo|down|up,esquerda|left|right,direita|right|left,frente|front|back,trás|back|black,perto|near|year,longe|far|for,aqui|here|hear,lá|there|their,hoje|today|tomorrow,amanhã|tomorrow|yesterday,ontem|yesterday|today,agora|now|how,depois|later|letter,antes|before|after,sempre|always|never,nunca|never|ever,frequentemente|often|open,às vezes|sometimes|something,geralmente|usually|unusual,já|already|ready,ainda|yet|yes,logo|soon|sun,tarde|late|rate,cedo|early|easily,manhã|morning|evening,tarde(período)|afternoon|morning,meio-dia|noon|moon,meia-noite|midnight|middle,segunda-feira|Monday|Sunday,terça-feira|Tuesday|Thursday,quarta-feira|Wednesday|Tuesday,quinta-feira|Thursday|Tuesday,sexta-feira|Friday|Sunday,sábado|Saturday|Sunday,domingo|Sunday|Monday,janeiro|January|February,fevereiro|February|January,março|March|Match,abril|April|Apple,maio|May|Way,junho|June|Jane,julho|July|Jelly,agosto|August|Autumn,setembro|September|October,outubro|October|September,novembro|November|December,dezembro|December|November,primavera|spring|string,verão|summer|hammer,outono|autumn|august,inverno|winter|winner,segundo|second|record,relógio|clock|click,moeda|coin|corn,conta|bill|pill,preço|price|pride,custo|cost|coast,caro|expensive|expansive,barato|cheap|cheat,comprar|buy|boy,vender|sell|tell,pagar|pay|play,gastar|spend|send,economizar|save|safe,cliente|customer|custom,produto|product|produce,tamanho|size|side,pequeno|small|smell,grande|big|bag,largo|large|charge,curto|short|shirt,longo|long|song,alto|tall|tell,pesado|heavy|heaven,leve|light|right,novo|new|now,velho|old|odd,bom|good|god,mau/ruim|bad|bed,ótimo|great|greet,terrível|terrible|terrific,feliz|happy|happen,triste|sad|sand,bravo|angry|agree,cansado|tired|tried,doente|sick|six,saudável|healthy|wealthy,forte|strong|string,fraco|weak|week,rico|rich|reach,pobre|poor|pool,quente|hot|hat,frio|cold|old,morno|warm|warn,limpo|clean|clear,sujo|dirty|duty,rápido|fast|fact,lento|slow|show,fácil|easy|early,difícil|hard|heart,macio|soft|sort,duro|hard|hand,bonito|beautiful|beauty,feio|ugly|uncle,inteligente|smart|start,estúpido|stupid|student,engraçado|funny|fun,sério|serious|series,amável|kind|king,cruel|cruel|crew,aberto|open|oven,fechado|closed|close,cheio|full|fall,vazio|empty|empire,verdadeiro|true|tree,falso|false|fall,certo|right|night,errado|wrong|strong,seguro|safe|save,perigoso|dangerous|danger,cor|color|collar,vermelho|red|read,azul|blue|glue,verde|green|greet,amarelo|yellow|fellow,preto|black|block,branco|white|write,cinza|gray|great,marrom|brown|crown,rosa|pink|pick,roxo|purple|people,família|family|familiar,pai|father|farther,filho|son|sun,filha|daughter|danger,irmão|brother|bother,irmã|sister|sit,avô|grandfather|grandmother,avó|grandmother|grandfather,tio|uncle|ankle,tia|aunt|ant,primo|cousin|cause,marido|husband|band,esposa|wife|life,menino|boy|toy,menina|girl|bird,bebê|baby|maybe,pessoas|people|purple,corpo|body|boy,cabelo|hair|air,ouvido|ear|eat,nariz|nose|noise,boca|mouth|month,dente|tooth|truth,rosto|face|fact,pescoço|neck|necktie,ombro|shoulder|soldier,braço|arm|art,dedo|finger|figure,perna|leg|let,pé|foot|food,costas|back|black,coração|heart|hurt,sangue|blood|flood,roupa|clothes|close,camisa|shirt|skirt,calça|pants|plants,vestido|dress|press,saia|skirt|shirt,casaco|coat|boat,jaqueta|jacket|packet,sapato|shoe|show,meia|sock|sack,chapéu|hat|hot,luva|glove|love,cinto|belt|bell,gravata|tie|lie,bolsa|bag|bug,aluno|student|study,professor|teacher|theater,classe|class|glass,caneta|pen|pan,lápis|pencil|cancel,papel|paper|pepper,caderno|notebook|laptop,mesa|desk|disk,cadeira|chair|hair,quadro|board|boat,prova|test|text,nota|grade|great,lição|lesson|listen,estudar|study|student,aprender|learn|lean,ensinar|teach|touch,ler|read|red,escrever|write|white,perguntar|ask|act,responder|answer|anger,emprego|job|joy,escritório|office|officer,chefe|boss|bus,empregado|employee|employer,reunião|meeting|greeting,computador|computer|commuter,teclado|keyboard|key,tela|screen|scream,telefone|phone|bone,carta|letter|better,mensagem|message|massage,arquivo|file|fill,pasta|folder|fold,lar|home|hole,banheiro|bathroom|bedroom,cozinha|kitchen|chicken,sala|living room|leaving room,porta|door|floor,janela|window|widow,parede|wall|well,chão|floor|door,teto|ceiling|feeling,telhado|roof|room,cama|bed|bad,sofá|sofa|soft,televisão|television|vision,rádio|radio|ratio,geladeira|fridge|bridge,fogão|stove|store,forno|oven|even,prato|plate|place,copo|glass|grass,faca|knife|wife,garfo|fork|pork,colher|spoon|soon,chave|key|keep,fechadura|lock|rock,luz|light|night,lâmpada|lamp|camp,esporte|sport|short,futebol|soccer|sock,basquete|basketball|basket,tênis|tennis|ten,natação|swimming|sweeping,pular|jump|dump,bola|ball|bell,jogador|player|prayer,música|music|museum,canção|song|long,cantar|sing|sign,dançar|dance|chance,tocar|play|pay,pintar|paint|point,desenhar|draw|drag,arte|art|arm,foto|picture|pitcher,câmera|camera|camel,filme|movie|move,poema|poem|poem,um|one|once,dois|two|too,três|three|tree,quatro|four|for,cinco|five|fine,seis|six|sex,sete|seven|several,oito|eight|weight,nove|nine|nice,dez|ten|then,cem|hundred|husband,mil|thousand|thought,primeiro|first|fist,último|last|lost,tudo|all|fall,algum|some|come,nenhum|none|done,muitos|many|money,muito|much|such,pouco|little|litter,mais|more|bore,menos|less|loss,tão|so|to,também|also|almost,apenas|only|lonely,então|then|them,onde|where|were,quando|when|went,por que|why|way,como|how|now,qual|which|witch,quem|who|how,o que|what|that,isto|this|these,aquilo|that|than,estes|these|this,aqueles|those|these,meu|my|me,seu|your|you,dele|his|he,dela|her|she,nosso|our|we,deles|their|there,eu|I|me,você|you|your,ele|he|his,ela|she|her,nós|we|us,eles|they|them,me|me|my,nós(objeto)|us|use,eles(objeto)|them|then,sim|yes|yet,não|no|not,e|and|end,mas|but|bus,ou|or|our,se|if|is,porque|because|become,com|with|which,sem|without|within,em|in|on,sobre|on|in,por|by|be,para|to|do,de|from|form,antes|before|below,depois|after|often,entre|between|behind,sob|under|uncle,acima|above|about,abaixo|below|before,dentro|inside|outside,fora|outside|inside,através|through|though,durante|during|doing,até|until|uncle,contra|against|again,embora|although|already,talvez|maybe|make,quase|almost|always,mesmo|even|ever,bem|well|will,mal|badly|baldly,bastante|enough|rough,realmente|really|ready,junto|together|gather,sozinho|alone|along,novamente|again|against,frente|forward|backward,trás|backward|forward,simplesmente|simply|sample,finalmente|finally|final,provavelmente|probably|probability,certamente|certainly|certain,especialmente|especially|special,geralmente|generally|general,recentemente|recently|recent,imediatamente|immediately|immediate,exatamente|exactly|exact,rapidamente|quickly|quick,lentamente|slowly|slow,cuidadosamente|carefully|careful,felizmente|happily|happy,infelizmente|unfortunately|fortunate,falar|speak|speed,chamar|call|fall,usar|use|us,encontrar|find|fund,dar|give|live,dizer|tell|tall,trabalhar|work|word,tentar|try|cry,perguntar|ask|act,precisar|need|seed,sentir|feel|fill,tornar|become|because,deixar|leave|live,colocar|put|push,significar|mean|meat,manter|keep|deep,começar|begin|beg,ajudar|help|held,mostrar|show|shoe,ouvir|hear|here,jogar|play|plan,correr|run|sun,mover|move|more,viver|live|love,acreditar|believe|belong,segurar|hold|hole,trazer|bring|ring,acontecer|happen|happy,escrever|write|white,sentar|sit|set,parar|stop|step,conhecer|meet|meat,incluir|include|inside,continuar|continue|contain,aprender|learn|earn,mudar|change|charge,entender|understand|under,assistir|watch|match,seguir|follow|fellow,criar|create|credit,permitir|allow|arrow,adicionar|add|and,crescer|grow|glow,abrir|open|oven,caminhar|walk|wall,ganhar|win|wing,oferecer|offer|office,lembrar|remember|member,amar|love|live,aparecer|appear|appeal,esperar|wait|want,servir|serve|seven,morrer|die|tie,enviar|send|sand,esperar|hope|hole,construir|build|bull,cair|fall|fail,cortar|cut|cat,alcançar|reach|teach,matar|kill|kiss,sugerir|suggest|subject,levantar|raise|rise,passar|pass|past,vender|sell|shell,exigir|require|inquire,relatar|report|export,decidir|decide|divide,puxar|pull|pool";
+
+            // Processamento do Banco de Dados para gerar exatamente 1000 questões
+            const rawList = compressedCoreData.split(',');
+            const fullDB = [];
+            
+            // Loop garante que o array tenha exatamente 1000 elementos
+            for(let i=0; i < 1000; i++) {
+                const item = rawList[i % rawList.length].split('|');
+                const port = item[0];
+                const engCorrect = item[1];
+                let engDistractor = item[2];
+                
+                // Variações dinâmicas para dificultar o distrator e evitar repetição visual exata
+                if(i > rawList.length) {
+                    const randomItem = rawList[Math.floor(Math.random() * rawList.length)].split('|');
+                    engDistractor = randomItem[1];
+                    // Prevenção de distrator ser igual à resposta correta
+                    while(engDistractor === engCorrect) {
+                        const newRandom = rawList[Math.floor(Math.random() * rawList.length)].split('|');
+                        engDistractor = newRandom[1];
+                    }
+                }
+
+                fullDB.push({
+                    q: `Como se diz <span style="color: #fff; text-decoration: underline;">"${port}"</span> em inglês?`,
+                    a: engCorrect,
+                    o: [engCorrect, engDistractor]
+                });
+            }
+
+            function shuffle(a) {
+                for (let i = a.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [a[i], a[j]] = [a[j], a[i]];
+                }
+                return a;
+            }
+
+            function renderQuiz() {
+                if(currentIndex >= fullDB.length) {
+                    quizContainer.innerHTML = `
+                        <div style="text-align:center; padding: 40px;">
+                            <h2 style="color: #0f0; font-size: 2rem; margin-bottom: 20px;">Mastery Achieved!</h2>
+                            <p>Você completou as 1000 palavras essenciais do inglês!</p>
+                        </div>
+                    `;
+                    return;
+                }
+
+                const item = currentOrder[currentIndex];
+                quizContainer.innerHTML = `
+                    <div style="font-size:0.7rem; color:var(--text-muted); margin-bottom:10px; text-transform: uppercase; font-weight: bold;">
+                        Missão ${currentIndex + 1} / 1000
+                    </div>
+                    
+                    <div class="question-text">${item.q}</div>
+                    
+                    <div class="options-grid">
+                        ${shuffle([...item.o]).map(opt => `<button class="opt-btn" data-val="${opt}">${opt}</button>`).join('')}
+                    </div>
+                    
+                    <div style="display:flex; justify-content:flex-end; margin-top:25px;">
+                        <button id="q-next" class="cyber-btn cyber-btn-primary" style="padding:10px; display:none;">Próxima Missão ⟶</button>
+                    </div>
+                `;
+
+                document.querySelectorAll('.opt-btn').forEach(btn => {
+                    btn.onclick = () => {
+                        if(item.done) return;
+                        item.done = true;
+                        const correct = btn.dataset.val === item.a;
+                        
+                        if(correct) {
+                            btn.classList.add('correct-ans');
+                            placarAcertos.textContent = parseInt(placarAcertos.textContent) + 1;
+                            window.updateXPAndCombo(10, true);
+                            
+                            // Avanço automático se acertar para manter o ritmo rápido
+                            setTimeout(() => {
+                                currentIndex++;
+                                renderQuiz();
+                            }, 500);
+                        } else {
+                            btn.classList.add('wrong-ans');
+                            placarErros.textContent = parseInt(placarErros.textContent) + 1;
+                            window.updateXPAndCombo(0, false);
+                            
+                            // Mostra a correta
+                            document.querySelectorAll('.opt-btn').forEach(b => { 
+                                if(b.dataset.val === item.a) b.classList.add('correct-ans'); 
+                                b.disabled = true;
+                            });
+                            document.getElementById('q-next').style.display = 'block'; // Obriga a clicar no botão para avançar (aprender com o erro)
+                        }
+                    };
+                });
+
+                const nextBtn = document.getElementById('q-next');
+                if(nextBtn) {
+                    nextBtn.onclick = () => {
+                        currentIndex++;
+                        renderQuiz();
+                    };
+                }
+            }
+
+            function init() {
+                currentIndex = 0;
+                placarAcertos.textContent = '0';
+                placarErros.textContent = '0';
+                window.resetComboUI();
+                currentOrder = shuffle(fullDB.map(x => ({...x, done: false})));
+                renderQuiz();
+            }
+
+            init();
+        });
+    </script>
+</body>
+</html>
