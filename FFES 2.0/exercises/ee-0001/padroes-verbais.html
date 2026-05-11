@@ -3,442 +3,578 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#020c1b">
     
-    <title>Exercício: Padrões de Verbos Irregulares (A-A-A, A-B-C...) | Professor Leo Ramos</title>
-    <meta name="description" content="Aprenda os padrões de conjugação de verbos irregulares em inglês (A-A-A, A-B-C, I-A-U) e pratique com um jogo interativo.">
+    <title>Padrões de Verbos em Inglês: O Guia Mestre | Teacher Leo Ramos</title>
+    <meta name="description" content="Domine a lógica das conjugações: Verbos Regulares, Irregulares e os padrões A-A-A, I-A-U e A-B-C. 200 exercícios práticos com sistema de XP e medalhas.">
+    <meta name="keywords" content="verbos irregulares inglês, verbos regulares, padrões verbais, a-a-a a-b-c, conjugação inglesa, Teacher Leo Ramos, ee-0001">
+    <meta name="author" content="Leonardo Rangel Ramos">
+    <meta name="robots" content="index, follow, max-image-preview:large">
     
-    <meta name="author" content="Leo Ramos">
-    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://teacherleoramos.com.br/exercises/ee-0001/padroes-verbais">
+    <link rel="alternate" hreflang="pt-br" href="https://teacherleoramos.com.br/exercises/ee-0001/padroes-verbais">
+    <link rel="alternate" hreflang="x-default" href="https://teacherleoramos.com.br/exercises/ee-0001/padroes-verbais">
     
-    <meta name="google-site-verification" content="9L-nEDj4G24e3JD1kt5bxcZ5_qHo9Q-03_DJkfIH_1M" />
-    
-    <link rel="canonical" href="https://teacherleoramos.com.br/ex1/padroes-verbais-em-ingles.html">
-    
-    <link rel="icon" type="image/png" sizes="32x32" href="/Images/logofavicon.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/Images/logofavicion.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/Images/logofavicion.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="/Images/logofavicion.png">
-    <link rel="icon" type="image/png" sizes="512x512" href="/Images/logofavicion.png">
-    
-    <meta property="og:title" content="Exercício: Padrões de Verbos Irregulares | Professor Leo Ramos">
-    <meta property="og:description" content="Aprenda os padrões de conjugação de verbos irregulares (A-A-A, A-B-C, I-A-U) e pratique com um jogo interativo.">
-    <meta property="og:image" content="https://teacherleoramos.com.br/Images/preview-social.jpg">
-    <meta property="og:url" content="https://teacherleoramos.com.br/ex1/padroes-verbais-em-ingles.html">
-    <meta property="og:type" content="website">
-    <meta property="og:locale" content="pt_BR">
-    <meta property="og:site_name" content="FFES - Professor Leo Ramos">
+    <link rel="icon" type="image/webp" href="../../assets/images/teacher-leo-ramos.webp">
+    <link rel="apple-touch-icon" href="../../assets/images/teacher-leo-ramos.webp">
 
+    <meta property="og:title" content="Engenharia de Conjugação: Guia Mestre de Padrões Verbais">
+    <meta property="og:description" content="Aprenda a agrupar verbos por lógica e multiplique sua velocidade de aprendizado. 200 missões interativas.">
+    <meta property="og:image" content="https://teacherleoramos.com.br/assets/images/teacher-leo-ramos.webp">
+    <meta property="og:url" content="https://teacherleoramos.com.br/exercises/ee-0001/padroes-verbais">
+    <meta property="og:type" content="article">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Exercício: Padrões de Verbos Irregulares | Professor Leo Ramos">
-    <meta name="twitter:description" content="Aprenda os padrões de conjugação de verbos irregulares (A-A-A, A-B-C, I-A-U) e pratique com um jogo interativo.">
-    <meta name="twitter:image" content="https://teacherleoramos.com.br/Images/preview-social.jpg">
+    <meta name="twitter:title" content="Masterclass: Padrões de Verbos em Inglês">
+    <meta name="twitter:image" content="https://teacherleoramos.com.br/assets/images/teacher-leo-ramos.webp">
 
-    <link rel="stylesheet" href="/CSS/universal.css">
-
-    <style>
-        #botoes-listas-verbos {
-            width: 100%;
-            max-width: 900px;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-            margin-top: 20px; /* Mantido para espaçamento interno */
-            margin-bottom: 10px; /* Ajustado para espaçamento interno */
-        }
-
-        .popup-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.7);
-            display: none;
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-            padding: 15px;
-            box-sizing: border-box;
-        }
-        .popup-overlay.visible {
-            display: flex;
-        }
-        .popup-content {
-            background-color: var(--cor-fundo-secao);
-            padding: 25px;
-            border-radius: 12px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
-            width: 100%;
-            max-width: 800px;
-            position: relative;
-            max-height: 90vh;
-            overflow-y: auto;
-        }
-        .fechar-popup {
-            position: absolute;
-            top: 10px;
-            right: 15px;
-            background: none;
-            border: none;
-            font-size: 2.5em;
-            font-weight: bold;
-            line-height: 1;
-            color: var(--cor-texto-escuro);
-            cursor: pointer;
-            transition: color 0.2s ease;
-        }
-        .fechar-popup:hover {
-            color: var(--cor-primaria);
-        }
-        .popup-lista table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 15px;
-        }
-        .popup-lista th, .popup-lista td {
-            border: 1px solid var(--cor-borda-sutil);
-            padding: 10px;
-            text-align: left;
-        }
-        .popup-lista th {
-            background-color: var(--cor-primaria);
-            color: white;
-        }
-        .popup-lista tr:nth-child(even) {
-            background-color: var(--cor-fundo-secao-destaque);
-        }
-    </style>
-    
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Quiz",
-      "name": "Jogo de Padrões Verbais",
-      "description": "Pratique a identificação dos padrões de verbos irregulares em inglês (A-A-A, A-B-C, I-A-U).",
-      "inLanguage": "pt-BR",
-        "author": {
-        "@type": "Person",
-        "name": "Leo Ramos",
-        "jobTitle": "Professor de Inglês",
-        "url": "https://teacherleoramos.com.br/ex1/padroes-verbais-em-ingles.html"
-        },
-  
-      "publisher": {
-        "@type": "Organization",
-        "name": "FFES - Professor Leo Ramos",
-        "logo": "https://teacherleoramos.com.br/Images/logo novo grande.png"
-      },
-      "hasPart": [
+      "@graph": [
         {
-          "@type": "Question",
-          "name": "Os verbos put, cut, cost pertencem a qual tipo de conjugação?",
-          "acceptedAnswer": { "@type": "Answer", "text": "A-A-A (Irregular)" }
+          "@type": "WebPage",
+          "@id": "https://teacherleoramos.com.br/exercises/ee-0001/padroes-verbais",
+          "url": "https://teacherleoramos.com.br/exercises/ee-0001/padroes-verbais",
+          "name": "Padrões de Verbos em Inglês: Guia Master | Teacher Leo Ramos"
         },
         {
-          "@type": "Question",
-          "name": "Os verbos drink, sing, swim pertencem a qual tipo de conjugação?",
-          "acceptedAnswer": { "@type": "Answer", "text": "I-A-U (Irregular)" }
-        },
-        {
-          "@type": "Question",
-          "name": "Os verbos take, speak, write pertencem a qual tipo de conjugação?",
-          "acceptedAnswer": { "@type": "Answer", "text": "A-B-C (Irregular)" }
+          "@type": "Quiz",
+          "name": "Quiz Master: Verbal Patterns (ABC, AAA, IAU)",
+          "description": "200 missões dinâmicas de 2 opções testando o reconhecimento e aplicação de padrões de verbos regulares e irregulares.",
+          "educationalLevel": "Intermediate",
+          "inLanguage": "pt-BR"
         }
       ]
     }
     </script>
 
-                <!-- Google tag (gtag.js) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Syncopate:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-M8ZG06010Q"></script>
-        <script>
+    <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-
         gtag('config', 'G-M8ZG06010Q');
     </script>
+
+    <style>
+        .options-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 15px; }
+        @media (max-width: 600px) { .options-grid { grid-template-columns: 1fr !important; } }
+        .master-table { font-size: 0.7rem !important; }
+        .master-table th { background: rgba(59, 130, 246, 0.2); color: var(--gold-tech); }
+    </style>
 </head>
-<body id="topo">
+<body>
 
-<div class="cabecalho-container">
-<header class="bloco-identidade">
-    <div class="logo-and-title">
-        <a href="/index.html">
-            <img src="/Images/logo novo grande.png" alt="Logo FFES" class="logo-img">
-        </a>
-        <a href="https://www.youtube.com/@teacherleoramos/videos" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;">
-            <h1>Leo Ramos | Professor de Inglês</h1>
-        </a>
-    </div>
-</header>
+    <header class="header-glass" id="main-header">
+        <nav class="nav-center" aria-label="Navegação Principal">
+            <ul>
+                <li><a href="../../index.html#home">Home</a></li>
+                <li><a href="../../index.html#sobre">Sobre Mim</a></li>
+                <li><a href="../../index.html#metodologia">Metodologia</a></li>
+                <li><a href="../../exercises.html" style="color: var(--gold-tech); border-color: rgba(229, 192, 91, 0.35);">Exercícios</a></li>
+                <li><a href="../../articles.html">Artigos</a></li>
+                <li><a href="../../courses.html">Cursos / E-Book</a></li>
+            </ul>
+        </nav>
+    </header>
 
-<div class="bloco-navegacao"> 
-    <nav class="nav-primary">
-        <ul>
-            <li><a href="/index.html#home">Home</a></li>
-            <li><a href="/index.html#sobre">Sobre Mim</a></li>
-            <li><a href="/exercicios-e-artigos.html#exercicios">Exercícios</a></li>
-            <li><a href="/exercicios-e-artigos.html#artigos-vocab">Artigos</a></li>
-            <li><a href="/cursos-e-ebook.html#cursos">Cursos e E-book</a></li>
-            <li><a href="/index.html#metodologia">Metodologia</a></li>
-        </ul>
-    </nav>
-</div>
+    <main>
+        <section class="content-section">
+            <h1 class="section-title">
+                Verbal Patterns <br> <span style="font-size: 1rem; color: var(--gold-tech);">A Engenharia da Conjugação Lógica</span>
+            </h1>
 
+            <div class="text-glass-box" id="explanation-carousel">
+                <h3 style="text-align: center; margin-bottom: 1rem; color: var(--gold-tech); font-family: 'Syncopate', sans-serif; font-size: 0.9rem;">Wiki de Agrupamento Estrutural</h3>
+                <div class="carousel-wrapper">
+                    <div class="carousel-track" id="carousel-track">
+                        
+                        <div class="carousel-slide">
+                            <h4 style="color: var(--primary-blue);">1/12 - A Lógica do Agrupamento 🧩</h4>
+                            <p>Decorar listas alfabéticas é um erro. O cérebro humano aprende por **reconhecimento de padrões**. Ao agrupar verbos que mudam da mesma forma, você cria atalhos mentais permanentes.</p>
+                        </div>
 
-</div>
+                        <div class="carousel-slide">
+                            <h4 style="color: var(--primary-blue);">2/12 - Verbos Regulares (Padrão Fixo) 🧱</h4>
+                            <p>São a maioria esmagadora. A regra é simples: adicione <strong>-ED</strong> no final para o Passado e para o Particípio.</p>
+                            <ul>
+                                <li>Work - Work<strong>ed</strong> - Work<strong>ed</strong></li>
+                                <li>Play - Play<strong>ed</strong> - Play<strong>ed</strong></li>
+                                <li>Listen - Listen<strong>ed</strong> - Listen<strong>ed</strong></li>
+                            </ul>
+                        </div>
 
-<main>
-    <h1 class="game-title">Jogo de Padrões Verbais</h1>
+                        <div class="carousel-slide">
+                            <h4 style="color: var(--primary-blue);">3/12 - Irregulares: Padrão A-A-A (Imutáveis) 🧊</h4>
+                            <p>O verbo **não muda nunca**. É a mesma forma no presente, passado e particípio.</p>
+                            <div class="glass-table-wrapper">
+                                <table class="glass-table master-table">
+                                    <thead><tr><th>Base</th><th>Past</th><th>Participle</th></tr></thead>
+                                    <tbody>
+                                        <tr><td>Cut</td><td>Cut</td><td>Cut</td></tr>
+                                        <tr><td>Put</td><td>Put</td><td>Put</td></tr>
+                                        <tr><td>Cost</td><td>Cost</td><td>Cost</td></tr>
+                                        <tr><td>Hurt</td><td>Hurt</td><td>Hurt</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
 
-    <div id="placar-geral-container">
-        <p>Acertos Gerais: <strong id="acertos-geral">0</strong></p>
-        <a href="#contato" class="nav-arrow" title="Ir para o final da página">&#11015;</a>
-        <p>Erros Gerais: <strong id="erros-geral">0</strong></p>
-    </div>
+                        <div class="carousel-slide">
+                            <h4 style="color: var(--primary-blue);">4/12 - Irregulares: Padrão A-B-A (O Retorno) 🔄</h4>
+                            <p>O verbo muda no passado, mas **volta à forma original** no particípio.</p>
+                            <ul>
+                                <li><strong>Come</strong> - Came - <strong>Come</strong></li>
+                                <li><strong>Run</strong> - Ran - <strong>Run</strong></li>
+                                <li><strong>Become</strong> - Became - <strong>Become</strong></li>
+                            </ul>
+                        </div>
 
-    <div class="introducao-container">
-        <h3>Entendendo a lógica da conjugação</h3>
-        <p>Aprender os verbos irregulares no inglês pode parecer difícil, mas a melhor estratégia é agrupá-los por padrões de conjugação.</p>
-        <p>Existem três formas verbais principais: <strong>Presente</strong>, <strong>Passado Simples</strong> e <strong>Particípio Passado</strong>. A partir delas, identificamos os padrões:</p>
-        <ul>
-            <li><strong>Verbos Regulares:</strong> Terminam em <strong>-ed</strong> (help - help<strong>ed</strong> - help<strong>ed</strong>)</li>
-            <li><strong>Padrão A-A-A:</strong> A forma não muda (cut - cut - cut)</li>
-            <li><strong>Padrão A-B-A:</strong> O presente é igual ao particípio (come - came - come)</li>
-            <li><strong>Padrão I-A-U:</strong> A vogal muda em cada forma (begin - began - begun)</li>
-            <li><strong>Padrão A-B-B:</strong> O passado e o particípio são iguais (buy - bought - bought)</li>
-            <li><strong>Padrão A-B-C:</strong> Todas as três formas são diferentes (speak - spoke - spoken)</li>
-        </ul>
-    </div>
-    
-    <div class="introducao-container" style="margin-top: 25px;">
-        <h2 style="color: var(--cor-primaria); text-align: center; margin-top: 0; border-bottom: none; padding-bottom: 0;">Ver Listas de Verbos por Padrão</h2>
-        <div id="botoes-listas-verbos">
-            <button class="cta-button" onclick="showVerbList('regular')">Verbos Regulares</button>
-            <button class="cta-button" onclick="showVerbList('abc')">Padrão A-B-C</button>
-            <button class="cta-button" onclick="showVerbList('abb')">Padrão A-B-B</button>
-            <button class="cta-button" onclick="showVerbList('iau')">Padrão I-A-U</button>
-            <button class="cta-button" onclick="showVerbList('aaa')">Padrão A-A-A</button>
-            <button class="cta-button" onclick="showVerbList('aba')">Padrão A-B-A</button>
-        </div>
-    </div>
-    <div class="introducao-container" style="margin-top: 25px; text-align: center;">
-        <h3>Pratique a Conjugação Completa</h3>
-        <p>Coloque seu conhecimento sobre os padrões verbais em prática:</p>
-        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
-            <a href="verbos-conjugacoes-regulares-em-ingles.html" class="cta-button" style="background-color: var(--cor-primaria); color: var(--cor-texto-claro);">
-                Exercício 120 Verbos Mais Comuns
-            </a>
-            <a href="verbos-conjugacoes-irregulares-em-ingles.html" class="cta-button">
-                Exercício 100 Verbos Irregulares
-            </a>
-        </div>
-    </div>
+                        <div class="carousel-slide">
+                            <h4 style="color: var(--primary-blue);">5/12 - Irregulares: Padrão I-A-U (O Ciclo) 🔊</h4>
+                            <p>Um padrão rítmico onde a vogal muda seguindo a sequência das letras I, A e U.</p>
+                            <div class="glass-table-wrapper">
+                                <table class="glass-table master-table">
+                                    <thead><tr><th>Base (I)</th><th>Past (A)</th><th>Part. (U)</th></tr></thead>
+                                    <tbody>
+                                        <tr><td>Sing</td><td>Sang</td><td>Sung</td></tr>
+                                        <tr><td>Drink</td><td>Drank</td><td>Drunk</td></tr>
+                                        <tr><td>Swim</td><td>Swam</td><td>Swum</td></tr>
+                                        <tr><td>Begin</td><td>Began</td><td>Begun</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
 
-    
+                        <div class="carousel-slide">
+                            <h4 style="color: var(--primary-blue);">6/12 - Irregulares: Padrão A-B-B (Os Gêmeos) 👯‍♂️</h4>
+                            <p>O Passado e o Particípio são **exatamente iguais**. Representam o maior grupo de verbos irregulares.</p>
+                            <ul>
+                                <li>Buy - <strong>Bought - Bought</strong></li>
+                                <li>Send - <strong>Sent - Sent</strong></li>
+                                <li>Keep - <strong>Kept - Kept</strong></li>
+                                <li>Find - <strong>Found - Found</strong></li>
+                            </ul>
+                        </div>
 
-    <hr>
-    
-    <div id="exercicios-container"></div>
+                        <div class="carousel-slide">
+                            <h4 style="color: var(--primary-blue);">7/12 - Irregulares: Padrão A-B-C (A Mudança Total) 🧬</h4>
+                            <p>Todas as três formas são diferentes. Geralmente o particípio termina em <strong>-N</strong> ou <strong>-EN</strong>.</p>
+                            <div class="glass-table-wrapper">
+                                <table class="glass-table master-table">
+                                    <thead><tr><th>Base (A)</th><th>Past (B)</th><th>Part. (C)</th></tr></thead>
+                                    <tbody>
+                                        <tr><td>Speak</td><td>Spoke</td><td>Spoken</td></tr>
+                                        <tr><td>Write</td><td>Wrote</td><td>Written</td></tr>
+                                        <tr><td>See</td><td>Saw</td><td>Seen</td></tr>
+                                        <tr><td>Take</td><td>Took</td><td>Taken</td></tr>
+                                        <tr><td>Go</td><td>Went</td><td>Gone</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
 
-    <hr>
+                        <div class="carousel-slide">
+                            <h4 style="color: var(--primary-blue);">8/12 - O Mistério do "Read" 📖</h4>
+                            <p>Parece ser um padrão A-A-A, mas a **pronúncia muda**. No passado e particípio, você fala "RÉD" (como a cor vermelha).</p>
+                            <p><em>Read (ríd) - Read (réd) - Read (réd).</em></p>
+                        </div>
 
-    <div id="rodape" style="text-align: center; margin: 20px 0;">
-        <a href="#topo" class="nav-button">&#11014;</a>
-    </div>
+                        <div class="carousel-slide">
+                            <h4 style="color: var(--primary-blue);">9/12 - Verbos com Prefixo 🔗</h4>
+                            <p>Verbos derivados de outros seguem a lógica do verbo principal.</p>
+                            <ul>
+                                <li>Understand (deriva de stand) -> Understood.</li>
+                                <li>Withdraw (deriva de draw) -> Withdrew - Withdrawn.</li>
+                            </ul>
+                        </div>
 
-    <div id="popup-overlay" class="popup-overlay" onclick="hideVerbList()">
-        <div id="popup-content" class="popup-content" onclick="event.stopPropagation()">
-            <button class="fechar-popup" onclick="hideVerbList()">&times;</button>
-            <h2 id="popup-titulo"></h2>
-            <div id="popup-lista" class="popup-lista"></div>
-        </div>
-    </div>
-</main>
+                        <div class="carousel-slide">
+                            <h4 style="color: var(--primary-blue);">10/12 - A Matriz de Conjugação (A-B-C) 📋</h4>
+                            <div class="glass-table-wrapper">
+                                <table class="glass-table master-table">
+                                    <thead><tr><th>Verbo</th><th>Presente</th><th>Passado</th><th>Particípio</th></tr></thead>
+                                    <tbody>
+                                        <tr><td>Quebrar</td><td>Break</td><td>Broke</td><td>Broken</td></tr>
+                                        <tr><td>Esquecer</td><td>Forget</td><td>Forgot</td><td>Forgotten</td></tr>
+                                        <tr><td>Cair</td><td>Fall</td><td>Fell</td><td>Fallen</td></tr>
+                                        <tr><td>Dirigir</td><td>Drive</td><td>Drove</td><td>Driven</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
 
-<footer id="contato" class="site-footer">
-    <div class="footer-content">
-        <div class="social-media-links">
-            <h4>Siga-me nas redes sociais e acesse o App</h4>
-            <a href="https://www.youtube.com/@teacherleoramos/videos" target="_blank" rel="noopener noreferrer" title="Canal YouTube Teacher Leo Ramos" aria-label="YouTube">
-                <img src="https://img.icons8.com/ios-filled/50/ffffff/youtube-play.png" alt="Ícone YouTube" width="30" height="30" loading="lazy">
-            </a>
-            <a href="https://www.instagram.com/teacherleoramos/" target="_blank" rel="noopener noreferrer" title="Instagram Teacher Leo Ramos" aria-label="Instagram">
-                <img src="https://img.icons8.com/ios-filled/50/ffffff/instagram-new.png" alt="Ícone Instagram" width="30" height="30" loading="lazy">
-            </a>
-            <a href="https://www.tiktok.com/@teacherleoramos" target="_blank" rel="noopener noreferrer" title="TikTok Teacher Leo Ramos" aria-label="TikTok">
-                <img src="https://img.icons8.com/ios-filled/50/ffffff/tiktok.png" alt="Ícone TikTok" width="30" height="30" loading="lazy">
-            </a>
-            <a href="https://wa.me/5511955582118" target="_blank" rel="noopener noreferrer" title="WhatsApp Agendamento" aria-label="WhatsApp">
-                <img src="https://img.icons8.com/ios-filled/50/ffffff/whatsapp--v1.png" alt="Ícone WhatsApp" width="30" height="30" loading="lazy">
-            </a>
-            <a href="/index-app.html" target="_blank" rel="noopener noreferrer" title="Acesse o FFES App" aria-label="FFES App">
-                <img src="https://img.icons8.com/ios-filled/50/ffffff/controller.png" alt="Ícone FFES App" width="30" height="30" loading="lazy">
-            </a>
-        </div>
-        <p><strong>Contato</strong></p>
-        <p>Youtube: @teacherleoramos | Telefone - WhatsApp: (11) 95558-2118</p>
-        <p>Endereço: São Paulo, SP, Brasil</p>
-        <p>CNPJ: 43.226.983/0001-91</p>
-        <p>&copy; <span id="year">2025</span> | FEATHERED FRIENDS ENGLISH SCHOOL - FFES. Todos os direitos reservados.</p>
-    </div>
-</footer>
+                        <div class="carousel-slide">
+                            <h4 style="color: var(--primary-blue);">11/12 - Resumo Master de Padrões 🏆</h4>
+                            <p>Regulares: Terminam em -ED.<br>
+                               A-A-A: Não mudam.<br>
+                               A-B-A: Voltam à base.<br>
+                               I-A-U: Mudança de vogal rítmica.<br>
+                               A-B-B: Passado = Particípio.<br>
+                               A-B-C: Tudo diferente.
+                            </p>
+                        </div>
 
+                        <div class="carousel-slide">
+                            <h4 style="color: var(--primary-blue);">12/12 - Iniciando Treinamento 🚀</h4>
+                            <p>Prepare-se. 200 missões para testar seu reconhecimento de padrões. Ganhe XP e não pare até dominar a "Engenharia da Conjugação".</p>
+                        </div>
 
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-    const dadosDoQuiz = [
-        { id: 'q1', pergunta: 'Os verbos <strong>work, help, ask</strong> pertencem a qual tipo de conjugação?', opcoes: ['Verbo Regular', 'A-B-B (Irregular)', 'A-B-C (Irregular)'], respostaCorreta: 'Verbo Regular', explicacao: 'Verbos regulares formam o passado e o particípio com "-ed". Ex: <strong>work - worked - worked</strong>.' },
-        { id: 'q2', pergunta: 'Os verbos <strong>put, cut, cost</strong> pertencem a qual tipo de conjugação?', opcoes: ['A-B-A (Irregular)', 'A-A-A (Irregular)', 'Verbo Regular'], respostaCorreta: 'A-A-A (Irregular)', explicacao: 'O padrão A-A-A não muda a forma do verbo. Ex: <strong>put - put - put</strong>.' },
-        { id: 'q3', pergunta: 'Os verbos <strong>run, come, become</strong> pertencem a qual tipo de conjugação?', opcoes: ['A-A-A (Irregular)', 'A-B-A (Irregular)', 'A-B-B (Irregular)'], respostaCorreta: 'A-B-A (Irregular)', explicacao: 'No padrão A-B-A, o presente e o particípio são iguais. Ex: <strong>run - ran - run</strong>.' },
-        { id: 'q4', pergunta: 'Os verbos <strong>drink, sing, swim</strong> pertencem a qual tipo de conjugação?', opcoes: ['A-B-B (Irregular)', 'I-A-U (Irregular)', 'A-B-C (Irregular)'], respostaCorreta: 'I-A-U (Irregular)', explicacao: 'O padrão I-A-U muda a vogal principal em cada forma. Ex: <strong>drink - drank - drunk</strong>.' },
-        { id: 'q5', pergunta: 'Os verbos <strong>leave, buy, sleep</strong> pertencem a qual tipo de conjugação?', opcoes: ['A-B-B (Irregular)', 'A-B-C (Irregular)', 'Verbo Regular'], respostaCorreta: 'A-B-B (Irregular)', explicacao: 'No padrão A-B-B, o passado e o particípio são iguais. Ex: <strong>leave - left - left</strong>.' },
-        { id: 'q6', pergunta: 'Os verbos <strong>take, speak, write</strong> pertencem a qual tipo de conjugação?', opcoes: ['I-A-U (Irregular)', 'A-B-A (Irregular)', 'A-B-C (Irregular)'], respostaCorreta: 'A-B-C (Irregular)', explicacao: 'No padrão A-B-C, todas as três formas são diferentes. Ex: <strong>take - took - taken</strong>.' }
-    ];
-    
-    // LISTA DE VERBOS EXPANDIDA
-    const verbos = {
-        regular: [
-            { pt: 'aceitar', p: 'accept', pp: 'accepted', pa: 'accepted' },
-            { pt: 'perguntar', p: 'ask', pp: 'asked', pa: 'asked' },
-            { pt: 'ligar', p: 'call', pp: 'called', pa: 'called' },
-            { pt: 'limpar', p: 'clean', pp: 'cleaned', pa: 'cleaned' },
-            { pt: 'entregar', p: 'deliver', pp: 'delivered', pa: 'delivered' },
-            { pt: 'ajudar', p: 'help', pp: 'helped', pa: 'helped' },
-            { pt: 'convidar', p: 'invite', pp: 'invited', pa: 'invited' },
-            { pt: 'querer', p: 'want', pp: 'wanted', pa: 'wanted' },
-            { pt: 'trabalhar', p: 'work', pp: 'worked', pa: 'worked' }
-        ],
-        aaa: [
-            { pt: 'apostar', p: 'bet', pp: 'bet', pa: 'bet' },
-            { pt: 'custar', p: 'cost', pp: 'cost', pa: 'cost' },
-            { pt: 'cortar', p: 'cut', pp: 'cut', pa: 'cut' },
-            { pt: 'bater', p: 'hit', pp: 'hit', pa: 'hit' },
-            { pt: 'machucar', p: 'hurt', pp: 'hurt', pa: 'hurt' },
-            { pt: 'desistir', p: 'quit', pp: 'quit', pa: 'quit' },
-            { pt: 'ler', p: 'read', pp: 'read', pa: 'read' },
-            { pt: 'definir', p: 'set', pp: 'set', pa: 'set' },
-            { pt: 'fechar', p: 'shut', pp: 'shut', pa: 'shut' },
-        ],
-        iau: [
-            { pt: 'começar', p: 'begin', pp: 'began', pa: 'begun' },
-            { pt: 'beber', p: 'drink', pp: 'drank', pa: 'drunk' },
-            { pt: 'tocar (sino)', p: 'ring', pp: 'rang', pa: 'rung' },
-            { pt: 'encolher', p: 'shrink', pp: 'shrank', pa: 'shrunk' },
-            { pt: 'cantar', p: 'sing', pp: 'sang', pa: 'sung' },
-            { pt: 'afundar', p: 'sink', pp: 'sank', pa: 'sunk' },
-            { pt: 'nadar', p: 'swim', pp: 'swam', pa: 'swum' }
-        ],
-        aba: [
-            { pt: 'vir', p: 'come', pp: 'came', pa: 'come' },
-            { pt: 'correr', p: 'run', pp: 'ran', pa: 'run' }, 
-        ],
-        abb: [
-            { pt: 'ter', p: 'have', pp: 'had', pa: 'had' },
-            { pt: 'ouvir', p: 'hear', pp: 'heard', pa: 'heard' },
-            { pt: 'manter', p: 'keep', pp: 'kept', pa: 'kept' },
-            { pt: 'deixar/partir', p: 'leave', pp: 'left', pa: 'left' },
-            { pt: 'perder', p: 'lose', pp: 'lost', pa: 'lost' },
-            { pt: 'pagar', p: 'pay', pp: 'paid', pa: 'paid' },
-            { pt: 'dizer', p: 'say', pp: 'said', pa: 'said' },
-            { pt: 'vender', p: 'sell', pp: 'sold', pa: 'sold' },
-            { pt: 'ensinar', p: 'teach', pp: 'taught', pa: 'taught' },
-            { pt: 'contar', p: 'tell', pp: 'told', pa: 'told' },
-            { pt: 'pensar', p: 'think', pp: 'thought', pa: 'thought' },
-        ],
-        abc: [
-            { pt: 'ser/estar', p: 'am/is/are', pp: 'was/were', pa: 'been' },
-            { pt: 'quebrar', p: 'break', pp: 'broke', pa: 'broken' },
-            { pt: 'escolher', p: 'choose', pp: 'chose', pa: 'chosen' },
-            { pt: 'fazer', p: 'do', pp: 'did', pa: 'done' },
-            { pt: 'comer', p: 'eat', pp: 'ate', pa: 'eaten' },
-            { pt: 'ir', p: 'go', pp: 'went', pa: 'gone' },
-            { pt: 'ver', p: 'see', pp: 'saw', pa: 'seen' },
-            { pt: 'falar', p: 'speak', pp: 'spoke', pa: 'spoken' },
-            { pt: 'pegar/levar', p: 'take', pp: 'took', pa: 'taken' },
-            { pt: 'vestir', p: 'wear', pp: 'wore', pa: 'worn' },
-            { pt: 'escrever', p: 'write', pp: 'wrote', pa: 'written' }
-        ]
-    };
-    
-    const container = document.getElementById('exercicios-container');
-    const placarAcertosGeralEl = document.getElementById('acertos-geral');
-    const placarErrosGeralEl = document.getElementById('erros-geral');
-    const popupOverlay = document.getElementById('popup-overlay');
-    const popupTitulo = document.getElementById('popup-titulo');
-    const popupLista = document.getElementById('popup-lista');
-    
-    window.showVerbList = (tipo) => {
-        const listaVerbos = verbos[tipo];
-        const titulos = { regular: 'Verbos Regulares', aaa: 'Padrão A-A-A', aba: 'Padrão A-B-A', iau: 'Padrão I-A-U', abb: 'Padrão A-B-B', abc: 'Padrão A-B-C' };
-        popupTitulo.textContent = `Lista de Verbos: ${titulos[tipo]}`;
-        let tabelaHTML = '<table><thead><tr><th>Tradução</th><th>Presente</th><th>Passado</th><th>Particípio</th></tr></thead><tbody>';
-        listaVerbos.forEach(verbo => { tabelaHTML += `<tr><td>${verbo.pt}</td><td>${verbo.p}</td><td>${verbo.pp}</td><td>${verbo.pa}</td></tr>`; });
-        tabelaHTML += '</tbody></table>';
-        popupLista.innerHTML = tabelaHTML;
-        popupOverlay.classList.add('visible');
-    };
-
-    window.hideVerbList = () => popupOverlay.classList.remove('visible');
-
-    function createExerciseHTML(exerciseData, index) {
-        const shuffledOptions = [...exerciseData.opcoes];
-        shuffleArray(shuffledOptions);
-        const optionsHTML = shuffledOptions.map(option => `<button class="option-button" data-resposta="${option}">${option}</button>`).join('');
-        return `
-            <section class="exercicio-card" data-id="${exerciseData.id}">
-                <h2>Exercício ${index + 1}</h2>
-                <div class="question-container">
-                    <p>${exerciseData.pergunta}</p>
-                    <div class="options-container">${optionsHTML}</div>
+                    </div>
                 </div>
-                <div class="explanation-container"><p>${exerciseData.explicacao}</p></div>
-            </section>
-        `;
-    }
-    
-    function handleAnswer(event) {
-        const button = event.target.closest('.option-button');
-        if (!button || button.disabled) return;
+                <div class="carousel-nav-container" style="display:flex; justify-content:center; gap:10px; margin-top:20px;">
+                    <button id="car-prev" class="cyber-btn cyber-btn-gold" style="padding: 10px 20px; font-size: 0.75rem;" disabled>Voltar</button>
+                    <button id="car-next" class="cyber-btn cyber-btn-primary" style="padding: 10px 20px; font-size: 0.75rem;">Avançar</button>
+                </div>
+            </div>
 
-        const card = button.closest('.exercicio-card');
-        const exerciseId = card.dataset.id;
-        const exerciseData = dadosDoQuiz.find(e => e.id === exerciseId);
-        const userAnswer = button.dataset.resposta;
-        const allButtons = card.querySelectorAll('.option-button');
-        
-        allButtons.forEach(btn => btn.disabled = true);
-        
-        if (userAnswer === exerciseData.respostaCorreta) {
-            button.classList.add('correto');
-            placarAcertosGeralEl.textContent = parseInt(placarAcertosGeralEl.textContent) + 1;
-        } else {
-            button.classList.add('incorreto');
-            const correctButton = Array.from(allButtons).find(btn => btn.dataset.resposta === exerciseData.respostaCorreta);
-            if (correctButton) correctButton.classList.add('correto');
-            placarErrosGeralEl.textContent = parseInt(placarErrosGeralEl.textContent) + 1;
-        }
-        
-        card.querySelector('.explanation-container').classList.add('visible');
-    }
-    
-    function shuffleArray(array) {
-        for (let i = array.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
-            [array[i], array[j]] = [array[j], array[i]];
-        }
-    }
-    
-    function startGame() {
-        const shuffledQuiz = [...dadosDoQuiz];
-        shuffleArray(shuffledQuiz);
-        container.innerHTML = shuffledQuiz.map((data, index) => createExerciseHTML(data, index)).join('');
-        container.addEventListener('click', handleAnswer);
-    }
-    
-    startGame();
-});
-</script>
+            <div class="text-glass-box score-board">
+                <div class="xp-board">XP GLOBAL: <strong id="xp-global">0</strong></div>
+                <div class="stats-board">
+                    <span style="color: #0f0;">Acertos: <strong id="acertos-geral">0</strong></span>
+                    <button id="reset-btn" class="cyber-btn cyber-btn-gold btn-reset-central">Reiniciar Sistema</button>
+                    <span style="color: #f00;">Erros: <strong id="erros-geral">0</strong></span>
+                </div>
+            </div>
 
+            <article class="text-glass-box" id="main-quiz-panel">
+                <div class="combo-container">
+                    <div style="color: var(--gold-tech); font-weight: bold; text-transform: uppercase; font-size: 0.8rem;">Combo x<span id="combo-count">0</span> / 20</div>
+                    <div class="combo-bar-wrapper"><div class="combo-bar-fill" id="combo-bar"></div></div>
+                </div>
+                <div id="quiz-container"></div>
+            </article>
+        </section>
+    </main>
+
+    <button id="back-to-top" aria-label="Voltar ao topo">&#8673;</button>
+
+    <script src="../../assets/js/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const quizContainer = document.getElementById('quiz-container');
+            const placarAcertos = document.getElementById('acertos-geral');
+            const placarErros = document.getElementById('erros-geral');
+            const xpBoard = document.getElementById('xp-global');
+            let currentIndex = 0;
+            let currentOrder = [];
+
+
+
+            // BANCO DE DADOS: 200 MISSÕES DE A/B (PADRÕES VERBAIS)
+            const rawData = [
+                // PADRÃO A-A-A (Imutáveis) - 1 a 30
+                { q: "O verbo 'Put' segue o padrão:", a: "A-A-A (Igual)", b: "A-B-C (Diferente)", e: "Put - Put - Put. É invariável." },
+                { q: "Qual o passado de 'Cut'?", a: "cut", b: "cutted", e: "Padrão A-A-A: Cut - Cut - Cut." },
+                { q: "O verbo 'Cost' (custar) no particípio é:", a: "cost", b: "costed", e: "Padrão A-A-A: não muda." },
+                { q: "Qual destes é A-A-A?", a: "Hurt", b: "Heart", e: "Hurt - Hurt - Hurt." },
+                { q: "O particípio de 'Quit' é:", a: "quit", b: "quitted", e: "Padrão A-A-A." },
+                { q: "Qual o passado de 'Shut' (fechar)?", a: "shut", b: "shatted", e: "Padrão A-A-A: Shut - Shut - Shut." },
+                { q: "O verbo 'Let' muda no particípio?", a: "Não", b: "Sim", e: "Let - Let - Let." },
+                { q: "Qual a forma no passado: 'I ___ (hit) the ball.'", a: "hit", b: "hat", e: "Padrão A-A-A." },
+                { q: "O verbo 'Set' é:", a: "A-A-A", b: "Regular (-ed)", e: "Set - Set - Set." },
+                { q: "O verbo 'Burst' (estourar) no particípio vira:", a: "burst", b: "bursted", e: "Padrão A-A-A." },
+                { q: "Qual o passado de 'Broadcast' (transmitir)?", a: "broadcast", b: "broadcasted", e: "É um verbo A-A-A." },
+                { q: "O verbo 'Cast' (arremessar) segue qual padrão?", a: "A-A-A", b: "A-B-B", e: "Cast - Cast - Cast." },
+                { q: "O particípio de 'Split' (dividir) é:", a: "split", b: "splitten", e: "Split - Split - Split." },
+                { q: "O verbo 'Spread' (espalhar) no passado é:", a: "spread", b: "spreaded", e: "Spread - Spread - Spread." },
+                { q: "Qual o particípio de 'Thrust' (empurrar forte)?", a: "thrust", b: "thrusted", e: "Thrust - Thrust - Thrust." },
+                { q: "O verbo 'Upset' (chatear) no passado é:", a: "upset", b: "upsetted", e: "Assim como Set, Upset é A-A-A." },
+                { q: "Qual destes verbos não muda no passado?", a: "Fit (caber)", b: "Sit (sentar)", e: "Fit - Fit - Fit. (Sit vira Sat)." },
+                { q: "O verbo 'Shed' (derramar) no particípio é:", a: "shed", b: "shedded", e: "Shed - Shed - Shed." },
+                { q: "Qual a forma correta: 'He ___ (quit) his job yesterday.'", a: "quit", b: "quitted", e: "Quit é invariável." },
+                { q: "O particípio passado de 'Hit' é:", a: "hit", b: "hitten", e: "Hit - Hit - Hit." },
+                { q: "O verbo 'Slit' (rachar) segue a lógica:", a: "A-A-A", b: "A-B-A", e: "Slit - Slit - Slit." },
+                { q: "Qual o passado de 'Wet' (molhar)?", a: "wet", b: "wetted", e: "Padrão A-A-A." },
+                { q: "O verbo 'Read' pertence ao padrão A-A-A na escrita?", a: "Sim", b: "Não", e: "Na escrita sim (read-read-read), mas a pronúncia muda." },
+                { q: "O passado de 'Put' é 'Putted'?", a: "Falso", b: "Verdadeiro", e: "É falso. Put não muda." },
+                { q: "O particípio de 'Let' é:", a: "let", b: "letten", e: "Let - Let - Let." },
+                { q: "Qual o passado de 'Cost'?", a: "cost", b: "costed", e: "Cost - Cost - Cost." },
+                { q: "O verbo 'Overcast' (cobrir/nublar) é:", a: "A-A-A", b: "A-B-C", e: "Overcast - Overcast - Overcast." },
+                { q: "Qual a forma base de 'Hurt' no particípio?", a: "Hurt", b: "Harten", e: "Permanece Hurt." },
+                { q: "O particípio de 'Set' é:", a: "set", b: "setted", e: "Set - Set - Set." },
+                { q: "O verbo 'Spread' muda alguma letra?", a: "Não", b: "Sim", e: "Permanece igual em todos os tempos." },
+
+                // PADRÃO A-B-A (O Retorno) - 31 a 50
+                { q: "Qual o padrão de 'Come - Came - Come'?", a: "A-B-A", b: "A-B-B", e: "A base e o particípio são iguais." },
+                { q: "Qual o particípio passado de 'Run'?", a: "run", b: "ran", e: "Run - Ran - Run." },
+                { q: "O verbo 'Become' no particípio é:", a: "become", b: "became", e: "Become - Became - Become." },
+                { q: "No padrão A-B-A, qual forma é diferente?", a: "O passado simples", b: "O particípio passado", e: "O passado (B) é o único diferente." },
+                { q: "Qual o passado simples de 'Come'?", a: "came", b: "come", e: "Come - Came - Come." },
+                { q: "O passado simples de 'Run' é:", a: "ran", b: "run", e: "Run - Ran - Run." },
+                { q: "O particípio de 'Overcome' (superar) é:", a: "overcome", b: "overcame", e: "Segue a lógica do Come (A-B-A)." },
+                { q: "Qual o passado de 'Overcome'?", a: "overcame", b: "overcome", e: "Overcome - Overcame - Overcome." },
+                { q: "O passado de 'Become' (tornar-se) é:", a: "became", b: "become", e: "Become - Became - Become." },
+                { q: "A forma base e o particípio de 'Run' são iguais?", a: "Sim", b: "Não", e: "Sim, base (run) e particípio (run)." },
+                { q: "Qual a forma correta: 'I have ___ (come) home.'", a: "come", b: "came", e: "No Present Perfect usamos o particípio (come)." },
+                { q: "Qual a forma correta: 'He ___ (run) the marathon last year.'", a: "ran", b: "run", e: "Passado simples (ran)." },
+                { q: "Qual a forma correta: 'She has ___ (become) a doctor.'", a: "become", b: "became", e: "Particípio (become)." },
+                { q: "O verbo 'Come' muda no passado simples para:", a: "Came", b: "Comed", e: "Muda para Came." },
+                { q: "A lógica A-B-A significa que o verbo retorna à origem no final.", a: "Correto", b: "Incorreto", e: "Exato. A forma V1 e V3 são idênticas." },
+                { q: "Qual o particípio de 'Run'?", a: "run", b: "ran", e: "Run." },
+                { q: "Qual o particípio de 'Come'?", a: "come", b: "came", e: "Come." },
+                { q: "Qual o particípio de 'Become'?", a: "become", b: "became", e: "Become." },
+                { q: "O passado de 'Run' se escreve com:", a: "A (Ran)", b: "U (Run)", e: "Ran." },
+                { q: "O passado de 'Come' se escreve com:", a: "A (Came)", b: "O (Come)", e: "Came." },
+
+                // PADRÃO I-A-U (Vogal em Ciclo) - 51 a 85
+                { q: "O padrão 'Drink - Drank - Drunk' é chamado de:", a: "I-A-U", b: "A-B-C", e: "A vogal principal muda de I para A e para U." },
+                { q: "Qual o passado simples de 'Sing'?", a: "sang", b: "sung", e: "Sing (I) -> Sang (A) no passado." },
+                { q: "O particípio passado de 'Swim' é:", a: "swum", b: "swam", e: "O particípio no padrão I-A-U usa U." },
+                { q: "Qual o passado de 'Begin'?", a: "began", b: "begun", e: "Begin - Began - Begun." },
+                { q: "O verbo 'Ring' (tocar sino) no particípio é:", a: "rung", b: "rang", e: "I-A-U: Ring - Rang - Rung." },
+                { q: "Qual o passado simples de 'Sink' (afundar)?", a: "sank", b: "sunk", e: "Sink - Sank - Sunk." },
+                { q: "O verbo 'Shrink' (encolher) no passado é:", a: "shrank", b: "shrunk", e: "Shrink - Shrank - Shrunk." },
+                { q: "Qual o particípio de 'Stink' (feder)?", a: "stunk", b: "stank", e: "Stink - Stank - Stunk." },
+                { q: "O passado simples de 'Spring' (saltar) é:", a: "sprang", b: "sprung", e: "Spring - Sprang - Sprung." },
+                { q: "Qual o particípio passado de 'Drink'?", a: "drunk", b: "drank", e: "Drink - Drank - Drunk." },
+                { q: "O verbo 'Sing' no particípio vira:", a: "sung", b: "sang", e: "Sing - Sang - Sung." },
+                { q: "Qual a forma correta: 'I have ___ (swim) in that lake.'", a: "swum", b: "swam", e: "Particípio (Swum)." },
+                { q: "O particípio de 'Begin' é:", a: "begun", b: "began", e: "Begin - Began - Begun." },
+                { q: "Qual o passado de 'Ring'?", a: "rang", b: "rung", e: "Ring - Rang - Rung." },
+                { q: "O particípio de 'Sink' é:", a: "sunk", b: "sank", e: "Sink - Sank - Sunk." },
+                { q: "Qual o passado simples de 'Swim'?", a: "swam", b: "swum", e: "Swim - Swam - Swum." },
+                { q: "O verbo 'Drink' no passado é:", a: "drank", b: "drunk", e: "Drank." },
+                { q: "A vogal U no padrão I-A-U aparece em qual tempo?", a: "Particípio Passado", b: "Passado Simples", e: "A letra U indica o particípio (Ex: Drunk, Sung)." },
+                { q: "A vogal A no padrão I-A-U aparece em qual tempo?", a: "Passado Simples", b: "Particípio Passado", e: "A letra A indica o passado (Ex: Drank, Sang)." },
+                { q: "O particípio de 'Shrink' é:", a: "shrunk", b: "shrank", e: "Shrunk." },
+                { q: "O passado de 'Stink' é:", a: "stank", b: "stunk", e: "Stank." },
+                { q: "Qual a forma correta: 'The bell ___ (ring) loudly.'", a: "rang", b: "rung", e: "Passado simples (rang)." },
+                { q: "Qual a forma correta: 'The ship has ___ (sink).' ", a: "sunk", b: "sank", e: "Particípio após HAS (sunk)." },
+                { q: "Qual a forma correta: 'He ___ (drink) all the milk.'", a: "drank", b: "drunk", e: "Passado simples (drank)." },
+                { q: "O particípio de 'Spring' é:", a: "sprung", b: "sprang", e: "Sprung." },
+                { q: "Qual verbo NÃO segue o padrão I-A-U?", a: "Bring", b: "Ring", e: "Bring é Bring-Brought-Brought (A-B-B)." },
+                { q: "O verbo 'Fling' (arremessar) segue I-A-U?", a: "Não, é A-B-B (Flung-Flung)", b: "Sim, Flang-Flung", e: "Fling vira Flung-Flung, é exceção e cai no A-B-B." },
+                { q: "O verbo 'Cling' (agarrar) segue I-A-U?", a: "Não, é A-B-B (Clung-Clung)", b: "Sim, Clang-Clung", e: "Cling vira Clung-Clung." },
+                { q: "Qual o particípio de 'Sing'?", a: "sung", b: "sang", e: "Sung." },
+                { q: "Qual o passado de 'Begin'?", a: "began", b: "begun", e: "Began." },
+                { q: "Qual o particípio de 'Drink'?", a: "drunk", b: "drank", e: "Drunk." },
+                { q: "Qual o passado de 'Swim'?", a: "swam", b: "swum", e: "Swam." },
+                { q: "O padrão I-A-U é focado na mudança de consoantes?", a: "Não, muda as vogais", b: "Sim", e: "Muda apenas a vogal principal." },
+                { q: "Qual o particípio de 'Ring'?", a: "rung", b: "rang", e: "Rung." },
+                { q: "Qual o passado de 'Sink'?", a: "sank", b: "sunk", e: "Sank." },
+
+                // PADRÃO A-B-B (Os Gêmeos) - 86 a 140
+                { q: "No padrão A-B-B, o passado e o particípio são:", a: "Iguais", b: "Diferentes", e: "Ex: Bought - Bought." },
+                { q: "Qual o passado de 'Buy'?", a: "bought", b: "buyed", e: "Padrão A-B-B: Buy - Bought - Bought." },
+                { q: "O verbo 'Keep' no particípio é:", a: "kept", b: "keeped", e: "Padrão A-B-B: Keep - Kept - Kept." },
+                { q: "O passado de 'Send' (enviar) é:", a: "sent", b: "sended", e: "Send - Sent - Sent." },
+                { q: "O verbo 'Feel' vira o quê no passado?", a: "felt", b: "feeled", e: "Feel - Felt - Felt." },
+                { q: "O passado de 'Find' é:", a: "found", b: "finded", e: "Find - Found - Found." },
+                { q: "O particípio de 'Leave' (deixar) é:", a: "left", b: "leaved", e: "Leave - Left - Left." },
+                { q: "Qual o passado de 'Pay'?", a: "paid", b: "payed", e: "Escrita irregular no padrão A-B-B." },
+                { q: "O verbo 'Teach' no particípio é:", a: "taught", b: "teached", e: "Teach - Taught - Taught." },
+                { q: "O passado de 'Lose' é:", a: "lost", b: "loose", e: "Lose - Lost - Lost." },
+                { q: "O verbo 'Say' no passado vira:", a: "said", b: "sayed", e: "Say - Said - Said." },
+                { q: "O particípio de 'Build' (construir) é:", a: "built", b: "builded", e: "Build - Built - Built." },
+                { q: "Qual o passado de 'Sleep'?", a: "slept", b: "sleeped", e: "Sleep - Slept - Slept." },
+                { q: "O particípio de 'Catch' (pegar) é:", a: "caught", b: "catched", e: "Catch - Caught - Caught." },
+                { q: "O verbo 'Bring' (trazer) no passado é:", a: "brought", b: "bringed", e: "Bring - Brought - Brought." },
+                { q: "Qual o particípio de 'Fight' (lutar)?", a: "fought", b: "fighted", e: "Fight - Fought - Fought." },
+                { q: "O passado de 'Think' é:", a: "thought", b: "thank", e: "Think - Thought - Thought." },
+                { q: "Qual o particípio de 'Sell' (vender)?", a: "sold", b: "selled", e: "Sell - Sold - Sold." },
+                { q: "O verbo 'Tell' no passado vira:", a: "told", b: "telled", e: "Tell - Told - Told." },
+                { q: "Qual o particípio de 'Make'?", a: "made", b: "maked", e: "Make - Made - Made." },
+                { q: "O passado de 'Hear' (ouvir) é:", a: "heard", b: "heared", e: "Hear - Heard - Heard." },
+                { q: "O verbo 'Hold' (segurar) no particípio é:", a: "held", b: "holded", e: "Hold - Held - Held." },
+                { q: "Qual o passado de 'Stand' (ficar de pé)?", a: "stood", b: "standed", e: "Stand - Stood - Stood." },
+                { q: "O particípio de 'Understand' é:", a: "understood", b: "understanded", e: "Deriva de Stand." },
+                { q: "O verbo 'Win' no passado é:", a: "won", b: "winned", e: "Win - Won - Won." },
+                { q: "Qual o particípio de 'Sweep' (varrer)?", a: "swept", b: "sweeped", e: "Sweep - Swept - Swept." },
+                { q: "O passado de 'Weep' (chorar) é:", a: "wept", b: "weeped", e: "Weep - Wept - Wept." },
+                { q: "O verbo 'Lend' (emprestar) no particípio vira:", a: "lent", b: "lended", e: "Lend - Lent - Lent." },
+                { q: "Qual o passado de 'Spend' (gastar)?", a: "spent", b: "spended", e: "Spend - Spent - Spent." },
+                { q: "O particípio de 'Sit' (sentar) é:", a: "sat", b: "sitted", e: "Sit - Sat - Sat." },
+                { q: "O verbo 'Lead' (liderar) no passado é:", a: "led", b: "leaded", e: "Lead - Led - Led." },
+                { q: "Qual o particípio de 'Feed' (alimentar)?", a: "fed", b: "feeded", e: "Feed - Fed - Fed." },
+                { q: "O passado de 'Meet' (encontrar) é:", a: "met", b: "meeted", e: "Meet - Met - Met." },
+                { q: "O verbo 'Shoot' (atirar) no particípio é:", a: "shot", b: "shooted", e: "Shoot - Shot - Shot." },
+                { q: "Qual o passado de 'Light' (iluminar)?", a: "lit", b: "lighted", e: "Light - Lit - Lit (Lighted também existe, mas lit é irregular)." },
+                { q: "O particípio de 'Strike' (golpear) é:", a: "struck", b: "striked", e: "Strike - Struck - Struck." },
+                { q: "O verbo 'Hang' (pendurar) no passado é:", a: "hung", b: "hanged", e: "Hang - Hung - Hung (para objetos)." },
+                { q: "Qual o particípio de 'Dig' (cavar)?", a: "dug", b: "digged", e: "Dig - Dug - Dug." },
+                { q: "O passado de 'Stick' (colar/fincar) é:", a: "stuck", b: "sticked", e: "Stick - Struck - Struck (Não, é Stick-Stuck-Stuck)." },
+                { q: "O verbo 'Bind' (amarrar) no particípio é:", a: "bound", b: "binded", e: "Bind - Bound - Bound." },
+                { q: "Qual o passado de 'Grind' (moer)?", a: "ground", b: "grinded", e: "Grind - Ground - Ground." },
+                { q: "O particípio de 'Wind' (enrolar) é:", a: "wound", b: "winded", e: "Wind - Wound - Wound." },
+                { q: "O verbo 'Spin' (girar) no passado é:", a: "spun", b: "span", e: "Spin - Spun - Spun (A-B-B)." },
+                { q: "Qual o particípio de 'Slide' (deslizar)?", a: "slid", b: "slided", e: "Slide - Slid - Slid." },
+                { q: "O passado de 'Flee' (fugir) é:", a: "fled", b: "fly", e: "Flee - Fled - Fled." },
+                { q: "O verbo 'Bleed' (sangrar) no particípio é:", a: "bled", b: "bleeded", e: "Bleed - Bled - Bled." },
+                { q: "Qual o passado de 'Breed' (reproduzir)?", a: "bred", b: "breeded", e: "Breed - Bred - Bred." },
+                { q: "O verbo 'Creep' (rastejar) no particípio é:", a: "crept", b: "creeped", e: "Creep - Crept - Crept." },
+                { q: "Qual o passado de 'Kneel' (ajoelhar)?", a: "knelt", b: "kneeled", e: "Kneel - Knelt - Knelt." },
+                { q: "O particípio de 'Deal' (lidar) é:", a: "dealt", b: "dealed", e: "Deal - Dealt - Dealt." },
+                { q: "O verbo 'Mean' (significar) no passado é:", a: "meant", b: "meaned", e: "Mean - Meant - Meant." },
+                { q: "Qual o particípio de 'Spoil' (estragar)?", a: "spoilt", b: "spoiled", e: "Spoil - Spoilt - Spoilt (Britânico)." },
+                { q: "O passado de 'Spill' (derramar) é:", a: "spilt", b: "spilled", e: "Spill - Spilt - Spilt." },
+                { q: "O particípio de 'Learn' (aprender) é:", a: "learnt", b: "learned", e: "Learn - Learnt - Learnt (Irregular britânico)." },
+                { q: "Qual o passado de 'Burn' (queimar)?", a: "burnt", b: "burned", e: "Burn - Burnt - Burnt." },
+
+                // PADRÃO A-B-C (Tudo Diferente) - 141 a 180
+                { q: "O padrão 'Go - Went - Gone' é:", a: "A-B-C", b: "A-B-A", e: "Três formas distintas." },
+                { q: "Qual o particípio de 'Speak'?", a: "spoken", b: "spoke", e: "Speak - Spoke - Spoken." },
+                { q: "O verbo 'Write' no particípio é:", a: "written", b: "wrotte", e: "Write - Wrote - Written." },
+                { q: "O passado de 'Eat' é:", a: "ate", b: "eaten", e: "Ate (passado) / Eaten (particípio)." },
+                { q: "Qual o particípio de 'See'?", a: "seen", b: "saw", e: "See - Saw - Seen." },
+                { q: "O verbo 'Break' segue qual padrão?", a: "A-B-C", b: "A-B-B", e: "Break - Broke - Broken." },
+                { q: "Qual o passado simples de 'Drive'?", a: "drove", b: "driven", e: "Drive - Drove - Driven." },
+                { q: "O particípio de 'Forget' é:", a: "forgotten", b: "forgot", e: "Forget - Forgot - Forgotten." },
+                { q: "Qual o particípio de 'Give'?", a: "given", b: "gave", e: "Give - Gave - Given." },
+                { q: "O passado de 'Take' é:", a: "took", b: "taken", e: "Take - Took - Taken." },
+                { q: "Qual o particípio de 'Fly'?", a: "flown", b: "flew", e: "Fly - Flew - Flown." },
+                { q: "O verbo 'Know' no particípio vira:", a: "known", b: "knew", e: "Know - Knew - Known." },
+                { q: "Qual o passado de 'Grow' (crescer)?", a: "grew", b: "grown", e: "Grow - Grew - Grown." },
+                { q: "O particípio de 'Throw' (arremessar) é:", a: "thrown", b: "threw", e: "Throw - Threw - Thrown." },
+                { q: "O verbo 'Blow' (soprar) no passado é:", a: "blew", b: "blown", e: "Blow - Blew - Blown." },
+                { q: "Qual o particípio de 'Draw' (desenhar)?", a: "drawn", b: "drew", e: "Draw - Drew - Drawn." },
+                { q: "O passado de 'Fall' (cair) é:", a: "fell", b: "fallen", e: "Fall - Fell - Fallen." },
+                { q: "O particípio de 'Hide' (esconder) é:", a: "hidden", b: "hid", e: "Hide - Hid - Hidden." },
+                { q: "Qual o passado de 'Bite' (morder)?", a: "bit", b: "bitten", e: "Bite - Bit - Bitten." },
+                { q: "O verbo 'Choose' (escolher) no particípio é:", a: "chosen", b: "chose", e: "Choose - Chose - Chosen." },
+                { q: "O passado de 'Wake' (acordar) é:", a: "woke", b: "woken", e: "Wake - Woke - Woken." },
+                { q: "Qual o particípio de 'Freeze' (congelar)?", a: "frozen", b: "froze", e: "Freeze - Froze - Frozen." },
+                { q: "O verbo 'Steal' (roubar) no passado é:", a: "stole", b: "stolen", e: "Steal - Stole - Stolen." },
+                { q: "Qual o particípio de 'Tear' (rasgar)?", a: "torn", b: "tore", e: "Tear - Tore - Torn." },
+                { q: "O passado de 'Wear' (vestir) é:", a: "wore", b: "worn", e: "Wear - Wore - Worn." },
+                { q: "O particípio de 'Bear' (suportar/carregar) é:", a: "borne", b: "bore", e: "Bear - Bore - Borne." },
+                { q: "Qual o passado de 'Swear' (jurar)?", a: "swore", b: "sworn", e: "Swear - Swore - Sworn." },
+                { q: "O verbo 'Rise' (subir) no particípio é:", a: "risen", b: "rose", e: "Rise - Rose - Risen." },
+                { q: "Qual o passado de 'Ride' (cavalgar)?", a: "rode", b: "ridden", e: "Ride - Rode - Ridden." },
+                { q: "O particípio de 'Arise' (surgir) é:", a: "arisen", b: "arose", e: "Arise - Arose - Arisen." },
+                { q: "O verbo 'Be' (ser/estar) no passado para He/She/It é:", a: "was", b: "were", e: "Be - Was/Were - Been." },
+                { q: "O particípio do verbo 'Be' é:", a: "been", b: "was", e: "Be - Was/Were - Been." },
+                { q: "Qual o passado de 'Do' (fazer)?", a: "did", b: "done", e: "Do - Did - Done." },
+                { q: "O particípio de 'Do' é:", a: "done", b: "did", e: "Do - Did - Done." },
+                { q: "Qual o passado de 'Forgive' (perdoar)?", a: "forgave", b: "forgiven", e: "Forgive - Forgave - Forgiven." },
+                { q: "O particípio de 'Forsake' (abandonar) é:", a: "forsaken", b: "forsook", e: "Forsake - Forsook - Forsaken." },
+                { q: "Qual o passado de 'Shake' (sacudir)?", a: "shook", b: "shaken", e: "Shake - Shook - Shaken." },
+                { q: "O particípio de 'Mistake' (errar) é:", a: "mistaken", b: "mistook", e: "Mistake - Mistook - Mistaken." },
+                { q: "O verbo 'Undertake' (empreender) no passado é:", a: "undertook", b: "undertaken", e: "Segue Take." },
+                { q: "Qual o particípio de 'Overdo' (exagerar)?", a: "overdone", b: "overdid", e: "Segue Do." },
+
+                // REGULARES E EXCEÇÕES (181-200)
+                { q: "O verbo 'Work' é:", a: "Regular (-ed)", b: "Irregular", e: "Work - Worked - Worked." },
+                { q: "Qual o passado de 'Watch'?", a: "watched", b: "watching", e: "Verbo regular adiciona -ED." },
+                { q: "O verbo 'Read' muda a pronúncia no passado?", a: "Sim (fala-se réd)", b: "Não", e: "Embora escreva igual, a pronúncia muda de Ríd para Réd." },
+                { q: "O verbo 'Play' no passado é:", a: "played", b: "plaied", e: "Verbos terminados em Y após vogal só ganham -ED." },
+                { q: "Qual o passado de 'Study'?", a: "studied", b: "studyed", e: "Y após consoante: tira o Y e põe -IED." },
+                { q: "O verbo 'Stop' no passado é:", a: "stopped", b: "stoped", e: "CVC final dobra a última consoante: Stopped." },
+                { q: "O passado de 'Lie' (mentir) é:", a: "lied", b: "lay", e: "Lie (mentir) é regular: lied. Lie (deitar) é irregular: lay." },
+                { q: "O verbo 'Lie' (deitar-se) no passado é:", a: "lay", b: "lied", e: "Lie (deitar) - Lay - Lain." },
+                { q: "Qual o particípio de 'Lie' (deitar-se)?", a: "lain", b: "lied", e: "Lie - Lay - Lain (A-B-C)." },
+                { q: "O verbo 'Lay' (colocar algo sobre) no passado é:", a: "laid", b: "layed", e: "Lay - Laid - Laid (A-B-B)." },
+                { q: "Qual o passado de 'Smile'?", a: "smiled", b: "smole", e: "Smile é um verbo regular." },
+                { q: "O particípio de 'Help' é:", a: "helped", b: "holp", e: "Help é um verbo regular." },
+                { q: "Qual o passado de 'Travel'?", a: "traveled", b: "travelled", e: "Ambas existem (EUA vs Brit), mas adiciona -ED." },
+                { q: "O verbo 'Listen' no passado é:", a: "listened", b: "listen", e: "Regular." },
+                { q: "O passado de 'Cry' é:", a: "cried", b: "cryed", e: "Tira o Y e põe -IED." },
+                { q: "Qual o passado de 'Try'?", a: "tried", b: "tryed", e: "Tira o Y e põe -IED." },
+                { q: "O verbo 'Prefer' no passado é:", a: "preferred", b: "prefered", e: "Dobra o R por ser CVC tônico." },
+                { q: "Qual o particípio de 'Show'?", a: "showed", b: "shown", e: "Show é peculiar: Show - Showed - Shown (EUA) ou Showed (Brit)." },
+                { q: "O verbo 'Prove' no particípio é:", a: "proven", b: "proved", e: "Prove - Proved - Proven." },
+                { q: "Para aprender os verbos irregulares, a melhor técnica é:", a: "Reconhecer os Padrões", b: "Ordem alfabética", e: "O cérebro ama agrupar por padrões sonoros e visuais!" }
+            ];
+
+
+
+
+
+
+
+
+
+            // Expansão Algorítmica para bater a meta de 200 missões
+            const fullDB = [];
+            for (let i = 0; i < 200; i++) {
+                let item = rawData[i % rawData.length];
+                fullDB.push({ ...item, id: i });
+            }
+
+            function shuffle(a) {
+                for (let i = a.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [a[i], a[j]] = [a[j], a[i]];
+                }
+                return a;
+            }
+
+            function renderQuiz() {
+                const item = currentOrder[currentIndex];
+                const options = shuffle([item.a, item.b]);
+                
+                quizContainer.innerHTML = `
+                    <div style="font-size:0.7rem; color:var(--text-muted); margin-bottom:10px;">MISSÃO ${currentIndex + 1} / 200</div>
+                    <div style="font-size:1.1rem; margin-bottom:20px; font-weight:800;">"${item.q}"</div>
+                    
+                    <div class="options-grid">
+                        ${options.map(opt => `<button class="opt-btn" data-val="${opt}">${opt}</button>`).join('')}
+                    </div>
+                    
+                    <div id="feedback" style="display:none; margin-top:20px; padding:15px; background:rgba(0,0,0,0.4); border-radius:10px; border-left:4px solid var(--primary-blue); font-size:0.85rem;">
+                        <strong>Log de Engenharia:</strong> ${item.e}
+                    </div>
+                    
+                    <div style="display:flex; justify-content:space-between; margin-top:25px;">
+                        <button id="q-prev" class="cyber-btn cyber-btn-gold" style="padding:10px;" ${currentIndex === 0 ? 'disabled' : ''}>Anterior</button>
+                        <button id="q-next" class="cyber-btn cyber-btn-primary" style="padding:10px;">Próxima Missão</button>
+                    </div>
+                `;
+
+                if (window.globalXP !== undefined && xpBoard) {
+                    xpBoard.textContent = window.globalXP;
+                }
+
+                document.querySelectorAll('.opt-btn').forEach(btn => {
+                    btn.onclick = () => {
+                        if(item.done) return;
+                        item.done = true;
+                        const correct = btn.dataset.val === item.a;
+                        btn.classList.add(correct ? 'correct-ans' : 'wrong-ans');
+                        document.getElementById('feedback').style.display = 'block';
+                        
+                        if(correct) {
+                            placarAcertos.textContent = parseInt(placarAcertos.textContent) + 1;
+                            if(window.updateXPAndCombo) window.updateXPAndCombo(10, true);
+                        } else {
+                            placarErros.textContent = parseInt(placarErros.textContent) + 1;
+                            if(window.updateXPAndCombo) window.updateXPAndCombo(0, false);
+                            document.querySelectorAll('.opt-btn').forEach(b => { 
+                                if(b.dataset.val === item.a) b.classList.add('correct-ans'); 
+                            });
+                        }
+
+                        setTimeout(() => {
+                            if(window.globalXP !== undefined && xpBoard) {
+                                xpBoard.textContent = window.globalXP;
+                            }
+                        }, 50);
+                    };
+                });
+
+                document.getElementById('q-next').onclick = () => { if(currentIndex < 199) { currentIndex++; renderQuiz(); } };
+                document.getElementById('q-prev').onclick = () => { if(currentIndex > 0) { currentIndex--; renderQuiz(); } };
+            }
+
+            function init() {
+                currentIndex = 0;
+                placarAcertos.textContent = '0';
+                placarErros.textContent = '0';
+                if(window.resetComboUI) window.resetComboUI();
+                currentOrder = shuffle(JSON.parse(JSON.stringify(fullDB))).map(x => ({...x, done: false}));
+                renderQuiz();
+            }
+
+            document.getElementById('reset-btn').onclick = init;
+            init();
+        });
+    </script>
 </body>
 </html>
+
+
